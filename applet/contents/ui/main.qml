@@ -17,18 +17,19 @@ Item {
     }
 
     ListView {
+        id: listView
         model: clientModel
         onCountChanged: {
             console.debug("count changed" + count)
         }
 
         width: parent.width
-        height: parent.height
+        height: parent.height / 2
         delegate: Item {
             Text {
                 id: text
                 anchors.top: parent.top
-                text: 'name: ' + name + "  volume: " + volume
+                text: description
             }
             Components.Slider {
                 id: slider
@@ -37,16 +38,63 @@ Item {
                 }
                 minimumValue: 0
                 maximumValue: 65536
-                stepSize: maximumValue / 10
+                stepSize: maximumValue / 100
                 focus: true
-                onValueChanged: pulseContext.setVolume(index, value)
+                onValueChanged: {
+                    pulseContext.setSinkVolume(index, value)
+                }
             }
             Component.onCompleted: slider.value = volume
         }
     }
 
-    Component.onCompleted: {
-        clientModel.setContext(pulseContext)
+    SinkInputModel {
+        id: sinkInputModel
+        onRowsInserted: {
+            console.debug("inserto")
+        }
     }
 
+    ListView {
+        id: inputView
+        model: sinkInputModel
+
+        onCountChanged: {
+            console.debug("fuck count changed" + count)
+        }
+        
+        width: parent.width
+        anchors.top: listView.bottom
+        delegate: Item {
+            Text {
+                id: inputText
+                anchors.top: parent.top
+                text: Name
+            }
+            Components.Slider {
+                id: inputSlider
+                anchors {
+                    top: inputText.bottom
+                }
+                minimumValue: 0
+                maximumValue: 65536
+                stepSize: maximumValue / 100
+                focus: true
+                visible: (HasVolume && IsVolumeWritable) ? true : false
+                onValueChanged: {
+                    pulseContext.setSinkInputVolume(Index, value)
+                }
+            }
+            Component.onCompleted: {
+                if (!HasVolume || !IsVolumeWritable)
+                    return
+                inputSlider.value = Volume
+            }
+        }
+    }
+
+    Component.onCompleted: {
+        clientModel.setContext(pulseContext)
+        sinkInputModel.setContext(pulseContext)
+    }
 }

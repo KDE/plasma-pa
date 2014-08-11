@@ -32,6 +32,12 @@ signals:
     void sinkAdded(quint32 index);
     void sinkUpdated(quint32 index);
     void sinkRemoved(quint32 index);
+
+    void sinkInputAdded(quint32 index);
+
+    void sinkInputUpdated(quint32 index);
+    void sinkInputRemoved(quint32 index);
+
 //    void sinksChanged();
     void sourcesChanged();
     void sinkInputsChanged();
@@ -40,18 +46,19 @@ signals:
     void cardsChanged();
 
 public slots:
-    Q_INVOKABLE void setVolume(quint32 index, quint32 volume);
+    Q_INVOKABLE void setSinkVolume(quint32 index, quint32 volume);
+    Q_INVOKABLE void setSinkInputVolume(quint32 index, quint32 volume);
 
 public:
 //private:
     void connectToDaemon();
 
-    QMap<qint32, Sink *> m_sinks;
-//    QMap<qint32, Source *> m_sources;
-    QMap<qint32, SinkInput *> m_sinkInputs;
-//    QMap<qint32, SourceOutput *> m_sourceOutputs;
-    QMap<qint32, Client *> m_clients;
-//    QMap<qint32, Card *> m_cards;
+    QMap<quint32, Sink *> m_sinks;
+//    QMap<quint32, Source *> m_sources;
+    QMap<quint32, SinkInput *> m_sinkInputs;
+//    QMap<quint32, SourceOutput *> m_sourceOutputs;
+    QMap<quint32, Client *> m_clients;
+//    QMap<quint32, Card *> m_cards;
 
     pa_context *m_context;
     pa_glib_mainloop *m_mainloop;

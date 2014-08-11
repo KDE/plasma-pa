@@ -12,6 +12,7 @@ public:
     void setInfo(const pa_sink_info *info);
 
     QString name() const { return m_name; }
+    QString description() const { return m_description; }
     pa_cvolume volume() const { return m_volume; }
 
 private:

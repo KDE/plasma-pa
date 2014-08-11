@@ -34,6 +34,8 @@ static void subscribe_cb(pa_context *context, pa_subscription_event_type_t type,
     ((Context *)data)->subscribeCallback(context, type, index);
 }
 
+// --------------------------
+
 Context::Context()
     : m_context(nullptr)
     , m_mainloop(nullptr)
@@ -62,6 +64,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
         case PA_SUBSCRIPTION_EVENT_SINK:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
                 m_sinks.take(index)->deleteLater();
+                emit sinkRemoved(index);
             } else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
@@ -88,8 +91,17 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
         case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+                int listIndex = -1;
+                QList<quint32> list = m_sinkInputs.keys();
+                for (int i = 0; i < list.size(); ++i) {
+                    if (list.at(i) == index) {
+                        listIndex = i;
+                        break;
+                    }
+                }
+                Q_ASSERT(listIndex >= 0);
                 m_sinkInputs.take(index)->deleteLater();
-                emit sinkInputsChanged();
+                emit sinkInputRemoved(listIndex);
             } else {
                 qDebug() << "sub sink input info";
                 pa_operation *o;
@@ -251,10 +263,21 @@ void Context::sinkCallback(pa_context *context, const pa_sink_info *info, int eo
     obj->setInfo(info);
     m_sinks.insert(info->index, obj);
 
+#warning this is bullshit and removal by this method is even more shit
+    int listIndex = -1;
+    QList<quint32> list = m_sinks.keys();
+    for (int i = 0; i < list.size(); ++i) {
+        if (list.at(i) == info->index) {
+            listIndex = i;
+            break;
+        }
+    }
+    Q_ASSERT(listIndex >= 0);
+
     if (isNew) {
-        emit sinkAdded(info->index);
+        emit sinkAdded(listIndex);
     } else {
-        emit sinkUpdated(info->index);
+        emit sinkUpdated(listIndex);
     }
 }
 
@@ -302,22 +325,37 @@ void Context::sinkInputCallback(pa_context *context, const pa_sink_input_info *i
 
     Q_ASSERT(info);
 
-    if (m_sinkInputs.contains(info->index)) {
-        SinkInput *sinkInput = m_sinkInputs.value(info->index);
-        sinkInput->setName(info->name);
-    } else {
-        SinkInput *sinkInput = new SinkInput();
-        sinkInput->setName(info->name);
-        m_sinkInputs.insert(info->index, sinkInput);
-    }
-    emit sinkInputsChanged();
+    bool isNew = false;
 
-    qDebug() << "  " << info->index << info->name << info->client;
+    SinkInput *obj = m_sinkInputs.value(info->index, nullptr);
+    if (!obj) {
+        obj = new SinkInput;
+        isNew = true;
+    }
+    obj->setInfo(info);
+    m_sinkInputs.insert(info->index, obj);
+
+    int listIndex = -1;
+    QList<quint32> list = m_sinkInputs.keys();
+    for (int i = 0; i < list.size(); ++i) {
+        if (list.at(i) == info->index) {
+            listIndex = i;
+            break;
+        }
+    }
+    Q_ASSERT(listIndex >= 0);
+
+    qDebug() << Q_FUNC_INFO << isNew << listIndex;
+    if (isNew) {
+        emit sinkInputAdded(listIndex);
+    } else {
+        emit sinkInputUpdated(listIndex);
+    }
 }
 
-void Context::setVolume(quint32 index, quint32 volume)
+void Context::setSinkVolume(quint32 index, quint32 volume)
 {
-    qDebug() << "volume" << index << volume;
+    qDebug() << Q_FUNC_INFO << index << volume;
     pa_operation *o;
     Sink *sink = m_sinks.value(index, nullptr);
     if (!sink)
@@ -327,6 +365,24 @@ void Context::setVolume(quint32 index, quint32 volume)
         newVolume.values[i] = volume;
     }
     if (!(o = pa_context_set_sink_volume_by_index(m_context, index, &newVolume, NULL, NULL))) {
+        qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
+        return;
+    }
+    pa_operation_unref(o);
+}
+
+void Context::setSinkInputVolume(quint32 index, quint32 volume)
+{
+    qDebug() << Q_FUNC_INFO << index << volume;
+    pa_operation *o;
+    SinkInput *obj = m_sinkInputs.value(index, nullptr);
+    if (!obj)
+        return;
+    pa_cvolume newVolume = obj->volume();
+    for (int i = 0; i < newVolume.channels; ++i) {
+        newVolume.values[i] = volume;
+    }
+    if (!(o = pa_context_set_sink_input_volume(m_context, index, &newVolume, NULL, NULL))) {
         qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
         return;
     }
