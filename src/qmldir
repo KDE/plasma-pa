@@ -1,0 +1,4 @@
+module org.kde.plasma.volume
+
+plugin plasma-volume-declarative
+
