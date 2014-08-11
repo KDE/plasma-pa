@@ -6,9 +6,6 @@ import org.kde.plasma.components 2.0 as Components
 
 
 Item {
-//    width: 680
-//    height: 420
-
     Plasmoid.icon: "audio-volume-medium";
 
     Context {
