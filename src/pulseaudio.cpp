@@ -47,9 +47,12 @@ QVariant ClientModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-SinkInputModel::SinkInputModel(QObject *parent)
+SinkInputModel::SinkInputModel(Context *context, QObject *parent)
     : PornModel(parent)
 {
+    if (context) {
+        setContext(context);
+    }
 }
 
 void SinkInputModel::setContext(Context *context)
@@ -71,6 +74,9 @@ QHash<int, QByteArray> SinkInputModel::roleNames() const
     roles[VolumeRole] = "Volume";
     roles[HasVolumeRole] = "HasVolume";
     roles[IsVolumeWritableRole] = "IsVolumeWritable";
+    roles[ClientIndexRole] = "ClientIndex";
+    roles[ClientNameRole] = "ClientName";
+    roles[ClientProperties] = "ClientProperties";
     qDebug() << roles;
     return roles;
 }
@@ -91,6 +97,7 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
     case IndexRole:
         return m_context->m_sinkInputs.values().at(index.row())->index();
     case NameRole:
+    case Qt::DisplayRole:
         return m_context->m_sinkInputs.values().at(index.row())->name();
     case VolumeRole:
 #warning values bs
@@ -99,7 +106,25 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
         return m_context->m_sinkInputs.values().at(index.row())->hasVolume();
     case IsVolumeWritableRole:
         return m_context->m_sinkInputs.values().at(index.row())->isVolumeWritable();
+    case ClientIndexRole:
+//        return
+        Q_ASSERT(false);
+    case ClientNameRole: {
+        quint32 clientIndex = m_context->m_sinkInputs.values().at(index.row())->client();
+        Client *client = m_context->m_clients.value(clientIndex, nullptr);
+        if (client)
+            return client->name();
+        return QVariant();
     }
+    case ClientProperties: {
+        quint32 clientIndex = m_context->m_sinkInputs.values().at(index.row())->client();
+        Client *client = m_context->m_clients.value(clientIndex, nullptr);
+        if (client)
+            return client->properties();
+        return QVariant();
+    }
+    }
+    return QVariant();
     Q_ASSERT(false);
 }
 
@@ -114,9 +139,12 @@ void PornModel::setContext(Context *context)
      endResetModel();
 }
 
-SinkModel::SinkModel(QObject *parent)
+SinkModel::SinkModel(Context *context, QObject *parent)
     : PornModel(parent)
 {
+    if (context) {
+        setContext(context);
+    }
 }
 
 void SinkModel::setContext(Context *context)
@@ -131,10 +159,12 @@ void SinkModel::setContext(Context *context)
 QHash<int, QByteArray> SinkModel::roleNames() const
 {
     QHash<int, QByteArray> roles;
-    roles[IndexRole] = "index";
-    roles[NameRole] = "name";
-    roles[DescritionRole] = "description";
-    roles[VolumeRole] = "volume";
+    roles[IndexRole] = "Index";
+    roles[NameRole] = "Name";
+    roles[DescritionRole] = "Description";
+    roles[VolumeRole] = "Volume";
+    roles[PortsRole] = "Ports";
+    roles[ActivePortRole] = "ActivePortIndex";
     return roles;
 }
 
@@ -147,6 +177,7 @@ int SinkModel::rowCount(const QModelIndex &parent) const
 
 QVariant SinkModel::data(const QModelIndex &index, int role) const
 {
+#warning fixme switch
     qDebug() << Q_FUNC_INFO;
     if (role == IndexRole) {
         return m_context->m_sinks.values().at(index.row())->index();
@@ -154,8 +185,19 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
         return m_context->m_sinks.values().at(index.row())->name();
     } else if (role == DescritionRole) {
         return m_context->m_sinks.values().at(index.row())->description();
-    } else if (role == VolumeRole)
+    } else if (role == VolumeRole) {
         return m_context->m_sinks.values().at(index.row())->volume().values[0];
+    } else if (role == PortsRole) {
+#warning fixme this should be a model or something or nothing, this mapping stuff here is bad
+        QList<SinkPort> ports = m_context->m_sinks.values().at(index.row())->ports();
+        QStringList l;
+        for (SinkPort port : ports) {
+            l.append(port.name());
+        }
+        return l;
+    } else if (role == ActivePortRole) {
+        return m_context->m_sinks.values().at(index.row())->activePortIndex();
+    }
     return QVariant();
 }
 

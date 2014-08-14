@@ -3,6 +3,8 @@
 
 #include <pulse/introspect.h>
 
+#include <QMap>
+
 #include "pulseobject.h"
 
 class Client : public PulseObject
@@ -14,11 +16,13 @@ public:
     void setInfo(const pa_client_info *info);
 
     QString name() const { return m_name; }
+    QMap<QString, QVariant> properties() const { return m_properties; }
 
 private:
     QString m_name;
     QString m_ownerModule;
     QString m_driver;
+    QMap<QString, QVariant> m_properties;
 };
 
 #endif // CLIENT_H

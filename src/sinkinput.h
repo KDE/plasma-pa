@@ -16,11 +16,15 @@ public:
     bool hasVolume() const { return m_hasVolume; }
     bool isVolumeWritable() const { return m_isVolumeWritable; }
 
+    quint32 client() const { return m_client; }
+
 private:
     QString m_name;
     pa_cvolume m_volume;
     bool m_hasVolume;
     bool m_isVolumeWritable;
+
+    quint32 m_client;
 };
 
 #endif // SINKINPUT_H

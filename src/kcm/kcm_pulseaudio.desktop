@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Service
+Icon=sound
+Exec=kcmshell5 pulseaudio
+
+X-KDE-Library=kcm_pulseaudio
+X-KDE-ServiceTypes=KCModule
+X-KDE-System-Settings-Parent-Category=personalization
+X-KDE-ParentApp=kcontrol
+X-KDE-PluginKeyword=kcm-pulseaudio
+X-KDE-Keywords=information,distribution,distro,system,kernel,qt,kde
+Categories=Qt;KDE;X-KDE-settings-personalization;X-KDE-information;
+
+Name=Sound
+Comment=Sound and Other Stuff

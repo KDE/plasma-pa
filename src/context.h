@@ -17,7 +17,7 @@ class Context : public QObject
 {
     Q_OBJECT
 public:
-    Context();
+    Context(QObject *parent = nullptr);
     ~Context();
 
     bool isValid() { return m_context && m_mainloop; }

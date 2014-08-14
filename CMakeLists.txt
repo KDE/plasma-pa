@@ -10,7 +10,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets Quick)
-find_package(KF5 REQUIRED COMPONENTS Plasma)
+find_package(KF5 REQUIRED COMPONENTS ConfigWidgets CoreAddons I18n Plasma)
 find_package(PulseAudio REQUIRED)
 find_package(GLIB2 REQUIRED)
 

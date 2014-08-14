@@ -3,6 +3,8 @@
 #include <QAbstractEventDispatcher>
 #include <QDebug>
 
+#warning todo this needs to be a singleton as multiple contexts dont make sense and it makes it eaier to use from qml
+
 static void sink_cb(pa_context *context, const pa_sink_info *info, int eol, void *data)
 {
     Q_ASSERT(data);
@@ -36,8 +38,9 @@ static void subscribe_cb(pa_context *context, pa_subscription_event_type_t type,
 
 // --------------------------
 
-Context::Context()
-    : m_context(nullptr)
+Context::Context(QObject *parent)
+    : QObject(parent)
+    , m_context(nullptr)
     , m_mainloop(nullptr)
 {
     // We require a glib event loop

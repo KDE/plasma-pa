@@ -2,6 +2,12 @@
 
 #include <QDebug>
 
+Sink::Sink()
+    : m_ports()
+    , m_activePortIndex(-1)
+{
+}
+
 void Sink::setInfo(const pa_sink_info *info)
 {
 //    const char *name;                  /**< Name of the sink */
@@ -36,5 +42,29 @@ void Sink::setInfo(const pa_sink_info *info)
 #warning fixme channels
     m_volume = info->volume;
 
+    m_ports.clear();
+    for (auto **ports = info->ports; *ports != nullptr; ++ports) {
+        SinkPort port;
+        port.setInfo(*ports);
+        m_ports.append(port);
+        if (info->active_port == *ports) {
+            m_activePortIndex = m_ports.size() - 1;
+        }
+    }
+
     qDebug() << info->name << info->volume.values[0] << info->driver;
+}
+
+SinkPort::SinkPort()
+    : m_name()
+    , m_description()
+    , m_isAvailable(false)
+{
+}
+
+void SinkPort::setInfo(const pa_sink_port_info *port)
+{
+    m_name = port->name;
+    m_description = port->description;
+    m_isAvailable = port->available;
 }

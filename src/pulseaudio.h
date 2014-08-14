@@ -12,7 +12,7 @@ class PornModel : public QAbstractListModel
     Q_OBJECT
 public:
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE = 0;
-    virtual QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE = 0;
+    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE = 0;
 
 public slots:
     virtual void setContext(Context *context);
@@ -36,16 +36,18 @@ public:
         IndexRole = Qt::UserRole + 1,
         NameRole,
         DescritionRole,
-        VolumeRole
+        VolumeRole,
+        PortsRole,
+        ActivePortRole
     };
 
-    SinkModel(QObject *parent = nullptr);
+    SinkModel(Context *context = nullptr, QObject *parent = nullptr);
 
     virtual void setContext(Context *context) Q_DECL_OVERRIDE;
 
     virtual QHash<int,QByteArray> roleNames() const Q_DECL_OVERRIDE;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 };
 
 class ClientModel : public QAbstractListModel
@@ -63,10 +65,7 @@ public:
 
     virtual QHash<int,QByteArray> roleNames() const Q_DECL_OVERRIDE;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-
-//private slots:
-//    void _onDataChange();
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
 private:
     Context *m_context;
@@ -81,16 +80,19 @@ public:
         NameRole,
         VolumeRole,
         HasVolumeRole,
-        IsVolumeWritableRole
+        IsVolumeWritableRole,
+        ClientIndexRole,
+        ClientNameRole,
+        ClientProperties
     };
 
-    SinkInputModel(QObject *parent = nullptr);
+    SinkInputModel(Context *context = nullptr, QObject *parent = nullptr);
 
     virtual void setContext(Context *context) Q_DECL_OVERRIDE;
 
     virtual QHash<int,QByteArray> roleNames() const Q_DECL_OVERRIDE;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 };
 
 #endif // PULSEAUDIO_H

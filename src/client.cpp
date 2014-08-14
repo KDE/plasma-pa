@@ -12,7 +12,8 @@ void Client::setInfo(const pa_client_info *info)
     m_ownerModule = info->owner_module;
     m_driver = QString::fromUtf8(info->driver);
 
-#warning clear properties first?
+    m_properties.clear();
+
     void *it = nullptr;
     while (const char *key = pa_proplist_iterate(info->proplist, &it)) {
         const char *value = pa_proplist_gets(info->proplist, key);
@@ -20,7 +21,7 @@ void Client::setInfo(const pa_client_info *info)
             qDebug() << "property" << key << "not a string";
             continue;
         }
-        setProperty(key, QString::fromUtf8(value));
-//        qDebug() << key << value
+        m_properties.insert(key, QString::fromUtf8(value));
+        qDebug() << key << value;
     }
 }
