@@ -26,3 +26,5 @@ target_link_libraries(plasma-volume-declarative
 )
 install(TARGETS plasma-volume-declarative DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/volume)
 install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/volume)
+
+add_subdirectory(kcm)
