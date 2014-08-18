@@ -119,7 +119,7 @@ Rectangle {
                                     model: Ports
                                     width: 200
                                     onCurrentIndexChanged: {
-
+                                        pulseContext.setSinkPort(Index
                                     }
                                 }
                             }

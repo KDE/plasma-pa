@@ -28,13 +28,16 @@ public:
     void clientCallback(pa_context *context, const pa_client_info *info, int eol);
     void sinkInputCallback(pa_context *context, const pa_sink_input_info *info, int eol);
 
+    Q_INVOKABLE void setSinkVolume(quint32 index, quint32 volume);
+    Q_INVOKABLE void setSinkPort(quint32 portIndex);
+    Q_INVOKABLE void setSinkInputVolume(quint32 index, quint32 volume);
+
 signals:
     void sinkAdded(quint32 index);
     void sinkUpdated(quint32 index);
     void sinkRemoved(quint32 index);
 
     void sinkInputAdded(quint32 index);
-
     void sinkInputUpdated(quint32 index);
     void sinkInputRemoved(quint32 index);
 
@@ -44,10 +47,6 @@ signals:
     void sourceOutputsChanged();
     void clientsChanged();
     void cardsChanged();
-
-public slots:
-    Q_INVOKABLE void setSinkVolume(quint32 index, quint32 volume);
-    Q_INVOKABLE void setSinkInputVolume(quint32 index, quint32 volume);
 
 public:
 //private:

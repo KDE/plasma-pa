@@ -374,6 +374,15 @@ void Context::setSinkVolume(quint32 index, quint32 volume)
     pa_operation_unref(o);
 }
 
+void Context::setSinkPort(quint32 portIndex)
+{
+    pa_operation *o;
+    if (!(o = pa_context_set_sink_port_by_index(m_context, portIndex, nullptr, nullptr, nullptr))) {
+        qWarning() << "pa_context_set_sink_port_by_index failed";
+        return;
+    }
+}
+
 void Context::setSinkInputVolume(quint32 index, quint32 volume)
 {
     qDebug() << Q_FUNC_INFO << index << volume;
