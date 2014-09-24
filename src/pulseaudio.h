@@ -43,7 +43,7 @@ public:
 
     SinkModel(Context *context = nullptr, QObject *parent = nullptr);
 
-    virtual void setContext(Context *context) Q_DECL_OVERRIDE;
+    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
 
     virtual QHash<int,QByteArray> roleNames() const Q_DECL_OVERRIDE;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
@@ -88,7 +88,7 @@ public:
 
     SinkInputModel(Context *context = nullptr, QObject *parent = nullptr);
 
-    virtual void setContext(Context *context) Q_DECL_OVERRIDE;
+    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
 
     virtual QHash<int,QByteArray> roleNames() const Q_DECL_OVERRIDE;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
