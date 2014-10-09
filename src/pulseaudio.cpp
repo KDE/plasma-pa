@@ -3,7 +3,7 @@
 #include <QDebug>
 
 ClientModel::ClientModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractModel(parent)
     , m_context(nullptr)
 {
 }
@@ -48,7 +48,7 @@ QVariant ClientModel::data(const QModelIndex &index, int role) const
 }
 
 SinkInputModel::SinkInputModel(Context *context, QObject *parent)
-    : PornModel(parent)
+    : AbstractModel(parent)
 {
     if (context) {
         setContext(context);
@@ -58,7 +58,7 @@ SinkInputModel::SinkInputModel(Context *context, QObject *parent)
 void SinkInputModel::setContext(Context *context)
 {
     qDebug() << Q_FUNC_INFO;
-    PornModel::setContext(context);
+    AbstractModel::setContext(context);
     connect(context, &Context::sinkInputAdded, this, &SinkInputModel::onDataAdded);
     connect(context, &Context::sinkInputUpdated, this, &SinkInputModel::onDataUpdated);
     connect(context, &Context::sinkInputRemoved, this, &SinkInputModel::onDataRemoved);
@@ -83,10 +83,10 @@ QHash<int, QByteArray> SinkInputModel::roleNames() const
 
 int SinkInputModel::rowCount(const QModelIndex &parent) const
 {
-    qDebug() << Q_FUNC_INFO << parent << m_context;
+//    qDebug() << Q_FUNC_INFO << parent << m_context;
     if (!m_context)
         return 0;
-    qDebug() << Q_FUNC_INFO << m_context->m_sinkInputs.count();
+//    qDebug() << Q_FUNC_INFO << m_context->m_sinkInputs.count();
     return m_context->m_sinkInputs.count();
 }
 
@@ -128,7 +128,7 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
     Q_ASSERT(false);
 }
 
-void PornModel::setContext(Context *context)
+void AbstractModel::setContext(Context *context)
 {
      beginResetModel();
      if (m_context) {
@@ -140,7 +140,7 @@ void PornModel::setContext(Context *context)
 }
 
 SinkModel::SinkModel(Context *context, QObject *parent)
-    : PornModel(parent)
+    : AbstractModel(parent)
 {
     if (context) {
         setContext(context);
@@ -150,7 +150,7 @@ SinkModel::SinkModel(Context *context, QObject *parent)
 void SinkModel::setContext(Context *context)
 {
     qDebug() << Q_FUNC_INFO;
-    PornModel::setContext(context);
+    AbstractModel::setContext(context);
     connect(context, &Context::sinkAdded, this, &SinkModel::onDataAdded);
     connect(context, &Context::sinkUpdated, this, &SinkModel::onDataUpdated);
     connect(context, &Context::sinkRemoved, this, &SinkModel::onDataRemoved);
@@ -201,7 +201,7 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void PornModel::onDataAdded(quint32 index)
+void AbstractModel::onDataAdded(quint32 index)
 {
     qDebug() << Q_FUNC_INFO << index;
 //    beginInsertRows(QModelIndex(), index, index);
@@ -210,18 +210,18 @@ void PornModel::onDataAdded(quint32 index)
     endResetModel();
 }
 
-void PornModel::onDataUpdated(quint32 index)
+void AbstractModel::onDataUpdated(quint32 index)
 {
     emit dataChanged(createIndex(index, 0), createIndex(index, 0));
 }
 
-void PornModel::onDataRemoved(quint32 index)
+void AbstractModel::onDataRemoved(quint32 index)
 {
     beginRemoveRows(QModelIndex(), index, index);
     endRemoveRows();
 }
 
-PornModel::PornModel(QObject *parent)
+AbstractModel::AbstractModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_context(nullptr)
 {

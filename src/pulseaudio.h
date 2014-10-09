@@ -5,9 +5,7 @@
 
 #include "context.h"
 
-class Card{};
-
-class PornModel : public QAbstractListModel
+class AbstractModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -23,12 +21,12 @@ protected slots:
     virtual void onDataRemoved(quint32 index);
 
 protected:
-    PornModel(QObject *parent = nullptr);
+    AbstractModel(QObject *parent = nullptr);
 
     Context *m_context;
 };
 
-class SinkModel : public PornModel
+class SinkModel : public AbstractModel
 {
     Q_OBJECT
 public:
@@ -50,7 +48,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 };
 
-class ClientModel : public QAbstractListModel
+class ClientModel : public AbstractModel
 {
     Q_OBJECT
 public:
@@ -61,7 +59,7 @@ public:
     ClientModel(QObject *parent = 0);
     ClientModel(Context *context, QObject *parent = 0);
 
-    Q_INVOKABLE void setContext(Context *context);
+    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
 
     virtual QHash<int,QByteArray> roleNames() const Q_DECL_OVERRIDE;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
@@ -71,7 +69,7 @@ private:
     Context *m_context;
 };
 
-class SinkInputModel : public PornModel
+class SinkInputModel : public AbstractModel
 {
     Q_OBJECT
 public:
