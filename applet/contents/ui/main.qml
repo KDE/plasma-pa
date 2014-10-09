@@ -1,10 +1,14 @@
 
 import QtQuick 2.0
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.volume 0.1
-import org.kde.plasma.components 2.0 as Components
-import org.kde.plasma.core 2.0 as PlasmaCore
 
+import QtQuick.Layouts 1.0
+
+import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.plasmoid 2.0
+
+import org.kde.plasma.volume 0.1
 
 Item {
     Plasmoid.icon: "audio-volume-medium";
@@ -48,56 +52,6 @@ Item {
         id: sinkModel
     }
 
-    ListView {
-        id: listView
-        model: sinkModel
-        onCountChanged: {
-            console.debug("count changed" + count)
-        }
-
-        width: parent.width
-        height: parent.height / 2
-        header: Header { text: "Devices" }
-
-        delegate: Components.ListItem {
-            property int maximumWidth: parent.width
-            property alias value: slider.value
-            property alias maximumValue: slider.maximumValue
-            Text {
-                id: text
-                anchors.top: parent.top
-                text: Description
-            }
-            Components.Slider {
-                id: slider
-                anchors {
-                    top: text.bottom
-                }
-                width:parent.width
-                minimumValue: 0
-                maximumValue: 65536
-                stepSize: maximumValue / 100
-                focus: true
-                onValueChanged: {
-                    pulseContext.setSinkVolume(Index, value)
-                    if (index == 0) {
-                        var split_base = maximumValue/3.0;
-                        if (value / split_base <= 0) {
-                            plasmoid.icon = "audio-volume-muted";
-                        } else if (value / split_base <= 1) {
-                            plasmoid.icon = "audio-volume-low";
-                        } else if (value / split_base <= 2) {
-                            plasmoid.icon = "audio-volume-medium";
-                        } else {
-                            plasmoid.icon = "audio-volume-high";
-                        }
-                    }
-                }
-            }
-            Component.onCompleted: slider.value = Volume
-        }
-    }
-
     SinkInputModel {
         id: sinkInputModel
         onRowsInserted: {
@@ -111,25 +65,80 @@ Item {
         }
     }
 
-    ListView {
-        id: inputView
-        model: sinkInputModel
+    PlasmaExtras.ScrollArea {
+        id: scrollView;
 
-        onCountChanged: {
-            console.debug("fuck count changed" + count)
-        }
-
-        height: parent.height
         anchors {
-            top: listView.bottom
-            left: parent.left
-            right: parent.right
+            bottom: parent.bottom;
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
         }
 
-        header: Header { text: "Applications" }
+        ColumnLayout {
+            property int maximumWidth: scrollView.viewport.width
+            width: maximumWidth
+            Layout.maximumWidth: maximumWidth
 
-        delegate: SinkInputItem {
-            maximumWidth: inputView.width
+            ListView {
+                id: listView
+
+                Layout.fillWidth: true
+                Layout.minimumHeight: contentHeight
+
+                model: sinkModel
+                boundsBehavior: Flickable.StopAtBounds;
+                header: Header { text: "Devices" }
+                delegate: PlasmaComponents.ListItem {
+                    property int maximumWidth: parent.width
+                    property alias value: slider.value
+                    property alias maximumValue: slider.maximumValue
+                    Text {
+                        id: text
+                        anchors.top: parent.top
+                        text: Description
+                    }
+                    PlasmaComponents.Slider {
+                        id: slider
+                        anchors {
+                            top: text.bottom
+                        }
+                        width:parent.width
+                        minimumValue: 0
+                        maximumValue: 65536
+                        stepSize: maximumValue / 100
+                        focus: true
+                        onValueChanged: {
+                            pulseContext.setSinkVolume(Index, value)
+                            if (index == 0) {
+                                var split_base = maximumValue/3.0;
+                                if (value / split_base <= 0) {
+                                    plasmoid.icon = "audio-volume-muted";
+                                } else if (value / split_base <= 1) {
+                                    plasmoid.icon = "audio-volume-low";
+                                } else if (value / split_base <= 2) {
+                                    plasmoid.icon = "audio-volume-medium";
+                                } else {
+                                    plasmoid.icon = "audio-volume-high";
+                                }
+                            }
+                        }
+                    }
+                    Component.onCompleted: slider.value = Volume
+                }
+            }
+
+            ListView {
+                id: inputView
+
+                Layout.fillWidth: true
+                Layout.minimumHeight: contentHeight
+
+                model: sinkInputModel
+                boundsBehavior: Flickable.StopAtBounds;
+                header: Header { text: "Applications" }
+                delegate: SinkInputItem {}
+            }
         }
     }
 
