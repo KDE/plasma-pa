@@ -10,13 +10,6 @@ set(SRC_LIST
     source.cpp
     sourceoutput.cpp
 )
-qt5_wrap_ui(SRC_LIST clientview.ui)
-add_executable(${PROJECT_NAME} ${SRC_LIST} clientview.cpp main.cpp)
-target_link_libraries(${PROJECT_NAME}
-    Qt5::Widgets
-    ${PULSEAUDIO_LIBRARY}
-    ${PULSEAUDIO_MAINLOOP_LIBRARY}
-)
 
 add_library(plasma-volume-declarative SHARED plugin.cpp ${SRC_LIST})
 target_link_libraries(plasma-volume-declarative
