@@ -1,4 +1,5 @@
 set(yolo_SRC
+    contents/ui/BaseItem.qml
     contents/ui/Header.qml
     contents/ui/main.qml
     contents/ui/SinkInputItem.qml

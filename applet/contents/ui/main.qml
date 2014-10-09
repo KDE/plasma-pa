@@ -89,43 +89,7 @@ Item {
                 model: sinkModel
                 boundsBehavior: Flickable.StopAtBounds;
                 header: Header { text: "Devices" }
-                delegate: PlasmaComponents.ListItem {
-                    property int maximumWidth: parent.width
-                    property alias value: slider.value
-                    property alias maximumValue: slider.maximumValue
-                    Text {
-                        id: text
-                        anchors.top: parent.top
-                        text: Description
-                    }
-                    PlasmaComponents.Slider {
-                        id: slider
-                        anchors {
-                            top: text.bottom
-                        }
-                        width:parent.width
-                        minimumValue: 0
-                        maximumValue: 65536
-                        stepSize: maximumValue / 100
-                        focus: true
-                        onValueChanged: {
-                            pulseContext.setSinkVolume(Index, value)
-                            if (index == 0) {
-                                var split_base = maximumValue/3.0;
-                                if (value / split_base <= 0) {
-                                    plasmoid.icon = "audio-volume-muted";
-                                } else if (value / split_base <= 1) {
-                                    plasmoid.icon = "audio-volume-low";
-                                } else if (value / split_base <= 2) {
-                                    plasmoid.icon = "audio-volume-medium";
-                                } else {
-                                    plasmoid.icon = "audio-volume-high";
-                                }
-                            }
-                        }
-                    }
-                    Component.onCompleted: slider.value = Volume
-                }
+                delegate: SinkItem {}
             }
 
             ListView {
