@@ -46,6 +46,7 @@ Context::Context(QObject *parent)
     // We require a glib event loop
     if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")) {
         qDebug() << "Disabling PulseAudio integration for lack of GLib event loop";
+        return;
     }
 
     connectToDaemon();
