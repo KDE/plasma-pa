@@ -13,9 +13,10 @@ import org.kde.plasma.volume 0.1
 Item {
     Plasmoid.icon: "audio-volume-medium";
 
-    Plasmoid.compactRepresentation: PlasmaCore.IconItem {
-        id: icon
+    Plasmoid.switchWidth: units.gridUnit * 12
+    Plasmoid.switchHeight: units.gridUnit * 12
 
+    Plasmoid.compactRepresentation: PlasmaCore.IconItem {
         source: plasmoid.icon ? plasmoid.icon : "plasma"
         active: mouseArea.containsMouse
 
