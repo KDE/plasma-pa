@@ -52,6 +52,7 @@ PlasmaComponents.ListItem {
                 PlasmaComponents.Label {
                     id: textLabel
                     Layout.fillWidth: true
+                    anchors.verticalCenter: iconContainer.verticalCenter
                     elide: Text.ElideRight
                 }
 
@@ -59,6 +60,8 @@ PlasmaComponents.ListItem {
                 // with regards to the percent text, so we can potentially have a wider item
                 // with a centered less wide icon.
                 Item {
+                    id: iconContainer
+
                     // Layout might want to make the text's height bigger than the content
                     // because of us, so we have to go after contentHeight to make sure we get the
                     // correct reference value, also we'd make an indirect binding loop otherwise.
