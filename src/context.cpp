@@ -5,20 +5,43 @@
 
 #warning todo this needs to be a singleton as multiple contexts dont make sense and it makes it eaier to use from qml
 
+static bool isGoodState(int eol)
+{
+    if (eol < 0) {
+        // Error
+        return false;
+    }
+
+    if (eol > 0) {
+        // End of callback chain
+        return false;
+    }
+
+    return true;
+}
+
+// --------------------------
+
 static void sink_cb(pa_context *context, const pa_sink_info *info, int eol, void *data)
 {
+    if (!isGoodState(eol))
+        return;
     Q_ASSERT(data);
     ((Context *)data)->sinkCallback(context, info, eol);
 }
 
 static void sink_input_callback(pa_context *context, const pa_sink_input_info *info, int eol, void *data)
 {
+    if (!isGoodState(eol))
+        return;
     Q_ASSERT(data);
     ((Context *)data)->sinkInputCallback(context, info, eol);
 }
 
 static void client_cb(pa_context *context, const pa_client_info *info, int eol, void *data)
 {
+    if (!isGoodState(eol))
+        return;
     Q_ASSERT(data);
     ((Context *)data)->clientCallback(context, info, eol);
 }
@@ -243,17 +266,6 @@ void Context::contextStateCallback(pa_context *c)
 
 void Context::sinkCallback(pa_context *context, const pa_sink_info *info, int eol)
 {
-    if (eol < 0) {
-        if (pa_context_errno(context) == PA_ERR_NOENTITY) {
-            return;
-        }
-        return;
-    }
-
-    if (eol > 0) {
-        return;
-    }
-
     Q_ASSERT(info);
 
     bool isNew = false;
@@ -287,18 +299,6 @@ void Context::sinkCallback(pa_context *context, const pa_sink_info *info, int eo
 void Context::clientCallback(pa_context *context, const pa_client_info *info, int eol)
 {
     Q_ASSERT(context);
-
-    if (eol < 0) {
-        if (pa_context_errno(context) == PA_ERR_NOENTITY) {
-            return;
-        }
-        return;
-    }
-
-    if (eol > 0) {
-        return;
-    }
-
     Q_ASSERT(info);
 
     Client *obj = m_clients.value(info->index, nullptr);
@@ -314,18 +314,6 @@ void Context::sinkInputCallback(pa_context *context, const pa_sink_input_info *i
 {
     qDebug() << "sink_input_cb";
     Q_ASSERT(context);
-
-    if (eol < 0) {
-        if (pa_context_errno(context) == PA_ERR_NOENTITY) {
-            return;
-        }
-        return;
-    }
-
-    if (eol > 0) {
-        return;
-    }
-
     Q_ASSERT(info);
 
     bool isNew = false;
