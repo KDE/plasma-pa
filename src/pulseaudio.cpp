@@ -25,9 +25,8 @@ void ClientModel::setContext(Context *context)
 
 QHash<int, QByteArray> ClientModel::roleNames() const
 {
-    qDebug() << "444444444444 roles";
     QHash<int, QByteArray> roles;
-    roles[NameRole] = "meow";
+    roles[NameRole] = "Name";
     return roles;
 }
 
@@ -35,7 +34,6 @@ int ClientModel::rowCount(const QModelIndex &parent) const
 {
     if (!m_context)
         return 0;
-    qDebug() << "1111 count" << m_context->m_clients.count();
     return m_context->m_clients.count();
 }
 
@@ -66,8 +64,6 @@ void SinkInputModel::setContext(Context *context)
 
 QHash<int, QByteArray> SinkInputModel::roleNames() const
 {
-#warning all rolenames probably should be upcase to avoid conflict with delegate stuff in qml
-    qDebug() << Q_FUNC_INFO;
     QHash<int, QByteArray> roles;
     roles[IndexRole] = "Index";
     roles[NameRole] = "Name";
@@ -77,7 +73,6 @@ QHash<int, QByteArray> SinkInputModel::roleNames() const
     roles[ClientIndexRole] = "ClientIndex";
     roles[ClientNameRole] = "ClientName";
     roles[ClientProperties] = "ClientProperties";
-    qDebug() << roles;
     return roles;
 }
 

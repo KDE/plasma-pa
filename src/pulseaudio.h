@@ -22,7 +22,6 @@ protected slots:
 
 protected:
     AbstractModel(QObject *parent = nullptr);
-
     Context *m_context;
 };
 
