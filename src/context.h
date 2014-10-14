@@ -3,6 +3,7 @@
 
 #include <QMap>
 #include <QObject>
+#include <QSet>
 
 #include <pulse/mainloop.h>
 #include <pulse/pulseaudio.h>
@@ -53,10 +54,13 @@ public:
     void connectToDaemon();
 
     QMap<quint32, Sink *> m_sinks;
+    QSet<quint32> m_recentlyDeletedSinks;
 //    QMap<quint32, Source *> m_sources;
     QMap<quint32, SinkInput *> m_sinkInputs;
+    QSet<quint32> m_recentlyDeletedSinkInputs;
 //    QMap<quint32, SourceOutput *> m_sourceOutputs;
     QMap<quint32, Client *> m_clients;
+    QSet<quint32> m_recentDeletedClients;
 //    QMap<quint32, Card *> m_cards;
 
     pa_context *m_context;

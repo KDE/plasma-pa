@@ -89,14 +89,15 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 #warning fixme
         case PA_SUBSCRIPTION_EVENT_SINK:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-                Q_ASSERT(m_sinks.contains(index));
-                delete m_sinks.take(index);
-                emit sinkRemoved(index);
-            } else {
-                // Reserve entry immediately, so we can drop it on immediate removes.
+                qDebug() << "DEL Sink" << index;
                 if (!m_sinks.contains(index)) {
-                    m_sinks.insert(index, nullptr);
+                    m_recentlyDeletedSinks.insert(index);
+                } else {
+                    int modelIndex = m_sinks.keys().indexOf(index);
+                    m_sinks.take(index)->deleteLater();
+                    emit sinkRemoved(modelIndex);
                 }
+            } else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
                     qWarning() << "pa_context_get_sink_info_by_index() failed";
@@ -123,15 +124,17 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
         case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
                 qDebug() << Q_FUNC_INFO << "::: dropping :::" << index;
-                Q_ASSERT(m_sinkInputs.contains(index));
-                delete m_sinkInputs.take(index);
-                emit sinkInputRemoved(index);
-            } else {
-                qDebug() << "sub sink input info";
-                // Reserve entry immediately, so we can drop it on immediate removes.
                 if (!m_sinkInputs.contains(index)) {
-                    m_sinkInputs.insert(index, nullptr);
+                    m_recentlyDeletedSinkInputs.insert(index);
+                } else {
+                    qDebug() << "dropping sink input" << index;
+                    qDebug() << m_sinkInputs.count();
+                    int modelIndex = m_sinkInputs.keys().indexOf(index);
+                    m_sinkInputs.take(index)->deleteLater();
+                    qDebug() << m_sinkInputs.count();
+                    emit sinkInputRemoved(modelIndex);
                 }
+            } else {
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_input_info(context, index, sink_input_callback, this))) {
                     qWarning() << "pa_context_get_sink_input_info() failed";
@@ -158,14 +161,13 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
         case PA_SUBSCRIPTION_EVENT_CLIENT:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
                 qDebug() << "dropping client" << index;
-                Q_ASSERT(m_clients.contains(index));
-                delete m_clients.take(index);
-                emit clientsChanged();
-            } else {
-                // Reserve entry immediately, so we can drop it on immediate removes.
                 if (!m_clients.contains(index)) {
-                    m_clients.insert(index, nullptr);
+                    m_recentDeletedClients.insert(index);
+                } else {
+                    m_clients.take(index)->deleteLater();
+                    emit clientsChanged();
                 }
+            } else {
                 pa_operation *o;
                 if (!(o = pa_context_get_client_info(context, index, client_cb, this))) {
                     qWarning() << "pa_context_get_client_info() failed";
@@ -271,9 +273,10 @@ void Context::sinkCallback(pa_context *context, const pa_sink_info *info, int eo
 {
     Q_ASSERT(info);
 
+    qDebug() << "sink_cb" << info->index << info->name;
     bool isNew = false;
 
-    if (!m_sinks.contains(info->index)) {
+    if (m_recentlyDeletedSinks.remove(info->index)) {
         // Was already removed again.
         return;
     }
@@ -309,7 +312,7 @@ void Context::clientCallback(pa_context *context, const pa_client_info *info, in
     Q_ASSERT(context);
     Q_ASSERT(info);
 
-    if (!m_clients.contains(info->index)) {
+    if (m_recentDeletedClients.remove(info->index)) {
         // Was already removed again.
         return;
     }
@@ -325,13 +328,12 @@ void Context::clientCallback(pa_context *context, const pa_client_info *info, in
 
 void Context::sinkInputCallback(pa_context *context, const pa_sink_input_info *info, int eol)
 {
-    qDebug() << "sink_input_cb";
     Q_ASSERT(context);
     Q_ASSERT(info);
 
     bool isNew = false;
 
-    if (!m_sinkInputs.contains(info->index)) {
+    if (m_recentlyDeletedSinkInputs.remove(info->index)) {
         // Was already removed again.
         return;
     }
