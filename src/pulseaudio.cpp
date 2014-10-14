@@ -39,7 +39,6 @@ int ClientModel::rowCount(const QModelIndex &parent) const
 
 QVariant ClientModel::data(const QModelIndex &index, int role) const
 {
-    qDebug() << Q_FUNC_INFO;
     if (role == NameRole)
         return m_context->m_clients.values().at(index.row())->name();
     return QVariant();
@@ -87,7 +86,6 @@ int SinkInputModel::rowCount(const QModelIndex &parent) const
 
 QVariant SinkInputModel::data(const QModelIndex &index, int role) const
 {
-    qDebug() << Q_FUNC_INFO << role;
     switch ((ItemRole) role) {
     case IndexRole:
         return m_context->m_sinkInputs.values().at(index.row())->index();
@@ -173,7 +171,6 @@ int SinkModel::rowCount(const QModelIndex &parent) const
 QVariant SinkModel::data(const QModelIndex &index, int role) const
 {
 #warning fixme switch
-    qDebug() << Q_FUNC_INFO;
     if (role == IndexRole) {
         return m_context->m_sinks.values().at(index.row())->index();
     } else if (role == NameRole) {
