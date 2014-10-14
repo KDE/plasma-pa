@@ -24,6 +24,5 @@ void Client::setInfo(const pa_client_info *info)
         }
         Q_ASSERT(value);
         m_properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
-        qDebug() << key << value;
     }
 }

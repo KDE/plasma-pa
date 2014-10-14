@@ -178,7 +178,6 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             break;
 
     }
-    qDebug() << "return !!!!!";
 }
 
 void Context::contextStateCallback(pa_context *c)

@@ -54,7 +54,6 @@ SinkInputModel::SinkInputModel(Context *context, QObject *parent)
 
 void SinkInputModel::setContext(Context *context)
 {
-    qDebug() << Q_FUNC_INFO;
     AbstractModel::setContext(context);
     connect(context, &Context::sinkInputAdded, this, &SinkInputModel::onDataAdded);
     connect(context, &Context::sinkInputUpdated, this, &SinkInputModel::onDataUpdated);
@@ -77,10 +76,8 @@ QHash<int, QByteArray> SinkInputModel::roleNames() const
 
 int SinkInputModel::rowCount(const QModelIndex &parent) const
 {
-//    qDebug() << Q_FUNC_INFO << parent << m_context;
     if (!m_context)
         return 0;
-//    qDebug() << Q_FUNC_INFO << m_context->m_sinkInputs.count();
     return m_context->m_sinkInputs.count();
 }
 
@@ -100,7 +97,6 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
     case IsVolumeWritableRole:
         return m_context->m_sinkInputs.values().at(index.row())->isVolumeWritable();
     case ClientIndexRole:
-//        return
         Q_ASSERT(false);
     case ClientNameRole: {
         quint32 clientIndex = m_context->m_sinkInputs.values().at(index.row())->client();
@@ -142,7 +138,6 @@ SinkModel::SinkModel(Context *context, QObject *parent)
 
 void SinkModel::setContext(Context *context)
 {
-    qDebug() << Q_FUNC_INFO;
     AbstractModel::setContext(context);
     connect(context, &Context::sinkAdded, this, &SinkModel::onDataAdded);
     connect(context, &Context::sinkUpdated, this, &SinkModel::onDataUpdated);
@@ -195,7 +190,6 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
 
 void AbstractModel::onDataAdded(quint32 index)
 {
-    qDebug() << Q_FUNC_INFO << index;
 //    beginInsertRows(QModelIndex(), index, index);
 //    endInsertRows();/
     beginResetModel();

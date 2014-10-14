@@ -30,8 +30,6 @@ Item {
             onPressed: wasExpanded = plasmoid.expanded
             onClicked: plasmoid.expanded = !wasExpanded
             onWheel: {
-                console.debug("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                console.debug(wheel.angleDelta);
                 if (sinkView.count < 0)
                     return;
                 for (var i = 0; i < sinkView.count; ++i) {
@@ -56,15 +54,6 @@ Item {
 
     SinkInputModel {
         id: sinkInputModel
-        onRowsInserted: {
-            console.debug("+++ inserto")
-        }
-        onDataChanged: {
-            console.debug("+++ changeroo")
-        }
-        onModelReset: {
-            console.debug("+++ model reset")
-        }
     }
 
     PlasmaExtras.ScrollArea {
