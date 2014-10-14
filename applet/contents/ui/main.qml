@@ -31,14 +31,13 @@ Item {
             onWheel: {
                 console.debug("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 console.debug(wheel.angleDelta);
-                if (listView.count < 0)
+                if (sinkView.count < 0)
                     return;
-                listView.currentIndex = 0;
-                var step = listView.currentItem.maximumValue / 10;
+                sinkView.currentIndex = 0;
                 if (wheel.angleDelta.y > 0) {
-                    listView.currentItem.value += step;
+                    sinkView.currentItem.increaseVolume()
                 } else {
-                    listView.currentItem.value -= step;
+                    sinkView.currentItem.decreaseVolume()
                 }
             }
         }
@@ -81,7 +80,7 @@ Item {
             Layout.maximumWidth: maximumWidth
 
             ListView {
-                id: listView
+                id: sinkView
 
                 Layout.fillWidth: true
                 Layout.minimumHeight: contentHeight

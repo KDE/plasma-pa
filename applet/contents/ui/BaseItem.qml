@@ -14,7 +14,17 @@ PlasmaComponents.ListItem {
     property alias icon: clientIcon.icon
 
     function setVolume(volume) {
-        throw "Pure Virtual BaseItem::setVolumve(volume) called."
+        throw "Pure Virtual BaseItem::setVolumve(volume) called.";
+    }
+
+    function increaseVolume() {
+        var step = slider.maximumValue / 10;
+        setVolume(Volume + step);
+    }
+
+    function decreaseVolume() {
+        var step = slider.maximumValue / 10;
+        setVolume(Volume - step);
     }
 
     anchors {
