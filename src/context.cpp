@@ -89,9 +89,14 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 #warning fixme
         case PA_SUBSCRIPTION_EVENT_SINK:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-                m_sinks.take(index)->deleteLater();
+                Q_ASSERT(m_sinks.contains(index));
+                delete m_sinks.take(index);
                 emit sinkRemoved(index);
             } else {
+                // Reserve entry immediately, so we can drop it on immediate removes.
+                if (!m_sinks.contains(index)) {
+                    m_sinks.insert(index, nullptr);
+                }
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
                     qWarning() << "pa_context_get_sink_info_by_index() failed";
@@ -117,19 +122,16 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
         case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-                int listIndex = -1;
-                QList<quint32> list = m_sinkInputs.keys();
-                for (int i = 0; i < list.size(); ++i) {
-                    if (list.at(i) == index) {
-                        listIndex = i;
-                        break;
-                    }
-                }
-                Q_ASSERT(listIndex >= 0);
-                m_sinkInputs.take(index)->deleteLater();
-                emit sinkInputRemoved(listIndex);
+                qDebug() << Q_FUNC_INFO << "::: dropping :::" << index;
+                Q_ASSERT(m_sinkInputs.contains(index));
+                delete m_sinkInputs.take(index);
+                emit sinkInputRemoved(index);
             } else {
                 qDebug() << "sub sink input info";
+                // Reserve entry immediately, so we can drop it on immediate removes.
+                if (!m_sinkInputs.contains(index)) {
+                    m_sinkInputs.insert(index, nullptr);
+                }
                 pa_operation *o;
                 if (!(o = pa_context_get_sink_input_info(context, index, sink_input_callback, this))) {
                     qWarning() << "pa_context_get_sink_input_info() failed";
@@ -155,9 +157,15 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
         case PA_SUBSCRIPTION_EVENT_CLIENT:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-                m_clients.take(index)->deleteLater();
+                qDebug() << "dropping client" << index;
+                Q_ASSERT(m_clients.contains(index));
+                delete m_clients.take(index);
                 emit clientsChanged();
             } else {
+                // Reserve entry immediately, so we can drop it on immediate removes.
+                if (!m_clients.contains(index)) {
+                    m_clients.insert(index, nullptr);
+                }
                 pa_operation *o;
                 if (!(o = pa_context_get_client_info(context, index, client_cb, this))) {
                     qWarning() << "pa_context_get_client_info() failed";
@@ -270,6 +278,11 @@ void Context::sinkCallback(pa_context *context, const pa_sink_info *info, int eo
 
     bool isNew = false;
 
+    if (!m_sinks.contains(info->index)) {
+        // Was already removed again.
+        return;
+    }
+
     Sink *obj = m_sinks.value(info->index, nullptr);
     if (!obj) {
         obj = new Sink;
@@ -301,6 +314,11 @@ void Context::clientCallback(pa_context *context, const pa_client_info *info, in
     Q_ASSERT(context);
     Q_ASSERT(info);
 
+    if (!m_clients.contains(info->index)) {
+        // Was already removed again.
+        return;
+    }
+
     Client *obj = m_clients.value(info->index, nullptr);
     if (!obj)
         obj = new Client;
@@ -317,6 +335,11 @@ void Context::sinkInputCallback(pa_context *context, const pa_sink_input_info *i
     Q_ASSERT(info);
 
     bool isNew = false;
+
+    if (!m_sinkInputs.contains(info->index)) {
+        // Was already removed again.
+        return;
+    }
 
     SinkInput *obj = m_sinkInputs.value(info->index, nullptr);
     if (!obj) {
