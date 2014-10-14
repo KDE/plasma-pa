@@ -367,6 +367,9 @@ void Context::sinkInputCallback(pa_context *context, const pa_sink_input_info *i
 void Context::setSinkVolume(quint32 index, quint32 volume)
 {
     qDebug() << Q_FUNC_INFO << index << volume;
+#warning fixme volume limit enforcement needs review for sensibility
+    if (volume > 65536)
+        return;
     pa_operation *o;
     Sink *sink = m_sinks.value(index, nullptr);
     if (!sink)
@@ -394,6 +397,9 @@ void Context::setSinkPort(quint32 portIndex)
 void Context::setSinkInputVolume(quint32 index, quint32 volume)
 {
     qDebug() << Q_FUNC_INFO << index << volume;
+#warning fixme volume limit enforcement needs review for sensibility
+    if (volume > 65536)
+        return;
     pa_operation *o;
     SinkInput *obj = m_sinkInputs.value(index, nullptr);
     if (!obj)
