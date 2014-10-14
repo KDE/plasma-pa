@@ -18,12 +18,12 @@ PlasmaComponents.ListItem {
     }
 
     function increaseVolume() {
-        var step = slider.maximumValue / 10;
+        var step = slider.maximumValue / 15;
         setVolume(Volume + step);
     }
 
     function decreaseVolume() {
-        var step = slider.maximumValue / 10;
+        var step = slider.maximumValue / 15;
         setVolume(Volume - step);
     }
 
