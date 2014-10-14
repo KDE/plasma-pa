@@ -33,11 +33,13 @@ Item {
                 console.debug(wheel.angleDelta);
                 if (sinkView.count < 0)
                     return;
-                sinkView.currentIndex = 0;
-                if (wheel.angleDelta.y > 0) {
-                    sinkView.currentItem.increaseVolume()
-                } else {
-                    sinkView.currentItem.decreaseVolume()
+                for (var i = 0; i < sinkView.count; ++i) {
+                    sinkView.currentIndex = i;
+                    if (wheel.angleDelta.y > 0) {
+                        sinkView.currentItem.increaseVolume()
+                    } else {
+                        sinkView.currentItem.decreaseVolume()
+                    }
                 }
             }
         }
