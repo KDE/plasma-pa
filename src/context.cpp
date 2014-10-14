@@ -217,33 +217,28 @@ void Context::contextStateCallback(pa_context *c)
 //            return;
 //        }
 //        pa_operation_unref(o);
-//        s_outstandingRequests++;
 
         if (!(o = pa_context_get_client_info_list(c, client_cb, this))) {
             qWarning() << "pa_context_client_info_list() failed";
             return;
         }
         pa_operation_unref(o);
-//        s_outstandingRequests++;
 
         if (!(o = pa_context_get_sink_input_info_list(c, sink_input_callback, this))) {
             qWarning() << "pa_context_get_sink_input_info_list() failed";
             return;
         }
         pa_operation_unref(o);
-//        s_outstandingRequests++;
 
 //        if (!(o = pa_context_get_source_output_info_list(c, source_output_cb, NULL))) {
 //            qWarning() << "pa_context_get_source_output_info_list() failed";
 //            return;
 //        }
 //        pa_operation_unref(o);
-//        s_outstandingRequests++;
 
         /* These calls are not always supported */
 //        if ((o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, NULL))) {
 //            pa_operation_unref(o);
-//            s_outstandingRequests++;
 
 //            pa_ext_stream_restore_set_subscribe_cb(c, ext_stream_restore_subscribe_cb, NULL);
 
