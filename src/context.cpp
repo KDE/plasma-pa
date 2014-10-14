@@ -29,7 +29,6 @@ static void context_state_callback(pa_context *context, void *data)
     ((Context *)data)->contextStateCallback(context);
 }
 
-#warning fix varnames
 static void subscribe_cb(pa_context *context, pa_subscription_event_type_t type, uint32_t index, void *data)
 {
     Q_ASSERT(data);
