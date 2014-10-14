@@ -104,21 +104,42 @@ PlasmaComponents.ListItem {
             RowLayout {
                 PlasmaComponents.Slider {
                     id: slider
+
+                    // Helper property to allow async slider updates.
+                    // While we are sliding we must not react to value updates
+                    // as otherwise we can easily end up in a loop where value
+                    // changes trigger volume changes trigger value changes.
+                    property int volume: Volume
+
                     Layout.fillWidth: true
                     minimumValue: 0
+                    // FIXME: I do wonder if exposing max through the model would be useful at all
                     maximumValue: 65536
                     stepSize: maximumValue / 100
-                    visible: (HasVolume && IsVolumeWritable) ? true : false
-                    onValueChanged: {
-                        setVolume(value);
+                    visible: HasVolume
+                    enabled: IsVolumeWritable
+
+                    onVolumeChanged: {
+                        if (!pressed) {
+                            value = Volume;
+                        }
                     }
 
-                    Component.onCompleted: {
-                        console.debug("+++ created " + Name)
-                        // TODO: need to disable sliders or something when sinkinputs have no control
-//                        if (!HasVolume || !IsVolumeWritable)
-//                            return
-                        value = Volume
+                    onValueChanged: {
+                        if (pressed) {
+                            setVolume(value);
+                        }
+                    }
+
+                    onPressedChanged: {
+                        if (!pressed) {
+                            // Make sure to sync the volume once the button was
+                            // released.
+                            // Otherwise it might be that the slider is at v10
+                            // whereas PA rejected the volume change and is
+                            // still at v15 (e.g.).
+                            value = Volume;
+                        }
                     }
                 }
                 PlasmaComponents.Label {
