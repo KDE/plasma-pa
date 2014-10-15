@@ -268,99 +268,65 @@ void Context::contextStateCallback(pa_context *c)
 
 #warning data changed should possibly only be emitted once eol is >0 to avoid pointless redraws
 
-void Context::sinkCallback(pa_context *context, const pa_sink_info *info, int eol)
+template <typename C, typename PAInfo, typename AddedSignal, typename UpdatedSignal>
+void Context::updateMap(QMap<quint32, C *> &map,
+                        QSet<quint32> &exclusionSet,
+                        const PAInfo *info,
+                        AddedSignal addedSignal,
+                        UpdatedSignal updatedSignal)
 {
     Q_ASSERT(info);
 
-    qDebug() << "sink_cb" << info->index << info->name;
-    bool isNew = false;
-
-    if (m_recentlyDeletedSinks.remove(info->index)) {
+    if (exclusionSet.remove(info->index)) {
         // Was already removed again.
         return;
     }
 
-    Sink *obj = m_sinks.value(info->index, nullptr);
+    const bool isNew = !map.contains(info->index);
+
+    auto *obj = map.value(info->index, nullptr);
     if (!obj) {
-        obj = new Sink;
-        isNew = true;
+        obj = new C;
     }
     obj->setInfo(info);
-    m_sinks.insert(info->index, obj);
+    map.insert(info->index, obj);
 
-#warning this is bullshit and removal by this method is even more shit
-    int listIndex = -1;
-    QList<quint32> list = m_sinks.keys();
-    for (int i = 0; i < list.size(); ++i) {
-        if (list.at(i) == info->index) {
-            listIndex = i;
-            break;
-        }
-    }
-    Q_ASSERT(listIndex >= 0);
+    const int modelIndex = map.keys().indexOf(info->index);
+    Q_ASSERT(modelIndex >= 0);
 
     if (isNew) {
-        emit sinkAdded(listIndex);
+        emit (this->*addedSignal)(modelIndex);
     } else {
-        emit sinkUpdated(listIndex);
+        emit (this->*updatedSignal)(modelIndex);
     }
+}
+
+#warning fixme recentlydeleted has the same type for everything making it easy to use the wrong one possibly
+void Context::sinkCallback(pa_context *context, const pa_sink_info *info, int eol)
+{
+    Q_ASSERT(context);
+    updateMap<Sink, pa_sink_info>(m_sinks, m_recentlyDeletedSinks,
+                                  info,
+                                  &Context::sinkAdded,
+                                  &Context::sinkUpdated);
 }
 
 void Context::clientCallback(pa_context *context, const pa_client_info *info, int eol)
 {
     Q_ASSERT(context);
-    Q_ASSERT(info);
-
-    if (m_recentDeletedClients.remove(info->index)) {
-        // Was already removed again.
-        return;
-    }
-
-    Client *obj = m_clients.value(info->index, nullptr);
-    if (!obj)
-        obj = new Client;
-    obj->setInfo(info);
-    m_clients.insert(info->index, obj);
-
-    emit clientsChanged();
+    updateMap<Client, pa_client_info>(m_clients, m_recentDeletedClients,
+                                      info,
+                                      &Context::clientAdded,
+                                      &Context::clientUpdated);
 }
 
 void Context::sinkInputCallback(pa_context *context, const pa_sink_input_info *info, int eol)
 {
     Q_ASSERT(context);
-    Q_ASSERT(info);
-
-    bool isNew = false;
-
-    if (m_recentlyDeletedSinkInputs.remove(info->index)) {
-        // Was already removed again.
-        return;
-    }
-
-    SinkInput *obj = m_sinkInputs.value(info->index, nullptr);
-    if (!obj) {
-        obj = new SinkInput;
-        isNew = true;
-    }
-    obj->setInfo(info);
-    m_sinkInputs.insert(info->index, obj);
-
-    int listIndex = -1;
-    QList<quint32> list = m_sinkInputs.keys();
-    for (int i = 0; i < list.size(); ++i) {
-        if (list.at(i) == info->index) {
-            listIndex = i;
-            break;
-        }
-    }
-    Q_ASSERT(listIndex >= 0);
-
-    qDebug() << Q_FUNC_INFO << isNew << listIndex;
-    if (isNew) {
-        emit sinkInputAdded(listIndex);
-    } else {
-        emit sinkInputUpdated(listIndex);
-    }
+    updateMap<SinkInput, pa_sink_input_info>(m_sinkInputs, m_recentlyDeletedSinkInputs,
+                                             info,
+                                             &Context::sinkInputAdded,
+                                             &Context::sinkInputUpdated);
 }
 
 void Context::setSinkVolume(quint32 index, quint32 volume)
@@ -396,7 +362,7 @@ void Context::setSinkPort(quint32 portIndex)
 void Context::setSinkInputVolume(quint32 index, quint32 volume)
 {
     qDebug() << Q_FUNC_INFO << index << volume;
-#warning fixme volume limit enforcement needs review for sensibility
+#warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
     if (volume > 65536)
         return;
     pa_operation *o;

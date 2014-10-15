@@ -25,6 +25,14 @@ public:
 
     void subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index);
     void contextStateCallback(pa_context *context);
+
+    template <typename C, typename PAInfo, typename AddedSignal, typename UpdatedSignal>
+    void updateMap(QMap<quint32, C *> &map,
+                   QSet<quint32> &exclusionSet,
+                   const PAInfo *info,
+                   AddedSignal addedSignal,
+                   UpdatedSignal updatedSignal);
+
     void sinkCallback(pa_context *context, const pa_sink_info *info, int eol);
     void clientCallback(pa_context *context, const pa_client_info *info, int eol);
     void sinkInputCallback(pa_context *context, const pa_sink_input_info *info, int eol);
@@ -41,6 +49,10 @@ signals:
     void sinkInputAdded(quint32 index);
     void sinkInputUpdated(quint32 index);
     void sinkInputRemoved(quint32 index);
+
+    void clientAdded(quint32 index);
+    void clientUpdated(quint32 index);
+    void clientRemoved(quint32 index);
 
 //    void sinksChanged();
     void sourcesChanged();
