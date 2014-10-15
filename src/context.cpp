@@ -333,7 +333,6 @@ void Context::setSinkVolume(quint32 index, quint32 volume)
 #warning fixme volume limit enforcement needs review for sensibility
     if (volume > 65536)
         return;
-    pa_operation *o;
     Sink *sink = m_sinks.value(index, nullptr);
     if (!sink)
         return;
@@ -341,6 +340,7 @@ void Context::setSinkVolume(quint32 index, quint32 volume)
     for (int i = 0; i < newVolume.channels; ++i) {
         newVolume.values[i] = volume;
     }
+    pa_operation *o;
     if (!(o = pa_context_set_sink_volume_by_index(m_context, index, &newVolume, NULL, NULL))) {
         qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
         return;
