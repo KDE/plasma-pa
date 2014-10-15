@@ -38,8 +38,10 @@ int ClientModel::rowCount(const QModelIndex &parent) const
 
 QVariant ClientModel::data(const QModelIndex &index, int role) const
 {
-    if (role == NameRole)
+    switch(static_cast<ItemRole>(role)){
+    case NameRole:
         return m_context->m_clients.values().at(index.row())->name();
+    }
     return QVariant();
 }
 
@@ -164,16 +166,18 @@ int SinkModel::rowCount(const QModelIndex &parent) const
 
 QVariant SinkModel::data(const QModelIndex &index, int role) const
 {
-#warning fixme switch
-    if (role == IndexRole) {
+    qDebug() << "data" << index << role << "name" << NameRole;
+    switch(static_cast<ItemRole>(role)) {
+    case IndexRole:
         return m_context->m_sinks.values().at(index.row())->index();
-    } else if (role == NameRole) {
+    case NameRole:
+        qDebug() << "  " << m_context->m_sinks.values().at(index.row())->name();
         return m_context->m_sinks.values().at(index.row())->name();
-    } else if (role == DescritionRole) {
+    case DescritionRole:
         return m_context->m_sinks.values().at(index.row())->description();
-    } else if (role == VolumeRole) {
+    case VolumeRole:
         return m_context->m_sinks.values().at(index.row())->volume().values[0];
-    } else if (role == PortsRole) {
+    case PortsRole: {
 #warning fixme this should be a model or something or nothing, this mapping stuff here is bad
         QList<SinkPort> ports = m_context->m_sinks.values().at(index.row())->ports();
         QStringList l;
@@ -181,7 +185,8 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
             l.append(port.name());
         }
         return l;
-    } else if (role == ActivePortRole) {
+    }
+    case ActivePortRole:
         return m_context->m_sinks.values().at(index.row())->activePortIndex();
     }
     return QVariant();
