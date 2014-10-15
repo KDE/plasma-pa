@@ -93,7 +93,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 if (!m_sinks.contains(index)) {
                     m_recentlyDeletedSinks.insert(index);
                 } else {
-                    int modelIndex = m_sinks.keys().indexOf(index);
+                    const int modelIndex = m_sinks.keys().indexOf(index);
                     m_sinks.take(index)->deleteLater();
                     emit sinkRemoved(modelIndex);
                 }
@@ -129,7 +129,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 } else {
                     qDebug() << "dropping sink input" << index;
                     qDebug() << m_sinkInputs.count();
-                    int modelIndex = m_sinkInputs.keys().indexOf(index);
+                    const int modelIndex = m_sinkInputs.keys().indexOf(index);
                     m_sinkInputs.take(index)->deleteLater();
                     qDebug() << m_sinkInputs.count();
                     emit sinkInputRemoved(modelIndex);
@@ -164,6 +164,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 if (!m_clients.contains(index)) {
                     m_recentDeletedClients.insert(index);
                 } else {
+                    const int modelIndex = m_clients.keys().indexOf(index);
                     m_clients.take(index)->deleteLater();
                     emit clientsChanged();
                 }
