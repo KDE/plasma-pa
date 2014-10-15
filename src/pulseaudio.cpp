@@ -68,11 +68,12 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
     case IndexRole:
         return m_context->m_sinkInputs.values().at(index.row())->index();
     case NameRole:
-    case Qt::DisplayRole:
         return m_context->m_sinkInputs.values().at(index.row())->name();
     case VolumeRole:
 #warning values bs
         return m_context->m_sinkInputs.values().at(index.row())->volume().values[0];
+    case IsMutedRole:
+        return m_context->m_sinkInputs.values().at(index.row())->isMuted();
     case HasVolumeRole:
         return m_context->m_sinkInputs.values().at(index.row())->hasVolume();
     case IsVolumeWritableRole:
@@ -168,12 +169,13 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     case IndexRole:
         return m_context->m_sinks.values().at(index.row())->index();
     case NameRole:
-        qDebug() << "  " << m_context->m_sinks.values().at(index.row())->name();
         return m_context->m_sinks.values().at(index.row())->name();
     case DescriptionRole:
         return m_context->m_sinks.values().at(index.row())->description();
     case VolumeRole:
         return m_context->m_sinks.values().at(index.row())->volume().values[0];
+    case IsMutedRole:
+        return m_context->m_sinks.values().at(index.row())->isMuted();
     case PortsRole: {
 #warning fixme this should be a model or something or nothing, this mapping stuff here is bad
         QList<SinkPort> ports = m_context->m_sinks.values().at(index.row())->ports();

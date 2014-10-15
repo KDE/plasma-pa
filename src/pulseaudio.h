@@ -35,6 +35,7 @@ public:
         NameRole,
         DescriptionRole,
         VolumeRole,
+        IsMutedRole,
         PortsRole,
         ActivePortRole
     };
@@ -77,6 +78,7 @@ public:
         IndexRole = Qt::UserRole + 1,
         NameRole,
         VolumeRole,
+        IsMutedRole,
         HasVolumeRole,
         IsVolumeWritableRole,
         ClientIndexRole,

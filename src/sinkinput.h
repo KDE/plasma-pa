@@ -13,6 +13,7 @@ public:
 
     QString name() const { return m_name; }
     pa_cvolume volume() const { return m_volume; }
+    bool isMuted() const { return m_isMuted; }
     bool hasVolume() const { return m_hasVolume; }
     bool isVolumeWritable() const { return m_isVolumeWritable; }
 
@@ -21,6 +22,7 @@ public:
 private:
     QString m_name;
     pa_cvolume m_volume;
+    bool m_isMuted;
     bool m_hasVolume;
     bool m_isVolumeWritable;
 

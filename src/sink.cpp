@@ -5,6 +5,7 @@
 Sink::Sink()
     : m_ports()
     , m_activePortIndex(-1)
+    , m_isMuted(false)
 {
 }
 
@@ -41,6 +42,7 @@ void Sink::setInfo(const pa_sink_info *info)
 
 #warning fixme channels
     m_volume = info->volume;
+    m_isMuted = info->mute;
 
     m_ports.clear();
     for (auto **ports = info->ports; *ports != nullptr; ++ports) {

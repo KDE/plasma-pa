@@ -33,6 +33,7 @@ public:
     QString name() const { return m_name; }
     QString description() const { return m_description; }
     pa_cvolume volume() const { return m_volume; }
+    bool isMuted() const { return m_isMuted; }
     QList<SinkPort> ports() const { return m_ports; }
     bool activePortIndex() const { return m_activePortIndex; }
 
@@ -40,6 +41,7 @@ private:
     QString m_name;
     QString m_description;
     pa_cvolume m_volume;
+    bool m_isMuted;
     QList<SinkPort> m_ports;
     int m_activePortIndex;
 };

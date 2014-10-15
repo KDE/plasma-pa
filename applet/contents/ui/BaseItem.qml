@@ -88,7 +88,7 @@ PlasmaComponents.ListItem {
                         elementId: {
                             var split_base = 65536/3.0;
                             var icon = null;
-                            if (Volume / split_base <= 0) {
+                            if ((Volume / split_base <= 0) || IsMuted) {
                                 icon = "audio-volume-muted";
                             } else if (Volume / split_base <= 1) {
                                 icon = "audio-volume-low";
@@ -130,7 +130,8 @@ PlasmaComponents.ListItem {
                     maximumValue: 65536
                     stepSize: maximumValue / 100
                     visible: HasVolume
-                    enabled: IsVolumeWritable
+                    // FIXME: when IsVolumeWritable is undefined (sink) this evals to true...
+                    enabled: IsVolumeWritable && !IsMuted
 
                     onVolumeChanged: {
                         if (!pressed) {
