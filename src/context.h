@@ -33,9 +33,9 @@ public:
                    AddedSignal addedSignal,
                    UpdatedSignal updatedSignal);
 
-    void sinkCallback(pa_context *context, const pa_sink_info *info, int eol);
-    void clientCallback(pa_context *context, const pa_client_info *info, int eol);
-    void sinkInputCallback(pa_context *context, const pa_sink_input_info *info, int eol);
+    void sinkCallback(const pa_sink_info *info);
+    void clientCallback(const pa_client_info *info);
+    void sinkInputCallback(const pa_sink_input_info *info);
 
     Q_INVOKABLE void setSinkVolume(quint32 index, quint32 volume);
     Q_INVOKABLE void setSinkPort(quint32 portIndex);

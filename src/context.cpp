@@ -26,24 +26,27 @@ static void sink_cb(pa_context *context, const pa_sink_info *info, int eol, void
 {
     if (!isGoodState(eol))
         return;
+    Q_ASSERT(context);
     Q_ASSERT(data);
-    ((Context *)data)->sinkCallback(context, info, eol);
+    ((Context *)data)->sinkCallback(info);
 }
 
 static void sink_input_callback(pa_context *context, const pa_sink_input_info *info, int eol, void *data)
 {
     if (!isGoodState(eol))
         return;
+    Q_ASSERT(context);
     Q_ASSERT(data);
-    ((Context *)data)->sinkInputCallback(context, info, eol);
+    ((Context *)data)->sinkInputCallback(info);
 }
 
 static void client_cb(pa_context *context, const pa_client_info *info, int eol, void *data)
 {
     if (!isGoodState(eol))
         return;
+    Q_ASSERT(context);
     Q_ASSERT(data);
-    ((Context *)data)->clientCallback(context, info, eol);
+    ((Context *)data)->clientCallback(info);
 }
 
 static void context_state_callback(pa_context *context, void *data)
@@ -300,27 +303,24 @@ void Context::updateMap(QMap<quint32, C *> &map,
 }
 
 #warning fixme recentlydeleted has the same type for everything making it easy to use the wrong one possibly
-void Context::sinkCallback(pa_context *context, const pa_sink_info *info, int eol)
+void Context::sinkCallback(const pa_sink_info *info)
 {
-    Q_ASSERT(context);
     updateMap<Sink, pa_sink_info>(m_sinks, m_recentlyDeletedSinks,
                                   info,
                                   &Context::sinkAdded,
                                   &Context::sinkUpdated);
 }
 
-void Context::clientCallback(pa_context *context, const pa_client_info *info, int eol)
+void Context::clientCallback(const pa_client_info *info)
 {
-    Q_ASSERT(context);
     updateMap<Client, pa_client_info>(m_clients, m_recentDeletedClients,
                                       info,
                                       &Context::clientAdded,
                                       &Context::clientUpdated);
 }
 
-void Context::sinkInputCallback(pa_context *context, const pa_sink_input_info *info, int eol)
+void Context::sinkInputCallback(const pa_sink_input_info *info)
 {
-    Q_ASSERT(context);
     updateMap<SinkInput, pa_sink_input_info>(m_sinkInputs, m_recentlyDeletedSinkInputs,
                                              info,
                                              &Context::sinkInputAdded,
