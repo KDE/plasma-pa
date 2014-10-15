@@ -1,4 +1,3 @@
-
 import QtQuick 2.0
 
 import QtQuick.Layouts 1.0
@@ -82,7 +81,7 @@ Item {
 
                 model: sinkModel
                 boundsBehavior: Flickable.StopAtBounds;
-                header: Header { text: "Devices" }
+                header: Header { text: i18n("Devices") }
                 delegate: SinkItem {}
             }
 
@@ -94,7 +93,7 @@ Item {
 
                 model: sinkInputModel
                 boundsBehavior: Flickable.StopAtBounds;
-                header: Header { text: "Applications" }
+                header: Header { text: i18n("Applications") }
                 delegate: SinkInputItem {}
             }
         }
