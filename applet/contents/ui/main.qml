@@ -52,7 +52,7 @@ Item {
         id: sinkModel
     }
 
-    SinkInputModel {
+    ReverseSinkInputModel {
         id: sinkInputModel
     }
 

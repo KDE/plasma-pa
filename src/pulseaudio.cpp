@@ -213,3 +213,28 @@ AbstractModel::AbstractModel(QObject *parent)
     , m_context(nullptr)
 {
 }
+
+#warning todo probably should sort all models in reverse order
+ReverseSinkInputModel::ReverseSinkInputModel(Context *context, QObject *parent)
+    : QSortFilterProxyModel(parent)
+{
+    setSourceModel(new SinkInputModel(context, this));
+    setDynamicSortFilter(true);
+    sort(0, Qt::DescendingOrder);
+}
+
+bool ReverseSinkInputModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    // FIXME: index is not necessarily a good sorting value as indexes may get
+    // reused after sufficient up-time.
+    auto leftData = sourceModel()->data(left, SinkInputModel::IndexRole).toInt();
+    auto rightData = sourceModel()->data(right, SinkInputModel::IndexRole).toInt();
+    if (leftData < rightData)
+        return true;
+    return false;
+}
+
+void ReverseSinkInputModel::setContext(Context *context)
+{
+    qobject_cast<SinkInputModel *>(sourceModel())->setContext(context);
+}

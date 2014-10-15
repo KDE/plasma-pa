@@ -2,6 +2,7 @@
 #define PULSEAUDIO_H
 
 #include <QAbstractListModel>
+#include <QSortFilterProxyModel>
 
 #include "context.h"
 
@@ -93,6 +94,16 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+};
+
+class ReverseSinkInputModel : public QSortFilterProxyModel
+{
+    Q_OBJECT
+public:
+    ReverseSinkInputModel(Context *context = nullptr, QObject *parent = nullptr);
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const Q_DECL_OVERRIDE;
+
+    Q_INVOKABLE void setContext(Context *context);
 };
 
 #endif // PULSEAUDIO_H
