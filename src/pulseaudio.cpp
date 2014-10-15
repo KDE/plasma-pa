@@ -1,6 +1,7 @@
 #include "pulseaudio.h"
 
 #include <QDebug>
+#include <QMetaEnum>
 
 ClientModel::ClientModel(QObject *parent)
     : AbstractModel(parent)
@@ -20,13 +21,6 @@ void ClientModel::setContext(Context *context)
     connect(context, &Context::clientAdded, this, &ClientModel::onDataAdded);
     connect(context, &Context::clientUpdated, this, &ClientModel::onDataUpdated);
     connect(context, &Context::clientRemoved, this, &ClientModel::onDataRemoved);
-}
-
-QHash<int, QByteArray> ClientModel::roleNames() const
-{
-    QHash<int, QByteArray> roles;
-    roles[NameRole] = "Name";
-    return roles;
 }
 
 int ClientModel::rowCount(const QModelIndex &parent) const
@@ -61,20 +55,6 @@ void SinkInputModel::setContext(Context *context)
     connect(context, &Context::sinkInputRemoved, this, &SinkInputModel::onDataRemoved);
 }
 
-QHash<int, QByteArray> SinkInputModel::roleNames() const
-{
-    QHash<int, QByteArray> roles;
-    roles[IndexRole] = "Index";
-    roles[NameRole] = "Name";
-    roles[VolumeRole] = "Volume";
-    roles[HasVolumeRole] = "HasVolume";
-    roles[IsVolumeWritableRole] = "IsVolumeWritable";
-    roles[ClientIndexRole] = "ClientIndex";
-    roles[ClientNameRole] = "ClientName";
-    roles[ClientProperties] = "ClientProperties";
-    return roles;
-}
-
 int SinkInputModel::rowCount(const QModelIndex &parent) const
 {
     if (!m_context)
@@ -106,7 +86,7 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
             return client->name();
         return QVariant();
     }
-    case ClientProperties: {
+    case ClientPropertiesRole: {
         quint32 clientIndex = m_context->m_sinkInputs.values().at(index.row())->client();
         Client *client = m_context->m_clients.value(clientIndex, nullptr);
         if (client)
@@ -116,6 +96,36 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
     }
     return QVariant();
     Q_ASSERT(false);
+}
+
+QHash<int, QByteArray> AbstractModel::roleNames() const
+{
+    QHash<int, QByteArray> roles;
+
+    QMetaEnum enumerator;
+    for (int i = 0; i < metaObject()->enumeratorCount(); ++i) {
+        if (metaObject()->enumerator(i).name() == QLatin1Literal("ItemRole")) {
+            enumerator = metaObject()->enumerator(i);
+            break;
+        }
+    }
+
+    Q_ASSERT(enumerator.scope() == metaObject()->className());
+    // No valid enum found, leaf probably doesn't implement ItemRole (correctly).
+    Q_ASSERT(enumerator.isValid());
+
+    for (int i = 0; i < enumerator.keyCount(); ++i) {
+        // Clip the Role suffix and glue it in the hash.
+        static auto roleLength = strlen("Role");
+        QByteArray key(enumerator.key(i));
+        // Enum values must end in Role or the enum is crap
+        Q_ASSERT(key.right(roleLength) == QByteArray("Role"));
+        key.chop(roleLength);
+        roles[enumerator.value(i)] = key;
+    }
+
+    qDebug() << roles;
+    return roles;
 }
 
 void AbstractModel::setContext(Context *context)
@@ -145,18 +155,6 @@ void SinkModel::setContext(Context *context)
     connect(context, &Context::sinkRemoved, this, &SinkModel::onDataRemoved);
 }
 
-QHash<int, QByteArray> SinkModel::roleNames() const
-{
-    QHash<int, QByteArray> roles;
-    roles[IndexRole] = "Index";
-    roles[NameRole] = "Name";
-    roles[DescritionRole] = "Description";
-    roles[VolumeRole] = "Volume";
-    roles[PortsRole] = "Ports";
-    roles[ActivePortRole] = "ActivePortIndex";
-    return roles;
-}
-
 int SinkModel::rowCount(const QModelIndex &parent) const
 {
     if (!m_context)
@@ -166,14 +164,13 @@ int SinkModel::rowCount(const QModelIndex &parent) const
 
 QVariant SinkModel::data(const QModelIndex &index, int role) const
 {
-    qDebug() << "data" << index << role << "name" << NameRole;
     switch(static_cast<ItemRole>(role)) {
     case IndexRole:
         return m_context->m_sinks.values().at(index.row())->index();
     case NameRole:
         qDebug() << "  " << m_context->m_sinks.values().at(index.row())->name();
         return m_context->m_sinks.values().at(index.row())->name();
-    case DescritionRole:
+    case DescriptionRole:
         return m_context->m_sinks.values().at(index.row())->description();
     case VolumeRole:
         return m_context->m_sinks.values().at(index.row())->volume().values[0];
