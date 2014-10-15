@@ -166,7 +166,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 } else {
                     const int modelIndex = m_clients.keys().indexOf(index);
                     m_clients.take(index)->deleteLater();
-                    emit clientsChanged();
+                    emit clientRemoved(modelIndex);
                 }
             } else {
                 pa_operation *o;
