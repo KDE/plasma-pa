@@ -127,11 +127,8 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 if (!m_sinkInputs.contains(index)) {
                     m_recentlyDeletedSinkInputs.insert(index);
                 } else {
-                    qDebug() << "dropping sink input" << index;
-                    qDebug() << m_sinkInputs.count();
                     const int modelIndex = m_sinkInputs.keys().indexOf(index);
                     m_sinkInputs.take(index)->deleteLater();
-                    qDebug() << m_sinkInputs.count();
                     emit sinkInputRemoved(modelIndex);
                 }
             } else {
