@@ -209,7 +209,7 @@ QString SinkModel::volumeText() const
         if (count == 1) {
             return QString("<b>%1%</b>").arg(volumePercent);
         }
-        ret.append(QString("%1: <b>%2%</b>\n").arg(name, QString::number(volumePercent)));
+        ret.append(QString("<p>%1: <b>%2%</b></p>").arg(name, QString::number(volumePercent)));
     }
 
     return ret;
