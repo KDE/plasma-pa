@@ -30,6 +30,7 @@ protected:
 class SinkModel : public AbstractModel
 {
     Q_OBJECT
+    Q_PROPERTY(QString volumeText READ volumeText NOTIFY volumeTextChanged)
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
@@ -48,6 +49,11 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+
+    QString volumeText() const;
+
+signals:
+    void volumeTextChanged();
 };
 
 class ClientModel : public AbstractModel

@@ -154,6 +154,10 @@ void SinkModel::setContext(Context *context)
     connect(context, &Context::sinkAdded, this, &SinkModel::onDataAdded);
     connect(context, &Context::sinkUpdated, this, &SinkModel::onDataUpdated);
     connect(context, &Context::sinkRemoved, this, &SinkModel::onDataRemoved);
+
+    connect(context, &Context::sinkAdded, this, &SinkModel::volumeTextChanged);
+    connect(context, &Context::sinkUpdated, this, &SinkModel::volumeTextChanged);
+    connect(context, &Context::sinkRemoved, this, &SinkModel::volumeTextChanged);
 }
 
 int SinkModel::rowCount(const QModelIndex &parent) const
@@ -189,6 +193,26 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
         return m_context->m_sinks.values().at(index.row())->activePortIndex();
     }
     return QVariant();
+}
+
+QString SinkModel::volumeText() const
+{
+    QString ret;
+
+    const int count = rowCount();
+    for (int i = 0; i < count; ++i) {
+        QString name = data(index(i), SinkModel::DescriptionRole).toString();
+#warning fixme volume max as always is amiss also see qml baseitem
+        int volume = data(index(i), SinkModel::VolumeRole).toInt();
+        int volumePercent = 100 * volume / 65536;
+#warning probably needs i18n because of percent
+        if (count == 1) {
+            return QString("<b>%1%</b>").arg(volumePercent);
+        }
+        ret.append(QString("%1: <b>%2%</b>\n").arg(name, QString::number(volumePercent)));
+    }
+
+    return ret;
 }
 
 void AbstractModel::onDataAdded(quint32 index)

@@ -16,6 +16,9 @@ Item {
     Plasmoid.switchWidth: units.gridUnit * 12
     Plasmoid.switchHeight: units.gridUnit * 12
 
+    Plasmoid.toolTipMainText: i18n("Audio Volume")
+    Plasmoid.toolTipSubText: sinkModel.volumeText
+
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
         source: plasmoid.icon ? plasmoid.icon : "plasma"
         active: mouseArea.containsMouse
