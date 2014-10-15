@@ -16,11 +16,10 @@ ClientModel::ClientModel(Context *context, QObject *parent)
 
 void ClientModel::setContext(Context *context)
 {
-    m_context = context;
-    Q_ASSERT(m_context);
-    Q_ASSERT(m_context->isValid());
-//    connect(m_context, &Context::clientsChanged,
-//            this, &ClientModel::_onDataChange);
+    AbstractModel::setContext(context);
+    connect(context, &Context::clientAdded, this, &ClientModel::onDataAdded);
+    connect(context, &Context::clientUpdated, this, &ClientModel::onDataUpdated);
+    connect(context, &Context::clientRemoved, this, &ClientModel::onDataRemoved);
 }
 
 QHash<int, QByteArray> ClientModel::roleNames() const
@@ -190,10 +189,8 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
 
 void AbstractModel::onDataAdded(quint32 index)
 {
-//    beginInsertRows(QModelIndex(), index, index);
-//    endInsertRows();/
-    beginResetModel();
-    endResetModel();
+    beginInsertRows(QModelIndex(), index, index);
+    endInsertRows();
 }
 
 void AbstractModel::onDataUpdated(quint32 index)
