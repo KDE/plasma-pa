@@ -2,6 +2,7 @@ import QtQuick 2.0
 
 BaseItem {
     label: ClientName + ": " + Name
+    contentLabel: i18n('output')
     icon: {
         if (ClientProperties['application.icon_name']) {
             return ClientProperties['application.icon_name'].toLowerCase();

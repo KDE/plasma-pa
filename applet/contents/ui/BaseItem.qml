@@ -11,6 +11,7 @@ PlasmaComponents.ListItem {
     id: item
 
     property alias label: textLabel.text
+    property alias contentLabel: contentLabel.unformattedText
     property alias icon: clientIcon.icon
 
     function setVolume(volume) {
@@ -54,6 +55,15 @@ PlasmaComponents.ListItem {
                     Layout.fillWidth: true
                     anchors.verticalCenter: iconContainer.verticalCenter
                     elide: Text.ElideRight
+                }
+
+                PlasmaComponents.Label {
+                    id: contentLabel
+                    property string unformattedText: ""
+                    Layout.fillWidth: false
+                    anchors.leftMargin: theme.mSize(theme.defaultFont).width*1.6
+                    text: unformattedText.toUpperCase()
+                    anchors.verticalCenter: iconContainer.verticalCenter
                 }
 
                 // The volume icon is packed into an item because we need to have it centered
