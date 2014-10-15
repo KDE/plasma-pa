@@ -54,13 +54,6 @@ signals:
     void clientUpdated(quint32 index);
     void clientRemoved(quint32 index);
 
-//    void sinksChanged();
-    void sourcesChanged();
-    void sinkInputsChanged();
-    void sourceOutputsChanged();
-    void clientsChanged();
-    void cardsChanged();
-
 public:
 //private:
     void connectToDaemon();
