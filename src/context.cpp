@@ -259,8 +259,6 @@ void Context::contextStateCallback(pa_context *c)
     }
 }
 
-#warning data changed should possibly only be emitted once eol is >0 to avoid pointless redraws
-
 template <typename C, typename PAInfo, typename AddedSignal, typename UpdatedSignal>
 void Context::updateMap(QMap<quint32, C *> &map,
                         QSet<quint32> &exclusionSet,
