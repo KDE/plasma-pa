@@ -68,12 +68,6 @@ Context::Context(QObject *parent)
     , m_context(nullptr)
     , m_mainloop(nullptr)
 {
-    // We require a glib event loop
-    if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")) {
-        qDebug() << "Disabling PulseAudio integration for lack of GLib event loop";
-        return;
-    }
-
     connectToDaemon();
 }
 
@@ -372,6 +366,12 @@ void Context::connectToDaemon()
 {
     Q_ASSERT(m_context == nullptr);
     Q_ASSERT(m_mainloop == nullptr);
+
+    // We require a glib event loop
+    if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")) {
+        qDebug() << "Disabling PulseAudio integration for lack of GLib event loop";
+        return;
+    }
 
     qDebug() <<  "Attempting connection to PulseAudio sound daemon";
     m_mainloop = pa_glib_mainloop_new(nullptr);
