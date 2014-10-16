@@ -375,6 +375,7 @@ void Context::connectToDaemon()
 
     qDebug() <<  "Attempting connection to PulseAudio sound daemon";
     m_mainloop = pa_glib_mainloop_new(nullptr);
+    Q_ASSERT(m_mainloop);
     pa_mainloop_api *api = pa_glib_mainloop_get_api(m_mainloop);
     Q_ASSERT(api);
 
@@ -383,6 +384,7 @@ void Context::connectToDaemon()
 
     if (pa_context_connect(m_context, NULL, PA_CONTEXT_NOFAIL, nullptr) < 0) {
         pa_context_unref(m_context);
+        pa_glib_mainloop_free(m_mainloop);
         m_context = nullptr;
         return;
     }
