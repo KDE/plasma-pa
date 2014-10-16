@@ -316,7 +316,7 @@ void Context::setSinkVolume(quint32 index, quint32 volume)
     qDebug() << Q_FUNC_INFO << index << volume;
 #warning fixme volume limit enforcement needs review for sensibility
     if (volume > 65536)
-        return;
+        volume = 0;
     Sink *sink = m_sinks.value(index, nullptr);
     if (!sink)
         return;
