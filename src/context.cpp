@@ -353,7 +353,6 @@ void Context::setSinkInputVolume(quint32 index, quint32 volume)
 #warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
     if (volume > 65536)
         volume = 0;
-    pa_operation *o;
     SinkInput *obj = m_sinkInputs.value(index, nullptr);
     if (!obj)
         return;
@@ -361,6 +360,7 @@ void Context::setSinkInputVolume(quint32 index, quint32 volume)
     for (int i = 0; i < newVolume.channels; ++i) {
         newVolume.values[i] = volume;
     }
+    pa_operation *o;
     if (!(o = pa_context_set_sink_input_volume(m_context, index, &newVolume, NULL, NULL))) {
         qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
         return;
