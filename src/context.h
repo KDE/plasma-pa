@@ -39,6 +39,7 @@ public:
 
     Q_INVOKABLE void setSinkVolume(quint32 index, quint32 volume);
     Q_INVOKABLE void setSinkPort(quint32 portIndex);
+
     Q_INVOKABLE void setSinkInputVolume(quint32 index, quint32 volume);
 
 signals:
@@ -57,6 +58,9 @@ signals:
 public:
 //private:
     void connectToDaemon();
+    template <typename PAFunction>
+    void setGenericVolume(quint32 index, quint32 newVolume,
+                          pa_cvolume cVolume, PAFunction pa_set_volume);
 
     QMap<quint32, Sink *> m_sinks;
     QSet<quint32> m_recentlyDeletedSinks;

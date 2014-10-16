@@ -313,23 +313,10 @@ void Context::sinkInputCallback(const pa_sink_input_info *info)
 
 void Context::setSinkVolume(quint32 index, quint32 volume)
 {
-    qDebug() << Q_FUNC_INFO << index << volume;
-#warning fixme volume limit enforcement needs review for sensibility
-    if (volume > 65536)
-        volume = 0;
-    Sink *sink = m_sinks.value(index, nullptr);
-    if (!sink)
+    Sink *obj = m_sinks.value(index, nullptr);
+    if (!obj)
         return;
-    pa_cvolume newVolume = sink->volume();
-    for (int i = 0; i < newVolume.channels; ++i) {
-        newVolume.values[i] = volume;
-    }
-    pa_operation *o;
-    if (!(o = pa_context_set_sink_volume_by_index(m_context, index, &newVolume, NULL, NULL))) {
-        qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
-        return;
-    }
-    pa_operation_unref(o);
+    setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Context::setSinkPort(quint32 portIndex)
@@ -343,23 +330,10 @@ void Context::setSinkPort(quint32 portIndex)
 
 void Context::setSinkInputVolume(quint32 index, quint32 volume)
 {
-    qDebug() << Q_FUNC_INFO << index << volume;
-#warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
-    if (volume > 65536)
-        volume = 0;
     SinkInput *obj = m_sinkInputs.value(index, nullptr);
     if (!obj)
         return;
-    pa_cvolume newVolume = obj->volume();
-    for (int i = 0; i < newVolume.channels; ++i) {
-        newVolume.values[i] = volume;
-    }
-    pa_operation *o;
-    if (!(o = pa_context_set_sink_input_volume(m_context, index, &newVolume, NULL, NULL))) {
-        qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
-        return;
-    }
-    pa_operation_unref(o);
+    setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_input_volume);
 }
 
 void Context::connectToDaemon()
@@ -389,4 +363,24 @@ void Context::connectToDaemon()
         return;
     }
     pa_context_set_state_callback(m_context, &context_state_callback, this);
+}
+
+template <typename PAFunction>
+void Context::setGenericVolume(quint32 index, quint32 newVolume,
+                               pa_cvolume cVolume, PAFunction pa_set_volume)
+{
+    qDebug() << Q_FUNC_INFO << index << newVolume;
+    #warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
+    if (newVolume > 65536)
+        newVolume = 0;
+    pa_cvolume newCVolume = cVolume;
+    for (int i = 0; i < newCVolume.channels; ++i) {
+        newCVolume.values[i] = newVolume;
+    }
+    pa_operation *o;
+    if (!(o = pa_set_volume(m_context, index, &newCVolume, NULL, NULL))) {
+        qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
+        return;
+    }
+    pa_operation_unref(o);
 }
