@@ -251,19 +251,11 @@ void Context::contextStateCallback(pa_context *c)
 //        }
     } else if (!PA_CONTEXT_IS_GOOD(state)) {
         qDebug() << "context kaput";
-        // If this is our probe phase, exit our context immediately
-        if (m_context != c) {
-            pa_context_disconnect(c);
-        } else {
-            // If we're not probing, it means we've been disconnected from our
-            // glib context
-            pa_context_unref(m_context);
-            m_context = nullptr;
-
-#warning fixme
-            // This one is not handled above.
-//            clients.clear();
-        }
+        // If we're not probing, it means we've been disconnected from our
+        // glib context
+        pa_context_unref(m_context);
+        m_context = nullptr;
+#warning fixme need to clear out all our data and possibly reconnect
     }
 }
 
