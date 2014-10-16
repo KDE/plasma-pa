@@ -72,6 +72,8 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
     case VolumeRole:
 #warning values bs
         return m_context->m_sinkInputs.values().at(index.row())->volume().values[0];
+    case SinkIndexRole:
+        return m_context->m_sinkInputs.values().at(index.row())->sinkIndex();
     case IsMutedRole:
         return m_context->m_sinkInputs.values().at(index.row())->isMuted();
     case HasVolumeRole:

@@ -85,6 +85,7 @@ public:
         IndexRole = Qt::UserRole + 1,
         NameRole,
         VolumeRole,
+        SinkIndexRole,
         IsMutedRole,
         HasVolumeRole,
         IsVolumeWritableRole,
