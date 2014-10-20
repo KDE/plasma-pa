@@ -123,7 +123,7 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
 
     for (int i = 0; i < enumerator.keyCount(); ++i) {
         // Clip the Role suffix and glue it in the hash.
-        static auto roleLength = strlen("Role");
+        static int roleLength = strlen("Role");
         QByteArray key(enumerator.key(i));
         // Enum values must end in Role or the enum is crap
         Q_ASSERT(key.right(roleLength) == QByteArray("Role"));
