@@ -13,6 +13,7 @@
 #include "client.h"
 #include "sink.h"
 #include "sinkinput.h"
+#include "source.h"
 
 class Context : public QObject
 {
@@ -34,8 +35,11 @@ public:
                    UpdatedSignal updatedSignal);
 
     void sinkCallback(const pa_sink_info *info);
-    void clientCallback(const pa_client_info *info);
     void sinkInputCallback(const pa_sink_input_info *info);
+
+    void sourceCallback(const pa_source_info *info);
+
+    void clientCallback(const pa_client_info *info);
 
     Q_INVOKABLE void setSinkVolume(quint32 index, quint32 volume);
     Q_INVOKABLE void setSinkPort(quint32 portIndex);
@@ -50,6 +54,10 @@ signals:
     void sinkInputAdded(quint32 index);
     void sinkInputUpdated(quint32 index);
     void sinkInputRemoved(quint32 index);
+
+    void sourceAdded(quint32 index);
+    void sourceUpdated(quint32 index);
+    void sourceRemoved(quint32 index);
 
     void clientAdded(quint32 index);
     void clientUpdated(quint32 index);
@@ -66,7 +74,8 @@ public:
 
     QMap<quint32, Sink *> m_sinks;
     QSet<quint32> m_recentlyDeletedSinks;
-//    QMap<quint32, Source *> m_sources;
+    QMap<quint32, Source *> m_sources;
+    QSet<quint32> m_recentlyDeletedSources;
     QMap<quint32, SinkInput *> m_sinkInputs;
     QSet<quint32> m_recentlyDeletedSinkInputs;
 //    QMap<quint32, SourceOutput *> m_sourceOutputs;

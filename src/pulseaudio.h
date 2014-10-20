@@ -56,6 +56,30 @@ signals:
     void volumeTextChanged();
 };
 
+class SourceModel : public AbstractModel
+{
+    Q_OBJECT
+public:
+    enum ItemRole {
+        IndexRole = Qt::UserRole + 1,
+        NameRole,
+        DescriptionRole,
+        VolumeRole,
+        IsMutedRole,
+    };
+    Q_ENUMS(ItemRole)
+
+    SourceModel(Context *context = nullptr, QObject *parent = nullptr);
+
+    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
+
+    int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+
+signals:
+    void volumeTextChanged();
+};
+
 class ClientModel : public AbstractModel
 {
     Q_OBJECT
@@ -65,8 +89,7 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    ClientModel(QObject *parent = 0);
-    ClientModel(Context *context, QObject *parent = 0);
+    ClientModel(Context *context = nullptr, QObject *parent = nullptr);
 
     Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
 

@@ -11,4 +11,5 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<SinkModel>(uri, 0, 1, "SinkModel");
     qmlRegisterType<SinkInputModel>(uri, 0, 1, "SinkInputModel");
     qmlRegisterType<ReverseSinkInputModel>(uri, 0, 1, "ReverseSinkInputModel");
+    qmlRegisterType<SourceModel>(uri, 0, 1, "SourceModel");
 }

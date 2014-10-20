@@ -14,7 +14,7 @@ PlasmaComponents.ListItem {
     property bool expanded: false
     property alias label: textLabel.text
     property alias icon: clientIcon.icon
-    property Component subComponent: undefined
+    property Component subComponent
 
     enabled: subComponent
 
@@ -167,7 +167,7 @@ PlasmaComponents.ListItem {
             // FIXME: need something more dynamic
             anchors.leftMargin: 22
 
-            Layout.minimumHeight: childrenRect.height
+            Layout.minimumHeight:  subLoader.item ? subLoader.item.contentHeight : 0
         }
     }
 

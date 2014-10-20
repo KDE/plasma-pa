@@ -3,16 +3,13 @@
 #include <QDebug>
 #include <QMetaEnum>
 
-ClientModel::ClientModel(QObject *parent)
-    : AbstractModel(parent)
-    , m_context(nullptr)
-{
-}
-
 ClientModel::ClientModel(Context *context, QObject *parent)
-    : ClientModel(parent)
+    : AbstractModel(parent)
 {
-    setContext(context);
+#warning this possibly should move to base
+    if (context) {
+        setContext(context);
+    }
 }
 
 void ClientModel::setContext(Context *context)
@@ -137,13 +134,13 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
 
 void AbstractModel::setContext(Context *context)
 {
-     beginResetModel();
-     if (m_context) {
-         m_context->disconnect(this);
-     }
-     m_context = context;
-     Q_ASSERT(m_context);
-     endResetModel();
+    beginResetModel();
+    if (m_context) {
+        m_context->disconnect(this);
+    }
+    m_context = context;
+    Q_ASSERT(m_context);
+    endResetModel();
 }
 
 SinkModel::SinkModel(Context *context, QObject *parent)
@@ -270,4 +267,47 @@ bool ReverseSinkInputModel::lessThan(const QModelIndex &left, const QModelIndex 
 void ReverseSinkInputModel::setContext(Context *context)
 {
     qobject_cast<SinkInputModel *>(sourceModel())->setContext(context);
+}
+
+
+SourceModel::SourceModel(Context *context, QObject *parent)
+    : AbstractModel(parent)
+{
+    if (context) {
+        setContext(context);
+    }
+}
+
+void SourceModel::setContext(Context *context)
+{
+    AbstractModel::setContext(context);
+    connect(context, &Context::sourceAdded, this, &SourceModel::onDataAdded);
+    connect(context, &Context::sourceUpdated, this, &SourceModel::onDataUpdated);
+    connect(context, &Context::sourceRemoved, this, &SourceModel::onDataRemoved);
+}
+
+int SourceModel::rowCount(const QModelIndex &parent) const
+{
+    if (!m_context)
+        return 0;
+    return m_context->m_sources.count();
+}
+
+QVariant SourceModel::data(const QModelIndex &index, int role) const
+{
+    Source *source = m_context->m_sources.values().at(index.row());
+    Q_ASSERT(source);
+    switch(static_cast<ItemRole>(role)) {
+    case IndexRole:
+        return source->index();
+    case NameRole:
+        return source->name();
+    case DescriptionRole:
+        return source->description();
+    case VolumeRole:
+        return source->volume().values[0];
+    case IsMutedRole:
+        return source->isMuted();
+    }
+    return QVariant();
 }

@@ -40,6 +40,15 @@ static void sink_input_callback(pa_context *context, const pa_sink_input_info *i
     ((Context *)data)->sinkInputCallback(info);
 }
 
+static void source_cb(pa_context *context, const pa_source_info *info, int eol, void *data)
+{
+    if (!isGoodState(eol))
+        return;
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    ((Context *)data)->sourceCallback(info);
+}
+
 static void client_cb(pa_context *context, const pa_client_info *info, int eol, void *data)
 {
     if (!isGoodState(eol))
@@ -103,19 +112,24 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             }
             break;
 
-//        case PA_SUBSCRIPTION_EVENT_SOURCE:
-//            if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-//                if (s_mixers.contains(KMIXPA_CAPTURE))
-//                    s_mixers[KMIXPA_CAPTURE]->removeWidget(index);
-//            } else {
-//                pa_operation *o;
-//                if (!(o = pa_context_get_source_info_by_index(c, index, source_cb, NULL))) {
-//                    qWarning() << "pa_context_get_source_info_by_index() failed";
-//                    return;
-//                }
-//                pa_operation_unref(o);
-//            }
-//            break;
+        case PA_SUBSCRIPTION_EVENT_SOURCE:
+            if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+                if (!m_sources.contains(index)) {
+                    m_recentlyDeletedSources.insert(index);
+                } else {
+                    const int modelIndex = m_sources.keys().indexOf(index);
+                    m_sources.take(index)->deleteLater();
+                    emit sourceRemoved(modelIndex);
+                }
+            } else {
+                pa_operation *o;
+                if (!(o = pa_context_get_source_info_by_index(context, index, source_cb, this))) {
+                    qWarning() << "pa_context_get_source_info_by_index() failed";
+                    return;
+                }
+                pa_operation_unref(o);
+            }
+            break;
 
         case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
@@ -128,8 +142,8 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                     emit sinkInputRemoved(modelIndex);
                 }
             } else {
-                pa_operation *o;
-                if (!(o = pa_context_get_sink_input_info(context, index, sink_input_callback, this))) {
+                pa_operation *o =  pa_context_get_sink_input_info(context, index, sink_input_callback, this);
+                if (!o) {
                     qWarning() << "pa_context_get_sink_input_info() failed";
                     return;
                 }
@@ -207,11 +221,11 @@ void Context::contextStateCallback(pa_context *c)
         }
         pa_operation_unref(o);
 
-//        if (!(o = pa_context_get_source_info_list(c, source_cb, NULL))) {
-//            qWarning() << "pa_context_get_source_info_list() failed";
-//            return;
-//        }
-//        pa_operation_unref(o);
+        if (!(o = pa_context_get_source_info_list(c, source_cb, this))) {
+            qWarning() << "pa_context_get_source_info_list() failed";
+            return;
+        }
+        pa_operation_unref(o);
 
         if (!(o = pa_context_get_client_info_list(c, client_cb, this))) {
             qWarning() << "pa_context_client_info_list() failed";
@@ -291,20 +305,28 @@ void Context::sinkCallback(const pa_sink_info *info)
                                   &Context::sinkUpdated);
 }
 
-void Context::clientCallback(const pa_client_info *info)
-{
-    updateMap<Client, pa_client_info>(m_clients, m_recentlyDeletedClients,
-                                      info,
-                                      &Context::clientAdded,
-                                      &Context::clientUpdated);
-}
-
 void Context::sinkInputCallback(const pa_sink_input_info *info)
 {
     updateMap<SinkInput, pa_sink_input_info>(m_sinkInputs, m_recentlyDeletedSinkInputs,
                                              info,
                                              &Context::sinkInputAdded,
                                              &Context::sinkInputUpdated);
+}
+
+void Context::sourceCallback(const pa_source_info *info)
+{
+    updateMap<Source, pa_source_info>(m_sources, m_recentlyDeletedSources,
+                                      info,
+                                      &Context::sourceAdded,
+                                      &Context::sourceUpdated);
+}
+
+void Context::clientCallback(const pa_client_info *info)
+{
+    updateMap<Client, pa_client_info>(m_clients, m_recentlyDeletedClients,
+                                      info,
+                                      &Context::clientAdded,
+                                      &Context::clientUpdated);
 }
 
 void Context::setSinkVolume(quint32 index, quint32 volume)
@@ -399,6 +421,7 @@ void Context::reset()
 
 #warning introduce a super structure to loop over so we cannot forget things by accident
     _wipeAll(m_sinks, m_recentlyDeletedSinks);
+    _wipeAll(m_sources, m_recentlyDeletedSources);
     _wipeAll(m_sinkInputs, m_recentlyDeletedSinkInputs);
     _wipeAll(m_clients, m_recentlyDeletedClients);
 }

@@ -6,22 +6,22 @@ BaseItem {
     icon: 'audio-card'
     label: Description
     subComponent: ListView {
-            id: inputView
+        id: inputView
 
-            width: parent.width
-            height: contentHeight
+        width: parent.width
+//        height: contentHeight
 
-            model: ReverseSinkInputModel {
-                id: m
-                filterRole: SinkInputModel.SinkIndexRole
-                filterRegExp: new RegExp(Index);
-                Component.onCompleted: {
-                    m.setContext(pulseContext);
-                }
+        model: ReverseSinkInputModel {
+            id: m
+            filterRole: SinkInputModel.SinkIndexRole
+            filterRegExp: new RegExp(Index);
+            Component.onCompleted: {
+                m.setContext(pulseContext);
             }
-            boundsBehavior: Flickable.StopAtBounds;
-            delegate: SinkInputItem {}
         }
+        boundsBehavior: Flickable.StopAtBounds;
+        delegate: SinkInputItem {}
+    }
 
     function setVolume(volume) {
         // TODO: possibly set the volume icon here, otherwise it will update on delay

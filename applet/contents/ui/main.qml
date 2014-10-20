@@ -81,6 +81,22 @@ Item {
                 boundsBehavior: Flickable.StopAtBounds;
                 delegate: SinkItem {}
             }
+
+            ListView {
+                id: sourceView
+
+                Layout.fillWidth: true
+                Layout.minimumHeight: contentHeight
+
+                model: SourceModel {
+                    id: sourceModel
+                    Component.onCompleted: {
+                        setContext(pulseContext);
+                    }
+                }
+                boundsBehavior: Flickable.StopAtBounds;
+                delegate: SinkItem {}
+            }
         }
     }
 }
