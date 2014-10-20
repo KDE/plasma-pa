@@ -69,7 +69,7 @@ public:
     QSet<quint32> m_recentlyDeletedSinkInputs;
 //    QMap<quint32, SourceOutput *> m_sourceOutputs;
     QMap<quint32, Client *> m_clients;
-    QSet<quint32> m_recentDeletedClients;
+    QSet<quint32> m_recentlyDeletedClients;
 //    QMap<quint32, Card *> m_cards;
 
     pa_context *m_context;

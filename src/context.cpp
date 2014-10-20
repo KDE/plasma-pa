@@ -156,7 +156,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
                 qDebug() << "dropping client" << index;
                 if (!m_clients.contains(index)) {
-                    m_recentDeletedClients.insert(index);
+                    m_recentlyDeletedClients.insert(index);
                 } else {
                     const int modelIndex = m_clients.keys().indexOf(index);
                     m_clients.take(index)->deleteLater();
@@ -297,7 +297,7 @@ void Context::sinkCallback(const pa_sink_info *info)
 
 void Context::clientCallback(const pa_client_info *info)
 {
-    updateMap<Client, pa_client_info>(m_clients, m_recentDeletedClients,
+    updateMap<Client, pa_client_info>(m_clients, m_recentlyDeletedClients,
                                       info,
                                       &Context::clientAdded,
                                       &Context::clientUpdated);
