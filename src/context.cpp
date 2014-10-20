@@ -73,8 +73,7 @@ Context::Context(QObject *parent)
 
 Context::~Context()
 {
-    pa_context_unref(m_context);
-    pa_glib_mainloop_free(m_mainloop);
+    reset();
 }
 
 void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index)
@@ -245,11 +244,8 @@ void Context::contextStateCallback(pa_context *c)
 //        }
     } else if (!PA_CONTEXT_IS_GOOD(state)) {
         qDebug() << "context kaput";
-        // If we're not probing, it means we've been disconnected from our
-        // glib context
-        pa_context_unref(m_context);
-        m_context = nullptr;
-#warning fixme need to clear out all our data and possibly reconnect
+        reset();
+#warning do reconnect here I guess
     }
 }
 
@@ -364,7 +360,6 @@ void Context::connectToDaemon()
     }
     pa_context_set_state_callback(m_context, &context_state_callback, this);
 }
-
 template <typename PAFunction>
 void Context::setGenericVolume(quint32 index, quint32 newVolume,
                                pa_cvolume cVolume, PAFunction pa_set_volume)
@@ -383,4 +378,27 @@ void Context::setGenericVolume(quint32 index, quint32 newVolume,
         return;
     }
     pa_operation_unref(o);
+}
+
+#warning make this a member
+template <typename Map, typename Set>
+static void _wipeAll(Map &map, Set &set)
+{
+    qDeleteAll(map);
+    map.clear();
+    set.clear();
+}
+
+void Context::reset()
+{
+    pa_context_unref(m_context);
+    m_context = nullptr;
+
+    pa_glib_mainloop_free(m_mainloop);
+    m_mainloop = nullptr;
+
+#warning introduce a super structure to loop over so we cannot forget things by accident
+    _wipeAll(m_sinks, m_recentlyDeletedSinks);
+    _wipeAll(m_sinkInputs, m_recentlyDeletedSinkInputs);
+    _wipeAll(m_clients, m_recentlyDeletedClients);
 }

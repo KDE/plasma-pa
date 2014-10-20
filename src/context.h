@@ -62,6 +62,8 @@ public:
     void setGenericVolume(quint32 index, quint32 newVolume,
                           pa_cvolume cVolume, PAFunction pa_set_volume);
 
+    void reset();
+
     QMap<quint32, Sink *> m_sinks;
     QSet<quint32> m_recentlyDeletedSinks;
 //    QMap<quint32, Source *> m_sources;
