@@ -32,9 +32,11 @@ int ClientModel::rowCount(const QModelIndex &parent) const
 
 QVariant ClientModel::data(const QModelIndex &index, int role) const
 {
+    Client *client = m_context->m_clients.values().at(index.row());
+    Q_ASSERT(client);
     switch(static_cast<ItemRole>(role)){
     case NameRole:
-        return m_context->m_clients.values().at(index.row())->name();
+        return client->name();
     }
     return QVariant();
 }
@@ -64,33 +66,35 @@ int SinkInputModel::rowCount(const QModelIndex &parent) const
 
 QVariant SinkInputModel::data(const QModelIndex &index, int role) const
 {
+    SinkInput *sinkInput =  m_context->m_sinkInputs.values().at(index.row());
+    Q_ASSERT(sinkInput);
     switch ((ItemRole) role) {
     case IndexRole:
-        return m_context->m_sinkInputs.values().at(index.row())->index();
+        return sinkInput->index();
     case NameRole:
-        return m_context->m_sinkInputs.values().at(index.row())->name();
+        return sinkInput->name();
     case VolumeRole:
 #warning values bs
-        return m_context->m_sinkInputs.values().at(index.row())->volume().values[0];
+        return sinkInput->volume().values[0];
     case SinkIndexRole:
-        return m_context->m_sinkInputs.values().at(index.row())->sinkIndex();
+        return sinkInput->sinkIndex();
     case IsMutedRole:
-        return m_context->m_sinkInputs.values().at(index.row())->isMuted();
+        return sinkInput->isMuted();
     case HasVolumeRole:
-        return m_context->m_sinkInputs.values().at(index.row())->hasVolume();
+        return sinkInput->hasVolume();
     case IsVolumeWritableRole:
-        return m_context->m_sinkInputs.values().at(index.row())->isVolumeWritable();
+        return sinkInput->isVolumeWritable();
     case ClientIndexRole:
         Q_ASSERT(false);
     case ClientNameRole: {
-        quint32 clientIndex = m_context->m_sinkInputs.values().at(index.row())->client();
+        quint32 clientIndex = sinkInput->client();
         Client *client = m_context->m_clients.value(clientIndex, nullptr);
         if (client)
             return client->name();
         return QVariant();
     }
     case ClientPropertiesRole: {
-        quint32 clientIndex = m_context->m_sinkInputs.values().at(index.row())->client();
+        quint32 clientIndex = sinkInput->client();
         Client *client = m_context->m_clients.value(clientIndex, nullptr);
         if (client)
             return client->properties();
@@ -171,20 +175,22 @@ int SinkModel::rowCount(const QModelIndex &parent) const
 
 QVariant SinkModel::data(const QModelIndex &index, int role) const
 {
+    Sink *sink = m_context->m_sinks.values().at(index.row());
+    Q_ASSERT(sink);
     switch(static_cast<ItemRole>(role)) {
     case IndexRole:
-        return m_context->m_sinks.values().at(index.row())->index();
+        return sink->index();
     case NameRole:
-        return m_context->m_sinks.values().at(index.row())->name();
+        return sink->name();
     case DescriptionRole:
-        return m_context->m_sinks.values().at(index.row())->description();
+        return sink->description();
     case VolumeRole:
-        return m_context->m_sinks.values().at(index.row())->volume().values[0];
+        return sink->volume().values[0];
     case IsMutedRole:
-        return m_context->m_sinks.values().at(index.row())->isMuted();
+        return sink->isMuted();
     case PortsRole: {
 #warning fixme this should be a model or something or nothing, this mapping stuff here is bad
-        QList<SinkPort> ports = m_context->m_sinks.values().at(index.row())->ports();
+        QList<SinkPort> ports = sink->ports();
         QStringList l;
         for (SinkPort port : ports) {
             l.append(port.name());
@@ -192,7 +198,7 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
         return l;
     }
     case ActivePortRole:
-        return m_context->m_sinks.values().at(index.row())->activePortIndex();
+        return sink->activePortIndex();
     }
     return QVariant();
 }
