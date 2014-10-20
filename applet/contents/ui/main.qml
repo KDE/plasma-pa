@@ -50,14 +50,6 @@ Item {
         id: pulseContext
     }
 
-    SinkModel {
-        id: sinkModel
-    }
-
-    ReverseSinkInputModel {
-        id: sinkInputModel
-    }
-
     PlasmaExtras.ScrollArea {
         id: scrollView;
 
@@ -66,6 +58,7 @@ Item {
             left: parent.left;
             right: parent.right;
             top: parent.top;
+            rightMargin: 16
         }
 
         ColumnLayout {
@@ -79,28 +72,15 @@ Item {
                 Layout.fillWidth: true
                 Layout.minimumHeight: contentHeight
 
-                model: sinkModel
+                model: SinkModel {
+                    id: sinkModel
+                    Component.onCompleted: {
+                        setContext(pulseContext);
+                    }
+                }
                 boundsBehavior: Flickable.StopAtBounds;
-                header: Header { text: i18n("Devices") }
                 delegate: SinkItem {}
             }
-
-            ListView {
-                id: inputView
-
-                Layout.fillWidth: true
-                Layout.minimumHeight: contentHeight
-
-                model: sinkInputModel
-                boundsBehavior: Flickable.StopAtBounds;
-                header: Header { text: i18n("Applications") }
-                delegate: SinkInputItem {}
-            }
         }
-    }
-
-    Component.onCompleted: {
-        sinkModel.setContext(pulseContext)
-        sinkInputModel.setContext(pulseContext)
     }
 }

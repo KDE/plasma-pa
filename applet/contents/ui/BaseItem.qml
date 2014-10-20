@@ -6,13 +6,17 @@ import QtQuick.Layouts 1.0
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 PlasmaComponents.ListItem {
     id: item
 
+    property bool expanded: false
     property alias label: textLabel.text
-    property alias contentLabel: contentLabel.unformattedText
     property alias icon: clientIcon.icon
+    property Component subComponent: undefined
+
+    enabled: true
 
     function setVolume(volume) {
         throw "Pure Virtual BaseItem::setVolumve(volume) called.";
@@ -33,58 +37,60 @@ PlasmaComponents.ListItem {
         right: parent.right;
     }
 
-    RowLayout {
+    ColumnLayout {
         property int maximumWidth: parent.width
         width: maximumWidth
         Layout.maximumWidth: maximumWidth
-        spacing: 8
 
-        QIconItem {
-            id: clientIcon
-            Layout.alignment: Qt.AlignHCenter
-            width: height
-            height: column.height * 0.75
-        }
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: 8
 
-        ColumnLayout {
-            id: column
+            QIconItem {
+                id: clientIcon
+                Layout.alignment: Qt.AlignHCenter
+                width: height
+                height: column.height * 0.75
+            }
 
-            RowLayout {
-                PlasmaComponents.Label {
-                    id: textLabel
-                    Layout.fillWidth: true
-                    anchors.verticalCenter: iconContainer.verticalCenter
-                    elide: Text.ElideRight
-                }
+            ColumnLayout {
+                id: column
 
-                PlasmaComponents.Label {
-                    id: contentLabel
-                    property string unformattedText: ""
-                    Layout.fillWidth: false
-                    anchors.leftMargin: theme.mSize(theme.defaultFont).width*1.6
-                    text: unformattedText.toUpperCase()
-                    anchors.verticalCenter: iconContainer.verticalCenter
-                }
-
-                // The volume icon is packed into an item because we need to have it centered
-                // with regards to the percent text, so we can potentially have a wider item
-                // with a centered less wide icon.
                 Item {
-                    id: iconContainer
+                    Layout.fillWidth: true
+                    height: textLabel.height
 
-                    // Layout might want to make the text's height bigger than the content
-                    // because of us, so we have to go after contentHeight to make sure we get the
-                    // correct reference value, also we'd make an indirect binding loop otherwise.
-                    width: Math.max(referenceText.width, textLabel.contentHeight)
-                    height: textLabel.contentHeight
+                    PlasmaExtras.Heading {
+                        id :textLabel
+                        anchors.top: parent.top
+                        anchors.left: parent.left
+                        anchors.right: expanderIcon.visible ? expanderIcon.left : parent.right
+                        //                    anchors.verticalCenter: iconContainer.verticalCenter
+                        level: 5
+                        opacity: 0.6
+                        wrapMode: Text.NoWrap
+                        elide: Text.ElideRight
+                    }
 
                     PlasmaCore.SvgItem {
-                        id: muteIcon;
-
-                        anchors.centerIn: parent
-                        height: parent.height
+                        id: expanderIcon
+                        visible: subComponent
+                        anchors.top: parent.top;
+                        anchors.right: parent.right;
+                        anchors.bottom: parent.bottom;
                         width: height
+                        svg: PlasmaCore.Svg {
+                            imagePath: "widgets/arrows"
+                        }
+                        elementId: expanded ? "up-arrow" : "down-arrow"
+                    }
+                }
 
+                RowLayout {
+                    PlasmaCore.SvgItem {
+                        Layout.maximumHeight: slider.height * 0.75
+                        Layout.maximumWidth: slider.height* 0.75
+                        svg: PlasmaCore.Svg { imagePath: "icons/audio" }
                         elementId: {
                             var split_base = 65536/3.0;
                             var icon = null;
@@ -99,71 +105,69 @@ PlasmaComponents.ListItem {
                             }
                             return icon;
                         }
-                        svg: PlasmaCore.FrameSvg { imagePath: "icons/audio" }
+                    }
 
-                        MouseArea {
-                            anchors.fill: parent
-                            hoverEnabled: true
+                    PlasmaComponents.Slider {
+                        id: slider
 
-                            onClicked: {
-                                // TODO: mute
+                        // Helper property to allow async slider updates.
+                        // While we are sliding we must not react to value updates
+                        // as otherwise we can easily end up in a loop where value
+                        // changes trigger volume changes trigger value changes.
+                        property int volume: Volume
+
+                        Layout.fillWidth: true
+                        minimumValue: 0
+                        // FIXME: I do wonder if exposing max through the model would be useful at all
+                        maximumValue: 65536
+                        stepSize: maximumValue / 100
+                        visible: HasVolume
+                        // FIXME: when IsVolumeWritable is undefined (sink) this evals to true...
+                        enabled: IsVolumeWritable && !IsMuted
+
+                        onVolumeChanged: {
+                            if (!pressed) {
+                                value = Volume;
+                            }
+                        }
+
+                        onValueChanged: {
+                            if (pressed) {
+                                setVolume(value);
+                            }
+                        }
+
+                        onPressedChanged: {
+                            if (!pressed) {
+                                // Make sure to sync the volume once the button was
+                                // released.
+                                // Otherwise it might be that the slider is at v10
+                                // whereas PA rejected the volume change and is
+                                // still at v15 (e.g.).
+                                value = Volume;
                             }
                         }
                     }
-                }
-
-            }
-
-            RowLayout {
-                PlasmaComponents.Slider {
-                    id: slider
-
-                    // Helper property to allow async slider updates.
-                    // While we are sliding we must not react to value updates
-                    // as otherwise we can easily end up in a loop where value
-                    // changes trigger volume changes trigger value changes.
-                    property int volume: Volume
-
-                    Layout.fillWidth: true
-                    minimumValue: 0
-                    // FIXME: I do wonder if exposing max through the model would be useful at all
-                    maximumValue: 65536
-                    stepSize: maximumValue / 100
-                    visible: HasVolume
-                    // FIXME: when IsVolumeWritable is undefined (sink) this evals to true...
-                    enabled: IsVolumeWritable && !IsMuted
-
-                    onVolumeChanged: {
-                        if (!pressed) {
-                            value = Volume;
-                        }
+                    PlasmaComponents.Label {
+                        id: percentText
+                        Layout.alignment: Qt.AlignHCenter
+                        Layout.minimumWidth: referenceText.width
+                        horizontalAlignment: Qt.AlignRight
+                        text: Math.floor(slider.value / slider.maximumValue * 100.0) + "%"
                     }
-
-                    onValueChanged: {
-                        if (pressed) {
-                            setVolume(value);
-                        }
-                    }
-
-                    onPressedChanged: {
-                        if (!pressed) {
-                            // Make sure to sync the volume once the button was
-                            // released.
-                            // Otherwise it might be that the slider is at v10
-                            // whereas PA rejected the volume change and is
-                            // still at v15 (e.g.).
-                            value = Volume;
-                        }
-                    }
-                }
-                PlasmaComponents.Label {
-                    id: percentText
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.minimumWidth: referenceText.width
-                    horizontalAlignment: Qt.AlignRight
-                    text: Math.floor(slider.value / slider.maximumValue * 100.0) + "%"
                 }
             }
+        }
+
+        Loader {
+            id: subLoader
+
+            anchors.right: parent.right
+            anchors.left: parent.left
+            // FIXME: need something more dynamic
+            anchors.leftMargin: 22
+
+            Layout.minimumHeight: childrenRect.height
         }
     }
 
@@ -171,5 +175,33 @@ PlasmaComponents.ListItem {
         id: referenceText
         visible: false
         text: "100%"
+    }
+
+    states: [
+        State {
+            name: "collapsed";
+            when: !expanded;
+            StateChangeScript {
+                script: {
+                    if (subLoader.status == Loader.Ready) {
+                        subLoader.sourceComponent = undefined;
+                    }
+                }
+            }
+        },
+        State {
+            name: "expanded";
+            when: expanded;
+            StateChangeScript {
+                script: subLoader.sourceComponent = subComponent;
+            }
+        }
+    ]
+
+    onClicked: {
+        if (!subComponent) {
+            return;
+        }
+        expanded = !expanded;
     }
 }

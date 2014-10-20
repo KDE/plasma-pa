@@ -252,6 +252,7 @@ ReverseSinkInputModel::ReverseSinkInputModel(Context *context, QObject *parent)
 {
     setSourceModel(new SinkInputModel(context, this));
     setDynamicSortFilter(true);
+    setFilterKeyColumn(0);
     sort(0, Qt::DescendingOrder);
 }
 
