@@ -16,7 +16,7 @@ PlasmaComponents.ListItem {
     property alias icon: clientIcon.icon
     property Component subComponent: undefined
 
-    enabled: true
+    enabled: subComponent
 
     function setVolume(volume) {
         throw "Pure Virtual BaseItem::setVolumve(volume) called.";
