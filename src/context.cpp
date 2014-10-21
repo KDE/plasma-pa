@@ -3,6 +3,12 @@
 #include <QAbstractEventDispatcher>
 #include <QDebug>
 
+#include "client.h"
+#include "sink.h"
+#include "sinkinput.h"
+#include "source.h"
+#include "sourceoutput.h"
+
 #warning todo this needs to be a singleton as multiple contexts dont make sense and it makes it eaier to use from qml
 
 static bool isGoodState(int eol)
@@ -49,6 +55,15 @@ static void source_cb(pa_context *context, const pa_source_info *info, int eol, 
     ((Context *)data)->sourceCallback(info);
 }
 
+static void source_output_cb(pa_context *context, const pa_source_output_info *info, int eol, void *data)
+{
+    if (!isGoodState(eol))
+        return;
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    ((Context *)data)->sourceOutputCallback(info);
+}
+
 static void client_cb(pa_context *context, const pa_client_info *info, int eol, void *data)
 {
     if (!isGoodState(eol))
@@ -87,103 +102,106 @@ Context::~Context()
 
 void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index)
 {
-#warning fixme
-//    Q_ASSERT(c == s_context);
+    Q_ASSERT(context == m_context);
 
     switch (type & PA_SUBSCRIPTION_EVENT_FACILITY_MASK) {
-#warning fixme
-        case PA_SUBSCRIPTION_EVENT_SINK:
-            if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-                qDebug() << "DEL Sink" << index;
-                if (!m_sinks.contains(index)) {
-                    m_recentlyDeletedSinks.insert(index);
-                } else {
-                    const int modelIndex = m_sinks.keys().indexOf(index);
-                    m_sinks.take(index)->deleteLater();
-                    emit sinkRemoved(modelIndex);
-                }
+    case PA_SUBSCRIPTION_EVENT_SINK:
+        if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+            qDebug() << "DEL Sink" << index;
+            if (!m_sinks.contains(index)) {
+                m_recentlyDeletedSinks.insert(index);
             } else {
-                pa_operation *o;
-                if (!(o = pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
-                    qWarning() << "pa_context_get_sink_info_by_index() failed";
-                    return;
-                }
-                pa_operation_unref(o);
+                const int modelIndex = m_sinks.keys().indexOf(index);
+                m_sinks.take(index)->deleteLater();
+                emit sinkRemoved(modelIndex);
             }
-            break;
+        } else {
+            pa_operation *o;
+            if (!(o = pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
+                qWarning() << "pa_context_get_sink_info_by_index() failed";
+                return;
+            }
+            pa_operation_unref(o);
+        }
+        break;
 
-        case PA_SUBSCRIPTION_EVENT_SOURCE:
-            if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-                if (!m_sources.contains(index)) {
-                    m_recentlyDeletedSources.insert(index);
-                } else {
-                    const int modelIndex = m_sources.keys().indexOf(index);
-                    m_sources.take(index)->deleteLater();
-                    emit sourceRemoved(modelIndex);
-                }
+    case PA_SUBSCRIPTION_EVENT_SOURCE:
+        if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+            if (!m_sources.contains(index)) {
+                m_recentlyDeletedSources.insert(index);
             } else {
-                pa_operation *o;
-                if (!(o = pa_context_get_source_info_by_index(context, index, source_cb, this))) {
-                    qWarning() << "pa_context_get_source_info_by_index() failed";
-                    return;
-                }
-                pa_operation_unref(o);
+                const int modelIndex = m_sources.keys().indexOf(index);
+                m_sources.take(index)->deleteLater();
+                emit sourceRemoved(modelIndex);
             }
-            break;
+        } else {
+            pa_operation *o;
+            if (!(o = pa_context_get_source_info_by_index(context, index, source_cb, this))) {
+                qWarning() << "pa_context_get_source_info_by_index() failed";
+                return;
+            }
+            pa_operation_unref(o);
+        }
+        break;
 
-        case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
-            if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-                qDebug() << Q_FUNC_INFO << "::: dropping :::" << index;
-                if (!m_sinkInputs.contains(index)) {
-                    m_recentlyDeletedSinkInputs.insert(index);
-                } else {
-                    const int modelIndex = m_sinkInputs.keys().indexOf(index);
-                    m_sinkInputs.take(index)->deleteLater();
-                    emit sinkInputRemoved(modelIndex);
-                }
+    case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
+        if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+            qDebug() << Q_FUNC_INFO << "::: dropping :::" << index;
+            if (!m_sinkInputs.contains(index)) {
+                m_recentlyDeletedSinkInputs.insert(index);
             } else {
-                pa_operation *o =  pa_context_get_sink_input_info(context, index, sink_input_callback, this);
-                if (!o) {
-                    qWarning() << "pa_context_get_sink_input_info() failed";
-                    return;
-                }
-                pa_operation_unref(o);
+                const int modelIndex = m_sinkInputs.keys().indexOf(index);
+                m_sinkInputs.take(index)->deleteLater();
+                emit sinkInputRemoved(modelIndex);
             }
-            break;
+        } else {
+            pa_operation *o =  pa_context_get_sink_input_info(context, index, sink_input_callback, this);
+            if (!o) {
+                qWarning() << "pa_context_get_sink_input_info() failed";
+                return;
+            }
+            pa_operation_unref(o);
+        }
+        break;
 
-//        case PA_SUBSCRIPTION_EVENT_SOURCE_OUTPUT:
-//            if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-//                if (s_mixers.contains(KMIXPA_APP_CAPTURE))
-//                    s_mixers[KMIXPA_APP_CAPTURE]->removeWidget(index);
-//            } else {
-//                pa_operation *o;
-//                if (!(o = pa_context_get_source_output_info(c, index, source_output_cb, NULL))) {
-//                    qWarning() << "pa_context_get_sink_input_info() failed";
-//                    return;
-//                }
-//                pa_operation_unref(o);
-//            }
-//            break;
-
-        case PA_SUBSCRIPTION_EVENT_CLIENT:
-            if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-                qDebug() << "dropping client" << index;
-                if (!m_clients.contains(index)) {
-                    m_recentlyDeletedClients.insert(index);
-                } else {
-                    const int modelIndex = m_clients.keys().indexOf(index);
-                    m_clients.take(index)->deleteLater();
-                    emit clientRemoved(modelIndex);
-                }
+    case PA_SUBSCRIPTION_EVENT_SOURCE_OUTPUT:
+        if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+            if (!m_sourceOutputs.contains(index)) {
+                m_recentlyDeletedSourceOutputs.insert(index);
             } else {
-                pa_operation *o;
-                if (!(o = pa_context_get_client_info(context, index, client_cb, this))) {
-                    qWarning() << "pa_context_get_client_info() failed";
-                    return;
-                }
-                pa_operation_unref(o);
+                const int modelIndex = m_sourceOutputs.keys().indexOf(index);
+                m_sourceOutputs.take(index)->deleteLater();
+                emit sinkInputRemoved(modelIndex);
             }
-            break;
+        } else {
+            pa_operation *o;
+            if (!(o = pa_context_get_source_output_info(context, index, source_output_cb, this))) {
+                qWarning() << "pa_context_get_sink_input_info() failed";
+                return;
+            }
+            pa_operation_unref(o);
+        }
+        break;
+
+    case PA_SUBSCRIPTION_EVENT_CLIENT:
+        if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+            qDebug() << "dropping client" << index;
+            if (!m_clients.contains(index)) {
+                m_recentlyDeletedClients.insert(index);
+            } else {
+                const int modelIndex = m_clients.keys().indexOf(index);
+                m_clients.take(index)->deleteLater();
+                emit clientRemoved(modelIndex);
+            }
+        } else {
+            pa_operation *o;
+            if (!(o = pa_context_get_client_info(context, index, client_cb, this))) {
+                qWarning() << "pa_context_get_client_info() failed";
+                return;
+            }
+            pa_operation_unref(o);
+        }
+        break;
 
     }
 }
@@ -239,23 +257,24 @@ void Context::contextStateCallback(pa_context *c)
         }
         pa_operation_unref(o);
 
-//        if (!(o = pa_context_get_source_output_info_list(c, source_output_cb, NULL))) {
-//            qWarning() << "pa_context_get_source_output_info_list() failed";
-//            return;
-//        }
-//        pa_operation_unref(o);
+        if (!(o = pa_context_get_source_output_info_list(c, source_output_cb, this))) {
+            qWarning() << "pa_context_get_source_output_info_list() failed";
+            return;
+        }
+        pa_operation_unref(o);
 
+#warning todo
         /* These calls are not always supported */
-//        if ((o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, NULL))) {
-//            pa_operation_unref(o);
+        //        if ((o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, NULL))) {
+        //            pa_operation_unref(o);
 
-//            pa_ext_stream_restore_set_subscribe_cb(c, ext_stream_restore_subscribe_cb, NULL);
+        //            pa_ext_stream_restore_set_subscribe_cb(c, ext_stream_restore_subscribe_cb, NULL);
 
-//            if ((o = pa_ext_stream_restore_subscribe(c, 1, NULL, NULL)))
-//                pa_operation_unref(o);
-//        } else {
-//            qWarning() << "Failed to initialize stream_restore extension: " << pa_strerror(pa_context_errno(m_context));
-//        }
+        //            if ((o = pa_ext_stream_restore_subscribe(c, 1, NULL, NULL)))
+        //                pa_operation_unref(o);
+        //        } else {
+        //            qWarning() << "Failed to initialize stream_restore extension: " << pa_strerror(pa_context_errno(m_context));
+        //        }
     } else if (!PA_CONTEXT_IS_GOOD(state)) {
         qDebug() << "context kaput";
         reset();
@@ -319,6 +338,14 @@ void Context::sourceCallback(const pa_source_info *info)
                                       info,
                                       &Context::sourceAdded,
                                       &Context::sourceUpdated);
+}
+
+void Context::sourceOutputCallback(const pa_source_output_info *info)
+{
+    updateMap<SourceOutput, pa_source_output_info>(m_sourceOutputs, m_recentlyDeletedSourceOutputs,
+                                                   info,
+                                                   &Context::sourceOutputAdded,
+                                                   &Context::sourceOutputUpdated);
 }
 
 void Context::clientCallback(const pa_client_info *info)
@@ -387,7 +414,7 @@ void Context::setGenericVolume(quint32 index, quint32 newVolume,
                                pa_cvolume cVolume, PAFunction pa_set_volume)
 {
     qDebug() << Q_FUNC_INFO << index << newVolume;
-    #warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
+#warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
     if (newVolume > 65536)
         newVolume = 0;
     pa_cvolume newCVolume = cVolume;
@@ -421,7 +448,8 @@ void Context::reset()
 
 #warning introduce a super structure to loop over so we cannot forget things by accident
     _wipeAll(m_sinks, m_recentlyDeletedSinks);
-    _wipeAll(m_sources, m_recentlyDeletedSources);
     _wipeAll(m_sinkInputs, m_recentlyDeletedSinkInputs);
+    _wipeAll(m_sources, m_recentlyDeletedSources);
+    _wipeAll(m_sourceOutputs, m_recentlyDeletedSources);
     _wipeAll(m_clients, m_recentlyDeletedClients);
 }

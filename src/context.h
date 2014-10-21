@@ -10,10 +10,11 @@
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
 
-#include "client.h"
-#include "sink.h"
-#include "sinkinput.h"
-#include "source.h"
+class Client;
+class Sink;
+class SinkInput;
+class Source;
+class SourceOutput;
 
 class Context : public QObject
 {
@@ -38,6 +39,7 @@ public:
     void sinkInputCallback(const pa_sink_input_info *info);
 
     void sourceCallback(const pa_source_info *info);
+    void sourceOutputCallback(const pa_source_output_info *info);
 
     void clientCallback(const pa_client_info *info);
 
@@ -59,6 +61,10 @@ signals:
     void sourceUpdated(quint32 index);
     void sourceRemoved(quint32 index);
 
+    void sourceOutputAdded(quint32 index);
+    void sourceOutputUpdated(quint32 index);
+    void sourceOutputRemoved(quint32 index);
+
     void clientAdded(quint32 index);
     void clientUpdated(quint32 index);
     void clientRemoved(quint32 index);
@@ -72,13 +78,19 @@ public:
 
     void reset();
 
+    // Sinking
     QMap<quint32, Sink *> m_sinks;
     QSet<quint32> m_recentlyDeletedSinks;
-    QMap<quint32, Source *> m_sources;
-    QSet<quint32> m_recentlyDeletedSources;
     QMap<quint32, SinkInput *> m_sinkInputs;
     QSet<quint32> m_recentlyDeletedSinkInputs;
-//    QMap<quint32, SourceOutput *> m_sourceOutputs;
+
+    // Sourcing
+    QMap<quint32, Source *> m_sources;
+    QSet<quint32> m_recentlyDeletedSources;
+    QMap<quint32, SourceOutput *> m_sourceOutputs;
+    QSet<quint32> m_recentlyDeletedSourceOutputs;
+
+    // Other Nonesense
     QMap<quint32, Client *> m_clients;
     QSet<quint32> m_recentlyDeletedClients;
 //    QMap<quint32, Card *> m_cards;

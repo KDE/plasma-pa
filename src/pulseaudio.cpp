@@ -3,6 +3,12 @@
 #include <QDebug>
 #include <QMetaEnum>
 
+#include "client.h"
+#include "sink.h"
+#include "sinkinput.h"
+#include "source.h"
+#include "sourceoutput.h"
+
 ClientModel::ClientModel(Context *context, QObject *parent)
     : AbstractModel(parent)
 {
@@ -310,4 +316,47 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
         return source->isMuted();
     }
     return QVariant();
+}
+
+SourceOutputModel::SourceOutputModel(Context *context, QObject *parent)
+    : AbstractModel(parent)
+{
+    if (context) {
+        setContext(context);
+    }
+}
+
+void SourceOutputModel::setContext(Context *context)
+{
+    AbstractModel::setContext(context);
+    connect(context, &Context::sourceOutputAdded, this, &SourceOutputModel::onDataAdded);
+    connect(context, &Context::sourceOutputUpdated, this, &SourceOutputModel::onDataUpdated);
+    connect(context, &Context::sourceOutputRemoved, this, &SourceOutputModel::onDataRemoved);
+}
+
+int SourceOutputModel::rowCount(const QModelIndex &parent) const
+{
+    if (!m_context)
+        return 0;
+    return m_context->m_sourceOutputs.count();
+}
+
+QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
+{
+    SourceOutput *data =  m_context->m_sourceOutputs.values().at(index.row());
+    Q_ASSERT(data);
+    switch ((ItemRole) role) {
+    case IndexRole:
+        return data->index();
+    case NameRole:
+        return data->name();
+    case SourceIndexRole:
+        return data->sourceIndex();
+    case VolumeRole:
+        return data->volume().values[0];
+    case IsMutedRole:
+        return data->isMuted();
+    }
+    return QVariant();
+    Q_ASSERT(false);
 }
