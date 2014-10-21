@@ -50,6 +50,9 @@ static void source_cb(pa_context *context, const pa_source_info *info, int eol, 
 {
     if (!isGoodState(eol))
         return;
+#warning force excluding monitors
+    if (info->monitor_of_sink != PA_INVALID_INDEX)
+        return;
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->sourceCallback(info);
@@ -59,6 +62,14 @@ static void source_output_cb(pa_context *context, const pa_source_output_info *i
 {
     if (!isGoodState(eol))
         return;
+#warning force excluding random apps
+    qDebug() << "~~~~~~~~~~~~~~~~~~~~" << pa_proplist_gets(info->proplist, PA_PROP_APPLICATION_ID);
+    if (const char *app = pa_proplist_gets(info->proplist, PA_PROP_APPLICATION_ID)) {
+        if (strcmp(app, "org.PulseAudio.pavucontrol") == 0
+                || strcmp(app, "org.gnome.VolumeControl") == 0
+                || strcmp(app, "org.kde.kmixd") == 0)
+            return;
+    }
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->sourceOutputCallback(info);
