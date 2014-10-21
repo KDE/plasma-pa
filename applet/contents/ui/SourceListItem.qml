@@ -15,7 +15,7 @@ BaseDeviceItem {
         Component.onCompleted: sort();
     }
 
-    // FIXME: implement
-//    function setVolume(volume) {
-//    }
+    function setVolume(volume) {
+        pulseContext.setSourceVolume(Index, volume);
+    }
 }
