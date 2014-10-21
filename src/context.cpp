@@ -392,6 +392,22 @@ void Context::setSinkInputVolume(quint32 index, quint32 volume)
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_input_volume);
 }
 
+void Context::setSourceVolume(quint32 index, quint32 volume)
+{
+    Source *obj = m_sources.value(index, nullptr);
+    if (!obj)
+        return;
+    setGenericVolume(index, volume, obj->volume(), &pa_context_set_source_volume_by_index);
+}
+
+void Context::setSourceOutputVolume(quint32 index, quint32 volume)
+{
+    SourceOutput *obj = m_sourceOutputs.value(index, nullptr);
+    if (!obj)
+        return;
+    setGenericVolume(index, volume, obj->volume(), &pa_context_set_source_output_volume);
+}
+
 void Context::connectToDaemon()
 {
     Q_ASSERT(m_context == nullptr);

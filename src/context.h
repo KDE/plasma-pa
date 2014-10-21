@@ -48,6 +48,10 @@ public:
 
     Q_INVOKABLE void setSinkInputVolume(quint32 index, quint32 volume);
 
+    Q_INVOKABLE void setSourceVolume(quint32 index, quint32 volume);
+
+    Q_INVOKABLE void setSourceOutputVolume(quint32 index, quint32 volume);
+
 signals:
     void sinkAdded(quint32 index);
     void sinkUpdated(quint32 index);
