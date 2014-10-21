@@ -9,7 +9,7 @@ BaseItem {
     subComponent: ListView {
         id: inputView
 
-        width: parent.width
+        width: parent ? parent.width : 0
         //        height: contentHeight
 
         model:sinkInputModel
