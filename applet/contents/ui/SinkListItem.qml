@@ -3,7 +3,7 @@ import QtQuick 2.0
 import org.kde.plasma.volume 0.1
 
 DeviceListItemBase {
-    icon: 'audio-card'
+//    icon: 'audio-card'
     subModel: ReverseFilterModel {
         sortRole: SinkInputModel.IndexRole
         filterRole: SinkInputModel.SinkIndexRole;

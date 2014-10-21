@@ -12,11 +12,11 @@ PlasmaComponents.ListItem {
     id: item
 
     property bool expanded: false
+    property string icon
     property Component subComponent
     property int subCount: 0
 
     property alias label: textLabel.text
-    property alias icon: clientIcon.icon
 
     enabled: subComponent
 
@@ -39,6 +39,11 @@ PlasmaComponents.ListItem {
         right: parent.right;
     }
 
+    onIconChanged: {
+        clientIcon.visible = icon ? true : false;
+        clientIcon.icon = icon
+    }
+
     ColumnLayout {
         property int maximumWidth: parent.width
         width: maximumWidth
@@ -50,6 +55,7 @@ PlasmaComponents.ListItem {
 
             QIconItem {
                 id: clientIcon
+                visible: false
                 Layout.alignment: Qt.AlignHCenter
                 width: height
                 height: column.height * 0.75
