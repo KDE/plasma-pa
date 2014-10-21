@@ -11,6 +11,45 @@
 
 #warning todo this needs to be a singleton as multiple contexts dont make sense and it makes it eaier to use from qml
 
+class PAOperation
+{
+public:
+    PAOperation(pa_operation *operation = nullptr)
+        : m_operation(operation)
+    {}
+
+    ~PAOperation()
+    {
+        if (m_operation) {
+            pa_operation_unref(m_operation);
+        }
+    }
+
+    PAOperation &operator =(pa_operation *operation)
+    {
+        m_operation = operation;
+        return *this;
+    }
+
+    bool operator !()
+    {
+        return !m_operation;
+    }
+
+    operator bool()
+    {
+        return m_operation;
+    }
+
+    pa_operation *&operator *()
+    {
+        return m_operation;
+    }
+
+private:
+    pa_operation *m_operation;
+};
+
 static bool isGoodState(int eol)
 {
     if (eol < 0) {
@@ -126,12 +165,10 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 emit sinkRemoved(modelIndex);
             }
         } else {
-            pa_operation *o;
-            if (!(o = pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
+            if (!PAOperation(pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
                 qWarning() << "pa_context_get_sink_info_by_index() failed";
                 return;
             }
-            pa_operation_unref(o);
         }
         break;
 
@@ -145,12 +182,10 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 emit sourceRemoved(modelIndex);
             }
         } else {
-            pa_operation *o;
-            if (!(o = pa_context_get_source_info_by_index(context, index, source_cb, this))) {
+            if (!PAOperation(pa_context_get_source_info_by_index(context, index, source_cb, this))) {
                 qWarning() << "pa_context_get_source_info_by_index() failed";
                 return;
             }
-            pa_operation_unref(o);
         }
         break;
 
@@ -165,12 +200,10 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 emit sinkInputRemoved(modelIndex);
             }
         } else {
-            pa_operation *o =  pa_context_get_sink_input_info(context, index, sink_input_callback, this);
-            if (!o) {
+            if (!PAOperation(pa_context_get_sink_input_info(context, index, sink_input_callback, this))) {
                 qWarning() << "pa_context_get_sink_input_info() failed";
                 return;
             }
-            pa_operation_unref(o);
         }
         break;
 
@@ -184,12 +217,10 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 emit sinkInputRemoved(modelIndex);
             }
         } else {
-            pa_operation *o;
-            if (!(o = pa_context_get_source_output_info(context, index, source_output_cb, this))) {
+            if (!PAOperation(pa_context_get_source_output_info(context, index, source_output_cb, this))) {
                 qWarning() << "pa_context_get_sink_input_info() failed";
                 return;
             }
-            pa_operation_unref(o);
         }
         break;
 
@@ -204,12 +235,10 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
                 emit clientRemoved(modelIndex);
             }
         } else {
-            pa_operation *o;
-            if (!(o = pa_context_get_client_info(context, index, client_cb, this))) {
+            if (!PAOperation(pa_context_get_client_info(context, index, client_cb, this))) {
                 qWarning() << "pa_context_get_client_info() failed";
                 return;
             }
-            pa_operation_unref(o);
         }
         break;
 
@@ -222,15 +251,12 @@ void Context::contextStateCallback(pa_context *c)
     pa_context_state_t state = pa_context_get_state(c);
     if (state == PA_CONTEXT_READY) {
         qDebug() << "ready";
-        // Attempt to load things up
-        pa_operation *o = nullptr;
 
         // 1. Register for the stream changes (except during probe)
         if (m_context == c) {
-#warning fixme
             pa_context_set_subscribe_callback(c, subscribe_cb, this);
 
-            if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t)
+            if (!PAOperation(pa_context_subscribe(c, (pa_subscription_mask_t)
                                            (PA_SUBSCRIPTION_MASK_SINK|
                                             PA_SUBSCRIPTION_MASK_SOURCE|
                                             PA_SUBSCRIPTION_MASK_CLIENT|
@@ -239,39 +265,32 @@ void Context::contextStateCallback(pa_context *c)
                 qWarning() << "pa_context_subscribe() failed";
                 return;
             }
-            pa_operation_unref(o);
         }
 
-#warning fixme
-        if (!(o = pa_context_get_sink_info_list(c, sink_cb, this))) {
+        if (!PAOperation(pa_context_get_sink_info_list(c, sink_cb, this))) {
             qWarning() << "pa_context_get_sink_info_list() failed";
             return;
         }
-        pa_operation_unref(o);
 
-        if (!(o = pa_context_get_source_info_list(c, source_cb, this))) {
+        if (!PAOperation(pa_context_get_source_info_list(c, source_cb, this))) {
             qWarning() << "pa_context_get_source_info_list() failed";
             return;
         }
-        pa_operation_unref(o);
 
-        if (!(o = pa_context_get_client_info_list(c, client_cb, this))) {
+        if (!PAOperation(pa_context_get_client_info_list(c, client_cb, this))) {
             qWarning() << "pa_context_client_info_list() failed";
             return;
         }
-        pa_operation_unref(o);
 
-        if (!(o = pa_context_get_sink_input_info_list(c, sink_input_callback, this))) {
+        if (!PAOperation(pa_context_get_sink_input_info_list(c, sink_input_callback, this))) {
             qWarning() << "pa_context_get_sink_input_info_list() failed";
             return;
         }
-        pa_operation_unref(o);
 
-        if (!(o = pa_context_get_source_output_info_list(c, source_output_cb, this))) {
+        if (!PAOperation(pa_context_get_source_output_info_list(c, source_output_cb, this))) {
             qWarning() << "pa_context_get_source_output_info_list() failed";
             return;
         }
-        pa_operation_unref(o);
 
 #warning todo
         /* These calls are not always supported */
@@ -376,8 +395,7 @@ void Context::setSinkVolume(quint32 index, quint32 volume)
 
 void Context::setSinkPort(quint32 portIndex)
 {
-    pa_operation *o;
-    if (!(o = pa_context_set_sink_port_by_index(m_context, portIndex, nullptr, nullptr, nullptr))) {
+    if (!PAOperation(pa_context_set_sink_port_by_index(m_context, portIndex, nullptr, nullptr, nullptr))) {
         qWarning() << "pa_context_set_sink_port_by_index failed";
         return;
     }
@@ -447,12 +465,10 @@ void Context::setGenericVolume(quint32 index, quint32 newVolume,
     for (int i = 0; i < newCVolume.channels; ++i) {
         newCVolume.values[i] = newVolume;
     }
-    pa_operation *o;
-    if (!(o = pa_set_volume(m_context, index, &newCVolume, NULL, NULL))) {
+    if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, NULL, NULL))) {
         qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
         return;
     }
-    pa_operation_unref(o);
 }
 
 #warning make this a member
