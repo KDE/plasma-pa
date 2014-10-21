@@ -71,6 +71,7 @@ Item {
 
                 Layout.fillWidth: true
                 Layout.minimumHeight: contentHeight
+                Layout.maximumHeight: contentHeight
 
                 model: SinkModel {
                     id: sinkModel
@@ -87,6 +88,7 @@ Item {
 
                 Layout.fillWidth: true
                 Layout.minimumHeight: contentHeight
+                Layout.maximumHeight: contentHeight
 
                 model: SourceModel {
                     id: sourceModel
