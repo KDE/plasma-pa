@@ -90,6 +90,8 @@ public:
         SourceIndexRole,
         VolumeRole,
         IsMutedRole,
+        HasVolumeRole,
+        IsVolumeWritableRole,
         ClientIndexRole,
         ClientNameRole,
         ClientPropertiesRole

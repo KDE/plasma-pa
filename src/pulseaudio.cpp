@@ -341,6 +341,10 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
         return data->volume().values[0];
     case IsMutedRole:
         return data->isMuted();
+    case HasVolumeRole:
+        return data->hasVolume();
+    case IsVolumeWritableRole:
+        return data->isVolumeWritable();
 #warning code copy between SOM and SIM
     case ClientIndexRole:
         Q_ASSERT(false);

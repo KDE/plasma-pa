@@ -5,6 +5,8 @@ SourceOutput::SourceOutput()
     , m_sourceIndex(0)
     , m_volume()
     , m_isMuted(false)
+    , m_hasVolume(false)
+    , m_isVolumeWritable(false)
 {
 }
 

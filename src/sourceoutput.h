@@ -16,6 +16,8 @@ public:
     quint32 sourceIndex() const { return m_sourceIndex; }
     pa_cvolume volume() const { return m_volume; }
     bool isMuted() const { return m_isMuted; }
+    bool hasVolume() const { return m_hasVolume; }
+    bool isVolumeWritable() const { return m_isVolumeWritable; }
 
     quint32 client() const { return m_client; }
 
@@ -24,6 +26,8 @@ private:
    quint32 m_sourceIndex;
    pa_cvolume m_volume;
    bool m_isMuted;
+   bool m_hasVolume;
+   bool m_isVolumeWritable;
    quint32 m_client;
 };
 
