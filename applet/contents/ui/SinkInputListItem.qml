@@ -1,6 +1,6 @@
 import QtQuick 2.0
 
-BaseItem {
+ListItemBase {
     label: ClientName + ": " + Name
     icon: {
         if (ClientProperties['application.icon_name']) {

@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 import org.kde.plasma.volume 0.1
 
-BaseDeviceItem {
+DeviceListItemBase {
     icon: 'audio-input-microphone'
     subModel: ReverseFilterModel {
         sortRole: SourceOutputModel.IndexRole

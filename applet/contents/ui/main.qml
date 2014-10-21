@@ -79,7 +79,7 @@ Item {
                     }
                 }
                 boundsBehavior: Flickable.StopAtBounds;
-                delegate: SinkItem {}
+                delegate: SinkListItem {}
             }
 
             ListView {

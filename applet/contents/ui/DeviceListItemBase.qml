@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 import org.kde.plasma.volume 0.1
 
-BaseItem {
+ListItemBase {
     property QtObject subModel
 
     label: Description
@@ -15,7 +15,7 @@ BaseItem {
 
         model: subModel
         boundsBehavior: Flickable.StopAtBounds;
-        delegate: SinkInputItem {}
+        delegate: SinkInputListItem {}
     }
 
     ListView {
