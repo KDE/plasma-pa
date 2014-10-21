@@ -249,32 +249,17 @@ AbstractModel::AbstractModel(QObject *parent)
 {
 }
 
-#warning todo probably should sort all models in reverse order
-ReverseSinkInputModel::ReverseSinkInputModel(Context *context, QObject *parent)
+ReverseFilterModel::ReverseFilterModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
-    setSourceModel(new SinkInputModel(context, this));
     setDynamicSortFilter(true);
     setFilterKeyColumn(0);
-    sort(0, Qt::DescendingOrder);
 }
 
-bool ReverseSinkInputModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+void ReverseFilterModel::sort()
 {
-    // FIXME: index is not necessarily a good sorting value as indexes may get
-    // reused after sufficient up-time.
-    auto leftData = sourceModel()->data(left, SinkInputModel::IndexRole).toInt();
-    auto rightData = sourceModel()->data(right, SinkInputModel::IndexRole).toInt();
-    if (leftData < rightData)
-        return true;
-    return false;
+    QSortFilterProxyModel::sort(0, Qt::DescendingOrder);
 }
-
-void ReverseSinkInputModel::setContext(Context *context)
-{
-    qobject_cast<SinkInputModel *>(sourceModel())->setContext(context);
-}
-
 
 SourceModel::SourceModel(Context *context, QObject *parent)
     : AbstractModel(parent)
@@ -356,6 +341,23 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
         return data->volume().values[0];
     case IsMutedRole:
         return data->isMuted();
+#warning code copy between SOM and SIM
+    case ClientIndexRole:
+        Q_ASSERT(false);
+    case ClientNameRole: {
+        quint32 clientIndex = data->client();
+        Client *client = m_context->m_clients.value(clientIndex, nullptr);
+        if (client)
+            return client->name();
+        return QVariant();
+    }
+    case ClientPropertiesRole: {
+        quint32 clientIndex = data->client();
+        Client *client = m_context->m_clients.value(clientIndex, nullptr);
+        if (client)
+            return client->properties();
+        return QVariant();
+    }
     }
     return QVariant();
     Q_ASSERT(false);

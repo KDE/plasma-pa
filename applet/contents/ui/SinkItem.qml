@@ -2,35 +2,17 @@ import QtQuick 2.0
 
 import org.kde.plasma.volume 0.1
 
-BaseItem {
+BaseDeviceItem {
     icon: 'audio-card'
-    label: Description
-    subCount: pseudoView.count
-    subComponent: ListView {
-        id: inputView
-
-        width: parent ? parent.width : 0
-        //        height: contentHeight
-
-        model:sinkInputModel
-        boundsBehavior: Flickable.StopAtBounds;
-        delegate: SinkInputItem {}
-    }
-
-    ListView {
-        id: pseudoView
-        visible: false
-        model: sinkInputModel
-        delegate: Item {}
-    }
-
-    ReverseSinkInputModel {
-        id: sinkInputModel
-        filterRole: SinkInputModel.SinkIndexRole
+    subModel: ReverseFilterModel {
+        sortRole: SinkInputModel.IndexRole
+        filterRole: SinkInputModel.SinkIndexRole;
         filterRegExp: new RegExp(Index);
-        Component.onCompleted: {
-            sinkInputModel.setContext(pulseContext);
+        sourceModel: SinkInputModel {
+            Component.onCompleted: setContext(pulseContext);
         }
+
+        Component.onCompleted: sort();
     }
 
     function setVolume(volume) {

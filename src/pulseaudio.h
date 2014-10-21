@@ -90,6 +90,9 @@ public:
         SourceIndexRole,
         VolumeRole,
         IsMutedRole,
+        ClientIndexRole,
+        ClientNameRole,
+        ClientPropertiesRole
     };
     Q_ENUMS(ItemRole)
 
@@ -147,14 +150,14 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 };
 
-class ReverseSinkInputModel : public QSortFilterProxyModel
+class ReverseFilterModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
 public:
-    ReverseSinkInputModel(Context *context = nullptr, QObject *parent = nullptr);
-    bool lessThan(const QModelIndex &left, const QModelIndex &right) const Q_DECL_OVERRIDE;
+    ReverseFilterModel(QObject *parent = nullptr);
 
-    Q_INVOKABLE void setContext(Context *context);
+    Q_INVOKABLE void sort();
 };
 
 #endif // PULSEAUDIO_H

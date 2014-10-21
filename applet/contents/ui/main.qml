@@ -95,7 +95,7 @@ Item {
                     }
                 }
                 boundsBehavior: Flickable.StopAtBounds;
-                delegate: SinkItem {}
+                delegate: SourceListItem {}
             }
         }
     }
