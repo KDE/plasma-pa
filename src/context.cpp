@@ -63,7 +63,6 @@ static void source_output_cb(pa_context *context, const pa_source_output_info *i
     if (!isGoodState(eol))
         return;
 #warning force excluding random apps
-    qDebug() << "~~~~~~~~~~~~~~~~~~~~" << pa_proplist_gets(info->proplist, PA_PROP_APPLICATION_ID);
     if (const char *app = pa_proplist_gets(info->proplist, PA_PROP_APPLICATION_ID)) {
         if (strcmp(app, "org.PulseAudio.pavucontrol") == 0
                 || strcmp(app, "org.gnome.VolumeControl") == 0
