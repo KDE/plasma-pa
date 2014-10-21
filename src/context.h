@@ -80,6 +80,9 @@ public:
     void setGenericVolume(quint32 index, quint32 newVolume,
                           pa_cvolume cVolume, PAFunction pa_set_volume);
 
+    template<typename Map, typename Set, typename Signal>
+    void removeEntry(quint32 index, Map &map, Set &set, Signal signal);
+
     void reset();
 
     // Sinking

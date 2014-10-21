@@ -156,14 +156,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
     switch (type & PA_SUBSCRIPTION_EVENT_FACILITY_MASK) {
     case PA_SUBSCRIPTION_EVENT_SINK:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            qDebug() << "DEL Sink" << index;
-            if (!m_sinks.contains(index)) {
-                m_recentlyDeletedSinks.insert(index);
-            } else {
-                const int modelIndex = m_sinks.keys().indexOf(index);
-                m_sinks.take(index)->deleteLater();
-                emit sinkRemoved(modelIndex);
-            }
+            removeEntry(index, m_sinks, m_recentlyDeletedSinks, &Context::sinkRemoved);
         } else {
             if (!PAOperation(pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
                 qWarning() << "pa_context_get_sink_info_by_index() failed";
@@ -174,13 +167,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
     case PA_SUBSCRIPTION_EVENT_SOURCE:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            if (!m_sources.contains(index)) {
-                m_recentlyDeletedSources.insert(index);
-            } else {
-                const int modelIndex = m_sources.keys().indexOf(index);
-                m_sources.take(index)->deleteLater();
-                emit sourceRemoved(modelIndex);
-            }
+            removeEntry(index, m_sources, m_recentlyDeletedSources, &Context::sourceRemoved);
         } else {
             if (!PAOperation(pa_context_get_source_info_by_index(context, index, source_cb, this))) {
                 qWarning() << "pa_context_get_source_info_by_index() failed";
@@ -191,14 +178,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
     case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            qDebug() << Q_FUNC_INFO << "::: dropping :::" << index;
-            if (!m_sinkInputs.contains(index)) {
-                m_recentlyDeletedSinkInputs.insert(index);
-            } else {
-                const int modelIndex = m_sinkInputs.keys().indexOf(index);
-                m_sinkInputs.take(index)->deleteLater();
-                emit sinkInputRemoved(modelIndex);
-            }
+            removeEntry(index, m_sinkInputs, m_recentlyDeletedSinkInputs, &Context::sinkInputRemoved);
         } else {
             if (!PAOperation(pa_context_get_sink_input_info(context, index, sink_input_callback, this))) {
                 qWarning() << "pa_context_get_sink_input_info() failed";
@@ -209,13 +189,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
     case PA_SUBSCRIPTION_EVENT_SOURCE_OUTPUT:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            if (!m_sourceOutputs.contains(index)) {
-                m_recentlyDeletedSourceOutputs.insert(index);
-            } else {
-                const int modelIndex = m_sourceOutputs.keys().indexOf(index);
-                m_sourceOutputs.take(index)->deleteLater();
-                emit sinkInputRemoved(modelIndex);
-            }
+            removeEntry(index, m_sourceOutputs, m_recentlyDeletedSourceOutputs, &Context::sourceOutputRemoved);
         } else {
             if (!PAOperation(pa_context_get_source_output_info(context, index, source_output_cb, this))) {
                 qWarning() << "pa_context_get_sink_input_info() failed";
@@ -226,14 +200,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
     case PA_SUBSCRIPTION_EVENT_CLIENT:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            qDebug() << "dropping client" << index;
-            if (!m_clients.contains(index)) {
-                m_recentlyDeletedClients.insert(index);
-            } else {
-                const int modelIndex = m_clients.keys().indexOf(index);
-                m_clients.take(index)->deleteLater();
-                emit clientRemoved(modelIndex);
-            }
+            removeEntry(index, m_clients, m_recentlyDeletedClients, &Context::clientRemoved);
         } else {
             if (!PAOperation(pa_context_get_client_info(context, index, client_cb, this))) {
                 qWarning() << "pa_context_get_client_info() failed";
@@ -494,4 +461,16 @@ void Context::reset()
     _wipeAll(m_sources, m_recentlyDeletedSources);
     _wipeAll(m_sourceOutputs, m_recentlyDeletedSources);
     _wipeAll(m_clients, m_recentlyDeletedClients);
+}
+
+template<typename Map, typename Set, typename Signal>
+void Context::removeEntry(quint32 index, Map &map, Set &set, Signal signal)
+{
+    if (!map.contains(index)) {
+        set.insert(index);
+    } else {
+        const int modelIndex = map.keys().indexOf(index);
+        map.take(index)->deleteLater();
+        emit (this->*signal)(modelIndex);
+    }
 }
