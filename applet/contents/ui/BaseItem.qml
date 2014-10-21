@@ -12,9 +12,11 @@ PlasmaComponents.ListItem {
     id: item
 
     property bool expanded: false
+    property Component subComponent
+    property int subCount: 0
+
     property alias label: textLabel.text
     property alias icon: clientIcon.icon
-    property Component subComponent
 
     enabled: subComponent
 
@@ -74,7 +76,7 @@ PlasmaComponents.ListItem {
 
                     PlasmaCore.SvgItem {
                         id: expanderIcon
-                        visible: subComponent
+                        visible: subComponent && subCount > 0
                         anchors.top: parent.top;
                         anchors.right: parent.right;
                         anchors.bottom: parent.bottom;
