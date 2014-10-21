@@ -15,4 +15,6 @@ void SourceOutput::setInfo(const pa_source_output_info *info)
     m_sourceIndex = info->source;
     m_volume = info->volume;
     m_isMuted = info->mute;
+
+    m_client = info->client;
 }

@@ -17,11 +17,14 @@ public:
     pa_cvolume volume() const { return m_volume; }
     bool isMuted() const { return m_isMuted; }
 
+    quint32 client() const { return m_client; }
+
 private:
    QString m_name;
    quint32 m_sourceIndex;
    pa_cvolume m_volume;
    bool m_isMuted;
+   quint32 m_client;
 };
 
 #endif // SOURCEOUTPUT_H
