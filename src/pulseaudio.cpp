@@ -10,12 +10,8 @@
 #include "sourceoutput.h"
 
 ClientModel::ClientModel(Context *context, QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(context, parent)
 {
-#warning this possibly should move to base
-    if (context) {
-        setContext(context);
-    }
 }
 
 void ClientModel::setContext(Context *context)
@@ -28,6 +24,7 @@ void ClientModel::setContext(Context *context)
 
 int ClientModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
     if (!m_context)
         return 0;
     return m_context->m_clients.count();
@@ -45,11 +42,8 @@ QVariant ClientModel::data(const QModelIndex &index, int role) const
 }
 
 SinkInputModel::SinkInputModel(Context *context, QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(context, parent)
 {
-    if (context) {
-        setContext(context);
-    }
 }
 
 void SinkInputModel::setContext(Context *context)
@@ -62,6 +56,7 @@ void SinkInputModel::setContext(Context *context)
 
 int SinkInputModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
     if (!m_context)
         return 0;
     return m_context->m_sinkInputs.count();
@@ -150,11 +145,8 @@ void AbstractModel::setContext(Context *context)
 }
 
 SinkModel::SinkModel(Context *context, QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(context, parent)
 {
-    if (context) {
-        setContext(context);
-    }
 }
 
 void SinkModel::setContext(Context *context)
@@ -171,6 +163,7 @@ void SinkModel::setContext(Context *context)
 
 int SinkModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
     if (!m_context)
         return 0;
     return m_context->m_sinks.count();
@@ -243,10 +236,13 @@ void AbstractModel::onDataRemoved(quint32 index)
     endRemoveRows();
 }
 
-AbstractModel::AbstractModel(QObject *parent)
+AbstractModel::AbstractModel(Context *context, QObject *parent)
     : QAbstractListModel(parent)
-    , m_context(nullptr)
+    , m_context(context)
 {
+    if (context) {
+        setContext(context);
+    }
 }
 
 ReverseFilterModel::ReverseFilterModel(QObject *parent)
@@ -256,17 +252,14 @@ ReverseFilterModel::ReverseFilterModel(QObject *parent)
     setFilterKeyColumn(0);
 }
 
-void ReverseFilterModel::sort()
+void ReverseFilterModel::initialSort()
 {
     QSortFilterProxyModel::sort(0, Qt::DescendingOrder);
 }
 
 SourceModel::SourceModel(Context *context, QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(context, parent)
 {
-    if (context) {
-        setContext(context);
-    }
 }
 
 void SourceModel::setContext(Context *context)
@@ -279,6 +272,7 @@ void SourceModel::setContext(Context *context)
 
 int SourceModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
     if (!m_context)
         return 0;
     return m_context->m_sources.count();
@@ -304,11 +298,8 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
 }
 
 SourceOutputModel::SourceOutputModel(Context *context, QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(context, parent)
 {
-    if (context) {
-        setContext(context);
-    }
 }
 
 void SourceOutputModel::setContext(Context *context)
@@ -321,6 +312,7 @@ void SourceOutputModel::setContext(Context *context)
 
 int SourceOutputModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
     if (!m_context)
         return 0;
     return m_context->m_sourceOutputs.count();

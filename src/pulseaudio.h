@@ -23,8 +23,13 @@ protected slots:
     virtual void onDataRemoved(quint32 index);
 
 protected:
-    AbstractModel(QObject *parent = nullptr);
+    AbstractModel(Context *context, QObject *parent);
     Context *m_context;
+
+private:
+    // Prevent leaf-classes from default constructing as we want to enforce
+    // them passing us a context or explicit nullptrs.
+    AbstractModel() {}
 };
 
 class SinkModel : public AbstractModel
@@ -159,7 +164,7 @@ class ReverseFilterModel : public QSortFilterProxyModel
 public:
     ReverseFilterModel(QObject *parent = nullptr);
 
-    Q_INVOKABLE void sort();
+    Q_INVOKABLE void initialSort();
 };
 
 #endif // PULSEAUDIO_H

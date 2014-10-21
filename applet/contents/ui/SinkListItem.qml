@@ -12,7 +12,7 @@ DeviceListItemBase {
             Component.onCompleted: setContext(pulseContext);
         }
 
-        Component.onCompleted: sort();
+        Component.onCompleted: initialSort();
     }
 
     function setVolume(volume) {

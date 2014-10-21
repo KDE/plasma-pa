@@ -438,7 +438,6 @@ void Context::setGenericVolume(quint32 index, quint32 newVolume,
     }
 }
 
-#warning make this a member
 template <typename Map, typename Set>
 static void _wipeAll(Map &map, Set &set)
 {

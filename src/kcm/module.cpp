@@ -92,7 +92,6 @@ Module::Module(QWidget *parent, const QVariantList &args)
     QuickView *view = new QuickView(QStringLiteral("pulseaudio/qml/SinkInputs.qml"),
                                     m_context,
                                     new SinkInputModel(m_context, this));
-    QVBoxLayout *vl = new QVBoxLayout(this);
     QWidget *w = QWidget::createWindowContainer(view, this);
     connect(view, &QWindow::minimumWidthChanged, w, &QWidget::setMinimumWidth);
     connect(view, &QWindow::minimumHeightChanged, w, &QWidget::setMinimumHeight);
