@@ -195,13 +195,18 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     case IsMutedRole:
         return sink->isMuted();
     case PortsRole: {
-#warning fixme this should be a model or something or nothing, this mapping stuff here is bad
-        QList<SinkPort> ports = sink->ports();
-        QStringList l;
-        for (SinkPort port : ports) {
-            l.append(port.name());
+#warning this is slightly meh maybe there is a better way
+        auto ports = sink->ports();
+        QList<QVariant> list;
+        for (SinkPort port: ports) {
+            QVariantMap map;
+            map.insert(QLatin1Literal("name"), port.name());
+            map.insert(QLatin1Literal("description"), port.description());
+            map.insert(QLatin1Literal("priority"), port.priority());
+            map.insert(QLatin1Literal("isAvailable"), port.isAvailable());
+            list.append(map);
         }
-        return l;
+        return list;
     }
     case ActivePortRole:
         return sink->activePortIndex();
@@ -374,6 +379,6 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
         return QVariant();
     }
     }
-    return QVariant();
     Q_ASSERT(false);
+    return QVariant();
 }
