@@ -175,7 +175,8 @@ PlasmaComponents.ListItem {
             // FIXME: need something more dynamic
             anchors.leftMargin: 22
 
-            Layout.minimumHeight:  subLoader.item ? subLoader.item.contentHeight : 0
+            Layout.minimumHeight: subLoader.item ? subLoader.item.height : 0
+            Layout.maximumHeight: Layout.minimumHeight
         }
     }
 
