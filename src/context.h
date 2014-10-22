@@ -167,6 +167,7 @@ private:
 
     void reset();
 
+    // Don't forget to add things to reset().
     SinkMap m_sinks;
     SinkInputMap m_sinkInputs;
     SourceMap m_sources;
