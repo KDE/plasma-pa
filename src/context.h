@@ -177,6 +177,7 @@ public:
     Q_INVOKABLE void setSinkPort(quint32 portIndex);
 
     Q_INVOKABLE void setSinkInputVolume(quint32 index, quint32 volume);
+#warning terminology is messed up... modelIndex is a QModelIndex, what we have here is a MapIndex...
     Q_INVOKABLE void setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex);
 
     Q_INVOKABLE void setSourceVolume(quint32 index, quint32 volume);
