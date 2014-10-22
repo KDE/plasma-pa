@@ -4,6 +4,7 @@ import org.kde.plasma.volume 0.1
 
 ListItemBase {
     property QtObject subModel
+    property Component subDelegate
 
     label: Description
     expanderIconVisible: pseudoView.count > 0
@@ -15,7 +16,7 @@ ListItemBase {
 
         model: subModel
         boundsBehavior: Flickable.StopAtBounds;
-        delegate: SinkInputListItem {}
+        delegate: subDelegate
     }
 
     ListView {

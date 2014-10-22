@@ -328,8 +328,14 @@ void Context::setSinkInputVolume(quint32 index, quint32 volume)
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_input_volume);
 }
 
-void Context::setSinkInputSink(quint32 index, quint32 sinkIndex)
+void Context::setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex)
 {
+    qint64 sinkIndex = m_sinks.dataIndexToPaIndex(sinkModelIndex);
+    if (sinkIndex == -1) {
+        qWarning() << "Tried to switch SinkInput" << sinkIndex << "to non-existant SinkModelIndex" << sinkModelIndex;
+        return;
+    }
+
     qDebug() << Q_FUNC_INFO << index <<  sinkIndex;
     SinkInput *obj = m_sinkInputs.data().value(index, nullptr);
     if (!obj)
@@ -358,6 +364,28 @@ void Context::setSourceOutputVolume(quint32 index, quint32 volume)
     if (!obj)
         return;
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_source_output_volume);
+}
+
+void Context::setSourceOutputSinkByModelIndex(quint32 index, int sourceModelIndex)
+{
+    qint64 sourceIndex = m_sources.dataIndexToPaIndex(sourceModelIndex);
+    if (sourceIndex == -1) {
+        qWarning() << "Tried to switch Source" << index << "to non-existant sourceModelIndex" << sourceModelIndex;
+        return;
+    }
+
+    qDebug() << Q_FUNC_INFO << index <<  sourceIndex;
+    SourceOutput *obj = m_sourceOutputs.data().value(index, nullptr);
+    if (!obj)
+        return;
+    if (!PAOperation(pa_context_move_source_output_by_index(m_context,
+                                                            index,
+                                                            sourceIndex,
+                                                            nullptr,
+                                                            nullptr))) {
+        qWarning() << "pa_context_move_source_output_by_index failed";
+        return;
+    }
 }
 
 void Context::connectToDaemon()

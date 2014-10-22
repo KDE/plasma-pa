@@ -16,6 +16,8 @@ class SinkInput;
 class Source;
 class SourceOutput;
 
+#include <QDebug>
+
 template<typename Type, typename PAInfo>
 class MapBase
 {
@@ -23,6 +25,28 @@ public:
     virtual ~MapBase() {}
 
     const QMap<quint32, Type *> &data() const { return m_data; }
+
+    /**
+     * @param dataIndex index in the data model
+     * @return -1 on invalid index, otherwise PA index
+     */
+    qint64 dataIndexToPaIndex(int dataIndex) const
+    {
+        auto list = m_data.values();
+        qDebug() <<  Q_FUNC_INFO << list.length() << dataIndex;
+        if (list.length() <= dataIndex) {
+            return -1;
+        }
+        qDebug() << "  " << list.at(dataIndex)->index();
+        qDebug() << "  " << list.at(dataIndex)->name();
+        return list.at(dataIndex)->index();
+    }
+
+    int paIndexToDataIndex(quint32 index) const
+    {
+        qDebug() << m_data.keys() << index;
+        return m_data.keys().indexOf(index);
+    }
 
     void reset()
     {
@@ -153,11 +177,12 @@ public:
     Q_INVOKABLE void setSinkPort(quint32 portIndex);
 
     Q_INVOKABLE void setSinkInputVolume(quint32 index, quint32 volume);
-    Q_INVOKABLE void setSinkInputSink(quint32 index, quint32 sinkIndex);
+    Q_INVOKABLE void setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex);
 
     Q_INVOKABLE void setSourceVolume(quint32 index, quint32 volume);
 
     Q_INVOKABLE void setSourceOutputVolume(quint32 index, quint32 volume);
+    Q_INVOKABLE void setSourceOutputSinkByModelIndex(quint32 index, int sourceModelIndex);
 
 private:
     void connectToDaemon();

@@ -4,7 +4,9 @@ set(yolo_SRC
 
     contents/ui/ListItemBase.qml
 
+    contents/ui/StreamListItemBase.qml
     contents/ui/SinkInputListItem.qml
+    contents/ui/SourceOutputListItem.qml
 
     contents/ui/DeviceListItemBase.qml
     contents/ui/SinkListItem.qml

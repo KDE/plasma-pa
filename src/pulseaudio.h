@@ -51,6 +51,8 @@ public:
     SinkModel(Context *context = nullptr, QObject *parent = nullptr);
 
     Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
+#warning fixme this is so bad...
+    Q_INVOKABLE int paIndexToDataIndex(quint32 index);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
@@ -77,6 +79,8 @@ public:
     SourceModel(Context *context = nullptr, QObject *parent = nullptr);
 
     Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
+#warning fixme this is so bad...
+    Q_INVOKABLE int paIndexToDataIndex(quint32 index);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;

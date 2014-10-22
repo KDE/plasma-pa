@@ -9,25 +9,26 @@ StreamListItemBase {
     expanderIconVisible: false
     enabled: true
     subComponent: PlasmaComponents.ComboBox {
-        property int sinkIndex: SinkIndex
-        property int sinkModelIndex: model.paIndexToDataIndex(sinkIndex)
-        property int sinkInputIndex: Index
-        model: SinkModel {
+        property int sourceIndex: SourceIndex
+        property int sourceModelIndex: model.paIndexToDataIndex(sourceIndex)
+        property int sourceOutputIndex: Index
+        model: SourceModel {
             Component.onCompleted: {
                 setContext(pulseContext);
-                sinkModelIndex = model.paIndexToDataIndex(sinkIndex)
+                sourceModelIndex = model.paIndexToDataIndex(sourceIndex)
             }
         }
         textRole: "Description"
-        currentIndex: sinkModelIndex
+        currentIndex: sourceModelIndex
         onCurrentIndexChanged: {
-            if (sinkModelIndex === -1) {
+            if (sourceModelIndex === -1) {
                 // Current index doesn't map to anything. Oh the agony.
                 return;
             }
 
-            if (currentIndex != sinkIndex) {
-                pulseContext.setSinkInputSinkByModelIndex(sinkInputIndex, currentIndex);
+            if (currentIndex != sourceModelIndex) {
+                // Context translates model index to PA index.
+                pulseContext.setSourceOutputSinkByModelIndex(sourceOutputIndex, currentIndex);
             }
         }
     }

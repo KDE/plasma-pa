@@ -161,6 +161,15 @@ void SinkModel::setContext(Context *context)
     connect(&context->sinks(), &SinkMap::removed, this, &SinkModel::volumeTextChanged);
 }
 
+int SinkModel::paIndexToDataIndex(quint32 index)
+{
+    qDebug() << Q_FUNC_INFO << m_context << index;
+    if (!m_context) {
+        return -1;
+    }
+    return m_context->sinks().paIndexToDataIndex(index);
+}
+
 int SinkModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
@@ -269,6 +278,15 @@ void SourceModel::setContext(Context *context)
     connect(&context->sources(), &SourceMap::added, this, &SourceModel::onDataAdded);
     connect(&context->sources(), &SourceMap::updated, this, &SourceModel::onDataUpdated);
     connect(&context->sources(), &SourceMap::removed, this, &SourceModel::onDataRemoved);
+}
+
+int SourceModel::paIndexToDataIndex(quint32 index)
+{
+    qDebug() << Q_FUNC_INFO << m_context << index;
+    if (!m_context) {
+        return -1;
+    }
+    return m_context->sources().paIndexToDataIndex(index);
 }
 
 int SourceModel::rowCount(const QModelIndex &parent) const
