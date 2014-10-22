@@ -14,11 +14,13 @@ public:
 
     QString name() const { return m_name; }
     QString description() const { return m_description; }
+    quint32 priority() const { return m_priority; }
     bool isAvailable() const { return m_isAvailable; }
 
 private:
     QString m_name;
     QString m_description;
+    quint32 m_priority;
     bool m_isAvailable;
 };
 

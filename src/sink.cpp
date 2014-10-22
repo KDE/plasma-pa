@@ -5,6 +5,7 @@
 SinkPort::SinkPort()
     : m_name()
     , m_description()
+    , m_priority(0)
     , m_isAvailable(false)
 {
 }
@@ -13,6 +14,7 @@ void SinkPort::setInfo(const pa_sink_port_info *port)
 {
     m_name = port->name;
     m_description = port->description;
+    m_priority = port->priority;
     m_isAvailable = port->available;
 }
 
