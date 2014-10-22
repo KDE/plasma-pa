@@ -156,7 +156,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
     switch (type & PA_SUBSCRIPTION_EVENT_FACILITY_MASK) {
     case PA_SUBSCRIPTION_EVENT_SINK:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            removeEntry(index, m_sinks, m_recentlyDeletedSinks, &Context::sinkRemoved);
+            m_sinks.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
                 qWarning() << "pa_context_get_sink_info_by_index() failed";
@@ -167,7 +167,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
     case PA_SUBSCRIPTION_EVENT_SOURCE:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            removeEntry(index, m_sources, m_recentlyDeletedSources, &Context::sourceRemoved);
+            m_sources.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_source_info_by_index(context, index, source_cb, this))) {
                 qWarning() << "pa_context_get_source_info_by_index() failed";
@@ -178,7 +178,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
     case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            removeEntry(index, m_sinkInputs, m_recentlyDeletedSinkInputs, &Context::sinkInputRemoved);
+            m_sinkInputs.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_sink_input_info(context, index, sink_input_callback, this))) {
                 qWarning() << "pa_context_get_sink_input_info() failed";
@@ -189,7 +189,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
     case PA_SUBSCRIPTION_EVENT_SOURCE_OUTPUT:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            removeEntry(index, m_sourceOutputs, m_recentlyDeletedSourceOutputs, &Context::sourceOutputRemoved);
+            m_sourceOutputs.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_source_output_info(context, index, source_output_cb, this))) {
                 qWarning() << "pa_context_get_sink_input_info() failed";
@@ -200,7 +200,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
     case PA_SUBSCRIPTION_EVENT_CLIENT:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
-            removeEntry(index, m_clients, m_recentlyDeletedClients, &Context::clientRemoved);
+            m_clients.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_client_info(context, index, client_cb, this))) {
                 qWarning() << "pa_context_get_client_info() failed";
@@ -278,83 +278,35 @@ void Context::contextStateCallback(pa_context *c)
     }
 }
 
-template <typename C, typename PAInfo, typename AddedSignal, typename UpdatedSignal>
-void Context::updateMap(QMap<quint32, C *> &map,
-                        QSet<quint32> &exclusionSet,
-                        const PAInfo *info,
-                        AddedSignal addedSignal,
-                        UpdatedSignal updatedSignal)
-{
-    Q_ASSERT(info);
-
-    if (exclusionSet.remove(info->index)) {
-        // Was already removed again.
-        return;
-    }
-
-    const bool isNew = !map.contains(info->index);
-
-    auto *obj = map.value(info->index, nullptr);
-    if (!obj) {
-        obj = new C;
-    }
-    obj->setInfo(info);
-    map.insert(info->index, obj);
-
-    const int modelIndex = map.keys().indexOf(info->index);
-    Q_ASSERT(modelIndex >= 0);
-
-    if (isNew) {
-        emit (this->*addedSignal)(modelIndex);
-    } else {
-        emit (this->*updatedSignal)(modelIndex);
-    }
-}
-
 #warning fixme recentlydeleted has the same type for everything making it easy to use the wrong one possibly
 void Context::sinkCallback(const pa_sink_info *info)
 {
-    updateMap<Sink, pa_sink_info>(m_sinks, m_recentlyDeletedSinks,
-                                  info,
-                                  &Context::sinkAdded,
-                                  &Context::sinkUpdated);
+    m_sinks.updateEntry(info);
 }
 
 void Context::sinkInputCallback(const pa_sink_input_info *info)
 {
-    updateMap<SinkInput, pa_sink_input_info>(m_sinkInputs, m_recentlyDeletedSinkInputs,
-                                             info,
-                                             &Context::sinkInputAdded,
-                                             &Context::sinkInputUpdated);
+    m_sinkInputs.updateEntry(info);
 }
 
 void Context::sourceCallback(const pa_source_info *info)
 {
-    updateMap<Source, pa_source_info>(m_sources, m_recentlyDeletedSources,
-                                      info,
-                                      &Context::sourceAdded,
-                                      &Context::sourceUpdated);
+    m_sources.updateEntry(info);
 }
 
 void Context::sourceOutputCallback(const pa_source_output_info *info)
 {
-    updateMap<SourceOutput, pa_source_output_info>(m_sourceOutputs, m_recentlyDeletedSourceOutputs,
-                                                   info,
-                                                   &Context::sourceOutputAdded,
-                                                   &Context::sourceOutputUpdated);
+    m_sourceOutputs.updateEntry(info);
 }
 
 void Context::clientCallback(const pa_client_info *info)
 {
-    updateMap<Client, pa_client_info>(m_clients, m_recentlyDeletedClients,
-                                      info,
-                                      &Context::clientAdded,
-                                      &Context::clientUpdated);
+    m_clients.updateEntry(info);
 }
 
 void Context::setSinkVolume(quint32 index, quint32 volume)
 {
-    Sink *obj = m_sinks.value(index, nullptr);
+    Sink *obj = m_sinks.data().value(index, nullptr);
     if (!obj)
         return;
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_volume_by_index);
@@ -370,15 +322,31 @@ void Context::setSinkPort(quint32 portIndex)
 
 void Context::setSinkInputVolume(quint32 index, quint32 volume)
 {
-    SinkInput *obj = m_sinkInputs.value(index, nullptr);
+    SinkInput *obj = m_sinkInputs.data().value(index, nullptr);
     if (!obj)
         return;
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_input_volume);
 }
 
+void Context::setSinkInputSink(quint32 index, quint32 sinkIndex)
+{
+    qDebug() << Q_FUNC_INFO << index <<  sinkIndex;
+    SinkInput *obj = m_sinkInputs.data().value(index, nullptr);
+    if (!obj)
+        return;
+    if (!PAOperation(pa_context_move_sink_input_by_index(m_context,
+                                                         index,
+                                                         sinkIndex,
+                                                         nullptr,
+                                                         nullptr))) {
+        qWarning() << "pa_context_move_sink_input_by_index failed";
+        return;
+    }
+}
+
 void Context::setSourceVolume(quint32 index, quint32 volume)
 {
-    Source *obj = m_sources.value(index, nullptr);
+    Source *obj = m_sources.data().value(index, nullptr);
     if (!obj)
         return;
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_source_volume_by_index);
@@ -386,7 +354,7 @@ void Context::setSourceVolume(quint32 index, quint32 volume)
 
 void Context::setSourceOutputVolume(quint32 index, quint32 volume)
 {
-    SourceOutput *obj = m_sourceOutputs.value(index, nullptr);
+    SourceOutput *obj = m_sourceOutputs.data().value(index, nullptr);
     if (!obj)
         return;
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_source_output_volume);
@@ -438,14 +406,6 @@ void Context::setGenericVolume(quint32 index, quint32 newVolume,
     }
 }
 
-template <typename Map, typename Set>
-static void _wipeAll(Map &map, Set &set)
-{
-    qDeleteAll(map);
-    map.clear();
-    set.clear();
-}
-
 void Context::reset()
 {
     pa_context_unref(m_context);
@@ -454,22 +414,9 @@ void Context::reset()
     pa_glib_mainloop_free(m_mainloop);
     m_mainloop = nullptr;
 
-#warning introduce a super structure to loop over so we cannot forget things by accident
-    _wipeAll(m_sinks, m_recentlyDeletedSinks);
-    _wipeAll(m_sinkInputs, m_recentlyDeletedSinkInputs);
-    _wipeAll(m_sources, m_recentlyDeletedSources);
-    _wipeAll(m_sourceOutputs, m_recentlyDeletedSources);
-    _wipeAll(m_clients, m_recentlyDeletedClients);
-}
-
-template<typename Map, typename Set, typename Signal>
-void Context::removeEntry(quint32 index, Map &map, Set &set, Signal signal)
-{
-    if (!map.contains(index)) {
-        set.insert(index);
-    } else {
-        const int modelIndex = map.keys().indexOf(index);
-        map.take(index)->deleteLater();
-        emit (this->*signal)(modelIndex);
-    }
+    m_sinks.reset();
+    m_sinkInputs.reset();
+    m_sources.reset();
+    m_sourceOutputs.reset();
+    m_clients.reset();
 }
