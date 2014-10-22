@@ -6,7 +6,7 @@ ListItemBase {
     property QtObject subModel
 
     label: Description
-    subCount: pseudoView.count
+    expanderIconVisible: pseudoView.count > 0
     subComponent: ListView {
         id: inputView
 
