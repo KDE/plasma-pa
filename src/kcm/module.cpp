@@ -22,6 +22,8 @@
 #include "ui_module.h"
 
 #include <KAboutData>
+#include <KColorScheme>
+#include <KDeclarative/KDeclarative>
 #include <KLocalizedString>
 
 #include <context.h>
@@ -47,8 +49,15 @@ public:
                   QWindow *parent = nullptr)
         : QQuickView(parent)
     {
+        KDeclarative::KDeclarative kdeclarative;
+        kdeclarative.setDeclarativeEngine(engine());
+        // FIXME: i18n
+//        kdeclarative.setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
+        kdeclarative.setupBindings();
+
         rootContext()->setContextProperty("pulseContext", context);
         rootContext()->setContextProperty("dataModel", model);
+        rootContext()->setContextProperty("backgroundColor", KColorScheme(QPalette::Active, KColorScheme::View, KSharedConfigPtr(0)).background(KColorScheme::NormalBackground).color());
         QString mainFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, path, QStandardPaths::LocateFile);
         setResizeMode(QQuickView::SizeRootObjectToView);
         setSource(QUrl(mainFile));
@@ -114,10 +123,21 @@ Module::Module(QWidget *parent, const QVariantList &args)
     w1->setMinimumSize(view->initialSize());
     w1->setFocusPolicy(Qt::StrongFocus);
 
+    QuickView *view4 = new QuickView(QStringLiteral("pulseaudio/qml/Cards.qml"),
+                                    m_context,
+                                    new CardModel(m_context, this));
+    QWidget *w4 = QWidget::createWindowContainer(view4, this);
+    connect(view4, &QWindow::minimumWidthChanged, w4, &QWidget::setMinimumWidth);
+    connect(view4, &QWindow::minimumHeightChanged, w4, &QWidget::setMinimumHeight);
+    w4->setMinimumSize(view->initialSize());
+    w4->setFocusPolicy(Qt::StrongFocus);
+
+#warning i18n
     ui->tabWidget->insertTab(0, w, QString("Applications"));
     ui->tabWidget->insertTab(1, new QWidget, "Recording");
     ui->tabWidget->insertTab(2, w1, "Output Devices");
     ui->tabWidget->insertTab(3, new QWidget, "Input Devices");
+    ui->tabWidget->insertTab(4, w4, "Configuration");
 
     // We have no help so remove the button from the buttons.
     setButtons(buttons() ^ KCModule::Help ^ KCModule::Default ^ KCModule::Apply);
