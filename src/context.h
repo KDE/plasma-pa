@@ -10,6 +10,7 @@
 #include <pulse/glib-mainloop.h>
 #include <pulse/ext-stream-restore.h>
 
+class Card;
 class Client;
 class Sink;
 class SinkInput;
@@ -149,6 +150,15 @@ signals:
     void removed(quint32 index) Q_DECL_OVERRIDE;
 };
 
+class CardMap : public QObject, public MapBase<Card, pa_card_info>
+{
+    Q_OBJECT
+signals:
+    void added(quint32 index) Q_DECL_OVERRIDE;
+    void updated(quint32 index) Q_DECL_OVERRIDE;
+    void removed(quint32 index) Q_DECL_OVERRIDE;
+};
+
 class Context : public QObject
 {
     Q_OBJECT
@@ -163,6 +173,7 @@ public:
     const SourceMap &sources() const { return m_sources; }
     const SourceOutputMap &sourceOutputs() const { return m_sourceOutputs; }
     const ClientMap &clients() const { return m_clients; }
+    const CardMap &cards() const { return m_cards; }
 
     void subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index);
     void contextStateCallback(pa_context *context);
@@ -172,6 +183,7 @@ public:
     void sourceCallback(const pa_source_info *info);
     void sourceOutputCallback(const pa_source_output_info *info);
     void clientCallback(const pa_client_info *info);
+    void cardCallback(const pa_card_info *info);
 
     Q_INVOKABLE void setSinkVolume(quint32 index, quint32 volume);
     Q_INVOKABLE void setSinkPort(quint32 portIndex);
@@ -184,6 +196,8 @@ public:
 
     Q_INVOKABLE void setSourceOutputVolume(quint32 index, quint32 volume);
     Q_INVOKABLE void setSourceOutputSinkByModelIndex(quint32 index, int sourceModelIndex);
+
+    Q_INVOKABLE void setCardProfile(quint32 cardIndex, const QString &profileName);
 
 private:
     void connectToDaemon();
@@ -199,6 +213,7 @@ private:
     SourceMap m_sources;
     SourceOutputMap m_sourceOutputs;
     ClientMap m_clients;
+    CardMap m_cards;
 
     pa_context *m_context;
     pa_glib_mainloop *m_mainloop;

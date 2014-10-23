@@ -3,6 +3,7 @@
 #include <QAbstractEventDispatcher>
 #include <QDebug>
 
+#include "card.h"
 #include "client.h"
 #include "sink.h"
 #include "sinkinput.h"
@@ -122,6 +123,15 @@ static void client_cb(pa_context *context, const pa_client_info *info, int eol, 
     ((Context *)data)->clientCallback(info);
 }
 
+static void card_cb(pa_context *context, const pa_card_info *info, int eol, void *data)
+{
+    if (!isGoodState(eol))
+        return;
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    ((Context *)data)->cardCallback(info);
+}
+
 static void context_state_callback(pa_context *context, void *data)
 {
     Q_ASSERT(data);
@@ -209,6 +219,18 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
         }
         break;
 
+#warning maybe point out to upstream that their api is inconsistent _by_index vs. null
+    case PA_SUBSCRIPTION_EVENT_CARD:
+        if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+            m_cards.removeEntry(index);
+        } else {
+            if (!PAOperation(pa_context_get_card_info_by_index(context, index, card_cb, this))) {
+                qWarning() << "pa_context_get_card_info_by_index() failed";
+                return;
+            }
+        }
+        break;
+
     }
 }
 
@@ -246,6 +268,11 @@ void Context::contextStateCallback(pa_context *c)
 
         if (!PAOperation(pa_context_get_client_info_list(c, client_cb, this))) {
             qWarning() << "pa_context_client_info_list() failed";
+            return;
+        }
+
+        if (!PAOperation(pa_context_get_card_info_list(c, card_cb, this))) {
+            qWarning() << "pa_context_get_card_info_list() failed";
             return;
         }
 
@@ -302,6 +329,11 @@ void Context::sourceOutputCallback(const pa_source_output_info *info)
 void Context::clientCallback(const pa_client_info *info)
 {
     m_clients.updateEntry(info);
+}
+
+void Context::cardCallback(const pa_card_info *info)
+{
+    m_cards.updateEntry(info);
 }
 
 void Context::setSinkVolume(quint32 index, quint32 volume)
@@ -384,6 +416,21 @@ void Context::setSourceOutputSinkByModelIndex(quint32 index, int sourceModelInde
                                                             nullptr,
                                                             nullptr))) {
         qWarning() << "pa_context_move_source_output_by_index failed";
+        return;
+    }
+}
+
+void Context::setCardProfile(quint32 index, const QString &profileName)
+{
+    qDebug() << Q_FUNC_INFO << index << profileName;
+    Card *obj = m_cards.data().value(index, nullptr);
+    if (!obj)
+        return;
+    if (!PAOperation(pa_context_set_card_profile_by_index(m_context,
+                                                          index,
+                                                          profileName.toUtf8().constData(),
+                                                          nullptr, nullptr))) {
+        qWarning() << "pa_context_set_card_profile_by_index failed";
         return;
     }
 }

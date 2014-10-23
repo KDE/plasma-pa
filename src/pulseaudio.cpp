@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QMetaEnum>
 
+#include "card.h"
 #include "client.h"
 #include "sink.h"
 #include "sinkinput.h"
@@ -10,8 +11,11 @@
 #include "sourceoutput.h"
 
 ClientModel::ClientModel(Context *context, QObject *parent)
-    : AbstractModel(context, parent)
+    : AbstractModel(parent)
 {
+    if (context) {
+        setContext(context);
+    }
 }
 
 void ClientModel::setContext(Context *context)
@@ -42,8 +46,11 @@ QVariant ClientModel::data(const QModelIndex &index, int role) const
 }
 
 SinkInputModel::SinkInputModel(Context *context, QObject *parent)
-    : AbstractModel(context, parent)
+    : AbstractModel(parent)
 {
+    if (context) {
+        setContext(context);
+    }
 }
 
 void SinkInputModel::setContext(Context *context)
@@ -135,6 +142,7 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
 
 void AbstractModel::setContext(Context *context)
 {
+    qDebug() << "............................................." << context;
     beginResetModel();
     if (m_context) {
         m_context->disconnect(this);
@@ -145,8 +153,11 @@ void AbstractModel::setContext(Context *context)
 }
 
 SinkModel::SinkModel(Context *context, QObject *parent)
-    : AbstractModel(context, parent)
+    : AbstractModel(parent)
 {
+    if (context) {
+        setContext(context);
+    }
 }
 
 void SinkModel::setContext(Context *context)
@@ -197,6 +208,7 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     case PortsRole: {
 #warning this is slightly meh maybe there is a better way
         auto ports = sink->ports();
+        qDebug() << "............................................" << ports.length();
         QList<QVariant> list;
         for (SinkPort port: ports) {
             QVariantMap map;
@@ -206,6 +218,7 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
             map.insert(QLatin1Literal("isAvailable"), port.isAvailable());
             list.append(map);
         }
+        qDebug() << "  ............................................" << list.length();
         return list;
     }
     case ActivePortRole:
@@ -251,13 +264,10 @@ void AbstractModel::onDataRemoved(quint32 index)
     endRemoveRows();
 }
 
-AbstractModel::AbstractModel(Context *context, QObject *parent)
+AbstractModel::AbstractModel(QObject *parent)
     : QAbstractListModel(parent)
-    , m_context(context)
+    , m_context(nullptr)
 {
-    if (context) {
-        setContext(context);
-    }
 }
 
 ReverseFilterModel::ReverseFilterModel(QObject *parent)
@@ -273,8 +283,11 @@ void ReverseFilterModel::initialSort()
 }
 
 SourceModel::SourceModel(Context *context, QObject *parent)
-    : AbstractModel(context, parent)
+    : AbstractModel(parent)
 {
+    if (context) {
+        setContext(context);
+    }
 }
 
 void SourceModel::setContext(Context *context)
@@ -322,8 +335,11 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
 }
 
 SourceOutputModel::SourceOutputModel(Context *context, QObject *parent)
-    : AbstractModel(context, parent)
+    : AbstractModel(parent)
 {
+    if (context) {
+        setContext(context);
+    }
 }
 
 void SourceOutputModel::setContext(Context *context)
@@ -378,6 +394,85 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
             return client->properties();
         return QVariant();
     }
+    }
+    Q_ASSERT(false);
+    return QVariant();
+}
+
+CardModel::CardModel(Context *context, QObject *parent)
+    : AbstractModel(parent)
+{
+    if (context) {
+        setContext(context);
+    }
+}
+
+void CardModel::setContext(Context *context)
+{
+    qDebug() << "-----------------------------------" << context;
+#warning this probably could go into the abstract somehow...
+    AbstractModel::setContext(context);
+    connect(&context->cards(), &CardMap::added, this, &CardModel::onDataAdded);
+    connect(&context->cards(), &CardMap::updated, this, &CardModel::onDataUpdated);
+    connect(&context->cards(), &CardMap::removed, this, &CardModel::onDataRemoved);
+}
+
+int CardModel::rowCount(const QModelIndex &parent) const
+{
+    qDebug() << Q_FUNC_INFO << m_context << (m_context ? m_context->cards().data().count() : 0);
+    Q_UNUSED(parent);
+    if (!m_context)
+        return 0;
+    return m_context->cards().data().count();
+}
+
+QVariant CardModel::data(const QModelIndex &index, int role) const
+{
+    Card *data =  m_context->cards().data().values().at(index.row());
+    Q_ASSERT(data);
+    switch ((ItemRole) role) {
+    case IndexRole:
+        return data->index();
+    case NameRole:
+        return data->name();
+    case DriverRole:
+        return data->driver();
+    case ProfilesRole: {
+#warning this is slightly meh maybe there is a better way
+        auto ports = data->profiles();
+        qDebug() << "............................................" << ports.length();
+        QList<QVariant> list;
+        for (auto port: ports) {
+            QVariantMap map;
+            map.insert(QLatin1Literal("name"), port.name());
+            map.insert(QLatin1Literal("description"), port.description());
+            map.insert(QLatin1Literal("priority"), port.priority());
+            list.append(map);
+        }
+        qDebug() << "  ............................................" << list.length();
+        return list;
+    }
+    case ActiveProfileIndexRole:
+        qDebug() << "~~~~~~~~~~~~~~~" << data->activeProfileIndex();
+        return data->activeProfileIndex();
+    case PortsRole: {
+    #warning this is slightly meh maybe there is a better way
+            auto ports = data->ports();
+            qDebug() << "............................................" << ports.length();
+            QList<QVariant> list;
+            for (auto port: ports) {
+                QVariantMap map;
+                map.insert(QLatin1Literal("name"), port.name());
+                map.insert(QLatin1Literal("description"), port.description());
+                map.insert(QLatin1Literal("priority"), port.priority());
+                map.insert(QLatin1Literal("isAvailable"), port.isAvailable());
+                list.append(map);
+            }
+            qDebug() << "  ............................................" << list.length();
+            return list;
+        }
+    case PropertiesRole:
+        return data->properties();
     }
     Q_ASSERT(false);
     return QVariant();

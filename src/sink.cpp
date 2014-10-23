@@ -43,7 +43,7 @@ void Sink::setInfo(const pa_sink_info *info)
         port.setInfo(*ports);
         m_ports.append(port);
         if (info->active_port == *ports) {
-            m_activePortIndex = m_ports.size() - 1;
+            m_activePortIndex = m_ports.length() - 1;
         }
     }
 

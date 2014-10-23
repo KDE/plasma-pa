@@ -1,6 +1,7 @@
 include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
 
 set(SRC_LIST
+    card.cpp
     client.cpp
     context.cpp
     pulseaudio.cpp
