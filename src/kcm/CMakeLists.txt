@@ -3,7 +3,9 @@ set(yolo_SRC
     qml/CardListItem.qml
     qml/ThemedScrollView.qml
     qml/Sinks.qml
+    qml/SinkListItem.qml
     qml/SinkInputs.qml
+    qml/SinkInputListItem.qml
 )
 add_custom_target(KcmQmlFiles ALL echo SOURCES ${yolo_SRC})
 

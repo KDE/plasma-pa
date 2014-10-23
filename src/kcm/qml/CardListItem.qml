@@ -44,9 +44,9 @@ ColumnLayout {
             currentIndex: ActiveProfileIndex
             onCurrentIndexChanged: {
                 // Get name.
-                textRole = "name"
-                var name = currentText
-                textRole = "description"
+                textRole = "name";
+                var name = currentText;
+                textRole = "description";
                 pulseContext.setCardProfile(Index, name);
             }
         }
