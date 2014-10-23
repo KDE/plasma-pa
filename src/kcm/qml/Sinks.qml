@@ -14,7 +14,7 @@ Rectangle {
         id: column
         anchors.fill: parent
 
-        ScrollView {
+        ThemedScrollView {
             frameVisible: true
             highlightOnFocus: true
             Layout.fillWidth: true
@@ -51,7 +51,7 @@ Rectangle {
                             id: delegateColumn
                             anchors.left: clientIcon.right
                             RowLayout {
-                                Text {
+                                Label {
                                     id: inputText
                                     Layout.fillWidth: true
                                     text: Description
@@ -62,7 +62,7 @@ Rectangle {
                                 }
                             }
                             RowLayout {
-                                Text {
+                                Label {
                                     text: 'mono'
                                 }
 
@@ -103,13 +103,13 @@ Rectangle {
                                     }
                                 }
 
-                                Text {
+                                Label {
                                     text: '100 '
                                 }
                             }
 
                             RowLayout {
-                                Text {
+                                Label {
                                     text: 'Port'
                                 }
 
@@ -118,9 +118,6 @@ Rectangle {
                                     currentIndex: ActivePortIndex
                                     model: Ports
                                     width: 200
-                                    onCurrentIndexChanged: {
-                                        pulseContext.setSinkPort(Index
-                                    }
                                 }
                             }
 
