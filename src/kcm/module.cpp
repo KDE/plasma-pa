@@ -80,6 +80,8 @@ Module::Module(QWidget *parent, const QVariantList &args)
                                            KAboutLicense::LicenseKey::GPL_V3,
                                            i18nc("@info:credit", "Copyright 2012-2014 Harald Sitter"));
 
+    setMinimumSize(800,600);
+
     aboutData->addAuthor(i18nc("@info:credit", "Harald Sitter"),
                         i18nc("@info:credit", "Author"),
                         QStringLiteral("apachelogger@kubuntu.org"));
