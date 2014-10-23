@@ -344,9 +344,13 @@ void Context::setSinkVolume(quint32 index, quint32 volume)
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_volume_by_index);
 }
 
-void Context::setSinkPort(quint32 portIndex)
+void Context::setSinkPort(quint32 index, const QString &portName)
 {
-    if (!PAOperation(pa_context_set_sink_port_by_index(m_context, portIndex, nullptr, nullptr, nullptr))) {
+    if (!PAOperation(pa_context_set_sink_port_by_index(m_context,
+                                                       index,
+                                                       portName.toUtf8().constData(),
+                                                       nullptr,
+                                                       nullptr))) {
         qWarning() << "pa_context_set_sink_port_by_index failed";
         return;
     }

@@ -186,7 +186,7 @@ public:
     void cardCallback(const pa_card_info *info);
 
     Q_INVOKABLE void setSinkVolume(quint32 index, quint32 volume);
-    Q_INVOKABLE void setSinkPort(quint32 portIndex);
+    Q_INVOKABLE void setSinkPort(quint32 index, const QString &portName);
 
     Q_INVOKABLE void setSinkInputVolume(quint32 index, quint32 volume);
 #warning terminology is messed up... modelIndex is a QModelIndex, what we have here is a MapIndex...
