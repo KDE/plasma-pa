@@ -12,7 +12,7 @@ ListItemBase {
         id: inputView
 
         width: parent ? parent.width : 0
-        //        height: contentHeight
+                height: contentHeight
 
         model: subModel
         boundsBehavior: Flickable.StopAtBounds;
