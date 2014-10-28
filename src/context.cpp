@@ -473,8 +473,7 @@ void Context::setGenericVolume(quint32 index, quint32 newVolume,
 {
     qDebug() << Q_FUNC_INFO << index << newVolume;
 #warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
-    if (newVolume > 65536)
-        newVolume = 0;
+    newVolume = qMin<quint32>(newVolume, 65536);
     pa_cvolume newCVolume = cVolume;
     for (int i = 0; i < newCVolume.channels; ++i) {
         newCVolume.values[i] = newVolume;
