@@ -28,7 +28,7 @@ void Card::setInfo(const pa_card_info *info)
 
 #warning there is no active port prop so it is possible that this is actually very worthless since we have sinks and sources
     m_ports.clear();
-    for (auto **it = info->ports; *it != nullptr; ++it) {
+    for (auto **it = info->ports; it && *it != nullptr; ++it) {
         CardPort port;
         port.setInfo(*it);
         m_ports.append(port);
