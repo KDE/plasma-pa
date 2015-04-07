@@ -43,7 +43,7 @@ ColumnLayout {
                 textRole = "name";
                 var name = currentText;
                 textRole = "description";
-                pulseContext.setSinkPort(Index, name);
+                kcm.context.setSinkPort(Index, name);
             }
         }
     }
@@ -75,7 +75,7 @@ ColumnLayout {
                 }
 
                 console.debug('changed')
-                pulseContext.setSinkVolume(Index, value)
+                kcm.context.setSinkVolume(Index, value)
             }
             onVolumeChanged: {
                 applyingVolume = true

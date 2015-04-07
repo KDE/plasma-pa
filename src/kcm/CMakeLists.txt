@@ -1,22 +1,9 @@
-set(yolo_SRC
-    qml/Cards.qml
-    qml/CardListItem.qml
-    qml/ThemedScrollView.qml
-    qml/Sinks.qml
-    qml/SinkListItem.qml
-    qml/SinkInputs.qml
-    qml/SinkInputListItem.qml
-)
-add_custom_target(KcmQmlFiles ALL echo SOURCES ${yolo_SRC})
-
-##########################
-
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/version.h)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
 
 set(kcm_SRCS
-    main.cpp
+#    main.cpp
     module.cpp
 )
 
@@ -42,9 +29,14 @@ target_link_libraries(kcm_pulseaudio
     KF5::CoreAddons
     KF5::Declarative
     KF5::I18n
+    KF5::QuickAddons
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
 )
 
-install(TARGETS kcm_pulseaudio DESTINATION ${PLUGIN_INSTALL_DIR})
+kcoreaddons_desktop_to_json(kcm_pulseaudio "kcm_pulseaudio.desktop")
+
 install(FILES kcm_pulseaudio.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS kcm_pulseaudio DESTINATION ${PLUGIN_INSTALL_DIR}/kcms)
+
+kpackage_install_package(package kcm_pulseaudio kcms)

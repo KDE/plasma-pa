@@ -47,7 +47,7 @@ ColumnLayout {
                 textRole = "name";
                 var name = currentText;
                 textRole = "description";
-                pulseContext.setCardProfile(Index, name);
+                kcm.context.setCardProfile(Index, name);
             }
         }
     }

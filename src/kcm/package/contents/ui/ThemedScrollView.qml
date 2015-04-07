@@ -5,7 +5,11 @@ ScrollView {
     frameVisible: false
 
     Rectangle {
-        color: backgroundColor
+        color: systemPalette.window
         anchors.fill: parent
+
+        SystemPalette {
+            id: systemPalette
+        }
     }
 }

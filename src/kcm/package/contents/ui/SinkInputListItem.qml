@@ -55,7 +55,7 @@ Item {
                     focus: true
                     visible: (HasVolume && IsVolumeWritable) ? true : false
                     onValueChanged: {
-                        pulseContext.setSinkInputVolume(Index, value)
+                        kcm.context.setSinkInputVolume(Index, value)
                     }
 
                     Component.onCompleted: {

@@ -12,7 +12,7 @@ ThemedScrollView {
         anchors.fill: parent
         // FIXME: arbitrary value
         anchors.margins: 10
-        model: dataModel
+        model: kcm.cardModel
         spacing: anchors.margins
         delegate: CardListItem {}
     }

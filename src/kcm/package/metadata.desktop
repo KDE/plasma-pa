@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Sound
+Comment=Configure Sound
+Icon=icon
+Type=Service
+X-KDE-PluginInfo-Author=Harald Sitter
+X-KDE-PluginInfo-Email=sitter@kde.org
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-Name=kcm_pulseaudio
+X-KDE-ServiceTypes=Plasma/Generic
+X-Plasma-API=declarativeappletscript
+
+X-Plasma-MainScript=ui/main.qml
+X-Plasma-RemoteLocation=

@@ -8,9 +8,9 @@ ThemedScrollView {
     ListView {
         id: inputView
 
-        model: dataModel
+        model: kcm.sinkInputModel
         anchors.fill: parent
         anchors.margins: 10
-        delegate: SinkListItem {}
+        delegate: SinkInputListItem {}
     }
 }

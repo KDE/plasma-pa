@@ -21,42 +21,42 @@
 #ifndef MODULE_H
 #define MODULE_H
 
-#include <KCModule>
+#include <KQuickAddons/ConfigModule>
 
-namespace Ui {
-    class Module;
-}
-
+class CardModel;
 class Context;
+class SinkInputModel;
+class SinkModel;
+class SourceModel;
+class SourceOutputModel;
 
-class Module : public KCModule
+class KCMPulseAudio : public KQuickAddons::ConfigModule
 {
     Q_OBJECT
+    Q_PROPERTY(Context *context READ context CONSTANT)
+    Q_PROPERTY(CardModel *cardModel READ cardModel CONSTANT)
+    Q_PROPERTY(SinkModel *sinkModel READ sinkModel CONSTANT)
+    Q_PROPERTY(SinkInputModel *sinkInputModel READ sinkInputModel CONSTANT)
+    Q_PROPERTY(SourceModel *sourceModel READ sourceModel CONSTANT)
+    Q_PROPERTY(SourceOutputModel *sourceOutputModel READ sourceOutputModel CONSTANT)
 public:
-    /**
-     * Constructor.
-     *
-     * @param parent Parent widget of the module
-     * @param args Arguments for the module
-     */
-    explicit Module(QWidget *parent, const QVariantList &args = QVariantList());
+    KCMPulseAudio(QObject *parent, const QVariantList &args);
+    ~KCMPulseAudio();
 
-    /*** Destructor. */
-    ~Module();
+    Context *context() const;
 
-    /*** Overloading the KCModule load() function. */
+    CardModel *cardModel();
+    SinkModel *sinkModel();
+    SinkInputModel *sinkInputModel();
+    SourceModel *sourceModel();
+    SourceOutputModel *sourceOutputModel();
+
+public slots:
+    void defaults() Q_DECL_OVERRIDE Q_DECL_FINAL;
     void load() Q_DECL_OVERRIDE Q_DECL_FINAL;
-
-    /*** Overloading the KCModule save() function. */
     void save() Q_DECL_OVERRIDE Q_DECL_FINAL;
 
-    /*** Overloading the KCModule defaults() function. */
-    void defaults() Q_DECL_OVERRIDE Q_DECL_FINAL;
-
 private:
-    /*** UI */
-    Ui::Module *ui;
-
     Context *m_context;
 };
 
