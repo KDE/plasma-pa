@@ -95,24 +95,11 @@ PlasmaComponents.ListItem {
                 }
 
                 RowLayout {
-                    PlasmaCore.SvgItem {
+                    VolumeIcon {
                         Layout.maximumHeight: slider.height * 0.75
                         Layout.maximumWidth: slider.height* 0.75
-                        svg: PlasmaCore.Svg { imagePath: "icons/audio" }
-                        elementId: {
-                            var split_base = 65536/3.0;
-                            var icon = null;
-                            if ((Volume / split_base <= 0) || IsMuted) {
-                                icon = "audio-volume-muted";
-                            } else if (Volume / split_base <= 1) {
-                                icon = "audio-volume-low";
-                            } else if (Volume / split_base <= 2) {
-                                icon = "audio-volume-medium";
-                            } else {
-                                icon = "audio-volume-high";
-                            }
-                            return icon;
-                        }
+                        volume: Volume
+                        muted: IsMuted
                     }
 
                     PlasmaComponents.Slider {
