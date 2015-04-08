@@ -75,9 +75,7 @@ Item {
 
                 model: SinkModel {
                     id: sinkModel
-                    Component.onCompleted: {
-                        setContext(pulseContext);
-                    }
+                    context: pulseContext
                 }
                 boundsBehavior: Flickable.StopAtBounds;
                 delegate: SinkListItem {}
@@ -92,9 +90,7 @@ Item {
 
                 model: SourceModel {
                     id: sourceModel
-                    Component.onCompleted: {
-                        setContext(pulseContext);
-                    }
+                    context: pulseContext
                 }
                 boundsBehavior: Flickable.StopAtBounds;
                 delegate: SourceListItem {}

@@ -9,7 +9,7 @@ DeviceListItemBase {
         filterRole: SinkInputModel.SinkIndexRole;
         filterRegExp: new RegExp(Index);
         sourceModel: SinkInputModel {
-            Component.onCompleted: setContext(pulseContext);
+            context: pulseContext
         }
 
         Component.onCompleted: initialSort();

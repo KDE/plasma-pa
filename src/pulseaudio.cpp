@@ -140,6 +140,11 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
     return roles;
 }
 
+Context *AbstractModel::context() const
+{
+    return m_context;
+}
+
 void AbstractModel::setContext(Context *context)
 {
     qDebug() << "............................................." << context;

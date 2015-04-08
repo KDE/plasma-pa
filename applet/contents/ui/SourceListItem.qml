@@ -9,7 +9,7 @@ DeviceListItemBase {
         filterRole: SourceOutputModel.SourceIndexRole;
         filterRegExp: new RegExp(Index);
         sourceModel: SourceOutputModel {
-            Component.onCompleted: setContext(pulseContext);
+            context: pulseContext
         }
 
         Component.onCompleted: initialSort();

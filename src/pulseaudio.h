@@ -9,12 +9,14 @@
 class Q_DECL_EXPORT AbstractModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(Context *context READ context WRITE setContext)
 public:
     virtual QHash<int,QByteArray> roleNames() const Q_DECL_OVERRIDE Q_DECL_FINAL;
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE = 0;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE = 0;
 
 public slots:
+    Context *context() const;
     virtual void setContext(Context *context);
 
 protected slots:
