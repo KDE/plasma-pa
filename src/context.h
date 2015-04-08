@@ -20,7 +20,7 @@ class SourceOutput;
 #include <QDebug>
 
 template<typename Type, typename PAInfo>
-class MapBase
+class Q_DECL_EXPORT MapBase
 {
 public:
     virtual ~MapBase() {}
@@ -105,7 +105,7 @@ protected:
     QSet<quint32> m_pendingRemovals;
 };
 
-class SinkMap : public QObject, public MapBase<Sink, pa_sink_info>
+class Q_DECL_EXPORT SinkMap : public QObject, public MapBase<Sink, pa_sink_info>
 {
     Q_OBJECT
 signals:
@@ -114,7 +114,7 @@ signals:
     void removed(quint32 index) Q_DECL_OVERRIDE;
 };
 
-class SinkInputMap : public QObject, public MapBase<SinkInput, pa_sink_input_info>
+class Q_DECL_EXPORT SinkInputMap : public QObject, public MapBase<SinkInput, pa_sink_input_info>
 {
     Q_OBJECT
 signals:
@@ -123,7 +123,7 @@ signals:
     void removed(quint32 index) Q_DECL_OVERRIDE;
 };
 
-class SourceMap : public QObject, public MapBase<Source, pa_source_info>
+class Q_DECL_EXPORT SourceMap : public QObject, public MapBase<Source, pa_source_info>
 {
     Q_OBJECT
 signals:
@@ -132,7 +132,7 @@ signals:
     void removed(quint32 index) Q_DECL_OVERRIDE;
 };
 
-class SourceOutputMap : public QObject, public MapBase<SourceOutput, pa_source_output_info>
+class Q_DECL_EXPORT SourceOutputMap : public QObject, public MapBase<SourceOutput, pa_source_output_info>
 {
     Q_OBJECT
 signals:
@@ -141,7 +141,7 @@ signals:
     void removed(quint32 index) Q_DECL_OVERRIDE;
 };
 
-class ClientMap : public QObject, public MapBase<Client, pa_client_info>
+class Q_DECL_EXPORT ClientMap : public QObject, public MapBase<Client, pa_client_info>
 {
     Q_OBJECT
 signals:
@@ -150,7 +150,7 @@ signals:
     void removed(quint32 index) Q_DECL_OVERRIDE;
 };
 
-class CardMap : public QObject, public MapBase<Card, pa_card_info>
+class Q_DECL_EXPORT CardMap : public QObject, public MapBase<Card, pa_card_info>
 {
     Q_OBJECT
 signals:
@@ -159,7 +159,7 @@ signals:
     void removed(quint32 index) Q_DECL_OVERRIDE;
 };
 
-class Context : public QObject
+class Q_DECL_EXPORT Context : public QObject
 {
     Q_OBJECT
 public:

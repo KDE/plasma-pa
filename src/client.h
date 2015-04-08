@@ -7,7 +7,7 @@
 
 #include "pulseobject.h"
 
-class Client : public PulseObject
+class Q_DECL_EXPORT Client : public PulseObject
 {
     Q_OBJECT
 public:

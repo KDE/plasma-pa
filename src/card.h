@@ -9,7 +9,7 @@
 #include "pulseobject.h"
 
 template <typename PAInfo>
-class ProfileBase
+class Q_DECL_EXPORT ProfileBase
 {
 public:
     ProfileBase()
@@ -43,7 +43,7 @@ private:
 };
 
 template <typename PAInfo>
-class PortBase : public ProfileBase<PAInfo>
+class Q_DECL_EXPORT PortBase : public ProfileBase<PAInfo>
 {
 public:
     PortBase()
@@ -69,7 +69,7 @@ private:
 typedef ProfileBase<pa_card_profile_info> CardProfile;
 typedef PortBase<pa_card_port_info> CardPort;
 
-class Card : public PulseObject
+class Q_DECL_EXPORT Card : public PulseObject
 {
     Q_OBJECT
 public:

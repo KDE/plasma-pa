@@ -3,7 +3,7 @@
 
 #include "pulseobject.h"
 
-class SinkInput : public PulseObject
+class Q_DECL_EXPORT SinkInput : public PulseObject
 {
     Q_OBJECT
 public:

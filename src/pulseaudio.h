@@ -6,7 +6,7 @@
 
 #include "context.h"
 
-class AbstractModel : public QAbstractListModel
+class Q_DECL_EXPORT AbstractModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -32,7 +32,7 @@ private:
     AbstractModel() {}
 };
 
-class SinkModel : public AbstractModel
+class Q_DECL_EXPORT SinkModel : public AbstractModel
 {
     Q_OBJECT
     Q_PROPERTY(QString volumeText READ volumeText NOTIFY volumeTextChanged)
@@ -63,7 +63,7 @@ signals:
     void volumeTextChanged();
 };
 
-class SourceModel : public AbstractModel
+class Q_DECL_EXPORT SourceModel : public AbstractModel
 {
     Q_OBJECT
 public:
@@ -89,7 +89,7 @@ signals:
     void volumeTextChanged();
 };
 
-class SourceOutputModel : public AbstractModel
+class Q_DECL_EXPORT SourceOutputModel : public AbstractModel
 {
     Q_OBJECT
 public:
@@ -115,7 +115,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 };
 
-class ClientModel : public AbstractModel
+class Q_DECL_EXPORT ClientModel : public AbstractModel
 {
     Q_OBJECT
 public:
@@ -132,7 +132,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 };
 
-class CardModel : public AbstractModel
+class Q_DECL_EXPORT CardModel : public AbstractModel
 {
     Q_OBJECT
 public:
@@ -155,7 +155,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 };
 
-class SinkInputModel : public AbstractModel
+class Q_DECL_EXPORT SinkInputModel : public AbstractModel
 {
     Q_OBJECT
 public:
@@ -181,7 +181,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 };
 
-class ReverseFilterModel : public QSortFilterProxyModel
+class Q_DECL_EXPORT ReverseFilterModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)

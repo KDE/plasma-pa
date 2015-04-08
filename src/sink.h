@@ -5,7 +5,7 @@
 
 #include "pulseobject.h"
 
-class SinkPort
+class Q_DECL_EXPORT SinkPort
 {
 public:
     SinkPort();
@@ -24,7 +24,7 @@ private:
     bool m_isAvailable;
 };
 
-class Sink : public PulseObject
+class Q_DECL_EXPORT Sink : public PulseObject
 {
     Q_OBJECT
 public:

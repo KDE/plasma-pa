@@ -12,13 +12,13 @@ set(SRC_LIST
     sourceoutput.cpp
 )
 
-add_library(plasma-volume-declarative SHARED plugin.cpp ${SRC_LIST})
-target_link_libraries(plasma-volume-declarative
-    Qt5::Quick
+add_library(QPulseAudioPrivate SHARED ${SRC_LIST})
+target_link_libraries(QPulseAudioPrivate
+    Qt5::Core
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
 )
-install(TARGETS plasma-volume-declarative DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/volume)
-install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/volume)
+install(TARGETS QPulseAudioPrivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 add_subdirectory(kcm)
+add_subdirectory(qml)

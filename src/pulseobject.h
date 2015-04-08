@@ -5,7 +5,7 @@
 
 #include <pulse/introspect.h>
 
-class PulseObject : public QObject
+class Q_DECL_EXPORT PulseObject : public QObject
 {
 public:
     quint32 index() const;

@@ -5,7 +5,7 @@
 
 #include "pulseobject.h"
 
-class SourceOutput : public PulseObject
+class Q_DECL_EXPORT SourceOutput : public PulseObject
 {
     Q_OBJECT
 public:
