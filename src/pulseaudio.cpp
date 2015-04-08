@@ -214,7 +214,7 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
 #warning this is slightly meh maybe there is a better way
         auto ports = sink->ports();
         QList<QVariant> list;
-        for (Sink::Port port : ports) {
+        for (auto port : ports) {
             list.append(port.toVariantMap());
         }
         return list;
@@ -332,7 +332,7 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
 #warning this is slightly meh maybe there is a better way
         auto ports = source->ports();
         QList<QVariant> list;
-        for (Source::Port port : ports) {
+        for (auto port : ports) {
             list.append(port.toVariantMap());
         }
         return list;
@@ -448,17 +448,11 @@ QVariant CardModel::data(const QModelIndex &index, int role) const
         return data->driver();
     case ProfilesRole: {
 #warning this is slightly meh maybe there is a better way
-        auto ports = data->profiles();
-        qDebug() << "............................................" << ports.length();
+        auto profiles = data->profiles();
         QList<QVariant> list;
-        for (auto port: ports) {
-            QVariantMap map;
-            map.insert(QLatin1Literal("name"), port.name());
-            map.insert(QLatin1Literal("description"), port.description());
-            map.insert(QLatin1Literal("priority"), port.priority());
-            list.append(map);
+        for (auto profile : profiles) {
+            list.append(profile.toVariantMap());
         }
-        qDebug() << "  ............................................" << list.length();
         return list;
     }
     case ActiveProfileIndexRole:
@@ -467,17 +461,10 @@ QVariant CardModel::data(const QModelIndex &index, int role) const
     case PortsRole: {
     #warning this is slightly meh maybe there is a better way
             auto ports = data->ports();
-            qDebug() << "............................................" << ports.length();
             QList<QVariant> list;
-            for (auto port: ports) {
-                QVariantMap map;
-                map.insert(QLatin1Literal("name"), port.name());
-                map.insert(QLatin1Literal("description"), port.description());
-                map.insert(QLatin1Literal("priority"), port.priority());
-                map.insert(QLatin1Literal("isAvailable"), port.isAvailable());
-                list.append(map);
+            for (auto port : ports) {
+                list.append(port.toVariantMap());
             }
-            qDebug() << "  ............................................" << list.length();
             return list;
         }
     case PropertiesRole:
