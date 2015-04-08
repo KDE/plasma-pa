@@ -7,21 +7,9 @@ set(kcm_SRCS
     module.cpp
 )
 
-set(lib_SRCS
-    ../card.cpp
-    ../client.cpp
-    ../context.cpp
-    ../pulseaudio.cpp
-    ../pulseobject.cpp
-    ../sink.cpp
-    ../sinkinput.cpp
-    ../source.cpp
-    ../sourceoutput.cpp
-)
-
 qt5_wrap_ui(kcm_SRCS module.ui)
 
-add_library(kcm_pulseaudio MODULE ${kcm_SRCS} ${lib_SRCS})
+add_library(kcm_pulseaudio MODULE ${kcm_SRCS})
 
 target_link_libraries(kcm_pulseaudio
     Qt5::Quick
@@ -32,6 +20,7 @@ target_link_libraries(kcm_pulseaudio
     KF5::QuickAddons
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
+    QPulseAudioPrivate
 )
 
 kcoreaddons_desktop_to_json(kcm_pulseaudio "kcm_pulseaudio.desktop")
