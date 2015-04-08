@@ -4,6 +4,7 @@ set(SRC_LIST
     card.cpp
     client.cpp
     context.cpp
+    maps.cpp
     pulseaudio.cpp
     pulseobject.cpp
     sink.cpp
