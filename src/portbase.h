@@ -23,6 +23,13 @@ public:
 
     bool isAvailable() const { return m_isAvailable; }
 
+    virtual QVariantMap toVariantMap() const Q_DECL_OVERRIDE Q_DECL_FINAL
+    {
+        auto map = ProfileBase<PAInfo>::toVariantMap();
+        map.insert(QLatin1Literal("available"), isAvailable());
+        return map;
+    }
+
 private:
     bool m_isAvailable;
 };

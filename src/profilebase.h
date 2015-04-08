@@ -2,6 +2,7 @@
 #define PROFILEBASE_H
 
 #include <QString>
+#include <QVariantMap>
 
 template <typename PAInfo>
 class Q_DECL_EXPORT ProfileBase
@@ -30,6 +31,15 @@ public:
     QString name() const { return m_name; }
     QString description() const { return m_description; }
     quint32 priority() const { return m_priority; }
+
+    virtual QVariantMap toVariantMap() const
+    {
+        QVariantMap map;
+        map.insert(QLatin1Literal("name"), name());
+        map.insert(QLatin1Literal("description"), description());
+        map.insert(QLatin1Literal("priority"), priority());
+        return map;
+    }
 
 private:
     QString m_name;
