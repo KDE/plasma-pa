@@ -28,7 +28,7 @@ public:
         m_isMuted = info->mute;
 
         m_ports.clear();
-        for (auto **ports = info->ports; *ports != nullptr; ++ports) {
+        for (auto **ports = info->ports; ports && *ports != nullptr; ++ports) {
             Port port;
             port.setInfo(*ports);
             m_ports.append(port);
