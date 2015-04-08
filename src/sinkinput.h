@@ -1,34 +1,18 @@
 #ifndef SINKINPUT_H
 #define SINKINPUT_H
 
-#include "pulseobject.h"
+#include "streambase.h"
 
-class Q_DECL_EXPORT SinkInput : public PulseObject
+class Q_DECL_EXPORT SinkInput : public StreamBase<pa_sink_input_info>
 {
     Q_OBJECT
 public:
-    SinkInput(QObject *parent = nullptr);
+    void setInfo(const pa_sink_input_info *info) Q_DECL_OVERRIDE Q_DECL_FINAL;
 
-    void setInfo(const pa_sink_input_info *info);
-
-    QString name() const { return m_name; }
     quint32 sinkIndex() const { return m_sinkIndex; }
-    pa_cvolume volume() const { return m_volume; }
-    bool isMuted() const { return m_isMuted; }
-    bool hasVolume() const { return m_hasVolume; }
-    bool isVolumeWritable() const { return m_isVolumeWritable; }
-
-    quint32 client() const { return m_client; }
 
 private:
-    QString m_name;
-    quint32 m_sinkIndex;
-    pa_cvolume m_volume;
-    bool m_isMuted;
-    bool m_hasVolume;
-    bool m_isVolumeWritable;
-
-    quint32 m_client;
+    quint32 m_sinkIndex = 0;
 };
 
 #endif // SINKINPUT_H

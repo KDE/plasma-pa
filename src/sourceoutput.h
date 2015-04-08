@@ -1,34 +1,18 @@
 #ifndef SOURCEOUTPUT_H
 #define SOURCEOUTPUT_H
 
-#include <pulse/introspect.h>
+#include "streambase.h"
 
-#include "pulseobject.h"
-
-class Q_DECL_EXPORT SourceOutput : public PulseObject
+class Q_DECL_EXPORT SourceOutput : public StreamBase<pa_source_output_info>
 {
     Q_OBJECT
 public:
-    SourceOutput();
-    void setInfo(const pa_source_output_info *info);
+    void setInfo(const pa_source_output_info *info) Q_DECL_OVERRIDE Q_DECL_FINAL;
 
-    QString name() const { return m_name; }
     quint32 sourceIndex() const { return m_sourceIndex; }
-    pa_cvolume volume() const { return m_volume; }
-    bool isMuted() const { return m_isMuted; }
-    bool hasVolume() const { return m_hasVolume; }
-    bool isVolumeWritable() const { return m_isVolumeWritable; }
-
-    quint32 client() const { return m_client; }
 
 private:
-   QString m_name;
-   quint32 m_sourceIndex;
-   pa_cvolume m_volume;
-   bool m_isMuted;
-   bool m_hasVolume;
-   bool m_isVolumeWritable;
-   quint32 m_client;
+    quint32 m_sourceIndex = 0;
 };
 
 #endif // SOURCEOUTPUT_H
