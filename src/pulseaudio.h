@@ -75,6 +75,8 @@ public:
         DescriptionRole,
         VolumeRole,
         IsMutedRole,
+        PortsRole,
+        ActivePortRole
     };
     Q_ENUMS(ItemRole)
 

@@ -213,17 +213,10 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     case PortsRole: {
 #warning this is slightly meh maybe there is a better way
         auto ports = sink->ports();
-        qDebug() << "............................................" << ports.length();
         QList<QVariant> list;
-        for (SinkPort port: ports) {
-            QVariantMap map;
-            map.insert(QLatin1Literal("name"), port.name());
-            map.insert(QLatin1Literal("description"), port.description());
-            map.insert(QLatin1Literal("priority"), port.priority());
-            map.insert(QLatin1Literal("isAvailable"), port.isAvailable());
-            list.append(map);
+        for (Sink::Port port : ports) {
+            list.append(port.toVariantMap());
         }
-        qDebug() << "  ............................................" << list.length();
         return list;
     }
     case ActivePortRole:
@@ -335,6 +328,17 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
         return source->volume().values[0];
     case IsMutedRole:
         return source->isMuted();
+    case PortsRole: {
+#warning this is slightly meh maybe there is a better way
+        auto ports = source->ports();
+        QList<QVariant> list;
+        for (Source::Port port : ports) {
+            list.append(port.toVariantMap());
+        }
+        return list;
+    }
+    case ActivePortRole:
+        return source->activePortIndex();
     }
     return QVariant();
 }
