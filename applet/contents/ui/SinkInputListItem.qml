@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-import org.kde.plasma.volume 0.1
+import org.kde.plasma.private.volume 0.1
 
 StreamListItemBase {
     // FIXME: all of this needs to be dependent on how many sinks we have...
