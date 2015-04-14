@@ -336,7 +336,7 @@ void Context::cardCallback(const pa_card_info *info)
     m_cards.updateEntry(info);
 }
 
-void Context::setSinkVolume(quint32 index, quint32 volume)
+void Context::setSinkVolume(quint32 index, qint64 volume)
 {
     Sink *obj = m_sinks.data().value(index, nullptr);
     if (!obj)
@@ -356,7 +356,7 @@ void Context::setSinkPort(quint32 index, const QString &portName)
     }
 }
 
-void Context::setSinkInputVolume(quint32 index, quint32 volume)
+void Context::setSinkInputVolume(quint32 index, qint64 volume)
 {
     SinkInput *obj = m_sinkInputs.data().value(index, nullptr);
     if (!obj)
@@ -386,7 +386,7 @@ void Context::setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex)
     }
 }
 
-void Context::setSourceVolume(quint32 index, quint32 volume)
+void Context::setSourceVolume(quint32 index, qint64 volume)
 {
     Source *obj = m_sources.data().value(index, nullptr);
     if (!obj)
@@ -394,7 +394,7 @@ void Context::setSourceVolume(quint32 index, quint32 volume)
     setGenericVolume(index, volume, obj->volume(), &pa_context_set_source_volume_by_index);
 }
 
-void Context::setSourceOutputVolume(quint32 index, quint32 volume)
+void Context::setSourceOutputVolume(quint32 index, qint64 volume)
 {
     SourceOutput *obj = m_sourceOutputs.data().value(index, nullptr);
     if (!obj)
@@ -468,12 +468,12 @@ void Context::connectToDaemon()
     pa_context_set_state_callback(m_context, &context_state_callback, this);
 }
 template <typename PAFunction>
-void Context::setGenericVolume(quint32 index, quint32 newVolume,
+void Context::setGenericVolume(quint32 index, qint64 newVolume,
                                pa_cvolume cVolume, PAFunction pa_set_volume)
 {
     qDebug() << Q_FUNC_INFO << index << newVolume;
 #warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
-    newVolume = qMin<quint32>(newVolume, 65536);
+    newVolume = qBound<qint64>(0, newVolume, 65536);
     pa_cvolume newCVolume = cVolume;
     for (int i = 0; i < newCVolume.channels; ++i) {
         newCVolume.values[i] = newVolume;
