@@ -31,8 +31,4 @@ StreamListItemBase {
             }
         }
     }
-
-    function setVolume(volume) {
-        pulseContext.setSinkInputVolume(Index, volume);
-    }
 }

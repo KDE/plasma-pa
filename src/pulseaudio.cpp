@@ -60,6 +60,8 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
     switch ((ItemRole) role) {
     case IndexRole:
         return sinkInput->index();
+    case PulseObjectRole:
+        return QVariant::fromValue(sinkInput);
     case NameRole:
         return sinkInput->name();
     case VolumeRole:
@@ -178,6 +180,8 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     switch(static_cast<ItemRole>(role)) {
     case IndexRole:
         return sink->index();
+    case PulseObjectRole:
+        return QVariant::fromValue(sink);
     case NameRole:
         return sink->name();
     case DescriptionRole:
@@ -287,6 +291,8 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
     switch(static_cast<ItemRole>(role)) {
     case IndexRole:
         return source->index();
+    case PulseObjectRole:
+        return QVariant::fromValue(source);
     case NameRole:
         return source->name();
     case DescriptionRole:
@@ -333,6 +339,8 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
     switch ((ItemRole) role) {
     case IndexRole:
         return data->index();
+    case PulseObjectRole:
+        return QVariant::fromValue(data);
     case NameRole:
         return data->name();
     case SourceIndexRole:

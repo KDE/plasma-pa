@@ -13,8 +13,4 @@ DeviceListItemBase {
         Component.onCompleted: initialSort();
     }
     subDelegate: SourceOutputListItem {}
-
-    function setVolume(volume) {
-        pulseContext.setSourceVolume(Index, volume);
-    }
 }

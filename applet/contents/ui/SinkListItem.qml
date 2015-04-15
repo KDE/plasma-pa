@@ -13,9 +13,4 @@ DeviceListItemBase {
         Component.onCompleted: initialSort();
     }
     subDelegate: SinkInputListItem {}
-
-    function setVolume(volume) {
-        // TODO: possibly set the volume icon here, otherwise it will update on delay
-        pulseContext.setSinkVolume(Index, volume);
-    }
 }

@@ -21,7 +21,7 @@ PlasmaComponents.ListItem {
     enabled: subComponent
 
     function setVolume(volume) {
-        throw "Pure Virtual BaseItem::setVolumve(volume) called.";
+        PulseObject.volume = volume
     }
 
     function increaseVolume() {

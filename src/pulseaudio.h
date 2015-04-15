@@ -37,6 +37,7 @@ class Q_DECL_EXPORT SinkModel : public AbstractModel
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
+        PulseObjectRole,
         NameRole,
         DescriptionRole,
         VolumeRole,
@@ -69,6 +70,7 @@ class Q_DECL_EXPORT SourceModel : public AbstractModel
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
+        PulseObjectRole,
         NameRole,
         DescriptionRole,
         VolumeRole,
@@ -96,6 +98,7 @@ class Q_DECL_EXPORT SourceOutputModel : public AbstractModel
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
+        PulseObjectRole,
         NameRole,
         SourceIndexRole,
         VolumeRole,
@@ -156,6 +159,7 @@ class Q_DECL_EXPORT SinkInputModel : public AbstractModel
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
+        PulseObjectRole,
         NameRole,
         VolumeRole,
         SinkIndexRole,
