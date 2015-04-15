@@ -5,11 +5,12 @@
 
 #include <pulse/volume.h>
 
+#include "abstractvolumebase.h"
 #include "portbase.h"
 #include "pulseobject.h"
 
 template <typename PAInfo, typename PAPortInfo>
-class Q_DECL_EXPORT DeviceBase : public PulseObject
+class Q_DECL_EXPORT DeviceBase : public PulseObject, public AbstractVolumeBase
 {
 public:
     typedef PortBase<PAPortInfo> Port;
@@ -25,7 +26,7 @@ public:
         m_description = info->description;
 
         m_volume = info->volume;
-        m_isMuted = info->mute;
+        m_muted = info->mute;
 
         m_ports.clear();
         for (auto **ports = info->ports; ports && *ports != nullptr; ++ports) {
@@ -40,16 +41,12 @@ public:
 
     QString name() const { return m_name; }
     QString description() const { return m_description; }
-    pa_cvolume volume() const { return m_volume; }
-    bool isMuted() const { return m_isMuted; }
     QList<Port> ports() const { return m_ports; }
     int activePortIndex() const { return m_activePortIndex; }
 
 private:
     QString m_name;
     QString m_description;
-    pa_cvolume m_volume;
-    bool m_isMuted = false;
     QList<Port> m_ports;
     int m_activePortIndex = -1;
 };
