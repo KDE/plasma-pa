@@ -7,17 +7,17 @@ ListItemBase {
     property Component subDelegate
 
     label: Description
-    expanderIconVisible: pseudoView.count > 0
-    subComponent: ListView {
-        id: inputView
-
-        width: parent ? parent.width : 0
-                height: contentHeight
-
-        model: subModel
-        boundsBehavior: Flickable.StopAtBounds;
-        delegate: subDelegate
-    }
+    // expanderIconVisible: pseudoView.count > 0
+    // subComponent: ListView {
+    //     id: inputView
+    //
+    //     width: parent ? parent.width : 0
+    //             height: contentHeight
+    //
+    //     model: subModel
+    //     boundsBehavior: Flickable.StopAtBounds;
+    //     delegate: subDelegate
+    // }
 
     ListView {
         id: pseudoView
