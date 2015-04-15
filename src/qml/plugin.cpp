@@ -7,6 +7,7 @@
 void Plugin::registerTypes(const char* uri)
 {
     qmlRegisterType<Context>();
+    qmlRegisterType<CardModel>(uri, 0, 1, "CardModel");
     qmlRegisterType<ClientModel>(uri, 0, 1, "ClientModel");
     qmlRegisterType<SinkModel>(uri, 0, 1, "SinkModel");
     qmlRegisterType<SinkInputModel>(uri, 0, 1, "SinkInputModel");

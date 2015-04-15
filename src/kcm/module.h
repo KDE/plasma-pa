@@ -33,23 +33,9 @@ class SourceOutputModel;
 class KCMPulseAudio : public KQuickAddons::ConfigModule
 {
     Q_OBJECT
-    Q_PROPERTY(Context *context READ context CONSTANT)
-    Q_PROPERTY(CardModel *cardModel READ cardModel CONSTANT)
-    Q_PROPERTY(SinkModel *sinkModel READ sinkModel CONSTANT)
-    Q_PROPERTY(SinkInputModel *sinkInputModel READ sinkInputModel CONSTANT)
-    Q_PROPERTY(SourceModel *sourceModel READ sourceModel CONSTANT)
-    Q_PROPERTY(SourceOutputModel *sourceOutputModel READ sourceOutputModel CONSTANT)
 public:
     KCMPulseAudio(QObject *parent, const QVariantList &args);
     ~KCMPulseAudio();
-
-    Context *context() const;
-
-    CardModel *cardModel();
-    SinkModel *sinkModel();
-    SinkInputModel *sinkInputModel();
-    SourceModel *sourceModel();
-    SourceOutputModel *sourceOutputModel();
 
 public slots:
     void defaults() Q_DECL_OVERRIDE Q_DECL_FINAL;

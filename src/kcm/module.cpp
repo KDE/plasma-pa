@@ -38,15 +38,7 @@ K_PLUGIN_FACTORY_WITH_JSON(KCMPulseAudioFactory,
 
 KCMPulseAudio::KCMPulseAudio(QObject *parent, const QVariantList &args)
     : KQuickAddons::ConfigModule(parent, args)
-    , m_context(new Context(this))
 {
-    qmlRegisterType<CardModel>();
-    qmlRegisterType<Context>();
-    qmlRegisterType<SinkModel>();
-    qmlRegisterType<SinkInputModel>();
-    qmlRegisterType<SourceModel>();
-    qmlRegisterType<SourceOutputModel>();
-
     KAboutData *aboutData = new KAboutData("kcm_pulseaudio",
                                            i18nc("@title", "PulseAudio"),
                                            global_s_versionStringFull,
@@ -64,41 +56,6 @@ KCMPulseAudio::KCMPulseAudio(QObject *parent, const QVariantList &args)
 
 KCMPulseAudio::~KCMPulseAudio()
 {
-}
-
-Context *KCMPulseAudio::context() const
-{
-    return m_context;
-}
-
-CardModel *KCMPulseAudio::cardModel()
-{
-    static CardModel *single = new CardModel(m_context, this);
-    return single;
-}
-
-SinkModel *KCMPulseAudio::sinkModel()
-{
-    static SinkModel *single = new SinkModel(m_context, this);
-    return single;
-}
-
-SinkInputModel *KCMPulseAudio::sinkInputModel()
-{
-    static SinkInputModel *single = new SinkInputModel(m_context, this);
-    return single;
-}
-
-SourceModel *KCMPulseAudio::sourceModel()
-{
-    static SourceModel *single = new SourceModel(m_context, this);
-    return single;
-}
-
-SourceOutputModel *KCMPulseAudio::sourceOutputModel()
-{
-    static SourceOutputModel *single = new SourceOutputModel(m_context, this);
-    return single;
 }
 
 void KCMPulseAudio::load()
