@@ -122,8 +122,12 @@ PlasmaComponents.ListItem {
                         maximumValue: 65536
                         stepSize: maximumValue / 100
                         visible: HasVolume
-                        // FIXME: when IsVolumeWritable is undefined (sink) this evals to true...
-                        enabled: IsVolumeWritable && !IsMuted
+                        enabled: {
+                            if (typeof IsVolumeWritable === 'undefined') {
+                                return !IsMuted
+                            }
+                            return IsVolumeWritable && !IsMuted
+                        }
 
                         onVolumeChanged: {
                             if (!pressed) {
