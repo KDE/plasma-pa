@@ -341,7 +341,7 @@ void Context::setSinkVolume(quint32 index, qint64 volume)
     Sink *obj = m_sinks.data().value(index, nullptr);
     if (!obj)
         return;
-    setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_volume_by_index);
+    setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Context::setSinkPort(quint32 index, const QString &portName)
@@ -391,7 +391,7 @@ void Context::setSourceVolume(quint32 index, qint64 volume)
     Source *obj = m_sources.data().value(index, nullptr);
     if (!obj)
         return;
-    setGenericVolume(index, volume, obj->volume(), &pa_context_set_source_volume_by_index);
+    setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_source_volume_by_index);
 }
 
 void Context::setSourceOutputVolume(quint32 index, qint64 volume)

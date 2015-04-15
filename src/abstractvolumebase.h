@@ -10,9 +10,16 @@ class Q_DECL_EXPORT AbstractVolumeBase
 public:
     virtual ~AbstractVolumeBase() {}
 
-    pa_cvolume volume() const
+
+#warning cvolume should be protected and only used internally
+    Q_DECL_DEPRECATED pa_cvolume cvolume() const
     {
         return m_volume;
+    }
+#warning volume value is a bit meh with channels in the picture
+    qint64 volume() const
+    {
+        return m_volume.values[0];
     }
     virtual void setVolume(qint64 volume) = 0;
 

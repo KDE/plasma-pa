@@ -216,7 +216,7 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     case DescriptionRole:
         return sink->description();
     case VolumeRole:
-        return sink->volume().values[0];
+        return sink->volume();
     case IsMutedRole:
         return sink->isMuted();
     case PortsRole: {
@@ -334,7 +334,7 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
     case DescriptionRole:
         return source->description();
     case VolumeRole:
-        return source->volume().values[0];
+        return source->volume();
     case IsMutedRole:
         return source->isMuted();
     case PortsRole: {
