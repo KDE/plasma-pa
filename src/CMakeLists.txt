@@ -7,6 +7,7 @@ set(SRC_LIST
     maps.cpp
     pulseaudio.cpp
     pulseobject.cpp
+    operation.cpp
     sink.cpp
     sinkinput.cpp
     source.cpp

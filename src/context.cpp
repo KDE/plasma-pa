@@ -5,51 +5,13 @@
 
 #include "card.h"
 #include "client.h"
+#include "operation.h"
 #include "sink.h"
 #include "sinkinput.h"
 #include "source.h"
 #include "sourceoutput.h"
 
 #warning todo this needs to be a singleton as multiple contexts dont make sense and it makes it eaier to use from qml
-
-class PAOperation
-{
-public:
-    PAOperation(pa_operation *operation = nullptr)
-        : m_operation(operation)
-    {}
-
-    ~PAOperation()
-    {
-        if (m_operation) {
-            pa_operation_unref(m_operation);
-        }
-    }
-
-    PAOperation &operator =(pa_operation *operation)
-    {
-        m_operation = operation;
-        return *this;
-    }
-
-    bool operator !()
-    {
-        return !m_operation;
-    }
-
-    operator bool()
-    {
-        return m_operation;
-    }
-
-    pa_operation *&operator *()
-    {
-        return m_operation;
-    }
-
-private:
-    pa_operation *m_operation;
-};
 
 static bool isGoodState(int eol)
 {
