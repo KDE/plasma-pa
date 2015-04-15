@@ -19,7 +19,7 @@ Item {
     Plasmoid.toolTipSubText: sinkModel.volumeText
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
-        source: plasmoid.icon ? plasmoid.icon : "plasma"
+        source: Plasmoid.icon ? Plasmoid.icon : "plasma"
         active: mouseArea.containsMouse
 
         MouseArea {
@@ -29,8 +29,8 @@ Item {
 
             anchors.fill: parent
             hoverEnabled: true
-            onPressed: wasExpanded = plasmoid.expanded
-            onClicked: plasmoid.expanded = !wasExpanded
+            onPressed: wasExpanded = Plasmoid.expanded
+            onClicked: Plasmoid.expanded = !wasExpanded
             onWheel: {
                 if (sinkView.count < 0)
                     return;
