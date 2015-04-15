@@ -51,6 +51,9 @@ public:
 
     Q_INVOKABLE void setCardProfile(quint32 cardIndex, const QString &profileName);
 
+    template <typename PAFunction>
+    void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute);
+
 private:
     void connectToDaemon();
     template <typename PAFunction>

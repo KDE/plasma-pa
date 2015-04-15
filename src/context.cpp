@@ -484,6 +484,16 @@ void Context::setGenericVolume(quint32 index, qint64 newVolume,
     }
 }
 
+template <typename PAFunction>
+void Context::setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
+{
+    qDebug() << Q_FUNC_INFO << index << mute;
+    if (!PAOperation(pa_set_mute(m_context, index, mute, nullptr, nullptr))) {
+        qWarning() <<  "pa_set_mute() failed";
+        return;
+    }
+}
+
 void Context::reset()
 {
     pa_context_unref(m_context);
