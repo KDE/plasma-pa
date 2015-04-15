@@ -7,6 +7,8 @@
 
 class Q_DECL_EXPORT PulseObject : public QObject
 {
+    Q_OBJECT
+    Q_PROPERTY(quint32 index READ index CONSTANT)
 public:
     quint32 index() const;
 
