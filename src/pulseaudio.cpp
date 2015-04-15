@@ -66,7 +66,7 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
         return sinkInput->name();
     case VolumeRole:
 #warning values bs
-        return sinkInput->volume().values[0];
+        return sinkInput->volume();
     case SinkIndexRole:
         return sinkInput->sinkIndex();
     case IsMutedRole:
@@ -346,7 +346,7 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
     case SourceIndexRole:
         return data->sourceIndex();
     case VolumeRole:
-        return data->volume().values[0];
+        return data->volume();
     case IsMutedRole:
         return data->isMuted();
     case HasVolumeRole:

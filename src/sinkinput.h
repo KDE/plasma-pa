@@ -11,6 +11,9 @@ public:
 
     quint32 sinkIndex() const { return m_sinkIndex; }
 
+    void setVolume(qint64 volume) Q_DECL_OVERRIDE;
+    void setMuted(bool muted) Q_DECL_OVERRIDE;
+
 private:
     quint32 m_sinkIndex = 0;
 };

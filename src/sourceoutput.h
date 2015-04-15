@@ -11,6 +11,9 @@ public:
 
     quint32 sourceIndex() const { return m_sourceIndex; }
 
+    void setVolume(qint64 volume) Q_DECL_OVERRIDE;
+    void setMuted(bool muted) Q_DECL_OVERRIDE;
+
 private:
     quint32 m_sourceIndex = 0;
 };

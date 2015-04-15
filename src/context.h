@@ -59,14 +59,13 @@ public:
     Q_INVOKABLE void setCardProfile(quint32 cardIndex, const QString &profileName);
 
     template <typename PAFunction>
+    void setGenericVolume(quint32 index, qint64 newVolume,
+                          pa_cvolume cVolume, PAFunction pa_set_volume);
+    template <typename PAFunction>
     void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute);
 
 private:
     void connectToDaemon();
-    template <typename PAFunction>
-    void setGenericVolume(quint32 index, qint64 newVolume,
-                          pa_cvolume cVolume, PAFunction pa_set_volume);
-
     void reset();
 
     // Don't forget to add things to reset().

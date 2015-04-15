@@ -5,10 +5,11 @@
 
 #include <pulse/volume.h>
 
+#include "abstractvolumebase.h"
 #include "pulseobject.h"
 
 template <typename PAInfo>
-class Q_DECL_EXPORT StreamBase : public PulseObject
+class Q_DECL_EXPORT StreamBase : public PulseObject, public AbstractVolumeBase
 {
 public:
     StreamBase() {}
@@ -18,7 +19,7 @@ public:
     {
         m_index = info->index;
         m_name = QString::fromUtf8(info->name);
-        m_isMuted = info->mute;
+        m_muted = info->mute;
         m_hasVolume = info->has_volume;
         m_isVolumeWritable = info->volume_writable;
         if (m_hasVolume) {
@@ -28,8 +29,6 @@ public:
     }
 
     QString name() const { return m_name; }
-    pa_cvolume volume() const { return m_volume; }
-    bool isMuted() const { return m_isMuted; }
     bool hasVolume() const { return m_hasVolume; }
     bool isVolumeWritable() const { return m_isVolumeWritable; }
 
@@ -37,8 +36,6 @@ public:
 
 private:
     QString m_name;
-    pa_cvolume m_volume;
-    bool m_isMuted;
     bool m_hasVolume;
     bool m_isVolumeWritable;
 

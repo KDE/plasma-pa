@@ -353,7 +353,7 @@ void Context::setSinkInputVolume(quint32 index, qint64 volume)
     SinkInput *obj = m_sinkInputs.data().value(index, nullptr);
     if (!obj)
         return;
-    setGenericVolume(index, volume, obj->volume(), &pa_context_set_sink_input_volume);
+    setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_sink_input_volume);
 }
 
 void Context::setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex)
@@ -391,7 +391,7 @@ void Context::setSourceOutputVolume(quint32 index, qint64 volume)
     SourceOutput *obj = m_sourceOutputs.data().value(index, nullptr);
     if (!obj)
         return;
-    setGenericVolume(index, volume, obj->volume(), &pa_context_set_source_output_volume);
+    setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_source_output_volume);
 }
 
 void Context::setSourceOutputSinkByModelIndex(quint32 index, int sourceModelIndex)
