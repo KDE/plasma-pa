@@ -100,6 +100,11 @@ PlasmaComponents.ListItem {
                         Layout.maximumWidth: slider.height* 0.75
                         volume: Volume
                         muted: IsMuted
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onPressed: PulseObject.muted = !PulseObject.muted
+                        }
                     }
 
                     PlasmaComponents.Slider {
