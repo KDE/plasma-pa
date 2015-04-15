@@ -1,5 +1,4 @@
 import QtQuick 2.0
-
 import QtQuick.Layouts 1.0
 
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -29,7 +28,17 @@ Item {
 
             anchors.fill: parent
             hoverEnabled: true
-            onPressed: wasExpanded = Plasmoid.expanded
+            acceptedButtons: Qt.LeftButton | Qt.MiddleButton
+            onPressed: {
+              if (mouse.button == Qt.LeftButton) {
+                wasExpanded = Plasmoid.expanded
+              } else if (mouse.button == Qt.MiddleButton) {
+                for (var i in sinkModel.sinks) {
+                  var sink = sinkModel.sinks[i]
+                  sink.muted = !sink.muted
+                }
+              }
+            }
             onClicked: Plasmoid.expanded = !wasExpanded
             onWheel: {
                 if (sinkView.count < 0)

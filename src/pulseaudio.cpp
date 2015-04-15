@@ -165,6 +165,15 @@ SinkModel::SinkModel(Context *context, QObject *parent)
     }
 }
 
+QList<QObject *> SinkModel::sinks() const
+{
+    QList <QObject *> ret;
+    for (Sink *sink : s_context->sinks().data().values()) {
+        ret << sink;
+    }
+    return ret;
+}
+
 void SinkModel::setContext(Context *context)
 {
     AbstractModel::setContext(context);

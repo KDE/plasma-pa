@@ -38,6 +38,7 @@ class Q_DECL_EXPORT SinkModel : public AbstractModel
 {
     Q_OBJECT
     Q_PROPERTY(QString volumeText READ volumeText NOTIFY volumeTextChanged)
+    Q_PROPERTY(QList<QObject *> sinks READ sinks)
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
@@ -51,6 +52,8 @@ public:
     Q_ENUMS(ItemRole)
 
     SinkModel(Context *context = nullptr, QObject *parent = nullptr);
+
+    QList<QObject *> sinks() const;
 
     Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
 #warning fixme this is so bad...
