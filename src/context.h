@@ -71,4 +71,6 @@ private:
     pa_glib_mainloop *m_mainloop;
 };
 
+Q_GLOBAL_STATIC(Context, s_context)
+
 #endif // CONTEXT_H
