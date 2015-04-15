@@ -168,7 +168,9 @@ SinkModel::SinkModel(Context *context, QObject *parent)
 QList<QObject *> SinkModel::sinks() const
 {
     QList <QObject *> ret;
-    for (Sink *sink : s_context->sinks().data().values()) {
+    if (!m_context)
+        return ret;
+    for (Sink *sink : m_context->sinks().data().values()) {
         ret << sink;
     }
     return ret;
