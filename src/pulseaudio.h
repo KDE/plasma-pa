@@ -38,7 +38,7 @@ class Q_DECL_EXPORT SinkModel : public AbstractModel
 {
     Q_OBJECT
     Q_PROPERTY(QString volumeText READ volumeText NOTIFY volumeTextChanged)
-    Q_PROPERTY(QList<QObject *> sinks READ sinks)
+    Q_PROPERTY(QList<QObject *> sinks READ sinks NOTIFY sinksChanged)
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
@@ -66,6 +66,7 @@ public:
 
 signals:
     void volumeTextChanged();
+    void sinksChanged();
 };
 
 class Q_DECL_EXPORT SourceModel : public AbstractModel

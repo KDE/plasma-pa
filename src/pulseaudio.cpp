@@ -163,6 +163,7 @@ SinkModel::SinkModel(Context *context, QObject *parent)
     if (context) {
         setContext(context);
     }
+    emit sinksChanged();
 }
 
 QList<QObject *> SinkModel::sinks() const
@@ -186,6 +187,12 @@ void SinkModel::setContext(Context *context)
     connect(&context->sinks(), &SinkMap::added, this, &SinkModel::volumeTextChanged);
     connect(&context->sinks(), &SinkMap::updated, this, &SinkModel::volumeTextChanged);
     connect(&context->sinks(), &SinkMap::removed, this, &SinkModel::volumeTextChanged);
+
+    connect(&context->sinks(), &SinkMap::added, this, &SinkModel::sinksChanged);
+    connect(&context->sinks(), &SinkMap::updated, this, &SinkModel::sinksChanged);
+    connect(&context->sinks(), &SinkMap::removed, this, &SinkModel::sinksChanged);
+
+    emit sinksChanged();
 }
 
 int SinkModel::paIndexToDataIndex(quint32 index)
