@@ -36,6 +36,7 @@ Item {
 
                 Button {
                     iconName: 'audio-volume-muted'
+                    onClicked: PulseObject.muted = !PulseObject.muted
                 }
             }
             RowLayout {
