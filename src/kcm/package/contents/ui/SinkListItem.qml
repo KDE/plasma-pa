@@ -75,7 +75,7 @@ ColumnLayout {
                 }
 
                 console.debug('changed')
-                kcm.context.setSinkVolume(Index, value)
+                PulseObject.volume = value
             }
             onVolumeChanged: {
                 applyingVolume = true
