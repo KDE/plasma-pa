@@ -344,6 +344,14 @@ void Context::setSinkVolume(quint32 index, qint64 volume)
     setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
+#warning sesetgenericmute is not outside linkable unless we have a use here...
+void Context::setSinkMute(quint32 index, bool mute)
+{
+    Sink *obj = m_sinks.data().value(index, nullptr);
+    if (!obj)
+        return;
+    setGenericMute(index, mute, &pa_context_set_sink_mute_by_index);
+}
 void Context::setSinkPort(quint32 index, const QString &portName)
 {
     if (!PAOperation(pa_context_set_sink_port_by_index(m_context,

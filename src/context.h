@@ -38,6 +38,7 @@ public:
     void cardCallback(const pa_card_info *info);
 
     Q_INVOKABLE void setSinkVolume(quint32 index, qint64 volume);
+    Q_INVOKABLE void setSinkMute(quint32 index, bool mute);
     Q_INVOKABLE void setSinkPort(quint32 index, const QString &portName);
 
     Q_INVOKABLE void setSinkInputVolume(quint32 index, qint64 volume);
