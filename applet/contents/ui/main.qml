@@ -20,7 +20,7 @@ Item {
     Plasmoid.toolTipSubText: sinkModel.volumeText
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
-        source: Plasmoid.icon
+        source: plasmoid.icon
         active: mouseArea.containsMouse
 
         MouseArea {
@@ -33,7 +33,7 @@ Item {
             acceptedButtons: Qt.LeftButton | Qt.MiddleButton
             onPressed: {
               if (mouse.button == Qt.LeftButton) {
-                wasExpanded = Plasmoid.expanded
+                wasExpanded = plasmoid.expanded
               } else if (mouse.button == Qt.MiddleButton) {
                 for (var i in sinkModel.sinks) {
                   var sink = sinkModel.sinks[i]
@@ -41,7 +41,7 @@ Item {
                 }
               }
             }
-            onClicked: Plasmoid.expanded = !wasExpanded
+            onClicked: plasmoid.expanded = !wasExpanded
             onWheel: {
                 if (sinkView.count < 0)
                     return;
