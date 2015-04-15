@@ -10,7 +10,6 @@ class Q_DECL_EXPORT AbstractVolumeBase
 public:
     virtual ~AbstractVolumeBase() {}
 
-
 #warning cvolume should be protected and only used internally
     Q_DECL_DEPRECATED pa_cvolume cvolume() const
     {
