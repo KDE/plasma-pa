@@ -8,8 +8,10 @@ import org.kde.plasma.plasmoid 2.0
 
 import org.kde.plasma.private.volume 0.1
 
+import "../code/icon.js" as Icon
+
 Item {
-    Plasmoid.icon: "audio-volume-medium";
+    Plasmoid.icon: sinkModel.sinks.length > 0 ? Icon.name(sinkModel.sinks[0].volume, sinkModel.sinks[0].muted) : Icon.name(0, true)
 
     Plasmoid.switchWidth: units.gridUnit * 12
     Plasmoid.switchHeight: units.gridUnit * 12
@@ -18,7 +20,7 @@ Item {
     Plasmoid.toolTipSubText: sinkModel.volumeText
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
-        source: Plasmoid.icon ? Plasmoid.icon : "plasma"
+        source: Plasmoid.icon
         active: mouseArea.containsMouse
 
         MouseArea {
