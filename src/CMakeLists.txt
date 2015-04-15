@@ -8,6 +8,7 @@ set(SRC_LIST
     pulseaudio.cpp
     pulseobject.cpp
     operation.cpp
+    ref.cpp
     sink.cpp
     sinkinput.cpp
     source.cpp
@@ -22,5 +23,5 @@ target_link_libraries(QPulseAudioPrivate
 )
 install(TARGETS QPulseAudioPrivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-add_subdirectory(kcm)
+#add_subdirectory(kcm)
 add_subdirectory(qml)

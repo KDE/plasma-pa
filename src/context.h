@@ -1,6 +1,7 @@
 #ifndef CONTEXT_H
 #define CONTEXT_H
 
+#include <QMutex>
 #include <QObject>
 #include <QSet>
 
@@ -17,6 +18,11 @@ class Q_DECL_EXPORT Context : public QObject
 public:
     Context(QObject *parent = nullptr);
     ~Context();
+
+    static Context *instance();
+
+    void ref();
+    void unref();
 
     bool isValid() { return m_context && m_mainloop; }
 
@@ -73,8 +79,8 @@ private:
 
     pa_context *m_context;
     pa_glib_mainloop *m_mainloop;
-};
 
-Q_GLOBAL_STATIC(Context, s_context)
+    int m_references;
+};
 
 #endif // CONTEXT_H

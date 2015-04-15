@@ -8,9 +8,7 @@ DeviceListItemBase {
         sortRole: SourceOutputModel.IndexRole
         filterRole: SourceOutputModel.SourceIndexRole;
         filterRegExp: new RegExp(Index);
-        sourceModel: SourceOutputModel {
-            context: pulseContext
-        }
+        sourceModel: SourceOutputModel {}
 
         Component.onCompleted: initialSort();
     }

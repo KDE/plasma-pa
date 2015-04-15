@@ -2,6 +2,7 @@
 
 #include <QAbstractEventDispatcher>
 #include <QDebug>
+#include <QMutexLocker>
 
 #include "card.h"
 #include "client.h"
@@ -10,8 +11,6 @@
 #include "sinkinput.h"
 #include "source.h"
 #include "sourceoutput.h"
-
-#warning todo this needs to be a singleton as multiple contexts dont make sense and it makes it eaier to use from qml
 
 static bool isGoodState(int eol)
 {
@@ -112,13 +111,35 @@ Context::Context(QObject *parent)
     : QObject(parent)
     , m_context(nullptr)
     , m_mainloop(nullptr)
+    , m_references(0)
 {
     connectToDaemon();
 }
 
 Context::~Context()
 {
+    qDebug() << "cherrio old chap!";
     reset();
+}
+
+Context *Context::instance()
+{
+    static Context *context = new Context;
+    return context;
+}
+
+void Context::ref()
+{
+    ++m_references;
+    qDebug() << m_references << "☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎";
+}
+
+void Context::unref()
+{
+    qDebug() << m_references-1 << "んんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんん";
+    if (--m_references == 0) {
+        delete this;
+    }
 }
 
 void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index)
@@ -314,6 +335,7 @@ void Context::setSinkMute(quint32 index, bool mute)
         return;
     setGenericMute(index, mute, &pa_context_set_sink_mute_by_index);
 }
+
 void Context::setSinkPort(quint32 index, const QString &portName)
 {
     if (!PAOperation(pa_context_set_sink_port_by_index(m_context,
@@ -437,6 +459,9 @@ void Context::connectToDaemon()
     }
     pa_context_set_state_callback(m_context, &context_state_callback, this);
 }
+
+#warning volume and mute should not assume success but wait for callback
+
 template <typename PAFunction>
 void Context::setGenericVolume(quint32 index, qint64 newVolume,
                                pa_cvolume cVolume, PAFunction pa_set_volume)

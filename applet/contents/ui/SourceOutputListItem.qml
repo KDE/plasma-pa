@@ -13,7 +13,6 @@ StreamListItemBase {
         property int sourceModelIndex: model.paIndexToDataIndex(sourceIndex)
         property int sourceOutputIndex: Index
         model: SourceModel {
-            context: pulseContext
             Component.onCompleted: {
                 sourceModelIndex = model.paIndexToDataIndex(sourceIndex)
             }

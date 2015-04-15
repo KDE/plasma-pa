@@ -10,33 +10,25 @@
 #include "source.h"
 #include "sourceoutput.h"
 
-ClientModel::ClientModel(Context *context, QObject *parent)
+ClientModel::ClientModel(QObject *parent)
     : AbstractModel(parent)
 {
-    if (context) {
-        setContext(context);
-    }
-}
-
-void ClientModel::setContext(Context *context)
-{
-    AbstractModel::setContext(context);
-    connect(&context->clients(), &ClientMap::added, this, &ClientModel::onDataAdded);
-    connect(&context->clients(), &ClientMap::updated, this, &ClientModel::onDataUpdated);
-    connect(&context->clients(), &ClientMap::removed, this, &ClientModel::onDataRemoved);
+    connect(&context()->clients(), &ClientMap::added, this, &ClientModel::onDataAdded);
+    connect(&context()->clients(), &ClientMap::updated, this, &ClientModel::onDataUpdated);
+    connect(&context()->clients(), &ClientMap::removed, this, &ClientModel::onDataRemoved);
 }
 
 int ClientModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    if (!m_context)
+    if (!context())
         return 0;
-    return m_context->clients().data().count();
+    return context()->clients().data().count();
 }
 
 QVariant ClientModel::data(const QModelIndex &index, int role) const
 {
-    Client *client = m_context->clients().data().values().at(index.row());
+    Client *client = context()->clients().data().values().at(index.row());
     Q_ASSERT(client);
     switch(static_cast<ItemRole>(role)){
     case NameRole:
@@ -45,33 +37,25 @@ QVariant ClientModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-SinkInputModel::SinkInputModel(Context *context, QObject *parent)
+SinkInputModel::SinkInputModel(QObject *parent)
     : AbstractModel(parent)
 {
-    if (context) {
-        setContext(context);
-    }
-}
-
-void SinkInputModel::setContext(Context *context)
-{
-    AbstractModel::setContext(context);
-    connect(&context->sinkInputs(), &SinkInputMap::added, this, &SinkInputModel::onDataAdded);
-    connect(&context->sinkInputs(), &SinkInputMap::updated, this, &SinkInputModel::onDataUpdated);
-    connect(&context->sinkInputs(), &SinkInputMap::removed, this, &SinkInputModel::onDataRemoved);
+    connect(&context()->sinkInputs(), &SinkInputMap::added, this, &SinkInputModel::onDataAdded);
+    connect(&context()->sinkInputs(), &SinkInputMap::updated, this, &SinkInputModel::onDataUpdated);
+    connect(&context()->sinkInputs(), &SinkInputMap::removed, this, &SinkInputModel::onDataRemoved);
 }
 
 int SinkInputModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    if (!m_context)
+    if (!context())
         return 0;
-    return m_context->sinkInputs().data().count();
+    return context()->sinkInputs().data().count();
 }
 
 QVariant SinkInputModel::data(const QModelIndex &index, int role) const
 {
-    SinkInput *sinkInput =  m_context->sinkInputs().data().values().at(index.row());
+    SinkInput *sinkInput = context()->sinkInputs().data().values().at(index.row());
     Q_ASSERT(sinkInput);
     switch ((ItemRole) role) {
     case IndexRole:
@@ -93,14 +77,14 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
         Q_ASSERT(false);
     case ClientNameRole: {
         quint32 clientIndex = sinkInput->client();
-        Client *client = m_context->clients().data().value(clientIndex, nullptr);
+        Client *client = context()->clients().data().value(clientIndex, nullptr);
         if (client)
             return client->name();
         return QVariant();
     }
     case ClientPropertiesRole: {
         quint32 clientIndex = sinkInput->client();
-        Client *client = m_context->clients().data().value(clientIndex, nullptr);
+        Client *client = context()->clients().data().value(clientIndex, nullptr);
         if (client)
             return client->properties();
         return QVariant();
@@ -140,82 +124,56 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
     return roles;
 }
 
-Context *AbstractModel::context() const
-{
-    return m_context;
-}
-
-void AbstractModel::setContext(Context *context)
-{
-    qDebug() << "............................................." << context;
-    beginResetModel();
-    if (m_context) {
-        m_context->disconnect(this);
-    }
-    m_context = context;
-    Q_ASSERT(m_context);
-    endResetModel();
-}
-
-SinkModel::SinkModel(Context *context, QObject *parent)
+SinkModel::SinkModel(QObject *parent)
     : AbstractModel(parent)
 {
-    if (context) {
-        setContext(context);
-    }
+    connect(&context()->sinks(), &SinkMap::added, this, &SinkModel::onDataAdded);
+    connect(&context()->sinks(), &SinkMap::updated, this, &SinkModel::onDataUpdated);
+    connect(&context()->sinks(), &SinkMap::removed, this, &SinkModel::onDataRemoved);
+
+    connect(&context()->sinks(), &SinkMap::added, this, &SinkModel::volumeTextChanged);
+    connect(&context()->sinks(), &SinkMap::updated, this, &SinkModel::volumeTextChanged);
+    connect(&context()->sinks(), &SinkMap::removed, this, &SinkModel::volumeTextChanged);
+
+    connect(&context()->sinks(), &SinkMap::added, this, &SinkModel::sinksChanged);
+    connect(&context()->sinks(), &SinkMap::updated, this, &SinkModel::sinksChanged);
+    connect(&context()->sinks(), &SinkMap::removed, this, &SinkModel::sinksChanged);
+
     emit sinksChanged();
 }
 
 QList<QObject *> SinkModel::sinks() const
 {
     QList <QObject *> ret;
-    if (!m_context)
+    if (!context())
         return ret;
-    for (Sink *sink : m_context->sinks().data().values()) {
+    for (Sink *sink : context()->sinks().data().values()) {
         ret << sink;
     }
     return ret;
 }
 
-void SinkModel::setContext(Context *context)
-{
-    AbstractModel::setContext(context);
-    connect(&context->sinks(), &SinkMap::added, this, &SinkModel::onDataAdded);
-    connect(&context->sinks(), &SinkMap::updated, this, &SinkModel::onDataUpdated);
-    connect(&context->sinks(), &SinkMap::removed, this, &SinkModel::onDataRemoved);
-
-    connect(&context->sinks(), &SinkMap::added, this, &SinkModel::volumeTextChanged);
-    connect(&context->sinks(), &SinkMap::updated, this, &SinkModel::volumeTextChanged);
-    connect(&context->sinks(), &SinkMap::removed, this, &SinkModel::volumeTextChanged);
-
-    connect(&context->sinks(), &SinkMap::added, this, &SinkModel::sinksChanged);
-    connect(&context->sinks(), &SinkMap::updated, this, &SinkModel::sinksChanged);
-    connect(&context->sinks(), &SinkMap::removed, this, &SinkModel::sinksChanged);
-
-    emit sinksChanged();
-}
-
 int SinkModel::paIndexToDataIndex(quint32 index)
 {
-    qDebug() << Q_FUNC_INFO << m_context << index;
-    if (!m_context) {
+    qDebug() << Q_FUNC_INFO << context() << index;
+    if (!context()) {
         return -1;
     }
-    return m_context->sinks().paIndexToDataIndex(index);
+    return context()->sinks().paIndexToDataIndex(index);
 }
 
 int SinkModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    if (!m_context)
+    if (!context())
         return 0;
-    return m_context->sinks().data().count();
+    return context()->sinks().data().count();
 }
 
 QVariant SinkModel::data(const QModelIndex &index, int role) const
 {
     qDebug() << IndexRole << role;
-    Sink *sink = m_context->sinks().data().values().at(index.row());
+    Sink *sink = context()->sinks().data().values().at(index.row());
     Q_ASSERT(sink);
     switch(static_cast<ItemRole>(role)) {
     case IndexRole:
@@ -282,7 +240,6 @@ void AbstractModel::onDataRemoved(quint32 index)
 
 AbstractModel::AbstractModel(QObject *parent)
     : QAbstractListModel(parent)
-    , m_context(nullptr)
 {
 }
 
@@ -298,42 +255,34 @@ void ReverseFilterModel::initialSort()
     QSortFilterProxyModel::sort(0, Qt::DescendingOrder);
 }
 
-SourceModel::SourceModel(Context *context, QObject *parent)
+SourceModel::SourceModel(QObject *parent)
     : AbstractModel(parent)
 {
-    if (context) {
-        setContext(context);
-    }
-}
-
-void SourceModel::setContext(Context *context)
-{
-    AbstractModel::setContext(context);
-    connect(&context->sources(), &SourceMap::added, this, &SourceModel::onDataAdded);
-    connect(&context->sources(), &SourceMap::updated, this, &SourceModel::onDataUpdated);
-    connect(&context->sources(), &SourceMap::removed, this, &SourceModel::onDataRemoved);
+    connect(&context()->sources(), &SourceMap::added, this, &SourceModel::onDataAdded);
+    connect(&context()->sources(), &SourceMap::updated, this, &SourceModel::onDataUpdated);
+    connect(&context()->sources(), &SourceMap::removed, this, &SourceModel::onDataRemoved);
 }
 
 int SourceModel::paIndexToDataIndex(quint32 index)
 {
-    qDebug() << Q_FUNC_INFO << m_context << index;
-    if (!m_context) {
+    qDebug() << Q_FUNC_INFO << context() << index;
+    if (!context()) {
         return -1;
     }
-    return m_context->sources().paIndexToDataIndex(index);
+    return context()->sources().paIndexToDataIndex(index);
 }
 
 int SourceModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    if (!m_context)
+    if (!context())
         return 0;
-    return m_context->sources().data().count();
+    return context()->sources().data().count();
 }
 
 QVariant SourceModel::data(const QModelIndex &index, int role) const
 {
-    Source *source = m_context->sources().data().values().at(index.row());
+    Source *source = context()->sources().data().values().at(index.row());
     Q_ASSERT(source);
     switch(static_cast<ItemRole>(role)) {
     case IndexRole:
@@ -361,33 +310,25 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-SourceOutputModel::SourceOutputModel(Context *context, QObject *parent)
+SourceOutputModel::SourceOutputModel(QObject *parent)
     : AbstractModel(parent)
 {
-    if (context) {
-        setContext(context);
-    }
-}
-
-void SourceOutputModel::setContext(Context *context)
-{
-    AbstractModel::setContext(context);
-    connect(&context->sourceOutputs(), &SourceOutputMap::added, this, &SourceOutputModel::onDataAdded);
-    connect(&context->sourceOutputs(), &SourceOutputMap::updated, this, &SourceOutputModel::onDataUpdated);
-    connect(&context->sourceOutputs(), &SourceOutputMap::removed, this, &SourceOutputModel::onDataRemoved);
+    connect(&context()->sourceOutputs(), &SourceOutputMap::added, this, &SourceOutputModel::onDataAdded);
+    connect(&context()->sourceOutputs(), &SourceOutputMap::updated, this, &SourceOutputModel::onDataUpdated);
+    connect(&context()->sourceOutputs(), &SourceOutputMap::removed, this, &SourceOutputModel::onDataRemoved);
 }
 
 int SourceOutputModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    if (!m_context)
+    if (!context())
         return 0;
-    return m_context->sourceOutputs().data().count();
+    return context()->sourceOutputs().data().count();
 }
 
 QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
 {
-    SourceOutput *data =  m_context->sourceOutputs().data().values().at(index.row());
+    SourceOutput *data =  context()->sourceOutputs().data().values().at(index.row());
     Q_ASSERT(data);
     switch ((ItemRole) role) {
     case IndexRole:
@@ -409,14 +350,14 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
         Q_ASSERT(false);
     case ClientNameRole: {
         quint32 clientIndex = data->client();
-        Client *client = m_context->clients().data().value(clientIndex, nullptr);
+        Client *client = context()->clients().data().value(clientIndex, nullptr);
         if (client)
             return client->name();
         return QVariant();
     }
     case ClientPropertiesRole: {
         quint32 clientIndex = data->client();
-        Client *client = m_context->clients().data().value(clientIndex, nullptr);
+        Client *client = context()->clients().data().value(clientIndex, nullptr);
         if (client)
             return client->properties();
         return QVariant();
@@ -426,36 +367,26 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CardModel::CardModel(Context *context, QObject *parent)
+CardModel::CardModel(QObject *parent)
     : AbstractModel(parent)
 {
-    if (context) {
-        setContext(context);
-    }
-}
-
-void CardModel::setContext(Context *context)
-{
-    qDebug() << "-----------------------------------" << context;
-#warning this probably could go into the abstract somehow...
-    AbstractModel::setContext(context);
-    connect(&context->cards(), &CardMap::added, this, &CardModel::onDataAdded);
-    connect(&context->cards(), &CardMap::updated, this, &CardModel::onDataUpdated);
-    connect(&context->cards(), &CardMap::removed, this, &CardModel::onDataRemoved);
+    connect(&context()->cards(), &CardMap::added, this, &CardModel::onDataAdded);
+    connect(&context()->cards(), &CardMap::updated, this, &CardModel::onDataUpdated);
+    connect(&context()->cards(), &CardMap::removed, this, &CardModel::onDataRemoved);
 }
 
 int CardModel::rowCount(const QModelIndex &parent) const
 {
-    qDebug() << Q_FUNC_INFO << m_context << (m_context ? m_context->cards().data().count() : 0);
+    qDebug() << Q_FUNC_INFO << context() << (context() ? context()->cards().data().count() : 0);
     Q_UNUSED(parent);
-    if (!m_context)
+    if (!context())
         return 0;
-    return m_context->cards().data().count();
+    return context()->cards().data().count();
 }
 
 QVariant CardModel::data(const QModelIndex &index, int role) const
 {
-    Card *data =  m_context->cards().data().values().at(index.row());
+    Card *data =  context()->cards().data().values().at(index.row());
     Q_ASSERT(data);
     switch ((ItemRole) role) {
     case IndexRole:

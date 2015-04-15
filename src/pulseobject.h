@@ -5,6 +5,8 @@
 
 #include <pulse/introspect.h>
 
+class Context;
+
 class Q_DECL_EXPORT PulseObject : public QObject
 {
     Q_OBJECT
@@ -15,6 +17,8 @@ public:
 protected:
     PulseObject(QObject *parent = 0);
     virtual ~PulseObject();
+
+    Context *context() const;
 
 //    virtual void setProplist(const pa_proplist *proplist);
 

@@ -57,10 +57,6 @@ Item {
         }
     }
 
-    Context {
-        id: pulseContext
-    }
-
     PlasmaExtras.ScrollArea {
         id: scrollView;
 
@@ -86,7 +82,6 @@ Item {
 
                 model: SinkModel {
                     id: sinkModel
-                    context: pulseContext
                 }
                 boundsBehavior: Flickable.StopAtBounds;
                 delegate: SinkListItem {}
@@ -101,7 +96,6 @@ Item {
 
                 model: SourceModel {
                     id: sourceModel
-                    context: pulseContext
                 }
                 boundsBehavior: Flickable.StopAtBounds;
                 delegate: SourceListItem {}

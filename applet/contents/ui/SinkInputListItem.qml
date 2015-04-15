@@ -13,7 +13,6 @@ StreamListItemBase {
         property int sinkModelIndex: model.paIndexToDataIndex(sinkIndex)
         property int sinkInputIndex: Index
         model: SinkModel {
-            context: pulseContext
             Component.onCompleted: {
                 sinkModelIndex = model.paIndexToDataIndex(sinkIndex)
             }

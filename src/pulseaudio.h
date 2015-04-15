@@ -5,19 +5,15 @@
 #include <QSortFilterProxyModel>
 
 #include "context.h"
+#include "ref.h"
 
-class Q_DECL_EXPORT AbstractModel : public QAbstractListModel
+class Q_DECL_EXPORT AbstractModel : public QAbstractListModel, public Ref
 {
     Q_OBJECT
-    Q_PROPERTY(Context *context READ context WRITE setContext)
 public:
     virtual QHash<int,QByteArray> roleNames() const Q_DECL_OVERRIDE Q_DECL_FINAL;
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE = 0;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE = 0;
-
-public slots:
-    Context *context() const;
-    virtual void setContext(Context *context);
 
 protected slots:
     virtual void onDataAdded(quint32 index);
@@ -26,7 +22,6 @@ protected slots:
 
 protected:
     AbstractModel(QObject *parent);
-    Context *m_context;
 
 private:
     // Prevent leaf-classes from default constructing as we want to enforce
@@ -51,11 +46,10 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    SinkModel(Context *context = nullptr, QObject *parent = nullptr);
+    SinkModel(QObject *parent = nullptr);
 
     QList<QObject *> sinks() const;
 
-    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
 #warning fixme this is so bad...
     Q_INVOKABLE int paIndexToDataIndex(quint32 index);
 
@@ -84,9 +78,8 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    SourceModel(Context *context = nullptr, QObject *parent = nullptr);
+    SourceModel(QObject *parent = nullptr);
 
-    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
 #warning fixme this is so bad...
     Q_INVOKABLE int paIndexToDataIndex(quint32 index);
 
@@ -115,9 +108,7 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    SourceOutputModel(Context *context = nullptr, QObject *parent = nullptr);
-
-    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
+    SourceOutputModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
@@ -132,9 +123,7 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    ClientModel(Context *context = nullptr, QObject *parent = nullptr);
-
-    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
+    ClientModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
@@ -155,9 +144,7 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    CardModel(Context *context = nullptr, QObject *parent = nullptr);
-
-    Q_INVOKABLE virtual void setContext(Context *context) Q_DECL_OVERRIDE;
+    CardModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
@@ -181,9 +168,7 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    SinkInputModel(Context *context = nullptr, QObject *parent = nullptr);
-
-    Q_INVOKABLE void setContext(Context *context) Q_DECL_OVERRIDE;
+    SinkInputModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
