@@ -32,25 +32,29 @@ Item {
             hoverEnabled: true
             acceptedButtons: Qt.LeftButton | Qt.MiddleButton
             onPressed: {
-              if (mouse.button == Qt.LeftButton) {
-                wasExpanded = plasmoid.expanded
-              } else if (mouse.button == Qt.MiddleButton) {
-                for (var i in sinkModel.sinks) {
-                  var sink = sinkModel.sinks[i]
-                  sink.muted = !sink.muted
+                if (mouse.button == Qt.LeftButton) {
+                    wasExpanded = plasmoid.expanded;
+                } else if (mouse.button == Qt.MiddleButton) {
+                    for (var i in sinkModel.sinks) {
+                        var sink = sinkModel.sinks[i];
+                        sink.muted = !sink.muted;
+                    }
                 }
-              }
             }
-            onClicked: plasmoid.expanded = !wasExpanded
+            onClicked: {
+                if (mouse.button == Qt.LeftButton) {
+                    plasmoid.expanded = !wasExpanded;
+                }
+            }
             onWheel: {
                 if (sinkView.count < 0)
                     return;
                 for (var i = 0; i < sinkView.count; ++i) {
                     sinkView.currentIndex = i;
                     if (wheel.angleDelta.y > 0) {
-                        sinkView.currentItem.increaseVolume()
+                        sinkView.currentItem.increaseVolume();
                     } else {
-                        sinkView.currentItem.decreaseVolume()
+                        sinkView.currentItem.decreaseVolume();
                     }
                 }
             }
