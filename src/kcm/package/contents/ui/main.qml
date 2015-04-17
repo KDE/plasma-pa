@@ -14,10 +14,15 @@ TabView {
 
     Tab {
         title: i18nc("@title:tab", "Applications")
-        SinkInputs {}
+        StreamView {
+            model: SinkInputModel {}
+        }
     }
     Tab {
         title: i18nc("@title:tab", "Recording")
+        StreamView {
+            model: SourceOutputModel {}
+        }
     }
     Tab {
         title: i18nc("@title:tab", "Output Devices")

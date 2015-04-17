@@ -9,8 +9,6 @@ import org.kde.plasma.private.volume 0.1
 Item {
     id: item
 
-    property variant sinkInput: PulseObject
-
     height: delegateColumn.height
     width: parent.width
 
@@ -25,7 +23,7 @@ Item {
             height: parent.height / 3 * 1.5
             width: height
             anchors.verticalCenter: parent.verticalCenter
-            icon: sinkInput.client.properties['application.icon_name'] ? sinkInput.client.properties['application.icon_name'] : 'unknown'
+            icon: PulseObject.client.properties['application.icon_name'] ? PulseObject.client.properties['application.icon_name'] : 'unknown'
         }
 
         ColumnLayout {
@@ -35,12 +33,12 @@ Item {
                 Label {
                     id: inputText
                     Layout.fillWidth: true
-                    text: sinkInput.client.name + ": " + sinkInput.name
+                    text: PulseObject.client.name + ": " + PulseObject.name
                 }
 
                 Button {
                     iconName: 'audio-volume-muted'
-                    onClicked: sinkInput.muted = !sinkInput.muted
+                    onClicked: PulseObject.muted = !PulseObject.muted
                 }
             }
 
