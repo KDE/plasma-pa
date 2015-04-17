@@ -100,20 +100,6 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
         roles[enumerator.value(i)] = key;
     }
 
-    int maxEnumValue = -1;
-    for (auto it = roles.constBegin(); it != roles.constEnd(); ++it) {
-        if (it.key() > maxEnumValue)
-            maxEnumValue = it.key();
-    }
-    Q_ASSERT(maxEnumValue != -1);
-    auto mo = SinkInput::staticMetaObject;
-    for (int i = 0; i < mo.propertyCount(); ++i) {
-        QString property(mo.property(i).name());
-        property.replace(0, 1, property.at(0).toUpper());
-        roles[++maxEnumValue] = property.toLatin1();
-        const_cast<QMap<int, int>*>(&m_objectProperties)->insert(maxEnumValue, i);
-    }
-
     qDebug() << roles;
     return roles;
 }
@@ -337,6 +323,7 @@ int CardModel::rowCount(const QModelIndex &parent) const
 
 QVariant CardModel::data(const QModelIndex &index, int role) const
 {
+    qDebug() << index<< role;
     Card *data =  context()->cards().data().values().at(index.row());
     Q_ASSERT(data);
     switch ((ItemRole) role) {
