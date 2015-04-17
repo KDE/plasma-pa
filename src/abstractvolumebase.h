@@ -31,11 +31,6 @@ public:
 //            }
     }
 
-#warning cvolume should be protected and only used internally
-    Q_DECL_DEPRECATED pa_cvolume cvolume() const
-    {
-        return m_volume;
-    }
 #warning volume value is a bit meh with channels in the picture
     qint64 volume() const
     {
@@ -54,6 +49,11 @@ signals:
     void mutedChanged();
 
 protected:
+    pa_cvolume cvolume() const
+    {
+            return m_volume;
+    }
+
     pa_cvolume m_volume;
     bool m_muted = false;
 };

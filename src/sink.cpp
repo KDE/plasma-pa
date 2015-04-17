@@ -14,7 +14,7 @@ void Sink::update(const pa_sink_info *info)
 
 void Sink::setVolume(qint64 volume)
 {
-    context()->setSinkVolume(index(), volume);
+    context()->setGenericVolume(index(), volume, cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Sink::setMuted(bool muted)

@@ -318,23 +318,6 @@ void Context::cardCallback(const pa_card_info *info)
     m_cards.updateEntry(info, this);
 }
 
-void Context::setSinkVolume(quint32 index, qint64 volume)
-{
-    Sink *obj = m_sinks.data().value(index, nullptr);
-    if (!obj)
-        return;
-    setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_sink_volume_by_index);
-}
-
-#warning sesetgenericmute is not outside linkable unless we have a use here...
-void Context::setSinkMute(quint32 index, bool mute)
-{
-    Sink *obj = m_sinks.data().value(index, nullptr);
-    if (!obj)
-        return;
-    setGenericMute(index, mute, &pa_context_set_sink_mute_by_index);
-}
-
 void Context::setSinkPort(quint32 index, const QString &portName)
 {
     if (!PAOperation(pa_context_set_sink_port_by_index(m_context,
@@ -345,14 +328,6 @@ void Context::setSinkPort(quint32 index, const QString &portName)
         qWarning() << "pa_context_set_sink_port_by_index failed";
         return;
     }
-}
-
-void Context::setSinkInputVolume(quint32 index, qint64 volume)
-{
-    SinkInput *obj = m_sinkInputs.data().value(index, nullptr);
-    if (!obj)
-        return;
-    setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_sink_input_volume);
 }
 
 void Context::setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex)
@@ -375,22 +350,6 @@ void Context::setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex)
         qWarning() << "pa_context_move_sink_input_by_index failed";
         return;
     }
-}
-
-void Context::setSourceVolume(quint32 index, qint64 volume)
-{
-    Source *obj = m_sources.data().value(index, nullptr);
-    if (!obj)
-        return;
-    setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_source_volume_by_index);
-}
-
-void Context::setSourceOutputVolume(quint32 index, qint64 volume)
-{
-    SourceOutput *obj = m_sourceOutputs.data().value(index, nullptr);
-    if (!obj)
-        return;
-    setGenericVolume(index, volume, obj->cvolume(), &pa_context_set_source_output_volume);
 }
 
 void Context::setSourceOutputSinkByModelIndex(quint32 index, int sourceModelIndex)

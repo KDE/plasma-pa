@@ -44,17 +44,11 @@ public:
     void clientCallback(const pa_client_info *info);
     void cardCallback(const pa_card_info *info);
 
-    Q_INVOKABLE void setSinkVolume(quint32 index, qint64 volume);
-    Q_INVOKABLE void setSinkMute(quint32 index, bool mute);
     Q_INVOKABLE void setSinkPort(quint32 index, const QString &portName);
 
-    Q_INVOKABLE void setSinkInputVolume(quint32 index, qint64 volume);
 #warning terminology is messed up... modelIndex is a QModelIndex, what we have here is a MapIndex...
     Q_INVOKABLE void setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex);
 
-    Q_INVOKABLE void setSourceVolume(quint32 index, qint64 volume);
-
-    Q_INVOKABLE void setSourceOutputVolume(quint32 index, qint64 volume);
     Q_INVOKABLE void setSourceOutputSinkByModelIndex(quint32 index, int sourceModelIndex);
 
     Q_INVOKABLE void setCardProfile(quint32 cardIndex, const QString &profileName);
