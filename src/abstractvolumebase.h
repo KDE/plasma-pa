@@ -5,10 +5,30 @@
 
 #include <pulse/volume.h>
 
-class Q_DECL_EXPORT AbstractVolumeBase
+#include "pulseobject.h"
+
+class VolumeObject : public PulseObject
 {
+    Q_OBJECT
+    Q_PROPERTY(qint64 volume READ volume WRITE setVolume NOTIFY volumeChanged)
+    Q_PROPERTY(bool muted READ isMuted WRITE setMuted NOTIFY mutedChanged)
 public:
-    virtual ~AbstractVolumeBase() {}
+    virtual ~VolumeObject() {}
+
+    template <typename PAInfo>
+    void updateVolumeObject(PAInfo *info)
+    {
+        updatePulseObject(info);
+        if (m_muted != info->mute) {
+            m_muted = info->mute;
+            emit mutedChanged();
+        }
+#warning fixme volume needs manual compare
+//            if (m_volume != info->volume) {
+                m_volume = info->volume;
+                emit volumeChanged();
+//            }
+    }
 
 #warning cvolume should be protected and only used internally
     Q_DECL_DEPRECATED pa_cvolume cvolume() const
@@ -28,9 +48,14 @@ public:
     }
     virtual void setMuted(bool muted) = 0;
 
+signals:
+    void volumeChanged();
+    void mutedChanged();
+
 protected:
     pa_cvolume m_volume;
     bool m_muted = false;
 };
+
 
 #endif // ABSTRACTVOLUMEBASE_H

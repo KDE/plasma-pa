@@ -6,31 +6,32 @@ Card::Card()
 {
 }
 
-void Card::setInfo(const pa_card_info *info)
+void Card::update(const pa_card_info *info)
 {
-    m_index = info->index;
+    updatePulseObject(info);
     m_name = QString::fromUtf8(info->name);
     m_driver = QString::fromUtf8(info->driver);
 
     qDebug() << "processing card" << info->index << info->name;
 
+    qDeleteAll(m_profiles);
     m_profiles.clear();
 #warning more inconsistent api... profiels end with entry with name on null...
     for (auto *it = info->profiles; it->name != nullptr; ++it) {
-        Profile profile;
-        profile.setInfo(it);
+        Profile *profile = new Profile(this);
+        profile->setInfo(it);
         m_profiles.append(profile);
         if (info->active_profile == it) {
-            qDebug() << "+++++++++++++++++ profile " << it->description << " appears the active one at index: "<< m_profiles.length() - 1;
             m_activeProfileIndex = m_profiles.length() - 1;
         }
     }
 
 #warning there is no active port prop so it is possible that this is actually very worthless since we have sinks and sources
+    qDeleteAll(m_ports);
     m_ports.clear();
     for (auto **it = info->ports; it && *it != nullptr; ++it) {
-        Port port;
-        port.setInfo(*it);
+        Port *port = new Port(this);
+        port->setInfo(*it);
         m_ports.append(port);
     }
 

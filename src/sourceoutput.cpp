@@ -2,9 +2,9 @@
 
 #include "context.h"
 
-void SourceOutput::setInfo(const pa_source_output_info *info)
+void SourceOutput::update(const pa_source_output_info *info)
 {
-    StreamBase<pa_source_output_info>::setInfo(info);
+    updateStream(info);
     m_sourceIndex = info->source;
 }
 

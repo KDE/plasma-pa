@@ -2,9 +2,9 @@
 
 #include "context.h"
 
-void SinkInput::setInfo(const pa_sink_input_info *info)
+void SinkInput::update(const pa_sink_input_info *info)
 {
-    StreamBase<pa_sink_input_info>::setInfo(info);
+    updateStream(info);
     m_sinkIndex = info->sink;
 }
 

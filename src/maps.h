@@ -66,7 +66,7 @@ public:
         if (!obj) {
             obj = new Type;
         }
-        obj->setInfo(info);
+        obj->update(info);
         m_data.insert(info->index, obj);
 
         const int modelIndex = m_data.keys().indexOf(info->index);

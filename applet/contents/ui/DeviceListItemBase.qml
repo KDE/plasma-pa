@@ -6,7 +6,7 @@ ListItemBase {
     property QtObject subModel
     property Component subDelegate
 
-    label: Description
+    label: PulseObject.description
     // expanderIconVisible: pseudoView.count > 0
     // subComponent: ListView {
     //     id: inputView

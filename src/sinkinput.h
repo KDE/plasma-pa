@@ -3,15 +3,12 @@
 
 #include "streambase.h"
 
-class Q_DECL_EXPORT SinkInput : public StreamBase<pa_sink_input_info>
+class Q_DECL_EXPORT SinkInput : public StreamBase
 {
     Q_OBJECT
-#warning missing properties
-
-    Q_PROPERTY(qint64 volume READ volume WRITE setVolume)
-    Q_PROPERTY(bool muted READ isMuted WRITE setMuted)
+#warning missing index property
 public:
-    void setInfo(const pa_sink_input_info *info) Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void update(const pa_sink_input_info *info);
 
     quint32 sinkIndex() const { return m_sinkIndex; }
 

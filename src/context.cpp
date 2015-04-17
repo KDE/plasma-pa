@@ -6,7 +6,6 @@
 
 #include "card.h"
 #include "client.h"
-#include "operation.h"
 #include "sink.h"
 #include "sinkinput.h"
 #include "source.h"
@@ -458,35 +457,6 @@ void Context::connectToDaemon()
         return;
     }
     pa_context_set_state_callback(m_context, &context_state_callback, this);
-}
-
-#warning volume and mute should not assume success but wait for callback
-
-template <typename PAFunction>
-void Context::setGenericVolume(quint32 index, qint64 newVolume,
-                               pa_cvolume cVolume, PAFunction pa_set_volume)
-{
-    qDebug() << Q_FUNC_INFO << index << newVolume;
-#warning fixme volume limit enforcement needs review for sensibility also this prevents overdrive
-    newVolume = qBound<qint64>(0, newVolume, 65536);
-    pa_cvolume newCVolume = cVolume;
-    for (int i = 0; i < newCVolume.channels; ++i) {
-        newCVolume.values[i] = newVolume;
-    }
-    if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, NULL, NULL))) {
-        qWarning() <<  "pa_context_set_sink_volume_by_index() failed";
-        return;
-    }
-}
-
-template <typename PAFunction>
-void Context::setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
-{
-    qDebug() << Q_FUNC_INFO << index << mute;
-    if (!PAOperation(pa_set_mute(m_context, index, mute, nullptr, nullptr))) {
-        qWarning() <<  "pa_set_mute() failed";
-        return;
-    }
 }
 
 void Context::reset()

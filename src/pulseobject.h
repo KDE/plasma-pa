@@ -12,6 +12,12 @@ class Q_DECL_EXPORT PulseObject : public QObject
     Q_OBJECT
     Q_PROPERTY(quint32 index READ index CONSTANT)
 public:
+    template <typename PAInfo>
+    void updatePulseObject(PAInfo *info)
+    {
+        m_index = info->index;
+    }
+
     quint32 index() const;
 
 protected:
@@ -19,9 +25,6 @@ protected:
     virtual ~PulseObject();
 
     Context *context() const;
-
-//    virtual void setProplist(const pa_proplist *proplist);
-
     quint32 m_index;
 };
 

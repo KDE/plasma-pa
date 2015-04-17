@@ -10,19 +10,23 @@
 class Q_DECL_EXPORT Client : public PulseObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
+    Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
 public:
     Client();
 
-    void setInfo(const pa_client_info *info);
+    void update(const pa_client_info *info);
 
     QString name() const { return m_name; }
-    QMap<QString, QVariant> properties() const { return m_properties; }
+    QVariantMap properties() const { return m_properties; }
+
+signals:
+    void nameChanged();
+    void propertiesChanged();
 
 private:
     QString m_name;
-    QString m_ownerModule;
-    QString m_driver;
-    QMap<QString, QVariant> m_properties;
+    QVariantMap m_properties;
 };
 
 #endif // CLIENT_H

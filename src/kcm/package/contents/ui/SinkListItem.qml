@@ -20,7 +20,7 @@ ColumnLayout {
         Label {
             id: inputText
             Layout.fillWidth: true
-            text: Description
+            text: PulseObject.description
         }
 
         Button {
@@ -29,70 +29,65 @@ ColumnLayout {
         }
     }
 
-    RowLayout {
-        Label {
-            text: 'Port'
-        }
+    ColumnLayout {
+        width: parent.width
+        enabled: !PulseObject.muted
 
-        ComboBox {
-            Layout.fillWidth: true
-            model: Ports
-            textRole: "description"
-            currentIndex: -1
-            onCurrentIndexChanged: {
-                // Get Name
-                textRole = "name";
-                var name = currentText;
-                textRole = "description";
-                kcm.context.setSinkPort(Index, name);
+        RowLayout {
+            Label {
+                text: 'Port'
+            }
+
+            ComboBox {
+                Layout.fillWidth: true
+                model: PulseObject.ports
+                textRole: "description"
+                currentIndex: PulseObject.activePortIndex
+                onActivated: PulseObject.activePortIndex = index
+                Connections {
+                    target: PulseObject
+                    // FIXME: comobox for some reason doesn't update after init
+                    onActivePortIndexChanged: parent.currentIndex = PulseObject.activePortIndex
+                }
             }
         }
-    }
 
-    RowLayout {
-        Label {
-            text: 'mono'
-        }
+        RowLayout {
+            Slider {
+                id: inputSlider
 
-        Slider {
-            id: inputSlider
+                property int volume: PulseObject.volume
+                property bool applyingVolume: false
 
-            property int volume: Volume
-            property bool applyingVolume: false
+                Layout.fillWidth: true
+                anchors {
+                    top: inputText.bottom
+                }
+                minimumValue: 0
+                maximumValue: 65536
+                stepSize: maximumValue / 100
+                focus: true
+                onValueChanged: {
+                    if (applyingVolume) {
+                        applyingVolume = false
+                        return
+                    }
 
-            Layout.fillWidth: true
-            anchors {
-                top: inputText.bottom
-            }
-            minimumValue: 0
-            maximumValue: 65536
-            stepSize: maximumValue / 100
-            focus: true
-            visible: (HasVolume && IsVolumeWritable) ? true : false
-            onValueChanged: {
-                if (applyingVolume) {
-                    applyingVolume = false
-                    return
+                    console.debug('changed')
+                    PulseObject.volume = value
+                }
+                onVolumeChanged: {
+                    applyingVolume = true
+                    value = volume
                 }
 
-                console.debug('changed')
-                PulseObject.volume = value
+                Component.onCompleted: {
+                    console.debug("delegate")
+                    if (!PulseObject.hasVolume || !PulseObject.isVolumeWritable)
+                        return
+                    inputSlider.value = PulseObject.volume
+                }
             }
-            onVolumeChanged: {
-                applyingVolume = true
-                value = volume
-            }
-
-            Component.onCompleted: {
-                console.debug("delegate")
-                if (!HasVolume || !IsVolumeWritable)
-                    return
-                inputSlider.value = Volume
-            }
-        }
-
-        Label {
-            text: '100 '
         }
     }
 

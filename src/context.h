@@ -11,6 +11,7 @@
 #include <pulse/ext-stream-restore.h>
 
 #include "maps.h"
+#include "operation.h"
 
 class Q_DECL_EXPORT Context : public QObject
 {
@@ -60,9 +61,41 @@ public:
 
     template <typename PAFunction>
     void setGenericVolume(quint32 index, qint64 newVolume,
-                          pa_cvolume cVolume, PAFunction pa_set_volume);
+                          pa_cvolume cVolume, PAFunction pa_set_volume)
+    {
+        // TODO: overdrive
+        newVolume = qBound<qint64>(0, newVolume, 65536);
+        pa_cvolume newCVolume = cVolume;
+        for (int i = 0; i < newCVolume.channels; ++i) {
+            newCVolume.values[i] = newVolume;
+        }
+        if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, nullptr, nullptr))) {
+            qWarning() <<  "pa_set_volume failed";
+            return;
+        }
+    }
     template <typename PAFunction>
-    void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute);
+    void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
+    {
+        qDebug() << Q_FUNC_INFO << index << mute;
+        if (!PAOperation(pa_set_mute(m_context, index, mute, nullptr, nullptr))) {
+            qWarning() <<  "pa_set_mute failed";
+            return;
+        }
+    }
+
+    template <typename PAFunction>
+    void setGenericPort(quint32 index, const QString &portName, PAFunction pa_set_port)
+    {
+        if (!PAOperation(pa_set_port(m_context,
+                                     index,
+                                     portName.toUtf8().constData(),
+                                     nullptr,
+                                     nullptr))) {
+            qWarning() << "pa_set_port failed";
+            return;
+        }
+    }
 
 private:
     void connectToDaemon();

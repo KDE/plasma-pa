@@ -12,35 +12,41 @@
 class Q_DECL_EXPORT Card : public PulseObject
 {
     Q_OBJECT
+#warning notify
+    Q_PROPERTY(QString name READ name)
+    Q_PROPERTY(QString driver READ driver)
+    Q_PROPERTY(QList<QObject *> profiles READ profiles)
+    Q_PROPERTY(quint32 activeProfileIndex READ activeProfileIndex)
+    Q_PROPERTY(QList<QObject *> ports READ ports)
+    Q_PROPERTY(QVariantMap properties READ properties)
 public:
-    typedef ProfileBase<pa_card_profile_info> Profile;
-    typedef PortBase<pa_card_port_info> Port;
-
     Card();
 
-    void setInfo(const pa_card_info *info);
+    void update(const pa_card_info *info);
 
     QString name() const { return m_name; }
     QString driver() const { return m_driver; }
 
-    QList<Profile> profiles() const { return m_profiles; }
-    int activeProfileIndex() const { return m_activeProfileIndex; }
+    QList<QObject *> profiles() const { return m_profiles; }
+    quint32 activeProfileIndex() const { return m_activeProfileIndex; }
 
-    QList<Port> ports() const { return m_ports; }
+    QList<QObject *> ports() const { return m_ports; }
 
     QMap<QString, QVariant> properties() const { return m_properties; }
+
+#warning implement setting profile
 
 private:
     QString m_name;
     QString m_ownerModule;
     QString m_driver;
 
-    QList<Profile> m_profiles;
-    int m_activeProfileIndex;
+    QList<QObject *> m_profiles;
+    quint32 m_activeProfileIndex;
 
-    QList<Port> m_ports;
+    QList<QObject *> m_ports;
 
-    QMap<QString, QVariant> m_properties;
+    QVariantMap m_properties;
 };
 
 #endif // CARD_H

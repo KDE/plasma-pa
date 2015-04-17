@@ -17,13 +17,13 @@ ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
             width: height
             height: nameLabel.contentHeight
-            icon: Properties['device.icon_name'] ? Properties['device.icon_name'] : 'audio-card'
+            icon: PulseObject.properties['device.icon_name'] ? PulseObject.properties['device.icon_name'] : 'audio-card'
         }
 
         Label {
             id: nameLabel
             Layout.fillWidth: true
-            text: Properties['device.description'] ? Properties['device.description'] : Name
+            text: PulseObject.properties['device.description'] ? PulseObject.properties['device.description'] : Name
             elide: "ElideRight"
         }
     }
@@ -39,9 +39,9 @@ ColumnLayout {
         }
         ComboBox {
             Layout.fillWidth: true
-            model: Profiles
+            model: PulseObject.profiles
             textRole: "description"
-            currentIndex: ActiveProfileIndex
+            currentIndex: PulseObject.activeProfileIndex
             onCurrentIndexChanged: {
                 // Get name.
                 textRole = "name";
@@ -63,7 +63,7 @@ ColumnLayout {
         }
         ComboBox {
             Layout.fillWidth: true
-            model: Ports
+            model: PulseObject.ports
             textRole: "description"
         }
     }

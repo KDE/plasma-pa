@@ -4,20 +4,26 @@
 #include <QString>
 #include <QVariantMap>
 
-template <typename PAInfo>
-class Q_DECL_EXPORT ProfileBase
+class Q_DECL_EXPORT Profile : public QObject
 {
+    Q_OBJECT
+#warning notify
+    Q_PROPERTY(QString name READ name)
+    Q_PROPERTY(QString description READ description)
+    Q_PROPERTY(quint32 priority READ priority)
 public:
-    ProfileBase()
-        : m_name()
+    Profile(QObject *parent)
+        : QObject(parent)
+        , m_name()
         , m_description()
         , m_priority(0)
     {
     }
 
-    virtual ~ProfileBase() {}
+    virtual ~Profile() {}
 
-    virtual void setInfo(const PAInfo *info)
+    template<typename PAInfo>
+    void setInfo(const PAInfo *info)
     {
         // Description is optional. Name not so much as we need some ID.
         Q_ASSERT(info->name);
@@ -31,15 +37,6 @@ public:
     QString name() const { return m_name; }
     QString description() const { return m_description; }
     quint32 priority() const { return m_priority; }
-
-    virtual QVariantMap toVariantMap() const
-    {
-        QVariantMap map;
-        map.insert(QLatin1Literal("name"), name());
-        map.insert(QLatin1Literal("description"), description());
-        map.insert(QLatin1Literal("priority"), priority());
-        return map;
-    }
 
 private:
     QString m_name;

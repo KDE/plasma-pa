@@ -9,46 +9,64 @@
 #include "portbase.h"
 #include "pulseobject.h"
 
-template <typename PAInfo, typename PAPortInfo>
-class Q_DECL_EXPORT DeviceBase : public PulseObject, public AbstractVolumeBase
-{
-public:
-    typedef PortBase<PAPortInfo> Port;
 
+class Q_DECL_EXPORT DeviceBase : public VolumeObject
+{
+    Q_OBJECT
+    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
+    Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
+    Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)
+    Q_PROPERTY(quint32 activePortIndex READ activePortIndex WRITE setActivePortIndex NOTIFY activePortIndexChanged)
+public:
     DeviceBase() {}
     virtual ~DeviceBase() {}
 
-    void setInfo(const PAInfo *info)
+    template <typename PAInfo>
+    void updateDevice(const PAInfo *info)
     {
-        m_index = info->index;
+        updateVolumeObject(info);
 
-        m_name = info->name;
-        m_description = info->description;
+        if (m_name != info->name) {
+            m_name = info->name;
+            emit nameChanged();
+        }
+        if (m_description != info->description) {
+            m_description = info->description;
+            emit descriptionChanged();
+        }
 
-        m_volume = info->volume;
-        m_muted = info->mute;
-
+#warning leaking here also not correctly updating things
+        qDeleteAll(m_ports);
         m_ports.clear();
         for (auto **ports = info->ports; ports && *ports != nullptr; ++ports) {
-            Port port;
-            port.setInfo(*ports);
+            Port *port = new Port(this);
+            port->setInfo(*ports);
             m_ports.append(port);
             if (info->active_port == *ports) {
                 m_activePortIndex = m_ports.length() - 1;
             }
         }
+        emit portsChanged();
+        emit activePortIndexChanged();
     }
 
     QString name() const { return m_name; }
     QString description() const { return m_description; }
-    QList<Port> ports() const { return m_ports; }
-    int activePortIndex() const { return m_activePortIndex; }
+    QList<QObject *> ports() const { return m_ports; }
+    quint32 activePortIndex() const { return m_activePortIndex; }
+    virtual void setActivePortIndex(quint32 port_index) = 0;
+
+signals:
+    void nameChanged();
+    void descriptionChanged();
+    void portsChanged();
+    void activePortIndexChanged();
 
 private:
     QString m_name;
     QString m_description;
-    QList<Port> m_ports;
-    int m_activePortIndex = -1;
+    QList<QObject *> m_ports;
+    quint32 m_activePortIndex = -1;
 };
 
 #endif // DEVICEBASE_H

@@ -3,15 +3,12 @@
 
 #include "streambase.h"
 
-class Q_DECL_EXPORT SourceOutput : public StreamBase<pa_source_output_info>
+class Q_DECL_EXPORT SourceOutput : public StreamBase
 {
     Q_OBJECT
-#warning missing properties
-
-    Q_PROPERTY(qint64 volume READ volume WRITE setVolume)
-    Q_PROPERTY(bool muted READ isMuted WRITE setMuted)
+#warning missing index property
 public:
-    void setInfo(const pa_source_output_info *info) Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void update(const pa_source_output_info *info);
 
     quint32 sourceIndex() const { return m_sourceIndex; }
 

@@ -26,12 +26,12 @@ PlasmaComponents.ListItem {
 
     function increaseVolume() {
         var step = slider.maximumValue / 15;
-        setVolume(Volume + step);
+        setVolume(PulseObject.volume + step);
     }
 
     function decreaseVolume() {
         var step = slider.maximumValue / 15;
-        setVolume(Volume - step);
+        setVolume(PulseObject.volume - step);
     }
 
     anchors {
@@ -98,8 +98,8 @@ PlasmaComponents.ListItem {
                     VolumeIcon {
                         Layout.maximumHeight: slider.height * 0.75
                         Layout.maximumWidth: slider.height* 0.75
-                        volume: Volume
-                        muted: IsMuted
+                        volume: PulseObject.volume
+                        muted: PulseObject.muted
 
                         MouseArea {
                             anchors.fill: parent
@@ -114,24 +114,24 @@ PlasmaComponents.ListItem {
                         // While we are sliding we must not react to value updates
                         // as otherwise we can easily end up in a loop where value
                         // changes trigger volume changes trigger value changes.
-                        property int volume: Volume
+                        property int volume: PulseObject.volume
 
                         Layout.fillWidth: true
                         minimumValue: 0
                         // FIXME: I do wonder if exposing max through the model would be useful at all
                         maximumValue: 65536
                         stepSize: maximumValue / 100
-                        visible: HasVolume
+                        visible: PulseObject.hasVolume
                         enabled: {
-                            if (typeof IsVolumeWritable === 'undefined') {
+                            if (typeof PulseObject.volumeWritable === 'undefined') {
                                 return !IsMuted
                             }
-                            return IsVolumeWritable && !IsMuted
+                            return PulseObject.volumeWritable && !PulseObject.muted
                         }
 
                         onVolumeChanged: {
                             if (!pressed) {
-                                value = Volume;
+                                value = PulseObject.volume;
                             }
                         }
 
@@ -148,7 +148,7 @@ PlasmaComponents.ListItem {
                                 // Otherwise it might be that the slider is at v10
                                 // whereas PA rejected the volume change and is
                                 // still at v15 (e.g.).
-                                value = Volume;
+                                value = PulseObject.volume;
                             }
                         }
                     }

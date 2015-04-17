@@ -22,6 +22,10 @@ protected slots:
 
 protected:
     AbstractModel(QObject *parent);
+    void initRoleNames(const QMetaObject &qobjectMetaObject);
+
+    QHash<int, QByteArray> m_roles;
+    QMap<int, int> m_objectProperties;
 
 private:
     // Prevent leaf-classes from default constructing as we want to enforce
@@ -32,35 +36,23 @@ private:
 class Q_DECL_EXPORT SinkModel : public AbstractModel
 {
     Q_OBJECT
-    Q_PROPERTY(QString volumeText READ volumeText NOTIFY volumeTextChanged)
     Q_PROPERTY(QList<QObject *> sinks READ sinks NOTIFY sinksChanged)
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
         PulseObjectRole,
-        NameRole,
-        DescriptionRole,
-        VolumeRole,
-        IsMutedRole,
-        PortsRole,
-        ActivePortRole
     };
     Q_ENUMS(ItemRole)
 
     SinkModel(QObject *parent = nullptr);
 
+#warning very naughty, used by main.qml to set volume on all sinks
     QList<QObject *> sinks() const;
-
-#warning fixme this is so bad...
-    Q_INVOKABLE int paIndexToDataIndex(quint32 index);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
-    QString volumeText() const;
-
 signals:
-    void volumeTextChanged();
     void sinksChanged();
 };
 
@@ -75,8 +67,6 @@ public:
         DescriptionRole,
         VolumeRole,
         IsMutedRole,
-        PortsRole,
-        ActivePortRole
     };
     Q_ENUMS(ItemRole)
 
@@ -98,16 +88,7 @@ class Q_DECL_EXPORT SourceOutputModel : public AbstractModel
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
-        PulseObjectRole,
-        NameRole,
-        SourceIndexRole,
-        VolumeRole,
-        IsMutedRole,
-        HasVolumeRole,
-        IsVolumeWritableRole,
-        ClientIndexRole,
-        ClientNameRole,
-        ClientPropertiesRole
+        PulseObjectRole
     };
     Q_ENUMS(ItemRole)
 
@@ -123,6 +104,7 @@ class Q_DECL_EXPORT ClientModel : public AbstractModel
 public:
     enum ItemRole {
         NameRole = Qt::UserRole + 1,
+        PulseObjectRole,
     };
     Q_ENUMS(ItemRole)
 
@@ -138,12 +120,7 @@ class Q_DECL_EXPORT CardModel : public AbstractModel
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
-        NameRole,
-        DriverRole,
-        ProfilesRole,
-        ActiveProfileIndexRole,
-        PortsRole,
-        PropertiesRole
+        PulseObjectRole,
     };
     Q_ENUMS(ItemRole)
 
@@ -159,16 +136,7 @@ class Q_DECL_EXPORT SinkInputModel : public AbstractModel
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
-        PulseObjectRole,
-        NameRole,
-        VolumeRole,
-        SinkIndexRole,
-        IsMutedRole,
-        HasVolumeRole,
-        IsVolumeWritableRole,
-        ClientIndexRole,
-        ClientNameRole,
-        ClientPropertiesRole
+        PulseObjectRole
     };
     Q_ENUMS(ItemRole)
 

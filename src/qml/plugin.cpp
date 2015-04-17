@@ -4,6 +4,7 @@
 
 #include "pulseaudio.h"
 
+#include "client.h"
 void Plugin::registerTypes(const char* uri)
 {
     qmlRegisterType<Context>();
@@ -14,4 +15,5 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<ReverseFilterModel>(uri, 0, 1, "ReverseFilterModel");
     qmlRegisterType<SourceModel>(uri, 0, 1, "SourceModel");
     qmlRegisterType<SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
+    qmlRegisterType<Client>();
 }

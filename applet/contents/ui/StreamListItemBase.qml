@@ -5,15 +5,15 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.private.volume 0.1
 
 ListItemBase {
-    label: ClientName + ": " + Name
+    label: PulseObject.client.name + ": " + PulseObject.name
     icon: {
-        if (ClientProperties['application.icon_name']) {
-            return ClientProperties['application.icon_name'].toLowerCase();
-        } else if (ClientProperties['application.process.binary']) {
-            if (ClientProperties['application.process.binary'].toLowerCase() === 'chrome') {
+        if (PulseObject.client.properties['application.icon_name']) {
+            return PulseObject.client.properties['application.icon_name'].toLowerCase();
+        } else if (PulseObject.client.properties['application.process.binary']) {
+            if (PulseObject.client.properties['application.process.binary'].toLowerCase() === 'chrome') {
                 return 'google-chrome';
             }
-            return ClientProperties['application.process.binary'].toLowerCase();
+            return PulseObject.client.properties['application.process.binary'].toLowerCase();
         }
         return 'unknown';
     }
