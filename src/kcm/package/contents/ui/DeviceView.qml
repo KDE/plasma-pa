@@ -11,6 +11,6 @@ ThemedScrollView {
         id: view
         anchors.fill: parent
         anchors.margins: 10
-        delegate: SinkListItem {}
+        delegate: DeviceListItem {}
     }
 }
