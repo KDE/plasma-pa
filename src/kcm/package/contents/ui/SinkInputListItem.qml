@@ -54,13 +54,13 @@ Item {
                     maximumValue: 65536
                     stepSize: maximumValue / 100
                     focus: true
-                    visible: (sinkInput.hasVolume && sinkInput.isVolumeWritable) ? true : false
+                    visible: (sinkInput.hasVolume && sinkInput.volumeWritable) ? true : false
                     onValueChanged: {
                         sinkInput.volume = value
                     }
 
                     Component.onCompleted: {
-                        if (!sinkInput.hasVolume || !sinkInput.isVolumeWritable)
+                        if (!sinkInput.hasVolume || !sinkInput.volumeWritable)
                             return
                         inputSlider.value = sinkInput.volume
                     }
