@@ -120,7 +120,7 @@ class Q_DECL_EXPORT CardModel : public AbstractModel
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
-        PulseObjectRole,
+        PulseObjectRole
     };
     Q_ENUMS(ItemRole)
 
