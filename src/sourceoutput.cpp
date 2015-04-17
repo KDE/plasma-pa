@@ -2,6 +2,11 @@
 
 #include "context.h"
 
+SourceOutput::SourceOutput(QObject *parent)
+    : StreamBase(parent)
+{
+}
+
 void SourceOutput::update(const pa_source_output_info *info)
 {
     updateStream(info);

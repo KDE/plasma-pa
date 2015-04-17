@@ -20,7 +20,7 @@ class Q_DECL_EXPORT Card : public PulseObject
     Q_PROPERTY(QList<QObject *> ports READ ports)
     Q_PROPERTY(QVariantMap properties READ properties)
 public:
-    Card();
+    Card(QObject *parent);
 
     void update(const pa_card_info *info);
 

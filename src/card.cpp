@@ -2,7 +2,8 @@
 
 #include <QDebug>
 
-Card::Card()
+Card::Card(QObject *parent)
+    : PulseObject(parent)
 {
 }
 

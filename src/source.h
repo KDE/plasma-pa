@@ -7,6 +7,8 @@ class Q_DECL_EXPORT Source : public DeviceBase
 {
     Q_OBJECT
 public:
+    Source(QObject *parent);
+
     void update(const pa_source_info *info);
     void setVolume(qint64 volume) Q_DECL_OVERRIDE;
     void setMuted(bool muted) Q_DECL_OVERRIDE;

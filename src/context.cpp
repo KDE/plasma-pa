@@ -290,32 +290,32 @@ void Context::contextStateCallback(pa_context *c)
 #warning fixme recentlydeleted has the same type for everything making it easy to use the wrong one possibly
 void Context::sinkCallback(const pa_sink_info *info)
 {
-    m_sinks.updateEntry(info);
+    m_sinks.updateEntry(info, this);
 }
 
 void Context::sinkInputCallback(const pa_sink_input_info *info)
 {
-    m_sinkInputs.updateEntry(info);
+    m_sinkInputs.updateEntry(info, this);
 }
 
 void Context::sourceCallback(const pa_source_info *info)
 {
-    m_sources.updateEntry(info);
+    m_sources.updateEntry(info, this);
 }
 
 void Context::sourceOutputCallback(const pa_source_output_info *info)
 {
-    m_sourceOutputs.updateEntry(info);
+    m_sourceOutputs.updateEntry(info, this);
 }
 
 void Context::clientCallback(const pa_client_info *info)
 {
-    m_clients.updateEntry(info);
+    m_clients.updateEntry(info, this);
 }
 
 void Context::cardCallback(const pa_card_info *info)
 {
-    m_cards.updateEntry(info);
+    m_cards.updateEntry(info, this);
 }
 
 void Context::setSinkVolume(quint32 index, qint64 volume)

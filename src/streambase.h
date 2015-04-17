@@ -59,7 +59,7 @@ signals:
     void clientChanged();
 
 protected:
-    StreamBase() {}
+    StreamBase(QObject *parent) : VolumeObject(parent) {}
     virtual ~StreamBase() {}
 
 private:

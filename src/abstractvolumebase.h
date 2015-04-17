@@ -13,6 +13,7 @@ class VolumeObject : public PulseObject
     Q_PROPERTY(qint64 volume READ volume WRITE setVolume NOTIFY volumeChanged)
     Q_PROPERTY(bool muted READ isMuted WRITE setMuted NOTIFY mutedChanged)
 public:
+    VolumeObject(QObject *parent) : PulseObject(parent) {}
     virtual ~VolumeObject() {}
 
     template <typename PAInfo>

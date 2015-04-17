@@ -8,6 +8,8 @@ class Q_DECL_EXPORT SourceOutput : public StreamBase
     Q_OBJECT
 #warning missing index property
 public:
+    SourceOutput(QObject *parent);
+
     void update(const pa_source_output_info *info);
 
     quint32 sourceIndex() const { return m_sourceIndex; }

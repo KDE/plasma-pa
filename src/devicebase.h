@@ -18,7 +18,6 @@ class Q_DECL_EXPORT DeviceBase : public VolumeObject
     Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)
     Q_PROPERTY(quint32 activePortIndex READ activePortIndex WRITE setActivePortIndex NOTIFY activePortIndexChanged)
 public:
-    DeviceBase() {}
     virtual ~DeviceBase() {}
 
     template <typename PAInfo>
@@ -61,6 +60,9 @@ signals:
     void descriptionChanged();
     void portsChanged();
     void activePortIndexChanged();
+
+protected:
+    DeviceBase(QObject *parent) : VolumeObject(parent) {}
 
 private:
     QString m_name;

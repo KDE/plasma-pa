@@ -8,6 +8,8 @@ class Q_DECL_EXPORT SinkInput : public StreamBase
     Q_OBJECT
 #warning missing index property
 public:
+    SinkInput(QObject *parent);
+
     void update(const pa_sink_input_info *info);
 
     quint32 sinkIndex() const { return m_sinkIndex; }

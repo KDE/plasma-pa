@@ -2,6 +2,11 @@
 
 #include "context.h"
 
+Source::Source(QObject *parent)
+    : DeviceBase(parent)
+{
+}
+
 void Source::update(const pa_source_info *info)
 {
     updateDevice(info);

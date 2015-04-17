@@ -2,6 +2,11 @@
 
 #include "context.h"
 
+SinkInput::SinkInput(QObject *parent)
+    : StreamBase(parent)
+{
+}
+
 void SinkInput::update(const pa_sink_input_info *info)
 {
     updateStream(info);

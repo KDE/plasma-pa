@@ -21,11 +21,15 @@ public:
     quint32 index() const;
 
 protected:
-    PulseObject(QObject *parent = 0);
+    PulseObject(QObject *parent);
     virtual ~PulseObject();
 
     Context *context() const;
     quint32 m_index;
+
+private:
+    // Ensure that we get properly parented.
+    PulseObject();
 };
 
 #endif // PULSEOBJECT_H

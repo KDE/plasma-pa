@@ -2,7 +2,8 @@
 
 #include <QDebug>
 
-Client::Client()
+Client::Client(QObject *parent)
+    : PulseObject(parent)
 {
 }
 

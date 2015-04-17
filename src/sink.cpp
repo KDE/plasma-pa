@@ -2,6 +2,11 @@
 
 #include "context.h"
 
+Sink::Sink(QObject *parent)
+    : DeviceBase(parent)
+{
+}
+
 void Sink::update(const pa_sink_info *info)
 {
     updateDevice(info);

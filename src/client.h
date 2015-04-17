@@ -13,7 +13,7 @@ class Q_DECL_EXPORT Client : public PulseObject
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
 public:
-    Client();
+    Client(QObject *parent);
 
     void update(const pa_client_info *info);
 

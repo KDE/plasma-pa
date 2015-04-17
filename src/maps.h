@@ -51,7 +51,8 @@ public:
         m_pendingRemovals.clear();
     }
 
-    void updateEntry(const PAInfo *info)
+#warning this parenting here is a bit weird
+    void updateEntry(const PAInfo *info, QObject *parent)
     {
         Q_ASSERT(info);
 
@@ -64,7 +65,7 @@ public:
 
         auto *obj = m_data.value(info->index, nullptr);
         if (!obj) {
-            obj = new Type;
+            obj = new Type(parent);
         }
         obj->update(info);
         m_data.insert(info->index, obj);
