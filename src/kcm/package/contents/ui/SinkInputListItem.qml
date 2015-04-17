@@ -43,29 +43,8 @@ Item {
                     onClicked: sinkInput.muted = !sinkInput.muted
                 }
             }
-            RowLayout {
-                Slider {
-                    id: inputSlider
-                    Layout.fillWidth: true
-                    anchors {
-                        top: inputText.bottom
-                    }
-                    minimumValue: 0
-                    maximumValue: 65536
-                    stepSize: maximumValue / 100
-                    focus: true
-                    visible: (sinkInput.hasVolume && sinkInput.volumeWritable) ? true : false
-                    onValueChanged: {
-                        sinkInput.volume = value
-                    }
 
-                    Component.onCompleted: {
-                        if (!sinkInput.hasVolume || !sinkInput.volumeWritable)
-                            return
-                        inputSlider.value = sinkInput.volume
-                    }
-                }
-            }
+            VolumeSlider {}
 
             Rectangle {
                 color: "grey"

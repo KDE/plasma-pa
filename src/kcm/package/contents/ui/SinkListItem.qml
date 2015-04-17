@@ -52,43 +52,7 @@ ColumnLayout {
             }
         }
 
-        RowLayout {
-            Slider {
-                id: inputSlider
-
-                property int volume: PulseObject.volume
-                property bool applyingVolume: false
-
-                Layout.fillWidth: true
-                anchors {
-                    top: inputText.bottom
-                }
-                minimumValue: 0
-                maximumValue: 65536
-                stepSize: maximumValue / 100
-                focus: true
-                onValueChanged: {
-                    if (applyingVolume) {
-                        applyingVolume = false
-                        return
-                    }
-
-                    console.debug('changed')
-                    PulseObject.volume = value
-                }
-                onVolumeChanged: {
-                    applyingVolume = true
-                    value = volume
-                }
-
-                Component.onCompleted: {
-                    console.debug("delegate")
-                    if (!PulseObject.hasVolume || !PulseObject.isVolumeWritable)
-                        return
-                    inputSlider.value = PulseObject.volume
-                }
-            }
-        }
+        VolumeSlider {}
     }
 
     Rectangle {
