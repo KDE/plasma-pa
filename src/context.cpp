@@ -316,6 +316,18 @@ void Context::cardCallback(const pa_card_info *info)
     m_cards.updateEntry(info, this);
 }
 
+void Context::setCardProfile(quint32 index, const QString &profile)
+{
+    qDebug() << Q_FUNC_INFO << index << profile;
+    if (!PAOperation(pa_context_set_card_profile_by_index(m_context,
+                                                          index,
+                                                          profile.toUtf8().constData(),
+                                                          nullptr, nullptr))) {
+        qWarning() << "pa_context_set_card_profile_by_index failed";
+        return;
+    }
+}
+
 void Context::connectToDaemon()
 {
     Q_ASSERT(m_context == nullptr);

@@ -52,5 +52,4 @@ private:
     quint32 m_priority;
 };
 
-
 #endif // PROFILE_H

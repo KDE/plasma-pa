@@ -2,6 +2,8 @@
 
 #include <QDebug>
 
+#include "context.h"
+
 Card::Card(QObject *parent)
     : PulseObject(parent)
 {
@@ -10,9 +12,12 @@ Card::Card(QObject *parent)
 void Card::update(const pa_card_info *info)
 {
     updatePulseObject(info);
-    m_name = QString::fromUtf8(info->name);
 
-    qDebug() << "processing card" << info->index << info->name;
+    QString infoName = QString::fromUtf8(info->name);
+    if (m_name != infoName) {
+        m_name = infoName;
+        emit nameChanged();
+    }
 
     qDeleteAll(m_profiles);
     m_profiles.clear();
@@ -26,6 +31,9 @@ void Card::update(const pa_card_info *info)
         }
     }
 
+    emit profilesChanged();
+    emit activeProfileIndexChanged();
+
     void *it = nullptr;
     while (const char *key = pa_proplist_iterate(info->proplist, &it)) {
         Q_ASSERT(key);
@@ -37,4 +45,11 @@ void Card::update(const pa_card_info *info)
         Q_ASSERT(value);
         m_properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
     }
+    emit propertiesChanged();
+}
+
+void Card::setActiveProfileIndex(quint32 profileIndex)
+{
+    const Profile *profile = qobject_cast<Profile *>(profiles().at(profileIndex));
+    context()->setCardProfile(index(), profile->name());
 }

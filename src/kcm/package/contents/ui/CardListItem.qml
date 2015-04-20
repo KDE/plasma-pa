@@ -7,8 +7,6 @@ import org.kde.kquickcontrolsaddons 2.0
 ColumnLayout {
     id: delegate
 
-    property int uniformLabelWidth: Math.max(profileLabel.contentWidth, portLabel.contentWidth)
-
     width: parent.width
 
     RowLayout {
@@ -31,20 +29,19 @@ ColumnLayout {
     RowLayout {
         Label {
             id: profileLabel
-            Layout.minimumWidth: delegate.uniformLabelWidth
-            Layout.maximumWidth: Layout.minimumWidth
-            // FIXME: i18n
-            text: "Profile:"
+            text: i18nc("@label", "Profile:")
             font.bold: true
         }
         ComboBox {
             Layout.fillWidth: true
             model: PulseObject.profiles
+            // NOTE: model resets (i.e. profiles property changes) will reset
+            // the currentIndex, so force it to be set on model changes, otherwise
+            // it would eventually become 0 when it shouldn't be.
+            onModelChanged: currentIndex = PulseObject.activeProfileIndex
             textRole: "description"
             currentIndex: PulseObject.activeProfileIndex
-            onCurrentIndexChanged: {
-                PulseObject.setCardProfile(currentIndex);
-            }
+            onActivated: PulseObject.activeProfileIndex = index
         }
     }
 

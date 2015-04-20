@@ -44,6 +44,8 @@ public:
     void clientCallback(const pa_client_info *info);
     void cardCallback(const pa_card_info *info);
 
+    void setCardProfile(quint32 index, const QString &profile);
+
     template <typename PAFunction>
     void setGenericVolume(quint32 index, qint64 newVolume,
                           pa_cvolume cVolume, PAFunction pa_set_volume)

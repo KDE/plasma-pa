@@ -6,17 +6,16 @@
 #include <QMap>
 #include <QVariant>
 
-#include "port.h"
+#include "profile.h"
 #include "pulseobject.h"
 
 class Q_DECL_EXPORT Card : public PulseObject
 {
     Q_OBJECT
-#warning notify
-    Q_PROPERTY(QString name READ name)
-    Q_PROPERTY(QList<QObject *> profiles READ profiles)
-    Q_PROPERTY(quint32 activeProfileIndex READ activeProfileIndex)
-    Q_PROPERTY(QVariantMap properties READ properties)
+    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
+    Q_PROPERTY(QList<QObject *> profiles READ profiles  NOTIFY profilesChanged)
+    Q_PROPERTY(quint32 activeProfileIndex READ activeProfileIndex WRITE setActiveProfileIndex NOTIFY activeProfileIndexChanged)
+    Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
 public:
     Card(QObject *parent);
 
@@ -27,23 +26,14 @@ public:
     QList<QObject *> profiles() const { return m_profiles; }
     quint32 activeProfileIndex() const { return m_activeProfileIndex; }
 
+    void setActiveProfileIndex(quint32 profileIndex);
     QMap<QString, QVariant> properties() const { return m_properties; }
 
-#warning impl setting profile
-//    void setCardProfile(quint32 index, const QString &profileName)
-//    {
-//        qDebug() << Q_FUNC_INFO << index << profileName;
-//        Card *obj = m_cards.data().value(index, nullptr);
-//        if (!obj)
-//            return;
-//        if (!PAOperation(pa_context_set_card_profile_by_index(m_context,
-//                                                              index,
-//                                                              profileName.toUtf8().constData(),
-//                                                              nullptr, nullptr))) {
-//            qWarning() << "pa_context_set_card_profile_by_index failed";
-//            return;
-//        }
-//    }
+signals:
+    void nameChanged();
+    void profilesChanged();
+    void activeProfileIndexChanged();
+    void propertiesChanged();
 
 private:
     QString m_name;
