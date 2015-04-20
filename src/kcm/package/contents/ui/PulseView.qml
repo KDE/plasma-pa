@@ -1,10 +1,11 @@
 import QtQuick 2.0
+import QtQuick.Controls 1.0
 
-ThemedScrollView {
+ScrollView {
     property alias model: view.model
     property alias delegate: view.delegate
 
-    frameVisible: true
+    frameVisible: false
     highlightOnFocus: true
     anchors.fill: parent
 

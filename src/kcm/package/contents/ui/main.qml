@@ -38,6 +38,8 @@ TabView {
     }
     Tab {
         title: i18nc("@title:tab", "Configuration")
-        Cards {}
+        CardView {
+            model: CardModel {}
+        }
     }
 }
