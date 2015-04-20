@@ -22,11 +22,9 @@ ColumnLayout {
             text: PulseObject.description
         }
 
-        Button {
-            iconName: 'audio-volume-muted'
-            checkable: true
-            checked: PulseObject.muted
-            onClicked: PulseObject.muted = !PulseObject.muted
+        MuteButton {
+            muted: PulseObject.muted
+            onMutedChanged: PulseObject.muted = muted
         }
     }
 
