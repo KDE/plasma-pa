@@ -33,6 +33,8 @@ QVariant ClientModel::data(const QModelIndex &index, int role) const
     switch(static_cast<ItemRole>(role)){
     case NameRole:
         return client->name();
+    case PulseObjectRole:
+        return QVariant::fromValue(client);
     }
     return QVariant();
 }

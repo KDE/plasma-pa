@@ -10,7 +10,20 @@ SourceOutput::SourceOutput(QObject *parent)
 void SourceOutput::update(const pa_source_output_info *info)
 {
     updateStream(info);
-    m_sourceIndex = info->source;
+    if (m_sourceIndex != info->source) {
+        m_sourceIndex = info->source;
+        emit sourceIndexChanged();
+    }
+}
+
+quint32 SourceOutput::sourceIndex() const
+{
+    return m_sourceIndex;
+}
+
+void SourceOutput::setSourceIndex(quint32 sourceIndex)
+{
+    context()->setGenericDeviceForStream(index(), sourceIndex, &pa_context_move_source_output_by_index);
 }
 
 void SourceOutput::setVolume(qint64 volume)

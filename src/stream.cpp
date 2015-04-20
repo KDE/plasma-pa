@@ -1,30 +1,30 @@
 #include "stream.h"
 
-StreamBase::StreamBase(QObject *parent)
+Stream::Stream(QObject *parent)
     : VolumeObject(parent)
 {
 }
 
-StreamBase::~StreamBase()
+Stream::~Stream()
 {
 }
 
-QString StreamBase::name() const
+QString Stream::name() const
 {
     return m_name;
 }
 
-bool StreamBase::hasVolume() const
+bool Stream::hasVolume() const
 {
     return m_hasVolume;
 }
 
-bool StreamBase::isVolumeWritable() const
+bool Stream::isVolumeWritable() const
 {
     return m_isVolumeWritable;
 }
 
-Client *StreamBase::client() const
+Client *Stream::client() const
 {
     qDebug() <<"client";
     return context()->clients().data().value(m_clientIndex, nullptr);

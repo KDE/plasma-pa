@@ -34,7 +34,21 @@ public:
 
     QMap<QString, QVariant> properties() const { return m_properties; }
 
-#warning implement setting profile
+#warning impl setting profile
+//    void setCardProfile(quint32 index, const QString &profileName)
+//    {
+//        qDebug() << Q_FUNC_INFO << index << profileName;
+//        Card *obj = m_cards.data().value(index, nullptr);
+//        if (!obj)
+//            return;
+//        if (!PAOperation(pa_context_set_card_profile_by_index(m_context,
+//                                                              index,
+//                                                              profileName.toUtf8().constData(),
+//                                                              nullptr, nullptr))) {
+//            qWarning() << "pa_context_set_card_profile_by_index failed";
+//            return;
+//        }
+//    }
 
 private:
     QString m_name;

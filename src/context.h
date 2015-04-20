@@ -44,15 +44,6 @@ public:
     void clientCallback(const pa_client_info *info);
     void cardCallback(const pa_card_info *info);
 
-    Q_INVOKABLE void setSinkPort(quint32 index, const QString &portName);
-
-#warning terminology is messed up... modelIndex is a QModelIndex, what we have here is a MapIndex...
-    Q_INVOKABLE void setSinkInputSinkByModelIndex(quint32 index, int sinkModelIndex);
-
-    Q_INVOKABLE void setSourceOutputSinkByModelIndex(quint32 index, int sourceModelIndex);
-
-    Q_INVOKABLE void setCardProfile(quint32 cardIndex, const QString &profileName);
-
     template <typename PAFunction>
     void setGenericVolume(quint32 index, qint64 newVolume,
                           pa_cvolume cVolume, PAFunction pa_set_volume)
@@ -87,6 +78,21 @@ public:
                                      nullptr,
                                      nullptr))) {
             qWarning() << "pa_set_port failed";
+            return;
+        }
+    }
+
+    template <typename PAFunction>
+    void setGenericDeviceForStream(quint32 streamIndex,
+                                   quint32 deviceIndex,
+                                   PAFunction pa_move_stream_to_device)
+    {
+        if (!PAOperation(pa_move_stream_to_device(m_context,
+                                                  streamIndex,
+                                                  deviceIndex,
+                                                  nullptr,
+                                                  nullptr))) {
+            qWarning() << "pa_move_stream_to_device failed";
             return;
         }
     }
