@@ -25,13 +25,13 @@ int ClientModel::rowCount(const QModelIndex &parent) const
 
 QVariant ClientModel::data(const QModelIndex &index, int role) const
 {
-    Client *client = context()->clients().data().values().at(index.row());
-    Q_ASSERT(client);
+    Client *data = context()->clients().data().values().at(index.row());
+    Q_ASSERT(data);
     switch(static_cast<ItemRole>(role)){
     case NameRole:
-        return client->name();
+        return data->name();
     case PulseObjectRole:
-        return QVariant::fromValue(client);
+        return QVariant::fromValue(data);
     }
     return QVariant();
 }
@@ -53,15 +53,12 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
 {
     SinkInput *data = context()->sinkInputs().data().values().at(index.row());
     Q_ASSERT(data);
-
-    // Try to resolve by enum value.
     switch ((ItemRole) role) {
     case IndexRole:
         return data->index();
     case PulseObjectRole:
         return QVariant::fromValue(data);
     }
-
     return QVariant();
 }
 
@@ -132,14 +129,13 @@ int SinkModel::rowCount(const QModelIndex &parent) const
 
 QVariant SinkModel::data(const QModelIndex &index, int role) const
 {
-    qDebug() << IndexRole << role;
-    Sink *sink = context()->sinks().data().values().at(index.row());
-    Q_ASSERT(sink);
+    Sink *data = context()->sinks().data().values().at(index.row());
+    Q_ASSERT(data);
     switch(static_cast<ItemRole>(role)) {
     case IndexRole:
-        return sink->index();
+        return data->index();
     case PulseObjectRole:
-        return QVariant::fromValue(sink);
+        return QVariant::fromValue(data);
     }
     return QVariant();
 }
@@ -238,13 +234,13 @@ int SourceModel::rowCount(const QModelIndex &parent) const
 
 QVariant SourceModel::data(const QModelIndex &index, int role) const
 {
-    Source *source = context()->sources().data().values().at(index.row());
-    Q_ASSERT(source);
+    Source *data = context()->sources().data().values().at(index.row());
+    Q_ASSERT(data);
     switch(static_cast<ItemRole>(role)) {
     case IndexRole:
-        return source->index();
+        return data->index();
     case PulseObjectRole:
-        return QVariant::fromValue(source);
+        return QVariant::fromValue(data);
     }
     return QVariant();
 }
@@ -283,7 +279,6 @@ CardModel::CardModel(QObject *parent)
 
 int CardModel::rowCount(const QModelIndex &parent) const
 {
-    qDebug() << Q_FUNC_INFO << context() << (context() ? context()->cards().data().count() : 0);
     Q_UNUSED(parent);
     if (!context())
         return 0;
@@ -292,7 +287,6 @@ int CardModel::rowCount(const QModelIndex &parent) const
 
 QVariant CardModel::data(const QModelIndex &index, int role) const
 {
-    qDebug() << index<< role;
     Card *data =  context()->cards().data().values().at(index.row());
     Q_ASSERT(data);
     switch ((ItemRole) role) {
