@@ -52,21 +52,5 @@ ColumnLayout {
         }
     }
 
-    RowLayout {
-        Label {
-            id: portLabel
-            Layout.minimumWidth: delegate.uniformLabelWidth
-            Layout.maximumWidth: Layout.minimumWidth
-            // FIXME: i18n
-            text: "Ports:"
-            font.bold: true
-        }
-        ComboBox {
-            Layout.fillWidth: true
-            model: PulseObject.ports
-            textRole: "description"
-        }
-    }
-
     ListItemSeperator { view: delegate.ListView.view }
 }
