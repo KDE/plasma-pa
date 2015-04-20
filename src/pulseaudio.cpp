@@ -217,7 +217,6 @@ void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
     qDebug() << m_roles;
 }
 
-
 ReverseFilterModel::ReverseFilterModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
@@ -238,15 +237,6 @@ SourceModel::SourceModel(QObject *parent)
     connect(&context()->sources(), &SourceMap::removed, this, &SourceModel::onDataRemoved);
 }
 
-int SourceModel::paIndexToDataIndex(quint32 index)
-{
-    qDebug() << Q_FUNC_INFO << context() << index;
-    if (!context()) {
-        return -1;
-    }
-    return context()->sources().paIndexToDataIndex(index);
-}
-
 int SourceModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
@@ -264,14 +254,6 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
         return source->index();
     case PulseObjectRole:
         return QVariant::fromValue(source);
-    case NameRole:
-        return source->name();
-    case DescriptionRole:
-        return source->description();
-    case VolumeRole:
-        return source->volume();
-    case IsMutedRole:
-        return source->isMuted();
     }
     return QVariant();
 }

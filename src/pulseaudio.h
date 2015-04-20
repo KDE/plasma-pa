@@ -63,23 +63,13 @@ public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
         PulseObjectRole,
-        NameRole,
-        DescriptionRole,
-        VolumeRole,
-        IsMutedRole,
     };
     Q_ENUMS(ItemRole)
 
     SourceModel(QObject *parent = nullptr);
 
-#warning fixme this is so bad...
-    Q_INVOKABLE int paIndexToDataIndex(quint32 index);
-
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-
-signals:
-    void volumeTextChanged();
 };
 
 class Q_DECL_EXPORT SourceOutputModel : public AbstractModel
