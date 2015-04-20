@@ -124,7 +124,7 @@ PlasmaComponents.ListItem {
                         visible: PulseObject.hasVolume
                         enabled: {
                             if (typeof PulseObject.volumeWritable === 'undefined') {
-                                return !IsMuted
+                                return !PulseObject.muted
                             }
                             return PulseObject.volumeWritable && !PulseObject.muted
                         }
