@@ -40,14 +40,10 @@ ColumnLayout {
             ComboBox {
                 Layout.fillWidth: true
                 model: PulseObject.ports
+                onModelChanged: currentIndex = PulseObject.activePortIndex
                 textRole: "description"
                 currentIndex: PulseObject.activePortIndex
                 onActivated: PulseObject.activePortIndex = index
-                Connections {
-                    target: PulseObject
-                    // FIXME: comobox for some reason doesn't update after init
-                    onActivePortIndexChanged: parent.currentIndex = PulseObject.activePortIndex
-                }
             }
         }
 
