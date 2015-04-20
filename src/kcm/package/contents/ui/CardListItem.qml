@@ -43,11 +43,7 @@ ColumnLayout {
             textRole: "description"
             currentIndex: PulseObject.activeProfileIndex
             onCurrentIndexChanged: {
-                // Get name.
-                textRole = "name";
-                var name = currentText;
-                textRole = "description";
-                PulseObject.setCardProfile(name);
+                PulseObject.setCardProfile(currentIndex);
             }
         }
     }
