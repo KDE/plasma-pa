@@ -14,8 +14,17 @@ class SinkInput;
 class Source;
 class SourceOutput;
 
+class Q_DECL_EXPORT MapBaseQObject : public QObject
+{
+    Q_OBJECT
+signals:
+    void added(quint32 index);
+    void updated(quint32 index);
+    void removed(quint32 index);
+};
+
 template<typename Type, typename PAInfo>
-class Q_DECL_EXPORT MapBase
+class Q_DECL_EXPORT MapBase : public MapBaseQObject
 {
 public:
     virtual ~MapBase() {}
@@ -94,68 +103,16 @@ public:
         }
     }
 
-    // Signals.
-    virtual void added(quint32 index) = 0;
-    virtual void updated(quint32 index) = 0;
-    virtual void removed(quint32 index) = 0;
-
 protected:
     QMap<quint32, Type *> m_data;
     QSet<quint32> m_pendingRemovals;
 };
 
-class Q_DECL_EXPORT SinkMap : public QObject, public MapBase<Sink, pa_sink_info>
-{
-    Q_OBJECT
-signals:
-    void added(quint32 index) Q_DECL_OVERRIDE;
-    void updated(quint32 index) Q_DECL_OVERRIDE;
-    void removed(quint32 index) Q_DECL_OVERRIDE;
-};
-
-class Q_DECL_EXPORT SinkInputMap : public QObject, public MapBase<SinkInput, pa_sink_input_info>
-{
-    Q_OBJECT
-    signals:
-    void added(quint32 index) Q_DECL_OVERRIDE;
-    void updated(quint32 index) Q_DECL_OVERRIDE;
-    void removed(quint32 index) Q_DECL_OVERRIDE;
-};
-
-class Q_DECL_EXPORT SourceMap : public QObject, public MapBase<Source, pa_source_info>
-{
-    Q_OBJECT
-    signals:
-    void added(quint32 index) Q_DECL_OVERRIDE;
-    void updated(quint32 index) Q_DECL_OVERRIDE;
-    void removed(quint32 index) Q_DECL_OVERRIDE;
-};
-
-class Q_DECL_EXPORT SourceOutputMap : public QObject, public MapBase<SourceOutput, pa_source_output_info>
-{
-    Q_OBJECT
-    signals:
-    void added(quint32 index) Q_DECL_OVERRIDE;
-    void updated(quint32 index) Q_DECL_OVERRIDE;
-    void removed(quint32 index) Q_DECL_OVERRIDE;
-};
-
-class Q_DECL_EXPORT ClientMap : public QObject, public MapBase<Client, pa_client_info>
-{
-    Q_OBJECT
-    signals:
-    void added(quint32 index) Q_DECL_OVERRIDE;
-    void updated(quint32 index) Q_DECL_OVERRIDE;
-    void removed(quint32 index) Q_DECL_OVERRIDE;
-};
-
-class Q_DECL_EXPORT CardMap : public QObject, public MapBase<Card, pa_card_info>
-{
-    Q_OBJECT
-    signals:
-    void added(quint32 index) Q_DECL_OVERRIDE;
-    void updated(quint32 index) Q_DECL_OVERRIDE;
-    void removed(quint32 index) Q_DECL_OVERRIDE;
-};
+typedef MapBase<Sink, pa_sink_info> SinkMap;
+typedef MapBase<SinkInput, pa_sink_input_info> SinkInputMap;
+typedef MapBase<Source, pa_source_info> SourceMap;
+typedef MapBase<SourceOutput, pa_source_output_info> SourceOutputMap;
+typedef MapBase<Client, pa_client_info> ClientMap;
+typedef MapBase<Card, pa_card_info> CardMap;
 
 #endif // MAPS_H
