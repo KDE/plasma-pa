@@ -12,7 +12,7 @@
 // Properties need fully qualified classes even with pointers.
 #include "client.h"
 
-class Q_DECL_EXPORT StreamBase : public VolumeObject
+class Q_DECL_EXPORT Stream : public VolumeObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
@@ -55,8 +55,8 @@ signals:
     void clientChanged();
 
 protected:
-    StreamBase(QObject *parent);
-    virtual ~StreamBase();
+    Stream(QObject *parent);
+    virtual ~Stream();
 
 private:
     QString m_name;

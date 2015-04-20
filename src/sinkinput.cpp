@@ -3,7 +3,7 @@
 #include "context.h"
 
 SinkInput::SinkInput(QObject *parent)
-    : StreamBase(parent)
+    : Stream(parent)
 {
 }
 

@@ -3,7 +3,7 @@
 #include "context.h"
 
 SourceOutput::SourceOutput(QObject *parent)
-    : StreamBase(parent)
+    : Stream(parent)
 {
 }
 
