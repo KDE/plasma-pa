@@ -232,7 +232,8 @@ void Context::contextStateCallback(pa_context *c)
                                             PA_SUBSCRIPTION_MASK_SOURCE|
                                             PA_SUBSCRIPTION_MASK_CLIENT|
                                             PA_SUBSCRIPTION_MASK_SINK_INPUT|
-                                            PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT), NULL, NULL))) {
+                                            PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT|
+                                            PA_SUBSCRIPTION_MASK_CARD), nullptr, nullptr))) {
                 qWarning() << "pa_context_subscribe() failed";
                 return;
             }
