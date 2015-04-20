@@ -23,7 +23,7 @@ ColumnLayout {
         Label {
             id: nameLabel
             Layout.fillWidth: true
-            text: PulseObject.properties['device.description'] ? PulseObject.properties['device.description'] : Name
+            text: PulseObject.properties['device.description'] ? PulseObject.properties['device.description'] : PulseObject.name
             elide: "ElideRight"
         }
     }
@@ -47,7 +47,7 @@ ColumnLayout {
                 textRole = "name";
                 var name = currentText;
                 textRole = "description";
-                kcm.context.setCardProfile(Index, name);
+                PulseObject.setCardProfile(name);
             }
         }
     }
