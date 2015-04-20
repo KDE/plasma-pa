@@ -4,13 +4,13 @@ import org.kde.plasma.private.volume 0.1
 
 DeviceListItemBase {
 //    icon: 'audio-card'
-    subModel: ReverseFilterModel {
-        sortRole: SinkInputModel.IndexRole;
-        filterRole: SinkInputModel.SinkIndexRole;
-        filterRegExp: new RegExp(Index);
-        sourceModel: SinkInputModel {}
+//    subModel: ReverseFilterModel {
+//        sortRole: SinkInputModel.IndexRole;
+//        filterRole: SinkInputModel.SinkIndexRole;
+//        filterRegExp: new RegExp(Index);
+//        sourceModel: SinkInputModel {}
 
-        Component.onCompleted: initialSort();
-    }
-    subDelegate: SinkInputListItem {}
+//        Component.onCompleted: initialSort();
+//    }
+//    subDelegate: SinkInputListItem {}
 }
