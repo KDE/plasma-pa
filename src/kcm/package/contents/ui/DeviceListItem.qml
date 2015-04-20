@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.0
 import org.kde.kquickcontrolsaddons 2.0
 
 ColumnLayout {
-    id: delegateColumn
+    id: delegate
     width: parent.width
 
     RowLayout {
@@ -54,10 +54,5 @@ ColumnLayout {
         VolumeSlider {}
     }
 
-    Rectangle {
-        color: "grey"
-        //                                width: parent.width
-        Layout.fillWidth: true
-        height: 1
-    }
+    ListItemSeperator { view: delegate.ListView.view }
 }

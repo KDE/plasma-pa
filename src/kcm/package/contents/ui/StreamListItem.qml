@@ -6,30 +6,27 @@ import org.kde.kquickcontrolsaddons 2.0
 
 import org.kde.plasma.private.volume 0.1
 
-Item {
-    id: item
+ColumnLayout {
+    id: delegate
 
-    height: delegateColumn.height
     width: parent.width
 
     RowLayout {
-        property int maximumWidth: parent.width - (4 * spacing)
-        width: maximumWidth
-        Layout.maximumWidth: maximumWidth
-        spacing: 8
+        Layout.fillWidth: true
+        spacing: units.gridUnit
 
         ClientIcon {
             id: clientIcon
 
-            height: parent.height / 3 * 1.5
+            height: delegateColumn.height / 3 * 1.5
             width: height
-            anchors.verticalCenter: parent.verticalCenter
             client: PulseObject.client
         }
 
         ColumnLayout {
             id: delegateColumn
-            anchors.left: clientIcon.right
+            Layout.fillWidth: true
+
             RowLayout {
                 Label {
                     id: inputText
@@ -44,15 +41,8 @@ Item {
             }
 
             VolumeSlider {}
-
-            Rectangle {
-                color: "grey"
-                //                                width: parent.width
-                Layout.fillWidth: true
-                height: 1
-            }
         }
-
     }
 
+    ListItemSeperator { view: delegate.ListView.view }
 }

@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.0
 import org.kde.kquickcontrolsaddons 2.0
 
 ColumnLayout {
-    id: item
+    id: delegate
 
     property int uniformLabelWidth: Math.max(profileLabel.contentWidth, portLabel.contentWidth)
 
@@ -31,7 +31,7 @@ ColumnLayout {
     RowLayout {
         Label {
             id: profileLabel
-            Layout.minimumWidth: item.uniformLabelWidth
+            Layout.minimumWidth: delegate.uniformLabelWidth
             Layout.maximumWidth: Layout.minimumWidth
             // FIXME: i18n
             text: "Profile:"
@@ -55,7 +55,7 @@ ColumnLayout {
     RowLayout {
         Label {
             id: portLabel
-            Layout.minimumWidth: item.uniformLabelWidth
+            Layout.minimumWidth: delegate.uniformLabelWidth
             Layout.maximumWidth: Layout.minimumWidth
             // FIXME: i18n
             text: "Ports:"
@@ -68,10 +68,5 @@ ColumnLayout {
         }
     }
 
-    Rectangle {
-        // FIXME: needs kcolorscheme backing
-        color: "grey"
-        Layout.fillWidth: true
-        height: 1
-    }
+    ListItemSeperator { view: delegate.ListView.view }
 }

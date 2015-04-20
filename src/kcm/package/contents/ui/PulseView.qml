@@ -12,5 +12,6 @@ ThemedScrollView {
         id: view
         anchors.fill: parent
         anchors.margins: 10
+        spacing: units.largeSpacing
     }
 }
