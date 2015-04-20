@@ -117,7 +117,6 @@ Context::Context(QObject *parent)
 
 Context::~Context()
 {
-    qDebug() << "cherrio old chap!";
     reset();
 }
 
@@ -130,12 +129,10 @@ Context *Context::instance()
 void Context::ref()
 {
     ++m_references;
-    qDebug() << m_references << "☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎☎";
 }
 
 void Context::unref()
 {
-    qDebug() << m_references-1 << "んんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんんん";
     if (--m_references == 0) {
         delete this;
     }

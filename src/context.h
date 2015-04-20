@@ -62,7 +62,6 @@ public:
     template <typename PAFunction>
     void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
     {
-        qDebug() << Q_FUNC_INFO << index << mute;
         if (!PAOperation(pa_set_mute(m_context, index, mute, nullptr, nullptr))) {
             qWarning() <<  "pa_set_mute failed";
             return;
