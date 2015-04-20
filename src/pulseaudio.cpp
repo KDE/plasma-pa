@@ -11,11 +11,8 @@
 #include "sourceoutput.h"
 
 ClientModel::ClientModel(QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(&context()->clients(), parent)
 {
-    connect(&context()->clients(), &ClientMap::added, this, &ClientModel::onDataAdded);
-    connect(&context()->clients(), &ClientMap::updated, this, &ClientModel::onDataUpdated);
-    connect(&context()->clients(), &ClientMap::removed, this, &ClientModel::onDataRemoved);
 }
 
 int ClientModel::rowCount(const QModelIndex &parent) const
@@ -40,11 +37,8 @@ QVariant ClientModel::data(const QModelIndex &index, int role) const
 }
 
 SinkInputModel::SinkInputModel(QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(&context()->sinkInputs(), parent)
 {
-    connect(&context()->sinkInputs(), &SinkInputMap::added, this, &SinkInputModel::onDataAdded);
-    connect(&context()->sinkInputs(), &SinkInputMap::updated, this, &SinkInputModel::onDataUpdated);
-    connect(&context()->sinkInputs(), &SinkInputMap::removed, this, &SinkInputModel::onDataRemoved);
 }
 
 int SinkInputModel::rowCount(const QModelIndex &parent) const
@@ -107,12 +101,8 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
 }
 
 SinkModel::SinkModel(QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(&context()->sinks(), parent)
 {
-    connect(&context()->sinks(), &SinkMap::added, this, &SinkModel::onDataAdded);
-    connect(&context()->sinks(), &SinkMap::updated, this, &SinkModel::onDataUpdated);
-    connect(&context()->sinks(), &SinkMap::removed, this, &SinkModel::onDataRemoved);
-
     connect(&context()->sinks(), &SinkMap::added, this, &SinkModel::sinksChanged);
     connect(&context()->sinks(), &SinkMap::updated, this, &SinkModel::sinksChanged);
     connect(&context()->sinks(), &SinkMap::removed, this, &SinkModel::sinksChanged);
@@ -171,9 +161,12 @@ void AbstractModel::onDataRemoved(quint32 index)
     endRemoveRows();
 }
 
-AbstractModel::AbstractModel(QObject *parent)
+AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     : QAbstractListModel(parent)
 {
+    connect(map, &MapBaseQObject::added, this, &AbstractModel::onDataAdded);
+    connect(map, &MapBaseQObject::updated, this, &AbstractModel::onDataUpdated);
+    connect(map, &MapBaseQObject::removed, this, &AbstractModel::onDataRemoved);
 }
 
 #warning probably should be called from constructor and it should get the mo passed
@@ -231,11 +224,8 @@ void ReverseFilterModel::initialSort()
 }
 
 SourceModel::SourceModel(QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(&context()->sources(), parent)
 {
-    connect(&context()->sources(), &SourceMap::added, this, &SourceModel::onDataAdded);
-    connect(&context()->sources(), &SourceMap::updated, this, &SourceModel::onDataUpdated);
-    connect(&context()->sources(), &SourceMap::removed, this, &SourceModel::onDataRemoved);
 }
 
 int SourceModel::rowCount(const QModelIndex &parent) const
@@ -260,11 +250,8 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
 }
 
 SourceOutputModel::SourceOutputModel(QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(&context()->sourceOutputs(), parent)
 {
-    connect(&context()->sourceOutputs(), &SourceOutputMap::added, this, &SourceOutputModel::onDataAdded);
-    connect(&context()->sourceOutputs(), &SourceOutputMap::updated, this, &SourceOutputModel::onDataUpdated);
-    connect(&context()->sourceOutputs(), &SourceOutputMap::removed, this, &SourceOutputModel::onDataRemoved);
 }
 
 int SourceOutputModel::rowCount(const QModelIndex &parent) const
@@ -290,11 +277,8 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
 }
 
 CardModel::CardModel(QObject *parent)
-    : AbstractModel(parent)
+    : AbstractModel(&context()->cards(), parent)
 {
-    connect(&context()->cards(), &CardMap::added, this, &CardModel::onDataAdded);
-    connect(&context()->cards(), &CardMap::updated, this, &CardModel::onDataUpdated);
-    connect(&context()->cards(), &CardMap::removed, this, &CardModel::onDataRemoved);
 }
 
 int CardModel::rowCount(const QModelIndex &parent) const

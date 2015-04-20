@@ -21,7 +21,7 @@ protected slots:
     virtual void onDataRemoved(quint32 index);
 
 protected:
-    AbstractModel(QObject *parent);
+    AbstractModel(const MapBaseQObject *map, QObject *parent);
     void initRoleNames(const QMetaObject &qobjectMetaObject);
 
     QHash<int, QByteArray> m_roles;
