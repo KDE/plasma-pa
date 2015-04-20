@@ -22,10 +22,8 @@ public:
     void update(const pa_card_info *info);
 
     QString name() const { return m_name; }
-
     QList<QObject *> profiles() const { return m_profiles; }
     quint32 activeProfileIndex() const { return m_activeProfileIndex; }
-
     void setActiveProfileIndex(quint32 profileIndex);
     QMap<QString, QVariant> properties() const { return m_properties; }
 
@@ -37,10 +35,8 @@ signals:
 
 private:
     QString m_name;
-
     QList<QObject *> m_profiles;
     quint32 m_activeProfileIndex;
-
     QVariantMap m_properties;
 };
 
