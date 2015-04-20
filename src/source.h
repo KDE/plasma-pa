@@ -1,7 +1,7 @@
 #ifndef SOURCE_H
 #define SOURCE_H
 
-#include "devicebase.h"
+#include "device.h"
 
 class Q_DECL_EXPORT Source : public DeviceBase
 {

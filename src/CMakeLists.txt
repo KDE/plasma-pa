@@ -4,15 +4,20 @@ set(SRC_LIST
     card.cpp
     client.cpp
     context.cpp
+    device.cpp
     maps.cpp
+    operation.cpp
+    port.cpp
+    profile.cpp
     pulseaudio.cpp
     pulseobject.cpp
-    operation.cpp
     ref.cpp
     sink.cpp
     sinkinput.cpp
     source.cpp
     sourceoutput.cpp
+    stream.cpp
+    volumeobject.cpp
 )
 
 add_library(QPulseAudioPrivate SHARED ${SRC_LIST})

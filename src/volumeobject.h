@@ -1,7 +1,5 @@
-#ifndef ABSTRACTVOLUMEBASE_H
-#define ABSTRACTVOLUMEBASE_H
-
-#include <QtGlobal>
+#ifndef VOLUMEOBJECT_H
+#define VOLUMEOBJECT_H
 
 #include <pulse/volume.h>
 
@@ -13,8 +11,8 @@ class VolumeObject : public PulseObject
     Q_PROPERTY(qint64 volume READ volume WRITE setVolume NOTIFY volumeChanged)
     Q_PROPERTY(bool muted READ isMuted WRITE setMuted NOTIFY mutedChanged)
 public:
-    VolumeObject(QObject *parent) : PulseObject(parent) {}
-    virtual ~VolumeObject() {}
+    VolumeObject(QObject *parent);
+    virtual ~VolumeObject();
 
     template <typename PAInfo>
     void updateVolumeObject(PAInfo *info)
@@ -31,17 +29,10 @@ public:
 //            }
     }
 
-#warning volume value is a bit meh with channels in the picture
-    qint64 volume() const
-    {
-        return m_volume.values[0];
-    }
+    qint64 volume() const;
     virtual void setVolume(qint64 volume) = 0;
 
-    bool isMuted() const
-    {
-        return m_muted;
-    }
+    bool isMuted() const;
     virtual void setMuted(bool muted) = 0;
 
 signals:
@@ -49,14 +40,11 @@ signals:
     void mutedChanged();
 
 protected:
-    pa_cvolume cvolume() const
-    {
-            return m_volume;
-    }
+    pa_cvolume cvolume() const;
 
     pa_cvolume m_volume;
     bool m_muted = false;
 };
 
 
-#endif // ABSTRACTVOLUMEBASE_H
+#endif // VOLUMEOBJECT_H

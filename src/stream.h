@@ -1,11 +1,11 @@
-#ifndef STREAMBASE_H
-#define STREAMBASE_H
+#ifndef STREAM_H
+#define STREAM_H
 
 #include <QString>
 
 #include <pulse/volume.h>
 
-#include "abstractvolumebase.h"
+#include "volumeobject.h"
 #include "pulseobject.h"
 
 #include "context.h"
@@ -43,14 +43,10 @@ public:
         }
     }
 
-    QString name() const { return m_name; }
-    bool hasVolume() const { return m_hasVolume; }
-    bool isVolumeWritable() const { return m_isVolumeWritable; }
-    Client *client() const
-    {
-        qDebug() <<"client";
-        return context()->clients().data().value(m_clientIndex, nullptr);
-    }
+    QString name() const;
+    bool hasVolume() const;
+    bool isVolumeWritable() const;
+    Client *client() const;
 
 signals:
     void nameChanged();
@@ -59,8 +55,8 @@ signals:
     void clientChanged();
 
 protected:
-    StreamBase(QObject *parent) : VolumeObject(parent) {}
-    virtual ~StreamBase() {}
+    StreamBase(QObject *parent);
+    virtual ~StreamBase();
 
 private:
     QString m_name;
@@ -69,4 +65,4 @@ private:
     quint32 m_clientIndex;
 };
 
-#endif // STREAMBASE_H
+#endif // STREAM_H

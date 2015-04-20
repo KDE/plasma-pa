@@ -1,7 +1,7 @@
 #ifndef SINKINPUT_H
 #define SINKINPUT_H
 
-#include "streambase.h"
+#include "stream.h"
 
 class Q_DECL_EXPORT SinkInput : public StreamBase
 {

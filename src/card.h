@@ -6,7 +6,7 @@
 #include <QMap>
 #include <QVariant>
 
-#include "portbase.h"
+#include "port.h"
 #include "pulseobject.h"
 
 class Q_DECL_EXPORT Card : public PulseObject

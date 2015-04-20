@@ -1,7 +1,7 @@
 #ifndef SOURCEOUTPUT_H
 #define SOURCEOUTPUT_H
 
-#include "streambase.h"
+#include "stream.h"
 
 class Q_DECL_EXPORT SourceOutput : public StreamBase
 {

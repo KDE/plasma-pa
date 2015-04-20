@@ -1,14 +1,13 @@
-#ifndef DEVICEBASE_H
-#define DEVICEBASE_H
+#ifndef DEVICE_H
+#define DEVICE_H
 
 #include <QString>
 
 #include <pulse/volume.h>
 
-#include "abstractvolumebase.h"
-#include "portbase.h"
+#include "volumeobject.h"
+#include "port.h"
 #include "pulseobject.h"
-
 
 class Q_DECL_EXPORT DeviceBase : public VolumeObject
 {
@@ -71,4 +70,4 @@ private:
     quint32 m_activePortIndex = -1;
 };
 
-#endif // DEVICEBASE_H
+#endif // DEVICE_H

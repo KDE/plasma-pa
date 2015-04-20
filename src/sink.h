@@ -1,7 +1,7 @@
 #ifndef SINK_H
 #define SINK_H
 
-#include "devicebase.h"
+#include "device.h"
 
 class Q_DECL_EXPORT Sink : public DeviceBase
 {
