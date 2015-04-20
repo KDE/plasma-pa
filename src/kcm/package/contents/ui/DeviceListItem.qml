@@ -33,11 +33,14 @@ ColumnLayout {
         enabled: !PulseObject.muted
 
         RowLayout {
+            visible: portbox.count > 1
+
             Label {
                 text: 'Port'
             }
 
             ComboBox {
+                id: portbox
                 Layout.fillWidth: true
                 model: PulseObject.ports
                 onModelChanged: currentIndex = PulseObject.activePortIndex
