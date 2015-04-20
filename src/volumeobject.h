@@ -10,6 +10,8 @@ class VolumeObject : public PulseObject
     Q_OBJECT
     Q_PROPERTY(qint64 volume READ volume WRITE setVolume NOTIFY volumeChanged)
     Q_PROPERTY(bool muted READ isMuted WRITE setMuted NOTIFY mutedChanged)
+    Q_PROPERTY(bool hasVolume READ hasVolume NOTIFY hasVolumeChanged)
+    Q_PROPERTY(bool volumeWritable READ isVolumeWritable NOTIFY isVolumeWritableChanged)
 public:
     VolumeObject(QObject *parent);
     virtual ~VolumeObject();
@@ -35,15 +37,22 @@ public:
     bool isMuted() const;
     virtual void setMuted(bool muted) = 0;
 
+    bool hasVolume() const;
+    bool isVolumeWritable() const;
+
 signals:
     void volumeChanged();
     void mutedChanged();
+    void hasVolumeChanged();
+    void isVolumeWritableChanged();
 
 protected:
     pa_cvolume cvolume() const;
 
     pa_cvolume m_volume;
-    bool m_muted = false;
+    bool m_muted;
+    bool m_hasVolume;
+    bool m_volumeWritable;
 };
 
 

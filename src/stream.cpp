@@ -3,6 +3,8 @@
 Stream::Stream(QObject *parent)
     : VolumeObject(parent)
 {
+    m_volumeWritable = false;
+    m_hasVolume = false;
 }
 
 Stream::~Stream()
@@ -12,16 +14,6 @@ Stream::~Stream()
 QString Stream::name() const
 {
     return m_name;
-}
-
-bool Stream::hasVolume() const
-{
-    return m_hasVolume;
-}
-
-bool Stream::isVolumeWritable() const
-{
-    return m_isVolumeWritable;
 }
 
 Client *Stream::client() const

@@ -16,8 +16,6 @@ class Q_DECL_EXPORT Stream : public VolumeObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
-    Q_PROPERTY(bool hasVolume READ hasVolume NOTIFY hasVolumeChanged)
-    Q_PROPERTY(bool volumeWritable READ isVolumeWritable NOTIFY isVolumeWritableChanged)
     Q_PROPERTY(Client *client READ client NOTIFY clientChanged)
 public:
     template <typename PAInfo>
@@ -33,8 +31,8 @@ public:
             m_hasVolume = info->has_volume;
             emit hasVolumeChanged();
         }
-        if (m_isVolumeWritable != info->volume_writable) {
-            m_isVolumeWritable = info->volume_writable;
+        if (m_volumeWritable != info->volume_writable) {
+            m_volumeWritable = info->volume_writable;
             emit isVolumeWritableChanged();
         }
         if (m_clientIndex != info->client) {
@@ -44,14 +42,10 @@ public:
     }
 
     QString name() const;
-    bool hasVolume() const;
-    bool isVolumeWritable() const;
     Client *client() const;
 
 signals:
     void nameChanged();
-    void hasVolumeChanged();
-    void isVolumeWritableChanged();
     void clientChanged();
 
 protected:
@@ -60,8 +54,6 @@ protected:
 
 private:
     QString m_name;
-    bool m_hasVolume;
-    bool m_isVolumeWritable;
     quint32 m_clientIndex;
 };
 

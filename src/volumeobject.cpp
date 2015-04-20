@@ -2,6 +2,9 @@
 
 VolumeObject::VolumeObject(QObject *parent)
     : PulseObject(parent)
+    , m_muted(true)
+    , m_hasVolume(true)
+    , m_volumeWritable(true)
 {
 }
 
@@ -23,4 +26,14 @@ bool VolumeObject::isMuted() const
 pa_cvolume VolumeObject::cvolume() const
 {
     return m_volume;
+}
+
+bool VolumeObject::hasVolume() const
+{
+    return m_hasVolume;
+}
+
+bool VolumeObject::isVolumeWritable() const
+{
+    return m_volumeWritable;
 }
