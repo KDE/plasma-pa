@@ -46,7 +46,6 @@ public:
 
     SinkModel(QObject *parent = nullptr);
 
-#warning very naughty, used by main.qml to set volume on all sinks
     QList<QObject *> sinks() const;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;

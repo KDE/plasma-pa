@@ -120,6 +120,7 @@ SinkModel::SinkModel(QObject *parent)
     emit sinksChanged();
 }
 
+#warning very naughty, used by main.qml to set volume on all sinks
 QList<QObject *> SinkModel::sinks() const
 {
     QList <QObject *> ret;

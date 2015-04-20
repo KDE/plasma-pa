@@ -287,9 +287,9 @@ void Context::contextStateCallback(pa_context *c)
     }
 }
 
-#warning fixme recentlydeleted has the same type for everything making it easy to use the wrong one possibly
 void Context::sinkCallback(const pa_sink_info *info)
 {
+#warning this parenting here is a bit weird
     m_sinks.updateEntry(info, this);
 }
 

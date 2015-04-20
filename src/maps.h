@@ -60,7 +60,6 @@ public:
         m_pendingRemovals.clear();
     }
 
-#warning this parenting here is a bit weird
     // Context is passed in as parent because context needs to include the maps
     // so we'd cause a circular dep if we were to try to use the instance here.
     // Plus that's weird separation anyway.

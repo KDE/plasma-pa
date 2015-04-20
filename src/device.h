@@ -33,7 +33,10 @@ public:
             emit descriptionChanged();
         }
 
-#warning leaking here also not correctly updating things
+        // TODO: this rebuilds the entire port list on every update. would be
+        // nicer if it actually removed what needs removing updates what needs
+        // updating and adds what needs adding. Alas, this is a tad more
+        // involved.
         qDeleteAll(m_ports);
         m_ports.clear();
         for (auto **ports = info->ports; ports && *ports != nullptr; ++ports) {
