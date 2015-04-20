@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=Volume
+Name=Sound Volume
 
 Comment=Bars for moving stuff
 
-Icon=sound
+Icon=kmix
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet
 

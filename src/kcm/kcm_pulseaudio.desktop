@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Service
-Icon=sound
+Icon=kmix
 Exec=kcmshell5 kcm_pulseaudio
 
 X-KDE-Library=kcm_pulseaudio
