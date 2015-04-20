@@ -10,7 +10,6 @@ ColumnLayout {
 
     RowLayout {
         QIconItem {
-            id: clientIcon
             width: height
             height: inputText.contentHeight
             anchors.verticalCenter: parent.verticalCenter

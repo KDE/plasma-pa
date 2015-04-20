@@ -18,12 +18,13 @@ Item {
         Layout.maximumWidth: maximumWidth
         spacing: 8
 
-        QIconItem {
+        ClientIcon {
             id: clientIcon
+
             height: parent.height / 3 * 1.5
             width: height
             anchors.verticalCenter: parent.verticalCenter
-            icon: PulseObject.client.properties['application.icon_name'] ? PulseObject.client.properties['application.icon_name'] : 'unknown'
+            client: PulseObject.client
         }
 
         ColumnLayout {

@@ -1,3 +1,4 @@
 module org.kde.plasma.private.volume
-
 plugin plasma-volume-declarative
+
+ClientIcon 0.1 ClientIcon.qml

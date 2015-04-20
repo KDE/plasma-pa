@@ -2,7 +2,10 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/version.h.cmake ${CMAKE_CURRENT_BINAR
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
 
+file(GLOB QML_SRCS package/contents/ui/*.qml)
+
 set(kcm_SRCS
+    ${QML_SRCS}
 #    main.cpp
     module.cpp
 )
