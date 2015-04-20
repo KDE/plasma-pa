@@ -3,7 +3,7 @@
 #include "context.h"
 
 Sink::Sink(QObject *parent)
-    : DeviceBase(parent)
+    : Device(parent)
 {
 }
 

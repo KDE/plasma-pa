@@ -9,7 +9,7 @@
 #include "port.h"
 #include "pulseobject.h"
 
-class Q_DECL_EXPORT DeviceBase : public VolumeObject
+class Q_DECL_EXPORT Device : public VolumeObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
@@ -17,7 +17,7 @@ class Q_DECL_EXPORT DeviceBase : public VolumeObject
     Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)
     Q_PROPERTY(quint32 activePortIndex READ activePortIndex WRITE setActivePortIndex NOTIFY activePortIndexChanged)
 public:
-    virtual ~DeviceBase() {}
+    virtual ~Device() {}
 
     template <typename PAInfo>
     void updateDevice(const PAInfo *info)
@@ -61,7 +61,7 @@ signals:
     void activePortIndexChanged();
 
 protected:
-    DeviceBase(QObject *parent) : VolumeObject(parent) {}
+    Device(QObject *parent) : VolumeObject(parent) {}
 
 private:
     QString m_name;

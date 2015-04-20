@@ -3,7 +3,7 @@
 #include "context.h"
 
 Source::Source(QObject *parent)
-    : DeviceBase(parent)
+    : Device(parent)
 {
 }
 

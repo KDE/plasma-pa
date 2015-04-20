@@ -3,7 +3,7 @@
 
 #include "device.h"
 
-class Q_DECL_EXPORT Source : public DeviceBase
+class Q_DECL_EXPORT Source : public Device
 {
     Q_OBJECT
 public:
