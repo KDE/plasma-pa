@@ -1,5 +1,4 @@
 function name(volume, muted) {
-    console.debug(volume)
     var split_base = 65536/4.0;
     var icon = null;
     if ((volume / split_base <= 0) || muted) {
