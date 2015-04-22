@@ -68,4 +68,10 @@ RowLayout {
         horizontalAlignment: Qt.AlignRight
         text: Math.floor(slider.value / slider.maximumValue * 100.0) + "%"
     }
+
+    Label {
+        id: referenceText
+        visible: false
+        text: "100%"
+    }
 }
