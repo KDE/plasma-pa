@@ -14,5 +14,6 @@ ScrollView {
         anchors.fill: parent
         anchors.margins: 10
         spacing: units.largeSpacing
+        interactive: false // Not flickable
     }
 }
