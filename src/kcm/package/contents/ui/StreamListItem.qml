@@ -30,6 +30,7 @@ ColumnLayout {
             RowLayout {
                 Label {
                     id: inputText
+                    Layout.alignment: Qt.AlignBottom
                     Layout.fillWidth: true
                     text: PulseObject.client.name + ": " + PulseObject.name
                 }

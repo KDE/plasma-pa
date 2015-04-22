@@ -10,14 +10,15 @@ ColumnLayout {
 
     RowLayout {
         QIconItem {
+            Layout.alignment: Qt.AlignBottom
             width: height
-            height: inputText.contentHeight
-            anchors.verticalCenter: parent.verticalCenter
+            height: inputText.height
             icon: 'audio-card'
         }
 
         Label {
             id: inputText
+            Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
             text: PulseObject.description
         }
