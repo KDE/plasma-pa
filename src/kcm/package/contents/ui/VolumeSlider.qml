@@ -30,12 +30,7 @@ RowLayout {
         maximumValue: 65536
         stepSize: maximumValue / 100
         visible: PulseObject.hasVolume
-        enabled: {
-            if (typeof PulseObject.volumeWritable === 'undefined') {
-                return !IsMuted
-            }
-            return PulseObject.volumeWritable && !PulseObject.muted
-        }
+        enabled: PulseObject.volumeWritable && !PulseObject.muted
 
         onVolumeChanged: {
             if (!pressed) {
