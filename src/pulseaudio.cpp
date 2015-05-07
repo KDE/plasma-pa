@@ -13,6 +13,7 @@
 ClientModel::ClientModel(QObject *parent)
     : AbstractModel(&context()->clients(), parent)
 {
+    initRoleNames(Client::staticMetaObject);
 }
 
 int ClientModel::rowCount(const QModelIndex &parent) const
@@ -33,12 +34,19 @@ QVariant ClientModel::data(const QModelIndex &index, int role) const
     case PulseObjectRole:
         return QVariant::fromValue(data);
     }
-    return QVariant();
+    return dataForRole(data, role);
 }
 
 SinkInputModel::SinkInputModel(QObject *parent)
     : AbstractModel(&context()->sinkInputs(), parent)
 {
+    initRoleNames(SinkInput::staticMetaObject);
+}
+
+int AbstractModel::role(const QByteArray &roleName) const
+{
+    qDebug() << roleName << m_roles.key(roleName, -1);
+    return m_roles.key(roleName, -1);
 }
 
 int SinkInputModel::rowCount(const QModelIndex &parent) const
@@ -59,7 +67,7 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
     case PulseObjectRole:
         return QVariant::fromValue(data);
     }
-    return QVariant();
+    return dataForRole(data, role);
 }
 
 QHash<int, QByteArray> AbstractModel::roleNames() const
@@ -68,38 +76,14 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
         qDebug() << "returning roles" << m_roles;
         return m_roles;
     }
-
-    QHash<int, QByteArray> roles;
-
-    QMetaEnum enumerator;
-    for (int i = 0; i < metaObject()->enumeratorCount(); ++i) {
-        if (metaObject()->enumerator(i).name() == QLatin1Literal("ItemRole")) {
-            enumerator = metaObject()->enumerator(i);
-            break;
-        }
-    }
-
-    Q_ASSERT(enumerator.scope() == metaObject()->className());
-    // No valid enum found, leaf probably doesn't implement ItemRole (correctly).
-    Q_ASSERT(enumerator.isValid());
-
-    for (int i = 0; i < enumerator.keyCount(); ++i) {
-        // Clip the Role suffix and glue it in the hash.
-        static int roleLength = strlen("Role");
-        QByteArray key(enumerator.key(i));
-        // Enum values must end in Role or the enum is crap
-        Q_ASSERT(key.right(roleLength) == QByteArray("Role"));
-        key.chop(roleLength);
-        roles[enumerator.value(i)] = key;
-    }
-
-    qDebug() << roles;
-    return roles;
+    Q_ASSERT(false);
 }
 
 SinkModel::SinkModel(QObject *parent)
     : AbstractModel(&context()->sinks(), parent)
 {
+    initRoleNames(Sink::staticMetaObject);
+
     connect(&context()->sinks(), &SinkMap::added, this, &SinkModel::sinksChanged);
     connect(&context()->sinks(), &SinkMap::updated, this, &SinkModel::sinksChanged);
     connect(&context()->sinks(), &SinkMap::removed, this, &SinkModel::sinksChanged);
@@ -137,7 +121,7 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     case PulseObjectRole:
         return QVariant::fromValue(data);
     }
-    return QVariant();
+    return dataForRole(data, role);
 }
 
 void AbstractModel::onDataAdded(quint32 index)
@@ -207,6 +191,15 @@ void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
     qDebug() << m_roles;
 }
 
+QVariant AbstractModel::dataForRole(QObject *obj, int role) const
+{
+    int property = m_objectProperties.value(role, -1);
+    if (property == -1) {
+        return QVariant();
+    }
+    return obj->metaObject()->property(property).read(obj);
+}
+
 ReverseFilterModel::ReverseFilterModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
@@ -222,6 +215,7 @@ void ReverseFilterModel::initialSort()
 SourceModel::SourceModel(QObject *parent)
     : AbstractModel(&context()->sources(), parent)
 {
+    initRoleNames(Source::staticMetaObject);
 }
 
 int SourceModel::rowCount(const QModelIndex &parent) const
@@ -242,12 +236,13 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
     case PulseObjectRole:
         return QVariant::fromValue(data);
     }
-    return QVariant();
+    return dataForRole(data, role);
 }
 
 SourceOutputModel::SourceOutputModel(QObject *parent)
     : AbstractModel(&context()->sourceOutputs(), parent)
 {
+    initRoleNames(SourceOutput::staticMetaObject);
 }
 
 int SourceOutputModel::rowCount(const QModelIndex &parent) const
@@ -268,13 +263,13 @@ QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
     case PulseObjectRole:
         return QVariant::fromValue(data);
     }
-    Q_ASSERT(false);
-    return QVariant();
+    return dataForRole(data, role);
 }
 
 CardModel::CardModel(QObject *parent)
     : AbstractModel(&context()->cards(), parent)
 {
+    initRoleNames(Card::staticMetaObject);
 }
 
 int CardModel::rowCount(const QModelIndex &parent) const
@@ -295,6 +290,5 @@ QVariant CardModel::data(const QModelIndex &index, int role) const
     case PulseObjectRole:
         return QVariant::fromValue(data);
     }
-    Q_ASSERT(false);
-    return QVariant();
+    return dataForRole(data, role);
 }

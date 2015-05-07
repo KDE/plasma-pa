@@ -15,6 +15,8 @@ public:
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE = 0;
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE = 0;
 
+    Q_INVOKABLE int role(const QByteArray &roleName) const;
+
 protected slots:
     virtual void onDataAdded(quint32 index);
     virtual void onDataUpdated(quint32 index);
@@ -23,6 +25,8 @@ protected slots:
 protected:
     AbstractModel(const MapBaseQObject *map, QObject *parent);
     void initRoleNames(const QMetaObject &qobjectMetaObject);
+
+    QVariant dataForRole(QObject *obj, int role) const;
 
     QHash<int, QByteArray> m_roles;
     QMap<int, int> m_objectProperties;
