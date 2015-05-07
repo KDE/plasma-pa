@@ -9,25 +9,41 @@ StreamListItemBase {
     expanderIconVisible: false
     enabled: true
     subComponent: PlasmaComponents.ComboBox {
-        property int sinkIndex: SinkIndex
-        property int sinkModelIndex: model.paIndexToDataIndex(sinkIndex)
-        property int sinkInputIndex: Index
-        model: SinkModel {
-            Component.onCompleted: {
-                sinkModelIndex = model.paIndexToDataIndex(sinkIndex)
-            }
-        }
-        textRole: "Description"
-        currentIndex: sinkModelIndex
-        onCurrentIndexChanged: {
-            if (sinkModelIndex === -1) {
+        model: SinkModel {}
+        textRole: 'Description'
+        onModelChanged: updateIndex()
+        onCountChanged: updateIndex()
+        onActivated: {
+            if (index === -1) {
                 // Current index doesn't map to anything. Oh the agony.
                 return;
             }
-
-            if (currentIndex != sinkIndex) {
-                pulseContext.setSinkInputSinkByModelIndex(sinkInputIndex, currentIndex);
-            }
+            PulseObject.sinkIndex = modelIndexToSinkIndex(index)
         }
+
+        function updateIndex() {
+            currentIndex = sinkIndexToModelIndex(SinkIndex);
+        }
+
+        function sinkIndexToModelIndex(sinkIndex) {
+            textRole = 'Index';
+            var searchString = '';
+            if (sinkIndex !== 0) {
+                // The stringy representation of 0 is '' oddly enough.
+                searchString = '' + sinkIndex;
+            }
+            var modelIndex = find(searchString);
+            textRole = 'Description';
+            return modelIndex;
+        }
+
+        function modelIndexToSinkIndex(modelIndex) {
+            textRole = 'Index';
+            var sinkIndex = Number(textAt(modelIndex));
+            textRole = 'Description';
+            return sinkIndex;
+        }
+
+        Component.onCompleted: updateIndex();
     }
 }
