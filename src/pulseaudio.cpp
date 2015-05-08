@@ -77,6 +77,7 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
         return m_roles;
     }
     Q_ASSERT(false);
+    return QHash<int, QByteArray>();
 }
 
 SinkModel::SinkModel(QObject *parent)
