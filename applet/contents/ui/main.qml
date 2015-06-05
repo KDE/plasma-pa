@@ -22,6 +22,7 @@ Item {
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
         source: plasmoid.icon
         active: mouseArea.containsMouse
+        colorGroup: PlasmaCore.ColorScope.colorGroup
 
         MouseArea {
             id: mouseArea
