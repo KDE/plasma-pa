@@ -30,6 +30,7 @@ protected:
 
     QHash<int, QByteArray> m_roles;
     QMap<int, int> m_objectProperties;
+    QMap<int, int> m_signalIndexToProperties;
 
 private:
     // Prevent leaf-classes from default constructing as we want to enforce
@@ -54,9 +55,20 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    bool setData(const QModelIndex &index, const QVariant &value, int role) Q_DECL_OVERRIDE;
 
 signals:
     void sinksChanged();
+
+protected:
+    virtual void onDataAdded(quint32 index) Q_DECL_OVERRIDE Q_DECL_FINAL;
+    virtual void onDataRemoved(quint32 index) Q_DECL_OVERRIDE Q_DECL_FINAL;
+
+private slots:
+    void propertyChanged();
+
+private:
+    QMetaMethod propertyChangedMetaMethod() const;
 };
 
 class Q_DECL_EXPORT SourceModel : public AbstractModel

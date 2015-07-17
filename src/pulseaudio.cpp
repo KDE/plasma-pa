@@ -125,6 +125,62 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
     return dataForRole(data, role);
 }
 
+bool SinkModel::setData(const QModelIndex &index, const QVariant &value, int role)
+{
+    int propertyIndex = m_objectProperties.value(role, -1);
+    if (propertyIndex == -1)
+        return false;
+    Sink *data = context()->sinks().data().values().at(index.row());
+    auto property = data->metaObject()->property(propertyIndex);
+    return property.write(data, value);
+}
+
+void SinkModel::onDataAdded(quint32 index)
+{
+    beginInsertRows(QModelIndex(), index, index);
+    Sink *data = context()->sinks().data().values().at(index);
+    const QMetaObject *mo = data->metaObject();
+    for (int i = 0; i < mo->methodCount(); ++i) {
+        auto meth = mo->method(i);
+        if (meth.methodType() == QMetaMethod::Signal) {
+            connect(data, meth, this, propertyChangedMetaMethod());
+        }
+    }
+    endInsertRows();
+}
+
+void SinkModel::onDataRemoved(quint32 index)
+{
+    beginRemoveRows(QModelIndex(), index, index);
+    endRemoveRows();
+}
+
+void SinkModel::propertyChanged()
+{
+    if (!sender() || senderSignalIndex() == -1)
+        return;
+    int propertyIndex = m_signalIndexToProperties.value(senderSignalIndex(), -1);
+    if (propertyIndex == -1)
+        return;
+    int role = m_objectProperties.key(propertyIndex, -1);
+    if (role == -1)
+        return;
+    int index = context()->sinks().modelIndexForQObject(sender());
+    qDebug() << "PROPERTY CHANGED (" << index << ") :: " << role << roleNames().value(role);
+    emit dataChanged(createIndex(index, 0), createIndex(index, 0), QVector<int>() << role);
+}
+
+QMetaMethod SinkModel::propertyChangedMetaMethod() const
+{
+    auto mo = metaObject();
+    for (int i = 0; i < mo->methodCount(); ++i) {
+        auto meth = mo->method(i);
+        if (meth.name() == QByteArray("propertyChanged"))
+            return meth;
+    }
+    return QMetaMethod();
+}
+
 void AbstractModel::onDataAdded(quint32 index)
 {
     beginInsertRows(QModelIndex(), index, index);
@@ -184,10 +240,14 @@ void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
     Q_ASSERT(maxEnumValue != -1);
     auto mo = qobjectMetaObject;
     for (int i = 0; i < mo.propertyCount(); ++i) {
-        QString property(mo.property(i).name());
-        property.replace(0, 1, property.at(0).toUpper());
-        m_roles[++maxEnumValue] = property.toLatin1();
+        QMetaProperty property = mo.property(i);
+        QString name(property.name());
+        name.replace(0, 1, name.at(0).toUpper());
+        m_roles[++maxEnumValue] = name.toLatin1();
         m_objectProperties.insert(maxEnumValue, i);
+        if (!property.hasNotifySignal())
+            continue;
+        m_signalIndexToProperties.insert(property.notifySignalIndex(), i);
     }
     qDebug() << m_roles;
 }

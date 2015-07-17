@@ -31,6 +31,17 @@ public:
 
     const QMap<quint32, Type *> &data() const { return m_data; }
 
+    int modelIndexForQObject(QObject *qobject) const
+    {
+        Type *t = qobject_cast<Type *>(qobject);
+        if (!t)
+            return -1;
+        int key = m_data.key(t, -1);
+        if (key == -1)
+            return -1;
+        return m_data.keys().indexOf(key);
+    }
+
     /**
     * @param dataIndex index in the data model
     * @return -1 on invalid index, otherwise PA index
