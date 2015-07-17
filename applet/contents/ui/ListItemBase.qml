@@ -21,7 +21,7 @@ PlasmaComponents.ListItem {
     enabled: subComponent
 
     function setVolume(volume) {
-        PulseObject.volume = volume
+        Volume = volume
     }
 
     function increaseVolume() {
