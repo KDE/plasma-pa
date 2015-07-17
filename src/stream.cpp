@@ -18,6 +18,5 @@ QString Stream::name() const
 
 Client *Stream::client() const
 {
-    qDebug() <<"client";
     return context()->clients().data().value(m_clientIndex, nullptr);
 }
