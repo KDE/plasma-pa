@@ -3,9 +3,10 @@ set(QML_SRCS
     ClientIcon.qml
 )
 
-add_library(plasma-volume-declarative SHARED plugin.cpp ${QML_SRCS})
+add_library(plasma-volume-declarative SHARED plugin.cpp globalactioncollection.cpp ${QML_SRCS})
 target_link_libraries(plasma-volume-declarative
     Qt5::Quick
+    KF5::GlobalAccel
     QPulseAudioPrivate
 )
 

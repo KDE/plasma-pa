@@ -17,7 +17,25 @@ Item {
     Plasmoid.switchHeight: units.gridUnit * 12
 
     Plasmoid.toolTipMainText: i18n("Audio Volume")
-//    Plasmoid.toolTipSubText: sinkModel.volumeText
+    //    Plasmoid.toolTipSubText: sinkModel.volumeText
+
+    function increaseVolume() {
+        if (sinkView.count < 0)
+            return;
+        for (var i = 0; i < sinkView.count; ++i) {
+            sinkView.currentIndex = i;
+            sinkView.currentItem.increaseVolume();
+        }
+    }
+
+    function decreaseVolume() {
+        if (sinkView.count < 0)
+            return;
+        for (var i = 0; i < sinkView.count; ++i) {
+            sinkView.currentIndex = i;
+            sinkView.currentItem.decreaseVolume();
+        }
+    }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
         source: plasmoid.icon
@@ -59,6 +77,29 @@ Item {
                     }
                 }
             }
+        }
+    }
+
+    GlobalActionCollection {
+        name: "kmix"
+        displayName: i18n("Audio Volume")
+        GlobalAction {
+            objectName: "increase_volume"
+            text: i18n("Increase Volume")
+            shortcut: Qt.Key_VolumeUp
+            onTriggered: increaseVolume()
+        }
+        GlobalAction {
+            objectName: "decrease_volume"
+            text: i18n("Decrease Volume")
+            shortcut: Qt.Key_VolumeDown
+            onTriggered: decreaseVolume()
+        }
+        GlobalAction {
+            objectName: "mute_volume"
+            text: i18n("Mute")
+            shortcut: Qt.Key_VolumeMute
+            onTriggered: muteVolume()
         }
     }
 

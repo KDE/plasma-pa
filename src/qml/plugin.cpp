@@ -3,8 +3,10 @@
 #include <QtQml>
 
 #include "pulseaudio.h"
-
 #include "client.h"
+
+#include "globalactioncollection.h"
+
 void Plugin::registerTypes(const char* uri)
 {
     qmlRegisterType<Context>();
@@ -15,5 +17,7 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<ReverseFilterModel>(uri, 0, 1, "ReverseFilterModel");
     qmlRegisterType<SourceModel>(uri, 0, 1, "SourceModel");
     qmlRegisterType<SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
+    qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
+    qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
     qmlRegisterType<Client>();
 }
