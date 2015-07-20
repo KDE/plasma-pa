@@ -9,8 +9,19 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
 
-find_package(Qt5 REQUIRED COMPONENTS Core Widgets Quick)
-find_package(KF5 REQUIRED COMPONENTS ConfigWidgets CoreAddons Declarative I18n Plasma GlobalAccel)
+find_package(Qt5 REQUIRED COMPONENTS
+    Core
+    Widgets
+    Quick
+)
+find_package(KF5 REQUIRED COMPONENTS
+    ConfigWidgets
+    CoreAddons
+    Declarative
+    GlobalAccel
+    I18n
+    Plasma
+)
 find_package(PulseAudio REQUIRED)
 find_package(GLIB2 REQUIRED)
 
