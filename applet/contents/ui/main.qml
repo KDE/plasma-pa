@@ -17,7 +17,7 @@ Item {
     Plasmoid.switchHeight: units.gridUnit * 12
 
     Plasmoid.toolTipMainText: i18n("Audio Volume")
-    //    Plasmoid.toolTipSubText: sinkModel.volumeText
+    // FIXME:    Plasmoid.toolTipSubText: sinkModel.volumeText
 
     function increaseVolume() {
         if (sinkView.count < 0)
