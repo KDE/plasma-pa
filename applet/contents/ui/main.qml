@@ -72,15 +72,10 @@ Item {
                 }
             }
             onWheel: {
-                if (sinkView.count < 0)
-                    return;
-                for (var i = 0; i < sinkView.count; ++i) {
-                    sinkView.currentIndex = i;
-                    if (wheel.angleDelta.y > 0) {
-                        sinkView.currentItem.increaseVolume();
-                    } else {
-                        sinkView.currentItem.decreaseVolume();
-                    }
+                if (wheel.angleDelta.y > 0) {
+                    increaseVolume();
+                } else {
+                    decreaseVolume();
                 }
             }
         }
