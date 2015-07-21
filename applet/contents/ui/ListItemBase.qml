@@ -23,6 +23,9 @@ PlasmaComponents.ListItem {
     enabled: subComponent
 
     function setVolume(volume) {
+        if (volume > 0 && Muted) {
+            toggleMute();
+        }
         Volume = volume
     }
 
