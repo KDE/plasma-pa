@@ -19,31 +19,25 @@ Item {
     Plasmoid.toolTipMainText: i18n("Audio Volume")
     // FIXME:    Plasmoid.toolTipSubText: sinkModel.volumeText
 
-    function increaseVolume() {
+    function runOnAllSinks(func) {
         if (sinkView.count < 0)
             return;
         for (var i = 0; i < sinkView.count; ++i) {
             sinkView.currentIndex = i;
-            sinkView.currentItem.increaseVolume();
+            sinkView.currentItem[func]();
         }
+    }
+
+    function increaseVolume() {
+        runOnAllSinks("increaseVolume");
     }
 
     function decreaseVolume() {
-        if (sinkView.count < 0)
-            return;
-        for (var i = 0; i < sinkView.count; ++i) {
-            sinkView.currentIndex = i;
-            sinkView.currentItem.decreaseVolume();
-        }
+        runOnAllSinks("decreaseVolume");
     }
 
     function muteVolume() {
-        if (sinkView.count < 0)
-            return;
-        for (var i = 0; i < sinkView.count; ++i) {
-            sinkView.currentIndex = i;
-            sinkView.currentItem.mute();
-        }
+        runOnAllSinks("mute");
     }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
