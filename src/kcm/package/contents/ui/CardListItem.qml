@@ -6,7 +6,6 @@ import org.kde.kquickcontrolsaddons 2.0
 
 ColumnLayout {
     id: delegate
-
     width: parent.width
 
     RowLayout {
