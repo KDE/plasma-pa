@@ -47,7 +47,7 @@ PlasmaComponents.ListItem {
         osd.show(100 * volume / slider.maximumValue);
     }
 
-    function mute() {
+    function toggleMute() {
         Muted = !Muted;
         osd.show(0);
     }

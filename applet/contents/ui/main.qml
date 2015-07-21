@@ -37,7 +37,7 @@ Item {
     }
 
     function muteVolume() {
-        runOnAllSinks("mute");
+        runOnAllSinks("toggleMute");
     }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
