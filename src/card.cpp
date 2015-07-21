@@ -21,7 +21,8 @@ void Card::update(const pa_card_info *info)
 
     qDeleteAll(m_profiles);
     m_profiles.clear();
-#warning more inconsistent api... profiels end with entry with name on null...
+#warning more inconsistent api... profiles end with entry with name on null...
+#warning profiles2 fixes this
     for (auto *it = info->profiles; it->name != nullptr; ++it) {
         Profile *profile = new Profile(this);
         profile->setInfo(it);
