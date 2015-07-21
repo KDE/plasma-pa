@@ -21,3 +21,8 @@ uint32_t PulseObject::index() const
 {
     return m_index;
 }
+
+QVariantMap PulseObject::properties() const
+{
+    return m_properties;
+}
