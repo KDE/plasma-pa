@@ -11,5 +11,5 @@ X-KDE-PluginKeyword=kcm_pulseaudio
 X-KDE-Keywords=
 Categories=
 
-Name=Sound
-Comment=Sound and Other Stuff
+Name=Audio Volume
+Comment=
