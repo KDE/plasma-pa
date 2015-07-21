@@ -87,8 +87,17 @@ Item {
     }
 
     GlobalActionCollection {
+        // KGlobalAccel cannot transition from kmix to something else, so if
+        // the user had a custom shortcut set for kmix those would get lost.
+        // To avoid this we hijack kmix name and actions. Entirely mental but
+        // best we can do to not cause annoyance for the user.
+        // The display name actually is updated to whatever registered last
+        // though, so as far as user visible strings go we should be fine.
+        // As of 2015-07-21:
+        //   componentName: kmix
+        //   actions: increase_volume, decrease_volume, mute_volume
         name: "kmix"
-        displayName: i18n("Audio Volume")
+        displayName: Plasmoid.toolTipMainText
         GlobalAction {
             objectName: "increase_volume"
             text: i18n("Increase Volume")
