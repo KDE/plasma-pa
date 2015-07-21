@@ -126,10 +126,7 @@ Item {
         id: scrollView;
 
         anchors {
-            bottom: parent.bottom;
-            left: parent.left;
-            right: parent.right;
-            top: parent.top;
+            fill: parent
             rightMargin: 16
         }
 
