@@ -18,7 +18,7 @@ ColumnLayout {
         ClientIcon {
             id: clientIcon
 
-            height: delegateColumn.height / 3 * 1.5
+            height: delegateColumn.height * 0.66
             width: height
             client: PulseObject.client
         }
