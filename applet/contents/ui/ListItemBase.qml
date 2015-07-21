@@ -8,6 +8,8 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
+import org.kde.plasma.private.volume 0.1
+
 PlasmaComponents.ListItem {
     id: item
 
@@ -24,14 +26,25 @@ PlasmaComponents.ListItem {
         Volume = volume
     }
 
+    function bound(value, min, max) {
+        return Math.max(min, Math.min(value, max));
+    }
+
+    // FIXME: increase/decrease are also present on app streams as they derive
+    //        from this, they are not used there though.
+    //        seems naughty.
     function increaseVolume() {
         var step = slider.maximumValue / 15;
-        setVolume(PulseObject.volume + step);
+        var volume = bound(PulseObject.volume + step, 0, slider.maximumValue);
+        setVolume(volume);
+        osd.show(100 * volume / slider.maximumValue);
     }
 
     function decreaseVolume() {
         var step = slider.maximumValue / 15;
-        setVolume(PulseObject.volume - step);
+        var volume = bound(PulseObject.volume - step, 0, slider.maximumValue);
+        setVolume(volume);
+        osd.show(100 * volume / slider.maximumValue);
     }
 
     anchors {

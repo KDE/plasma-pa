@@ -103,6 +103,10 @@ Item {
         }
     }
 
+    VolumeOSD {
+        id: osd
+    }
+
     PlasmaExtras.ScrollArea {
         id: scrollView;
 

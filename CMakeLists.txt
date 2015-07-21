@@ -11,6 +11,7 @@ include(KDECompilerSettings)
 
 find_package(Qt5 REQUIRED COMPONENTS
     Core
+    DBus
     Widgets
     Quick
 )

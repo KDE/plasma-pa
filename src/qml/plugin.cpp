@@ -6,6 +6,7 @@
 #include "client.h"
 
 #include "globalactioncollection.h"
+#include "volumeosd.h"
 
 void Plugin::registerTypes(const char* uri)
 {
@@ -19,5 +20,6 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
     qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
+    qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");
     qmlRegisterType<Client>();
 }
