@@ -31,11 +31,17 @@ void Card::update(const pa_card_info *info)
             m_activeProfileIndex = m_profiles.length() - 1;
         }
     }
-
     emit profilesChanged();
     emit activeProfileIndexChanged();
 
+    qDeleteAll(m_ports);
+    m_ports.clear();
+    for (auto **it = info->ports; it && *it != nullptr; ++it) {
+        CardPort *port = new CardPort(this);
+        port->update(*it);
+        m_ports.append(port);
     }
+    emit portsChanged();
 }
 
 void Card::setActiveProfileIndex(quint32 profileIndex)
