@@ -37,6 +37,15 @@ Item {
         }
     }
 
+    function muteVolume() {
+        if (sinkView.count < 0)
+            return;
+        for (var i = 0; i < sinkView.count; ++i) {
+            sinkView.currentIndex = i;
+            sinkView.currentItem.mute();
+        }
+    }
+
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
         source: plasmoid.icon
         active: mouseArea.containsMouse
@@ -54,10 +63,7 @@ Item {
                 if (mouse.button == Qt.LeftButton) {
                     wasExpanded = plasmoid.expanded;
                 } else if (mouse.button == Qt.MiddleButton) {
-                    for (var i in sinkModel.sinks) {
-                        var sink = sinkModel.sinks[i];
-                        sink.muted = !sink.muted;
-                    }
+                    muteVolume();
                 }
             }
             onClicked: {

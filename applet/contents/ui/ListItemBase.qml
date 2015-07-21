@@ -47,6 +47,11 @@ PlasmaComponents.ListItem {
         osd.show(100 * volume / slider.maximumValue);
     }
 
+    function mute() {
+        Muted = !Muted;
+        osd.show(0);
+    }
+
     anchors {
         left: parent.left;
         right: parent.right;
