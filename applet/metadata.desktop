@@ -1,7 +1,6 @@
 [Desktop Entry]
-Name=Sound Volume
-
-Comment=Bars for moving stuff
+Name=Audio Volume
+Comment=
 
 Icon=kmix
 Type=Service
@@ -12,7 +11,6 @@ X-Plasma-MainScript=ui/main.qml
 
 X-Plasma-NotificationArea=true
 X-Plasma-ConfigPlugins=kcm_pulseaudio
-# X-Plasma-DBusActivationService=org.freedesktop.NetworkManager
 
 X-KDE-PluginInfo-Name=org.kde.plasma.volume
 X-KDE-PluginInfo-Category=Multimedia
@@ -21,4 +19,4 @@ X-KDE-PluginInfo-Email=sitter@kde.org
 X-KDE-PluginInfo-Version=1.0.0
 X-KDE-PluginInfo-Website=
 X-KDE-PluginInfo-License=GPL
-X-KDE-PluginInfo-EnabledByDefault=false
+X-KDE-PluginInfo-EnabledByDefault=true
