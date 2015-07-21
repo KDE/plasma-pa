@@ -3,6 +3,9 @@
 
 #include "profile.h"
 
+namespace QPulseAudio
+{
+
 class Q_DECL_EXPORT Port : public Profile
 {
     Q_OBJECT
@@ -29,5 +32,7 @@ signals:
 private:
     bool m_isAvailable;
 };
+
+} // QPulseAudio
 
 #endif // PORT_H

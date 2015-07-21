@@ -7,6 +7,9 @@
 #include "context.h"
 #include "ref.h"
 
+namespace QPulseAudio
+{
+
 class Q_DECL_EXPORT AbstractModel : public QAbstractListModel, public Ref
 {
     Q_OBJECT
@@ -160,5 +163,7 @@ public:
 
     Q_INVOKABLE void initialSort();
 };
+
+} // QPulseAudio
 
 #endif // PULSEAUDIO_H

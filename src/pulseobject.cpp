@@ -2,6 +2,9 @@
 
 #include "context.h"
 
+namespace QPulseAudio
+{
+
 PulseObject::PulseObject(QObject *parent)
     : QObject(parent)
     , m_index(0)
@@ -26,3 +29,5 @@ QVariantMap PulseObject::properties() const
 {
     return m_properties;
 }
+
+} // QPulseAudio

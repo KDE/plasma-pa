@@ -10,6 +10,9 @@
 #include "port.h"
 #include "pulseobject.h"
 
+namespace QPulseAudio
+{
+
 class CardPort : public Port
 {
     Q_OBJECT
@@ -82,5 +85,7 @@ private:
     quint32 m_activeProfileIndex;
     QList<QObject *> m_ports;
 };
+
+} // QPulseAudio
 
 #endif // CARD_H

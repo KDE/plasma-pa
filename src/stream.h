@@ -12,6 +12,9 @@
 // Properties need fully qualified classes even with pointers.
 #include "client.h"
 
+namespace QPulseAudio
+{
+
 class Q_DECL_EXPORT Stream : public VolumeObject
 {
     Q_OBJECT
@@ -56,5 +59,7 @@ private:
     QString m_name;
     quint32 m_clientIndex;
 };
+
+} // QPulseAudio
 
 #endif // STREAM_H

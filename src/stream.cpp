@@ -1,5 +1,8 @@
 #include "stream.h"
 
+namespace QPulseAudio
+{
+
 Stream::Stream(QObject *parent)
     : VolumeObject(parent)
 {
@@ -20,3 +23,5 @@ Client *Stream::client() const
 {
     return context()->clients().data().value(m_clientIndex, nullptr);
 }
+
+} // QPulseAudio

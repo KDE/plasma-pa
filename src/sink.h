@@ -3,6 +3,9 @@
 
 #include "device.h"
 
+namespace QPulseAudio
+{
+
 class Q_DECL_EXPORT Sink : public Device
 {
     Q_OBJECT
@@ -14,5 +17,7 @@ public:
     void setMuted(bool muted) Q_DECL_OVERRIDE;
     void setActivePortIndex(quint32 port_index) Q_DECL_OVERRIDE;
 };
+
+} // QPulseAudio
 
 #endif // SINK_H

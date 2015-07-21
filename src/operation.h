@@ -3,6 +3,9 @@
 
 #include <pulse/operation.h>
 
+namespace QPulseAudio
+{
+
 /**
  * @brief The PAOperation class
  * Helps with management of pa_operations. pa_operations need to be expicitly
@@ -42,5 +45,7 @@ public:
 private:
     pa_operation *m_operation;
 };
+
+} // QPulseAudio
 
 #endif // OPERATION_H

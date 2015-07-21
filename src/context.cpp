@@ -11,6 +11,9 @@
 #include "source.h"
 #include "sourceoutput.h"
 
+namespace QPulseAudio
+{
+
 static bool isGoodState(int eol)
 {
     if (eol < 0) {
@@ -371,3 +374,5 @@ void Context::reset()
     m_sourceOutputs.reset();
     m_clients.reset();
 }
+
+} // QPulseAudio

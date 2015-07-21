@@ -3,6 +3,9 @@
 
 #include "stream.h"
 
+namespace QPulseAudio
+{
+
 class Q_DECL_EXPORT SinkInput : public Stream
 {
     Q_OBJECT
@@ -24,5 +27,7 @@ signals:
 private:
     quint32 m_sinkIndex = 0;
 };
+
+} // QPulseAudio
 
 #endif // SINKINPUT_H

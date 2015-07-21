@@ -10,6 +10,9 @@
 #include "source.h"
 #include "sourceoutput.h"
 
+namespace QPulseAudio
+{
+
 ClientModel::ClientModel(QObject *parent)
     : AbstractModel(&context()->clients(), parent)
 {
@@ -353,3 +356,5 @@ QVariant CardModel::data(const QModelIndex &index, int role) const
     }
     return dataForRole(data, role);
 }
+
+} // QPulseAudio

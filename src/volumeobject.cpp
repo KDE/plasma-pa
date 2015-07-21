@@ -1,5 +1,8 @@
 #include "volumeobject.h"
 
+namespace QPulseAudio
+{
+
 VolumeObject::VolumeObject(QObject *parent)
     : PulseObject(parent)
     , m_muted(true)
@@ -37,3 +40,5 @@ bool VolumeObject::isVolumeWritable() const
 {
     return m_volumeWritable;
 }
+
+} // QPulseAudio

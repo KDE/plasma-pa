@@ -13,6 +13,9 @@
 #include "maps.h"
 #include "operation.h"
 
+namespace QPulseAudio
+{
+
 class Q_DECL_EXPORT Context : public QObject
 {
     Q_OBJECT
@@ -115,5 +118,7 @@ private:
 
     int m_references;
 };
+
+} // QPulseAudio
 
 #endif // CONTEXT_H

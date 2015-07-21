@@ -3,6 +3,9 @@
 
 #include <QtGlobal>
 
+namespace QPulseAudio
+{
+
 class Context;
 
 /**
@@ -25,5 +28,7 @@ public:
      */
     Context *context() const;
 };
+
+} // QPulseAudio
 
 #endif // REF_H

@@ -4,6 +4,9 @@
 #include <QObject>
 #include <QString>
 
+namespace QPulseAudio
+{
+
 class Q_DECL_EXPORT Profile : public QObject
 {
     Q_OBJECT
@@ -51,5 +54,7 @@ private:
     QString m_description;
     quint32 m_priority;
 };
+
+} // QPulseAudio
 
 #endif // PROFILE_H

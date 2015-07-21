@@ -2,6 +2,9 @@
 
 #include "context.h"
 
+namespace QPulseAudio
+{
+
 SourceOutput::SourceOutput(QObject *parent)
     : Stream(parent)
 {
@@ -35,3 +38,5 @@ void SourceOutput::setMuted(bool muted)
 {
     context()->setGenericMute(index(), muted, &pa_context_set_source_output_mute);
 }
+
+} // QPulseAudio

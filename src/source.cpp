@@ -2,6 +2,9 @@
 
 #include "context.h"
 
+namespace QPulseAudio
+{
+
 Source::Source(QObject *parent)
     : Device(parent)
 {
@@ -31,3 +34,5 @@ void Source::setActivePortIndex(quint32 port_index)
     }
     context()->setGenericPort(index(), port->name(), &pa_context_set_source_port_by_index);
 }
+
+} // QPulseAudio

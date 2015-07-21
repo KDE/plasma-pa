@@ -5,6 +5,9 @@
 
 #include "pulseobject.h"
 
+namespace QPulseAudio
+{
+
 class VolumeObject : public PulseObject
 {
     Q_OBJECT
@@ -55,5 +58,6 @@ protected:
     bool m_volumeWritable;
 };
 
+} // QPulseAudio
 
 #endif // VOLUMEOBJECT_H

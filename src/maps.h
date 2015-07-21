@@ -7,6 +7,9 @@
 
 #include <pulse/pulseaudio.h>
 
+namespace QPulseAudio
+{
+
 class Card;
 class Client;
 class Sink;
@@ -124,5 +127,7 @@ typedef MapBase<Source, pa_source_info> SourceMap;
 typedef MapBase<SourceOutput, pa_source_output_info> SourceOutputMap;
 typedef MapBase<Client, pa_client_info> ClientMap;
 typedef MapBase<Card, pa_card_info> CardMap;
+
+} // QPulseAudio
 
 #endif // MAPS_H

@@ -9,6 +9,9 @@
 #include "port.h"
 #include "pulseobject.h"
 
+namespace QPulseAudio
+{
+
 class Q_DECL_EXPORT Device : public VolumeObject
 {
     Q_OBJECT
@@ -79,5 +82,7 @@ private:
     QList<QObject *> m_ports;
     quint32 m_activePortIndex = -1;
 };
+
+} // QPulseAudio
 
 #endif // DEVICE_H

@@ -4,6 +4,9 @@
 
 #include "context.h"
 
+namespace QPulseAudio
+{
+
 Card::Card(QObject *parent)
     : PulseObject(parent)
 {
@@ -49,3 +52,5 @@ void Card::setActiveProfileIndex(quint32 profileIndex)
     const Profile *profile = qobject_cast<Profile *>(profiles().at(profileIndex));
     context()->setCardProfile(index(), profile->name());
 }
+
+} // QPulseAudio

@@ -2,8 +2,15 @@
 
 #include <QDebug>
 
+namespace QPulseAudio
+{
+
 Client::Client(QObject *parent)
     : PulseObject(parent)
+{
+}
+
+Client::~Client()
 {
 }
 
@@ -17,3 +24,5 @@ void Client::update(const pa_client_info *info)
         emit nameChanged();
     }
 }
+
+} // QPulseAudio

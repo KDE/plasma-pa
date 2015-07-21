@@ -6,6 +6,9 @@
 
 #include <pulse/introspect.h>
 
+namespace QPulseAudio
+{
+
 class Context;
 
 class Q_DECL_EXPORT PulseObject : public QObject
@@ -52,5 +55,7 @@ private:
     // Ensure that we get properly parented.
     PulseObject();
 };
+
+} // QPulseAudio
 
 #endif // PULSEOBJECT_H

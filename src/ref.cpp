@@ -4,6 +4,9 @@
 
 #include <QObject>
 
+namespace QPulseAudio
+{
+
 Ref::Ref()
 {
     auto c = Context::instance();
@@ -19,3 +22,5 @@ Context *Ref::context() const
 {
     return Context::instance();
 }
+
+} // QPulseAudio

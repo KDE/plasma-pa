@@ -2,6 +2,9 @@
 
 #include "context.h"
 
+namespace QPulseAudio
+{
+
 SinkInput::SinkInput(QObject *parent)
     : Stream(parent)
 {
@@ -35,3 +38,5 @@ void SinkInput::setMuted(bool muted)
 {
     context()->setGenericMute(index(), muted, &pa_context_set_sink_input_mute);
 }
+
+} // QPulseAudio

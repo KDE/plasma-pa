@@ -1,5 +1,8 @@
 #include "profile.h"
 
+namespace QPulseAudio
+{
+
 Profile::Profile(QObject *parent)
     : QObject(parent)
     , m_name()
@@ -26,3 +29,5 @@ quint32 Profile::priority() const
 {
     return m_priority;
 }
+
+} // QPulseAudio
