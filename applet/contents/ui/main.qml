@@ -124,6 +124,11 @@ Item {
             width: maximumWidth
             Layout.maximumWidth: maximumWidth
 
+            Header {
+                Layout.fillWidth: true
+                visible: sinkView.count > 0
+                text: i18n("Playback Devices")
+            }
             ListView {
                 id: sinkView
 
@@ -138,6 +143,11 @@ Item {
                 delegate: SinkListItem {}
             }
 
+            Header {
+                Layout.fillWidth: true
+                visible: sourceView.count > 0
+                text: i18n("Capture Devices")
+            }
             ListView {
                 id: sourceView
 
