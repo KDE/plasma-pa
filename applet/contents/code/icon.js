@@ -1,5 +1,6 @@
 function name(volume, muted) {
-    var split_base = 65536/4.0;
+    // FIXME: hardcoded max value
+    var split_base = 65536/3.0;
     var icon = null;
     if ((volume / split_base <= 0) || muted) {
         icon = "audio-volume-muted";
