@@ -11,12 +11,14 @@ import org.kde.plasma.private.volume 0.1
 import "../code/icon.js" as Icon
 
 Item {
-    Plasmoid.icon: sinkModel.sinks.length > 0 ? Icon.name(sinkModel.sinks[0].volume, sinkModel.sinks[0].muted) : Icon.name(0, true)
+    id: main
 
+    property string displayName: i18n("Audio Volume")
+
+    Plasmoid.icon: sinkModel.sinks.length > 0 ? Icon.name(sinkModel.sinks[0].volume, sinkModel.sinks[0].muted) : Icon.name(0, true)
     Plasmoid.switchWidth: units.gridUnit * 12
     Plasmoid.switchHeight: units.gridUnit * 12
-
-    Plasmoid.toolTipMainText: i18n("Audio Volume")
+    Plasmoid.toolTipMainText: displayName
     // FIXME:    Plasmoid.toolTipSubText: sinkModel.volumeText
 
     function runOnAllSinks(func) {
@@ -86,7 +88,7 @@ Item {
         //   componentName: kmix
         //   actions: increase_volume, decrease_volume, mute_volume
         name: "kmix"
-        displayName: Plasmoid.toolTipMainText
+        displayName: main.displayName
         GlobalAction {
             objectName: "increase_volume"
             text: i18n("Increase Volume")
