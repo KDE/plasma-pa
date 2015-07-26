@@ -49,8 +49,13 @@ PlasmaComponents.ListItem {
     }
 
     function toggleMute() {
-        Muted = !Muted;
-        osd.show(0);
+        var toMute = !Muted;
+        if (toMute) {
+            osd.show(0);
+        } else {
+            osd.show(Volume);
+        }
+        Muted = toMute;
     }
 
     anchors {
