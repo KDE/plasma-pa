@@ -31,5 +31,6 @@ find_package(GLIB2 REQUIRED)
 
 add_subdirectory(applet)
 add_subdirectory(src)
+add_subdirectory(data)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
