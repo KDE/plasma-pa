@@ -11,19 +11,6 @@ TabView {
     implicitHeight: units.gridUnit * 20
 
     ConfigModule.quickHelp: "((UNKNOWN))"
-
-    Tab {
-        title: i18nc("@title:tab", "Applications")
-        StreamView {
-            model: SinkInputModel {}
-        }
-    }
-    Tab {
-        title: i18nc("@title:tab", "Recording")
-        StreamView {
-            model: SourceOutputModel {}
-        }
-    }
     Tab {
         title: i18nc("@title:tab", "Output Devices")
         DeviceView {
@@ -34,6 +21,18 @@ TabView {
         title: i18nc("@title:tab", "Input Devices")
         DeviceView {
             model: SourceModel {}
+        }
+    }
+    Tab {
+        title: i18nc("@title:tab", "Applications")
+        StreamView {
+            model: SinkInputModel {}
+        }
+    }
+    Tab {
+        title: i18nc("@title:tab", "Recording")
+        StreamView {
+            model: SourceOutputModel {}
         }
     }
     Tab {
