@@ -20,7 +20,7 @@ public:
 
     void update(const pa_client_info *info);
 
-    QString name() const { return m_name; }
+    QString name() const;
 
 signals:
     void nameChanged();

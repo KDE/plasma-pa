@@ -47,10 +47,30 @@ void Card::update(const pa_card_info *info)
     emit portsChanged();
 }
 
+QString Card::name() const
+{
+    return m_name;
+}
+
+QList<QObject *> Card::profiles() const
+{
+    return m_profiles;
+}
+
+quint32 Card::activeProfileIndex() const
+{
+    return m_activeProfileIndex;
+}
+
 void Card::setActiveProfileIndex(quint32 profileIndex)
 {
     const Profile *profile = qobject_cast<Profile *>(profiles().at(profileIndex));
     context()->setCardProfile(index(), profile->name());
+}
+
+QList<QObject *> Card::ports() const
+{
+    return m_ports;
 }
 
 } // QPulseAudio

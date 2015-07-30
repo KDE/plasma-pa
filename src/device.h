@@ -58,11 +58,11 @@ public:
         emit activePortIndexChanged();
     }
 
-    QString name() const { return m_name; }
-    QString description() const { return m_description; }
-    quint32 cardIndex() const { return m_cardIndex; }
-    QList<QObject *> ports() const { return m_ports; }
-    quint32 activePortIndex() const { return m_activePortIndex; }
+    QString name() const;
+    QString description() const;
+    quint32 cardIndex() const;
+    QList<QObject *> ports() const;
+    quint32 activePortIndex() const;
     virtual void setActivePortIndex(quint32 port_index) = 0;
 
 signals:
@@ -73,7 +73,7 @@ signals:
     void activePortIndexChanged();
 
 protected:
-    Device(QObject *parent) : VolumeObject(parent) {}
+    Device(QObject *parent);
 
 private:
     QString m_name;

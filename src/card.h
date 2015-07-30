@@ -67,11 +67,11 @@ public:
 
     void update(const pa_card_info *info);
 
-    QString name() const { return m_name; }
-    QList<QObject *> profiles() const { return m_profiles; }
-    quint32 activeProfileIndex() const { return m_activeProfileIndex; }
+    QString name() const;
+    QList<QObject *> profiles() const;
+    quint32 activeProfileIndex() const;
     void setActiveProfileIndex(quint32 profileIndex);
-    QList<QObject *> ports() const { return m_ports; }
+    QList<QObject *> ports() const;
 
 signals:
     void nameChanged();

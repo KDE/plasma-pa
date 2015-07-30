@@ -25,4 +25,9 @@ void Client::update(const pa_client_info *info)
     }
 }
 
+QString Client::name() const
+{
+    return m_name;
+}
+
 } // QPulseAudio
