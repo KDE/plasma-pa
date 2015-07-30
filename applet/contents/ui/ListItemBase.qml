@@ -53,7 +53,7 @@ PlasmaComponents.ListItem {
         if (toMute) {
             osd.show(0);
         } else {
-            osd.show(Volume);
+            osd.show(100 * Volume / slider.maximumValue);
         }
         Muted = toMute;
     }
