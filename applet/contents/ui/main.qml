@@ -102,7 +102,7 @@ Item {
             onTriggered: decreaseVolume()
         }
         GlobalAction {
-            objectName: "mute_volume"
+            objectName: "mute"
             text: i18n("Mute")
             shortcut: Qt.Key_VolumeMute
             onTriggered: muteVolume()
