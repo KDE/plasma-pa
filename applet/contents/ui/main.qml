@@ -86,7 +86,7 @@ Item {
         // though, so as far as user visible strings go we should be fine.
         // As of 2015-07-21:
         //   componentName: kmix
-        //   actions: increase_volume, decrease_volume, mute_volume
+        //   actions: increase_volume, decrease_volume, mute
         name: "kmix"
         displayName: main.displayName
         GlobalAction {
