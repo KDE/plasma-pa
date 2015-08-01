@@ -7,6 +7,8 @@ set(PROJECT_VERSION_MAJOR 5)
 find_package(ECM 0.0.14 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/)
 
+add_definitions(-DTRANSLATION_DOMAIN=\"kcm_plasma_volume\")
+
 include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
