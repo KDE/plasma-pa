@@ -20,6 +20,10 @@ PlasmaComponents.ListItem {
 
     enabled: subComponent
 
+    function volumePercent(volume) {
+        return 100 * volume / slider.maximumValue;
+    }
+
     function setVolume(volume) {
         if (volume > 0 && Muted) {
             toggleMute();
@@ -38,14 +42,14 @@ PlasmaComponents.ListItem {
         var step = slider.maximumValue / 15;
         var volume = bound(PulseObject.volume + step, 0, slider.maximumValue);
         setVolume(volume);
-        osd.show(100 * volume / slider.maximumValue);
+        osd.show(volumePercent(volume));
     }
 
     function decreaseVolume() {
         var step = slider.maximumValue / 15;
         var volume = bound(PulseObject.volume - step, 0, slider.maximumValue);
         setVolume(volume);
-        osd.show(100 * volume / slider.maximumValue);
+        osd.show(volumePercent(volume));
     }
 
     function toggleMute() {
@@ -53,7 +57,7 @@ PlasmaComponents.ListItem {
         if (toMute) {
             osd.show(0);
         } else {
-            osd.show(100 * Volume / slider.maximumValue);
+            osd.show(volumePercent(Volume));
         }
         Muted = toMute;
     }
