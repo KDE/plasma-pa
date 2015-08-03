@@ -19,7 +19,6 @@
 */
 
 #include "module.h"
-#include "ui_module.h"
 
 #include <KAboutData>
 #include <KColorScheme>
