@@ -6,11 +6,8 @@ file(GLOB QML_SRCS package/contents/ui/*.qml)
 
 set(kcm_SRCS
     ${QML_SRCS}
-#    main.cpp
     module.cpp
 )
-
-qt5_wrap_ui(kcm_SRCS module.ui)
 
 add_library(kcm_pulseaudio MODULE ${kcm_SRCS})
 
