@@ -10,6 +10,7 @@
 namespace QPulseAudio
 {
 
+// Used for typedefs.
 class Card;
 class Client;
 class Sink;
@@ -17,6 +18,11 @@ class SinkInput;
 class Source;
 class SourceOutput;
 
+/**
+ * @see MapBase
+ * This class is nothing more than the QObject base since moc cannot handle
+ * templates.
+ */
 class Q_DECL_EXPORT MapBaseQObject : public QObject
 {
     Q_OBJECT
@@ -26,6 +32,12 @@ signals:
     void removed(quint32 index);
 };
 
+/**
+ * Maps a specific index to a specific object pointer.
+ * This is used to give the unique arbitrary PulseAudio index of a PulseObject a
+ * serialized list index. Namely it enables us to translate a discrete list
+ * index to a pulse index to an object, and any permutation thereof.
+ */
 template<typename Type, typename PAInfo>
 class Q_DECL_EXPORT MapBase : public MapBaseQObject
 {
