@@ -33,6 +33,8 @@
 #include "maps.h"
 #include "operation.h"
 
+#include "canberra/context.h"
+
 namespace QPulseAudio
 {
 
@@ -83,6 +85,8 @@ public:
             qWarning() <<  "pa_set_volume failed";
             return;
         }
+#warning FIXME in the applet we edit the volume of all outputs always so audibility might be undesired
+        QCanberraPrivate::Context().play(index);
     }
     template <typename PAFunction>
     void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)

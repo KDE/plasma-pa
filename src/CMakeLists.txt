@@ -25,8 +25,10 @@ target_link_libraries(QPulseAudioPrivate
     Qt5::Core
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
+    QCanberraPrivate
 )
 install(TARGETS QPulseAudioPrivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
+add_subdirectory(canberra)
 add_subdirectory(kcm)
 add_subdirectory(qml)

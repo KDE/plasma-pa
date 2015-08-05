@@ -30,6 +30,11 @@ find_package(KF5 REQUIRED COMPONENTS
 )
 find_package(PulseAudio REQUIRED)
 find_package(GLIB2 REQUIRED)
+find_package(Canberra REQUIRED)
+set_package_properties(Canberra PROPERTIES DESCRIPTION "Audio setup GUI"
+    PURPOSE "libcanberra is needed for audio setup GUI"
+    URL "http://0pointer.de/lennart/projects/libcanberra"
+    TYPE OPTIONAL)
 
 add_subdirectory(applet)
 add_subdirectory(src)
