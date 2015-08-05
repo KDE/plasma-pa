@@ -20,7 +20,7 @@
 
 #include "client.h"
 
-#include <QDebug>
+#include "debug.h"
 
 namespace QPulseAudio
 {

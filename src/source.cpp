@@ -49,7 +49,7 @@ void Source::setActivePortIndex(quint32 port_index)
 {
     Port *port = qobject_cast<Port *>(ports().at(port_index));
     if (!port) {
-        qWarning() << "invalid port set request" << port_index;
+        qCWarning(PLASMAPA) << "invalid port set request" << port_index;
         return;
     }
     context()->setGenericPort(index(), port->name(), &pa_context_set_source_port_by_index);

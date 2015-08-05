@@ -20,7 +20,7 @@
 
 #include "card.h"
 
-#include <QDebug>
+#include "debug.h"
 
 #include "context.h"
 

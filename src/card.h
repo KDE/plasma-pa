@@ -57,7 +57,7 @@ public:
             Q_ASSERT(key);
             const char *value = pa_proplist_gets(info->proplist, key);
             if (!value) {
-                qDebug() << "property" << key << "not a string";
+                qCDebug(PLASMAPA) << "property" << key << "not a string";
                 continue;
             }
             Q_ASSERT(value);

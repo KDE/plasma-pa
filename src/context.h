@@ -80,7 +80,7 @@ public:
             newCVolume.values[i] = newVolume;
         }
         if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, nullptr, nullptr))) {
-            qWarning() <<  "pa_set_volume failed";
+            qCWarning(PLASMAPA) <<  "pa_set_volume failed";
             return;
         }
     }
@@ -88,7 +88,7 @@ public:
     void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
     {
         if (!PAOperation(pa_set_mute(m_context, index, mute, nullptr, nullptr))) {
-            qWarning() <<  "pa_set_mute failed";
+            qCWarning(PLASMAPA) <<  "pa_set_mute failed";
             return;
         }
     }
@@ -101,7 +101,7 @@ public:
                                      portName.toUtf8().constData(),
                                      nullptr,
                                      nullptr))) {
-            qWarning() << "pa_set_port failed";
+            qCWarning(PLASMAPA) << "pa_set_port failed";
             return;
         }
     }
@@ -116,7 +116,7 @@ public:
                                                   deviceIndex,
                                                   nullptr,
                                                   nullptr))) {
-            qWarning() << "pa_move_stream_to_device failed";
+            qCWarning(PLASMAPA) << "pa_move_stream_to_device failed";
             return;
         }
     }

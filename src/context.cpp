@@ -21,7 +21,7 @@
 #include "context.h"
 
 #include <QAbstractEventDispatcher>
-#include <QDebug>
+#include "debug.h"
 #include <QMutexLocker>
 
 #include "card.h"
@@ -171,7 +171,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             m_sinks.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_sink_info_by_index(context, index, sink_cb, this))) {
-                qWarning() << "pa_context_get_sink_info_by_index() failed";
+                qCWarning(PLASMAPA) << "pa_context_get_sink_info_by_index() failed";
                 return;
             }
         }
@@ -182,7 +182,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             m_sources.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_source_info_by_index(context, index, source_cb, this))) {
-                qWarning() << "pa_context_get_source_info_by_index() failed";
+                qCWarning(PLASMAPA) << "pa_context_get_source_info_by_index() failed";
                 return;
             }
         }
@@ -193,7 +193,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             m_sinkInputs.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_sink_input_info(context, index, sink_input_callback, this))) {
-                qWarning() << "pa_context_get_sink_input_info() failed";
+                qCWarning(PLASMAPA) << "pa_context_get_sink_input_info() failed";
                 return;
             }
         }
@@ -204,7 +204,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             m_sourceOutputs.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_source_output_info(context, index, source_output_cb, this))) {
-                qWarning() << "pa_context_get_sink_input_info() failed";
+                qCWarning(PLASMAPA) << "pa_context_get_sink_input_info() failed";
                 return;
             }
         }
@@ -215,7 +215,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             m_clients.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_client_info(context, index, client_cb, this))) {
-                qWarning() << "pa_context_get_client_info() failed";
+                qCWarning(PLASMAPA) << "pa_context_get_client_info() failed";
                 return;
             }
         }
@@ -227,7 +227,7 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
             m_cards.removeEntry(index);
         } else {
             if (!PAOperation(pa_context_get_card_info_by_index(context, index, card_cb, this))) {
-                qWarning() << "pa_context_get_card_info_by_index() failed";
+                qCWarning(PLASMAPA) << "pa_context_get_card_info_by_index() failed";
                 return;
             }
         }
@@ -238,10 +238,10 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
 
 void Context::contextStateCallback(pa_context *c)
 {
-    qDebug() << "state callback";
+    qCDebug(PLASMAPA) << "state callback";
     pa_context_state_t state = pa_context_get_state(c);
     if (state == PA_CONTEXT_READY) {
-        qDebug() << "ready";
+        qCDebug(PLASMAPA) << "ready";
 
         // 1. Register for the stream changes (except during probe)
         if (m_context == c) {
@@ -254,38 +254,38 @@ void Context::contextStateCallback(pa_context *c)
                                             PA_SUBSCRIPTION_MASK_SINK_INPUT|
                                             PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT|
                                             PA_SUBSCRIPTION_MASK_CARD), nullptr, nullptr))) {
-                qWarning() << "pa_context_subscribe() failed";
+                qCWarning(PLASMAPA) << "pa_context_subscribe() failed";
                 return;
             }
         }
 
         if (!PAOperation(pa_context_get_sink_info_list(c, sink_cb, this))) {
-            qWarning() << "pa_context_get_sink_info_list() failed";
+            qCWarning(PLASMAPA) << "pa_context_get_sink_info_list() failed";
             return;
         }
 
         if (!PAOperation(pa_context_get_source_info_list(c, source_cb, this))) {
-            qWarning() << "pa_context_get_source_info_list() failed";
+            qCWarning(PLASMAPA) << "pa_context_get_source_info_list() failed";
             return;
         }
 
         if (!PAOperation(pa_context_get_client_info_list(c, client_cb, this))) {
-            qWarning() << "pa_context_client_info_list() failed";
+            qCWarning(PLASMAPA) << "pa_context_client_info_list() failed";
             return;
         }
 
         if (!PAOperation(pa_context_get_card_info_list(c, card_cb, this))) {
-            qWarning() << "pa_context_get_card_info_list() failed";
+            qCWarning(PLASMAPA) << "pa_context_get_card_info_list() failed";
             return;
         }
 
         if (!PAOperation(pa_context_get_sink_input_info_list(c, sink_input_callback, this))) {
-            qWarning() << "pa_context_get_sink_input_info_list() failed";
+            qCWarning(PLASMAPA) << "pa_context_get_sink_input_info_list() failed";
             return;
         }
 
         if (!PAOperation(pa_context_get_source_output_info_list(c, source_output_cb, this))) {
-            qWarning() << "pa_context_get_source_output_info_list() failed";
+            qCWarning(PLASMAPA) << "pa_context_get_source_output_info_list() failed";
             return;
         }
 
@@ -299,10 +299,10 @@ void Context::contextStateCallback(pa_context *c)
         //            if ((o = pa_ext_stream_restore_subscribe(c, 1, NULL, NULL)))
         //                pa_operation_unref(o);
         //        } else {
-        //            qWarning() << "Failed to initialize stream_restore extension: " << pa_strerror(pa_context_errno(m_context));
+        //            qCWarning(PLASMAPA) << "Failed to initialize stream_restore extension: " << pa_strerror(pa_context_errno(m_context));
         //        }
     } else if (!PA_CONTEXT_IS_GOOD(state)) {
-        qDebug() << "context kaput";
+        qCDebug(PLASMAPA) << "context kaput";
         reset();
 #warning do reconnect here I guess
     }
@@ -341,12 +341,12 @@ void Context::cardCallback(const pa_card_info *info)
 
 void Context::setCardProfile(quint32 index, const QString &profile)
 {
-    qDebug() << Q_FUNC_INFO << index << profile;
+    qCDebug(PLASMAPA) << Q_FUNC_INFO << index << profile;
     if (!PAOperation(pa_context_set_card_profile_by_index(m_context,
                                                           index,
                                                           profile.toUtf8().constData(),
                                                           nullptr, nullptr))) {
-        qWarning() << "pa_context_set_card_profile_by_index failed";
+        qCWarning(PLASMAPA) << "pa_context_set_card_profile_by_index failed";
         return;
     }
 }
@@ -358,11 +358,11 @@ void Context::connectToDaemon()
 
     // We require a glib event loop
     if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")) {
-        qDebug() << "Disabling PulseAudio integration for lack of GLib event loop";
+        qCDebug(PLASMAPA) << "Disabling PulseAudio integration for lack of GLib event loop";
         return;
     }
 
-    qDebug() <<  "Attempting connection to PulseAudio sound daemon";
+    qCDebug(PLASMAPA) <<  "Attempting connection to PulseAudio sound daemon";
     m_mainloop = pa_glib_mainloop_new(nullptr);
     Q_ASSERT(m_mainloop);
     pa_mainloop_api *api = pa_glib_mainloop_get_api(m_mainloop);

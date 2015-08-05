@@ -20,7 +20,7 @@
 
 #include "pulseaudio.h"
 
-#include <QDebug>
+#include "debug.h"
 #include <QMetaEnum>
 
 #include "card.h"
@@ -68,7 +68,7 @@ SinkInputModel::SinkInputModel(QObject *parent)
 
 int AbstractModel::role(const QByteArray &roleName) const
 {
-    qDebug() << roleName << m_roles.key(roleName, -1);
+    qCDebug(PLASMAPA) << roleName << m_roles.key(roleName, -1);
     return m_roles.key(roleName, -1);
 }
 
@@ -96,7 +96,7 @@ QVariant SinkInputModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> AbstractModel::roleNames() const
 {
     if (!m_roles.empty()) {
-        qDebug() << "returning roles" << m_roles;
+        qCDebug(PLASMAPA) << "returning roles" << m_roles;
         return m_roles;
     }
     Q_ASSERT(false);
@@ -189,7 +189,7 @@ void SinkModel::propertyChanged()
     if (role == -1)
         return;
     int index = context()->sinks().modelIndexForQObject(sender());
-    qDebug() << "PROPERTY CHANGED (" << index << ") :: " << role << roleNames().value(role);
+    qCDebug(PLASMAPA) << "PROPERTY CHANGED (" << index << ") :: " << role << roleNames().value(role);
     emit dataChanged(createIndex(index, 0), createIndex(index, 0), QVector<int>() << role);
 }
 
@@ -272,7 +272,7 @@ void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
             continue;
         m_signalIndexToProperties.insert(property.notifySignalIndex(), i);
     }
-    qDebug() << m_roles;
+    qCDebug(PLASMAPA) << m_roles;
 }
 
 QVariant AbstractModel::dataForRole(QObject *obj, int role) const

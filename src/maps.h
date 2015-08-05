@@ -21,7 +21,7 @@
 #ifndef MAPS_H
 #define MAPS_H
 
-#include <QDebug>
+#include "debug.h"
 #include <QMap>
 #include <QObject>
 
@@ -84,18 +84,18 @@ public:
     qint64 dataIndexToPaIndex(int dataIndex) const
     {
         auto list = m_data.values();
-        qDebug() <<  Q_FUNC_INFO << list.length() << dataIndex;
+        qCDebug(PLASMAPA) <<  Q_FUNC_INFO << list.length() << dataIndex;
         if (list.length() <= dataIndex) {
             return -1;
         }
-        qDebug() << "  " << list.at(dataIndex)->index();
-        qDebug() << "  " << list.at(dataIndex)->name();
+        qCDebug(PLASMAPA) << "  " << list.at(dataIndex)->index();
+        qCDebug(PLASMAPA) << "  " << list.at(dataIndex)->name();
         return list.at(dataIndex)->index();
     }
 
     int paIndexToDataIndex(quint32 index) const
     {
-        qDebug() << m_data.keys() << index;
+        qCDebug(PLASMAPA) << m_data.keys() << index;
         return m_data.keys().indexOf(index);
     }
 
