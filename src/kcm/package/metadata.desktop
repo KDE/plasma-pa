@@ -1,6 +1,16 @@
 [Desktop Entry]
 Name=Sound
+Name[nl]=Geluid
+Name[pt]=Som
+Name[sv]=Ljud
+Name[uk]=Звук
+Name[x-test]=xxSoundxx
 Comment=Configure Sound
+Comment[nl]=Geluid instellen
+Comment[pt]=Configurar o Som
+Comment[sv]=Anpassa ljud
+Comment[uk]=Налаштовування звуку
+Comment[x-test]=xxConfigure Soundxx
 Icon=kmix
 Type=Service
 X-KDE-PluginInfo-Author=Harald Sitter

@@ -1,5 +1,10 @@
 [Desktop Entry]
 Name=Audio Volume
+Name[nl]=Geluidsvolume
+Name[pt]=Volume do Áudio
+Name[sv]=Ljudvolym
+Name[uk]=Гучність
+Name[x-test]=xxAudio Volumexx
 Comment=
 
 Icon=kmix
