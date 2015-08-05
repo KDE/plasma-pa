@@ -39,7 +39,7 @@ class Q_DECL_EXPORT Stream : public VolumeObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
-    Q_PROPERTY(Client *client READ client NOTIFY clientChanged)
+    Q_PROPERTY(QPulseAudio::Client *client READ client NOTIFY clientChanged)
 public:
     template <typename PAInfo>
     void updateStream(const PAInfo *info)
