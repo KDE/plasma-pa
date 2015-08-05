@@ -22,7 +22,7 @@ import QtQuick 2.1
 import QtQuick.Controls 1.3
 
 import org.kde.kcm 1.0
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.core 2.0 as PlasmaCore /* for units.gridUnit */
 
 import org.kde.plasma.private.volume 0.1
 
@@ -31,34 +31,40 @@ TabView {
     implicitHeight: units.gridUnit * 20
 
     ConfigModule.quickHelp: "((UNKNOWN))"
-    Tab {
-        title: i18nc("@title:tab", "Output Devices")
-        DeviceView {
-            model: SinkModel {}
-        }
-    }
-    Tab {
-        title: i18nc("@title:tab", "Input Devices")
-        DeviceView {
-            model: SourceModel {}
-        }
-    }
+
     Tab {
         title: i18nc("@title:tab", "Applications")
         StreamView {
             model: SinkInputModel {}
+            emptyText: i18nc('@label', 'No Applications Playing Audio')
         }
     }
     Tab {
         title: i18nc("@title:tab", "Recording")
         StreamView {
             model: SourceOutputModel {}
+            emptyText: i18nc('@label', 'No Applications Recording Audio')
+        }
+    }
+    Tab {
+        title: i18nc("@title:tab", "Output Devices")
+        DeviceView {
+            model: SinkModel {}
+            emptyText: i18nc('@label', 'No Output Devices Available')
+        }
+    }
+    Tab {
+        title: i18nc("@title:tab", "Input Devices")
+        DeviceView {
+            model: SourceModel {}
+            emptyText: i18nc('@label', 'No Input Devices Available')
         }
     }
     Tab {
         title: i18nc("@title:tab", "Configuration")
         CardView {
             model: CardModel {}
+            emptyText: i18nc('@label', 'No Additional Configuration Available')
         }
     }
 }

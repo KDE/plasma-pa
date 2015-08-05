@@ -20,10 +20,15 @@
 
 import QtQuick 2.0
 import QtQuick.Controls 1.0
+import QtQuick.Layouts 1.0
+
+import org.kde.kquickcontrolsaddons 2.0
+import org.kde.plasma.core 2.0 as PlasmaCore /* for units.gridUnit */
 
 ScrollView {
     property alias model: view.model
     property alias delegate: view.delegate
+    property alias emptyText: emptyLabel.text
 
     frameVisible: false
     highlightOnFocus: true
@@ -31,9 +36,33 @@ ScrollView {
 
     ListView {
         id: view
+        visible: count > 0
         anchors.fill: parent
         anchors.margins: 10
         spacing: units.largeSpacing
         interactive: false // Not flickable
+    }
+
+
+    Item {
+        visible: !view.visible
+        width: viewport.width
+        height: viewport.height
+
+        ColumnLayout {
+            anchors.centerIn: parent
+
+            QIconItem {
+                Layout.preferredWidth: units.iconSizes.medium
+                Layout.preferredHeight: units.iconSizes.medium
+                Layout.alignment: Qt.AlignHCenter
+                icon: 'dialog-information'
+            }
+
+            Label {
+                id: emptyLabel
+                Layout.alignment: Qt.AlignHCenter
+            }
+        }
     }
 }
