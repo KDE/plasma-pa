@@ -205,7 +205,7 @@ PlasmaComponents.ListItem {
                         Layout.alignment: Qt.AlignHCenter
                         Layout.minimumWidth: referenceText.width
                         horizontalAlignment: Qt.AlignRight
-                        text: Math.floor(slider.value / slider.maximumValue * 100.0) + "%"
+                        text: i18nc("volume percentage", "%1%", Math.floor(slider.value / slider.maximumValue * 100.0))
                     }
                 }
             }
@@ -227,7 +227,7 @@ PlasmaComponents.ListItem {
     PlasmaComponents.Label {
         id: referenceText
         visible: false
-        text: "100%"
+        text: i18nc("only used for sizing, should be widest possible string", "100%")
     }
 
     states: [
