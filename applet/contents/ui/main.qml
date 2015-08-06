@@ -62,6 +62,10 @@ Item {
         runOnAllSinks("toggleMute");
     }
 
+    SinkModel {
+        id: sinkModel
+    }
+
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
         source: plasmoid.icon
         active: mouseArea.containsMouse
@@ -133,12 +137,16 @@ Item {
         id: osd
     }
 
-    PlasmaExtras.ScrollArea {
+    Plasmoid.fullRepresentation: PlasmaExtras.ScrollArea {
+        Layout.minimumHeight: units.gridUnit * 12
+        Layout.minimumWidth: units.gridUnit * 12
+        Layout.preferredHeight: units.gridUnit * 20
+        Layout.preferredWidth: units.gridUnit * 20
         id: scrollView;
 
         anchors {
             fill: parent
-            rightMargin: 16
+            rightMargin: units.gridUnit
         }
 
         ColumnLayout {
@@ -158,9 +166,7 @@ Item {
                 Layout.minimumHeight: contentHeight
                 Layout.maximumHeight: contentHeight
 
-                model: SinkModel {
-                    id: sinkModel
-                }
+                model:  sinkModel
                 boundsBehavior: Flickable.StopAtBounds;
                 delegate: SinkListItem {}
             }
