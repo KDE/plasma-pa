@@ -38,7 +38,7 @@ ScrollView {
         id: view
         visible: count > 0
         anchors.fill: parent
-        anchors.margins: 10
+        anchors.margins: units.gridUnit / 2
         spacing: units.largeSpacing
         interactive: false // Not flickable
     }

@@ -24,13 +24,12 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 PlasmaComponents.ListItem {
     property alias text: label.text
 
-    height: label.height + units.gridUnit
+    height: units.gridUnit * 1.5
     sectionDelegate: true
 
     PlasmaComponents.Label {
         id: label
         anchors.centerIn: parent
-        height: paintedHeight
         font.weight: Font.DemiBold
     }
 }

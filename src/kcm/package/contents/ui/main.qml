@@ -27,7 +27,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore /* for units.gridUnit */
 import org.kde.plasma.private.volume 0.1
 
 TabView {
-    implicitWidth: units.gridUnit * 20
+    implicitWidth: units.gridUnit * 30
     implicitHeight: units.gridUnit * 20
 
     ConfigModule.quickHelp: i18n("This module allows to set up the Pulseaudio sound subsystem.")

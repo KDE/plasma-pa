@@ -216,8 +216,7 @@ PlasmaComponents.ListItem {
 
             anchors.right: parent.right
             anchors.left: parent.left
-            // FIXME: need something more dynamic
-            anchors.leftMargin: 22
+            anchors.leftMargin: units.gridUnit
 
             Layout.minimumHeight: subLoader.item ? subLoader.item.height : 0
             Layout.maximumHeight: Layout.minimumHeight

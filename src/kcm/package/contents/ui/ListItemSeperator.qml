@@ -28,7 +28,7 @@ Rectangle {
 
     visible: (view.count != 0) && (view.count != (index + 1))
     color: systemPalette.mid
-    height: 1
+    height: Math.ceil(units.gridUnit / 20)
 
     SystemPalette {
         id: systemPalette
