@@ -52,7 +52,7 @@ ColumnLayout {
                     id: inputText
                     Layout.alignment: Qt.AlignBottom
                     Layout.fillWidth: true
-                    text: PulseObject.client.name + ": " + PulseObject.name
+                    text: i18nc("label of stream items", "%1: %2", PulseObject.client.name, PulseObject.name)
                 }
 
                 MuteButton {

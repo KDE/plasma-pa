@@ -25,7 +25,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.private.volume 0.1
 
 ListItemBase {
-    label: i18n("label of stream items", "%1: %2", PulseObject.client.name + PulseObject.name)
+    label: i18nc("label of stream items", "%1: %2", PulseObject.client.name, PulseObject.name)
     icon: {
         if (PulseObject.client.properties['application.icon_name']) {
             return PulseObject.client.properties['application.icon_name'].toLowerCase();

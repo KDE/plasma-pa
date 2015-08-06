@@ -30,7 +30,7 @@ TabView {
     implicitWidth: units.gridUnit * 20
     implicitHeight: units.gridUnit * 20
 
-    ConfigModule.quickHelp: "((UNKNOWN))"
+    ConfigModule.quickHelp: i18n("This module allows to set up the Pulseaudio sound subsystem.")
 
     Tab {
         title: i18nc("@title:tab", "Applications")
