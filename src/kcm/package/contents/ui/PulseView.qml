@@ -25,14 +25,10 @@ import QtQuick.Layouts 1.0
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore /* for units.gridUnit */
 
-ScrollView {
+Item {
     property alias model: view.model
     property alias delegate: view.delegate
     property alias emptyText: emptyLabel.text
-
-    frameVisible: false
-    highlightOnFocus: true
-    anchors.fill: parent
 
     ListView {
         id: view
@@ -40,21 +36,21 @@ ScrollView {
         anchors.fill: parent
         anchors.margins: units.gridUnit / 2
         spacing: units.largeSpacing
-        interactive: false // Not flickable
+        interactive: contentHeight > height
     }
 
 
     Item {
         visible: !view.visible
-        width: viewport.width
-        height: viewport.height
+        width: parent.width
+        height: parent.height
 
         ColumnLayout {
             anchors.centerIn: parent
 
             QIconItem {
-                Layout.preferredWidth: units.iconSizes.medium
-                Layout.preferredHeight: units.iconSizes.medium
+                Layout.preferredWidth: units.iconSizes.large
+                Layout.preferredHeight: units.iconSizes.large
                 Layout.alignment: Qt.AlignHCenter
                 icon: 'dialog-information'
             }
