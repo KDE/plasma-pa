@@ -1,19 +1,23 @@
 [Desktop Entry]
 Name=Sound
+Name[ca]=So
 Name[es]=Sonido
 Name[gl]=Son
 Name[nl]=Geluid
 Name[pt]=Som
 Name[pt_BR]=Som
+Name[sk]=Zvuk
 Name[sv]=Ljud
 Name[uk]=Звук
 Name[x-test]=xxSoundxx
 Comment=Configure Sound
+Comment[ca]=Configura el so
 Comment[es]=Configurar el sonido
 Comment[gl]=Configurar o son
 Comment[nl]=Geluid instellen
 Comment[pt]=Configurar o Som
 Comment[pt_BR]=Configurar o som
+Comment[sk]=Nastaviť zvuk
 Comment[sv]=Anpassa ljud
 Comment[uk]=Налаштовування звуку
 Comment[x-test]=xxConfigure Soundxx
