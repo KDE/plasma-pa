@@ -2,6 +2,7 @@
 Name=Sound
 Name[ca]=So
 Name[es]=Sonido
+Name[fi]=Ääni
 Name[gl]=Son
 Name[nl]=Geluid
 Name[pl]=Dźwięk
@@ -14,6 +15,7 @@ Name[x-test]=xxSoundxx
 Comment=Configure Sound
 Comment[ca]=Configura el so
 Comment[es]=Configurar el sonido
+Comment[fi]=Äänen asetukset
 Comment[gl]=Configurar o son
 Comment[nl]=Geluid instellen
 Comment[pl]=Ustawienia dźwięku
