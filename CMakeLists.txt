@@ -35,6 +35,6 @@ find_package(GLIB2 REQUIRED)
 add_subdirectory(applet)
 add_subdirectory(src)
 add_subdirectory(data)
-add_subdirectory(doc) # pending https://git.reviewboard.kde.org/r/124692/
+# add_subdirectory(doc) # pending https://git.reviewboard.kde.org/r/124692/
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
