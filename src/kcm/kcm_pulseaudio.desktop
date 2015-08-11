@@ -12,6 +12,7 @@ X-DocPath=plasma-pa/index.html
 
 Name=Audio Volume
 Name[ca]=Volum de l'àudio
+Name[cs]=Hlasitost audia
 Name[es]=Volumen del sonido
 Name[fi]=Äänenvoimakkuus
 Name[gl]=Volume do son
@@ -25,6 +26,7 @@ Name[uk]=Гучність
 Name[x-test]=xxAudio Volumexx
 Comment=Configure the Audio Volume
 Comment[ca]=Configura el volum de l'àudio
+Comment[cs]=Nastavit hlasitost zvuku
 Comment[es]=Configurar el volumen del sonido
 Comment[fi]=Äänenvoimakkuuden asetukset
 Comment[gl]=Configurar o volume do son
