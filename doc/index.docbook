@@ -94,8 +94,8 @@ Configuration: This tab allows to set specific profiles to such as Analog Stereo
 
 <chapter id="plasmoid">
 <title>Plasma Widget</title>
-The &plasmapa; Plasma Widget is automatically loaded in the system tray area. Clicking on the speaker icon in the panel opens a popup with volume control sliders for different playback devices, and allows to change their volume individually.
-
+<para>The &plasmapa; Plasma Widget is automatically loaded in the system tray area. Clicking on the speaker icon in the panel opens a popup with volume control sliders for different playback devices, and allows to change their volume individually.
+</para>
 </chapter>
 
 <chapter id="credits">
