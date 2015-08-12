@@ -39,7 +39,7 @@ This documentation describes the Pulseaudio Systemsettings module.
 <keyword>configuration</keyword>
 <keyword>multimedia</keyword>
 <keyword>sound</keyword>
-<keyword>voume</keyword>
+<keyword>volume</keyword>
 <keyword>speaker</keyword>
 <keyword>headset</keyword>
 <keyword>bluetooth</keyword>
@@ -85,7 +85,7 @@ Output Devices: Output devices, you can find your headphone jack or bass woofer 
 Input Devices: Sound input devices that maybe be connected to your computer.
 </para></listitem>
 <listitem><para>
-Configuration: This tab allows to set specific profiles to such as Analog Stereo or Digital Suround 5.1. For bluetooth devices, you can switch to the high-fidelity AD2P bluetooth profile here.
+Configuration: This tab allows to set specific profiles to such as Analog Stereo or Digital Surround 5.1. For bluetooth devices, you can switch to the high-fidelity AD2P bluetooth profile here.
 </para></listitem>
 </itemizedlist>
 </para>
