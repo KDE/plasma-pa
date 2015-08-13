@@ -42,6 +42,7 @@ Comment[x-test]=xxConfigure the Audio Volumexx
 Comment[zh_CN]=配置音频音量
 X-KDE-Keywords=Sound,Volume,Output,Audio,Music,PulseAudio,Pulse
 X-KDE-Keywords[ca]=So,Volum,Sortida,Àudio,Música,PulseAudio,Pulse
+X-KDE-Keywords[cs]=Zvuk,Hlasitost,Výstup,Audio,Hudba,PulseAudio,Pulse
 X-KDE-Keywords[es]=Sonido,Volumen,Salida,Audio,Música,PulseAudio,Pulse
 X-KDE-Keywords[fi]=Sound,Volume,Output,Audio,Music,PulseAudio,Pulse,Ääni,Voimakkuus,Äänenvoimakkuus,Ulostulo,Lähtö,Musiikki
 X-KDE-Keywords[gl]=Son,Audio,Volume,Saída,Música,PulseAudio,Pulse
