@@ -36,35 +36,35 @@ TabView {
         title: i18nc("@title:tab", "Applications")
         StreamView {
             model: SinkInputModel {}
-            emptyText: i18nc('@label', 'No Applications Playing Audio')
+            emptyText: i18nc("@label", "No Applications Playing Audio")
         }
     }
     Tab {
         title: i18nc("@title:tab", "Recording")
         StreamView {
             model: SourceOutputModel {}
-            emptyText: i18nc('@label', 'No Applications Recording Audio')
+            emptyText: i18nc("@label", "No Applications Recording Audio")
         }
     }
     Tab {
         title: i18nc("@title:tab", "Output Devices")
         DeviceView {
             model: SinkModel {}
-            emptyText: i18nc('@label', 'No Output Devices Available')
+            emptyText: i18nc("@label", "No Output Devices Available")
         }
     }
     Tab {
         title: i18nc("@title:tab", "Input Devices")
         DeviceView {
             model: SourceModel {}
-            emptyText: i18nc('@label', 'No Input Devices Available')
+            emptyText: i18nc("@label", "No Input Devices Available")
         }
     }
     Tab {
         title: i18nc("@title:tab", "Configuration")
         CardView {
             model: CardModel {}
-            emptyText: i18nc('@label', 'No Additional Configuration Available')
+            emptyText: i18nc("@label", "No Additional Configuration Available")
         }
     }
 }
