@@ -32,7 +32,10 @@ import "../code/icon.js" as Icon
 
 Item {
     id: main
-
+    Layout.minimumHeight: units.gridUnit * 12
+    Layout.minimumWidth: units.gridUnit * 12
+    Layout.preferredHeight: units.gridUnit * 20
+    Layout.preferredWidth: units.gridUnit * 20
     property string displayName: i18n("Audio Volume")
 
     Plasmoid.icon: sinkModel.sinks.length > 0 ? Icon.name(sinkModel.sinks[0].volume, sinkModel.sinks[0].muted) : Icon.name(0, true)
@@ -42,8 +45,12 @@ Item {
     // FIXME:    Plasmoid.toolTipSubText: sinkModel.volumeText
 
     function runOnAllSinks(func) {
-        if (sinkView.count < 0)
+        if (typeof(sinkView) === "undefined") {
+            print("This case we need to handle.");
             return;
+        } else if (sinkView.count < 0) {
+            return;
+        }
         for (var i = 0; i < sinkView.count; ++i) {
             sinkView.currentIndex = i;
             sinkView.currentItem[func]();
