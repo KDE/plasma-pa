@@ -13,7 +13,6 @@ add_library(kcm_pulseaudio MODULE ${kcm_SRCS})
 
 target_link_libraries(kcm_pulseaudio
     Qt5::Quick
-    KF5::ConfigWidgets
     KF5::CoreAddons
     KF5::Declarative
     KF5::I18n

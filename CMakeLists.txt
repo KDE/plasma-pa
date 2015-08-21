@@ -21,7 +21,6 @@ find_package(Qt5 REQUIRED COMPONENTS
     Quick
 )
 find_package(KF5 REQUIRED COMPONENTS
-    ConfigWidgets
     CoreAddons
     Declarative
     DocTools

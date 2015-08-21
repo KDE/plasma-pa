@@ -21,7 +21,6 @@
 #include "module.h"
 
 #include <KAboutData>
-#include <KColorScheme>
 #include <KDeclarative/KDeclarative>
 #include <KLocalizedString>
 #include <KPluginFactory>
