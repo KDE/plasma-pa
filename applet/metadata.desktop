@@ -1,12 +1,21 @@
 [Desktop Entry]
 Name=Audio Volume
+Name[ca]=Volum de l'àudio
+Name[cs]=Hlasitost audia
 Name[es]=Volumen del sonido
+Name[fi]=Äänenvoimakkuus
+Name[gl]=Volume do son
+Name[lt]=Garsumas
 Name[nl]=Geluidsvolume
+Name[pl]=Głośność dźwięku
+Name[pt]=Volume do Áudio
 Name[pt_BR]=Volume do áudio
 Name[ru]=Громкость
+Name[sk]=Hlasitosť zvuku
 Name[sv]=Ljudvolym
 Name[uk]=Гучність
 Name[x-test]=xxAudio Volumexx
+Name[zh_CN]=音频音量
 Comment=
 
 Icon=kmix
