@@ -2,6 +2,7 @@
 Name=Audio Volume
 Name[ca]=Volum de l'àudio
 Name[cs]=Hlasitost audia
+Name[de]=Lautstärke
 Name[es]=Volumen del sonido
 Name[fi]=Äänenvoimakkuus
 Name[gl]=Volume do son
@@ -12,6 +13,7 @@ Name[pt]=Volume do Áudio
 Name[pt_BR]=Volume do áudio
 Name[ru]=Громкость
 Name[sk]=Hlasitosť zvuku
+Name[sl]=Glasnost zvoka
 Name[sr]=Јачина звука
 Name[sr@ijekavian]=Јачина звука
 Name[sr@ijekavianlatin]=Jačina zvuka
