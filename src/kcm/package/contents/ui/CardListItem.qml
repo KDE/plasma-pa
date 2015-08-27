@@ -41,7 +41,7 @@ ColumnLayout {
             id: nameLabel
             Layout.fillWidth: true
             text: PulseObject.properties['device.description'] ? PulseObject.properties['device.description'] : PulseObject.name
-            elide: "ElideRight"
+            elide: Text.ElideRight
         }
     }
 

@@ -40,10 +40,13 @@ ColumnLayout {
             id: inputText
             Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
+            anchors.right: muteButton.left
+            elide: Text.ElideRight
             text: PulseObject.description
         }
 
         MuteButton {
+            id: muteButton
             muted: PulseObject.muted
             onMutedChanged: PulseObject.muted = muted
         }
