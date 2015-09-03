@@ -108,6 +108,20 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    bool setData(const QModelIndex &index, const QVariant &value, int role) Q_DECL_OVERRIDE;
+
+signals:
+    void sourcesChanged();
+
+protected:
+    virtual void onDataAdded(quint32 index) Q_DECL_OVERRIDE Q_DECL_FINAL;
+    virtual void onDataRemoved(quint32 index) Q_DECL_OVERRIDE Q_DECL_FINAL;
+
+private slots:
+    void propertyChanged();
+
+private:
+    QMetaMethod propertyChangedMetaMethod() const;
 };
 
 class Q_DECL_EXPORT SourceOutputModel : public AbstractModel

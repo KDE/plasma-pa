@@ -300,6 +300,12 @@ SourceModel::SourceModel(QObject *parent)
     : AbstractModel(&context()->sources(), parent)
 {
     initRoleNames(Source::staticMetaObject);
+
+    connect(&context()->sources(), &SourceMap::added, this, &SourceModel::sourcesChanged);
+    connect(&context()->sources(), &SourceMap::updated, this, &SourceModel::sourcesChanged);
+    connect(&context()->sources(), &SourceMap::removed, this, &SourceModel::sourcesChanged);
+
+    emit sourcesChanged();
 }
 
 int SourceModel::rowCount(const QModelIndex &parent) const
@@ -321,6 +327,61 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue(data);
     }
     return dataForRole(data, role);
+}
+
+bool SourceModel::setData(const QModelIndex &index, const QVariant &value, int role)
+{
+    int propertyIndex = m_objectProperties.value(role, -1);
+    if (propertyIndex == -1)
+        return false;
+    Source *data = context()->sources().data().values().at(index.row());
+    auto property = data->metaObject()->property(propertyIndex);
+    return property.write(data, value);
+}
+
+void SourceModel::onDataAdded(quint32 index)
+{
+    beginInsertRows(QModelIndex(), index, index);
+    Source *data = context()->sources().data().values().at(index);
+    const QMetaObject *mo = data->metaObject();
+    // We have all the data changed notify signals already stored
+    auto keys = m_signalIndexToProperties.keys();
+    foreach(int index, keys){
+        QMetaMethod meth = mo->method(index);
+        connect(data, meth, this, propertyChangedMetaMethod());
+    }
+    endInsertRows();
+}
+
+void SourceModel::onDataRemoved(quint32 index)
+{
+    beginRemoveRows(QModelIndex(), index, index);
+    endRemoveRows();
+}
+
+void SourceModel::propertyChanged()
+{
+    if (!sender() || senderSignalIndex() == -1)
+        return;
+    int propertyIndex = m_signalIndexToProperties.value(senderSignalIndex(), -1);
+    if (propertyIndex == -1)
+        return;
+    int role = m_objectProperties.key(propertyIndex, -1);
+    if (role == -1)
+        return;
+    int index = context()->sources().modelIndexForQObject(sender());
+    qCDebug(PLASMAPA) << "PROPERTY CHANGED (" << index << ") :: " << role << roleNames().value(role);
+    emit dataChanged(createIndex(index, 0), createIndex(index, 0), QVector<int>() << role);
+}
+
+QMetaMethod SourceModel::propertyChangedMetaMethod() const
+{
+    auto mo = metaObject();
+    int methodIndex = mo->indexOfMethod(QMetaObject::normalizedSignature("propertyChanged()").data());
+    if(methodIndex == -1){
+        return QMetaMethod();
+    }
+    return mo->method(methodIndex);
 }
 
 SourceOutputModel::SourceOutputModel(QObject *parent)
