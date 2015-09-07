@@ -163,11 +163,11 @@ void SinkModel::onDataAdded(quint32 index)
     beginInsertRows(QModelIndex(), index, index);
     Sink *data = context()->sinks().data().values().at(index);
     const QMetaObject *mo = data->metaObject();
-    for (int i = 0; i < mo->methodCount(); ++i) {
-        auto meth = mo->method(i);
-        if (meth.methodType() == QMetaMethod::Signal) {
-            connect(data, meth, this, propertyChangedMetaMethod());
-        }
+    // We have all the data changed notify signals already stored
+    auto keys = m_signalIndexToProperties.keys();
+    foreach(int index, keys){
+        QMetaMethod meth = mo->method(index);
+        connect(data, meth, this, propertyChangedMetaMethod());
     }
     endInsertRows();
 }
@@ -196,12 +196,11 @@ void SinkModel::propertyChanged()
 QMetaMethod SinkModel::propertyChangedMetaMethod() const
 {
     auto mo = metaObject();
-    for (int i = 0; i < mo->methodCount(); ++i) {
-        auto meth = mo->method(i);
-        if (meth.name() == QByteArray("propertyChanged"))
-            return meth;
+    int methodIndex = mo->indexOfMethod(QMetaObject::normalizedSignature("propertyChanged()").data());
+    if(methodIndex == -1){
+        return QMetaMethod();
     }
-    return QMetaMethod();
+    return mo->method(methodIndex);
 }
 
 void AbstractModel::onDataAdded(quint32 index)
