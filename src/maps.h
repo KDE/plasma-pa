@@ -101,7 +101,12 @@ public:
 
     void reset()
     {
-        qDeleteAll(m_data);
+        while (!m_data.isEmpty()) {
+            auto key = m_data.lastKey();
+            auto *obj = m_data.take(key);
+            emit removed(obj->index());
+            delete obj;
+        }
         m_data.clear();
         m_pendingRemovals.clear();
     }

@@ -23,6 +23,7 @@
 #include <QAbstractEventDispatcher>
 #include "debug.h"
 #include <QMutexLocker>
+#include <QTimer>
 
 #include "card.h"
 #include "client.h"
@@ -140,6 +141,16 @@ Context::Context(QObject *parent)
 
 Context::~Context()
 {
+    if (m_context) {
+        pa_context_unref(m_context);
+        m_context = nullptr;
+    }
+
+    if (m_mainloop) {
+        pa_glib_mainloop_free(m_mainloop);
+        m_mainloop = nullptr;
+    }
+
     reset();
 }
 
@@ -303,8 +314,12 @@ void Context::contextStateCallback(pa_context *c)
         //        }
     } else if (!PA_CONTEXT_IS_GOOD(state)) {
         qCDebug(PLASMAPA) << "context kaput";
+        if (m_context) {
+            pa_context_unref(m_context);
+            m_context = nullptr;
+        }
         reset();
-#warning do reconnect here I guess
+        QTimer::singleShot(0, this, &Context::connectToDaemon);
     }
 }
 
@@ -354,7 +369,6 @@ void Context::setCardProfile(quint32 index, const QString &profile)
 void Context::connectToDaemon()
 {
     Q_ASSERT(m_context == nullptr);
-    Q_ASSERT(m_mainloop == nullptr);
 
     // We require a glib event loop
     if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")) {
@@ -363,11 +377,13 @@ void Context::connectToDaemon()
     }
 
     qCDebug(PLASMAPA) <<  "Attempting connection to PulseAudio sound daemon";
-    m_mainloop = pa_glib_mainloop_new(nullptr);
-    Q_ASSERT(m_mainloop);
+    if (!m_mainloop) {
+        m_mainloop = pa_glib_mainloop_new(nullptr);
+        Q_ASSERT(m_mainloop);
+    }
+
     pa_mainloop_api *api = pa_glib_mainloop_get_api(m_mainloop);
     Q_ASSERT(api);
-
     m_context = pa_context_new(api, "QPulse");
     Q_ASSERT(m_context);
 
@@ -382,12 +398,6 @@ void Context::connectToDaemon()
 
 void Context::reset()
 {
-    pa_context_unref(m_context);
-    m_context = nullptr;
-
-    pa_glib_mainloop_free(m_mainloop);
-    m_mainloop = nullptr;
-
     m_sinks.reset();
     m_sinkInputs.reset();
     m_sources.reset();
