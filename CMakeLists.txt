@@ -1,7 +1,7 @@
 project(plasma-volume-control)
 cmake_minimum_required(VERSION 2.8.12)
 
-set(PROJECT_VERSION "5.3.90")
+set(PROJECT_VERSION "5.4.1")
 set(PROJECT_VERSION_MAJOR 5)
 
 find_package(ECM 0.0.14 REQUIRED NO_MODULE)

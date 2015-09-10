@@ -122,7 +122,7 @@ public:
     }
 
 private:
-    void connectToDaemon();
+    Q_INVOKABLE void connectToDaemon();
     void reset();
 
     // Don't forget to add things to reset().
