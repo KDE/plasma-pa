@@ -2,6 +2,7 @@
 Name=Sound
 Name[ca]=So
 Name[cs]=Zvuk
+Name[en_GB]=Sound
 Name[es]=Sonido
 Name[fi]=Ääni
 Name[gl]=Son
@@ -25,6 +26,7 @@ Name[zh_CN]=声音
 Comment=Configure Sound
 Comment[ca]=Configura el so
 Comment[cs]=Nastavit zvuk
+Comment[en_GB]=Configure Sound
 Comment[es]=Configurar el sonido
 Comment[fi]=Äänen asetukset
 Comment[gl]=Configurar o son
