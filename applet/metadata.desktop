@@ -27,7 +27,7 @@ Name[x-test]=xxAudio Volumexx
 Name[zh_CN]=音频音量
 Comment=
 
-Icon=kmix
+Icon=org.kde.plasma.volume
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet
 
