@@ -43,6 +43,9 @@ RowLayout {
         // as otherwise we can easily end up in a loop where value
         // changes trigger volume changes trigger value changes.
         property int volume: PulseObject.volume
+        // Helper property to allow changing volume with mouse wheel
+        property bool pendingWheelEvent: false
+
 
         Layout.fillWidth: true
         minimumValue: 0
@@ -59,8 +62,9 @@ RowLayout {
         }
 
         onValueChanged: {
-            if (pressed) {
-                PulseObject.volume = value;
+            if (pendingWheelEvent || pressed) {
+                pendingWheelEvent = false
+                setVolume(value);
             }
         }
 
@@ -72,6 +76,22 @@ RowLayout {
                 // whereas PA rejected the volume change and is
                 // still at v15 (e.g.).
                 value = PulseObject.volume;
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            acceptedButtons: Qt.NoButton
+            onWheel: {
+                wheel.accepted = false
+                slider.pendingWheelEvent = true
+                updateTimer.restart()
+            }
+
+            Timer {
+                id: updateTimer
+                interval: 200
+                onTriggered: slider.value = PulseObject.volume
             }
         }
     }
