@@ -38,14 +38,12 @@ RowLayout {
     Slider {
         id: slider
 
-        // Helper property to allow async slider updates.
+        // Helper properties to allow async slider updates.
         // While we are sliding we must not react to value updates
         // as otherwise we can easily end up in a loop where value
         // changes trigger volume changes trigger value changes.
         property int volume: PulseObject.volume
-        // Helper property to allow changing volume with mouse wheel
-        property bool pendingWheelEvent: false
-
+        property bool ignoreValueChange: false
 
         Layout.fillWidth: true
         minimumValue: 0
@@ -56,15 +54,18 @@ RowLayout {
         enabled: PulseObject.volumeWritable && !PulseObject.muted
 
         onVolumeChanged: {
-            if (!pressed) {
-                value = PulseObject.volume;
-            }
+            ignoreValueChange = true;
+            value = PulseObject.volume;
+            ignoreValueChange = false;
         }
 
         onValueChanged: {
-            if (pendingWheelEvent || pressed) {
-                pendingWheelEvent = false
-                setVolume(value);
+            if (!ignoreValueChange) {
+                PulseObject.volume = value;
+
+                if (!pressed) {
+                    updateTimer.restart();
+                }
             }
         }
 
@@ -75,24 +76,14 @@ RowLayout {
                 // Otherwise it might be that the slider is at v10
                 // whereas PA rejected the volume change and is
                 // still at v15 (e.g.).
-                value = PulseObject.volume;
+                updateTimer.restart();
             }
         }
 
-        MouseArea {
-            anchors.fill: parent
-            acceptedButtons: Qt.NoButton
-            onWheel: {
-                wheel.accepted = false
-                slider.pendingWheelEvent = true
-                updateTimer.restart()
-            }
-
-            Timer {
-                id: updateTimer
-                interval: 200
-                onTriggered: slider.value = PulseObject.volume
-            }
+        Timer {
+            id: updateTimer
+            interval: 200
+            onTriggered: slider.value = PulseObject.volume
         }
     }
 

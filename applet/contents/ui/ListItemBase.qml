@@ -158,11 +158,12 @@ PlasmaComponents.ListItem {
                     PlasmaComponents.Slider {
                         id: slider
 
-                        // Helper property to allow async slider updates.
+                        // Helper properties to allow async slider updates.
                         // While we are sliding we must not react to value updates
                         // as otherwise we can easily end up in a loop where value
                         // changes trigger volume changes trigger value changes.
                         property int volume: PulseObject.volume
+                        property bool ignoreValueChange: false
 
                         Layout.fillWidth: true
                         minimumValue: 0
@@ -178,14 +179,18 @@ PlasmaComponents.ListItem {
                         }
 
                         onVolumeChanged: {
-                            if (!pressed) {
-                                value = PulseObject.volume;
-                            }
+                            ignoreValueChange = true;
+                            value = PulseObject.volume;
+                            ignoreValueChange = false;
                         }
 
                         onValueChanged: {
-                            if (pressed) {
+                            if (!ignoreValueChange) {
                                 setVolume(value);
+
+                                if (!pressed) {
+                                    updateTimer.restart();
+                                }
                             }
                         }
 
@@ -196,8 +201,14 @@ PlasmaComponents.ListItem {
                                 // Otherwise it might be that the slider is at v10
                                 // whereas PA rejected the volume change and is
                                 // still at v15 (e.g.).
-                                value = PulseObject.volume;
+                                updateTimer.restart();
                             }
+                        }
+
+                        Timer {
+                            id: updateTimer
+                            interval: 200
+                            onTriggered: slider.value = PulseObject.volume
                         }
 
                         // Block wheel events
