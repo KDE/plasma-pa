@@ -137,6 +137,7 @@ private:
     pa_glib_mainloop *m_mainloop;
 
     int m_references;
+    static Context* s_context;
 };
 
 } // QPulseAudio

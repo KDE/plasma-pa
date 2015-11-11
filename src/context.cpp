@@ -35,6 +35,8 @@
 namespace QPulseAudio
 {
 
+Context* Context::s_context = nullptr;
+
 static bool isGoodState(int eol)
 {
     if (eol < 0) {
@@ -156,8 +158,10 @@ Context::~Context()
 
 Context *Context::instance()
 {
-    static Context *context = new Context;
-    return context;
+    if (!s_context) {
+        s_context = new Context;
+    }
+    return s_context;
 }
 
 void Context::ref()
@@ -169,6 +173,7 @@ void Context::unref()
 {
     if (--m_references == 0) {
         delete this;
+        s_context = nullptr;
     }
 }
 
