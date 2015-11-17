@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Sound
+Name[ast]=Soníu
 Name[ca]=So
 Name[ca@valencia]=So
 Name[cs]=Zvuk
@@ -30,6 +31,7 @@ Name[uk]=Звук
 Name[x-test]=xxSoundxx
 Name[zh_CN]=声音
 Comment=Configure Sound
+Comment[ast]=Configura'l soníu
 Comment[ca]=Configura el so
 Comment[ca@valencia]=Configura el so
 Comment[cs]=Nastavit zvuk
