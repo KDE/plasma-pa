@@ -31,6 +31,7 @@ Name[sv]=Ljudvolym
 Name[uk]=Гучність
 Name[x-test]=xxAudio Volumexx
 Name[zh_CN]=音频音量
+Name[zh_TW]=音效音量
 Comment=
 
 Icon=org.kde.plasma.volume
