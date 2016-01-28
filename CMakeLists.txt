@@ -12,7 +12,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
 include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDECompilerSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
 
 find_package(Qt5 REQUIRED COMPONENTS
     Core
