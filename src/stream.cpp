@@ -28,6 +28,7 @@ Stream::Stream(QObject *parent)
 {
     m_volumeWritable = false;
     m_hasVolume = false;
+    m_virtualStream = false;
 }
 
 Stream::~Stream()
@@ -42,6 +43,11 @@ QString Stream::name() const
 Client *Stream::client() const
 {
     return context()->clients().data().value(m_clientIndex, nullptr);
+}
+
+bool Stream::isVirtualStream() const
+{
+    return m_virtualStream;
 }
 
 } // QPulseAudio

@@ -40,6 +40,7 @@ class Q_DECL_EXPORT Stream : public VolumeObject
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QPulseAudio::Client *client READ client NOTIFY clientChanged)
+    Q_PROPERTY(bool virtualStream READ isVirtualStream NOTIFY virtualStreamChanged)
 public:
     template <typename PAInfo>
     void updateStream(const PAInfo *info)
@@ -62,14 +63,20 @@ public:
             m_clientIndex = info->client;
             emit clientChanged();
         }
+        if (m_virtualStream != (info->client == PA_INVALID_INDEX)) {
+            m_virtualStream = info->client == PA_INVALID_INDEX;
+            emit virtualStreamChanged();
+        }
     }
 
     QString name() const;
     Client *client() const;
+    bool isVirtualStream() const;
 
 signals:
     void nameChanged();
     void clientChanged();
+    void virtualStreamChanged();
 
 protected:
     Stream(QObject *parent);
@@ -78,6 +85,7 @@ protected:
 private:
     QString m_name;
     quint32 m_clientIndex;
+    bool m_virtualStream;
 };
 
 } // QPulseAudio
