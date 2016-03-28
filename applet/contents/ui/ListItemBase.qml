@@ -210,13 +210,6 @@ PlasmaComponents.ListItem {
                             interval: 200
                             onTriggered: slider.value = PulseObject.volume
                         }
-
-                        // Block wheel events
-                        MouseArea {
-                            anchors.fill: parent
-                            acceptedButtons: Qt.NoButton
-                            onWheel: wheel.accepted = true
-                        }
                     }
                     PlasmaComponents.Label {
                         id: percentText
