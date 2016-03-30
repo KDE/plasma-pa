@@ -30,13 +30,15 @@ Item {
     property alias delegate: view.delegate
     property alias emptyText: emptyLabel.text
 
-    ListView {
-        id: view
-        visible: count > 0
+    ScrollView {
         anchors.fill: parent
         anchors.margins: units.gridUnit / 2
-        spacing: units.largeSpacing
-        interactive: contentHeight > height
+
+        ListView {
+            id: view
+            visible: count > 0
+            spacing: units.largeSpacing
+        }
     }
 
 
