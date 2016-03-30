@@ -33,13 +33,13 @@ ColumnLayout {
 
     RowLayout {
         Layout.fillWidth: true
-        spacing: units.gridUnit
+        spacing: units.smallSpacing * 2
 
         ClientIcon {
             id: clientIcon
 
-            height: delegateColumn.height * 0.66
-            width: height
+            Layout.preferredHeight: delegateColumn.height * 0.66
+            Layout.preferredWidth: Layout.preferredHeight
             client: PulseObject.client
         }
 
