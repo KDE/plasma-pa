@@ -32,11 +32,10 @@ PlasmaComponents.ListItem {
     id: item
 
     property bool expanded: false
-    property string icon
     property Component subComponent
 
     property alias label: textLabel.text
-    property alias expanderIconVisible: expanderIcon.visible
+    property alias icon: clientIcon.source
 
     enabled: subComponent
 
@@ -48,7 +47,7 @@ PlasmaComponents.ListItem {
         if (volume > 0 && Muted) {
             toggleMute();
         }
-        Volume = volume
+        PulseObject.volume = volume
     }
 
     function bound(value, min, max) {
@@ -87,11 +86,6 @@ PlasmaComponents.ListItem {
         right: parent.right;
     }
 
-    onIconChanged: {
-        clientIcon.visible = icon ? true : false;
-        clientIcon.icon = icon
-    }
-
     ColumnLayout {
         property int maximumWidth: parent.width
         width: maximumWidth
@@ -99,11 +93,11 @@ PlasmaComponents.ListItem {
 
         RowLayout {
             Layout.fillWidth: true
-            spacing: 8
+            spacing: units.smallSpacing
 
-            QIconItem {
+            PlasmaCore.IconItem {
                 id: clientIcon
-                visible: false
+                visible: valid
                 Layout.alignment: Qt.AlignHCenter
                 width: height
                 height: column.height * 0.75
@@ -225,10 +219,8 @@ PlasmaComponents.ListItem {
         Loader {
             id: subLoader
 
-            anchors.right: parent.right
-            anchors.left: parent.left
-            anchors.leftMargin: units.gridUnit
-
+            Layout.fillWidth: true
+            Layout.leftMargin: units.gridUnit + clientIcon.width
             Layout.minimumHeight: subLoader.item ? subLoader.item.height : 0
             Layout.maximumHeight: Layout.minimumHeight
         }
@@ -256,7 +248,7 @@ PlasmaComponents.ListItem {
             name: "expanded";
             when: expanded;
             StateChangeScript {
-                script: subLoader.sourceComponent = subComponent;
+                script: subLoader.sourceComponent = Qt.binding(function() { return subComponent; });
             }
         }
     ]

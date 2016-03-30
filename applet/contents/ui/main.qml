@@ -148,55 +148,132 @@ Item {
         id: osd
     }
 
-    PlasmaExtras.ScrollArea {
-        id: scrollView;
+    PlasmaComponents.TabBar {
+        id: tabBar
 
         anchors {
-            fill: parent
-            rightMargin: 16
+            top: parent.top
+            left: parent.left
+            right: parent.right
         }
 
-        ColumnLayout {
-            property int maximumWidth: scrollView.viewport.width
-            width: maximumWidth
-            Layout.maximumWidth: maximumWidth
+        PlasmaComponents.TabButton {
+            id: devicesTab
+            text: i18n("Devices")
+        }
 
-            Header {
-                Layout.fillWidth: true
-                visible: sinkView.count > 0
-                text: i18n("Playback Devices")
-            }
-            ListView {
-                id: sinkView
+        PlasmaComponents.TabButton {
+            id: streamsTab
+            text: i18n("Applications")
+        }
+    }
 
-                Layout.fillWidth: true
-                Layout.minimumHeight: contentHeight
-                Layout.maximumHeight: contentHeight
+    PlasmaExtras.ScrollArea {
+        id: scrollView;
+        horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
 
-                model: SinkModel {
-                    id: sinkModel
+        anchors {
+            top: tabBar.bottom
+            topMargin: units.smallSpacing
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
+        Item {
+            width: streamsView.visible ? streamsView.width : devicesView.width
+            height: streamsView.visible ? streamsView.height : devicesView.height
+
+            ColumnLayout {
+                id: streamsView
+                visible: tabBar.currentTab == streamsTab
+                property int maximumWidth: scrollView.viewport.width
+                width: maximumWidth
+                Layout.maximumWidth: maximumWidth
+
+                Header {
+                    Layout.fillWidth: true
+                    visible: sinkInputView.count > 0
+                    text: i18n("Playback Streams")
                 }
-                boundsBehavior: Flickable.StopAtBounds;
-                delegate: SinkListItem {}
-            }
+                ListView {
+                    id: sinkInputView
 
-            Header {
-                Layout.fillWidth: true
-                visible: sourceView.count > 0
-                text: i18n("Capture Devices")
-            }
-            ListView {
-                id: sourceView
+                    Layout.fillWidth: true
+                    Layout.minimumHeight: contentHeight
+                    Layout.maximumHeight: contentHeight
 
-                Layout.fillWidth: true
-                Layout.minimumHeight: contentHeight
-                Layout.maximumHeight: contentHeight
-
-                model: SourceModel {
-                    id: sourceModel
+                    model: SinkInputModel {
+                        id: sinkInputModel
+                    }
+                    boundsBehavior: Flickable.StopAtBounds;
+                    delegate: StreamListItem {}
                 }
-                boundsBehavior: Flickable.StopAtBounds;
-                delegate: SourceListItem {}
+
+                Header {
+                    Layout.fillWidth: true
+                    visible: sourceOutputView.count > 0
+                    text: i18n("Capture Streams")
+                }
+                ListView {
+                    id: sourceOutputView
+
+                    Layout.fillWidth: true
+                    Layout.minimumHeight: contentHeight
+                    Layout.maximumHeight: contentHeight
+
+                    model: SourceOutputModel {
+                        id: sourceOutputModel
+                    }
+                    boundsBehavior: Flickable.StopAtBounds;
+                    delegate: StreamListItem {}
+                }
+            }
+
+            ColumnLayout {
+                id: devicesView
+                visible: tabBar.currentTab == devicesTab
+                property int maximumWidth: scrollView.viewport.width
+                width: maximumWidth
+                Layout.maximumWidth: maximumWidth
+
+                Header {
+                    Layout.fillWidth: true
+                    visible: sinkView.count > 0
+                    text: i18n("Playback Devices")
+                }
+                ListView {
+                    id: sinkView
+
+                    Layout.fillWidth: true
+                    Layout.minimumHeight: contentHeight
+                    Layout.maximumHeight: contentHeight
+
+                    model: SinkModel {
+                        id: sinkModel
+                    }
+                    boundsBehavior: Flickable.StopAtBounds;
+                    delegate: SinkListItem {}
+                }
+
+                Header {
+                    Layout.fillWidth: true
+                    visible: sourceView.count > 0
+                    text: i18n("Capture Devices")
+                }
+                ListView {
+                    id: sourceView
+
+                    Layout.fillWidth: true
+                    Layout.minimumHeight: contentHeight
+                    Layout.maximumHeight: contentHeight
+
+                    model: SourceModel {
+                        id: sourceModel
+                    }
+                    boundsBehavior: Flickable.StopAtBounds;
+                    delegate: SourceListItem {}
+                }
             }
         }
     }
