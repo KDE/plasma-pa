@@ -29,6 +29,9 @@ import org.kde.plasma.private.volume 0.1
 ColumnLayout {
     id: delegate
 
+    property alias deviceType: deviceComboBox.deviceType
+    property alias deviceModel: deviceComboBox.model
+
     width: parent.width
 
     RowLayout {
@@ -50,10 +53,17 @@ ColumnLayout {
             RowLayout {
                 Label {
                     id: inputText
-                    Layout.alignment: Qt.AlignBottom
                     Layout.fillWidth: true
                     text: i18nc("label of stream items", "%1: %2", PulseObject.client.name, PulseObject.name)
                     elide: Text.ElideRight
+                }
+
+                DeviceComboBox {
+                    id: deviceComboBox
+                    Layout.leftMargin: units.smallSpacing
+                    Layout.rightMargin: units.smallSpacing
+                    Layout.preferredWidth: delegate.width / 3
+                    visible: count > 1
                 }
 
                 MuteButton {

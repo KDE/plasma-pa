@@ -1,5 +1,6 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2016 David Rosca <nowrep@gmail.com>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -19,7 +20,11 @@
 */
 
 import QtQuick 2.0
+import QtQuick.Controls 1.3
 
 PulseView {
-    delegate: StreamListItem {}
+    delegate: StreamListItem {
+        deviceType: "source"
+        deviceModel: sourceModel
+    }
 }

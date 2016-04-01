@@ -27,6 +27,9 @@ import org.kde.plasma.core 2.0 as PlasmaCore /* for units.gridUnit */
 import org.kde.plasma.private.volume 0.1
 
 TabView {
+    property QtObject sinkModel: SinkModel { }
+    property QtObject sourceModel: SourceModel { }
+
     implicitWidth: units.gridUnit * 30
     implicitHeight: units.gridUnit * 20
 
@@ -34,14 +37,14 @@ TabView {
 
     Tab {
         title: i18nc("@title:tab", "Applications")
-        StreamView {
+        SinkInputView {
             model: SinkInputModel {}
             emptyText: i18nc("@label", "No Applications Playing Audio")
         }
     }
     Tab {
         title: i18nc("@title:tab", "Recording")
-        StreamView {
+        SourceOutputView {
             model: SourceOutputModel {}
             emptyText: i18nc("@label", "No Applications Recording Audio")
         }
@@ -49,14 +52,14 @@ TabView {
     Tab {
         title: i18nc("@title:tab", "Output Devices")
         DeviceView {
-            model: SinkModel {}
+            model: sinkModel
             emptyText: i18nc("@label", "No Output Devices Available")
         }
     }
     Tab {
         title: i18nc("@title:tab", "Input Devices")
         DeviceView {
-            model: SourceModel {}
+            model: sourceModel
             emptyText: i18nc("@label", "No Input Devices Available")
         }
     }
