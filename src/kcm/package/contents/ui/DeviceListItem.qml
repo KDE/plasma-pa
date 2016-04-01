@@ -63,7 +63,6 @@ ColumnLayout {
 
     ColumnLayout {
         width: parent.width
-        enabled: !PulseObject.muted
 
         RowLayout {
             visible: portbox.count > 1
