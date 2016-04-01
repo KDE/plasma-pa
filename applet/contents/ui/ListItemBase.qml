@@ -39,46 +39,11 @@ PlasmaComponents.ListItem {
 
     enabled: subComponent
 
-    function volumePercent(volume) {
-        return 100 * volume / slider.maximumValue;
-    }
-
     function setVolume(volume) {
         if (volume > 0 && Muted) {
-            toggleMute();
+            Muted = false;
         }
         PulseObject.volume = volume
-    }
-
-    function bound(value, min, max) {
-        return Math.max(min, Math.min(value, max));
-    }
-
-    // FIXME: increase/decrease are also present on app streams as they derive
-    //        from this, they are not used there though.
-    //        seems naughty.
-    function increaseVolume() {
-        var step = slider.maximumValue / 15;
-        var volume = bound(PulseObject.volume + step, 0, slider.maximumValue);
-        setVolume(volume);
-        osd.show(volumePercent(volume));
-    }
-
-    function decreaseVolume() {
-        var step = slider.maximumValue / 15;
-        var volume = bound(PulseObject.volume - step, 0, slider.maximumValue);
-        setVolume(volume);
-        osd.show(volumePercent(volume));
-    }
-
-    function toggleMute() {
-        var toMute = !Muted;
-        if (toMute) {
-            osd.show(0);
-        } else {
-            osd.show(volumePercent(Volume));
-        }
-        Muted = toMute;
     }
 
     anchors {

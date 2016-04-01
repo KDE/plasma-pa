@@ -32,41 +32,60 @@ import "../code/icon.js" as Icon
 
 Item {
     id: main
+
+    property int volumeStep: 65536 / 15
+    property string displayName: i18n("Audio Volume")
+
     Layout.minimumHeight: units.gridUnit * 12
     Layout.minimumWidth: units.gridUnit * 12
     Layout.preferredHeight: units.gridUnit * 20
     Layout.preferredWidth: units.gridUnit * 20
-    property string displayName: i18n("Audio Volume")
 
-    Plasmoid.icon: sinkModel.sinks.length > 0 ? Icon.name(sinkModel.sinks[0].volume, sinkModel.sinks[0].muted) : Icon.name(0, true)
+    Plasmoid.icon: sinkModel.defaultSink ? Icon.name(sinkModel.defaultSink.volume, sinkModel.defaultSink.muted) : Icon.name(0, true)
     Plasmoid.switchWidth: units.gridUnit * 12
     Plasmoid.switchHeight: units.gridUnit * 12
     Plasmoid.toolTipMainText: displayName
-    // FIXME:    Plasmoid.toolTipSubText: sinkModel.volumeText
+    Plasmoid.toolTipSubText: sinkModel.defaultSink ? i18n("Volume at %1%\n%2", volumePercent(sinkModel.defaultSink.volume), sinkModel.defaultSink.description) : ""
 
-    function runOnAllSinks(func) {
-        if (typeof(sinkView) === "undefined") {
-            print("This case we need to handle.");
-            return;
-        } else if (sinkView.count < 0) {
+    function bound(value, min, max) {
+        return Math.max(min, Math.min(value, max));
+    }
+
+    function volumePercent(volume) {
+        return Math.round(100 * volume / 65536);
+    }
+
+    function increaseVolume(showOsd) {
+        if (!sinkModel.defaultSink) {
             return;
         }
-        for (var i = 0; i < sinkView.count; ++i) {
-            sinkView.currentIndex = i;
-            sinkView.currentItem[func]();
+        var volume = bound(sinkModel.defaultSink.volume + volumeStep, 0, 65536);
+        sinkModel.defaultSink.volume = volume;
+        if (showOsd) {
+            osd.show(volumePercent(volume));
         }
     }
 
-    function increaseVolume() {
-        runOnAllSinks("increaseVolume");
+    function decreaseVolume(showOsd) {
+        if (!sinkModel.defaultSink) {
+            return;
+        }
+        var volume = bound(sinkModel.defaultSink.volume - volumeStep, 0, 65536);
+        sinkModel.defaultSink.volume = volume;
+        if (showOsd) {
+            osd.show(volumePercent(volume));
+        }
     }
 
-    function decreaseVolume() {
-        runOnAllSinks("decreaseVolume");
-    }
-
-    function muteVolume() {
-        runOnAllSinks("toggleMute");
+    function muteVolume(showOsd) {
+        if (!sinkModel.defaultSink) {
+            return;
+        }
+        var toMute = !sinkModel.defaultSink.muted;
+        sinkModel.defaultSink.muted = toMute;
+        if (showOsd) {
+            osd.show(toMute ? 0 : volumePercent(sinkModel.defaultSink.volume));
+        }
     }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
@@ -128,19 +147,19 @@ Item {
             objectName: "increase_volume"
             text: i18n("Increase Volume")
             shortcut: Qt.Key_VolumeUp
-            onTriggered: increaseVolume()
+            onTriggered: increaseVolume(true)
         }
         GlobalAction {
             objectName: "decrease_volume"
             text: i18n("Decrease Volume")
             shortcut: Qt.Key_VolumeDown
-            onTriggered: decreaseVolume()
+            onTriggered: decreaseVolume(true)
         }
         GlobalAction {
             objectName: "mute"
             text: i18n("Mute")
             shortcut: Qt.Key_VolumeMute
-            onTriggered: muteVolume()
+            onTriggered: muteVolume(true)
         }
     }
 

@@ -29,6 +29,7 @@
 #include "sinkinput.h"
 #include "source.h"
 #include "sourceoutput.h"
+#include "server.h"
 
 namespace QPulseAudio
 {
@@ -111,20 +112,14 @@ SinkModel::SinkModel(QObject *parent)
     connect(&context()->sinks(), &SinkMap::added, this, &SinkModel::sinksChanged);
     connect(&context()->sinks(), &SinkMap::updated, this, &SinkModel::sinksChanged);
     connect(&context()->sinks(), &SinkMap::removed, this, &SinkModel::sinksChanged);
+    connect(context()->server(), &Server::defaultSinkChanged, this, &SinkModel::defaultSinkChanged);
 
     emit sinksChanged();
 }
 
-#warning very naughty, used by main.qml to set volume on all sinks
-QList<QObject *> SinkModel::sinks() const
+Sink *SinkModel::defaultSink() const
 {
-    QList <QObject *> ret;
-    if (!context())
-        return ret;
-    for (Sink *sink : context()->sinks().data().values()) {
-        ret << sink;
-    }
-    return ret;
+    return context()->server()->defaultSink();
 }
 
 int SinkModel::rowCount(const QModelIndex &parent) const
@@ -301,8 +296,14 @@ SourceModel::SourceModel(QObject *parent)
     connect(&context()->sources(), &SourceMap::added, this, &SourceModel::sourcesChanged);
     connect(&context()->sources(), &SourceMap::updated, this, &SourceModel::sourcesChanged);
     connect(&context()->sources(), &SourceMap::removed, this, &SourceModel::sourcesChanged);
+    connect(context()->server(), &Server::defaultSourceChanged, this, &SourceModel::defaultSourceChanged);
 
     emit sourcesChanged();
+}
+
+Source *SourceModel::defaultSource() const
+{
+    return context()->server()->defaultSource();
 }
 
 int SourceModel::rowCount(const QModelIndex &parent) const

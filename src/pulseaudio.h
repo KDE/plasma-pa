@@ -64,7 +64,7 @@ private:
 class Q_DECL_EXPORT SinkModel : public AbstractModel
 {
     Q_OBJECT
-    Q_PROPERTY(QList<QObject *> sinks READ sinks NOTIFY sinksChanged)
+    Q_PROPERTY(QPulseAudio::Sink *defaultSink READ defaultSink NOTIFY defaultSinkChanged)
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
@@ -74,7 +74,7 @@ public:
 
     SinkModel(QObject *parent = nullptr);
 
-    QList<QObject *> sinks() const;
+    Sink *defaultSink() const;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
@@ -82,6 +82,7 @@ public:
 
 signals:
     void sinksChanged();
+    void defaultSinkChanged();
 
 protected:
     virtual void onDataAdded(quint32 index) Q_DECL_OVERRIDE Q_DECL_FINAL;
@@ -97,6 +98,7 @@ private:
 class Q_DECL_EXPORT SourceModel : public AbstractModel
 {
     Q_OBJECT
+    Q_PROPERTY(QPulseAudio::Source *defaultSource READ defaultSource NOTIFY defaultSourceChanged)
 public:
     enum ItemRole {
         IndexRole = Qt::UserRole + 1,
@@ -106,12 +108,15 @@ public:
 
     SourceModel(QObject *parent = nullptr);
 
+    Source *defaultSource() const;
+
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
     bool setData(const QModelIndex &index, const QVariant &value, int role) Q_DECL_OVERRIDE;
 
 signals:
     void sourcesChanged();
+    void defaultSourceChanged();
 
 protected:
     virtual void onDataAdded(quint32 index) Q_DECL_OVERRIDE Q_DECL_FINAL;

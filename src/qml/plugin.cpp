@@ -24,13 +24,14 @@
 
 #include "pulseaudio.h"
 #include "client.h"
+#include "sink.h"
+#include "source.h"
 
 #include "globalactioncollection.h"
 #include "volumeosd.h"
 
 void Plugin::registerTypes(const char* uri)
 {
-    qmlRegisterType<QPulseAudio::Context>();
     qmlRegisterType<QPulseAudio::CardModel>(uri, 0, 1, "CardModel");
     qmlRegisterType<QPulseAudio::ClientModel>(uri, 0, 1, "ClientModel");
     qmlRegisterType<QPulseAudio::SinkModel>(uri, 0, 1, "SinkModel");
@@ -41,5 +42,8 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
     qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
     qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");
+
     qmlRegisterType<QPulseAudio::Client>();
+    qmlRegisterType<QPulseAudio::Sink>();
+    qmlRegisterType<QPulseAudio::Source>();
 }
