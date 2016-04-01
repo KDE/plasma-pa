@@ -21,6 +21,7 @@
 #include "sink.h"
 
 #include "context.h"
+#include "server.h"
 
 namespace QPulseAudio
 {
@@ -28,6 +29,7 @@ namespace QPulseAudio
 Sink::Sink(QObject *parent)
     : Device(parent)
 {
+    connect(context()->server(), &Server::defaultSinkChanged, this, &Sink::defaultChanged);
 }
 
 void Sink::update(const pa_sink_info *info)
@@ -59,6 +61,18 @@ void Sink::setActivePortIndex(quint32 port_index)
 void Sink::setChannelVolume(int channel, qint64 volume)
 {
     context()->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_volume_by_index);
+}
+
+bool Sink::isDefault() const
+{
+    return context()->server()->defaultSink() == this;
+}
+
+void Sink::setDefault(bool enable)
+{
+    if (enable) {
+        context()->server()->setDefaultSink(this);
+    }
 }
 
 } // QPulseAudio

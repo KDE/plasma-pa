@@ -1,5 +1,5 @@
 /*
-    Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2016 David Rosca <nowrep@gmail.com>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -21,12 +21,10 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.0
 
-Button {
-    property bool muted: true
+RadioButton {
+    property bool isDefault: true
 
-    iconName: 'audio-volume-muted'
-    tooltip: i18n("Mute audio")
-    checkable: true
-    checked: muted
-    onClicked: muted = !muted
+    checked: isDefault
+    text: checked ? i18n("Default") : ""
+    onIsDefaultChanged: checked = isDefault
 }

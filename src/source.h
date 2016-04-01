@@ -37,6 +37,9 @@ public:
     void setMuted(bool muted) Q_DECL_OVERRIDE;
     void setActivePortIndex(quint32 port_index) Q_DECL_OVERRIDE;
     void setChannelVolume(int channel, qint64 volume) Q_DECL_OVERRIDE;
+
+    bool isDefault() const Q_DECL_OVERRIDE;
+    void setDefault(bool enable) Q_DECL_OVERRIDE;
 };
 
 } // QPulseAudio

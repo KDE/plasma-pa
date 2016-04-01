@@ -30,7 +30,6 @@ ColumnLayout {
 
     RowLayout {
         QIconItem {
-            Layout.alignment: Qt.AlignBottom
             width: height
             height: inputText.height
             icon: 'audio-card'
@@ -38,10 +37,22 @@ ColumnLayout {
 
         Label {
             id: inputText
-            Layout.alignment: Qt.AlignBottom
             Layout.fillWidth: true
             elide: Text.ElideRight
             text: PulseObject.description
+        }
+
+        DefaultDeviceButton {
+            visible: delegate.ListView.view.count > 1
+            isDefault: PulseObject.default
+            onCheckedChanged: {
+                if (!checked) {
+                    // Cannot unset default device
+                    checked = isDefault;
+                } else {
+                    PulseObject.default = true;
+                }
+            }
         }
 
         MuteButton {

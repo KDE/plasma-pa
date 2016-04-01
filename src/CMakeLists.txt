@@ -19,6 +19,7 @@ set(SRC_LIST
     stream.cpp
     volumeobject.cpp
     debug.cpp
+    server.cpp
 )
 
 add_library(QPulseAudioPrivate SHARED ${SRC_LIST})

@@ -40,6 +40,7 @@ class Q_DECL_EXPORT Device : public VolumeObject
     Q_PROPERTY(quint32 cardIndex READ cardIndex NOTIFY cardIndexChanged)
     Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)
     Q_PROPERTY(quint32 activePortIndex READ activePortIndex WRITE setActivePortIndex NOTIFY activePortIndexChanged)
+    Q_PROPERTY(bool default READ isDefault WRITE setDefault NOTIFY defaultChanged)
 public:
     virtual ~Device() {}
 
@@ -84,6 +85,8 @@ public:
     QList<QObject *> ports() const;
     quint32 activePortIndex() const;
     virtual void setActivePortIndex(quint32 port_index) = 0;
+    virtual bool isDefault() const = 0;
+    virtual void setDefault(bool enable) = 0;
 
 signals:
     void nameChanged();
@@ -91,6 +94,7 @@ signals:
     void cardIndexChanged();
     void portsChanged();
     void activePortIndexChanged();
+    void defaultChanged();
 
 protected:
     Device(QObject *parent);

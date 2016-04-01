@@ -19,6 +19,7 @@
 */
 
 #include "context.h"
+#include "server.h"
 
 #include <QAbstractEventDispatcher>
 #include "debug.h"
@@ -118,6 +119,13 @@ static void card_cb(pa_context *context, const pa_card_info *info, int eol, void
     ((Context *)data)->cardCallback(info);
 }
 
+static void server_cb(pa_context *context, const pa_server_info *info, void *data)
+{
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    ((Context *)data)->serverCallback(info);
+}
+
 static void context_state_callback(pa_context *context, void *data)
 {
     Q_ASSERT(data);
@@ -134,6 +142,7 @@ static void subscribe_cb(pa_context *context, pa_subscription_event_type_t type,
 
 Context::Context(QObject *parent)
     : QObject(parent)
+    , m_server(new Server(this))
     , m_context(nullptr)
     , m_mainloop(nullptr)
     , m_references(0)
@@ -248,6 +257,13 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
         }
         break;
 
+    case PA_SUBSCRIPTION_EVENT_SERVER:
+        if (!PAOperation(pa_context_get_server_info(context, server_cb, this))) {
+            qCWarning(PLASMAPA) << "pa_context_get_server_info() failed";
+            return;
+        }
+        break;
+
     }
 }
 
@@ -268,7 +284,8 @@ void Context::contextStateCallback(pa_context *c)
                                             PA_SUBSCRIPTION_MASK_CLIENT|
                                             PA_SUBSCRIPTION_MASK_SINK_INPUT|
                                             PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT|
-                                            PA_SUBSCRIPTION_MASK_CARD), nullptr, nullptr))) {
+                                            PA_SUBSCRIPTION_MASK_CARD|
+                                            PA_SUBSCRIPTION_MASK_SERVER), nullptr, nullptr))) {
                 qCWarning(PLASMAPA) << "pa_context_subscribe() failed";
                 return;
             }
@@ -301,6 +318,11 @@ void Context::contextStateCallback(pa_context *c)
 
         if (!PAOperation(pa_context_get_source_output_info_list(c, source_output_cb, this))) {
             qCWarning(PLASMAPA) << "pa_context_get_source_output_info_list() failed";
+            return;
+        }
+
+        if (!PAOperation(pa_context_get_server_info(c, server_cb, this))) {
+            qCWarning(PLASMAPA) << "pa_context_get_server_info() failed";
             return;
         }
 
@@ -358,6 +380,11 @@ void Context::cardCallback(const pa_card_info *info)
     m_cards.updateEntry(info, this);
 }
 
+void Context::serverCallback(const pa_server_info *info)
+{
+    m_server->update(info);
+}
+
 void Context::setCardProfile(quint32 index, const QString &profile)
 {
     qCDebug(PLASMAPA) << Q_FUNC_INFO << index << profile;
@@ -367,6 +394,28 @@ void Context::setCardProfile(quint32 index, const QString &profile)
                                                           nullptr, nullptr))) {
         qCWarning(PLASMAPA) << "pa_context_set_card_profile_by_index failed";
         return;
+    }
+}
+
+void Context::setDefaultSink(const QString &name)
+{
+    const QByteArray nameData = name.toUtf8();
+    if (!PAOperation(pa_context_set_default_sink(m_context,
+                                                 nameData.constData(),
+                                                 nullptr,
+                                                 nullptr))) {
+        qCWarning(PLASMAPA) << "pa_context_set_default_sink failed";
+    }
+}
+
+void Context::setDefaultSource(const QString &name)
+{
+    const QByteArray nameData = name.toUtf8();
+    if (!PAOperation(pa_context_set_default_source(m_context,
+                                                 nameData.constData(),
+                                                 nullptr,
+                                                 nullptr))) {
+        qCWarning(PLASMAPA) << "pa_context_set_default_source failed";
     }
 }
 
@@ -407,6 +456,7 @@ void Context::reset()
     m_sources.reset();
     m_sourceOutputs.reset();
     m_clients.reset();
+    m_server->reset();
 }
 
 } // QPulseAudio

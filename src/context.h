@@ -36,6 +36,8 @@
 namespace QPulseAudio
 {
 
+class Server;
+
 class Q_DECL_EXPORT Context : public QObject
 {
     Q_OBJECT
@@ -56,6 +58,7 @@ public:
     const SourceOutputMap &sourceOutputs() const { return m_sourceOutputs; }
     const ClientMap &clients() const { return m_clients; }
     const CardMap &cards() const { return m_cards; }
+    Server *server() const { return m_server; }
 
     void subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index);
     void contextStateCallback(pa_context *context);
@@ -66,8 +69,11 @@ public:
     void sourceOutputCallback(const pa_source_output_info *info);
     void clientCallback(const pa_client_info *info);
     void cardCallback(const pa_card_info *info);
+    void serverCallback(const pa_server_info *info);
 
     void setCardProfile(quint32 index, const QString &profile);
+    void setDefaultSink(const QString &name);
+    void setDefaultSource(const QString &name);
 
     template <typename PAFunction>
     void setGenericVolume(quint32 index, int channel, qint64 newVolume,
@@ -128,7 +134,7 @@ public:
     }
 
 private:
-    Q_INVOKABLE void connectToDaemon();
+    void connectToDaemon();
     void reset();
 
     // Don't forget to add things to reset().
@@ -138,6 +144,7 @@ private:
     SourceOutputMap m_sourceOutputs;
     ClientMap m_clients;
     CardMap m_cards;
+    Server *m_server;
 
     pa_context *m_context;
     pa_glib_mainloop *m_mainloop;

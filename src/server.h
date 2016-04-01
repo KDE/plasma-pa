@@ -1,5 +1,5 @@
 /*
-    Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2016 David Rosca <nowrep@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,30 +18,43 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SINK_H
-#define SINK_H
+#ifndef SERVER_H
+#define SERVER_H
 
-#include "device.h"
+#include <QObject>
+#include <pulse/introspect.h>
 
 namespace QPulseAudio
 {
 
-class Q_DECL_EXPORT Sink : public Device
+class Sink;
+class Source;
+
+class Q_DECL_EXPORT Server : public QObject
 {
     Q_OBJECT
+
 public:
-    Sink(QObject *parent);
+    explicit Server(QObject *parent = nullptr);
 
-    void update(const pa_sink_info *info);
-    void setVolume(qint64 volume) Q_DECL_OVERRIDE;
-    void setMuted(bool muted) Q_DECL_OVERRIDE;
-    void setActivePortIndex(quint32 port_index) Q_DECL_OVERRIDE;
-    void setChannelVolume(int channel, qint64 volume) Q_DECL_OVERRIDE;
+    Sink *defaultSink() const;
+    void setDefaultSink(Sink *sink);
 
-    bool isDefault() const Q_DECL_OVERRIDE;
-    void setDefault(bool enable) Q_DECL_OVERRIDE;
+    Source *defaultSource() const;
+    void setDefaultSource(Source *source);
+
+    void reset();
+    void update(const pa_server_info *info);
+
+signals:
+    void defaultSinkChanged(Sink *sink);
+    void defaultSourceChanged(Source *source);
+
+private:
+    Sink *m_defaultSink;
+    Source *m_defaultSource;
 };
 
 } // QPulseAudio
 
-#endif // SINK_H
+#endif // CONTEXT_H
