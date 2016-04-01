@@ -35,6 +35,8 @@ class VolumeObject : public PulseObject
     Q_PROPERTY(bool muted READ isMuted WRITE setMuted NOTIFY mutedChanged)
     Q_PROPERTY(bool hasVolume READ hasVolume NOTIFY hasVolumeChanged)
     Q_PROPERTY(bool volumeWritable READ isVolumeWritable NOTIFY isVolumeWritableChanged)
+    Q_PROPERTY(QStringList channels READ channels NOTIFY channelsChanged)
+    Q_PROPERTY(QList<qint64> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
 public:
     VolumeObject(QObject *parent);
     virtual ~VolumeObject();
@@ -47,11 +49,20 @@ public:
             m_muted = info->mute;
             emit mutedChanged();
         }
-#warning fixme volume needs manual compare
-//            if (m_volume != info->volume) {
-                m_volume = info->volume;
-                emit volumeChanged();
-//            }
+        if (memcmp(&m_volume, &info->volume, sizeof(pa_cvolume)) != 0) {
+            m_volume = info->volume;
+            emit volumeChanged();
+            emit channelVolumesChanged();
+        }
+        QStringList infoChannels;
+        infoChannels.reserve(info->channel_map.channels);
+        for (int i = 0; i < info->channel_map.channels; ++i) {
+            infoChannels << QString::fromUtf8(pa_channel_position_to_pretty_string(info->channel_map.map[i]));
+        }
+        if (m_channels != infoChannels) {
+            m_channels = infoChannels;
+            emit channelsChanged();
+        }
     }
 
     qint64 volume() const;
@@ -63,11 +74,17 @@ public:
     bool hasVolume() const;
     bool isVolumeWritable() const;
 
+    QStringList channels() const;
+    QList<qint64> channelVolumes() const;
+    Q_INVOKABLE virtual void setChannelVolume(int channel, qint64 volume) = 0;
+
 signals:
     void volumeChanged();
     void mutedChanged();
     void hasVolumeChanged();
     void isVolumeWritableChanged();
+    void channelsChanged();
+    void channelVolumesChanged();
 
 protected:
     pa_cvolume cvolume() const;
@@ -76,6 +93,7 @@ protected:
     bool m_muted;
     bool m_hasVolume;
     bool m_volumeWritable;
+    QStringList m_channels;
 };
 
 } // QPulseAudio

@@ -51,12 +51,17 @@ void SinkInput::setSinkIndex(quint32 sinkIndex)
 
 void SinkInput::setVolume(qint64 volume)
 {
-    context()->setGenericVolume(index(), volume, cvolume(), &pa_context_set_sink_input_volume);
+    context()->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_sink_input_volume);
 }
 
 void SinkInput::setMuted(bool muted)
 {
     context()->setGenericMute(index(), muted, &pa_context_set_sink_input_mute);
+}
+
+void SinkInput::setChannelVolume(int channel, qint64 volume)
+{
+    context()->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_input_volume);
 }
 
 } // QPulseAudio

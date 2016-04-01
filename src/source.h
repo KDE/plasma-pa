@@ -36,6 +36,7 @@ public:
     void setVolume(qint64 volume) Q_DECL_OVERRIDE;
     void setMuted(bool muted) Q_DECL_OVERRIDE;
     void setActivePortIndex(quint32 port_index) Q_DECL_OVERRIDE;
+    void setChannelVolume(int channel, qint64 volume) Q_DECL_OVERRIDE;
 };
 
 } // QPulseAudio

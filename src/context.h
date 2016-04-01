@@ -70,20 +70,26 @@ public:
     void setCardProfile(quint32 index, const QString &profile);
 
     template <typename PAFunction>
-    void setGenericVolume(quint32 index, qint64 newVolume,
+    void setGenericVolume(quint32 index, int channel, qint64 newVolume,
                           pa_cvolume cVolume, PAFunction pa_set_volume)
     {
         // TODO: overdrive
         newVolume = qBound<qint64>(0, newVolume, 65536);
         pa_cvolume newCVolume = cVolume;
-        for (int i = 0; i < newCVolume.channels; ++i) {
-            newCVolume.values[i] = newVolume;
+        if (channel == -1) { // -1 all channels
+            for (int i = 0; i < newCVolume.channels; ++i) {
+                newCVolume.values[i] = newVolume;
+            }
+        } else {
+            Q_ASSERT(newCVolume.channels > channel);
+            newCVolume.values[channel] = newVolume;
         }
         if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, nullptr, nullptr))) {
             qCWarning(PLASMAPA) <<  "pa_set_volume failed";
             return;
         }
     }
+
     template <typename PAFunction>
     void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
     {

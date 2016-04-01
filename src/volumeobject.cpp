@@ -35,7 +35,6 @@ VolumeObject::~VolumeObject()
 {
 }
 
-#warning volume value is a bit meh with channels in the picture
 qint64 VolumeObject::volume() const
 {
     return m_volume.values[0];
@@ -59,6 +58,21 @@ bool VolumeObject::hasVolume() const
 bool VolumeObject::isVolumeWritable() const
 {
     return m_volumeWritable;
+}
+
+QStringList VolumeObject::channels() const
+{
+    return m_channels;
+}
+
+QList<qint64> VolumeObject::channelVolumes() const
+{
+    QList<qint64> ret;
+    ret.reserve(m_volume.channels);
+    for (int i = 0; i < m_volume.channels; ++i) {
+        ret << m_volume.values[i];
+    }
+    return ret;
 }
 
 } // QPulseAudio
