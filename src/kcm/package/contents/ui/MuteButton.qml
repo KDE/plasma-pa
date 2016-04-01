@@ -27,5 +27,5 @@ Button {
     iconName: 'audio-volume-muted'
     checkable: true
     checked: muted
-    onClicked: muted = !muted
+    onMutedChanged: checked = muted
 }
