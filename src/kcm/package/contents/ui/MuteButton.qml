@@ -28,5 +28,5 @@ Button {
     tooltip: i18n("Mute audio")
     checkable: true
     checked: muted
-    onClicked: muted = !muted
+    onMutedChanged: checked = muted
 }

@@ -57,7 +57,7 @@ ColumnLayout {
 
         MuteButton {
             muted: PulseObject.muted
-            onMutedChanged: PulseObject.muted = muted
+            onCheckedChanged: PulseObject.muted = checked
         }
     }
 
