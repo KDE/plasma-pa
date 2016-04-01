@@ -339,7 +339,7 @@ void Context::contextStateCallback(pa_context *c)
         //            qCWarning(PLASMAPA) << "Failed to initialize stream_restore extension: " << pa_strerror(pa_context_errno(m_context));
         //        }
     } else if (!PA_CONTEXT_IS_GOOD(state)) {
-        qCDebug(PLASMAPA) << "context kaput";
+        qCWarning(PLASMAPA) << "context kaput";
         if (m_context) {
             pa_context_unref(m_context);
             m_context = nullptr;
@@ -387,7 +387,7 @@ void Context::serverCallback(const pa_server_info *info)
 
 void Context::setCardProfile(quint32 index, const QString &profile)
 {
-    qCDebug(PLASMAPA) << Q_FUNC_INFO << index << profile;
+    qCDebug(PLASMAPA) << index << profile;
     if (!PAOperation(pa_context_set_card_profile_by_index(m_context,
                                                           index,
                                                           profile.toUtf8().constData(),
@@ -425,7 +425,7 @@ void Context::connectToDaemon()
 
     // We require a glib event loop
     if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")) {
-        qCDebug(PLASMAPA) << "Disabling PulseAudio integration for lack of GLib event loop";
+        qCWarning(PLASMAPA) << "Disabling PulseAudio integration for lack of GLib event loop";
         return;
     }
 

@@ -49,7 +49,6 @@ void Sink::setMuted(bool muted)
 
 void Sink::setActivePortIndex(quint32 port_index)
 {
-    qCDebug(PLASMAPA) << port_index;
     Port *port = qobject_cast<Port *>(ports().at(port_index));
     if (!port) {
         qCWarning(PLASMAPA) << "invalid port set request" << port_index;
