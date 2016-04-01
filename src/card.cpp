@@ -44,13 +44,11 @@ void Card::update(const pa_card_info *info)
 
     qDeleteAll(m_profiles);
     m_profiles.clear();
-#warning more inconsistent api... profiles end with entry with name on null...
-#warning profiles2 fixes this
-    for (auto *it = info->profiles; it->name != nullptr; ++it) {
+    for (auto **it = info->profiles2; it && *it != nullptr; ++it) {
         Profile *profile = new Profile(this);
-        profile->setInfo(it);
+        profile->setInfo(*it);
         m_profiles.append(profile);
-        if (info->active_profile == it) {
+        if (info->active_profile2 == *it) {
             m_activeProfileIndex = m_profiles.length() - 1;
         }
     }

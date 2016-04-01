@@ -228,8 +228,6 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     connect(map, &MapBaseQObject::removed, this, &AbstractModel::onDataRemoved);
 }
 
-#warning probably should be called from constructor and it should get the mo passed
-
 void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
 {
     QMetaEnum enumerator;

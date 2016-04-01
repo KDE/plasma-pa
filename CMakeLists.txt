@@ -28,7 +28,7 @@ find_package(KF5 REQUIRED COMPONENTS
     I18n
     Plasma
 )
-find_package(PulseAudio REQUIRED)
+find_package(PulseAudio 5.0.0 REQUIRED)
 find_package(GLIB2 REQUIRED)
 
 add_subdirectory(applet)

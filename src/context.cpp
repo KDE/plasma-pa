@@ -76,7 +76,7 @@ static void source_cb(pa_context *context, const pa_source_info *info, int eol, 
 {
     if (!isGoodState(eol))
         return;
-#warning force excluding monitors
+    // FIXME: This forces excluding monitors
     if (info->monitor_of_sink != PA_INVALID_INDEX)
         return;
     Q_ASSERT(context);
@@ -88,7 +88,7 @@ static void source_output_cb(pa_context *context, const pa_source_output_info *i
 {
     if (!isGoodState(eol))
         return;
-#warning force excluding random apps
+    // FIXME: This forces excluding these apps
     if (const char *app = pa_proplist_gets(info->proplist, PA_PROP_APPLICATION_ID)) {
         if (strcmp(app, "org.PulseAudio.pavucontrol") == 0
                 || strcmp(app, "org.gnome.VolumeControl") == 0
@@ -237,7 +237,6 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
         }
         break;
 
-#warning maybe point out to upstream that their api is inconsistent _by_index vs. null
     case PA_SUBSCRIPTION_EVENT_CARD:
         if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
             m_cards.removeEntry(index);
@@ -305,7 +304,7 @@ void Context::contextStateCallback(pa_context *c)
             return;
         }
 
-#warning todo
+        // TODO
         /* These calls are not always supported */
         //        if ((o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, NULL))) {
         //            pa_operation_unref(o);
@@ -330,7 +329,7 @@ void Context::contextStateCallback(pa_context *c)
 
 void Context::sinkCallback(const pa_sink_info *info)
 {
-#warning this parenting here is a bit weird
+    // This parenting here is a bit weird
     m_sinks.updateEntry(info, this);
 }
 
