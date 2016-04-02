@@ -36,3 +36,9 @@ void VolumeOSD::show(int percent)
     OsdServiceInterface osdService(SERVICE, PATH, CONNECTION);
     osdService.volumeChanged(percent);
 }
+
+void VolumeOSD::showMicrophone(int percent)
+{
+    OsdServiceInterface osdService(SERVICE, PATH, CONNECTION);
+    osdService.microphoneVolumeChanged(percent);
+}

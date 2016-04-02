@@ -20,6 +20,9 @@
     <method name="volumeChanged">
       <arg name="percent" type="i" direction="in"/>
     </method>
+    <method name="microphoneVolumeChanged">
+      <arg name="percent" type="i" direction="in"/>
+    </method>
     <method name="mediaPlayerVolumeChanged">
       <arg name="percent" type="i" direction="in"/>
       <arg name="playerName" type="s" direction="in"/>

@@ -31,6 +31,7 @@ public:
 
 public slots:
     void show(int percent);
+    void showMicrophone(int percent);
 };
 
 #endif // VOLUMEOSD_H

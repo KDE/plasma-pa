@@ -83,6 +83,33 @@ Item {
         osd.show(toMute ? 0 : volumePercent(sinkModel.defaultSink.volume));
     }
 
+    function increaseMicrophoneVolume() {
+        if (!sourceModel.defaultSource) {
+            return;
+        }
+        var volume = bound(sourceModel.defaultSource.volume + volumeStep, 0, 65536);
+        sourceModel.defaultSource.volume = volume;
+        osd.showMicrophone(volumePercent(volume));
+    }
+
+    function decreaseMicrophoneVolume() {
+        if (!sourceModel.defaultSource) {
+            return;
+        }
+        var volume = bound(sourceModel.defaultSource.volume - volumeStep, 0, 65536);
+        sourceModel.defaultSource.volume = volume;
+        osd.showMicrophone(volumePercent(volume));
+    }
+
+    function muteMicrophone() {
+        if (!sourceModel.defaultSource) {
+            return;
+        }
+        var toMute = !sourceModel.defaultSource.muted;
+        sourceModel.defaultSource.muted = toMute;
+        osd.showMicrophone(toMute? 0 : volumePercent(sourceModel.defaultSource.volume));
+    }
+
     function beginMoveStream(type, stream) {
         if (type == "sink") {
             sourceView.visible = false;
@@ -176,6 +203,24 @@ Item {
             text: i18n("Mute")
             shortcut: Qt.Key_VolumeMute
             onTriggered: muteVolume()
+        }
+        GlobalAction {
+            objectName: "increase_microphone_volume"
+            text: i18n("Increase Microphone Volume")
+            shortcut: Qt.Key_MicVolumeUp
+            onTriggered: increaseMicrophoneVolume()
+        }
+        GlobalAction {
+            objectName: "decrease_microphone_volume"
+            text: i18n("Decrease Microphone Volume")
+            shortcut: Qt.Key_MicVolumeDown
+            onTriggered: decreaseMicrophoneVolume()
+        }
+        GlobalAction {
+            objectName: "mic_mute"
+            text: i18n("Mute Microphone")
+            shortcut: Qt.Key_MicMute
+            onTriggered: muteMicrophone()
         }
     }
 
