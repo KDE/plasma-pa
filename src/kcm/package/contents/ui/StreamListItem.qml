@@ -54,7 +54,10 @@ ColumnLayout {
                 Label {
                     id: inputText
                     Layout.fillWidth: true
-                    text: i18nc("label of stream items", "%1: %2", PulseObject.client.name, PulseObject.name)
+                    text: PulseObject.client ? i18nc("label of stream items", "%1: %2",
+                                                     PulseObject.client.name,
+                                                     PulseObject.name)
+                                             : PulseObject.name
                     elide: Text.ElideRight
                 }
 
