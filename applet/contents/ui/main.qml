@@ -222,8 +222,8 @@ Item {
                     Layout.minimumHeight: contentHeight
                     Layout.maximumHeight: contentHeight
 
-                    model: SinkInputModel {
-                        id: sinkInputModel
+                    model: PulseObjectFilterModel {
+                        sourceModel: SinkInputModel {}
                     }
                     boundsBehavior: Flickable.StopAtBounds;
                     delegate: StreamListItem {}
@@ -241,8 +241,8 @@ Item {
                     Layout.minimumHeight: contentHeight
                     Layout.maximumHeight: contentHeight
 
-                    model: SourceOutputModel {
-                        id: sourceOutputModel
+                    model: PulseObjectFilterModel {
+                        sourceModel: SourceOutputModel {}
                     }
                     boundsBehavior: Flickable.StopAtBounds;
                     delegate: StreamListItem {}

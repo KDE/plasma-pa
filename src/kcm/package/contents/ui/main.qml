@@ -38,14 +38,18 @@ TabView {
     Tab {
         title: i18nc("@title:tab", "Applications")
         SinkInputView {
-            model: SinkInputModel {}
+            model: PulseObjectFilterModel {
+                sourceModel: SinkInputModel {}
+            }
             emptyText: i18nc("@label", "No Applications Playing Audio")
         }
     }
     Tab {
         title: i18nc("@title:tab", "Recording")
         SourceOutputView {
-            model: SourceOutputModel {}
+            model: PulseObjectFilterModel {
+                sourceModel: SourceOutputModel {}
+            }
             emptyText: i18nc("@label", "No Applications Recording Audio")
         }
     }

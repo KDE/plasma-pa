@@ -1,6 +1,7 @@
 set(qml_SRCS
     qmldir
     ClientIcon.qml
+    PulseObjectFilterModel.qml
 )
 
 set(cpp_SRCS
