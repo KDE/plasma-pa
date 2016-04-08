@@ -1,7 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY Sebastian.Kuegler '<personname><firstname>Sebastian</firstname><surname>Kügler</surname></personname>'>
-  <!ENTITY Sebastian.Kuegler.mail '<email>sebas@kde.org</email>'>
   <!ENTITY i18n-plasmapa 'Audio Volume'>
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
