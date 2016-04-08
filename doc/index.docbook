@@ -1,13 +1,15 @@
 <?xml version="1.0" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kappname "&plasmapa;">
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY Sebastian.Kuegler '<personname><firstname>Sebastian</firstname><surname>Kügler</surname></personname>'>
+  <!ENTITY Sebastian.Kuegler.mail '<email>sebas@kde.org</email>'>
+  <!ENTITY i18n-plasmapa 'Audio Volume'>
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
 ]>
-<book id="plasmapa" lang="&language;">
+<article id="plasmapa" lang="&language;">
 
-<bookinfo>
-<title>The &plasmapa; Handbook</title>
+<articleinfo>
+<title>&i18n-plasmapa;</title>
 
 <authorgroup>
 <author>
@@ -28,7 +30,7 @@
 
 <abstract>
 <para>
-This documentation describes the Pulseaudio Systemsettings module.
+This documentation describes the &i18n-plasmapa; Systemsettings module.
 </para>
 </abstract>
 
@@ -47,30 +49,29 @@ This documentation describes the Pulseaudio Systemsettings module.
 <keyword>pulseaudio</keyword>
 </keywordset>
 
-</bookinfo>
+</articleinfo>
 
-<chapter id="introduction">
+<sect1 id="introduction">
 <title>Introduction</title>
 
 <para>
-&plasmapa; provides the user with a mechanism to control the volume of devices and applications using the Pulseaudio sound system.
+&i18n-plasmapa; provides the user with a mechanism to control the volume of devices and applications using the PulsAudio sound system.
 </para>
-</chapter>
 
-<chapter id="kcm">
+<sect2 id="kcm">
 <title>System Settings Module</title>
 
 <para>
-&plasmapa; provides the user with a mechanism to control the volume of devices and applications using the Pulseaudio sound system.
+&i18n-plasmapa; provides the user with a mechanism to control the volume of devices and applications using the PulsAudio sound system.
 </para>
 
 <para>
-&plasmapa; allows the user to control the volume of output devices, application-level channels, input and recording devices. It allows the user to route audio to and from specific devices.
-&plasmapa; consists of a system settings module and a Plasma widget, which can usually be found in the system tray area.
+&i18n-plasmapa; allows the user to control the volume of output devices, application-level channels, input and recording devices. It allows the user to route audio to and from specific devices.
+&i18n-plasmapa; consists of a system settings module and a Plasma widget, which can usually be found in the system tray area.
 </para>
 
 <para>
-&plasmapa; groups volume and sound settings for different channels or devices into the following groups:
+&i18n-plasmapa; groups volume and sound settings for different channels or devices into the following groups:
 <itemizedlist>
 <listitem><para>
 Applications: Applications that play audio, such as your music player or web browser.
@@ -90,15 +91,15 @@ Configuration: This tab allows to set specific profiles to such as Analog Stereo
 </itemizedlist>
 </para>
 
-</chapter>
+</sect2>
 
-<chapter id="plasmoid">
+<sect2 id="plasmoid">
 <title>Plasma Widget</title>
-<para>The &plasmapa; Plasma Widget is automatically loaded in the system tray area. Clicking on the speaker icon in the panel opens a popup with volume control sliders for different playback devices, and allows to change their volume individually.
+<para>The &i18n-plasmapa; Plasma Widget is automatically loaded in the system tray area. Clicking on the speaker icon in the panel opens a popup with volume control sliders for different playback devices, and allows to change their volume individually.
 </para>
-</chapter>
+</sect2>
 
-<chapter id="credits">
+<sect2 id="credits">
 
 <title>Credits and License</title>
 
@@ -117,10 +118,11 @@ Documentation Copyright &copy; 2015 &Sebastian.Kuegler; &Sebastian.Kuegler.mail;
 
 &underFDL;
 &underGPL;
-</chapter>
+</sect2>
 
-&documentation.index;
-</book>
+</sect1>
+
+</article>
 
 <!--
 Local Variables:

@@ -49,7 +49,7 @@ KCMPulseAudio::KCMPulseAudio(QObject *parent, const QVariantList &args)
                         QStringLiteral("apachelogger@kubuntu.org"));
 
     setAboutData(aboutData);
-    setButtons(buttons() ^ Help ^ Default ^ Apply);
+    setButtons(Help);
 }
 
 KCMPulseAudio::~KCMPulseAudio()

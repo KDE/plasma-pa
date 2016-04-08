@@ -8,7 +8,7 @@ X-KDE-ServiceTypes=KCModule
 X-KDE-System-Settings-Parent-Category=audio-and-video
 X-KDE-ParentApp=kcontrol
 X-KDE-PluginKeyword=kcm_pulseaudio
-X-DocPath=plasma-pa/index.html
+X-DocPath=kcontrol/plasma-pa/index.html
 
 Name=Audio Volume
 Name[ar]=مستوى الصّوت
