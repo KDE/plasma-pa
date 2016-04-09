@@ -92,8 +92,36 @@ int AbstractModel::role(const QByteArray &roleName) const
 void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
 {
     m_roles[PulseObjectRole] = QByteArrayLiteral("PulseObject");
-    int maxEnumValue = PulseObjectRole;
 
+    QMetaEnum enumerator;
+    for (int i = 0; i < metaObject()->enumeratorCount(); ++i) {
+        if (metaObject()->enumerator(i).name() == QLatin1String("ItemRole")) {
+            enumerator = metaObject()->enumerator(i);
+            break;
+        }
+    }
+
+    Q_ASSERT(enumerator.scope() == metaObject()->className());
+    // No valid enum found, leaf probably doesn't implement ItemRole (correctly).
+    Q_ASSERT(enumerator.isValid());
+
+    for (int i = 0; i < enumerator.keyCount(); ++i) {
+        // Clip the Role suffix and glue it in the hash.
+        const int roleLength = 4;
+        QByteArray key(enumerator.key(i));
+        // Enum values must end in Role or the enum is crap
+        Q_ASSERT(key.right(roleLength) == QByteArrayLiteral("Role"));
+        key.chop(roleLength);
+        m_roles[enumerator.value(i)] = key;
+    }
+
+    int maxEnumValue = -1;
+    for (auto it = m_roles.constBegin(); it != m_roles.constEnd(); ++it) {
+        if (it.key() > maxEnumValue) {
+            maxEnumValue = it.key();
+        }
+    }
+    Q_ASSERT(maxEnumValue != -1);
     auto mo = qobjectMetaObject;
     for (int i = 0; i < mo.propertyCount(); ++i) {
         QMetaProperty property = mo.property(i);
@@ -175,6 +203,17 @@ Sink *SinkModel::defaultSink() const
     return context()->server()->defaultSink();
 }
 
+QVariant SinkModel::data(const QModelIndex &index, int role) const
+{
+    if (role == SortByDefaultRole) {
+        // Workaround QTBUG-1548
+        const QString pulseIndex = data(index, AbstractModel::role(QByteArrayLiteral("Index"))).toString();
+        const QString defaultDevice = data(index, AbstractModel::role(QByteArrayLiteral("Default"))).toString();
+        return defaultDevice + pulseIndex;
+    }
+    return AbstractModel::data(index, role);
+}
+
 SourceModel::SourceModel(QObject *parent)
     : AbstractModel(&context()->sources(), parent)
 {
@@ -186,6 +225,17 @@ SourceModel::SourceModel(QObject *parent)
 Source *SourceModel::defaultSource() const
 {
     return context()->server()->defaultSource();
+}
+
+QVariant SourceModel::data(const QModelIndex &index, int role) const
+{
+    if (role == SortByDefaultRole) {
+        // Workaround QTBUG-1548
+        const QString pulseIndex = data(index, AbstractModel::role(QByteArrayLiteral("Index"))).toString();
+        const QString defaultDevice = data(index, AbstractModel::role(QByteArrayLiteral("Default"))).toString();
+        return defaultDevice + pulseIndex;
+    }
+    return AbstractModel::data(index, role);
 }
 
 SinkInputModel::SinkInputModel(QObject *parent)

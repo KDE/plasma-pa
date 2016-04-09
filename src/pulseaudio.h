@@ -40,7 +40,7 @@ public:
 
     QHash<int, QByteArray> roleNames() const Q_DECL_FINAL;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_FINAL;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_FINAL;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
     bool setData(const QModelIndex &index, const QVariant &value, int role) Q_DECL_FINAL;
 
     Q_INVOKABLE int role(const QByteArray &roleName) const;
@@ -80,8 +80,14 @@ class Q_DECL_EXPORT SinkModel : public AbstractModel
     Q_OBJECT
     Q_PROPERTY(QPulseAudio::Sink *defaultSink READ defaultSink NOTIFY defaultSinkChanged)
 public:
+    enum ItemRole {
+        SortByDefaultRole = PulseObjectRole + 1
+    };
+    Q_ENUMS(ItemRole)
+
     SinkModel(QObject *parent = nullptr);
     Sink *defaultSink() const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
 signals:
     void defaultSinkChanged();
@@ -99,8 +105,14 @@ class Q_DECL_EXPORT SourceModel : public AbstractModel
     Q_OBJECT
     Q_PROPERTY(QPulseAudio::Source *defaultSource READ defaultSource NOTIFY defaultSourceChanged)
 public:
+    enum ItemRole {
+        SortByDefaultRole = PulseObjectRole + 1
+    };
+    Q_ENUMS(ItemRole)
+
     SourceModel(QObject *parent = nullptr);
     Source *defaultSource() const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
 signals:
     void defaultSourceChanged();

@@ -39,6 +39,9 @@ TabView {
         title: i18nc("@title:tab", "Applications")
         SinkInputView {
             model: PulseObjectFilterModel {
+                sortRole: "EventStream"
+                sortOrder: Qt.DescendingOrder
+                filters: [ { role: "VirtualStream", value: false } ]
                 sourceModel: SinkInputModel {}
             }
             emptyText: i18nc("@label", "No Applications Playing Audio")
@@ -48,6 +51,7 @@ TabView {
         title: i18nc("@title:tab", "Recording")
         SourceOutputView {
             model: PulseObjectFilterModel {
+                filters: [ { role: "VirtualStream", value: false } ]
                 sourceModel: SourceOutputModel {}
             }
             emptyText: i18nc("@label", "No Applications Recording Audio")

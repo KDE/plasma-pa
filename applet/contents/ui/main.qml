@@ -219,6 +219,7 @@ Item {
                     Layout.maximumHeight: contentHeight
 
                     model: PulseObjectFilterModel {
+                        filters: [ { role: "VirtualStream", value: false } ]
                         sourceModel: SinkInputModel {}
                     }
                     boundsBehavior: Flickable.StopAtBounds;
@@ -238,6 +239,7 @@ Item {
                     Layout.maximumHeight: contentHeight
 
                     model: PulseObjectFilterModel {
+                        filters: [ { role: "VirtualStream", value: false } ]
                         sourceModel: SourceOutputModel {}
                     }
                     boundsBehavior: Flickable.StopAtBounds;
@@ -264,8 +266,12 @@ Item {
                     Layout.minimumHeight: contentHeight
                     Layout.maximumHeight: contentHeight
 
-                    model: SinkModel {
-                        id: sinkModel
+                    model: PulseObjectFilterModel {
+                        sortRole: "SortByDefault"
+                        sortOrder: Qt.DescendingOrder
+                        sourceModel: SinkModel {
+                            id: sinkModel
+                        }
                     }
                     boundsBehavior: Flickable.StopAtBounds;
                     delegate: DeviceListItem {}
@@ -283,8 +289,12 @@ Item {
                     Layout.minimumHeight: contentHeight
                     Layout.maximumHeight: contentHeight
 
-                    model: SourceModel {
-                        id: sourceModel
+                    model: PulseObjectFilterModel {
+                        sortRole: "SortByDefault"
+                        sortOrder: Qt.DescendingOrder
+                        sourceModel: SourceModel {
+                            id: sourceModel
+                        }
                     }
                     boundsBehavior: Flickable.StopAtBounds;
                     delegate: DeviceListItem {}
