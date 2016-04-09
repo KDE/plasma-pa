@@ -32,6 +32,7 @@
 #include "sinkinput.h"
 #include "source.h"
 #include "sourceoutput.h"
+#include "streamrestore.h"
 
 namespace QPulseAudio
 {
@@ -71,6 +72,12 @@ static void sink_input_callback(pa_context *context, const pa_sink_input_info *i
     // pulsesink probe is used by gst-pulse only to query sink formats (not for playback)
     if (qstrcmp(info->name, "pulsesink probe") == 0) {
         return;
+    }
+    if (const char *id = pa_proplist_gets(info->proplist, "module-stream-restore.id")) {
+        if (qstrcmp(id, "sink-input-by-media-role:event") == 0) {
+            qCDebug(PLASMAPA) << "Ignoring event role sink input.";
+            return;
+        }
     }
     Q_ASSERT(context);
     Q_ASSERT(data);
@@ -140,6 +147,25 @@ static void subscribe_cb(pa_context *context, pa_subscription_event_type_t type,
 {
     Q_ASSERT(data);
     ((Context *)data)->subscribeCallback(context, type, index);
+}
+
+static void ext_stream_restore_read_cb(pa_context *context, const pa_ext_stream_restore_info *info, int eol, void *data)
+{
+    if (!isGoodState(eol)) {
+        return;
+    }
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    ((Context *)data)->streamRestoreCallback(info);
+}
+
+static void ext_stream_restore_subscribe_cb(pa_context *context, void *data)
+{
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    if (!PAOperation(pa_ext_stream_restore_read(context, ext_stream_restore_read_cb, data))) {
+        qCWarning(PLASMAPA) << "pa_ext_stream_restore_read() failed";
+    }
 }
 
 // --------------------------
@@ -330,18 +356,12 @@ void Context::contextStateCallback(pa_context *c)
             return;
         }
 
-        // TODO
-        /* These calls are not always supported */
-        //        if ((o = pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, NULL))) {
-        //            pa_operation_unref(o);
-
-        //            pa_ext_stream_restore_set_subscribe_cb(c, ext_stream_restore_subscribe_cb, NULL);
-
-        //            if ((o = pa_ext_stream_restore_subscribe(c, 1, NULL, NULL)))
-        //                pa_operation_unref(o);
-        //        } else {
-        //            qCWarning(PLASMAPA) << "Failed to initialize stream_restore extension: " << pa_strerror(pa_context_errno(m_context));
-        //        }
+        if (PAOperation(pa_ext_stream_restore_read(c, ext_stream_restore_read_cb, this))) {
+            pa_ext_stream_restore_set_subscribe_cb(c, ext_stream_restore_subscribe_cb, this);
+            PAOperation(pa_ext_stream_restore_subscribe(c, 1, nullptr, this));
+        } else {
+            qCWarning(PLASMAPA) << "Failed to initialize stream_restore extension";
+        }
     } else if (!PA_CONTEXT_IS_GOOD(state)) {
         qCWarning(PLASMAPA) << "context kaput";
         if (m_context) {
@@ -384,6 +404,26 @@ void Context::cardCallback(const pa_card_info *info)
     m_cards.updateEntry(info, this);
 }
 
+void Context::streamRestoreCallback(const pa_ext_stream_restore_info *info)
+{
+    if (qstrcmp(info->name, "sink-input-by-media-role:event") != 0) {
+        return;
+    }
+
+    const int eventRoleIndex = 1;
+    StreamRestore *obj = qobject_cast<StreamRestore *>(m_streamRestores.data().value(eventRoleIndex));
+
+    if (!obj) {
+        QVariantMap props;
+        props.insert(QStringLiteral("application.icon_name"),
+                     QStringLiteral("preferences-desktop-notification"));
+        obj = new StreamRestore(eventRoleIndex, props, this);
+        m_streamRestores.insert(obj);
+    }
+
+    obj->update(info);
+}
+
 void Context::serverCallback(const pa_server_info *info)
 {
     m_server->update(info);
@@ -420,6 +460,19 @@ void Context::setDefaultSource(const QString &name)
                                                  nullptr,
                                                  nullptr))) {
         qCWarning(PLASMAPA) << "pa_context_set_default_source failed";
+    }
+}
+
+void Context::streamRestoreWrite(const pa_ext_stream_restore_info *info)
+{
+    if (!PAOperation(pa_ext_stream_restore_write(m_context,
+                                                 PA_UPDATE_REPLACE,
+                                                 info,
+                                                 1,
+                                                 true,
+                                                 nullptr,
+                                                 nullptr))) {
+        qCWarning(PLASMAPA) << "pa_ext_stream_restore_write failed";
     }
 }
 

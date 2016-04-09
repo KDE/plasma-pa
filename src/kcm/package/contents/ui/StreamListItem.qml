@@ -30,6 +30,7 @@ ColumnLayout {
     id: delegate
 
     property alias deviceModel: deviceComboBox.model
+    readonly property bool isEventStream: Name == "sink-input-by-media-role:event"
 
     width: parent.width
 
@@ -53,7 +54,15 @@ ColumnLayout {
                 Label {
                     id: inputText
                     Layout.fillWidth: true
-                    text: Client ? i18nc("label of stream items", "%1: %2", Client.name, Name) : Name
+                    text: {
+                        if (isEventStream) {
+                            return i18n("Notification Sounds");
+                        } else if (Client) {
+                            return i18nc("label of stream items", "%1: %2", Client.name, Name);
+                        } else {
+                            return Name;
+                        }
+                    }
                     elide: Text.ElideRight
                 }
 
@@ -62,7 +71,7 @@ ColumnLayout {
                     Layout.leftMargin: units.smallSpacing
                     Layout.rightMargin: units.smallSpacing
                     Layout.preferredWidth: delegate.width / 3
-                    visible: count > 1
+                    visible: !isEventStream && count > 1
                 }
 
                 MuteButton {

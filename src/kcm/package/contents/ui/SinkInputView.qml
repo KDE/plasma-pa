@@ -20,10 +20,59 @@
 */
 
 import QtQuick 2.0
+import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.3
 
-PulseView {
-    delegate: StreamListItem {
-        deviceModel: sinkModel
+import org.kde.plasma.private.volume 0.1
+
+Item {
+    property alias emptyText: pulseView.emptyText
+    property alias model: sinkInputView.model
+
+    ScrollView {
+        id: scrollView
+        anchors.fill: parent
+
+        ColumnLayout {
+            width: scrollView.viewport.width
+
+            ListView {
+                id: eventStreamView
+                Layout.fillWidth: true
+                Layout.minimumHeight: contentHeight
+                Layout.maximumHeight: contentHeight
+                Layout.margins: units.gridUnit / 2
+                model: PulseObjectFilterModel {
+                    filters: [ { role: "Name", value: "sink-input-by-media-role:event" } ]
+                    sourceModel: StreamRestoreModel {}
+                }
+                delegate: StreamListItem {
+                    deviceModel: sinkModel
+                }
+                boundsBehavior: Flickable.StopAtBounds;
+                visible: count > 0
+                spacing: units.largeSpacing
+            }
+
+            ListView {
+                id: sinkInputView
+                Layout.fillWidth: true
+                Layout.minimumHeight: contentHeight
+                Layout.maximumHeight: contentHeight
+                Layout.margins: units.gridUnit / 2
+                boundsBehavior: Flickable.StopAtBounds;
+                visible: count > 0
+                spacing: units.largeSpacing
+                delegate: StreamListItem {
+                    deviceModel: sinkModel
+                }
+            }
+        }
+    }
+
+    PulseView {
+        id: pulseView
+        anchors.fill: parent
+        visible: !eventStreamView.visible && !sinkInputView.visible
     }
 }

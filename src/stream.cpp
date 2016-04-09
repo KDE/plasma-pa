@@ -25,10 +25,11 @@ namespace QPulseAudio
 
 Stream::Stream(QObject *parent)
     : VolumeObject(parent)
+    , m_clientIndex(PA_INVALID_INDEX)
+    , m_virtualStream(false)
 {
     m_volumeWritable = false;
     m_hasVolume = false;
-    m_virtualStream = false;
 }
 
 Stream::~Stream()

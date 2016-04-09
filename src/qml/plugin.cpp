@@ -37,6 +37,7 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<QPulseAudio::SinkInputModel>(uri, 0, 1, "SinkInputModel");
     qmlRegisterType<QPulseAudio::SourceModel>(uri, 0, 1, "SourceModel");
     qmlRegisterType<QPulseAudio::SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
+    qmlRegisterType<QPulseAudio::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
     qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
     qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");

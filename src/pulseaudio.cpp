@@ -28,6 +28,7 @@
 #include "source.h"
 #include "sourceoutput.h"
 #include "server.h"
+#include "streamrestore.h"
 
 #include <QMetaEnum>
 
@@ -250,6 +251,12 @@ CardModel::CardModel(QObject *parent)
     : AbstractModel(&context()->cards(), parent)
 {
     initRoleNames(Card::staticMetaObject);
+}
+
+StreamRestoreModel::StreamRestoreModel(QObject *parent)
+    : AbstractModel(&context()->streamRestores(), parent)
+{
+    initRoleNames(StreamRestore::staticMetaObject);
 }
 
 } // QPulseAudio

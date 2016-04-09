@@ -26,6 +26,7 @@
 #include <QObject>
 
 #include <pulse/pulseaudio.h>
+#include <pulse/ext-stream-restore.h>
 
 namespace QPulseAudio
 {
@@ -37,6 +38,7 @@ class Sink;
 class SinkInput;
 class Source;
 class SourceOutput;
+class StreamRestore;
 
 /**
  * @see MapBase
@@ -103,6 +105,17 @@ public:
         m_pendingRemovals.clear();
     }
 
+    void insert(Type *object)
+    {
+        Q_ASSERT(!m_data.contains(object->index()));
+
+        m_data.insert(object->index(), object);
+
+        const int modelIndex = m_data.keys().indexOf(object->index());
+        Q_ASSERT(modelIndex >= 0);
+        emit added(modelIndex);
+    }
+
     // Context is passed in as parent because context needs to include the maps
     // so we'd cause a circular dep if we were to try to use the instance here.
     // Plus that's weird separation anyway.
@@ -124,10 +137,9 @@ public:
         obj->update(info);
         m_data.insert(info->index, obj);
 
-        const int modelIndex = m_data.keys().indexOf(info->index);
-        Q_ASSERT(modelIndex >= 0);
-
         if (isNew) {
+            const int modelIndex = m_data.keys().indexOf(info->index);
+            Q_ASSERT(modelIndex >= 0);
             emit added(modelIndex);
         }
     }
@@ -154,6 +166,7 @@ typedef MapBase<Source, pa_source_info> SourceMap;
 typedef MapBase<SourceOutput, pa_source_output_info> SourceOutputMap;
 typedef MapBase<Client, pa_client_info> ClientMap;
 typedef MapBase<Card, pa_card_info> CardMap;
+typedef MapBase<StreamRestore, pa_ext_stream_restore_info> StreamRestoreMap;
 
 } // QPulseAudio
 
