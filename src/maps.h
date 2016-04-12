@@ -102,12 +102,8 @@ public:
     void reset()
     {
         while (!m_data.isEmpty()) {
-            auto key = m_data.lastKey();
-            auto *obj = m_data.take(key);
-            emit removed(obj->index());
-            delete obj;
+            removeEntry(m_data.lastKey());
         }
-        m_data.clear();
         m_pendingRemovals.clear();
     }
 
