@@ -46,10 +46,15 @@ class SourceOutput;
 class Q_DECL_EXPORT MapBaseQObject : public QObject
 {
     Q_OBJECT
+
+public:
+    virtual int count() const = 0;
+    virtual QObject *objectAt(int index) const = 0;
+    virtual int indexOfObject(QObject *object) const = 0;
+
 signals:
-    void added(quint32 index);
-    void updated(quint32 index);
-    void removed(quint32 index);
+    void added(int index);
+    void removed(int index);
 };
 
 /**
@@ -66,37 +71,28 @@ public:
 
     const QMap<quint32, Type *> &data() const { return m_data; }
 
-    int modelIndexForQObject(QObject *qobject) const
+    int count() const Q_DECL_OVERRIDE
     {
-        Type *t = qobject_cast<Type *>(qobject);
-        if (!t)
-            return -1;
-        int key = m_data.key(t, -1);
-        if (key == -1)
-            return -1;
-        return m_data.keys().indexOf(key);
+        return m_data.count();
     }
 
-    /**
-    * @param dataIndex index in the data model
-    * @return -1 on invalid index, otherwise PA index
-    */
-    qint64 dataIndexToPaIndex(int dataIndex) const
+    int indexOfObject(QObject *object) const Q_DECL_OVERRIDE
     {
-        auto list = m_data.values();
-        qCDebug(PLASMAPA) <<  Q_FUNC_INFO << list.length() << dataIndex;
-        if (list.length() <= dataIndex) {
-            return -1;
+        int index = 0;
+        QMapIterator<quint32, Type *> it(m_data);
+        while (it.hasNext()) {
+            it.next();
+            if (it.value() == object) {
+                return index;
+            }
+            index++;
         }
-        qCDebug(PLASMAPA) << "  " << list.at(dataIndex)->index();
-        qCDebug(PLASMAPA) << "  " << list.at(dataIndex)->name();
-        return list.at(dataIndex)->index();
+        return -1;
     }
 
-    int paIndexToDataIndex(quint32 index) const
+    QObject *objectAt(int index) const Q_DECL_OVERRIDE
     {
-        qCDebug(PLASMAPA) << m_data.keys() << index;
-        return m_data.keys().indexOf(index);
+        return (m_data.constBegin() + index).value();
     }
 
     void reset()
@@ -133,8 +129,6 @@ public:
 
         if (isNew) {
             emit added(modelIndex);
-        } else {
-            emit updated(modelIndex);
         }
     }
 
@@ -144,7 +138,7 @@ public:
             m_pendingRemovals.insert(index);
         } else {
             const int modelIndex = m_data.keys().indexOf(index);
-            m_data.take(index)->deleteLater();
+            delete m_data.take(index);
             emit removed(modelIndex);
         }
     }

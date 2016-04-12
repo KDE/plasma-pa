@@ -1,5 +1,6 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2016 David Rosca <nowrep@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -21,77 +22,24 @@
 #include "pulseaudio.h"
 
 #include "debug.h"
-#include <QMetaEnum>
-
 #include "card.h"
-#include "client.h"
 #include "sink.h"
 #include "sinkinput.h"
 #include "source.h"
 #include "sourceoutput.h"
 #include "server.h"
 
+#include <QMetaEnum>
+
 namespace QPulseAudio
 {
 
-ClientModel::ClientModel(QObject *parent)
-    : AbstractModel(&context()->clients(), parent)
+AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
+    : QAbstractListModel(parent)
+    , m_map(map)
 {
-    initRoleNames(Client::staticMetaObject);
-}
-
-int ClientModel::rowCount(const QModelIndex &parent) const
-{
-    Q_UNUSED(parent);
-    if (!context())
-        return 0;
-    return context()->clients().data().count();
-}
-
-QVariant ClientModel::data(const QModelIndex &index, int role) const
-{
-    Client *data = context()->clients().data().values().at(index.row());
-    Q_ASSERT(data);
-    switch(static_cast<ItemRole>(role)){
-    case NameRole:
-        return data->name();
-    case PulseObjectRole:
-        return QVariant::fromValue(data);
-    }
-    return dataForRole(data, role);
-}
-
-SinkInputModel::SinkInputModel(QObject *parent)
-    : AbstractModel(&context()->sinkInputs(), parent)
-{
-    initRoleNames(SinkInput::staticMetaObject);
-}
-
-int AbstractModel::role(const QByteArray &roleName) const
-{
-    qCDebug(PLASMAPA) << roleName << m_roles.key(roleName, -1);
-    return m_roles.key(roleName, -1);
-}
-
-int SinkInputModel::rowCount(const QModelIndex &parent) const
-{
-    Q_UNUSED(parent);
-    if (!context())
-        return 0;
-    return context()->sinkInputs().data().count();
-}
-
-QVariant SinkInputModel::data(const QModelIndex &index, int role) const
-{
-    SinkInput *data = context()->sinkInputs().data().values().at(index.row());
-    Q_ASSERT(data);
-    switch ((ItemRole) role) {
-    case IndexRole:
-        return data->index();
-    case PulseObjectRole:
-        return QVariant::fromValue(data);
-    }
-    return dataForRole(data, role);
+    connect(m_map, &MapBaseQObject::added, this, &AbstractModel::onDataAdded);
+    connect(m_map, &MapBaseQObject::removed, this, &AbstractModel::onDataRemoved);
 }
 
 QHash<int, QByteArray> AbstractModel::roleNames() const
@@ -100,159 +48,52 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
         qCDebug(PLASMAPA) << "returning roles" << m_roles;
         return m_roles;
     }
-    Q_ASSERT(false);
+    Q_UNREACHABLE();
     return QHash<int, QByteArray>();
 }
 
-SinkModel::SinkModel(QObject *parent)
-    : AbstractModel(&context()->sinks(), parent)
-{
-    initRoleNames(Sink::staticMetaObject);
-
-    connect(&context()->sinks(), &SinkMap::added, this, &SinkModel::sinksChanged);
-    connect(&context()->sinks(), &SinkMap::updated, this, &SinkModel::sinksChanged);
-    connect(&context()->sinks(), &SinkMap::removed, this, &SinkModel::sinksChanged);
-    connect(context()->server(), &Server::defaultSinkChanged, this, &SinkModel::defaultSinkChanged);
-
-    emit sinksChanged();
-}
-
-Sink *SinkModel::defaultSink() const
-{
-    return context()->server()->defaultSink();
-}
-
-int SinkModel::rowCount(const QModelIndex &parent) const
+int AbstractModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    if (!context())
-        return 0;
-    return context()->sinks().data().count();
+    return m_map->count();
 }
 
-QVariant SinkModel::data(const QModelIndex &index, int role) const
+QVariant AbstractModel::data(const QModelIndex &index, int role) const
 {
-    Sink *data = context()->sinks().data().values().at(index.row());
+    QObject *data = m_map->objectAt(index.row());
     Q_ASSERT(data);
-    switch(static_cast<ItemRole>(role)) {
-    case IndexRole:
-        return data->index();
-    case PulseObjectRole:
+    if (role == PulseObjectRole) {
         return QVariant::fromValue(data);
     }
-    return dataForRole(data, role);
+    int property = m_objectProperties.value(role, -1);
+    if (property == -1) {
+        return QVariant();
+    }
+    return data->metaObject()->property(property).read(data);
 }
 
-bool SinkModel::setData(const QModelIndex &index, const QVariant &value, int role)
+bool AbstractModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     int propertyIndex = m_objectProperties.value(role, -1);
-    if (propertyIndex == -1)
+    if (propertyIndex == -1) {
         return false;
-    Sink *data = context()->sinks().data().values().at(index.row());
+    }
+    QObject *data = m_map->objectAt(index.row());
     auto property = data->metaObject()->property(propertyIndex);
     return property.write(data, value);
 }
 
-void SinkModel::onDataAdded(quint32 index)
+int AbstractModel::role(const QByteArray &roleName) const
 {
-    beginInsertRows(QModelIndex(), index, index);
-    Sink *data = context()->sinks().data().values().at(index);
-    const QMetaObject *mo = data->metaObject();
-    // We have all the data changed notify signals already stored
-    auto keys = m_signalIndexToProperties.keys();
-    foreach(int index, keys){
-        QMetaMethod meth = mo->method(index);
-        connect(data, meth, this, propertyChangedMetaMethod());
-    }
-    endInsertRows();
-}
-
-void SinkModel::onDataRemoved(quint32 index)
-{
-    beginRemoveRows(QModelIndex(), index, index);
-    endRemoveRows();
-}
-
-void SinkModel::propertyChanged()
-{
-    if (!sender() || senderSignalIndex() == -1)
-        return;
-    int propertyIndex = m_signalIndexToProperties.value(senderSignalIndex(), -1);
-    if (propertyIndex == -1)
-        return;
-    int role = m_objectProperties.key(propertyIndex, -1);
-    if (role == -1)
-        return;
-    int index = context()->sinks().modelIndexForQObject(sender());
-    qCDebug(PLASMAPA) << "PROPERTY CHANGED (" << index << ") :: " << role << roleNames().value(role);
-    emit dataChanged(createIndex(index, 0), createIndex(index, 0), QVector<int>() << role);
-}
-
-QMetaMethod SinkModel::propertyChangedMetaMethod() const
-{
-    auto mo = metaObject();
-    int methodIndex = mo->indexOfMethod(QMetaObject::normalizedSignature("propertyChanged()").data());
-    if(methodIndex == -1){
-        return QMetaMethod();
-    }
-    return mo->method(methodIndex);
-}
-
-void AbstractModel::onDataAdded(quint32 index)
-{
-    beginInsertRows(QModelIndex(), index, index);
-    endInsertRows();
-}
-
-void AbstractModel::onDataUpdated(quint32 index)
-{
-    emit dataChanged(createIndex(index, 0), createIndex(index, 0));
-}
-
-void AbstractModel::onDataRemoved(quint32 index)
-{
-    beginRemoveRows(QModelIndex(), index, index);
-    endRemoveRows();
-}
-
-AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
-    : QAbstractListModel(parent)
-{
-    connect(map, &MapBaseQObject::added, this, &AbstractModel::onDataAdded);
-    connect(map, &MapBaseQObject::updated, this, &AbstractModel::onDataUpdated);
-    connect(map, &MapBaseQObject::removed, this, &AbstractModel::onDataRemoved);
+    qCDebug(PLASMAPA) << roleName << m_roles.key(roleName, -1);
+    return m_roles.key(roleName, -1);
 }
 
 void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
 {
-    QMetaEnum enumerator;
-    for (int i = 0; i < metaObject()->enumeratorCount(); ++i) {
-        if (metaObject()->enumerator(i).name() == QLatin1Literal("ItemRole")) {
-            enumerator = metaObject()->enumerator(i);
-            break;
-        }
-    }
+    m_roles[PulseObjectRole] = QByteArrayLiteral("PulseObject");
+    int maxEnumValue = PulseObjectRole;
 
-    Q_ASSERT(enumerator.scope() == metaObject()->className());
-    // No valid enum found, leaf probably doesn't implement ItemRole (correctly).
-    Q_ASSERT(enumerator.isValid());
-
-    for (int i = 0; i < enumerator.keyCount(); ++i) {
-        // Clip the Role suffix and glue it in the hash.
-        static int roleLength = strlen("Role");
-        QByteArray key(enumerator.key(i));
-        // Enum values must end in Role or the enum is crap
-        Q_ASSERT(key.right(roleLength) == QByteArray("Role"));
-        key.chop(roleLength);
-        m_roles[enumerator.value(i)] = key;
-    }
-
-    int maxEnumValue = -1;
-    for (auto it = m_roles.constBegin(); it != m_roles.constEnd(); ++it) {
-        if (it.key() > maxEnumValue)
-            maxEnumValue = it.key();
-    }
-    Q_ASSERT(maxEnumValue != -1);
     auto mo = qobjectMetaObject;
     for (int i = 0; i < mo.propertyCount(); ++i) {
         QMetaProperty property = mo.property(i);
@@ -260,32 +101,73 @@ void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
         name.replace(0, 1, name.at(0).toUpper());
         m_roles[++maxEnumValue] = name.toLatin1();
         m_objectProperties.insert(maxEnumValue, i);
-        if (!property.hasNotifySignal())
+        if (!property.hasNotifySignal()) {
             continue;
+        }
         m_signalIndexToProperties.insert(property.notifySignalIndex(), i);
     }
     qCDebug(PLASMAPA) << m_roles;
 }
 
-QVariant AbstractModel::dataForRole(QObject *obj, int role) const
+void AbstractModel::propertyChanged()
 {
-    int property = m_objectProperties.value(role, -1);
-    if (property == -1) {
-        return QVariant();
+    if (!sender() || senderSignalIndex() == -1) {
+        return;
     }
-    return obj->metaObject()->property(property).read(obj);
+    int propertyIndex = m_signalIndexToProperties.value(senderSignalIndex(), -1);
+    if (propertyIndex == -1) {
+        return;
+    }
+    int role = m_objectProperties.key(propertyIndex, -1);
+    if (role == -1) {
+        return;
+    }
+    int index = m_map->indexOfObject(sender());
+    qCDebug(PLASMAPA) << "PROPERTY CHANGED (" << index << ") :: " << role << roleNames().value(role);
+    emit dataChanged(createIndex(index, 0), createIndex(index, 0), {role});
 }
 
-ReverseFilterModel::ReverseFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent)
+void AbstractModel::onDataAdded(int index)
 {
-    setDynamicSortFilter(true);
-    setFilterKeyColumn(0);
+    beginInsertRows(QModelIndex(), index, index);
+    QObject *data = m_map->objectAt(index);
+    const QMetaObject *mo = data->metaObject();
+    // We have all the data changed notify signals already stored
+    auto keys = m_signalIndexToProperties.keys();
+    foreach (int index, keys) {
+        QMetaMethod meth = mo->method(index);
+        connect(data, meth, this, propertyChangedMetaMethod());
+    }
+    endInsertRows();
 }
 
-void ReverseFilterModel::initialSort()
+void AbstractModel::onDataRemoved(int index)
 {
-    QSortFilterProxyModel::sort(0, Qt::DescendingOrder);
+    beginRemoveRows(QModelIndex(), index, index);
+    endRemoveRows();
+}
+
+QMetaMethod AbstractModel::propertyChangedMetaMethod() const
+{
+    auto mo = metaObject();
+    int methodIndex = mo->indexOfMethod("propertyChanged()");
+    if (methodIndex == -1) {
+        return QMetaMethod();
+    }
+    return mo->method(methodIndex);
+}
+
+SinkModel::SinkModel(QObject *parent)
+    : AbstractModel(&context()->sinks(), parent)
+{
+    initRoleNames(Sink::staticMetaObject);
+
+    connect(context()->server(), &Server::defaultSinkChanged, this, &SinkModel::defaultSinkChanged);
+}
+
+Sink *SinkModel::defaultSink() const
+{
+    return context()->server()->defaultSink();
 }
 
 SourceModel::SourceModel(QObject *parent)
@@ -293,12 +175,7 @@ SourceModel::SourceModel(QObject *parent)
 {
     initRoleNames(Source::staticMetaObject);
 
-    connect(&context()->sources(), &SourceMap::added, this, &SourceModel::sourcesChanged);
-    connect(&context()->sources(), &SourceMap::updated, this, &SourceModel::sourcesChanged);
-    connect(&context()->sources(), &SourceMap::removed, this, &SourceModel::sourcesChanged);
     connect(context()->server(), &Server::defaultSourceChanged, this, &SourceModel::defaultSourceChanged);
-
-    emit sourcesChanged();
 }
 
 Source *SourceModel::defaultSource() const
@@ -306,80 +183,10 @@ Source *SourceModel::defaultSource() const
     return context()->server()->defaultSource();
 }
 
-int SourceModel::rowCount(const QModelIndex &parent) const
+SinkInputModel::SinkInputModel(QObject *parent)
+    : AbstractModel(&context()->sinkInputs(), parent)
 {
-    Q_UNUSED(parent);
-    if (!context())
-        return 0;
-    return context()->sources().data().count();
-}
-
-QVariant SourceModel::data(const QModelIndex &index, int role) const
-{
-    Source *data = context()->sources().data().values().at(index.row());
-    Q_ASSERT(data);
-    switch(static_cast<ItemRole>(role)) {
-    case IndexRole:
-        return data->index();
-    case PulseObjectRole:
-        return QVariant::fromValue(data);
-    }
-    return dataForRole(data, role);
-}
-
-bool SourceModel::setData(const QModelIndex &index, const QVariant &value, int role)
-{
-    int propertyIndex = m_objectProperties.value(role, -1);
-    if (propertyIndex == -1)
-        return false;
-    Source *data = context()->sources().data().values().at(index.row());
-    auto property = data->metaObject()->property(propertyIndex);
-    return property.write(data, value);
-}
-
-void SourceModel::onDataAdded(quint32 index)
-{
-    beginInsertRows(QModelIndex(), index, index);
-    Source *data = context()->sources().data().values().at(index);
-    const QMetaObject *mo = data->metaObject();
-    // We have all the data changed notify signals already stored
-    auto keys = m_signalIndexToProperties.keys();
-    foreach(int index, keys){
-        QMetaMethod meth = mo->method(index);
-        connect(data, meth, this, propertyChangedMetaMethod());
-    }
-    endInsertRows();
-}
-
-void SourceModel::onDataRemoved(quint32 index)
-{
-    beginRemoveRows(QModelIndex(), index, index);
-    endRemoveRows();
-}
-
-void SourceModel::propertyChanged()
-{
-    if (!sender() || senderSignalIndex() == -1)
-        return;
-    int propertyIndex = m_signalIndexToProperties.value(senderSignalIndex(), -1);
-    if (propertyIndex == -1)
-        return;
-    int role = m_objectProperties.key(propertyIndex, -1);
-    if (role == -1)
-        return;
-    int index = context()->sources().modelIndexForQObject(sender());
-    qCDebug(PLASMAPA) << "PROPERTY CHANGED (" << index << ") :: " << role << roleNames().value(role);
-    emit dataChanged(createIndex(index, 0), createIndex(index, 0), QVector<int>() << role);
-}
-
-QMetaMethod SourceModel::propertyChangedMetaMethod() const
-{
-    auto mo = metaObject();
-    int methodIndex = mo->indexOfMethod(QMetaObject::normalizedSignature("propertyChanged()").data());
-    if(methodIndex == -1){
-        return QMetaMethod();
-    }
-    return mo->method(methodIndex);
+    initRoleNames(SinkInput::staticMetaObject);
 }
 
 SourceOutputModel::SourceOutputModel(QObject *parent)
@@ -388,52 +195,10 @@ SourceOutputModel::SourceOutputModel(QObject *parent)
     initRoleNames(SourceOutput::staticMetaObject);
 }
 
-int SourceOutputModel::rowCount(const QModelIndex &parent) const
-{
-    Q_UNUSED(parent);
-    if (!context())
-        return 0;
-    return context()->sourceOutputs().data().count();
-}
-
-QVariant SourceOutputModel::data(const QModelIndex &index, int role) const
-{
-    SourceOutput *data =  context()->sourceOutputs().data().values().at(index.row());
-    Q_ASSERT(data);
-    switch ((ItemRole) role) {
-    case IndexRole:
-        return data->index();
-    case PulseObjectRole:
-        return QVariant::fromValue(data);
-    }
-    return dataForRole(data, role);
-}
-
 CardModel::CardModel(QObject *parent)
     : AbstractModel(&context()->cards(), parent)
 {
     initRoleNames(Card::staticMetaObject);
-}
-
-int CardModel::rowCount(const QModelIndex &parent) const
-{
-    Q_UNUSED(parent);
-    if (!context())
-        return 0;
-    return context()->cards().data().count();
-}
-
-QVariant CardModel::data(const QModelIndex &index, int role) const
-{
-    Card *data =  context()->cards().data().values().at(index.row());
-    Q_ASSERT(data);
-    switch ((ItemRole) role) {
-    case IndexRole:
-        return data->index();
-    case PulseObjectRole:
-        return QVariant::fromValue(data);
-    }
-    return dataForRole(data, role);
 }
 
 } // QPulseAudio
