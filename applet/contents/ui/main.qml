@@ -189,7 +189,6 @@ Item {
 
     PlasmaExtras.ScrollArea {
         id: scrollView;
-        horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
 
         anchors {
             top: tabBar.bottom
@@ -198,6 +197,9 @@ Item {
             right: parent.right
             bottom: parent.bottom
         }
+
+        horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+        flickableItem.boundsBehavior: Flickable.StopAtBounds;
 
         Item {
             width: streamsView.visible ? streamsView.width : devicesView.width
