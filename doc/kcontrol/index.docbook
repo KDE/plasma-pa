@@ -60,7 +60,7 @@ This documentation describes the &i18n-plasmapa; Systemsettings module.
 <title>System Settings Module</title>
 
 <para>
-&i18n-plasmapa; provides the user with a mechanism to control the volume of devices and applications using the PulsAudio sound system.
+&i18n-plasmapa; provides the user with a mechanism to control the volume of devices and applications using the PulseAudio sound system.
 </para>
 
 <para>
