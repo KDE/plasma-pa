@@ -53,7 +53,7 @@ This documentation describes the &i18n-plasmapa; Systemsettings module.
 <title>Introduction</title>
 
 <para>
-&i18n-plasmapa; provides the user with a mechanism to control the volume of devices and applications using the PulsAudio sound system.
+&i18n-plasmapa; provides the user with a mechanism to control the volume of devices and applications using the PulseAudio sound system.
 </para>
 
 <sect2 id="kcm">
@@ -102,7 +102,7 @@ Configuration: This tab allows to set specific profiles to such as Analog Stereo
 <title>Credits and License</title>
 
 <para>
-&plasmapa;
+&i18n-plasmapa;
 </para>
 <para>
 Program copyright 2014-2015 Harald Sitter
