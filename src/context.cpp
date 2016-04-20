@@ -68,6 +68,10 @@ static void sink_input_callback(pa_context *context, const pa_sink_input_info *i
 {
     if (!isGoodState(eol))
         return;
+    // pulsesink probe is used by gst-pulse only to query sink formats (not for playback)
+    if (qstrcmp(info->name, "pulsesink probe") == 0) {
+        return;
+    }
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->sinkInputCallback(info);
