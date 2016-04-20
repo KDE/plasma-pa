@@ -19,7 +19,6 @@
 */
 
 import QtQuick 2.4
-
 import QtQuick.Controls 1.0
 import QtQuick.Layouts 1.0
 
@@ -28,6 +27,8 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.draganddrop 2.0 as DragAndDrop
+
+import org.kde.plasma.private.volume 0.1
 
 PlasmaComponents.ListItem {
     id: item
@@ -139,10 +140,9 @@ PlasmaComponents.ListItem {
                         property bool ignoreValueChange: false
 
                         Layout.fillWidth: true
-                        minimumValue: 0
-                        // FIXME: I do wonder if exposing max through the model would be useful at all
-                        maximumValue: 65536
-                        stepSize: maximumValue / 100
+                        minimumValue: PulseAudio.MinimalVolume
+                        maximumValue: maxVolumeValue
+                        stepSize: maximumValue / maxVolumePercent
                         visible: HasVolume
                         enabled: VolumeWritable && !Muted
 
@@ -181,10 +181,11 @@ PlasmaComponents.ListItem {
                     }
                     PlasmaComponents.Label {
                         id: percentText
+                        readonly property real value: PulseObject.volume > slider.maximumValue ? PulseObject.volume : slider.value
                         Layout.alignment: Qt.AlignHCenter
                         Layout.minimumWidth: percentMetrics.advanceWidth
                         horizontalAlignment: Qt.AlignRight
-                        text: i18nc("volume percentage", "%1%", Math.floor(slider.value / slider.maximumValue * 100.0))
+                        text: i18nc("volume percentage", "%1%", Math.round(value / PulseAudio.NormalVolume * 100.0))
                     }
 
                     TextMetrics {

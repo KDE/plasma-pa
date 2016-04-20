@@ -33,7 +33,9 @@ import "../code/icon.js" as Icon
 Item {
     id: main
 
-    property int volumeStep: 65536 / 15
+    property int maxVolumePercent: 100
+    property int maxVolumeValue: Math.round(maxVolumePercent * PulseAudio.NormalVolume / 100.0)
+    property int volumeStep: PulseAudio.NormalVolume / 15
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
@@ -48,30 +50,33 @@ Item {
     Plasmoid.toolTipMainText: displayName
     Plasmoid.toolTipSubText: sinkModel.defaultSink ? i18n("Volume at %1%\n%2", volumePercent(sinkModel.defaultSink.volume), sinkModel.defaultSink.description) : ""
 
-    function bound(value, min, max) {
-        return Math.max(min, Math.min(value, max));
+    function boundVolume(volume) {
+        return Math.max(PulseAudio.MinimalVolume, Math.min(volume, maxVolumeValue));
     }
 
-    function volumePercent(volume) {
-        return Math.round(100 * volume / 65536);
+    function volumePercent(volume, max) {
+        if (!max) {
+            max = PulseAudio.NormalVolume;
+        }
+        return Math.round(volume / max * 100.0);
     }
 
     function increaseVolume() {
         if (!sinkModel.defaultSink) {
             return;
         }
-        var volume = bound(sinkModel.defaultSink.volume + volumeStep, 0, 65536);
+        var volume = boundVolume(sinkModel.defaultSink.volume + volumeStep);
         sinkModel.defaultSink.volume = volume;
-        osd.show(volumePercent(volume));
+        osd.show(volumePercent(volume, maxVolumeValue));
     }
 
     function decreaseVolume() {
         if (!sinkModel.defaultSink) {
             return;
         }
-        var volume = bound(sinkModel.defaultSink.volume - volumeStep, 0, 65536);
+        var volume = boundVolume(sinkModel.defaultSink.volume - volumeStep);
         sinkModel.defaultSink.volume = volume;
-        osd.show(volumePercent(volume));
+        osd.show(volumePercent(volume, maxVolumeValue));
     }
 
     function muteVolume() {
@@ -80,7 +85,7 @@ Item {
         }
         var toMute = !sinkModel.defaultSink.muted;
         sinkModel.defaultSink.muted = toMute;
-        osd.show(toMute ? 0 : volumePercent(sinkModel.defaultSink.volume));
+        osd.show(toMute ? 0 : volumePercent(sinkModel.defaultSink.volume, maxVolumeValue));
     }
 
     function increaseMicrophoneVolume() {

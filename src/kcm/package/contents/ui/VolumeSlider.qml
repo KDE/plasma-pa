@@ -22,7 +22,11 @@ import QtQuick 2.4
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.0
 
+import org.kde.plasma.private.volume 0.1
+
 RowLayout {
+    Layout.bottomMargin: hundredPercentLabel.height
+
     Slider {
         id: slider
 
@@ -34,10 +38,8 @@ RowLayout {
         property bool ignoreValueChange: false
 
         Layout.fillWidth: true
-        minimumValue: 0
-        // FIXME: I do wonder if exposing max through the model would be useful at all
-        maximumValue: 65536
-        stepSize: maximumValue / 100
+        minimumValue: PulseAudio.MinimalVolume
+        maximumValue: PulseAudio.MaximalVolume
         visible: HasVolume
         enabled: VolumeWritable && !Muted
 
@@ -68,6 +70,16 @@ RowLayout {
             }
         }
 
+        Label {
+            id: hundredPercentLabel
+            z: slider.z - 1
+            x: (slider.width / slider.maximumValue) * PulseAudio.NormalVolume - width / 2
+            y: slider.height / 1.2
+            opacity: 0.5
+            font.pixelSize: slider.height / 2.2
+            text: i18n("100%")
+        }
+
         Timer {
             id: updateTimer
             interval: 200
@@ -77,10 +89,11 @@ RowLayout {
 
     Label {
         id: percentText
+        readonly property real value: PulseObject.volume > slider.maximumValue ? PulseObject.volume : slider.value
         Layout.alignment: Qt.AlignHCenter
         Layout.minimumWidth: percentMetrics.advanceWidth
         horizontalAlignment: Qt.AlignRight
-        text: i18nc("volume percentage", "%1%", Math.floor(slider.value / slider.maximumValue * 100.0))
+        text: i18nc("volume percentage", "%1%", Math.round(value / PulseAudio.NormalVolume * 100.0))
     }
 
     TextMetrics {

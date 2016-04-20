@@ -26,9 +26,21 @@
 #include "client.h"
 #include "sink.h"
 #include "source.h"
+#include "context.h"
 
 #include "globalactioncollection.h"
 #include "volumeosd.h"
+
+static QJSValue pulseaudio_singleton(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(engine)
+
+    QJSValue object = scriptEngine->newObject();
+    object.setProperty(QStringLiteral("NormalVolume"), (double) QPulseAudio::Context::NormalVolume);
+    object.setProperty(QStringLiteral("MinimalVolume"), (double) QPulseAudio::Context::MinimalVolume);
+    object.setProperty(QStringLiteral("MaximalVolume"), (double) QPulseAudio::Context::MaximalVolume);
+    return object;
+}
 
 void Plugin::registerTypes(const char* uri)
 {
@@ -41,6 +53,7 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
     qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
     qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");
+    qmlRegisterSingletonType(uri, 0, 1, "PulseAudio", pulseaudio_singleton);
 
     qmlRegisterType<QPulseAudio::Client>();
     qmlRegisterType<QPulseAudio::Sink>();

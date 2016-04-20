@@ -47,6 +47,10 @@ public:
 
     static Context *instance();
 
+    static const qint64 NormalVolume = PA_VOLUME_NORM;
+    static const qint64 MinimalVolume = 0;
+    static const qint64 MaximalVolume = (PA_VOLUME_NORM / 100.0) * 150;
+
     void ref();
     void unref();
 
@@ -82,8 +86,7 @@ public:
     void setGenericVolume(quint32 index, int channel, qint64 newVolume,
                           pa_cvolume cVolume, PAFunction pa_set_volume)
     {
-        // TODO: overdrive
-        newVolume = qBound<qint64>(0, newVolume, 65536);
+        newVolume = qBound<qint64>(0, newVolume, PA_VOLUME_MAX);
         pa_cvolume newCVolume = cVolume;
         if (channel == -1) { // -1 all channels
             for (int i = 0; i < newCVolume.channels; ++i) {
