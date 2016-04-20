@@ -55,37 +55,31 @@ Item {
         return Math.round(100 * volume / 65536);
     }
 
-    function increaseVolume(showOsd) {
+    function increaseVolume() {
         if (!sinkModel.defaultSink) {
             return;
         }
         var volume = bound(sinkModel.defaultSink.volume + volumeStep, 0, 65536);
         sinkModel.defaultSink.volume = volume;
-        if (showOsd) {
-            osd.show(volumePercent(volume));
-        }
+        osd.show(volumePercent(volume));
     }
 
-    function decreaseVolume(showOsd) {
+    function decreaseVolume() {
         if (!sinkModel.defaultSink) {
             return;
         }
         var volume = bound(sinkModel.defaultSink.volume - volumeStep, 0, 65536);
         sinkModel.defaultSink.volume = volume;
-        if (showOsd) {
-            osd.show(volumePercent(volume));
-        }
+        osd.show(volumePercent(volume));
     }
 
-    function muteVolume(showOsd) {
+    function muteVolume() {
         if (!sinkModel.defaultSink) {
             return;
         }
         var toMute = !sinkModel.defaultSink.muted;
         sinkModel.defaultSink.muted = toMute;
-        if (showOsd) {
-            osd.show(toMute ? 0 : volumePercent(sinkModel.defaultSink.volume));
-        }
+        osd.show(toMute ? 0 : volumePercent(sinkModel.defaultSink.volume));
     }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
@@ -147,19 +141,19 @@ Item {
             objectName: "increase_volume"
             text: i18n("Increase Volume")
             shortcut: Qt.Key_VolumeUp
-            onTriggered: increaseVolume(true)
+            onTriggered: increaseVolume()
         }
         GlobalAction {
             objectName: "decrease_volume"
             text: i18n("Decrease Volume")
             shortcut: Qt.Key_VolumeDown
-            onTriggered: decreaseVolume(true)
+            onTriggered: decreaseVolume()
         }
         GlobalAction {
             objectName: "mute"
             text: i18n("Mute")
             shortcut: Qt.Key_VolumeMute
-            onTriggered: muteVolume(true)
+            onTriggered: muteVolume()
         }
     }
 
