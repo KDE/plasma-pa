@@ -73,14 +73,17 @@ template <typename Type, typename Map>
 static Type *findByName(const Map &map, const char *name)
 {
     const QString nameStr = QString::fromUtf8(name);
+    Type *out = nullptr;
     QMapIterator<quint32, Type *> it(map);
     while (it.hasNext()) {
         it.next();
-        if (it.value()->name() == nameStr) {
-            return it.value();
+        out = it.value();
+        if (out->name() == nameStr) {
+            return out;
         }
     }
-    return nullptr;
+    qCWarning(PLASMAPA) << "No object for name" << nameStr;
+    return out;
 }
 
 void Server::update(const pa_server_info *info)
