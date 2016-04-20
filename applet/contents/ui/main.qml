@@ -33,9 +33,9 @@ import "../code/icon.js" as Icon
 Item {
     id: main
 
-    property int maxVolumePercent: 100
+    property int maxVolumePercent: Plasmoid.configuration.maximumVolume
     property int maxVolumeValue: Math.round(maxVolumePercent * PulseAudio.NormalVolume / 100.0)
-    property int volumeStep: PulseAudio.NormalVolume / 15
+    property int volumeStep: Math.round(Plasmoid.configuration.volumeStep * PulseAudio.NormalVolume / 100.0)
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
