@@ -33,20 +33,15 @@ SourceOutput::SourceOutput(QObject *parent)
 void SourceOutput::update(const pa_source_output_info *info)
 {
     updateStream(info);
-    if (m_sourceIndex != info->source) {
-        m_sourceIndex = info->source;
-        emit sourceIndexChanged();
+    if (m_deviceIndex != info->source) {
+        m_deviceIndex = info->source;
+        emit deviceIndexChanged();
     }
 }
 
-quint32 SourceOutput::sourceIndex() const
+void SourceOutput::setDeviceIndex(quint32 deviceIndex)
 {
-    return m_sourceIndex;
-}
-
-void SourceOutput::setSourceIndex(quint32 sourceIndex)
-{
-    context()->setGenericDeviceForStream(index(), sourceIndex, &pa_context_move_source_output_by_index);
+    context()->setGenericDeviceForStream(index(), deviceIndex, &pa_context_move_source_output_by_index);
 }
 
 void SourceOutput::setVolume(qint64 volume)

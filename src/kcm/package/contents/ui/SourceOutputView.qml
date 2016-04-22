@@ -24,7 +24,6 @@ import QtQuick.Controls 1.3
 
 PulseView {
     delegate: StreamListItem {
-        deviceType: "source"
         deviceModel: sourceModel
     }
 }

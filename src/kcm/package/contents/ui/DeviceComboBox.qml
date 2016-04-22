@@ -23,8 +23,6 @@ import QtQuick 2.0
 import QtQuick.Controls 1.3
 
 ComboBox {
-    property string deviceType
-
     onModelChanged: updateIndex()
     onCountChanged: updateIndex()
 
@@ -32,19 +30,12 @@ ComboBox {
         if (index === -1) {
             return;
         }
-        if (deviceType == 'sink') {
-            PulseObject.sinkIndex = modelIndexToDeviceIndex(index)
-        } else if (deviceType == 'source') {
-            PulseObject.sourceIndex = modelIndexToDeviceIndex(index)
-        }
+
+        PulseObject.deviceIndex = modelIndexToDeviceIndex(index);
     }
 
     function updateIndex() {
-        if (deviceType == 'sink') {
-            currentIndex = deviceIndexToModelIndex(SinkIndex);
-        } else if (deviceType == 'source') {
-            currentIndex = deviceIndexToModelIndex(SourceIndex);
-        }
+        currentIndex = deviceIndexToModelIndex(DeviceIndex);
     }
 
     function deviceIndexToModelIndex(deviceIndex) {
@@ -68,8 +59,7 @@ ComboBox {
     Connections {
         target: PulseObject
         ignoreUnknownSignals: true
-        onSinkIndexChanged: updateIndex();
-        onSourceIndexChanged: updateIndex();
+        onDeviceIndexChanged: updateIndex();
     }
 
     Component.onCompleted: updateIndex();

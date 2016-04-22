@@ -50,4 +50,9 @@ bool Stream::isVirtualStream() const
     return m_virtualStream;
 }
 
+quint32 Stream::deviceIndex() const
+{
+    return m_deviceIndex;
+}
+
 } // QPulseAudio

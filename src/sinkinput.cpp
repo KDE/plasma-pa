@@ -33,20 +33,15 @@ SinkInput::SinkInput(QObject *parent)
 void SinkInput::update(const pa_sink_input_info *info)
 {
     updateStream(info);
-    if (m_sinkIndex != info->sink) {
-        m_sinkIndex = info->sink;
-        emit sinkIndexChanged();
+    if (m_deviceIndex != info->sink) {
+        m_deviceIndex = info->sink;
+        emit deviceIndexChanged();
     }
 }
 
-quint32 SinkInput::sinkIndex() const
+void SinkInput::setDeviceIndex(quint32 deviceIndex)
 {
-    return m_sinkIndex;
-}
-
-void SinkInput::setSinkIndex(quint32 sinkIndex)
-{
-    context()->setGenericDeviceForStream(index(), sinkIndex, &pa_context_move_sink_input_by_index);
+    context()->setGenericDeviceForStream(index(), deviceIndex, &pa_context_move_sink_input_by_index);
 }
 
 void SinkInput::setVolume(qint64 volume)

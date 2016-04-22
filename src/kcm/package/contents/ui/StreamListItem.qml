@@ -29,7 +29,6 @@ import org.kde.plasma.private.volume 0.1
 ColumnLayout {
     id: delegate
 
-    property alias deviceType: deviceComboBox.deviceType
     property alias deviceModel: deviceComboBox.model
 
     width: parent.width
