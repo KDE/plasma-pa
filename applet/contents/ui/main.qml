@@ -268,7 +268,7 @@ Item {
                         id: sinkModel
                     }
                     boundsBehavior: Flickable.StopAtBounds;
-                    delegate: SinkListItem {}
+                    delegate: DeviceListItem {}
                 }
 
                 Header {
@@ -287,7 +287,7 @@ Item {
                         id: sourceModel
                     }
                     boundsBehavior: Flickable.StopAtBounds;
-                    delegate: SourceListItem {}
+                    delegate: DeviceListItem {}
                 }
             }
         }
