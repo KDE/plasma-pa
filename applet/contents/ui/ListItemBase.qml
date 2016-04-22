@@ -31,13 +31,8 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 PlasmaComponents.ListItem {
     id: item
 
-    property bool expanded: false
-    property Component subComponent
-
     property alias label: textLabel.text
     property alias icon: clientIcon.source
-
-    enabled: subComponent
 
     function setVolume(volume) {
         if (volume > 0 && Muted) {
@@ -71,34 +66,13 @@ PlasmaComponents.ListItem {
             ColumnLayout {
                 id: column
 
-                Item {
+                PlasmaExtras.Heading {
+                    id :textLabel
                     Layout.fillWidth: true
-                    height: textLabel.height
-
-                    PlasmaExtras.Heading {
-                        id :textLabel
-                        anchors.top: parent.top
-                        anchors.left: parent.left
-                        anchors.right: expanderIcon.visible ? expanderIcon.left : parent.right
-                        //                    anchors.verticalCenter: iconContainer.verticalCenter
-                        level: 5
-                        opacity: 0.6
-                        wrapMode: Text.NoWrap
-                        elide: Text.ElideRight
-                    }
-
-                    PlasmaCore.SvgItem {
-                        id: expanderIcon
-                        visible: subComponent
-                        anchors.top: parent.top;
-                        anchors.right: parent.right;
-                        anchors.bottom: parent.bottom;
-                        width: height
-                        svg: PlasmaCore.Svg {
-                            imagePath: "widgets/arrows"
-                        }
-                        elementId: expanded ? "up-arrow" : "down-arrow"
-                    }
+                    level: 5
+                    opacity: 0.6
+                    wrapMode: Text.NoWrap
+                    elide: Text.ElideRight
                 }
 
                 RowLayout {
@@ -180,48 +154,11 @@ PlasmaComponents.ListItem {
                 }
             }
         }
-
-        Loader {
-            id: subLoader
-
-            Layout.fillWidth: true
-            Layout.leftMargin: units.gridUnit + clientIcon.width
-            Layout.minimumHeight: subLoader.item ? subLoader.item.height : 0
-            Layout.maximumHeight: Layout.minimumHeight
-        }
     }
 
     PlasmaComponents.Label {
         id: referenceText
         visible: false
         text: i18nc("only used for sizing, should be widest possible string", "100%")
-    }
-
-    states: [
-        State {
-            name: "collapsed";
-            when: !expanded;
-            StateChangeScript {
-                script: {
-                    if (subLoader.status == Loader.Ready) {
-                        subLoader.sourceComponent = undefined;
-                    }
-                }
-            }
-        },
-        State {
-            name: "expanded";
-            when: expanded;
-            StateChangeScript {
-                script: subLoader.sourceComponent = Qt.binding(function() { return subComponent; });
-            }
-        }
-    ]
-
-    onClicked: {
-        if (!subComponent) {
-            return;
-        }
-        expanded = !expanded;
     }
 }
