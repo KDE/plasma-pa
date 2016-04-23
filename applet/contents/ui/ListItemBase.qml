@@ -18,7 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
+import QtQuick 2.4
 
 import QtQuick.Controls 1.0
 import QtQuick.Layouts 1.0
@@ -147,18 +147,18 @@ PlasmaComponents.ListItem {
                     PlasmaComponents.Label {
                         id: percentText
                         Layout.alignment: Qt.AlignHCenter
-                        Layout.minimumWidth: referenceText.width
+                        Layout.minimumWidth: percentMetrics.advanceWidth
                         horizontalAlignment: Qt.AlignRight
                         text: i18nc("volume percentage", "%1%", Math.floor(slider.value / slider.maximumValue * 100.0))
+                    }
+
+                    TextMetrics {
+                        id: percentMetrics
+                        font: percentText.font
+                        text: i18nc("only used for sizing, should be widest possible string", "100%")
                     }
                 }
             }
         }
-    }
-
-    PlasmaComponents.Label {
-        id: referenceText
-        visible: false
-        text: i18nc("only used for sizing, should be widest possible string", "100%")
     }
 }

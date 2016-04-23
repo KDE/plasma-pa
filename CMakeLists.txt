@@ -4,7 +4,10 @@ cmake_minimum_required(VERSION 2.8.12)
 set(PROJECT_VERSION "5.6.90")
 set(PROJECT_VERSION_MAJOR 5)
 
-find_package(ECM 0.0.14 REQUIRED NO_MODULE)
+set (QT_MIN_VERSION "5.4.0")
+set (ECM_MIN_VERSION "0.0.14")
+
+find_package(ECM ${ECM_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
@@ -14,7 +17,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
-find_package(Qt5 REQUIRED COMPONENTS
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     DBus
     Widgets
