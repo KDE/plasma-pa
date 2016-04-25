@@ -59,8 +59,8 @@ PlasmaComponents.ListItem {
                 id: clientIcon
                 visible: valid
                 Layout.alignment: Qt.AlignHCenter
-                width: height
-                height: column.height * 0.75
+                Layout.preferredHeight: column.height * 0.75
+                Layout.preferredWidth: Layout.preferredHeight
             }
 
             ColumnLayout {

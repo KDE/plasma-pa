@@ -19,6 +19,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
+    Gui
     DBus
     Widgets
     Quick

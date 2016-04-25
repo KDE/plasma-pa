@@ -1,5 +1,4 @@
 module org.kde.plasma.private.volume
 plugin plasma-volume-declarative
 
-ClientIcon 0.1 ClientIcon.qml
 PulseObjectFilterModel 0.1 PulseObjectFilterModel.qml

@@ -37,12 +37,12 @@ ColumnLayout {
         Layout.fillWidth: true
         spacing: units.smallSpacing * 2
 
-        ClientIcon {
+        QIconItem {
             id: clientIcon
 
             Layout.preferredHeight: delegateColumn.height * 0.66
             Layout.preferredWidth: Layout.preferredHeight
-            client: PulseObject.client
+            icon: PulseObject.iconName || "unknown"
         }
 
         ColumnLayout {

@@ -34,7 +34,7 @@ ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
             width: height
             height: nameLabel.contentHeight
-            icon: PulseObject.properties['device.icon_name'] ? PulseObject.properties['device.icon_name'] : 'audio-card'
+            icon: PulseObject.iconName || "audio-card"
         }
 
         Label {

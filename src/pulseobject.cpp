@@ -22,6 +22,8 @@
 
 #include "context.h"
 
+#include <QIcon>
+
 namespace QPulseAudio
 {
 
@@ -43,6 +45,36 @@ Context *PulseObject::context() const
 uint32_t PulseObject::index() const
 {
     return m_index;
+}
+
+QString PulseObject::iconName() const
+{
+    QString name = m_properties.value(QStringLiteral("device.icon_name")).toString();
+    if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
+        return name;
+    }
+
+    name = m_properties.value(QStringLiteral("window.icon_name")).toString();
+    if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
+        return name;
+    }
+
+    name = m_properties.value(QStringLiteral("application.icon_name")).toString();
+    if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
+        return name;
+    }
+
+    name = m_properties.value(QStringLiteral("application.binary")).toString();
+    if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
+        return name;
+    }
+
+    name = property("name").toString();
+    if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
+        return name;
+    }
+
+    return QString();
 }
 
 QVariantMap PulseObject::properties() const

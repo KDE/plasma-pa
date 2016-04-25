@@ -25,6 +25,7 @@ set(SRC_LIST
 add_library(QPulseAudioPrivate SHARED ${SRC_LIST})
 target_link_libraries(QPulseAudioPrivate
     Qt5::Core
+    Qt5::Gui
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
 )

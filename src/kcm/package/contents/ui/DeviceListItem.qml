@@ -32,7 +32,7 @@ ColumnLayout {
         QIconItem {
             width: height
             height: inputText.height
-            icon: 'audio-card'
+            icon: PulseObject.iconName || "audio-card"
         }
 
         Label {

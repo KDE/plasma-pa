@@ -29,5 +29,5 @@ ListItemBase {
                                       PulseObject.client.name,
                                       PulseObject.name)
                               : PulseObject.name
-    icon: PulseObject.client.icon
+    icon: PulseObject.iconName || "unknown"
 }

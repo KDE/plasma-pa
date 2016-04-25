@@ -35,6 +35,7 @@ class Q_DECL_EXPORT PulseObject : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(quint32 index READ index CONSTANT)
+    Q_PROPERTY(QString iconName READ iconName CONSTANT)
     Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
 public:
     template <typename PAInfo>
@@ -58,6 +59,7 @@ public:
     }
 
     quint32 index() const;
+    QString iconName() const;
     QVariantMap properties() const;
 
 signals:
