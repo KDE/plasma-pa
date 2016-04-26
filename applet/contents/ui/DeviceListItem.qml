@@ -21,5 +21,5 @@
 import QtQuick 2.0
 
 ListItemBase {
-    label: PulseObject.description
+    label: Description
 }

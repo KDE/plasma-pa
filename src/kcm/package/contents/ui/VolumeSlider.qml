@@ -23,18 +23,6 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.0
 
 RowLayout {
-    // VolumeIcon {
-    //     Layout.maximumHeight: slider.height * 0.75
-    //     Layout.maximumWidth: slider.height* 0.75
-    //     volume: PulseObject.volume
-    //     muted: PulseObject.muted
-    //
-    //     MouseArea {
-    //         anchors.fill: parent
-    //         onPressed: PulseObject.muted = !PulseObject.muted
-    //     }
-    // }
-
     Slider {
         id: slider
 
@@ -42,7 +30,7 @@ RowLayout {
         // While we are sliding we must not react to value updates
         // as otherwise we can easily end up in a loop where value
         // changes trigger volume changes trigger value changes.
-        property int volume: PulseObject.volume
+        property int volume: Volume
         property bool ignoreValueChange: false
 
         Layout.fillWidth: true
@@ -50,18 +38,18 @@ RowLayout {
         // FIXME: I do wonder if exposing max through the model would be useful at all
         maximumValue: 65536
         stepSize: maximumValue / 100
-        visible: PulseObject.hasVolume
-        enabled: PulseObject.volumeWritable && !PulseObject.muted
+        visible: HasVolume
+        enabled: VolumeWritable && !Muted
 
         onVolumeChanged: {
             ignoreValueChange = true;
-            value = PulseObject.volume;
+            value = Volume;
             ignoreValueChange = false;
         }
 
         onValueChanged: {
             if (!ignoreValueChange) {
-                PulseObject.volume = value;
+                Volume = value;
 
                 if (!pressed) {
                     updateTimer.restart();
@@ -83,7 +71,7 @@ RowLayout {
         Timer {
             id: updateTimer
             interval: 200
-            onTriggered: slider.value = PulseObject.volume
+            onTriggered: slider.value = Volume
         }
     }
 

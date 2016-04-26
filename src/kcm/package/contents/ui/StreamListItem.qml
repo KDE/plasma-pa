@@ -42,7 +42,7 @@ ColumnLayout {
 
             Layout.preferredHeight: delegateColumn.height * 0.66
             Layout.preferredWidth: Layout.preferredHeight
-            icon: PulseObject.iconName || "unknown"
+            icon: IconName || "unknown"
         }
 
         ColumnLayout {
@@ -53,10 +53,7 @@ ColumnLayout {
                 Label {
                     id: inputText
                     Layout.fillWidth: true
-                    text: PulseObject.client ? i18nc("label of stream items", "%1: %2",
-                                                     PulseObject.client.name,
-                                                     PulseObject.name)
-                                             : PulseObject.name
+                    text: Client ? i18nc("label of stream items", "%1: %2", Client.name, Name) : Name
                     elide: Text.ElideRight
                 }
 
@@ -69,8 +66,8 @@ ColumnLayout {
                 }
 
                 MuteButton {
-                    muted: PulseObject.muted
-                    onCheckedChanged: PulseObject.muted = checked
+                    muted: Muted
+                    onCheckedChanged: Muted = checked
                 }
             }
 

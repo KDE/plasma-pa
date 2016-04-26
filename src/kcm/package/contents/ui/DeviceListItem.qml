@@ -32,32 +32,32 @@ ColumnLayout {
         QIconItem {
             width: height
             height: inputText.height
-            icon: PulseObject.iconName || "audio-card"
+            icon: IconName || "audio-card"
         }
 
         Label {
             id: inputText
             Layout.fillWidth: true
             elide: Text.ElideRight
-            text: PulseObject.description
+            text: Description
         }
 
         DefaultDeviceButton {
             visible: delegate.ListView.view.count > 1
-            isDefault: PulseObject.default
+            isDefault: Default
             onCheckedChanged: {
                 if (!checked) {
                     // Cannot unset default device
                     checked = isDefault;
                 } else {
-                    PulseObject.default = true;
+                    Default = true;
                 }
             }
         }
 
         MuteButton {
-            muted: PulseObject.muted
-            onCheckedChanged: PulseObject.muted = checked
+            muted: Muted
+            onCheckedChanged: Muted = checked
         }
     }
 
@@ -74,11 +74,11 @@ ColumnLayout {
             ComboBox {
                 id: portbox
                 Layout.fillWidth: true
-                model: PulseObject.ports
-                onModelChanged: currentIndex = PulseObject.activePortIndex
+                model: Ports
+                onModelChanged: currentIndex = ActivePortIndex
                 textRole: "description"
-                currentIndex: PulseObject.activePortIndex
-                onActivated: PulseObject.activePortIndex = index
+                currentIndex: ActivePortIndex
+                onActivated: ActivePortIndex = index
             }
         }
 

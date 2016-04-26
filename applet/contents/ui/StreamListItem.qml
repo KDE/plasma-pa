@@ -25,9 +25,6 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.private.volume 0.1
 
 ListItemBase {
-    label: PulseObject.client ? i18nc("label of stream items", "%1: %2",
-                                      PulseObject.client.name,
-                                      PulseObject.name)
-                              : PulseObject.name
-    icon: PulseObject.iconName || "unknown"
+    label: Client ? i18nc("label of stream items", "%1: %2", Client.name, Name) : Name
+    icon: IconName || "unknown"
 }

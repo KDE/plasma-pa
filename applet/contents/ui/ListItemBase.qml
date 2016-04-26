@@ -34,13 +34,6 @@ PlasmaComponents.ListItem {
     property alias label: textLabel.text
     property alias icon: clientIcon.source
 
-    function setVolume(volume) {
-        if (volume > 0 && Muted) {
-            Muted = false;
-        }
-        PulseObject.volume = volume
-    }
-
     anchors {
         left: parent.left;
         right: parent.right;
@@ -79,12 +72,12 @@ PlasmaComponents.ListItem {
                     VolumeIcon {
                         Layout.maximumHeight: slider.height * 0.75
                         Layout.maximumWidth: slider.height* 0.75
-                        volume: PulseObject.volume
-                        muted: PulseObject.muted
+                        volume: Volume
+                        muted: Muted
 
                         MouseArea {
                             anchors.fill: parent
-                            onPressed: PulseObject.muted = !PulseObject.muted
+                            onPressed: Muted = !Muted
                         }
                     }
 
@@ -95,7 +88,7 @@ PlasmaComponents.ListItem {
                         // While we are sliding we must not react to value updates
                         // as otherwise we can easily end up in a loop where value
                         // changes trigger volume changes trigger value changes.
-                        property int volume: PulseObject.volume
+                        property int volume: Volume
                         property bool ignoreValueChange: false
 
                         Layout.fillWidth: true
@@ -103,23 +96,18 @@ PlasmaComponents.ListItem {
                         // FIXME: I do wonder if exposing max through the model would be useful at all
                         maximumValue: 65536
                         stepSize: maximumValue / 100
-                        visible: PulseObject.hasVolume
-                        enabled: {
-                            if (typeof PulseObject.volumeWritable === 'undefined') {
-                                return !PulseObject.muted
-                            }
-                            return PulseObject.volumeWritable && !PulseObject.muted
-                        }
+                        visible: HasVolume
+                        enabled: VolumeWritable && !Muted
 
                         onVolumeChanged: {
                             ignoreValueChange = true;
-                            value = PulseObject.volume;
+                            value = Volume;
                             ignoreValueChange = false;
                         }
 
                         onValueChanged: {
                             if (!ignoreValueChange) {
-                                setVolume(value);
+                                Volume = value;
 
                                 if (!pressed) {
                                     updateTimer.restart();
@@ -141,7 +129,7 @@ PlasmaComponents.ListItem {
                         Timer {
                             id: updateTimer
                             interval: 200
-                            onTriggered: slider.value = PulseObject.volume
+                            onTriggered: slider.value = Volume
                         }
                     }
                     PlasmaComponents.Label {

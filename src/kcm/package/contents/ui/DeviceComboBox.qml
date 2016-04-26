@@ -31,7 +31,7 @@ ComboBox {
             return;
         }
 
-        PulseObject.deviceIndex = modelIndexToDeviceIndex(index);
+        DeviceIndex = modelIndexToDeviceIndex(index);
     }
 
     function updateIndex() {
@@ -58,7 +58,6 @@ ComboBox {
 
     Connections {
         target: PulseObject
-        ignoreUnknownSignals: true
         onDeviceIndexChanged: updateIndex();
     }
 

@@ -107,6 +107,11 @@ void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
         m_signalIndexToProperties.insert(property.notifySignalIndex(), i);
     }
     qCDebug(PLASMAPA) << m_roles;
+
+    // Connect to property changes also with objects already in model
+    for (int i = 0; i < m_map->count(); ++i) {
+        onDataAdded(i);
+    }
 }
 
 void AbstractModel::propertyChanged()

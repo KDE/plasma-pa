@@ -34,13 +34,13 @@ ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
             width: height
             height: nameLabel.contentHeight
-            icon: PulseObject.iconName || "audio-card"
+            icon: IconName || "audio-card"
         }
 
         Label {
             id: nameLabel
             Layout.fillWidth: true
-            text: PulseObject.properties['device.description'] ? PulseObject.properties['device.description'] : PulseObject.name
+            text: Properties["device.description"] || Name
             elide: Text.ElideRight
         }
     }
@@ -53,14 +53,14 @@ ColumnLayout {
         }
         ComboBox {
             Layout.fillWidth: true
-            model: PulseObject.profiles
+            model: Profiles
             // NOTE: model resets (i.e. profiles property changes) will reset
             // the currentIndex, so force it to be set on model changes, otherwise
             // it would eventually become 0 when it shouldn't be.
-            onModelChanged: currentIndex = PulseObject.activeProfileIndex
+            onModelChanged: currentIndex = ActiveProfileIndex
             textRole: "description"
-            currentIndex: PulseObject.activeProfileIndex
-            onActivated: PulseObject.activeProfileIndex = index
+            currentIndex: ActiveProfileIndex
+            onActivated: ActiveProfileIndex = index
         }
     }
 
