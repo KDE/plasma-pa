@@ -35,6 +35,7 @@ Item {
 
     property int volumeStep: 65536 / 15
     property string displayName: i18n("Audio Volume")
+    property QtObject draggedStream: null
 
     Layout.minimumHeight: units.gridUnit * 12
     Layout.minimumWidth: units.gridUnit * 12
@@ -80,6 +81,27 @@ Item {
         var toMute = !sinkModel.defaultSink.muted;
         sinkModel.defaultSink.muted = toMute;
         osd.show(toMute ? 0 : volumePercent(sinkModel.defaultSink.volume));
+    }
+
+    function beginMoveStream(type, stream) {
+        if (type == "sink") {
+            sourceView.visible = false;
+            sourceViewHeader.visible = false;
+        } else if (type == "source") {
+            sinkView.visible = false;
+            sinkViewHeader.visible = false;
+        }
+
+        tabBar.currentTab = devicesTab;
+    }
+
+    function endMoveStream() {
+        tabBar.currentTab = streamsTab;
+
+        sourceView.visible = true;
+        sourceViewHeader.visible = true;
+        sinkView.visible = true;
+        sinkViewHeader.visible = true;
     }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
@@ -223,7 +245,10 @@ Item {
                         sourceModel: SinkInputModel {}
                     }
                     boundsBehavior: Flickable.StopAtBounds;
-                    delegate: StreamListItem {}
+                    delegate: StreamListItem {
+                        type: "sink-input"
+                        draggable: sinkView.count > 1
+                    }
                 }
 
                 Header {
@@ -243,7 +268,10 @@ Item {
                         sourceModel: SourceOutputModel {}
                     }
                     boundsBehavior: Flickable.StopAtBounds;
-                    delegate: StreamListItem {}
+                    delegate: StreamListItem {
+                        type: "source-input"
+                        draggable: sourceView.count > 1
+                    }
                 }
             }
 
@@ -255,6 +283,7 @@ Item {
                 Layout.maximumWidth: maximumWidth
 
                 Header {
+                    id: sinkViewHeader
                     Layout.fillWidth: true
                     visible: sinkView.count > 0
                     text: i18n("Playback Devices")
@@ -274,10 +303,13 @@ Item {
                         }
                     }
                     boundsBehavior: Flickable.StopAtBounds;
-                    delegate: DeviceListItem {}
+                    delegate: DeviceListItem {
+                        type: "sink"
+                    }
                 }
 
                 Header {
+                    id: sourceViewHeader
                     Layout.fillWidth: true
                     visible: sourceView.count > 0
                     text: i18n("Capture Devices")
@@ -297,7 +329,9 @@ Item {
                         }
                     }
                     boundsBehavior: Flickable.StopAtBounds;
-                    delegate: DeviceListItem {}
+                    delegate: DeviceListItem {
+                        type: "source"
+                    }
                 }
             }
         }

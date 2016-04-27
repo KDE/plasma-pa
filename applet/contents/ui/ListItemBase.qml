@@ -27,16 +27,38 @@ import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.draganddrop 2.0 as DragAndDrop
 
 PlasmaComponents.ListItem {
     id: item
 
     property alias label: textLabel.text
+    property alias draggable: dragArea.enabled
     property alias icon: clientIcon.source
+    property string type
 
     anchors {
         left: parent.left;
         right: parent.right;
+    }
+
+    checked: dropArea.containsDrag
+    opacity: (draggedStream && draggedStream.deviceIndex == Index) ? 0.3 : 1.0
+
+    DragAndDrop.DropArea {
+        id: dropArea
+        anchors.fill: parent
+        enabled: draggedStream
+
+        onDragEnter: {
+            if (draggedStream.deviceIndex == Index) {
+                event.ignore();
+            }
+        }
+
+        onDrop: {
+            draggedStream.deviceIndex = Index;
+        }
     }
 
     ColumnLayout {
@@ -54,6 +76,31 @@ PlasmaComponents.ListItem {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.preferredHeight: column.height * 0.75
                 Layout.preferredWidth: Layout.preferredHeight
+
+                DragAndDrop.DragArea {
+                    id: dragArea
+                    anchors.fill: parent
+                    delegate: parent
+
+                    mimeData {
+                        source: item
+                    }
+
+                    onDragStarted: {
+                        draggedStream = PulseObject;
+                        main.beginMoveStream(type == "sink-input" ? "sink" : "source");
+                    }
+
+                    onDrop: {
+                        draggedStream = null;
+                        main.endMoveStream();
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: dragArea.enabled ? (pressed ? Qt.ClosedHandCursor : Qt.OpenHandCursor) : undefined
+                    }
+                }
             }
 
             ColumnLayout {
