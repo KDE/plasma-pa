@@ -101,10 +101,6 @@ void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
         }
     }
 
-    Q_ASSERT(enumerator.scope() == metaObject()->className());
-    // No valid enum found, leaf probably doesn't implement ItemRole (correctly).
-    Q_ASSERT(enumerator.isValid());
-
     for (int i = 0; i < enumerator.keyCount(); ++i) {
         // Clip the Role suffix and glue it in the hash.
         const int roleLength = 4;
