@@ -501,6 +501,7 @@ void Context::connectToDaemon()
         pa_context_unref(m_context);
         pa_glib_mainloop_free(m_mainloop);
         m_context = nullptr;
+        m_mainloop = nullptr;
         return;
     }
     pa_context_set_state_callback(m_context, &context_state_callback, this);
