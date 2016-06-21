@@ -84,5 +84,15 @@ ColumnLayout {
         }
     }
 
-    ListItemSeperator { view: delegate.ListView.view }
+    ListItemSeperator {
+        view: delegate.ListView.view
+
+        Component.onCompleted: {
+            if (isEventStream) {
+                visible = Qt.binding(function() {
+                    return sinkInputView.count > 0;
+                });
+            }
+        }
+    }
 }
