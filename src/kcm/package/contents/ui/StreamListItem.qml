@@ -41,7 +41,7 @@ ColumnLayout {
         QIconItem {
             id: clientIcon
 
-            Layout.preferredHeight: delegateColumn.height * 0.66
+            Layout.preferredHeight: delegateColumn.height * 0.60
             Layout.preferredWidth: Layout.preferredHeight
             icon: IconName || "unknown"
         }
@@ -84,5 +84,15 @@ ColumnLayout {
         }
     }
 
-    ListItemSeperator { view: delegate.ListView.view }
+    ListItemSeperator {
+        view: delegate.ListView.view
+
+        Component.onCompleted: {
+            if (isEventStream) {
+                visible = Qt.binding(function() {
+                    return sinkInputView.count > 0;
+                });
+            }
+        }
+    }
 }
