@@ -41,7 +41,8 @@ RowLayout {
         minimumValue: PulseAudio.MinimalVolume
         maximumValue: PulseAudio.MaximalVolume
         visible: HasVolume
-        enabled: VolumeWritable && !Muted
+        enabled: VolumeWritable
+        opacity: Muted ? 0.5 : 1
 
         onVolumeChanged: {
             ignoreValueChange = true;
@@ -52,6 +53,7 @@ RowLayout {
         onValueChanged: {
             if (!ignoreValueChange) {
                 Volume = value;
+                Muted = false;
 
                 if (!pressed) {
                     updateTimer.restart();
