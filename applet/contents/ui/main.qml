@@ -66,6 +66,7 @@ Item {
             return;
         }
         var volume = boundVolume(sinkModel.defaultSink.volume + volumeStep);
+        sinkModel.defaultSink.muted = false;
         sinkModel.defaultSink.volume = volume;
         osd.show(volumePercent(volume, maxVolumeValue));
     }
@@ -75,6 +76,7 @@ Item {
             return;
         }
         var volume = boundVolume(sinkModel.defaultSink.volume - volumeStep);
+        sinkModel.defaultSink.muted = false;
         sinkModel.defaultSink.volume = volume;
         osd.show(volumePercent(volume, maxVolumeValue));
     }
@@ -93,6 +95,7 @@ Item {
             return;
         }
         var volume = bound(sourceModel.defaultSource.volume + volumeStep, 0, 65536);
+        sourceModel.defaultSource.muted = false;
         sourceModel.defaultSource.volume = volume;
         osd.showMicrophone(volumePercent(volume));
     }
@@ -102,6 +105,7 @@ Item {
             return;
         }
         var volume = bound(sourceModel.defaultSource.volume - volumeStep, 0, 65536);
+        sourceModel.defaultSource.muted = false;
         sourceModel.defaultSource.volume = volume;
         osd.showMicrophone(volumePercent(volume));
     }
