@@ -64,7 +64,7 @@ QString PulseObject::iconName() const
         return name;
     }
 
-    name = m_properties.value(QStringLiteral("application.binary")).toString();
+    name = m_properties.value(QStringLiteral("application.process.binary")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
     }
