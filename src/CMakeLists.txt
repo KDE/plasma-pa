@@ -1,4 +1,5 @@
-include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
+include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR}     ${GCONF_INCLUDE_DIRS}
+    ${GOBJECT_INCLUDE_DIRS})
 
 set(SRC_LIST
     card.cpp
@@ -14,6 +15,8 @@ set(SRC_LIST
     ref.cpp
     sink.cpp
     sinkinput.cpp
+    modulemanager.cpp
+    gconfitem.cpp
     source.cpp
     sourceoutput.cpp
     stream.cpp

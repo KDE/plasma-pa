@@ -19,7 +19,26 @@
 */
 
 import QtQuick 2.0
+import QtQuick.Layouts 1.1
+import QtQuick.Controls 1.3
 
-PulseView {
-    delegate: CardListItem {}
+import org.kde.plasma.private.volume 0.1
+
+ColumnLayout {
+    property alias model: view.model
+    property alias emptyText: view.emptyText
+    PulseView {
+        id: view
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        delegate: CardListItem {}
+    }
+    CheckBox {
+        ModuleManager {
+            id: moduleManager
+        }
+        text: i18n("Add virtual output device for simultaneous output on all local sound cards")
+        checked: moduleManager.combineSinks
+        onCheckedChanged: moduleManager.combineSinks = checked;
+    }
 }

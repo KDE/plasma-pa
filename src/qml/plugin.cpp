@@ -27,6 +27,7 @@
 #include "sink.h"
 #include "source.h"
 #include "context.h"
+#include "modulemanager.h"
 
 #include "globalactioncollection.h"
 #include "volumeosd.h"
@@ -48,6 +49,7 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<QPulseAudio::SinkModel>(uri, 0, 1, "SinkModel");
     qmlRegisterType<QPulseAudio::SinkInputModel>(uri, 0, 1, "SinkInputModel");
     qmlRegisterType<QPulseAudio::SourceModel>(uri, 0, 1, "SourceModel");
+    qmlRegisterType<QPulseAudio::ModuleManager>(uri, 0, 1, "ModuleManager");
     qmlRegisterType<QPulseAudio::SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
     qmlRegisterType<QPulseAudio::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
