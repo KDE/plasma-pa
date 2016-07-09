@@ -94,7 +94,7 @@ Item {
         if (!sourceModel.defaultSource) {
             return;
         }
-        var volume = bound(sourceModel.defaultSource.volume + volumeStep, 0, 65536);
+        var volume = boundVolume(sourceModel.defaultSource.volume + volumeStep);
         sourceModel.defaultSource.muted = false;
         sourceModel.defaultSource.volume = volume;
         osd.showMicrophone(volumePercent(volume));
@@ -104,7 +104,7 @@ Item {
         if (!sourceModel.defaultSource) {
             return;
         }
-        var volume = bound(sourceModel.defaultSource.volume - volumeStep, 0, 65536);
+        var volume = boundVolume(sourceModel.defaultSource.volume - volumeStep);
         sourceModel.defaultSource.muted = false;
         sourceModel.defaultSource.volume = volume;
         osd.showMicrophone(volumePercent(volume));
