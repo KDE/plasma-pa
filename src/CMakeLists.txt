@@ -32,6 +32,8 @@ target_link_libraries(QPulseAudioPrivate
     Qt5::Gui
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
+    ${GCONF_LDFLAGS}
+    ${GOBJECT_LDFLAGS}
 )
 install(TARGETS QPulseAudioPrivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 

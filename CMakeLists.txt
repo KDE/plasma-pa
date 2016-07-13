@@ -18,6 +18,10 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMOptionalAddSubdirectory)
 
+include(FindPkgConfig)
+pkg_check_modules(GCONF REQUIRED gconf-2.0)
+pkg_check_modules(GOBJECT REQUIRED gobject-2.0)
+
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     Gui
