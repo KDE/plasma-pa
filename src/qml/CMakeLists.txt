@@ -7,6 +7,7 @@ set(cpp_SRCS
     globalactioncollection.cpp
     plugin.cpp
     volumeosd.cpp
+    volumefeedback.cpp
 )
 
 set_property(SOURCE dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdServiceInterface)
@@ -18,6 +19,7 @@ target_link_libraries(plasma-volume-declarative
     Qt5::Quick
     KF5::GlobalAccel
     QPulseAudioPrivate
+    ${CANBERRA_LIBRARIES}
 )
 
 set(PRIVATE_QML_INSTALL_DIR ${QML_INSTALL_DIR}/org/kde/plasma/private/volume)

@@ -158,6 +158,10 @@ PlasmaComponents.ListItem {
                                 Volume = value;
                                 Muted = false;
 
+                                if (type == "sink") {
+                                    playFeedback(CardIndex);
+                                }
+
                                 if (!pressed) {
                                     updateTimer.restart();
                                 }

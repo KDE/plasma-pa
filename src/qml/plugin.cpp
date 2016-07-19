@@ -31,6 +31,7 @@
 
 #include "globalactioncollection.h"
 #include "volumeosd.h"
+#include "volumefeedback.h"
 
 static QJSValue pulseaudio_singleton(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
@@ -55,6 +56,7 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
     qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
     qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");
+    qmlRegisterType<VolumeFeedback>(uri, 0, 1, "VolumeFeedback");
     qmlRegisterSingletonType(uri, 0, 1, "PulseAudio", pulseaudio_singleton);
 
     qmlRegisterType<QPulseAudio::Client>();

@@ -22,38 +22,69 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.0
 
+import org.kde.plasma.private.volume 0.1
+
 Item {
     property alias cfg_maximumVolume: maximumVolume.value
     property alias cfg_volumeStep: volumeStep.value
+    property alias cfg_volumeFeedback: volumeFeedback.checked
 
-    GridLayout {
-        columns: 2
+    ColumnLayout {
         Layout.fillWidth: true
 
-        Label {
-            Layout.alignment: Qt.AlignRight
-            text: i18n("Maximum volume:")
+        GroupBox {
+            Layout.fillWidth: true
+            flat: true
+            title: i18n("Volume")
+
+            GridLayout {
+                columns: 2
+                Layout.fillWidth: true
+
+                Label {
+                    Layout.alignment: Qt.AlignRight
+                    text: i18n("Maximum volume:")
+                }
+
+                SpinBox {
+                    id: maximumVolume
+                    minimumValue: 100
+                    maximumValue: 150
+                    stepSize: 1
+                    suffix: i18n("%")
+                }
+
+                Label {
+                    Layout.alignment: Qt.AlignRight
+                    text: i18n("Volume step:")
+                }
+
+                SpinBox {
+                    id: volumeStep
+                    minimumValue: 1
+                    maximumValue: 100
+                    stepSize: 1
+                    suffix: i18n("%")
+                }
+            }
         }
 
-        SpinBox {
-            id: maximumVolume
-            minimumValue: 100
-            maximumValue: 150
-            stepSize: 1
-            suffix: i18n("%")
-        }
+        GroupBox {
+            Layout.fillWidth: true
+            flat: true
+            title: i18n("Behavior")
 
-        Label {
-            Layout.alignment: Qt.AlignRight
-            text: i18n("Volume step:")
+            ColumnLayout {
+                CheckBox {
+                    id: volumeFeedback
+                    text: i18n("Volume feedback")
+                    enabled: feedback.valid
+                }
+            }
         }
+    }
 
-        SpinBox {
-            id: volumeStep
-            minimumValue: 1
-            maximumValue: 100
-            stepSize: 1
-            suffix: i18n("%")
-        }
+    VolumeFeedback {
+        id: feedback
     }
 }

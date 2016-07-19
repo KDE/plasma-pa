@@ -12,6 +12,9 @@
     <entry name="volumeStep" type="Int">
       <default>5</default>
     </entry>
+    <entry name="volumeFeedback" type="Bool">
+      <default>true</default>
+    </entry>
   </group>
 
 </kcfg>

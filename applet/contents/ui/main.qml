@@ -33,6 +33,7 @@ import "../code/icon.js" as Icon
 Item {
     id: main
 
+    property bool volumeFeedback: Plasmoid.configuration.volumeFeedback
     property int maxVolumePercent: Plasmoid.configuration.maximumVolume
     property int maxVolumeValue: Math.round(maxVolumePercent * PulseAudio.NormalVolume / 100.0)
     property int volumeStep: Math.round(Plasmoid.configuration.volumeStep * PulseAudio.NormalVolume / 100.0)
@@ -69,6 +70,7 @@ Item {
         sinkModel.preferredSink.muted = false;
         sinkModel.preferredSink.volume = volume;
         osd.show(volumePercent(volume, maxVolumeValue));
+        playFeedback();
     }
 
     function decreaseVolume() {
@@ -79,6 +81,7 @@ Item {
         sinkModel.preferredSink.muted = false;
         sinkModel.preferredSink.volume = volume;
         osd.show(volumePercent(volume, maxVolumeValue));
+        playFeedback();
     }
 
     function muteVolume() {
@@ -88,6 +91,7 @@ Item {
         var toMute = !sinkModel.preferredSink.muted;
         sinkModel.preferredSink.muted = toMute;
         osd.show(toMute ? 0 : volumePercent(sinkModel.preferredSink.volume, maxVolumeValue));
+        playFeedback();
     }
 
     function increaseMicrophoneVolume() {
@@ -138,6 +142,16 @@ Item {
         sourceViewHeader.visible = true;
         sinkView.visible = true;
         sinkViewHeader.visible = true;
+    }
+
+    function playFeedback(sinkIndex) {
+        if (!volumeFeedback) {
+            return;
+        }
+        if (!sinkIndex) {
+            sinkIndex = sinkModel.preferredSink.cardIndex;
+        }
+        feedback.play(sinkIndex);
     }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
@@ -235,6 +249,10 @@ Item {
 
     VolumeOSD {
         id: osd
+    }
+
+    VolumeFeedback {
+        id: feedback
     }
 
     PlasmaComponents.TabBar {

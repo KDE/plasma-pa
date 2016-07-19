@@ -38,6 +38,7 @@ find_package(KF5 REQUIRED COMPONENTS
     Plasma
 )
 find_package(PulseAudio 5.0.0 REQUIRED)
+find_package(Canberra REQUIRED)
 find_package(GLIB2 REQUIRED)
 
 add_subdirectory(applet)
