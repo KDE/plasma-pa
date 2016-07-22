@@ -79,6 +79,7 @@ class Q_DECL_EXPORT SinkModel : public AbstractModel
 {
     Q_OBJECT
     Q_PROPERTY(QPulseAudio::Sink *defaultSink READ defaultSink NOTIFY defaultSinkChanged)
+    Q_PROPERTY(QPulseAudio::Sink *preferredSink READ preferredSink NOTIFY preferredSinkChanged)
 public:
     enum ItemRole {
         SortByDefaultRole = PulseObjectRole + 1
@@ -87,10 +88,20 @@ public:
 
     SinkModel(QObject *parent = nullptr);
     Sink *defaultSink() const;
+    Sink *preferredSink() const;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
 signals:
     void defaultSinkChanged();
+    void preferredSinkChanged();
+
+private:
+    void sinkAdded(int index);
+    void sinkRemoved(int index);
+    void updatePreferredSink();
+    Sink *findPreferredSink() const;
+
+    Sink *m_preferredSink;
 };
 
 class Q_DECL_EXPORT SinkInputModel : public AbstractModel

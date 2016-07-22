@@ -189,15 +189,31 @@ QMetaMethod AbstractModel::propertyChangedMetaMethod() const
 
 SinkModel::SinkModel(QObject *parent)
     : AbstractModel(&context()->sinks(), parent)
+    , m_preferredSink(nullptr)
 {
     initRoleNames(Sink::staticMetaObject);
 
-    connect(context()->server(), &Server::defaultSinkChanged, this, &SinkModel::defaultSinkChanged);
+    for (int i = 0; i < context()->sinks().count(); ++i) {
+        sinkAdded(i);
+    }
+
+    connect(&context()->sinks(), &MapBaseQObject::added, this, &SinkModel::sinkAdded);
+    connect(&context()->sinks(), &MapBaseQObject::removed, this, &SinkModel::sinkRemoved);
+
+    connect(context()->server(), &Server::defaultSinkChanged, this, [this]() {
+        updatePreferredSink();
+        emit defaultSinkChanged();
+    });
 }
 
 Sink *SinkModel::defaultSink() const
 {
     return context()->server()->defaultSink();
+}
+
+Sink *SinkModel::preferredSink() const
+{
+    return m_preferredSink;
 }
 
 QVariant SinkModel::data(const QModelIndex &index, int role) const
@@ -209,6 +225,78 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
         return defaultDevice + pulseIndex;
     }
     return AbstractModel::data(index, role);
+}
+
+void SinkModel::sinkAdded(int index)
+{
+    Q_ASSERT(qobject_cast<Sink *>(context()->sinks().objectAt(index)));
+    Sink *sink = static_cast<Sink *>(context()->sinks().objectAt(index));
+    connect(sink, &Sink::stateChanged, this, &SinkModel::updatePreferredSink);
+
+    updatePreferredSink();
+}
+
+void SinkModel::sinkRemoved(int index)
+{
+    Q_UNUSED(index);
+
+    updatePreferredSink();
+}
+
+void SinkModel::updatePreferredSink()
+{
+    Sink *sink = findPreferredSink();
+
+    if (sink != m_preferredSink) {
+        qCDebug(PLASMAPA) << "Changing preferred sink to" << sink << (sink ? sink->name() : "");
+        m_preferredSink = sink;
+        emit preferredSinkChanged();
+    }
+}
+
+Sink *SinkModel::findPreferredSink() const
+{
+    const auto &sinks = context()->sinks();
+
+    // Only one sink is the preferred one
+    if (sinks.count() == 1) {
+        return static_cast<Sink *>(sinks.objectAt(0));
+    }
+
+    auto lookForState = [this](Device::State state) {
+        Sink *ret = nullptr;
+        QMapIterator<quint32, Sink *> it(context()->sinks().data());
+        while (it.hasNext()) {
+            it.next();
+            if (it.value()->state() != state) {
+                continue;
+            }
+            if (!ret) {
+                ret = it.value();
+            } else if (it.value() == defaultSink()) {
+                ret = it.value();
+                break;
+            }
+        }
+        return ret;
+    };
+
+    Sink *preferred = nullptr;
+
+    // Look for playing sinks + prefer default sink
+    preferred = lookForState(Device::RunningState);
+    if (preferred) {
+        return preferred;
+    }
+
+    // Look for idle sinks + prefer default sink
+    preferred = lookForState(Device::IdleState);
+    if (preferred) {
+        return preferred;
+    }
+
+    // Fallback to default sink
+    return defaultSink();
 }
 
 SourceModel::SourceModel(QObject *parent)

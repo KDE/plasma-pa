@@ -35,6 +35,7 @@ namespace QPulseAudio
 class Q_DECL_EXPORT Device : public VolumeObject
 {
     Q_OBJECT
+    Q_PROPERTY(State state READ state NOTIFY stateChanged)
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
     Q_PROPERTY(quint32 cardIndex READ cardIndex NOTIFY cardIndexChanged)
@@ -42,6 +43,15 @@ class Q_DECL_EXPORT Device : public VolumeObject
     Q_PROPERTY(quint32 activePortIndex READ activePortIndex WRITE setActivePortIndex NOTIFY activePortIndexChanged)
     Q_PROPERTY(bool default READ isDefault WRITE setDefault NOTIFY defaultChanged)
 public:
+    enum State {
+        InvalidState = 0,
+        RunningState,
+        IdleState,
+        SuspendedState,
+        UnknownState
+    };
+    Q_ENUMS(State);
+
     virtual ~Device() {}
 
     template <typename PAInfo>
@@ -77,8 +87,15 @@ public:
         }
         emit portsChanged();
         emit activePortIndexChanged();
+
+        State infoState = stateFromPaState(info->state);
+        if (infoState != m_state) {
+            m_state = infoState;
+            emit stateChanged();
+        }
     }
 
+    State state() const;
     QString name() const;
     QString description() const;
     quint32 cardIndex() const;
@@ -89,6 +106,7 @@ public:
     virtual void setDefault(bool enable) = 0;
 
 signals:
+    void stateChanged();
     void nameChanged();
     void descriptionChanged();
     void cardIndexChanged();
@@ -100,11 +118,14 @@ protected:
     Device(QObject *parent);
 
 private:
+    State stateFromPaState(int value) const;
+
     QString m_name;
     QString m_description;
     quint32 m_cardIndex = -1;
     QList<QObject *> m_ports;
     quint32 m_activePortIndex = -1;
+    State m_state = UnknownState;
 };
 
 } // QPulseAudio

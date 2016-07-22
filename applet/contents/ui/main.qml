@@ -44,11 +44,11 @@ Item {
     Layout.preferredHeight: units.gridUnit * 20
     Layout.preferredWidth: units.gridUnit * 20
 
-    Plasmoid.icon: sinkModel.defaultSink ? Icon.name(sinkModel.defaultSink.volume, sinkModel.defaultSink.muted) : Icon.name(0, true)
+    Plasmoid.icon: sinkModel.preferredSink ? Icon.name(sinkModel.preferredSink.volume, sinkModel.preferredSink.muted) : Icon.name(0, true)
     Plasmoid.switchWidth: units.gridUnit * 12
     Plasmoid.switchHeight: units.gridUnit * 12
     Plasmoid.toolTipMainText: displayName
-    Plasmoid.toolTipSubText: sinkModel.defaultSink ? i18n("Volume at %1%\n%2", volumePercent(sinkModel.defaultSink.volume), sinkModel.defaultSink.description) : ""
+    Plasmoid.toolTipSubText: sinkModel.preferredSink ? i18n("Volume at %1%\n%2", volumePercent(sinkModel.preferredSink.volume), sinkModel.preferredSink.description) : ""
 
     function boundVolume(volume) {
         return Math.max(PulseAudio.MinimalVolume, Math.min(volume, maxVolumeValue));
@@ -62,32 +62,32 @@ Item {
     }
 
     function increaseVolume() {
-        if (!sinkModel.defaultSink) {
+        if (!sinkModel.preferredSink) {
             return;
         }
-        var volume = boundVolume(sinkModel.defaultSink.volume + volumeStep);
-        sinkModel.defaultSink.muted = false;
-        sinkModel.defaultSink.volume = volume;
+        var volume = boundVolume(sinkModel.preferredSink.volume + volumeStep);
+        sinkModel.preferredSink.muted = false;
+        sinkModel.preferredSink.volume = volume;
         osd.show(volumePercent(volume, maxVolumeValue));
     }
 
     function decreaseVolume() {
-        if (!sinkModel.defaultSink) {
+        if (!sinkModel.preferredSink) {
             return;
         }
-        var volume = boundVolume(sinkModel.defaultSink.volume - volumeStep);
-        sinkModel.defaultSink.muted = false;
-        sinkModel.defaultSink.volume = volume;
+        var volume = boundVolume(sinkModel.preferredSink.volume - volumeStep);
+        sinkModel.preferredSink.muted = false;
+        sinkModel.preferredSink.volume = volume;
         osd.show(volumePercent(volume, maxVolumeValue));
     }
 
     function muteVolume() {
-        if (!sinkModel.defaultSink) {
+        if (!sinkModel.preferredSink) {
             return;
         }
-        var toMute = !sinkModel.defaultSink.muted;
-        sinkModel.defaultSink.muted = toMute;
-        osd.show(toMute ? 0 : volumePercent(sinkModel.defaultSink.volume, maxVolumeValue));
+        var toMute = !sinkModel.preferredSink.muted;
+        sinkModel.preferredSink.muted = toMute;
+        osd.show(toMute ? 0 : volumePercent(sinkModel.preferredSink.volume, maxVolumeValue));
     }
 
     function increaseMicrophoneVolume() {

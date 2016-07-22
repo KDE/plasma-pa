@@ -20,6 +20,11 @@
 
 #include "device.h"
 
+QPulseAudio::Device::State QPulseAudio::Device::state() const
+{
+    return m_state;
+}
+
 QString QPulseAudio::Device::name() const
 {
     return m_name;
@@ -48,4 +53,20 @@ quint32 QPulseAudio::Device::activePortIndex() const
 QPulseAudio::Device::Device(QObject *parent)
     : VolumeObject(parent)
 {
+}
+
+QPulseAudio::Device::State QPulseAudio::Device::stateFromPaState(int value) const
+{
+    switch (value) {
+    case -1: // PA_X_INVALID_STATE
+        return InvalidState;
+    case 0:  // PA_X_RUNNING
+        return RunningState;
+    case 1:  // PA_X_IDLE
+        return IdleState;
+    case 2:  // PA_X_SUSPENDED
+        return SuspendedState;
+    default:
+        return UnknownState;
+    }
 }
