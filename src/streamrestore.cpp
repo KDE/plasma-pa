@@ -101,6 +101,10 @@ bool StreamRestore::isMuted() const
 
 void StreamRestore::setMuted(bool muted)
 {
+    if (m_muted == muted) {
+        return;
+    }
+
     writeChanges(m_volume, m_channelMap, muted, m_device);
 }
 
