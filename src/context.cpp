@@ -369,7 +369,7 @@ void Context::contextStateCallback(pa_context *c)
             m_context = nullptr;
         }
         reset();
-        QTimer::singleShot(0, this, &Context::connectToDaemon);
+        QTimer::singleShot(1000, this, &Context::connectToDaemon);
     }
 }
 
