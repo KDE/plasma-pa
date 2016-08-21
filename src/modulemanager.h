@@ -33,6 +33,7 @@ class GConfItem;
 
 namespace QPulseAudio
 {
+class Module;
 
 class Q_DECL_EXPORT ModuleManager : public QObject
 {
@@ -52,8 +53,9 @@ Q_SIGNALS:
     void switchOnConnectChanged();
 
 private:
-    GConfItem *m_combineSinksConfig;
-    GConfItem *m_switchOnConnectConfig;
+    Module *m_combineSinks;
+    Module *m_switchOnConnect;
+    Module *m_deviceManager;
 };
 
 } // QPulseAudio
