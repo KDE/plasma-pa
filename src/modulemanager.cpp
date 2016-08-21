@@ -30,9 +30,11 @@ namespace QPulseAudio
 {
 ModuleManager::ModuleManager(QObject *parent) :
     QObject(parent),
-    m_combineSinksConfig(new GConfItem(QStringLiteral(PA_GCONF_PATH_MODULES"/combine"), this))
+    m_combineSinksConfig(new GConfItem(QStringLiteral(PA_GCONF_PATH_MODULES"/combine"), this)),
+    m_switchOnConnectConfig(new GConfItem(QStringLiteral(PA_GCONF_PATH_MODULES"/switch-on-connect"), this))
 {
     connect(m_combineSinksConfig, &GConfItem::subtreeChanged, this, &ModuleManager::combineSinksChanged);
+    connect(m_switchOnConnectConfig, &GConfItem::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
 }
 
 ModuleManager::~ModuleManager()
@@ -47,8 +49,6 @@ bool ModuleManager::combineSinks() const
 
 void ModuleManager::setCombineSinks(bool combineSinks)
 {
-    GConfItem combine();
-
     m_combineSinksConfig->set(QStringLiteral("locked"), true);
 
     if (combineSinks) {
@@ -60,6 +60,25 @@ void ModuleManager::setCombineSinks(bool combineSinks)
         m_combineSinksConfig->set(QStringLiteral("enabled"), false);
     }
     m_combineSinksConfig->set(QStringLiteral("locked"), false);
+}
+
+bool ModuleManager::switchOnConnect() const
+{
+    return m_switchOnConnectConfig->value(QStringLiteral("enabled")).toBool();
+}
+
+void ModuleManager::setSwitchOnConnect(bool switchOnConnect)
+{
+    m_switchOnConnectConfig->set(QStringLiteral("locked"), true);
+
+    if (switchOnConnect) {
+        m_switchOnConnectConfig->set(QStringLiteral("name0"), QStringLiteral("module-switch-on-connect"));
+        m_switchOnConnectConfig->set(QStringLiteral("args0"), QVariant());
+        m_switchOnConnectConfig->set(QStringLiteral("enabled"), true);
+    } else {
+        m_switchOnConnectConfig->set(QStringLiteral("enabled"), false);
+    }
+    m_switchOnConnectConfig->set(QStringLiteral("locked"), false);
 }
 
 }

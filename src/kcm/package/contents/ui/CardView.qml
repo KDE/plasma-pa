@@ -33,12 +33,18 @@ ColumnLayout {
         Layout.fillWidth: true
         delegate: CardListItem {}
     }
+    ModuleManager {
+        id: moduleManager
+    }
     CheckBox {
-        ModuleManager {
-            id: moduleManager
-        }
         text: i18n("Add virtual output device for simultaneous output on all local sound cards")
         checked: moduleManager.combineSinks
         onCheckedChanged: moduleManager.combineSinks = checked;
     }
+    CheckBox {
+        text: i18n("Automatically switch all running streams when a new output becomes available")
+        checked: moduleManager.switchOnConnect
+        onCheckedChanged: moduleManager.switchOnConnect = checked;
+    }
+
 }

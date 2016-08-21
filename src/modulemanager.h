@@ -38,17 +38,22 @@ class Q_DECL_EXPORT ModuleManager : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool combineSinks READ combineSinks WRITE setCombineSinks NOTIFY combineSinksChanged)
+    Q_PROPERTY(bool switchOnConnect READ switchOnConnect WRITE setSwitchOnConnect NOTIFY switchOnConnectChanged)
 public:
     ModuleManager(QObject *parent = nullptr);
     ~ModuleManager();
     bool combineSinks() const;
     void setCombineSinks(bool combineSinks);
+    bool switchOnConnect() const;
+    void setSwitchOnConnect(bool switchOnConnect);
 
 Q_SIGNALS:
     void combineSinksChanged();
+    void switchOnConnectChanged();
 
 private:
     GConfItem *m_combineSinksConfig;
+    GConfItem *m_switchOnConnectConfig;
 };
 
 } // QPulseAudio
