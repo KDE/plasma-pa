@@ -29,13 +29,14 @@ namespace QPulseAudio
 
 class Sink;
 class Source;
+class Context;
 
 class Q_DECL_EXPORT Server : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Server(QObject *parent = nullptr);
+    explicit Server(Context *context);
 
     Sink *defaultSink() const;
     void setDefaultSink(Sink *sink);
@@ -51,6 +52,10 @@ signals:
     void defaultSourceChanged(Source *source);
 
 private:
+    void updateDefaultDevices();
+
+    QString m_defaultSinkName;
+    QString m_defaultSourceName;
     Sink *m_defaultSink;
     Source *m_defaultSource;
 };
