@@ -27,11 +27,17 @@
 namespace QPulseAudio
 {
 
-Server::Server(QObject *parent)
-    : QObject(parent)
+Server::Server(Context *context)
+    : QObject(context)
     , m_defaultSink(nullptr)
     , m_defaultSource(nullptr)
 {
+    Q_ASSERT(context);
+
+    connect(&context->sinks(), &MapBaseQObject::added, this, &Server::updateDefaultDevices);
+    connect(&context->sinks(), &MapBaseQObject::removed, this, &Server::updateDefaultDevices);
+    connect(&context->sources(), &MapBaseQObject::added, this, &Server::updateDefaultDevices);
+    connect(&context->sources(), &MapBaseQObject::removed, this, &Server::updateDefaultDevices);
 }
 
 Sink *Server::defaultSink() const
@@ -69,34 +75,46 @@ void Server::reset()
     }
 }
 
-template <typename Type, typename Map>
-static Type *findByName(const Map &map, const char *name)
+void Server::update(const pa_server_info *info)
 {
-    const QString nameStr = QString::fromUtf8(name);
+    m_defaultSinkName = QString::fromUtf8(info->default_sink_name);
+    m_defaultSourceName = QString::fromUtf8(info->default_source_name);
+
+    updateDefaultDevices();
+}
+
+template <typename Type, typename Map>
+static Type *findByName(const Map &map, const QString &name)
+{
     Type *out = nullptr;
+    if (name.isEmpty()) {
+        return out;
+    }
     QMapIterator<quint32, Type *> it(map);
     while (it.hasNext()) {
         it.next();
         out = it.value();
-        if (out->name() == nameStr) {
+        if (out->name() == name) {
             return out;
         }
     }
-    qCWarning(PLASMAPA) << "No object for name" << nameStr;
+    qCWarning(PLASMAPA) << "No object for name" << name;
     return out;
 }
 
-void Server::update(const pa_server_info *info)
+void Server::updateDefaultDevices()
 {
-    Sink *sink = findByName<Sink>(Context::instance()->sinks().data(), info->default_sink_name);
-    Source *source = findByName<Source>(Context::instance()->sources().data(), info->default_source_name);
+    Sink *sink = findByName<Sink>(Context::instance()->sinks().data(), m_defaultSinkName);
+    Source *source = findByName<Source>(Context::instance()->sources().data(), m_defaultSourceName);
 
     if (m_defaultSink != sink) {
+        qCDebug(PLASMAPA) << "Default sink changed" << sink;
         m_defaultSink = sink;
         emit defaultSinkChanged(m_defaultSink);
     }
 
     if (m_defaultSource != source) {
+        qCDebug(PLASMAPA) << "Default source changed" << source;
         m_defaultSource = source;
         emit defaultSourceChanged(m_defaultSource);
     }
