@@ -29,6 +29,9 @@ StreamRestore::StreamRestore(quint32 index, const QVariantMap &properties, QObje
     : PulseObject(parent)
     , m_muted(false)
 {
+    memset(&m_volume, 0, sizeof(m_volume));
+    memset(&m_channelMap, 0, sizeof(m_channelMap));
+
     m_index = index;
     m_properties = properties;
 }
