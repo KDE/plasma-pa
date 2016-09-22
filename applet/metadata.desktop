@@ -34,7 +34,7 @@ Name[sv]=Ljudvolym
 Name[uk]=Гучність
 Name[x-test]=xxAudio Volumexx
 Name[zh_CN]=音频音量
-Comment=
+Comment=Adjust the volume of devices and applications
 
 Icon=org.kde.plasma.volume
 Type=Service
