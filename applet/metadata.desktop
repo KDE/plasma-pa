@@ -36,6 +36,13 @@ Name[x-test]=xxAudio Volumexx
 Name[zh_CN]=音频音量
 Name[zh_TW]=音效音量
 Comment=Adjust the volume of devices and applications
+Comment[ca]=Ajusta el volum dels dispositius i les aplicacions
+Comment[pl]=Dostosuj głośność urządzeń i aplikacji
+Comment[pt]=Ajustar o volume dos dispositivos e aplicações
+Comment[sk]=Upraviť hlasitosť zariadení a aplikácií
+Comment[sv]=Justera enhets- och programvolym
+Comment[uk]=Коригування гучності пристроїв і звуків програм
+Comment[x-test]=xxAdjust the volume of devices and applicationsxx
 
 Icon=org.kde.plasma.volume
 Type=Service
