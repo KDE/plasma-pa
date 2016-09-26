@@ -34,12 +34,13 @@ Name[sv]=Ljudvolym
 Name[uk]=Гучність
 Name[x-test]=xxAudio Volumexx
 Name[zh_CN]=音频音量
+Name[zh_TW]=音效音量
 Comment=Adjust the volume of devices and applications
 Comment[ca]=Ajusta el volum dels dispositius i les aplicacions
 Comment[da]=Justér lydstyrke for enheder og programmer
 Comment[de]=Anpassung der Lautstärke von Geräten und Anwendungen
 Comment[es]=Ajustar el volumen de dispositivos y aplicaciones
-Comment[nl]=Geluidsniveau van apparaten en toepassingen aanpassen
+Comment[nl]=Het volume van apparaten en toepassingen
 Comment[pl]=Dostosuj głośność urządzeń i aplikacji
 Comment[pt]=Ajustar o volume dos dispositivos e aplicações
 Comment[ru]=Настройка громкости устройств и звука в приложениях
@@ -47,6 +48,7 @@ Comment[sk]=Upraviť hlasitosť zariadení a aplikácií
 Comment[sv]=Justera enhets- och programvolym
 Comment[uk]=Коригування гучності пристроїв і звуків програм
 Comment[x-test]=xxAdjust the volume of devices and applicationsxx
+Comment[zh_TW]=調整裝置與應用程式的音量
 
 Icon=org.kde.plasma.volume
 Type=Service
@@ -56,6 +58,7 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 
 X-Plasma-NotificationArea=true
+X-Plasma-NotificationAreaCategory=Hardware
 X-Plasma-ConfigPlugins=kcm_pulseaudio
 
 X-KDE-PluginInfo-Name=org.kde.plasma.volume
