@@ -49,6 +49,7 @@ Comment[sk]=Upraviť hlasitosť zariadení a aplikácií
 Comment[sv]=Justera enhets- och programvolym
 Comment[uk]=Коригування гучності пристроїв і звуків програм
 Comment[x-test]=xxAdjust the volume of devices and applicationsxx
+Comment[zh_CN]=调整设备和程序的音量
 
 Icon=org.kde.plasma.volume
 Type=Service
