@@ -12,7 +12,6 @@ set(SRC_LIST
     profile.cpp
     pulseaudio.cpp
     pulseobject.cpp
-    ref.cpp
     sink.cpp
     sinkinput.cpp
     modulemanager.cpp

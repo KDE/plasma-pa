@@ -39,6 +39,13 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     : QAbstractListModel(parent)
     , m_map(map)
 {
+    Context::instance()->ref();
+    //deref context after we've deleted this object
+    //see https://bugs.kde.org/show_bug.cgi?id=371215
+    connect(this, &QObject::destroyed, []() {
+        Context::instance()->unref();
+    });
+
     connect(m_map, &MapBaseQObject::added, this, &AbstractModel::onDataAdded);
     connect(m_map, &MapBaseQObject::removed, this, &AbstractModel::onDataRemoved);
 }
@@ -88,6 +95,11 @@ int AbstractModel::role(const QByteArray &roleName) const
 {
     qCDebug(PLASMAPA) << roleName << m_roles.key(roleName, -1);
     return m_roles.key(roleName, -1);
+}
+
+Context *AbstractModel::context() const
+{
+    return Context::instance();
 }
 
 void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)

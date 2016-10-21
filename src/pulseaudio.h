@@ -25,12 +25,12 @@
 #include <QAbstractListModel>
 
 #include "maps.h"
-#include "ref.h"
 
 namespace QPulseAudio
 {
+    class Context;
 
-class Q_DECL_EXPORT AbstractModel : public QAbstractListModel, public Ref
+class Q_DECL_EXPORT AbstractModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -48,6 +48,7 @@ public:
 protected:
     AbstractModel(const MapBaseQObject *map, QObject *parent);
     void initRoleNames(const QMetaObject &qobjectMetaObject);
+    Context *context() const;
 
 private slots:
     void propertyChanged();
