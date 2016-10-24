@@ -67,9 +67,10 @@ Item {
             return;
         }
         var volume = boundVolume(sinkModel.preferredSink.volume + volumeStep);
-        sinkModel.preferredSink.muted = false;
+        var percent = volumePercent(volume, maxVolumeValue);
+        sinkModel.preferredSink.muted = percent == 0;
         sinkModel.preferredSink.volume = volume;
-        osd.show(volumePercent(volume, maxVolumeValue));
+        osd.show(percent);
         playFeedback();
     }
 
@@ -78,9 +79,10 @@ Item {
             return;
         }
         var volume = boundVolume(sinkModel.preferredSink.volume - volumeStep);
-        sinkModel.preferredSink.muted = false;
+        var percent = volumePercent(volume, maxVolumeValue);
+        sinkModel.preferredSink.muted = percent == 0;
         sinkModel.preferredSink.volume = volume;
-        osd.show(volumePercent(volume, maxVolumeValue));
+        osd.show(percent);
         playFeedback();
     }
 
@@ -99,9 +101,10 @@ Item {
             return;
         }
         var volume = boundVolume(sourceModel.defaultSource.volume + volumeStep);
-        sourceModel.defaultSource.muted = false;
+        var percent = volumePercent(volume);
+        sourceModel.defaultSource.muted = percent == 0;
         sourceModel.defaultSource.volume = volume;
-        osd.showMicrophone(volumePercent(volume));
+        osd.showMicrophone(percent);
     }
 
     function decreaseMicrophoneVolume() {
@@ -109,9 +112,10 @@ Item {
             return;
         }
         var volume = boundVolume(sourceModel.defaultSource.volume - volumeStep);
-        sourceModel.defaultSource.muted = false;
+        var percent = volumePercent(volume);
+        sourceModel.defaultSource.muted = percent == 0;
         sourceModel.defaultSource.volume = volume;
-        osd.showMicrophone(volumePercent(volume));
+        osd.showMicrophone(percent);
     }
 
     function muteMicrophone() {
