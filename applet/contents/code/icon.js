@@ -18,17 +18,20 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-function name(volume, muted) {
+function name(volume, muted, prefix) {
+    if (!prefix) {
+        prefix = "audio-volume";
+    }
     var icon = null;
     var percent = volume / maxVolumeValue;
     if (percent <= 0.0 || muted) {
-        icon = "audio-volume-muted";
+        icon = prefix + "-muted";
     } else if (percent <= 0.25) {
-        icon = "audio-volume-low";
+        icon = prefix + "-low";
     } else if (percent <= 0.75) {
-        icon = "audio-volume-medium";
+        icon = prefix + "-medium";
     } else {
-        icon = "audio-volume-high";
+        icon = prefix + "-high";
     }
     return icon;
 }

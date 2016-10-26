@@ -27,8 +27,9 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.draganddrop 2.0 as DragAndDrop
-
 import org.kde.plasma.private.volume 0.1
+
+import "../code/icon.js" as Icon
 
 PlasmaComponents.ListItem {
     id: item
@@ -117,11 +118,11 @@ PlasmaComponents.ListItem {
                 }
 
                 RowLayout {
-                    VolumeIcon {
-                        Layout.maximumHeight: slider.height * 0.75
-                        Layout.maximumWidth: slider.height* 0.75
-                        volume: Volume
-                        muted: Muted
+                    PlasmaCore.IconItem {
+                        readonly property bool isPlayback: type.substring(0, 4) == "sink"
+                        Layout.maximumHeight: slider.height * 0.85
+                        Layout.maximumWidth: slider.height * 0.85
+                        source: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
 
                         MouseArea {
                             anchors.fill: parent
