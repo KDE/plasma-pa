@@ -21,5 +21,24 @@
 import QtQuick 2.0
 
 ListItemBase {
-    label: Description
+    readonly property var currentPort: Ports[ActivePortIndex]
+
+    draggable: false
+    label: currentPort ? i18nc("label of device items", "%1 (%2)", currentPort.description, Description) : Description
+    icon: {
+        if (currentPort) {
+            if (currentPort.name.indexOf("speaker") != -1) {
+                return "audio-speakers-symbolic";
+            } else if (currentPort.name.indexOf("headphones") != -1) {
+                return "audio-headphones";
+            } else if (currentPort.name.indexOf("hdmi") != -1) {
+                return "video-television";
+            } else if (currentPort.name.indexOf("mic") != -1) {
+                return "audio-input-microphone";
+            } else if (currentPort.name.indexOf("phone") != -1) {
+                return "phone";
+            }
+        }
+        return IconName || "unknown";
+    }
 }
