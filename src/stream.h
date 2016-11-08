@@ -42,6 +42,7 @@ class Q_DECL_EXPORT Stream : public VolumeObject
     Q_PROPERTY(QPulseAudio::Client *client READ client NOTIFY clientChanged)
     Q_PROPERTY(bool virtualStream READ isVirtualStream NOTIFY virtualStreamChanged)
     Q_PROPERTY(quint32 deviceIndex READ deviceIndex WRITE setDeviceIndex NOTIFY deviceIndexChanged)
+    Q_PROPERTY(bool corked READ isCorked NOTIFY corkedChanged)
 public:
     template <typename PAInfo>
     void updateStream(const PAInfo *info)
@@ -68,12 +69,17 @@ public:
             m_virtualStream = info->client == PA_INVALID_INDEX;
             emit virtualStreamChanged();
         }
+        if (m_corked != info->corked) {
+            m_corked = info->corked;
+            emit corkedChanged();
+        }
     }
 
     QString name() const;
     Client *client() const;
     bool isVirtualStream() const;
     quint32 deviceIndex() const;
+    bool isCorked() const;
 
     virtual void setDeviceIndex(quint32 deviceIndex) = 0;
 
@@ -82,6 +88,7 @@ signals:
     void clientChanged();
     void virtualStreamChanged();
     void deviceIndexChanged();
+    void corkedChanged();
 
 protected:
     Stream(QObject *parent);
@@ -93,6 +100,7 @@ private:
     QString m_name;
     quint32 m_clientIndex;
     bool m_virtualStream;
+    bool m_corked;
 };
 
 } // QPulseAudio
