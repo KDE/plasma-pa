@@ -29,6 +29,7 @@ VolumeObject::VolumeObject(QObject *parent)
     , m_hasVolume(true)
     , m_volumeWritable(true)
 {
+    pa_cvolume_init(&m_volume);
 }
 
 VolumeObject::~VolumeObject()

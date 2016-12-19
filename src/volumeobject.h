@@ -49,7 +49,7 @@ public:
             m_muted = info->mute;
             emit mutedChanged();
         }
-        if (memcmp(&m_volume, &info->volume, sizeof(pa_cvolume)) != 0) {
+        if (pa_cvolume_equal(&m_volume, &info->volume) != 0) {
             m_volume = info->volume;
             emit volumeChanged();
             emit channelVolumesChanged();
