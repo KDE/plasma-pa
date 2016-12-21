@@ -70,7 +70,7 @@ Comment[zh_TW]=調整裝置與應用程式的音量
 
 Icon=org.kde.plasma.volume
 Type=Service
-X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet
+X-KDE-ServiceTypes=Plasma/Applet
 
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
