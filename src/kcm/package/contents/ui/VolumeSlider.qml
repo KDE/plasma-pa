@@ -53,7 +53,7 @@ RowLayout {
         onValueChanged: {
             if (!ignoreValueChange) {
                 Volume = value;
-                Muted = false;
+                Muted = value == 0;
 
                 if (!pressed) {
                     updateTimer.restart();

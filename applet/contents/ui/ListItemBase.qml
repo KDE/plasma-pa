@@ -165,7 +165,7 @@ PlasmaComponents.ListItem {
                         onValueChanged: {
                             if (!ignoreValueChange) {
                                 Volume = value;
-                                Muted = false;
+                                Muted = value == 0;
 
                                 if (type == "sink") {
                                     playFeedback(CardIndex);
