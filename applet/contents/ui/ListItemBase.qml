@@ -65,6 +65,12 @@ PlasmaComponents.ListItem {
         }
     }
 
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.MiddleButton
+        onClicked: Muted = !Muted
+    }
+
     ColumnLayout {
         property int maximumWidth: parent.width
         width: maximumWidth
