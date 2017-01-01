@@ -47,6 +47,8 @@ PlasmaComponents.ListItem {
     checked: dropArea.containsDrag
     opacity: (draggedStream && draggedStream.deviceIndex == Index) ? 0.3 : 1.0
 
+    ListView.delayRemove: dragArea.dragActive
+
     DragAndDrop.DropArea {
         id: dropArea
         anchors.fill: parent
