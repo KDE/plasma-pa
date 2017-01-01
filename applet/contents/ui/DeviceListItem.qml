@@ -39,6 +39,6 @@ ListItemBase {
                 return "phone";
             }
         }
-        return IconName || "unknown";
+        return IconName;
     }
 }

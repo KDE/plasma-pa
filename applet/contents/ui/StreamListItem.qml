@@ -26,5 +26,5 @@ import org.kde.plasma.private.volume 0.1
 
 ListItemBase {
     label: Client ? i18nc("label of stream items", "%1: %2", Client.name, Name) : Name
-    icon: IconName || "unknown"
+    icon: IconName
 }

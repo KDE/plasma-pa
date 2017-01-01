@@ -82,10 +82,16 @@ PlasmaComponents.ListItem {
 
             PlasmaCore.IconItem {
                 id: clientIcon
-                visible: valid
                 Layout.alignment: Qt.AlignHCenter
                 Layout.preferredHeight: column.height * 0.75
                 Layout.preferredWidth: Layout.preferredHeight
+                source: "unknown"
+
+                onSourceChanged: {
+                    if (!valid && source != "unknown") {
+                        source = "unknown";
+                    }
+                }
 
                 DragAndDrop.DragArea {
                     id: dragArea
