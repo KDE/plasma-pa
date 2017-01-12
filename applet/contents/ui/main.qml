@@ -153,7 +153,7 @@ Item {
             return;
         }
         if (!sinkIndex) {
-            sinkIndex = sinkModel.preferredSink.cardIndex;
+            sinkIndex = sinkModel.preferredSink.index;
         }
         feedback.play(sinkIndex);
     }
