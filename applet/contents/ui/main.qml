@@ -48,8 +48,19 @@ Item {
     Plasmoid.icon: sinkModel.preferredSink ? Icon.name(sinkModel.preferredSink.volume, sinkModel.preferredSink.muted) : Icon.name(0, true)
     Plasmoid.switchWidth: units.gridUnit * 12
     Plasmoid.switchHeight: units.gridUnit * 12
-    Plasmoid.toolTipMainText: displayName
-    Plasmoid.toolTipSubText: sinkModel.preferredSink ? i18n("Volume at %1%\n%2", volumePercent(sinkModel.preferredSink.volume), sinkModel.preferredSink.description) : ""
+    Plasmoid.toolTipMainText: {
+        var sink = sinkModel.preferredSink;
+        if (!sink) {
+            return displayName;
+        }
+
+        if (sink.muted) {
+            return i18n("Audio Muted");
+        } else {
+            return i18n("Volume at %1%", volumePercent(sink.volume));
+        }
+    }
+    Plasmoid.toolTipSubText: sinkModel.preferredSink ? sinkModel.preferredSink.description : ""
 
     function boundVolume(volume) {
         return Math.max(PulseAudio.MinimalVolume, Math.min(volume, maxVolumeValue));
