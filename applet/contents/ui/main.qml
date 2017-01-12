@@ -152,7 +152,7 @@ Item {
         if (!volumeFeedback) {
             return;
         }
-        if (!sinkIndex) {
+        if (sinkIndex == undefined) {
             sinkIndex = sinkModel.preferredSink.index;
         }
         feedback.play(sinkIndex);
