@@ -152,8 +152,8 @@ Item {
         if (!volumeFeedback) {
             return;
         }
-        if (!sinkIndex) {
-            sinkIndex = sinkModel.preferredSink.cardIndex;
+        if (sinkIndex == undefined) {
+            sinkIndex = sinkModel.preferredSink.index;
         }
         feedback.play(sinkIndex);
     }

@@ -174,7 +174,7 @@ PlasmaComponents.ListItem {
                                 Muted = value == 0;
 
                                 if (type == "sink") {
-                                    playFeedback(CardIndex);
+                                    playFeedback(Index);
                                 }
 
                                 if (!pressed) {
