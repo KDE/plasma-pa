@@ -152,7 +152,7 @@ PlasmaComponents.ListItem {
                         // as otherwise we can easily end up in a loop where value
                         // changes trigger volume changes trigger value changes.
                         property int volume: Volume
-                        property bool ignoreValueChange: false
+                        property bool ignoreValueChange: true
 
                         Layout.fillWidth: true
                         minimumValue: PulseAudio.MinimalVolume
@@ -162,10 +162,15 @@ PlasmaComponents.ListItem {
                         enabled: VolumeWritable
                         opacity: Muted ? 0.5 : 1
 
+                        Component.onCompleted: {
+                            ignoreValueChange = false;
+                        }
+
                         onVolumeChanged: {
+                            var oldIgnoreValueChange = ignoreValueChange;
                             ignoreValueChange = true;
                             value = Volume;
-                            ignoreValueChange = false;
+                            ignoreValueChange = oldIgnoreValueChange;
                         }
 
                         onValueChanged: {
