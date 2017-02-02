@@ -431,6 +431,9 @@ void Context::serverCallback(const pa_server_info *info)
 
 void Context::setCardProfile(quint32 index, const QString &profile)
 {
+    if (!m_context) {
+        return;
+    }
     qCDebug(PLASMAPA) << index << profile;
     if (!PAOperation(pa_context_set_card_profile_by_index(m_context,
                                                           index,
@@ -443,6 +446,9 @@ void Context::setCardProfile(quint32 index, const QString &profile)
 
 void Context::setDefaultSink(const QString &name)
 {
+    if (!m_context) {
+        return;
+    }
     const QByteArray nameData = name.toUtf8();
     if (!PAOperation(pa_context_set_default_sink(m_context,
                                                  nameData.constData(),
@@ -454,6 +460,9 @@ void Context::setDefaultSink(const QString &name)
 
 void Context::setDefaultSource(const QString &name)
 {
+    if (!m_context) {
+        return;
+    }
     const QByteArray nameData = name.toUtf8();
     if (!PAOperation(pa_context_set_default_source(m_context,
                                                  nameData.constData(),
@@ -465,6 +474,9 @@ void Context::setDefaultSource(const QString &name)
 
 void Context::streamRestoreWrite(const pa_ext_stream_restore_info *info)
 {
+    if (!m_context) {
+        return;
+    }
     if (!PAOperation(pa_ext_stream_restore_write(m_context,
                                                  PA_UPDATE_REPLACE,
                                                  info,
