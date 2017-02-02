@@ -86,6 +86,9 @@ public:
     void setGenericVolume(quint32 index, int channel, qint64 newVolume,
                           pa_cvolume cVolume, PAFunction pa_set_volume)
     {
+        if (!m_context) {
+            return;
+        }
         newVolume = qBound<qint64>(0, newVolume, PA_VOLUME_MAX);
         pa_cvolume newCVolume = cVolume;
         if (channel == -1) { // -1 all channels
@@ -105,6 +108,9 @@ public:
     template <typename PAFunction>
     void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
     {
+        if (!m_context) {
+            return;
+        }
         if (!PAOperation(pa_set_mute(m_context, index, mute, nullptr, nullptr))) {
             qCWarning(PLASMAPA) <<  "pa_set_mute failed";
             return;
@@ -114,6 +120,9 @@ public:
     template <typename PAFunction>
     void setGenericPort(quint32 index, const QString &portName, PAFunction pa_set_port)
     {
+        if (!m_context) {
+            return;
+        }
         if (!PAOperation(pa_set_port(m_context,
                                      index,
                                      portName.toUtf8().constData(),
@@ -129,6 +138,9 @@ public:
                                    quint32 deviceIndex,
                                    PAFunction pa_move_stream_to_device)
     {
+        if (!m_context) {
+            return;
+        }
         if (!PAOperation(pa_move_stream_to_device(m_context,
                                                   streamIndex,
                                                   deviceIndex,
