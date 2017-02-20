@@ -270,8 +270,8 @@ Item {
         id: feedback
     }
 
-    PlasmaComponents.TabBar {
-        id: tabBar
+    RowLayout {
+        id: tabBarRow
 
         anchors {
             top: parent.top
@@ -279,14 +279,29 @@ Item {
             right: parent.right
         }
 
-        PlasmaComponents.TabButton {
-            id: devicesTab
-            text: i18n("Devices")
+        PlasmaComponents.TabBar {
+            id: tabBar
+            Layout.fillWidth: true
+
+            PlasmaComponents.TabButton {
+                id: devicesTab
+                text: i18n("Devices")
+            }
+
+            PlasmaComponents.TabButton {
+                id: streamsTab
+                text: i18n("Applications")
+            }
         }
 
-        PlasmaComponents.TabButton {
-            id: streamsTab
-            text: i18n("Applications")
+        PlasmaComponents.ToolButton {
+            Layout.alignment: Qt.AlignBottom
+            tooltip: plasmoid.action("configure").text
+            iconName: "configure"
+            Accessible.name: tooltip
+            onClicked: {
+                plasmoid.action("configure").trigger();
+            }
         }
     }
 
@@ -294,7 +309,7 @@ Item {
         id: scrollView;
 
         anchors {
-            top: tabBar.bottom
+            top: tabBarRow.bottom
             topMargin: units.smallSpacing
             left: parent.left
             right: parent.right
