@@ -86,6 +86,14 @@ private:
     pa_channel_map m_channelMap;
     QStringList m_channels;
     bool m_muted;
+
+    struct {
+        bool valid = false;
+        pa_cvolume volume;
+        pa_channel_map channelMap;
+        bool muted;
+        QString device;
+    } m_cache;
 };
 
 } // QPulseAudio

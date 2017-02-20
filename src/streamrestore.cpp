@@ -38,6 +38,7 @@ StreamRestore::StreamRestore(quint32 index, const QVariantMap &properties, QObje
 
 void StreamRestore::update(const pa_ext_stream_restore_info *info)
 {
+    m_cache.valid = false;
     const QString infoName = QString::fromUtf8(info->name);
     if (m_name != infoName) {
         m_name = infoName;
@@ -80,7 +81,11 @@ QString StreamRestore::device() const
 
 void StreamRestore::setDevice(const QString &device)
 {
-    writeChanges(m_volume, m_channelMap, m_muted, device);
+    if (m_cache.valid) {
+        writeChanges(m_cache.volume, m_cache.channelMap, m_cache.muted, device);
+    } else {
+        writeChanges(m_volume, m_channelMap, m_muted, device);
+    }
 }
 
 qint64 StreamRestore::volume() const
@@ -90,11 +95,16 @@ qint64 StreamRestore::volume() const
 
 void StreamRestore::setVolume(qint64 volume)
 {
-    pa_cvolume vol = m_volume;
+    pa_cvolume vol = m_cache.valid ? m_cache.volume : m_volume;
     for (int i = 0; i < vol.channels; ++i) {
         vol.values[i] = volume;
     }
-    writeChanges(vol, m_channelMap, m_muted, m_device);
+
+    if (m_cache.valid) {
+        writeChanges(vol, m_cache.channelMap, m_cache.muted, m_cache.device);
+    } else {
+        writeChanges(vol, m_channelMap, m_muted, m_device);
+    }
 }
 
 bool StreamRestore::isMuted() const
@@ -104,11 +114,11 @@ bool StreamRestore::isMuted() const
 
 void StreamRestore::setMuted(bool muted)
 {
-    if (m_muted == muted) {
-        return;
+    if (m_cache.valid) {
+        writeChanges(m_cache.volume, m_cache.channelMap, muted, m_cache.device);
+    } else {
+        writeChanges(m_volume, m_channelMap, muted, m_device);
     }
-
-    writeChanges(m_volume, m_channelMap, muted, m_device);
 }
 
 bool StreamRestore::hasVolume() const
@@ -139,9 +149,14 @@ QList<qint64> StreamRestore::channelVolumes() const
 void StreamRestore::setChannelVolume(int channel, qint64 volume)
 {
     Q_ASSERT(channel >= 0 && channel < m_volume.channels);
-    pa_cvolume vol = m_volume;
+    pa_cvolume vol = m_cache.valid ? m_cache.volume : m_volume;
     vol.values[channel] = volume;
-    writeChanges(vol, m_channelMap, m_muted, m_device);
+
+    if (m_cache.valid) {
+        writeChanges(vol, m_cache.channelMap, m_cache.muted, m_cache.device);
+    } else {
+        writeChanges(vol, m_channelMap, m_muted, m_device);
+    }
 }
 
 quint32 StreamRestore::deviceIndex() const
@@ -166,6 +181,12 @@ void StreamRestore::writeChanges(const pa_cvolume &volume, const pa_channel_map 
     info.volume = volume;
     info.device = deviceData.isEmpty() ? nullptr : deviceData.constData();
     info.mute = muted;
+
+    m_cache.valid = true;
+    m_cache.volume = volume;
+    m_cache.channelMap = channelMap;
+    m_cache.muted = muted;
+    m_cache.device = device;
 
     context()->streamRestoreWrite(&info);
 }
