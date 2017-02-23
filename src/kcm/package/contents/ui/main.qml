@@ -31,49 +31,20 @@ TabView {
     property QtObject sourceModel: SourceModel { }
 
     implicitWidth: units.gridUnit * 30
-    implicitHeight: units.gridUnit * 20
+    implicitHeight: units.gridUnit * 30
 
     ConfigModule.quickHelp: i18n("This module allows to set up the Pulseaudio sound subsystem.")
 
     Tab {
+        title: i18nc("@title:tab", "Devices")
+        Devices {}
+    }
+    Tab {
         title: i18nc("@title:tab", "Applications")
-        SinkInputView {
-            model: PulseObjectFilterModel {
-                filters: [ { role: "VirtualStream", value: false } ]
-                sourceModel: SinkInputModel {}
-            }
-            emptyText: i18nc("@label", "No Applications Playing Audio")
-        }
+        Applications {}
     }
     Tab {
-        title: i18nc("@title:tab", "Recording")
-        SourceOutputView {
-            model: PulseObjectFilterModel {
-                filters: [ { role: "VirtualStream", value: false } ]
-                sourceModel: SourceOutputModel {}
-            }
-            emptyText: i18nc("@label", "No Applications Recording Audio")
-        }
-    }
-    Tab {
-        title: i18nc("@title:tab", "Output Devices")
-        DeviceView {
-            model: sinkModel
-            emptyText: i18nc("@label", "No Output Devices Available")
-        }
-    }
-    Tab {
-        title: i18nc("@title:tab", "Input Devices")
-        DeviceView {
-            model: sourceModel
-            emptyText: i18nc("@label", "No Input Devices Available")
-        }
-    }
-    Tab {
-        title: i18nc("@title:tab", "Configuration")
-        CardView {
-            model: CardModel {}
-            emptyText: i18nc("@label", "No Additional Configuration Available")
-        }
+        title: i18nc("@title:tab", "Advanced")
+        Advanced {}
     }
 }

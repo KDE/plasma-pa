@@ -19,7 +19,31 @@
 */
 
 import QtQuick 2.0
+import QtQuick.Layouts 1.1
+import QtQuick.Controls 1.3
 
-PulseView {
-    delegate: DeviceListItem {}
+import org.kde.plasma.components 2.0 as PlasmaComponents
+
+ColumnLayout {
+    property alias text: heading.text
+    property alias disabledText: disabledLabel.text
+
+    Item {
+        Layout.fillWidth: true
+        Layout.topMargin: units.smallSpacing
+        height: units.gridUnit * 1.5
+
+        PlasmaComponents.Label {
+            id: heading
+            anchors.centerIn: parent
+            font.weight: Font.DemiBold
+        }
+    }
+
+    Label {
+        id: disabledLabel
+        Layout.alignment: Qt.AlignCenter
+        visible: text != "" && !parent.enabled
+        font.italic: true
+    }
 }
