@@ -28,6 +28,7 @@
 #include "source.h"
 #include "context.h"
 #include "modulemanager.h"
+#include "port.h"
 
 #include "globalactioncollection.h"
 #include "volumeosd.h"
@@ -53,6 +54,7 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<QPulseAudio::ModuleManager>(uri, 0, 1, "ModuleManager");
     qmlRegisterType<QPulseAudio::SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
     qmlRegisterType<QPulseAudio::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
+    qmlRegisterUncreatableType<QPulseAudio::Port>(uri, 0, 1, "Port", QString());
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
     qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
     qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");

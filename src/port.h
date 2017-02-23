@@ -23,14 +23,23 @@
 
 #include "profile.h"
 
+#include <pulse/def.h>
+
 namespace QPulseAudio
 {
 
 class Q_DECL_EXPORT Port : public Profile
 {
     Q_OBJECT
-    Q_PROPERTY(bool available READ isAvailable NOTIFY availableChanged)
+    Q_PROPERTY(Availability availability READ availability NOTIFY availabilityChanged)
 public:
+    enum Availability {
+        Unknown,
+        Available,
+        Unavailable
+    };
+    Q_ENUM(Availability)
+
     Port(QObject *parent);
     virtual ~Port();
 
@@ -38,19 +47,31 @@ public:
     void setInfo(const PAInfo *info)
     {
         Profile::setInfo(info);
-        if (m_isAvailable != info->available) {
-            m_isAvailable = info->available;
-            emit availableChanged();
+
+        Availability newAvailability;
+        switch (info->available) {
+        case PA_PORT_AVAILABLE_NO:
+            newAvailability = Unavailable;
+            break;
+        case PA_PORT_AVAILABLE_YES:
+            newAvailability = Available;
+            break;
+        default:
+            newAvailability = Unknown;
+        }
+        if (m_availability != newAvailability) {
+            m_availability = newAvailability;
+            emit availabilityChanged();
         }
     }
 
-    bool isAvailable() const;
+    Availability availability() const;
 
 signals:
-    void availableChanged();
+    void availabilityChanged();
 
 private:
-    bool m_isAvailable;
+    Availability m_availability;
 };
 
 } // QPulseAudio

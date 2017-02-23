@@ -25,7 +25,7 @@ namespace QPulseAudio
 
 Port::Port(QObject *parent)
     : Profile(parent)
-    , m_isAvailable(false)
+    , m_availability(Unknown)
 {
 }
 
@@ -33,9 +33,9 @@ Port::~Port()
 {
 }
 
-bool Port::isAvailable() const
+Port::Availability Port::availability() const
 {
-    return m_isAvailable;
+    return m_availability;
 }
 
 } // QPulseAudio
