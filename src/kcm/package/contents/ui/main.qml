@@ -38,6 +38,10 @@ MouseArea {
     ConfigModule.quickHelp: i18n("This module allows to set up the Pulseaudio sound subsystem.")
 
     onWheel: {
+        if (tabView.childAt(wheel.x, wheel.y).objectName != "tabbar") {
+            wheel.accepted = false;
+            return;
+        }
         var delta = wheel.angleDelta.y || wheel.angleDelta.x;
         wheelDelta += delta;
         // Magic number 120 for common "one click"
