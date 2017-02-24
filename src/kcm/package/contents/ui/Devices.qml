@@ -35,7 +35,7 @@ ScrollView {
 
         Header {
             Layout.fillWidth: true
-            enabled: 0 < sinks.count
+            enabled: sinks.count > 0
             text: i18n("Outputs")
             disabledText: i18nc("@label", "No Output Devices Available")
         }

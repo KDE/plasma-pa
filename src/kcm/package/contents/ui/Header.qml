@@ -30,8 +30,8 @@ ColumnLayout {
 
     Item {
         Layout.fillWidth: true
+        Layout.preferredHeight: units.gridUnit * 1.5
         Layout.topMargin: units.smallSpacing
-        height: units.gridUnit * 1.5
 
         PlasmaComponents.Label {
             id: heading
@@ -43,7 +43,7 @@ ColumnLayout {
     Label {
         id: disabledLabel
         Layout.alignment: Qt.AlignCenter
-        visible: text != "" && !parent.enabled
+        visible: text && !parent.enabled
         font.italic: true
     }
 }

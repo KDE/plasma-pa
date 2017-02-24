@@ -37,10 +37,9 @@ ScrollView {
             });
         }
 
-        property bool appsPlayingAudio: eventStreamView.visible || sinkInputView.visible
-
         Header {
-            enabled: parent.appsPlayingAudio
+            Layout.fillWidth: true
+            enabled: eventStreamView.count || sinkInputView.count
             text: i18n("Playback")
             disabledText: i18nc("@label", "No Applications Playing Audio")
         }
@@ -48,11 +47,9 @@ ScrollView {
         ListView {
             id: eventStreamView
             Layout.fillWidth: true
-            Layout.minimumHeight: contentHeight
-            Layout.maximumHeight: contentHeight
+            Layout.preferredHeight: contentHeight
             Layout.margins: units.gridUnit / 2
             interactive: false
-            visible: count > 0
             spacing: units.largeSpacing
             model: PulseObjectFilterModel {
                 filters: [ { role: "Name", value: "sink-input-by-media-role:event" } ]
@@ -66,11 +63,9 @@ ScrollView {
         ListView {
             id: sinkInputView
             Layout.fillWidth: true
-            Layout.minimumHeight: contentHeight
-            Layout.maximumHeight: contentHeight
+            Layout.preferredHeight: contentHeight
             Layout.margins: units.gridUnit / 2
             interactive: false
-            visible: count > 0
             spacing: units.largeSpacing
             model: PulseObjectFilterModel {
                 filters: [ { role: "VirtualStream", value: false } ]
@@ -83,13 +78,18 @@ ScrollView {
 
         Header {
             Layout.fillWidth: true
-            enabled: capturestreams.count > 0
+            enabled: sourceOutputView.count > 0
             text: i18n("Capture")
             disabledText: i18nc("@label", "No Applications Recording Audio")
         }
 
         ListView {
-            id: capturestreams
+            id: sourceOutputView
+            Layout.fillWidth: true
+            Layout.preferredHeight: contentHeight
+            Layout.margins: units.gridUnit / 2
+            interactive: false
+            spacing: units.largeSpacing
             model: PulseObjectFilterModel {
                 filters: [ { role: "VirtualStream", value: false } ]
                 sourceModel: SourceOutputModel {}
@@ -99,6 +99,5 @@ ScrollView {
                 deviceModel: sourceModel
             }
         }
-
     }
 }

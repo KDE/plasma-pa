@@ -37,7 +37,7 @@ ScrollView {
 
         Header {
             Layout.fillWidth: true
-            enabled: 0 < view.count
+            enabled: view.count > 0
             text: i18n("Device Profiles")
             disabledText: i18nc("@label", "No Device Profiles Available")
         }
@@ -57,19 +57,21 @@ ScrollView {
             Layout.fillWidth: true
             text: i18n("Advanced Output Configuration")
         }
+
         ModuleManager {
             id: moduleManager
         }
+
         CheckBox {
             Layout.fillWidth: true
             Layout.topMargin: units.smallSpacing
             Layout.leftMargin: units.gridUnit / 2
             Layout.rightMargin: units.gridUnit / 2
-            width: parent.width
             text: i18n("Add virtual output device for simultaneous output on all local sound cards")
             checked: moduleManager.combineSinks
             onCheckedChanged: moduleManager.combineSinks = checked;
         }
+
         CheckBox {
             Layout.fillWidth: true
             Layout.leftMargin: units.gridUnit / 2
@@ -78,6 +80,5 @@ ScrollView {
             checked: moduleManager.switchOnConnect
             onCheckedChanged: moduleManager.switchOnConnect = checked;
         }
-
     }
 }
