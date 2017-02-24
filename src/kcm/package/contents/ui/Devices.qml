@@ -26,7 +26,12 @@ ScrollView {
     id: scrollView
 
     ColumnLayout {
-        width: scrollView.viewport.width
+        Component.onCompleted: {
+            // Normal binding causes binding loops
+            width = Qt.binding(function() {
+                return scrollView.viewport.width;
+            });
+        }
 
         Header {
             Layout.fillWidth: true
