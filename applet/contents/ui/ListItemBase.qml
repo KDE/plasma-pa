@@ -39,45 +39,18 @@ PlasmaComponents.ListItem {
     property alias icon: clientIcon.source
     property string type
 
-    anchors {
-        left: parent.left;
-        right: parent.right;
-    }
-
     checked: dropArea.containsDrag
     opacity: (draggedStream && draggedStream.deviceIndex == Index) ? 0.3 : 1.0
 
     ListView.delayRemove: dragArea.dragActive
 
-    DragAndDrop.DropArea {
-        id: dropArea
-        anchors.fill: parent
-        enabled: draggedStream
-
-        onDragEnter: {
-            if (draggedStream.deviceIndex == Index) {
-                event.ignore();
-            }
-        }
-
-        onDrop: {
-            draggedStream.deviceIndex = Index;
-        }
-    }
-
-    MouseArea {
-        anchors.fill: parent
-        acceptedButtons: Qt.MiddleButton
-        onClicked: Muted = !Muted
-    }
-
-    ColumnLayout {
-        property int maximumWidth: parent.width
-        width: maximumWidth
-        Layout.maximumWidth: maximumWidth
+    Item {
+        width: parent.width
+        height: rowLayout.height
 
         RowLayout {
-            Layout.fillWidth: true
+            id: rowLayout
+            width: parent.width
             spacing: units.smallSpacing
 
             PlasmaCore.IconItem {
@@ -221,6 +194,28 @@ PlasmaComponents.ListItem {
                     }
                 }
             }
+        }
+
+        DragAndDrop.DropArea {
+            id: dropArea
+            anchors.fill: parent
+            enabled: draggedStream
+
+            onDragEnter: {
+                if (draggedStream.deviceIndex == Index) {
+                    event.ignore();
+                }
+            }
+
+            onDrop: {
+                draggedStream.deviceIndex = Index;
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            acceptedButtons: Qt.MiddleButton
+            onClicked: Muted = !Muted
         }
     }
 }
