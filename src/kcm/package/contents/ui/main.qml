@@ -26,25 +26,47 @@ import org.kde.plasma.core 2.0 as PlasmaCore /* for units.gridUnit */
 
 import org.kde.plasma.private.volume 0.1
 
-TabView {
+MouseArea {
+    property int wheelDelta: 0
     property QtObject sinkModel: SinkModel { }
     property QtObject sourceModel: SourceModel { }
 
+    acceptedButtons: Qt.NoButton
     implicitWidth: units.gridUnit * 30
     implicitHeight: units.gridUnit * 30
 
     ConfigModule.quickHelp: i18n("This module allows to set up the Pulseaudio sound subsystem.")
 
-    Tab {
-        title: i18nc("@title:tab", "Devices")
-        Devices {}
+    onWheel: {
+        var delta = wheel.angleDelta.y || wheel.angleDelta.x;
+        wheelDelta += delta;
+        // Magic number 120 for common "one click"
+        // See: http://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
+        while (wheelDelta >= 120) {
+            wheelDelta -= 120;
+            tabView.currentIndex = Math.max(0, tabView.currentIndex - 1);
+        }
+        while (wheelDelta <= -120) {
+            wheelDelta += 120;
+            tabView.currentIndex = Math.min(tabView.count - 1, tabView.currentIndex + 1);
+        }
     }
-    Tab {
-        title: i18nc("@title:tab", "Applications")
-        Applications {}
-    }
-    Tab {
-        title: i18nc("@title:tab", "Advanced")
-        Advanced {}
+
+    TabView {
+        id: tabView
+        anchors.fill: parent
+
+        Tab {
+            title: i18nc("@title:tab", "Devices")
+            Devices {}
+        }
+        Tab {
+            title: i18nc("@title:tab", "Applications")
+            Applications {}
+        }
+        Tab {
+            title: i18nc("@title:tab", "Advanced")
+            Advanced {}
+        }
     }
 }
