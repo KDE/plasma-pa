@@ -62,6 +62,7 @@ public:
     const SourceOutputMap &sourceOutputs() const { return m_sourceOutputs; }
     const ClientMap &clients() const { return m_clients; }
     const CardMap &cards() const { return m_cards; }
+    const ModuleMap &modules() const { return m_modules; }
     const StreamRestoreMap &streamRestores() const { return m_streamRestores; }
     Server *server() const { return m_server; }
 
@@ -74,6 +75,7 @@ public:
     void sourceOutputCallback(const pa_source_output_info *info);
     void clientCallback(const pa_client_info *info);
     void cardCallback(const pa_card_info *info);
+    void moduleCallback(const pa_module_info *info);
     void streamRestoreCallback(const pa_ext_stream_restore_info *info);
     void serverCallback(const pa_server_info *info);
 
@@ -162,6 +164,7 @@ private:
     SourceOutputMap m_sourceOutputs;
     ClientMap m_clients;
     CardMap m_cards;
+    ModuleMap m_modules;
     StreamRestoreMap m_streamRestores;
     Server *m_server;
 

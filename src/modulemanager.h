@@ -33,13 +33,14 @@ class GConfItem;
 
 namespace QPulseAudio
 {
-class Module;
+class GConfModule;
 
 class Q_DECL_EXPORT ModuleManager : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool combineSinks READ combineSinks WRITE setCombineSinks NOTIFY combineSinksChanged)
     Q_PROPERTY(bool switchOnConnect READ switchOnConnect WRITE setSwitchOnConnect NOTIFY switchOnConnectChanged)
+    Q_PROPERTY(QStringList loadedModules READ loadedModules NOTIFY loadedModulesChanged)
 public:
     ModuleManager(QObject *parent = nullptr);
     ~ModuleManager();
@@ -47,15 +48,20 @@ public:
     void setCombineSinks(bool combineSinks);
     bool switchOnConnect() const;
     void setSwitchOnConnect(bool switchOnConnect);
+    QStringList loadedModules() const;
 
 Q_SIGNALS:
     void combineSinksChanged();
     void switchOnConnectChanged();
+    void loadedModulesChanged();
 
 private:
-    Module *m_combineSinks;
-    Module *m_switchOnConnect;
-    Module *m_deviceManager;
+    void updateLoadedModules();
+
+    GConfModule *m_combineSinks;
+    GConfModule *m_switchOnConnect;
+    GConfModule *m_deviceManager;
+    QStringList m_loadedModules;
 };
 
 } // QPulseAudio

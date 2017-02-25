@@ -20,38 +20,41 @@
 
 
 #include "modulemanager.h"
+#include "module.h"
 
 #define PA_GCONF_ROOT "/system/pulseaudio"
 #define PA_GCONF_PATH_MODULES PA_GCONF_ROOT"/modules"
 
 #include "gconfitem.h"
 
+#include <QTimer>
+
 namespace QPulseAudio
 {
 
-class Module : public GConfItem
+class GConfModule : public GConfItem
 {
     Q_OBJECT
 public:
-    Module(const QString &configName, const QString &moduleName, QObject *parent);
+    GConfModule(const QString &configName, const QString &moduleName, QObject *parent);
     bool isEnabled() const;
     void setEnabled(bool enabled, const QVariant &args=QVariant());
 private:
     QString m_moduleName;
 };
 
-Module::Module(const QString &configName, const QString &moduleName, QObject *parent) :
+GConfModule::GConfModule(const QString &configName, const QString &moduleName, QObject *parent) :
     GConfItem(QStringLiteral(PA_GCONF_PATH_MODULES"/") + configName, parent),
     m_moduleName(moduleName)
 {
 }
 
-bool Module::isEnabled() const
+bool GConfModule::isEnabled() const
 {
     return value(QStringLiteral("enabled")).toBool();
 }
 
-void Module::setEnabled(bool enabled, const QVariant &args)
+void GConfModule::setEnabled(bool enabled, const QVariant &args)
 {
     set(QStringLiteral("locked"), true);
 
@@ -68,13 +71,21 @@ void Module::setEnabled(bool enabled, const QVariant &args)
 
 ModuleManager::ModuleManager(QObject *parent) :
     QObject(parent),
-    m_combineSinks(new Module(QStringLiteral("combine"), QStringLiteral("module-combine"), this)),
-    m_switchOnConnect(new Module(QStringLiteral("switch-on-connect"), QStringLiteral("module-switch-on-connect"), this)),
-    m_deviceManager(new Module(QStringLiteral("device-manager"), QStringLiteral("module-device-manager"), this))
+    m_combineSinks(new GConfModule(QStringLiteral("combine"), QStringLiteral("module-combine"), this)),
+    m_switchOnConnect(new GConfModule(QStringLiteral("switch-on-connect"), QStringLiteral("module-switch-on-connect"), this)),
+    m_deviceManager(new GConfModule(QStringLiteral("device-manager"), QStringLiteral("module-device-manager"), this))
 {
     connect(m_combineSinks, &GConfItem::subtreeChanged, this, &ModuleManager::combineSinksChanged);
     connect(m_switchOnConnect, &GConfItem::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
     connect(m_deviceManager, &GConfItem::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
+
+    QTimer *updateModulesTimer = new QTimer(this);
+    updateModulesTimer->setInterval(500);
+    updateModulesTimer->setSingleShot(true);
+    connect(updateModulesTimer, &QTimer::timeout, this, &ModuleManager::updateLoadedModules);
+    connect(&Context::instance()->modules(), &MapBaseQObject::added, updateModulesTimer, static_cast<void(QTimer::*)(void)>(&QTimer::start));
+    connect(&Context::instance()->modules(), &MapBaseQObject::removed, updateModulesTimer, static_cast<void(QTimer::*)(void)>(&QTimer::start));
+    updateLoadedModules();
 }
 
 ModuleManager::~ModuleManager()
@@ -105,6 +116,21 @@ void ModuleManager::setSwitchOnConnect(bool switchOnConnect)
 {
     m_deviceManager->setEnabled(!switchOnConnect);
     m_switchOnConnect->setEnabled(switchOnConnect);
+}
+
+QStringList ModuleManager::loadedModules() const
+{
+    return m_loadedModules;
+}
+
+void ModuleManager::updateLoadedModules()
+{
+    m_loadedModules.clear();
+    const auto modules = Context::instance()->modules().data();
+    for (Module *module : modules) {
+        m_loadedModules.append(module->name());
+    }
+    Q_EMIT loadedModulesChanged();
 }
 
 }

@@ -39,6 +39,7 @@ class SinkInput;
 class Source;
 class SourceOutput;
 class StreamRestore;
+class Module;
 
 /**
  * @see MapBase
@@ -166,6 +167,7 @@ typedef MapBase<Source, pa_source_info> SourceMap;
 typedef MapBase<SourceOutput, pa_source_output_info> SourceOutputMap;
 typedef MapBase<Client, pa_client_info> ClientMap;
 typedef MapBase<Card, pa_card_info> CardMap;
+typedef MapBase<Module, pa_module_info> ModuleMap;
 typedef MapBase<StreamRestore, pa_ext_stream_restore_info> StreamRestoreMap;
 
 } // QPulseAudio

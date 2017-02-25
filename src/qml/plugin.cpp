@@ -54,6 +54,7 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<QPulseAudio::ModuleManager>(uri, 0, 1, "ModuleManager");
     qmlRegisterType<QPulseAudio::SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
     qmlRegisterType<QPulseAudio::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
+    qmlRegisterType<QPulseAudio::ModuleModel>(uri, 0, 1, "ModuleModel");
     qmlRegisterUncreatableType<QPulseAudio::Port>(uri, 0, 1, "Port", QString());
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
     qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");

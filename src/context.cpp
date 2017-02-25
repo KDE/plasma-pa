@@ -33,6 +33,7 @@
 #include "source.h"
 #include "sourceoutput.h"
 #include "streamrestore.h"
+#include "module.h"
 
 namespace QPulseAudio
 {
@@ -128,6 +129,15 @@ static void card_cb(pa_context *context, const pa_card_info *info, int eol, void
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->cardCallback(info);
+}
+
+static void module_info_list_cb(pa_context *context, const pa_module_info *info, int eol, void *data)
+{
+    if (!isGoodState(eol))
+        return;
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    ((Context *)data)->moduleCallback(info);
 }
 
 static void server_cb(pa_context *context, const pa_server_info *info, void *data)
@@ -287,6 +297,18 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
         }
         break;
 
+    case PA_SUBSCRIPTION_EVENT_MODULE:
+        if ((type & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
+            m_modules.removeEntry(index);
+        } else {
+            if (!PAOperation(pa_context_get_module_info_list(context, module_info_list_cb, this))) {
+                qCWarning(PLASMAPA) << "pa_context_get_module_info_list() failed";
+                return;
+            }
+        }
+        break;
+
+
     case PA_SUBSCRIPTION_EVENT_SERVER:
         if (!PAOperation(pa_context_get_server_info(context, server_cb, this))) {
             qCWarning(PLASMAPA) << "pa_context_get_server_info() failed";
@@ -315,6 +337,7 @@ void Context::contextStateCallback(pa_context *c)
                                             PA_SUBSCRIPTION_MASK_SINK_INPUT|
                                             PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT|
                                             PA_SUBSCRIPTION_MASK_CARD|
+                                            PA_SUBSCRIPTION_MASK_MODULE|
                                             PA_SUBSCRIPTION_MASK_SERVER), nullptr, nullptr))) {
                 qCWarning(PLASMAPA) << "pa_context_subscribe() failed";
                 return;
@@ -348,6 +371,11 @@ void Context::contextStateCallback(pa_context *c)
 
         if (!PAOperation(pa_context_get_source_output_info_list(c, source_output_cb, this))) {
             qCWarning(PLASMAPA) << "pa_context_get_source_output_info_list() failed";
+            return;
+        }
+
+        if (!PAOperation(pa_context_get_module_info_list(c, module_info_list_cb, this))) {
+            qCWarning(PLASMAPA) << "pa_context_get_module_info_list() failed";
             return;
         }
 
@@ -402,6 +430,11 @@ void Context::clientCallback(const pa_client_info *info)
 void Context::cardCallback(const pa_card_info *info)
 {
     m_cards.updateEntry(info, this);
+}
+
+void Context::moduleCallback(const pa_module_info *info)
+{
+    m_modules.updateEntry(info, this);
 }
 
 void Context::streamRestoreCallback(const pa_ext_stream_restore_info *info)
@@ -526,6 +559,9 @@ void Context::reset()
     m_sources.reset();
     m_sourceOutputs.reset();
     m_clients.reset();
+    m_cards.reset();
+    m_modules.reset();
+    m_streamRestores.reset();
     m_server->reset();
 }
 

@@ -144,6 +144,13 @@ public:
     StreamRestoreModel(QObject *parent = nullptr);
 };
 
+class Q_DECL_EXPORT ModuleModel : public AbstractModel
+{
+    Q_OBJECT
+public:
+    ModuleModel(QObject *parent = nullptr);
+};
+
 } // QPulseAudio
 
 #endif // PULSEAUDIO_H

@@ -70,6 +70,7 @@ ScrollView {
             text: i18n("Add virtual output device for simultaneous output on all local sound cards")
             checked: moduleManager.combineSinks
             onCheckedChanged: moduleManager.combineSinks = checked;
+            enabled: moduleManager.loadedModules.indexOf("module-gconf") != -1
         }
 
         CheckBox {
@@ -79,6 +80,15 @@ ScrollView {
             text: i18n("Automatically switch all running streams when a new output becomes available")
             checked: moduleManager.switchOnConnect
             onCheckedChanged: moduleManager.switchOnConnect = checked;
+            enabled: moduleManager.loadedModules.indexOf("module-gconf") != -1
+        }
+
+        Label {
+            Layout.alignment: Qt.AlignHCenter
+            enabled: false
+            font.italic: true
+            text: i18n("Requires 'module-gconf' PulseAudio module")
+            visible: moduleManager.loadedModules.indexOf("module-gconf") == -1
         }
     }
 }

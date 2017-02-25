@@ -23,6 +23,7 @@ set(SRC_LIST
     debug.cpp
     server.cpp
     streamrestore.cpp
+    module.cpp
 )
 
 add_library(QPulseAudioPrivate SHARED ${SRC_LIST})
