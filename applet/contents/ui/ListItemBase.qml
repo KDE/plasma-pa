@@ -95,13 +95,25 @@ PlasmaComponents.ListItem {
             ColumnLayout {
                 id: column
 
-                PlasmaExtras.Heading {
-                    id :textLabel
+                RowLayout {
                     Layout.fillWidth: true
-                    level: 5
-                    opacity: 0.6
-                    wrapMode: Text.NoWrap
-                    elide: Text.ElideRight
+
+                    PlasmaExtras.Heading {
+                        id: textLabel
+                        Layout.fillWidth: true
+                        level: 5
+                        opacity: 0.6
+                        wrapMode: Text.NoWrap
+                        elide: Text.ElideRight
+                    }
+                    PlasmaComponents.ToolButton {
+                        id: contextMenuButton
+                        Layout.preferredHeight: slider.height
+                        Layout.preferredWidth: Layout.preferredHeight
+                        checkable: true
+                        iconName: "application-menu"
+                        onClicked: contextMenu.show(x, y + height)
+                    }
                 }
 
                 RowLayout {
@@ -216,6 +228,81 @@ PlasmaComponents.ListItem {
             anchors.fill: parent
             acceptedButtons: Qt.MiddleButton
             onClicked: Muted = !Muted
+        }
+    }
+
+    PlasmaComponents.ContextMenu {
+        id: contextMenu
+
+        onStatusChanged: {
+            if (status == PlasmaComponents.DialogStatus.Closed) {
+                contextMenuButton.checked = false;
+            }
+        }
+
+        function newSeperator() {
+            return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem { separator: true }", contextMenu);
+        }
+        function newMenuItem() {
+            return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem {}", contextMenu);
+        }
+
+        function loadDynamicActions() {
+            contextMenu.clearMenuItems();
+
+            // Mute
+            var menuItem = newMenuItem();
+            menuItem.text = i18nc("Checkable switch for (un-)muting sound output.", "Mute");
+            menuItem.checkable = true;
+            menuItem.checked = Muted;
+            menuItem.clicked.connect(function() {
+                Muted = !Muted
+            });
+            contextMenu.addMenuItem(menuItem);
+
+            // Default
+            if (typeof PulseObject.default === "boolean") {
+                var menuItem = newMenuItem();
+                menuItem.text = i18nc("Checkable switch to change the current default output.", "Default");
+                menuItem.checkable = true;
+                menuItem.checked = PulseObject.default
+                menuItem.clicked.connect(function() {
+                    PulseObject.default = true
+                });
+                contextMenu.addMenuItem(menuItem);
+            }
+
+            // Ports
+            if (PulseObject.ports && PulseObject.ports.length > 0) {
+                contextMenu.addMenuItem(newSeperator());
+
+                var isMultiplePorts = (1 < PulseObject.ports.length);
+                var menuItem = newMenuItem();
+                menuItem.text = i18nc("Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)", "Ports");
+                menuItem.enabled = false;
+                contextMenu.addMenuItem(menuItem);
+
+                for (var i = 0; i < PulseObject.ports.length; i++) {
+                    var port = PulseObject.ports[i];
+                    var menuItem = newMenuItem();
+                    menuItem.text = port.description;
+                    menuItem.enabled = isMultiplePorts;
+                    menuItem.checkable = true;
+                    menuItem.checked = i === PulseObject.activePortIndex;
+                    var setActivePort = function(portIndex) {
+                        return function() {
+                            PulseObject.activePortIndex = portIndex;
+                        };
+                    };
+                    menuItem.clicked.connect(setActivePort(i));
+                    contextMenu.addMenuItem(menuItem);
+                }
+            }
+        }
+
+        function show(x, y) {
+            loadDynamicActions();
+            open(x, y);
         }
     }
 }
