@@ -119,8 +119,9 @@ PlasmaComponents.ListItem {
                 RowLayout {
                     PlasmaCore.IconItem {
                         readonly property bool isPlayback: type.substring(0, 4) == "sink"
-                        Layout.maximumHeight: slider.height * 0.85
-                        Layout.maximumWidth: slider.height * 0.85
+                        roundToIconSize: false
+                        Layout.preferredWidth: Math.round(slider.height * 0.95)
+                        Layout.preferredHeight: Layout.preferredWidth
                         source: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
 
                         MouseArea {
