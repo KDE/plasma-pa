@@ -24,6 +24,8 @@ import QtQuick.Layouts 1.0
 
 import org.kde.kquickcontrolsaddons 2.0
 
+import org.kde.plasma.private.volume 0.1
+
 ColumnLayout {
     id: delegate
     width: parent.width
@@ -73,12 +75,28 @@ ColumnLayout {
 
             ComboBox {
                 id: portbox
+                readonly property var ports: Ports
                 Layout.fillWidth: true
-                model: Ports
                 onModelChanged: currentIndex = ActivePortIndex
-                textRole: "description"
                 currentIndex: ActivePortIndex
                 onActivated: ActivePortIndex = index
+
+                onPortsChanged: {
+                    var items = [];
+                    for (var i = 0; i < ports.length; ++i) {
+                        var port = ports[i];
+                        var text = port.description;
+                        if (port.availability == Port.Unavailable) {
+                            if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
+                                text += i18nc("Port is unavailable", " (unavailable)");
+                            } else {
+                                text += i18nc("Port is unplugged", " (unplugged)");
+                            }
+                        }
+                        items.push(text);
+                    }
+                    model = items;
+                }
             }
         }
 

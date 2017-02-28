@@ -282,6 +282,13 @@ PlasmaComponents.ListItem {
                     var port = PulseObject.ports[i];
                     var menuItem = newMenuItem();
                     menuItem.text = port.description;
+                    if (port.availability == Port.Unavailable) {
+                        if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
+                            menuItem.text += i18nc("Port is unavailable", " (unavailable)");
+                        } else {
+                            menuItem.text += i18nc("Port is unplugged", " (unplugged)");
+                        }
+                    }
                     menuItem.enabled = isMultiplePorts;
                     menuItem.checkable = true;
                     menuItem.checked = i === PulseObject.activePortIndex;
