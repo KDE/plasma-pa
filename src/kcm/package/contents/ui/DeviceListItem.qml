@@ -68,7 +68,7 @@ ColumnLayout {
             visible: portbox.count > 1
 
             Label {
-                text: 'Port'
+                text: i18n("Port")
             }
 
             ComboBox {
