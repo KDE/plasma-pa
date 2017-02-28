@@ -54,6 +54,11 @@ QString PulseObject::iconName() const
         return name;
     }
 
+    name = m_properties.value(QStringLiteral("media.icon_name")).toString();
+    if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
+        return name;
+    }
+
     name = m_properties.value(QStringLiteral("window.icon_name")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
