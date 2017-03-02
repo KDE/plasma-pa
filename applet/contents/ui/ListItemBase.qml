@@ -112,7 +112,7 @@ PlasmaComponents.ListItem {
                         Layout.preferredWidth: Layout.preferredHeight
                         checkable: true
                         iconName: "application-menu"
-                        onClicked: contextMenu.show(x, y + height)
+                        onClicked: contextMenu.show()
                     }
                 }
 
@@ -235,6 +235,9 @@ PlasmaComponents.ListItem {
     PlasmaComponents.ContextMenu {
         id: contextMenu
 
+        visualParent: contextMenuButton
+        placement: PlasmaCore.Types.BottomPosedLeftAlignedPopup
+
         onStatusChanged: {
             if (status == PlasmaComponents.DialogStatus.Closed) {
                 contextMenuButton.checked = false;
@@ -301,9 +304,9 @@ PlasmaComponents.ListItem {
             }
         }
 
-        function show(x, y) {
+        function show() {
             loadDynamicActions();
-            open(x, y);
+            openRelative();
         }
     }
 }
