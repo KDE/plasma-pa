@@ -31,7 +31,7 @@ class Sink;
 class Source;
 class Context;
 
-class Q_DECL_EXPORT Server : public QObject
+class Server : public QObject
 {
     Q_OBJECT
 

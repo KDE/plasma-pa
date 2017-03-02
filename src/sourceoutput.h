@@ -26,7 +26,7 @@
 namespace QPulseAudio
 {
 
-class Q_DECL_EXPORT SourceOutput : public Stream
+class SourceOutput : public Stream
 {
     Q_OBJECT
 public:

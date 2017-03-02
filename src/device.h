@@ -32,7 +32,7 @@
 namespace QPulseAudio
 {
 
-class Q_DECL_EXPORT Device : public VolumeObject
+class Device : public VolumeObject
 {
     Q_OBJECT
     Q_PROPERTY(State state READ state NOTIFY stateChanged)

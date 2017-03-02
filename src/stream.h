@@ -35,7 +35,7 @@
 namespace QPulseAudio
 {
 
-class Q_DECL_EXPORT Stream : public VolumeObject
+class Stream : public VolumeObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)

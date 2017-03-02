@@ -27,7 +27,7 @@
 namespace QPulseAudio
 {
 
-class Q_DECL_EXPORT Profile : public QObject
+class Profile : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)

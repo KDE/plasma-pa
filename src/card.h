@@ -75,7 +75,7 @@ private:
     QVariantMap m_properties;
 };
 
-class Q_DECL_EXPORT Card : public PulseObject
+class Card : public PulseObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)

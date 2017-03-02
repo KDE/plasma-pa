@@ -28,7 +28,7 @@
 namespace QPulseAudio
 {
 
-class Q_DECL_EXPORT Port : public Profile
+class Port : public Profile
 {
     Q_OBJECT
     Q_PROPERTY(Availability availability READ availability NOTIFY availabilityChanged)

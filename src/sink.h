@@ -26,7 +26,7 @@
 namespace QPulseAudio
 {
 
-class Q_DECL_EXPORT Sink : public Device
+class Sink : public Device
 {
     Q_OBJECT
 public:

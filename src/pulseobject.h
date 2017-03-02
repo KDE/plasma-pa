@@ -31,7 +31,7 @@ namespace QPulseAudio
 
 class Context;
 
-class Q_DECL_EXPORT PulseObject : public QObject
+class PulseObject : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(quint32 index READ index CONSTANT)

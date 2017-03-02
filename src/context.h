@@ -38,7 +38,7 @@ namespace QPulseAudio
 
 class Server;
 
-class Q_DECL_EXPORT Context : public QObject
+class Context : public QObject
 {
     Q_OBJECT
 public:

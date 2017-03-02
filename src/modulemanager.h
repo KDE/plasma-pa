@@ -35,7 +35,7 @@ namespace QPulseAudio
 {
 class GConfModule;
 
-class Q_DECL_EXPORT ModuleManager : public QObject
+class ModuleManager : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool combineSinks READ combineSinks WRITE setCombineSinks NOTIFY combineSinksChanged)

@@ -30,7 +30,7 @@
 namespace QPulseAudio
 {
 
-class Q_DECL_EXPORT Client : public PulseObject
+class Client : public PulseObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)

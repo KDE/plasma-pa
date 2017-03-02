@@ -30,7 +30,7 @@ namespace QPulseAudio
 {
     class Context;
 
-class Q_DECL_EXPORT AbstractModel : public QAbstractListModel
+class AbstractModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -69,14 +69,14 @@ private:
     AbstractModel() {}
 };
 
-class Q_DECL_EXPORT CardModel : public AbstractModel
+class CardModel : public AbstractModel
 {
     Q_OBJECT
 public:
     CardModel(QObject *parent = nullptr);
 };
 
-class Q_DECL_EXPORT SinkModel : public AbstractModel
+class SinkModel : public AbstractModel
 {
     Q_OBJECT
     Q_PROPERTY(QPulseAudio::Sink *defaultSink READ defaultSink NOTIFY defaultSinkChanged)
@@ -105,14 +105,14 @@ private:
     Sink *m_preferredSink;
 };
 
-class Q_DECL_EXPORT SinkInputModel : public AbstractModel
+class SinkInputModel : public AbstractModel
 {
     Q_OBJECT
 public:
     SinkInputModel(QObject *parent = nullptr);
 };
 
-class Q_DECL_EXPORT SourceModel : public AbstractModel
+class SourceModel : public AbstractModel
 {
     Q_OBJECT
     Q_PROPERTY(QPulseAudio::Source *defaultSource READ defaultSource NOTIFY defaultSourceChanged)
@@ -130,21 +130,21 @@ signals:
     void defaultSourceChanged();
 };
 
-class Q_DECL_EXPORT SourceOutputModel : public AbstractModel
+class SourceOutputModel : public AbstractModel
 {
     Q_OBJECT
 public:
     SourceOutputModel(QObject *parent = nullptr);
 };
 
-class Q_DECL_EXPORT StreamRestoreModel : public AbstractModel
+class StreamRestoreModel : public AbstractModel
 {
     Q_OBJECT
 public:
     StreamRestoreModel(QObject *parent = nullptr);
 };
 
-class Q_DECL_EXPORT ModuleModel : public AbstractModel
+class ModuleModel : public AbstractModel
 {
     Q_OBJECT
 public:

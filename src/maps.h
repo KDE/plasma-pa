@@ -46,7 +46,7 @@ class Module;
  * This class is nothing more than the QObject base since moc cannot handle
  * templates.
  */
-class Q_DECL_EXPORT MapBaseQObject : public QObject
+class MapBaseQObject : public QObject
 {
     Q_OBJECT
 
@@ -67,7 +67,7 @@ signals:
  * index to a pulse index to an object, and any permutation thereof.
  */
 template<typename Type, typename PAInfo>
-class Q_DECL_EXPORT MapBase : public MapBaseQObject
+class MapBase : public MapBaseQObject
 {
 public:
     virtual ~MapBase() {}
