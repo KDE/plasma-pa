@@ -19,7 +19,6 @@ target_link_libraries(kcm_pulseaudio
     KF5::QuickAddons
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
-    QPulseAudioPrivate
 )
 
 kcoreaddons_desktop_to_json(kcm_pulseaudio "kcm_pulseaudio.desktop")
