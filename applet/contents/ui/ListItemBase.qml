@@ -108,11 +108,19 @@ PlasmaComponents.ListItem {
                     }
                     PlasmaComponents.ToolButton {
                         id: contextMenuButton
-                        Layout.preferredHeight: slider.height
+                        Layout.preferredHeight: units.iconSizes.small
                         Layout.preferredWidth: Layout.preferredHeight
                         checkable: true
-                        iconName: "application-menu"
                         onClicked: contextMenu.show()
+
+                        PlasmaCore.IconItem {
+                            anchors.fill: parent
+                            source: "application-menu"
+
+                            // From Plasma's ToolButtonStyle:
+                            active: parent.hovered
+                            colorGroup: parent.hovered ? PlasmaCore.Theme.ButtonColorGroup : PlasmaCore.ColorScope.colorGroup
+                        }
                     }
                 }
 
