@@ -108,13 +108,14 @@ PlasmaComponents.ListItem {
                     }
                     PlasmaComponents.ToolButton {
                         id: contextMenuButton
-                        Layout.preferredHeight: units.iconSizes.small
+                        Layout.preferredHeight: units.iconSizes.small + units.smallSpacing * 2
                         Layout.preferredWidth: Layout.preferredHeight
                         checkable: true
                         onClicked: contextMenu.show()
 
                         PlasmaCore.IconItem {
                             anchors.fill: parent
+                            anchors.margins: units.smallSpacing
                             source: "application-menu"
 
                             // From Plasma's ToolButtonStyle:
@@ -127,8 +128,7 @@ PlasmaComponents.ListItem {
                 RowLayout {
                     PlasmaCore.IconItem {
                         readonly property bool isPlayback: type.substring(0, 4) == "sink"
-                        roundToIconSize: false
-                        Layout.preferredWidth: Math.round(slider.height * 0.95)
+                        Layout.preferredWidth: units.iconSizes.small
                         Layout.preferredHeight: Layout.preferredWidth
                         source: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
 
