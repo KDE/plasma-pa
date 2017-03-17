@@ -34,8 +34,7 @@ Item {
     id: main
 
     property bool volumeFeedback: Plasmoid.configuration.volumeFeedback
-    property int maxVolumePercent: Plasmoid.configuration.maximumVolume
-    property int maxVolumeValue: Math.round(maxVolumePercent * PulseAudio.NormalVolume / 100.0)
+    property int maxVolumeValue: Math.round(Plasmoid.configuration.maximumVolume * PulseAudio.NormalVolume / 100.0)
     property int volumeStep: Math.round(Plasmoid.configuration.volumeStep * PulseAudio.NormalVolume / 100.0)
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null

@@ -131,11 +131,12 @@ PlasmaComponents.ListItem {
                         // changes trigger volume changes trigger value changes.
                         property int volume: Volume
                         property bool ignoreValueChange: true
+                        property bool raiseMaxVolume: false
 
                         Layout.fillWidth: true
                         minimumValue: PulseAudio.MinimalVolume
-                        maximumValue: maxVolumeValue
-                        stepSize: maximumValue / maxVolumePercent
+                        maximumValue: raiseMaxVolume ? PulseAudio.MaximalVolume : maxVolumeValue
+                        stepSize: maximumValue / (maximumValue / PulseAudio.NormalVolume * 100.0)
                         visible: HasVolume
                         enabled: VolumeWritable
                         opacity: Muted ? 0.5 : 1
@@ -267,6 +268,16 @@ PlasmaComponents.ListItem {
                 });
                 contextMenu.addMenuItem(menuItem);
             }
+
+            // Raise max volume
+            menuItem = newMenuItem();
+            menuItem.text = i18n("Raise maximum volume");
+            menuItem.checkable = true;
+            menuItem.checked = slider.raiseMaxVolume;
+            menuItem.clicked.connect(function() {
+                slider.raiseMaxVolume = !slider.raiseMaxVolume;
+            });
+            contextMenu.addMenuItem(menuItem);
 
             // Ports
             if (PulseObject.ports && PulseObject.ports.length > 0) {
