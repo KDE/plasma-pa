@@ -94,6 +94,7 @@ PlasmaComponents.ListItem {
 
             ColumnLayout {
                 id: column
+                spacing: 1
 
                 RowLayout {
                     Layout.fillWidth: true
@@ -106,36 +107,19 @@ PlasmaComponents.ListItem {
                         wrapMode: Text.NoWrap
                         elide: Text.ElideRight
                     }
-                    PlasmaComponents.ToolButton {
+                    SmallToolButton {
                         id: contextMenuButton
-                        Layout.preferredHeight: units.iconSizes.small + units.smallSpacing * 2
-                        Layout.preferredWidth: Layout.preferredHeight
+                        icon: "application-menu"
                         checkable: true
                         onClicked: contextMenu.show()
-
-                        PlasmaCore.IconItem {
-                            anchors.fill: parent
-                            anchors.margins: units.smallSpacing
-                            source: "application-menu"
-
-                            // From Plasma's ToolButtonStyle:
-                            active: parent.hovered
-                            colorGroup: parent.hovered ? PlasmaCore.Theme.ButtonColorGroup : PlasmaCore.ColorScope.colorGroup
-                        }
                     }
                 }
 
                 RowLayout {
-                    PlasmaCore.IconItem {
+                    SmallToolButton {
                         readonly property bool isPlayback: type.substring(0, 4) == "sink"
-                        Layout.preferredWidth: units.iconSizes.small
-                        Layout.preferredHeight: Layout.preferredWidth
-                        source: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
-
-                        MouseArea {
-                            anchors.fill: parent
-                            onPressed: Muted = !Muted
-                        }
+                        icon: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
+                        onClicked: Muted = !Muted
                     }
 
                     PlasmaComponents.Slider {
