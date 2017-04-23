@@ -79,8 +79,9 @@ RowLayout {
 
         Label {
             id: hundredPercentLabel
+            readonly property real hundredPos: (slider.width / slider.maximumValue) * PulseAudio.NormalVolume
             z: slider.z - 1
-            x: (slider.width / slider.maximumValue) * PulseAudio.NormalVolume - width / 2
+            x: (Qt.application.layoutDirection == Qt.RightToLeft ? slider.width - hundredPos : hundredPos) - width / 2
             y: slider.height / 1.2
             opacity: 0.5
             font.pixelSize: slider.height / 2.2
