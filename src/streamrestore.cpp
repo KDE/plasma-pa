@@ -82,9 +82,13 @@ QString StreamRestore::device() const
 void StreamRestore::setDevice(const QString &device)
 {
     if (m_cache.valid) {
-        writeChanges(m_cache.volume, m_cache.channelMap, m_cache.muted, device);
+        if (m_cache.device != device) {
+            writeChanges(m_cache.volume, m_cache.channelMap, m_cache.muted, device);
+        }
     } else {
-        writeChanges(m_volume, m_channelMap, m_muted, device);
+        if (m_device != device) {
+            writeChanges(m_volume, m_channelMap, m_muted, device);
+        }
     }
 }
 
@@ -115,9 +119,13 @@ bool StreamRestore::isMuted() const
 void StreamRestore::setMuted(bool muted)
 {
     if (m_cache.valid) {
-        writeChanges(m_cache.volume, m_cache.channelMap, muted, m_cache.device);
+        if (m_cache.muted != muted) {
+            writeChanges(m_cache.volume, m_cache.channelMap, muted, m_cache.device);
+        }
     } else {
-        writeChanges(m_volume, m_channelMap, muted, m_device);
+        if (m_muted != muted) {
+            writeChanges(m_volume, m_channelMap, muted, m_device);
+        }
     }
 }
 
