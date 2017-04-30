@@ -144,9 +144,9 @@ QStringList StreamRestore::channels() const
     return m_channels;
 }
 
-QList<qint64> StreamRestore::channelVolumes() const
+QList<qreal> StreamRestore::channelVolumes() const
 {
-    QList<qint64> ret;
+    QList<qreal> ret;
     ret.reserve(m_volume.channels);
     for (int i = 0; i < m_volume.channels; ++i) {
         ret << m_volume.values[i];

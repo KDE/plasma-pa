@@ -38,7 +38,7 @@ class StreamRestore : public PulseObject
     Q_PROPERTY(bool hasVolume READ hasVolume CONSTANT)
     Q_PROPERTY(bool volumeWritable READ isVolumeWritable CONSTANT)
     Q_PROPERTY(QStringList channels READ channels NOTIFY channelsChanged)
-    Q_PROPERTY(QList<qint64> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
+    Q_PROPERTY(QList<qreal> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
     Q_PROPERTY(quint32 deviceIndex READ deviceIndex WRITE setDeviceIndex NOTIFY deviceIndexChanged)
 public:
     StreamRestore(quint32 index, const QVariantMap &properties, QObject *parent);
@@ -61,7 +61,7 @@ public:
 
     QStringList channels() const;
 
-    QList<qint64> channelVolumes() const;
+    QList<qreal> channelVolumes() const;
 
     quint32 deviceIndex() const;
     void setDeviceIndex(quint32 deviceIndex);

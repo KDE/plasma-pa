@@ -36,7 +36,7 @@ class VolumeObject : public PulseObject
     Q_PROPERTY(bool hasVolume READ hasVolume NOTIFY hasVolumeChanged)
     Q_PROPERTY(bool volumeWritable READ isVolumeWritable NOTIFY isVolumeWritableChanged)
     Q_PROPERTY(QStringList channels READ channels NOTIFY channelsChanged)
-    Q_PROPERTY(QList<qint64> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
+    Q_PROPERTY(QList<qreal> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
 public:
     VolumeObject(QObject *parent);
     virtual ~VolumeObject();
@@ -75,7 +75,7 @@ public:
     bool isVolumeWritable() const;
 
     QStringList channels() const;
-    QList<qint64> channelVolumes() const;
+    QList<qreal> channelVolumes() const;
     Q_INVOKABLE virtual void setChannelVolume(int channel, qint64 volume) = 0;
 
 signals:
