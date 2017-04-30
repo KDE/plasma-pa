@@ -22,8 +22,6 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.3
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-
 ColumnLayout {
     property alias text: heading.text
     property alias disabledText: disabledLabel.text
@@ -33,7 +31,7 @@ ColumnLayout {
         Layout.preferredHeight: units.gridUnit * 1.5
         Layout.topMargin: units.smallSpacing
 
-        PlasmaComponents.Label {
+        Label {
             id: heading
             anchors.centerIn: parent
             font.weight: Font.DemiBold
