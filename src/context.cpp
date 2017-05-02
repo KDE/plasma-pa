@@ -25,6 +25,8 @@
 #include "debug.h"
 #include <QMutexLocker>
 #include <QTimer>
+#include <QDBusServiceWatcher>
+#include <QDBusConnection>
 
 #include "card.h"
 #include "client.h"
@@ -187,6 +189,16 @@ Context::Context(QObject *parent)
     , m_mainloop(nullptr)
     , m_references(0)
 {
+    QDBusServiceWatcher *watcher = new QDBusServiceWatcher(QStringLiteral("org.pulseaudio.Server"),
+                                                           QDBusConnection::sessionBus(),
+                                                           QDBusServiceWatcher::WatchForRegistration,
+                                                           this);
+    connect(watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() {
+        if (!m_context) {
+            connectToDaemon();
+        }
+    });
+
     connectToDaemon();
 }
 
