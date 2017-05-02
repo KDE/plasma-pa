@@ -4,10 +4,10 @@ cmake_minimum_required(VERSION 2.8.12)
 set(PROJECT_VERSION "5.9.90")
 set(PROJECT_VERSION_MAJOR 5)
 
-set (QT_MIN_VERSION "5.4.0")
-set (ECM_MIN_VERSION "0.0.14")
+set(QT_MIN_VERSION "5.7.0")
+set(KF5_MIN_VERSION "5.30.0")
 
-find_package(ECM ${ECM_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM 1.8.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
@@ -29,7 +29,7 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Widgets
     Quick
 )
-find_package(KF5 REQUIRED COMPONENTS
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     Declarative
     DocTools
