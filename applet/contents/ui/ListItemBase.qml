@@ -102,6 +102,7 @@ PlasmaComponents.ListItem {
                     PlasmaExtras.Heading {
                         id: textLabel
                         Layout.fillWidth: true
+                        height: undefined
                         level: 5
                         opacity: 0.6
                         wrapMode: Text.NoWrap
