@@ -65,6 +65,8 @@ public:
     const ModuleMap &modules() const { return m_modules; }
     const StreamRestoreMap &streamRestores() const { return m_streamRestores; }
     Server *server() const { return m_server; }
+    QString newDefaultSink() const { return m_newDefaultSink; }
+    QString newDefaultSource() const { return m_newDefaultSource; }
 
     void subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index);
     void contextStateCallback(pa_context *context);
@@ -170,6 +172,9 @@ private:
 
     pa_context *m_context;
     pa_glib_mainloop *m_mainloop;
+
+    QString m_newDefaultSink;
+    QString m_newDefaultSource;
 
     int m_references;
     static Context* s_context;

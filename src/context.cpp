@@ -180,6 +180,46 @@ static void ext_stream_restore_subscribe_cb(pa_context *context, void *data)
     }
 }
 
+static void ext_stream_restore_change_sink_cb(pa_context *context, const pa_ext_stream_restore_info *info, int eol, void *data)
+{
+    if (!isGoodState(eol)) {
+        return;
+    }
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    if (qstrncmp(info->name, "sink-input-by", 13) == 0) {
+        Context *context = static_cast<Context *>(data);
+        const QByteArray deviceData = context->newDefaultSink().toUtf8();
+        pa_ext_stream_restore_info newinfo;
+        newinfo.name = info->name;
+        newinfo.channel_map = info->channel_map;
+        newinfo.volume = info->volume;
+        newinfo.mute = info->mute;
+        newinfo.device = deviceData.constData();
+        context->streamRestoreWrite(&newinfo);
+    }
+}
+
+static void ext_stream_restore_change_source_cb(pa_context *context, const pa_ext_stream_restore_info *info, int eol, void *data)
+{
+    if (!isGoodState(eol)) {
+        return;
+    }
+    Q_ASSERT(context);
+    Q_ASSERT(data);
+    if (qstrncmp(info->name, "source-output-by", 16) == 0) {
+        Context *context = static_cast<Context *>(data);
+        const QByteArray deviceData = context->newDefaultSource().toUtf8();
+        pa_ext_stream_restore_info newinfo;
+        newinfo.name = info->name;
+        newinfo.channel_map = info->channel_map;
+        newinfo.volume = info->volume;
+        newinfo.mute = info->mute;
+        newinfo.device = deviceData.constData();
+        context->streamRestoreWrite(&newinfo);
+    }
+}
+
 // --------------------------
 
 Context::Context(QObject *parent)
@@ -501,6 +541,14 @@ void Context::setDefaultSink(const QString &name)
                                                  nullptr))) {
         qCWarning(PLASMAPA) << "pa_context_set_default_sink failed";
     }
+
+    // Change device for all entries in stream-restore database
+    m_newDefaultSink = name;
+    if (!PAOperation(pa_ext_stream_restore_read(m_context,
+                                                ext_stream_restore_change_sink_cb,
+                                                this))) {
+        qCWarning(PLASMAPA) << "pa_ext_stream_restore_read failed";
+    }
 }
 
 void Context::setDefaultSource(const QString &name)
@@ -514,6 +562,14 @@ void Context::setDefaultSource(const QString &name)
                                                  nullptr,
                                                  nullptr))) {
         qCWarning(PLASMAPA) << "pa_context_set_default_source failed";
+    }
+
+    // Change device for all entries in stream-restore database
+    m_newDefaultSource = name;
+    if (!PAOperation(pa_ext_stream_restore_read(m_context,
+                                                ext_stream_restore_change_source_cb,
+                                                this))) {
+        qCWarning(PLASMAPA) << "pa_ext_stream_restore_read failed";
     }
 }
 
