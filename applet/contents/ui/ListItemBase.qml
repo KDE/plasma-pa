@@ -132,7 +132,8 @@ PlasmaComponents.ListItem {
                         // changes trigger volume changes trigger value changes.
                         property int volume: Volume
                         property bool ignoreValueChange: true
-                        property bool raiseMaxVolume: false
+                        property bool forceRaiseMaxVolume: false
+                        readonly property bool raiseMaxVolume: forceRaiseMaxVolume || volume >= PulseAudio.NormalVolume * 1.01
 
                         Layout.fillWidth: true
                         minimumValue: PulseAudio.MinimalVolume
@@ -274,9 +275,12 @@ PlasmaComponents.ListItem {
             menuItem = newMenuItem();
             menuItem.text = i18n("Raise maximum volume");
             menuItem.checkable = true;
-            menuItem.checked = slider.raiseMaxVolume;
+            menuItem.checked = slider.forceRaiseMaxVolume;
             menuItem.clicked.connect(function() {
-                slider.raiseMaxVolume = !slider.raiseMaxVolume;
+                slider.forceRaiseMaxVolume = !slider.forceRaiseMaxVolume;
+                if (!slider.forceRaiseMaxVolume && Volume > PulseAudio.NormalVolume) {
+                    Volume = PulseAudio.NormalVolume;
+                }
             });
             contextMenu.addMenuItem(menuItem);
 
