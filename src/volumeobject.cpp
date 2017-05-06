@@ -38,7 +38,7 @@ VolumeObject::~VolumeObject()
 
 qint64 VolumeObject::volume() const
 {
-    return m_volume.values[0];
+    return pa_cvolume_avg(&m_volume);
 }
 
 bool VolumeObject::isMuted() const
