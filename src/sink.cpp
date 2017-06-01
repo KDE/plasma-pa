@@ -69,7 +69,7 @@ bool Sink::isDefault() const
 
 void Sink::setDefault(bool enable)
 {
-    if (enable) {
+    if (!isDefault() && enable) {
         context()->server()->setDefaultSink(this);
     }
 }

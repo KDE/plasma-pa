@@ -69,7 +69,7 @@ bool Source::isDefault() const
 
 void Source::setDefault(bool enable)
 {
-    if (enable) {
+    if (!isDefault() && enable) {
         context()->server()->setDefaultSource(this);
     }
 }
