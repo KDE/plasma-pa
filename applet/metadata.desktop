@@ -83,7 +83,6 @@ X-Plasma-MainScript=ui/main.qml
 X-Plasma-NotificationArea=true
 X-Plasma-NotificationAreaCategory=Hardware
 X-Plasma-ConfigPlugins=kcm_pulseaudio
-X-Plasma-DBusActivationService=org.pulseaudio.Server
 
 X-KDE-PluginInfo-Name=org.kde.plasma.volume
 X-KDE-PluginInfo-Category=Multimedia
