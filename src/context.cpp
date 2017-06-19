@@ -233,12 +233,7 @@ Context::Context(QObject *parent)
                                                            QDBusConnection::sessionBus(),
                                                            QDBusServiceWatcher::WatchForRegistration,
                                                            this);
-    connect(watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() {
-        if (!m_context) {
-            connectToDaemon();
-        }
-    });
-
+    connect(watcher, &QDBusServiceWatcher::serviceRegistered, this, &Context::connectToDaemon);
     connectToDaemon();
 }
 
@@ -591,7 +586,9 @@ void Context::streamRestoreWrite(const pa_ext_stream_restore_info *info)
 
 void Context::connectToDaemon()
 {
-    Q_ASSERT(m_context == nullptr);
+    if (m_context) {
+        return;
+    }
 
     // We require a glib event loop
     if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")) {
