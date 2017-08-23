@@ -78,7 +78,7 @@ signals:
     void deviceIndexChanged();
 
 private:
-    void writeChanges(const pa_cvolume &volume, const pa_channel_map &channelMap, bool muted, const QString &device);
+    void writeChanges(const pa_cvolume &volume, bool muted, const QString &device);
 
     QString m_name;
     QString m_device;
@@ -90,7 +90,6 @@ private:
     struct {
         bool valid = false;
         pa_cvolume volume;
-        pa_channel_map channelMap;
         bool muted;
         QString device;
     } m_cache;
