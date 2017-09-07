@@ -291,7 +291,7 @@ PlasmaComponents.ListItem {
                 var isMultiplePorts = (1 < PulseObject.ports.length);
                 var menuItem = newMenuItem();
                 menuItem.text = i18nc("Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)", "Ports");
-                menuItem.enabled = false;
+                menuItem.section = true;
                 contextMenu.addMenuItem(menuItem);
 
                 for (var i = 0; i < PulseObject.ports.length; i++) {
