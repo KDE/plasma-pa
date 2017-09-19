@@ -319,6 +319,9 @@ Item {
         horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
         flickableItem.boundsBehavior: Flickable.StopAtBounds;
 
+        //our scroll isn't a list of delegates, all internal items are tab focussable, making this redundant
+        activeFocusOnTab: false
+
         Item {
             width: streamsView.visible ? streamsView.width : devicesView.width
             height: streamsView.visible ? streamsView.height : devicesView.height

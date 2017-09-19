@@ -113,6 +113,7 @@ PlasmaComponents.ListItem {
                         icon: "application-menu"
                         checkable: true
                         onClicked: contextMenu.show()
+                        tooltip: i18n("Show additional options for %1", textLabel.text)
                     }
                 }
 
@@ -121,6 +122,8 @@ PlasmaComponents.ListItem {
                         readonly property bool isPlayback: type.substring(0, 4) == "sink"
                         icon: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                         onClicked: Muted = !Muted
+                        tooltip: i18n("Mute %1", textLabel.text)
+
                     }
 
                     PlasmaComponents.Slider {
@@ -142,6 +145,8 @@ PlasmaComponents.ListItem {
                         visible: HasVolume
                         enabled: VolumeWritable
                         opacity: Muted ? 0.5 : 1
+
+                        Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", textLabel.text)
 
                         Component.onCompleted: {
                             ignoreValueChange = false;
