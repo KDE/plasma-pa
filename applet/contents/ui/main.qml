@@ -18,7 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
+import QtQuick 2.2
 import QtQuick.Layouts 1.0
 
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -281,6 +281,7 @@ Item {
         PlasmaComponents.TabBar {
             id: tabBar
             Layout.fillWidth: true
+            activeFocusOnTab: true
 
             PlasmaComponents.TabButton {
                 id: devicesTab
