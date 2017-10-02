@@ -35,6 +35,11 @@ QString QPulseAudio::Device::description() const
     return m_description;
 }
 
+QString QPulseAudio::Device::formFactor() const
+{
+    return m_formFactor;
+}
+
 quint32 QPulseAudio::Device::cardIndex() const
 {
     return m_cardIndex;

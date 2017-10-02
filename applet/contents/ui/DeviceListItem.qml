@@ -26,18 +26,30 @@ ListItemBase {
     draggable: false
     label: currentPort ? i18nc("label of device items", "%1 (%2)", currentPort.description, Description) : Description
     icon: {
-        if (currentPort) {
-            if (currentPort.name.indexOf("speaker") != -1) {
+        switch(FormFactor) {
+            case "internal":
+                return "audio-card";
+            case "speaker":
                 return "audio-speakers-symbolic";
-            } else if (currentPort.name.indexOf("headphones") != -1) {
-                return "audio-headphones";
-            } else if (currentPort.name.indexOf("hdmi") != -1) {
-                return "video-television";
-            } else if (currentPort.name.indexOf("mic") != -1) {
-                return "audio-input-microphone";
-            } else if (currentPort.name.indexOf("phone") != -1) {
+            case "handset":
                 return "phone";
-            }
+            case "tv":
+                return "video-television";
+            case "webcam":
+                return "camera-web";
+            case "microphone":
+                return "audio-input-microphone";
+            case "headset":
+                return "audio-headset";
+            case "headphone":
+                return "audio-headphones";
+/*  There are some form factors which we don't have any icon for, so we ignore them for now */
+//          case "hands-free": break;
+//          case "car": break;
+//          case "hifi": break;
+            case "computer":
+                return "computer"; break;
+//          case "portable": break;
         }
         return IconName;
     }

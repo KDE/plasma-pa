@@ -38,6 +38,7 @@ class Device : public VolumeObject
     Q_PROPERTY(State state READ state NOTIFY stateChanged)
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
+    Q_PROPERTY(QString formFactor READ formFactor NOTIFY formFactorChanged)
     Q_PROPERTY(quint32 cardIndex READ cardIndex NOTIFY cardIndexChanged)
     Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)
     Q_PROPERTY(quint32 activePortIndex READ activePortIndex WRITE setActivePortIndex NOTIFY activePortIndexChanged)
@@ -66,6 +67,14 @@ public:
         if (m_description != info->description) {
             m_description = info->description;
             emit descriptionChanged();
+        }
+        const char *form_factor = pa_proplist_gets(info->proplist, PA_PROP_DEVICE_FORM_FACTOR);
+        if (form_factor) {
+            QString formFactor = QString::fromUtf8(form_factor);
+            if (m_formFactor != formFactor) {
+                m_formFactor = formFactor;
+                emit formFactorChanged();
+            }
         }
 
         m_cardIndex = info->card;
@@ -98,6 +107,7 @@ public:
     State state() const;
     QString name() const;
     QString description() const;
+    QString formFactor() const;
     quint32 cardIndex() const;
     QList<QObject *> ports() const;
     quint32 activePortIndex() const;
@@ -109,6 +119,7 @@ signals:
     void stateChanged();
     void nameChanged();
     void descriptionChanged();
+    void formFactorChanged();
     void cardIndexChanged();
     void portsChanged();
     void activePortIndexChanged();
@@ -122,6 +133,7 @@ private:
 
     QString m_name;
     QString m_description;
+    QString m_formFactor;
     quint32 m_cardIndex = -1;
     QList<QObject *> m_ports;
     quint32 m_activePortIndex = -1;
