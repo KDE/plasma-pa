@@ -168,6 +168,10 @@ Item {
         feedback.play(sinkIndex);
     }
 
+    SinkModel {
+        id: sinkModel
+    }
+
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
         source: plasmoid.icon
         active: mouseArea.containsMouse
@@ -269,199 +273,191 @@ Item {
         id: feedback
     }
 
-    RowLayout {
-        id: tabBarRow
+    Plasmoid.fullRepresentation: ColumnLayout {
+        spacing: units.smallSpacing
 
-        anchors {
-            top: parent.top
-            left: parent.left
-            right: parent.right
-        }
-
-        PlasmaComponents.TabBar {
-            id: tabBar
+        RowLayout {
+            spacing: units.smallSpacing
             Layout.fillWidth: true
-            activeFocusOnTab: true
 
-            PlasmaComponents.TabButton {
-                id: devicesTab
-                text: i18n("Devices")
+            PlasmaComponents.TabBar {
+                id: tabBar
+                Layout.fillWidth: true
+                activeFocusOnTab: true
+
+                PlasmaComponents.TabButton {
+                    id: devicesTab
+                    text: i18n("Devices")
+                }
+
+                PlasmaComponents.TabButton {
+                    id: streamsTab
+                    text: i18n("Applications")
+                }
             }
 
-            PlasmaComponents.TabButton {
-                id: streamsTab
-                text: i18n("Applications")
+            PlasmaComponents.ToolButton {
+                Layout.alignment: Qt.AlignBottom
+                tooltip: plasmoid.action("configure").text
+                iconName: "configure"
+                Accessible.name: tooltip
+                onClicked: {
+                    plasmoid.action("configure").trigger();
+                }
             }
         }
 
-        PlasmaComponents.ToolButton {
-            Layout.alignment: Qt.AlignBottom
-            tooltip: plasmoid.action("configure").text
-            iconName: "configure"
-            Accessible.name: tooltip
-            onClicked: {
-                plasmoid.action("configure").trigger();
-            }
-        }
-    }
+        PlasmaExtras.ScrollArea {
+            id: scrollView;
 
-    PlasmaExtras.ScrollArea {
-        id: scrollView;
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
-        anchors {
-            top: tabBarRow.bottom
-            topMargin: units.smallSpacing
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-        }
+            horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+            flickableItem.boundsBehavior: Flickable.StopAtBounds;
 
-        horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
-        flickableItem.boundsBehavior: Flickable.StopAtBounds;
+            //our scroll isn't a list of delegates, all internal items are tab focussable, making this redundant
+            activeFocusOnTab: false
 
-        //our scroll isn't a list of delegates, all internal items are tab focussable, making this redundant
-        activeFocusOnTab: false
+            Item {
+                width: streamsView.visible ? streamsView.width : devicesView.width
+                height: streamsView.visible ? streamsView.height : devicesView.height
 
-        Item {
-            width: streamsView.visible ? streamsView.width : devicesView.width
-            height: streamsView.visible ? streamsView.height : devicesView.height
+                ColumnLayout {
+                    id: streamsView
+                    visible: tabBar.currentTab == streamsTab
+                    property int maximumWidth: scrollView.viewport.width
+                    width: maximumWidth
+                    Layout.maximumWidth: maximumWidth
 
-            ColumnLayout {
-                id: streamsView
-                visible: tabBar.currentTab == streamsTab
-                property int maximumWidth: scrollView.viewport.width
-                width: maximumWidth
-                Layout.maximumWidth: maximumWidth
-
-                Header {
-                    Layout.fillWidth: true
-                    visible: sinkInputView.count > 0
-                    text: i18n("Playback Streams")
-                }
-                ListView {
-                    id: sinkInputView
-
-                    Layout.fillWidth: true
-                    Layout.minimumHeight: contentHeight
-                    Layout.maximumHeight: contentHeight
-
-                    model: PulseObjectFilterModel {
-                        filters: [ { role: "VirtualStream", value: false } ]
-                        sourceModel: SinkInputModel {}
+                    Header {
+                        Layout.fillWidth: true
+                        visible: sinkInputView.count > 0
+                        text: i18n("Playback Streams")
                     }
-                    boundsBehavior: Flickable.StopAtBounds;
-                    delegate: StreamListItem {
-                        type: "sink-input"
-                        draggable: sinkView.count > 1
-                    }
-                }
+                    ListView {
+                        id: sinkInputView
 
-                Header {
-                    Layout.fillWidth: true
-                    visible: sourceOutputView.count > 0
-                    text: i18n("Capture Streams")
-                }
-                ListView {
-                    id: sourceOutputView
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: contentHeight
+                        Layout.maximumHeight: contentHeight
 
-                    Layout.fillWidth: true
-                    Layout.minimumHeight: contentHeight
-                    Layout.maximumHeight: contentHeight
-
-                    model: PulseObjectFilterModel {
-                        filters: [ { role: "VirtualStream", value: false } ]
-                        sourceModel: SourceOutputModel {}
-                    }
-                    boundsBehavior: Flickable.StopAtBounds;
-                    delegate: StreamListItem {
-                        type: "source-input"
-                        draggable: sourceView.count > 1
-                    }
-                }
-            }
-
-            ColumnLayout {
-                id: devicesView
-                visible: tabBar.currentTab == devicesTab
-                property int maximumWidth: scrollView.viewport.width
-                width: maximumWidth
-                Layout.maximumWidth: maximumWidth
-
-                Header {
-                    id: sinkViewHeader
-                    Layout.fillWidth: true
-                    visible: sinkView.count > 0
-                    text: i18n("Playback Devices")
-                }
-                ListView {
-                    id: sinkView
-
-                    Layout.fillWidth: true
-                    Layout.minimumHeight: contentHeight
-                    Layout.maximumHeight: contentHeight
-
-                    model: PulseObjectFilterModel {
-                        sortRole: "SortByDefault"
-                        sortOrder: Qt.DescendingOrder
-                        sourceModel: SinkModel {
-                            id: sinkModel
+                        model: PulseObjectFilterModel {
+                            filters: [ { role: "VirtualStream", value: false } ]
+                            sourceModel: SinkInputModel {}
+                        }
+                        boundsBehavior: Flickable.StopAtBounds;
+                        delegate: StreamListItem {
+                            type: "sink-input"
+                            draggable: sinkView.count > 1
                         }
                     }
-                    boundsBehavior: Flickable.StopAtBounds;
-                    delegate: DeviceListItem {
-                        type: "sink"
+
+                    Header {
+                        Layout.fillWidth: true
+                        visible: sourceOutputView.count > 0
+                        text: i18n("Capture Streams")
                     }
-                }
+                    ListView {
+                        id: sourceOutputView
 
-                Header {
-                    id: sourceViewHeader
-                    Layout.fillWidth: true
-                    visible: sourceView.count > 0
-                    text: i18n("Capture Devices")
-                }
-                ListView {
-                    id: sourceView
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: contentHeight
+                        Layout.maximumHeight: contentHeight
 
-                    Layout.fillWidth: true
-                    Layout.minimumHeight: contentHeight
-                    Layout.maximumHeight: contentHeight
-
-                    model: PulseObjectFilterModel {
-                        sortRole: "SortByDefault"
-                        sortOrder: Qt.DescendingOrder
-                        sourceModel: SourceModel {
-                            id: sourceModel
+                        model: PulseObjectFilterModel {
+                            filters: [ { role: "VirtualStream", value: false } ]
+                            sourceModel: SourceOutputModel {}
+                        }
+                        boundsBehavior: Flickable.StopAtBounds;
+                        delegate: StreamListItem {
+                            type: "source-input"
+                            draggable: sourceView.count > 1
                         }
                     }
-                    boundsBehavior: Flickable.StopAtBounds;
-                    delegate: DeviceListItem {
-                        type: "source"
+                }
+
+                ColumnLayout {
+                    id: devicesView
+                    visible: tabBar.currentTab == devicesTab
+                    property int maximumWidth: scrollView.viewport.width
+                    width: maximumWidth
+                    Layout.maximumWidth: maximumWidth
+
+                    Header {
+                        id: sinkViewHeader
+                        Layout.fillWidth: true
+                        visible: sinkView.count > 0
+                        text: i18n("Playback Devices")
+                    }
+                    ListView {
+                        id: sinkView
+
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: contentHeight
+                        Layout.maximumHeight: contentHeight
+
+                        model: PulseObjectFilterModel {
+                            sortRole: "SortByDefault"
+                            sortOrder: Qt.DescendingOrder
+                            sourceModel: sinkModel
+                        }
+                        boundsBehavior: Flickable.StopAtBounds;
+                        delegate: DeviceListItem {
+                            type: "sink"
+                        }
+                    }
+
+                    Header {
+                        id: sourceViewHeader
+                        Layout.fillWidth: true
+                        visible: sourceView.count > 0
+                        text: i18n("Capture Devices")
+                    }
+                    ListView {
+                        id: sourceView
+
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: contentHeight
+                        Layout.maximumHeight: contentHeight
+
+                        model: PulseObjectFilterModel {
+                            sortRole: "SortByDefault"
+                            sortOrder: Qt.DescendingOrder
+                            sourceModel: SourceModel {
+                                id: sourceModel
+                            }
+                        }
+                        boundsBehavior: Flickable.StopAtBounds;
+                        delegate: DeviceListItem {
+                            type: "source"
+                        }
                     }
                 }
-            }
 
-            PlasmaExtras.Heading {
-                level: 4
-                opacity: 0.8
-                width: parent.width
-                height: scrollView.height
-                visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
-                text: i18n("No applications playing or recording audio")
-                wrapMode: Text.WordWrap
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-            }
+                PlasmaExtras.Heading {
+                    level: 4
+                    opacity: 0.8
+                    width: parent.width
+                    height: scrollView.height
+                    visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
+                    text: i18n("No applications playing or recording audio")
+                    wrapMode: Text.WordWrap
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                }
 
-            PlasmaExtras.Heading {
-                level: 4
-                opacity: 0.8
-                width: parent.width
-                height: scrollView.height
-                visible: devicesView.visible && !sinkView.count && !sourceView.count
-                text: i18n("No output or input devices found")
-                wrapMode: Text.WordWrap
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
+                PlasmaExtras.Heading {
+                    level: 4
+                    opacity: 0.8
+                    width: parent.width
+                    height: scrollView.height
+                    visible: devicesView.visible && !sinkView.count && !sourceView.count
+                    text: i18n("No output or input devices found")
+                    wrapMode: Text.WordWrap
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                }
             }
         }
     }
