@@ -96,7 +96,7 @@ public:
         newVolume = qBound<qint64>(0, newVolume, PA_VOLUME_MAX);
         pa_cvolume newCVolume = cVolume;
         if (channel == -1) { // -1 all channels
-            const qint64 diff = newVolume - pa_cvolume_avg(&cVolume);
+            const qint64 diff = newVolume - pa_cvolume_max(&cVolume);
             for (int i = 0; i < newCVolume.channels; ++i) {
                 newCVolume.values[i] = qBound<qint64>(0, newCVolume.values[i] + diff, PA_VOLUME_MAX);
             }
