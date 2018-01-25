@@ -77,12 +77,12 @@ PlasmaComponents.ListItem {
 
                     onDragStarted: {
                         draggedStream = PulseObject;
-                        main.beginMoveStream(type == "sink-input" ? "sink" : "source");
+                        beginMoveStream(type == "sink-input" ? "sink" : "source");
                     }
 
                     onDrop: {
                         draggedStream = null;
-                        main.endMoveStream();
+                        endMoveStream();
                     }
 
                     MouseArea {
