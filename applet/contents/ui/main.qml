@@ -137,27 +137,6 @@ Item {
         osd.showMicrophone(toMute? 0 : volumePercent(sourceModel.defaultSource.volume));
     }
 
-    function beginMoveStream(type, stream) {
-        if (type == "sink") {
-            sourceView.visible = false;
-            sourceViewHeader.visible = false;
-        } else if (type == "source") {
-            sinkView.visible = false;
-            sinkViewHeader.visible = false;
-        }
-
-        tabBar.currentTab = devicesTab;
-    }
-
-    function endMoveStream() {
-        tabBar.currentTab = streamsTab;
-
-        sourceView.visible = true;
-        sourceViewHeader.visible = true;
-        sinkView.visible = true;
-        sinkViewHeader.visible = true;
-    }
-
     function playFeedback(sinkIndex) {
         if (!volumeFeedback) {
             return;
@@ -275,6 +254,27 @@ Item {
 
     Plasmoid.fullRepresentation: ColumnLayout {
         spacing: units.smallSpacing
+
+        function beginMoveStream(type, stream) {
+            if (type == "sink") {
+                sourceView.visible = false;
+                sourceViewHeader.visible = false;
+            } else if (type == "source") {
+                sinkView.visible = false;
+                sinkViewHeader.visible = false;
+            }
+
+            tabBar.currentTab = devicesTab;
+        }
+
+        function endMoveStream() {
+            tabBar.currentTab = streamsTab;
+
+            sourceView.visible = true;
+            sourceViewHeader.visible = true;
+            sinkView.visible = true;
+            sinkViewHeader.visible = true;
+        }
 
         RowLayout {
             spacing: units.smallSpacing
