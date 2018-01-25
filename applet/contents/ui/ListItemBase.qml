@@ -87,7 +87,13 @@ PlasmaComponents.ListItem {
 
                     MouseArea {
                         anchors.fill: parent
-                        cursorShape: dragArea.enabled ? (pressed ? Qt.ClosedHandCursor : Qt.OpenHandCursor) : undefined
+                        cursorShape: dragArea.enabled ? (pressed && pressedButtons === Qt.LeftButton ? Qt.ClosedHandCursor : Qt.OpenHandCursor) : undefined
+                        acceptedButtons: Qt.LeftButton | Qt.MiddleButton
+                        onClicked: {
+                            if (mouse.button === Qt.MiddleButton) {
+                                Muted = !Muted;
+                            }
+                        }
                     }
                 }
             }
@@ -226,7 +232,10 @@ PlasmaComponents.ListItem {
         }
 
         MouseArea {
-            anchors.fill: parent
+            anchors {
+                fill: parent
+                leftMargin: clientIcon.width
+            }
             acceptedButtons: Qt.MiddleButton
             onClicked: Muted = !Muted
         }
