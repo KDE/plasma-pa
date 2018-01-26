@@ -40,7 +40,6 @@ Name[x-test]=xxAudio Volumexx
 Name[zh_CN]=音频音量
 Name[zh_TW]=音效音量
 Comment=Adjust the volume of devices and applications
-Comment[ar]=اضبط مستوى صوت الأجهزة والتّطبيقات
 Comment[ca]=Ajusta el volum dels dispositius i les aplicacions
 Comment[ca@valencia]=Ajusta el volum dels dispositius i les aplicacions
 Comment[cs]=Upravit hlasitost zařízení a aplikací
