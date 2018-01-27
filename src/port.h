@@ -31,14 +31,8 @@ namespace QPulseAudio
 class Port : public Profile
 {
     Q_OBJECT
-    Q_PROPERTY(Availability availability READ availability NOTIFY availabilityChanged)
+
 public:
-    enum Availability {
-        Unknown,
-        Available,
-        Unavailable
-    };
-    Q_ENUM(Availability)
 
     Port(QObject *parent);
     virtual ~Port();
@@ -47,31 +41,7 @@ public:
     void setInfo(const PAInfo *info)
     {
         Profile::setInfo(info);
-
-        Availability newAvailability;
-        switch (info->available) {
-        case PA_PORT_AVAILABLE_NO:
-            newAvailability = Unavailable;
-            break;
-        case PA_PORT_AVAILABLE_YES:
-            newAvailability = Available;
-            break;
-        default:
-            newAvailability = Unknown;
-        }
-        if (m_availability != newAvailability) {
-            m_availability = newAvailability;
-            emit availabilityChanged();
-        }
     }
-
-    Availability availability() const;
-
-signals:
-    void availabilityChanged();
-
-private:
-    Availability m_availability;
 };
 
 } // QPulseAudio

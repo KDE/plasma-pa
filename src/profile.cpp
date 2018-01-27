@@ -28,6 +28,7 @@ Profile::Profile(QObject *parent)
     , m_name()
     , m_description()
     , m_priority(0)
+    , m_availability(Unknown)
 {
 }
 
@@ -48,6 +49,11 @@ QString Profile::description() const
 quint32 Profile::priority() const
 {
     return m_priority;
+}
+
+Profile::Availability Profile::availability() const
+{
+    return m_availability;
 }
 
 } // QPulseAudio

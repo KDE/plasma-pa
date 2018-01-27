@@ -33,7 +33,16 @@ class Profile : public QObject
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
     Q_PROPERTY(quint32 priority READ priority NOTIFY priorityChanged)
+    Q_PROPERTY(Availability availability READ availability NOTIFY availabilityChanged)
 public:
+
+    enum Availability {
+        Unknown,
+        Available,
+        Unavailable
+    };
+    Q_ENUM(Availability)
+
     Profile(QObject *parent);
     virtual ~Profile();
 
@@ -58,21 +67,30 @@ public:
             m_priority = info->priority;
             emit priorityChanged();
         }
+
+        Availability newAvailability = info->available ? Available : Unavailable;
+        if (m_availability != newAvailability) {
+            m_availability = newAvailability;
+            emit availabilityChanged();
+        }
     }
 
     QString name() const;
     QString description() const;
     quint32 priority() const;
+    Availability availability() const;
 
 signals:
     void nameChanged();
     void descriptionChanged();
     void priorityChanged();
+    void availabilityChanged();
 
 private:
     QString m_name;
     QString m_description;
     quint32 m_priority;
+    Availability m_availability;
 };
 
 } // QPulseAudio
