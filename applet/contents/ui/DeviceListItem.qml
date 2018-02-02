@@ -43,13 +43,16 @@ ListItemBase {
                 return "audio-headset";
             case "headphone":
                 return "audio-headphones";
-/*  There are some form factors which we don't have any icon for, so we ignore them for now */
-//          case "hands-free": break;
-//          case "car": break;
-//          case "hifi": break;
+            case "hands-free":
+                return "hands-free"; break;
+            case "car":
+                return "car"; break;
+            case "hifi":
+                return "hifi"; break;
             case "computer":
                 return "computer"; break;
-//          case "portable": break;
+            case "portable":
+                return "portable"; break;
         }
         return IconName;
     }
