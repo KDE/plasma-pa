@@ -44,11 +44,11 @@ Item {
     Layout.preferredHeight: units.gridUnit * 20
     Layout.preferredWidth: units.gridUnit * 20
 
-    Plasmoid.icon: sinkModel.preferredSink ? Icon.name(sinkModel.preferredSink.volume, sinkModel.preferredSink.muted) : Icon.name(0, true)
+    Plasmoid.icon: paSinkModel.preferredSink ? Icon.name(paSinkModel.preferredSink.volume, paSinkModel.preferredSink.muted) : Icon.name(0, true)
     Plasmoid.switchWidth: units.gridUnit * 12
     Plasmoid.switchHeight: units.gridUnit * 12
     Plasmoid.toolTipMainText: {
-        var sink = sinkModel.preferredSink;
+        var sink = paSinkModel.preferredSink;
         if (!sink) {
             return displayName;
         }
@@ -59,7 +59,7 @@ Item {
             return i18n("Volume at %1%", volumePercent(sink.volume));
         }
     }
-    Plasmoid.toolTipSubText: sinkModel.preferredSink ? sinkModel.preferredSink.description : ""
+    Plasmoid.toolTipSubText: paSinkModel.preferredSink ? paSinkModel.preferredSink.description : ""
 
     function boundVolume(volume) {
         return Math.max(PulseAudio.MinimalVolume, Math.min(volume, maxVolumeValue));
@@ -73,68 +73,68 @@ Item {
     }
 
     function increaseVolume() {
-        if (!sinkModel.preferredSink) {
+        if (!paSinkModel.preferredSink) {
             return;
         }
-        var volume = boundVolume(sinkModel.preferredSink.volume + volumeStep);
+        var volume = boundVolume(paSinkModel.preferredSink.volume + volumeStep);
         var percent = volumePercent(volume, maxVolumeValue);
-        sinkModel.preferredSink.muted = percent == 0;
-        sinkModel.preferredSink.volume = volume;
+        paSinkModel.preferredSink.muted = percent == 0;
+        paSinkModel.preferredSink.volume = volume;
         osd.show(percent);
         playFeedback();
     }
 
     function decreaseVolume() {
-        if (!sinkModel.preferredSink) {
+        if (!paSinkModel.preferredSink) {
             return;
         }
-        var volume = boundVolume(sinkModel.preferredSink.volume - volumeStep);
+        var volume = boundVolume(paSinkModel.preferredSink.volume - volumeStep);
         var percent = volumePercent(volume, maxVolumeValue);
-        sinkModel.preferredSink.muted = percent == 0;
-        sinkModel.preferredSink.volume = volume;
+        paSinkModel.preferredSink.muted = percent == 0;
+        paSinkModel.preferredSink.volume = volume;
         osd.show(percent);
         playFeedback();
     }
 
     function muteVolume() {
-        if (!sinkModel.preferredSink) {
+        if (!paSinkModel.preferredSink) {
             return;
         }
-        var toMute = !sinkModel.preferredSink.muted;
-        sinkModel.preferredSink.muted = toMute;
-        osd.show(toMute ? 0 : volumePercent(sinkModel.preferredSink.volume, maxVolumeValue));
+        var toMute = !paSinkModel.preferredSink.muted;
+        paSinkModel.preferredSink.muted = toMute;
+        osd.show(toMute ? 0 : volumePercent(paSinkModel.preferredSink.volume, maxVolumeValue));
         playFeedback();
     }
 
     function increaseMicrophoneVolume() {
-        if (!sourceModel.defaultSource) {
+        if (!paSourceModel.defaultSource) {
             return;
         }
-        var volume = boundVolume(sourceModel.defaultSource.volume + volumeStep);
+        var volume = boundVolume(paSourceModel.defaultSource.volume + volumeStep);
         var percent = volumePercent(volume);
-        sourceModel.defaultSource.muted = percent == 0;
-        sourceModel.defaultSource.volume = volume;
+        paSourceModel.defaultSource.muted = percent == 0;
+        paSourceModel.defaultSource.volume = volume;
         osd.showMicrophone(percent);
     }
 
     function decreaseMicrophoneVolume() {
-        if (!sourceModel.defaultSource) {
+        if (!paSourceModel.defaultSource) {
             return;
         }
-        var volume = boundVolume(sourceModel.defaultSource.volume - volumeStep);
+        var volume = boundVolume(paSourceModel.defaultSource.volume - volumeStep);
         var percent = volumePercent(volume);
-        sourceModel.defaultSource.muted = percent == 0;
-        sourceModel.defaultSource.volume = volume;
+        paSourceModel.defaultSource.muted = percent == 0;
+        paSourceModel.defaultSource.volume = volume;
         osd.showMicrophone(percent);
     }
 
     function muteMicrophone() {
-        if (!sourceModel.defaultSource) {
+        if (!paSourceModel.defaultSource) {
             return;
         }
-        var toMute = !sourceModel.defaultSource.muted;
-        sourceModel.defaultSource.muted = toMute;
-        osd.showMicrophone(toMute? 0 : volumePercent(sourceModel.defaultSource.volume));
+        var toMute = !paSourceModel.defaultSource.muted;
+        paSourceModel.defaultSource.muted = toMute;
+        osd.showMicrophone(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume));
     }
 
     function playFeedback(sinkIndex) {
@@ -142,13 +142,17 @@ Item {
             return;
         }
         if (sinkIndex == undefined) {
-            sinkIndex = sinkModel.preferredSink.index;
+            sinkIndex = paSinkModel.preferredSink.index;
         }
         feedback.play(sinkIndex);
     }
 
     SinkModel {
-        id: sinkModel
+        id: paSinkModel
+    }
+
+    SourceModel {
+        id: paSourceModel
     }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
@@ -400,7 +404,7 @@ Item {
                         model: PulseObjectFilterModel {
                             sortRole: "SortByDefault"
                             sortOrder: Qt.DescendingOrder
-                            sourceModel: sinkModel
+                            sourceModel: paSinkModel
                         }
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
@@ -424,9 +428,7 @@ Item {
                         model: PulseObjectFilterModel {
                             sortRole: "SortByDefault"
                             sortOrder: Qt.DescendingOrder
-                            sourceModel: SourceModel {
-                                id: sourceModel
-                            }
+                            sourceModel: paSourceModel
                         }
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
