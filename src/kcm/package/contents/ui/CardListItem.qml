@@ -23,6 +23,7 @@ import QtQuick.Controls 1.0
 import QtQuick.Layouts 1.0
 
 import org.kde.kquickcontrolsaddons 2.0
+import org.kde.plasma.private.volume 0.1
 
 ColumnLayout {
     id: delegate
@@ -53,14 +54,15 @@ ColumnLayout {
         }
         ComboBox {
             Layout.fillWidth: true
-            model: Profiles
+            model: Profiles.filter(function (profile) {
+                return profile.availability === Profile.Available;
+            })
             // NOTE: model resets (i.e. profiles property changes) will reset
             // the currentIndex, so force it to be set on model changes, otherwise
             // it would eventually become 0 when it shouldn't be.
-            onModelChanged: currentIndex = ActiveProfileIndex
+            onModelChanged: currentIndex = model.indexOf(Profiles[ActiveProfileIndex])
             textRole: "description"
-            currentIndex: ActiveProfileIndex
-            onActivated: ActiveProfileIndex = index
+            onActivated: ActiveProfileIndex = Profiles.indexOf(model[index])
         }
     }
 
