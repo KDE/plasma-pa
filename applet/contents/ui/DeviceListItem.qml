@@ -31,6 +31,8 @@ ListItemBase {
                 return "audio-card";
             case "speaker":
                 return "audio-speakers-symbolic";
+            case "phone":
+                return "phone";
             case "handset":
                 return "phone";
             case "tv":
