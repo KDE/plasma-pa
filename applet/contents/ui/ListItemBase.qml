@@ -331,6 +331,37 @@ PlasmaComponents.ListItem {
                     contextMenu.addMenuItem(menuItem);
                 }
             }
+
+            // Choose output / input device
+            // By choice only shown when there are at least two options
+            if ((type == "sink-input" && sinkView.model.count > 1) || (type == "source-input" && sourceView.model.count > 1)) {
+                contextMenu.addMenuItem(newSeperator());
+                var menuItem = newMenuItem();
+                if (type == "sink-input") {
+                    menuItem.text = i18nc("Heading for a list of possible output devices (speakers, headphones, ...) to choose", "Play audio using");
+                } else {
+                    menuItem.text = i18nc("Heading for a list of possible input devices (built-in microphone, headset, ...) to choose", "Record audio using");
+                }
+                menuItem.section = true;
+                contextMenu.addMenuItem(menuItem);
+                var sModel = type == "sink-input" ? sinkView.model : sourceView.model;
+
+                for (var i = 0; i < sModel.count; ++i) {
+                    var data = sModel.get(i);
+                    var menuItem = newMenuItem();
+                    menuItem.text = data.Description;
+                    menuItem.enabled = true;
+                    menuItem.checkable = true;
+                    menuItem.checked = data.Index === PulseObject.deviceIndex;
+                    var setActiveSink = function(sinkIndex) {
+                        return function() {
+                            PulseObject.deviceIndex = sinkIndex;
+                        };
+                    };
+                    menuItem.clicked.connect(setActiveSink(data.Index));
+                    contextMenu.addMenuItem(menuItem);
+                }
+            }
         }
 
         function show() {
