@@ -35,6 +35,7 @@ PlasmaComponents.ListItem {
     id: item
 
     property alias label: textLabel.text
+    property alias labelOpacity: textLabel.opacity
     property alias draggable: dragArea.enabled
     property alias icon: clientIcon.source
     property string type

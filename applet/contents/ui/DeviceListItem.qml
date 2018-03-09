@@ -22,9 +22,21 @@ import QtQuick 2.0
 
 ListItemBase {
     readonly property var currentPort: Ports[ActivePortIndex]
+    property bool onlyOne: false
 
     draggable: false
-    label: currentPort ? i18nc("label of device items", "%1 (%2)", currentPort.description, Description) : Description
+    label: {
+        if (!currentPort) {
+            return Description
+        } else {
+            if (onlyOne) {
+                return currentPort.description
+            } else {
+                return i18nc("label of device items", "%1 (%2)", currentPort.description, Description)
+            }
+        }
+    }
+    labelOpacity: onlyOne ? 1 : 0.6
     icon: {
         switch(FormFactor) {
             case "internal":

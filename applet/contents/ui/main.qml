@@ -330,13 +330,14 @@ Item {
                 ColumnLayout {
                     id: streamsView
                     visible: tabBar.currentTab == streamsTab
+                    readonly property bool simpleMode: (sinkInputView.count >= 1 && sourceOutputView.count == 0) || (sinkInputView.count == 0 && sourceOutputView.count >= 1)
                     property int maximumWidth: scrollView.viewport.width
                     width: maximumWidth
                     Layout.maximumWidth: maximumWidth
 
                     Header {
                         Layout.fillWidth: true
-                        visible: sinkInputView.count > 0
+                        visible: sinkInputView.count > 0 && !streamsView.simpleMode
                         text: i18n("Playback Streams")
                     }
                     ListView {
@@ -354,12 +355,13 @@ Item {
                         delegate: StreamListItem {
                             type: "sink-input"
                             draggable: sinkView.count > 1
+                            onlyOne: streamsView.simpleMode
                         }
                     }
 
                     Header {
                         Layout.fillWidth: true
-                        visible: sourceOutputView.count > 0
+                        visible: sourceOutputView.count > 0 && !streamsView.simpleMode
                         text: i18n("Capture Streams")
                     }
                     ListView {
@@ -377,6 +379,7 @@ Item {
                         delegate: StreamListItem {
                             type: "source-input"
                             draggable: sourceView.count > 1
+                            onlyOne: streamsView.simpleMode
                         }
                     }
                 }
@@ -384,6 +387,7 @@ Item {
                 ColumnLayout {
                     id: devicesView
                     visible: tabBar.currentTab == devicesTab
+                    readonly property bool simpleMode: sinkView.count == 1 && sourceView.count == 1
                     property int maximumWidth: scrollView.viewport.width
                     width: maximumWidth
                     Layout.maximumWidth: maximumWidth
@@ -391,7 +395,7 @@ Item {
                     Header {
                         id: sinkViewHeader
                         Layout.fillWidth: true
-                        visible: sinkView.count > 0
+                        visible: sinkView.count > 0 && !devicesView.simpleMode
                         text: i18n("Playback Devices")
                     }
                     ListView {
@@ -409,13 +413,14 @@ Item {
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
                             type: "sink"
+                            onlyOne: devicesView.simpleMode
                         }
                     }
 
                     Header {
                         id: sourceViewHeader
                         Layout.fillWidth: true
-                        visible: sourceView.count > 0
+                        visible: sourceView.count > 0 && !devicesView.simpleMode
                         text: i18n("Capture Devices")
                     }
                     ListView {
@@ -433,6 +438,7 @@ Item {
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
                             type: "source"
+                            onlyOne: devicesView.simpleMode
                         }
                     }
                 }

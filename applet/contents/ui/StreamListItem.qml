@@ -25,6 +25,19 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.private.volume 0.1
 
 ListItemBase {
-    label: Client ? i18nc("label of stream items", "%1: %2", Client.name, Name) : Name
+    property bool onlyOne: false
+
+    label: {
+        if (! Client) {
+            return Name
+        } else {
+            if (onlyOne) {
+                return Client.name
+            } else {
+                return i18nc("label of stream items", "%1 (%2)", Client.name, Name)
+            }
+        }
+    }
+    labelOpacity: onlyOne ? 1 : 0.6
     icon: IconName
 }
