@@ -36,6 +36,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     Plasma
 )
+find_package(KF5PulseAudioQt REQUIRED)
 find_package(PulseAudio 5.0.0 REQUIRED)
 find_package(Canberra REQUIRED)
 find_package(GLIB2 REQUIRED)
