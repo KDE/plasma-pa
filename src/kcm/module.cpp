@@ -25,8 +25,8 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 
-#include <context.h>
-#include <pulseaudio.h>
+#include <PulseAudioQt/Context>
+// #include <PulseAudioQt/PulseAudio>
 
 #include "version.h"
 

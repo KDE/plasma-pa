@@ -23,7 +23,7 @@
 #include <gio/gio.h>
 
 #include "gsettingsitem.h"
-#include "debug.h"
+// #include "debug.h"
 
 QVariant GSettingsItem::value(const QString &key) const
 {

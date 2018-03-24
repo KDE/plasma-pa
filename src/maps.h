@@ -21,7 +21,7 @@
 #ifndef MAPS_H
 #define MAPS_H
 
-#include "debug.h"
+// #include "debug.h"
 #include <QMap>
 #include <QObject>
 

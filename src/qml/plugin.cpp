@@ -22,14 +22,14 @@
 
 #include <QQmlEngine>
 
-#include "pulseaudio.h"
-#include "client.h"
-#include "sink.h"
-#include "source.h"
-#include "context.h"
+// #include "PulseAudioQt/pulseaudio.h"
+#include "PulseAudioQt/client.h"
+#include "PulseAudioQt/sink.h"
+#include "PulseAudioQt/source.h"
+#include "PulseAudioQt/context.h"
 #include "modulemanager.h"
-#include "profile.h"
-#include "port.h"
+#include "PulseAudioQt/profile.h"
+#include "PulseAudioQt/port.h"
 
 #include "globalactioncollection.h"
 #include "microphoneindicator.h"

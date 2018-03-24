@@ -3,28 +3,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
 include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
 
 set(cpp_SRCS
-    card.cpp
-    client.cpp
-    context.cpp
-    device.cpp
-    maps.cpp
-    operation.cpp
-    port.cpp
-    profile.cpp
-    pulseaudio.cpp
-    pulseobject.cpp
-    sink.cpp
-    sinkinput.cpp
     modulemanager.cpp
-    source.cpp
-    sourceoutput.cpp
-    stream.cpp
-    volumeobject.cpp
-    debug.cpp
-    server.cpp
-    streamrestore.cpp
-    module.cpp
-    canberracontext.cpp
     qml/globalactioncollection.cpp
     qml/plugin.cpp
     qml/microphoneindicator.cpp
@@ -52,17 +31,15 @@ endif()
 
 add_library(plasma-volume-declarative SHARED ${dbus_SRCS} ${cpp_SRCS} ${qml_SRCS})
 target_link_libraries(plasma-volume-declarative
-    Qt5::Core
     Qt5::Gui
     Qt5::DBus
     Qt5::Quick
+    KF5::PulseAudioQt
     KF5::GlobalAccel
     KF5::I18n
     KF5::Notifications
     Canberra::Canberra
-    ${PULSEAUDIO_LIBRARY}
-    ${PULSEAUDIO_MAINLOOP_LIBRARY}
-    ${GOBJECT_LDFLAGS}
+    ${CANBERRA_LIBRARIES}
 )
 
 if (USE_GCONF)

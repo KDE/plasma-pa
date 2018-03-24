@@ -21,7 +21,7 @@
 #ifndef PULSEOBJECT_H
 #define PULSEOBJECT_H
 
-#include "debug.h"
+// #include "debug.h"
 #include <QObject>
 
 #include <pulse/introspect.h>
