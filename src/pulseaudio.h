@@ -38,6 +38,7 @@ public:
         PulseObjectRole = Qt::UserRole + 1
     };
 
+    ~AbstractModel() override;
     QHash<int, QByteArray> roleNames() const Q_DECL_FINAL;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_FINAL;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;

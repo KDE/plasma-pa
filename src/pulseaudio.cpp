@@ -41,13 +41,14 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     , m_map(map)
 {
     Context::instance()->ref();
-    //deref context after we've deleted this object
-    //see https://bugs.kde.org/show_bug.cgi?id=371215
-    connect(this, &QObject::destroyed, []() {
-        Context::instance()->unref();
-    });
 
-    connect(m_map, &MapBaseQObject::added, this, &AbstractModel::onDataAdded);
+    connect(m_map, &MapBaseQObject::aboutToBeAdded, this, [this](int index) {
+        beginInsertRows(QModelIndex(), index, index);
+    });
+    connect(m_map, &MapBaseQObject::added, this, [this](int index) {
+        onDataAdded(index);
+        endInsertRows();
+    });
     connect(m_map, &MapBaseQObject::aboutToBeRemoved, this, [this](int index) {
         beginRemoveRows(QModelIndex(), index, index);
     });
@@ -55,7 +56,13 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
         Q_UNUSED(index);
         endRemoveRows();
     });
+}
 
+AbstractModel::~AbstractModel()
+{
+    //deref context after we've deleted this object
+    //see https://bugs.kde.org/show_bug.cgi?id=371215
+    Context::instance()->unref();
 }
 
 QHash<int, QByteArray> AbstractModel::roleNames() const
@@ -70,16 +77,23 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
 
 int AbstractModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent);
+    if (parent.isValid()) {
+        return 0;
+    }
     return m_map->count();
 }
 
 QVariant AbstractModel::data(const QModelIndex &index, int role) const
 {
+    if (!hasIndex(index.row(), index.column())) {
+        return QVariant();
+    }
     QObject *data = m_map->objectAt(index.row());
     Q_ASSERT(data);
     if (role == PulseObjectRole) {
         return QVariant::fromValue(data);
+    } else if (role == Qt::DisplayRole) {
+        return static_cast<PulseObject*>(data)->properties().value(QStringLiteral("name")).toString();
     }
     int property = m_objectProperties.value(role, -1);
     if (property == -1) {
@@ -179,7 +193,6 @@ void AbstractModel::propertyChanged()
 
 void AbstractModel::onDataAdded(int index)
 {
-    beginInsertRows(QModelIndex(), index, index);
     QObject *data = m_map->objectAt(index);
     const QMetaObject *mo = data->metaObject();
     // We have all the data changed notify signals already stored
@@ -188,7 +201,6 @@ void AbstractModel::onDataAdded(int index)
         QMetaMethod meth = mo->method(index);
         connect(data, meth, this, propertyChangedMetaMethod());
     }
-    endInsertRows();
 }
 
 QMetaMethod AbstractModel::propertyChangedMetaMethod() const
