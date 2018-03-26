@@ -48,7 +48,14 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     });
 
     connect(m_map, &MapBaseQObject::added, this, &AbstractModel::onDataAdded);
-    connect(m_map, &MapBaseQObject::removed, this, &AbstractModel::onDataRemoved);
+    connect(m_map, &MapBaseQObject::aboutToBeRemoved, this, [this](int index) {
+        beginRemoveRows(QModelIndex(), index, index);
+    });
+    connect(m_map, &MapBaseQObject::removed, this, [this](int index) {
+        Q_UNUSED(index);
+        endRemoveRows();
+    });
+
 }
 
 QHash<int, QByteArray> AbstractModel::roleNames() const
@@ -182,12 +189,6 @@ void AbstractModel::onDataAdded(int index)
         connect(data, meth, this, propertyChangedMetaMethod());
     }
     endInsertRows();
-}
-
-void AbstractModel::onDataRemoved(int index)
-{
-    beginRemoveRows(QModelIndex(), index, index);
-    endRemoveRows();
 }
 
 QMetaMethod AbstractModel::propertyChangedMetaMethod() const
