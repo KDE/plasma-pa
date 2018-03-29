@@ -4,6 +4,7 @@ include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
 
 set(cpp_SRCS
     modulemanager.cpp
+    gconfitem.cpp
     qml/globalactioncollection.cpp
     qml/plugin.cpp
     qml/microphoneindicator.cpp
@@ -39,6 +40,8 @@ target_link_libraries(plasma-volume-declarative
     KF5::I18n
     KF5::Notifications
     Canberra::Canberra
+    ${GCONF_LDFLAGS}
+    ${GOBJECT_LDFLAGS}
     ${CANBERRA_LIBRARIES}
 )
 
