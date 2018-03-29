@@ -2,6 +2,7 @@ include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
 
 set(cpp_SRCS
     modulemanager.cpp
+    gconfitem.cpp
     qml/globalactioncollection.cpp
     qml/plugin.cpp
     qml/volumeosd.cpp
@@ -34,6 +35,8 @@ target_link_libraries(plasma-volume-declarative
     KF5::PulseAudioQt
     KF5::GlobalAccel
     Canberra::Canberra
+    ${GCONF_LDFLAGS}
+    ${GOBJECT_LDFLAGS}
     ${CANBERRA_LIBRARIES}
 )
 
