@@ -104,6 +104,9 @@ QVariant AbstractModel::data(const QModelIndex &index, int role) const
 
 bool AbstractModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
+    if (!hasIndex(index.row(), index.column())) {
+        return false;
+    }
     int propertyIndex = m_objectProperties.value(role, -1);
     if (propertyIndex == -1) {
         return false;
