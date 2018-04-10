@@ -42,3 +42,9 @@ void VolumeOSD::showMicrophone(int percent)
     OsdServiceInterface osdService(SERVICE, PATH, CONNECTION);
     osdService.microphoneVolumeChanged(percent);
 }
+
+void VolumeOSD::showText(const QString &iconName, const QString &text)
+{
+    OsdServiceInterface osdService(SERVICE, PATH, CONNECTION);
+    osdService.showText(iconName, text);
+}

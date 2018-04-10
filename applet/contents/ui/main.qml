@@ -149,6 +149,26 @@ Item {
 
     SinkModel {
         id: paSinkModel
+
+        property bool initalDefaultSinkIsSet: false
+
+        onDefaultSinkChanged: {
+            if (!defaultSink || !plasmoid.configuration.outputChangeOsd) {
+                return;
+            }
+
+            // avoid showing a OSD on startup
+            if (!initalDefaultSinkIsSet) {
+                initalDefaultSinkIsSet = true;
+                return;
+            }
+
+            var icon = Icon.formFactorIcon(defaultSink.formFactor);
+            if (!icon) {
+                icon = Icon.name(defaultSink.volume, defaultSink.muted);
+            }
+            osd.showText(icon, defaultSink.description);
+        }
     }
 
     SourceModel {

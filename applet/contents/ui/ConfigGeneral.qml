@@ -28,6 +28,7 @@ Item {
     property alias cfg_maximumVolume: maximumVolume.value
     property alias cfg_volumeStep: volumeStep.value
     property alias cfg_volumeFeedback: volumeFeedback.checked
+    property alias cfg_outputChangeOsd: outputChangeOsd.checked
 
     ColumnLayout {
         Layout.fillWidth: true
@@ -79,6 +80,11 @@ Item {
                     id: volumeFeedback
                     text: i18n("Volume feedback")
                     enabled: feedback.valid
+                }
+
+                CheckBox {
+                    id: outputChangeOsd
+                    text: i18n("Visual feedback when default output device changes")
                 }
             }
         }

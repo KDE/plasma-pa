@@ -34,6 +34,10 @@
     <method name="virtualDesktopChanged">
       <arg name="currentVirtualDesktopName" type="s" direction="in"/>
     </method>
+    <method name="showText">
+      <arg name="icon" type="s" direction="in"/>
+      <arg name="text" type="s" direction="in"/>
+    </method>
   </interface>
 </node>
 

@@ -15,6 +15,10 @@
     <entry name="volumeFeedback" type="Bool">
       <default>true</default>
     </entry>
+    <entry name="outputChangeOsd" type="Bool">
+    <label>Whether to show a popup when the default output device changes (e.g. plugging in a headset)</label>
+      <default>true</default>
+    </entry>
   </group>
 
 </kcfg>

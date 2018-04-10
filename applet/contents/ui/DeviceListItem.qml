@@ -20,6 +20,8 @@
 
 import QtQuick 2.0
 
+import "../code/icon.js" as Icon
+
 ListItemBase {
     readonly property var currentPort: Ports[ActivePortIndex]
     property bool onlyOne: false
@@ -37,37 +39,5 @@ ListItemBase {
         }
     }
     labelOpacity: onlyOne ? 1 : 0.6
-    icon: {
-        switch(FormFactor) {
-            case "internal":
-                return "audio-card";
-            case "speaker":
-                return "audio-speakers-symbolic";
-            case "phone":
-                return "phone";
-            case "handset":
-                return "phone";
-            case "tv":
-                return "video-television";
-            case "webcam":
-                return "camera-web";
-            case "microphone":
-                return "audio-input-microphone";
-            case "headset":
-                return "audio-headset";
-            case "headphone":
-                return "audio-headphones";
-            case "hands-free":
-                return "hands-free"; break;
-            case "car":
-                return "car"; break;
-            case "hifi":
-                return "hifi"; break;
-            case "computer":
-                return "computer"; break;
-            case "portable":
-                return "portable"; break;
-        }
-        return IconName;
-    }
+    icon: Icon.formFactorIcon(FormFactor) || IconName
 }

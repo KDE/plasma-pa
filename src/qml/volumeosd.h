@@ -32,6 +32,7 @@ public:
 public slots:
     void show(int percent);
     void showMicrophone(int percent);
+    void showText(const QString &iconName, const QString &text);
 };
 
 #endif // VOLUMEOSD_H
