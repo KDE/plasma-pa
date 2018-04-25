@@ -38,6 +38,7 @@ PlasmaComponents.ListItem {
     property alias labelOpacity: textLabel.opacity
     property alias draggable: dragArea.enabled
     property alias icon: clientIcon.source
+    property alias iconUsesPlasmaTheme: clientIcon.usesPlasmaTheme
     property string type
 
     checked: dropArea.containsDrag

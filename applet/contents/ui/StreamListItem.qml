@@ -40,4 +40,5 @@ ListItemBase {
     }
     labelOpacity: onlyOne ? 1 : 0.6
     icon: IconName
+    iconUsesPlasmaTheme: false
 }
