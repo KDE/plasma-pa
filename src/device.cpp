@@ -55,6 +55,11 @@ quint32 QPulseAudio::Device::activePortIndex() const
     return m_activePortIndex;
 }
 
+bool QPulseAudio::Device::isVirtualDevice() const
+{
+    return m_virtualDevice;
+}
+
 QPulseAudio::Device::Device(QObject *parent)
     : VolumeObject(parent)
 {

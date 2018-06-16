@@ -43,6 +43,7 @@ class Device : public VolumeObject
     Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)
     Q_PROPERTY(quint32 activePortIndex READ activePortIndex WRITE setActivePortIndex NOTIFY activePortIndexChanged)
     Q_PROPERTY(bool default READ isDefault WRITE setDefault NOTIFY defaultChanged)
+    Q_PROPERTY(bool virtualDevice READ isVirtualDevice NOTIFY virtualDeviceChanged)
 public:
     enum State {
         InvalidState = 0,
@@ -102,6 +103,12 @@ public:
             m_state = infoState;
             emit stateChanged();
         }
+
+        const bool isVirtual = !(info->flags & 4); // PA_X_HARDWARE
+        if (m_virtualDevice != isVirtual) {
+            m_virtualDevice = isVirtual;
+            emit virtualDeviceChanged();
+        }
     }
 
     State state() const;
@@ -114,6 +121,7 @@ public:
     virtual void setActivePortIndex(quint32 port_index) = 0;
     virtual bool isDefault() const = 0;
     virtual void setDefault(bool enable) = 0;
+    bool isVirtualDevice() const;
 
 signals:
     void stateChanged();
@@ -124,6 +132,7 @@ signals:
     void portsChanged();
     void activePortIndexChanged();
     void defaultChanged();
+    void virtualDeviceChanged();
 
 protected:
     Device(QObject *parent);
@@ -138,6 +147,7 @@ private:
     QList<QObject *> m_ports;
     quint32 m_activePortIndex = -1;
     State m_state = UnknownState;
+    bool m_virtualDevice = false;
 };
 
 } // QPulseAudio
