@@ -38,12 +38,15 @@ class GConfModule;
 class ModuleManager : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(bool settingsSupported READ settingsSupported CONSTANT)
     Q_PROPERTY(bool combineSinks READ combineSinks WRITE setCombineSinks NOTIFY combineSinksChanged)
     Q_PROPERTY(bool switchOnConnect READ switchOnConnect WRITE setSwitchOnConnect NOTIFY switchOnConnectChanged)
     Q_PROPERTY(QStringList loadedModules READ loadedModules NOTIFY loadedModulesChanged)
 public:
     ModuleManager(QObject *parent = nullptr);
     ~ModuleManager();
+
+    bool settingsSupported() const;
     bool combineSinks() const;
     void setCombineSinks(bool combineSinks);
     bool switchOnConnect() const;

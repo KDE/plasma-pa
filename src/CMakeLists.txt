@@ -1,5 +1,4 @@
-include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR}     ${GCONF_INCLUDE_DIRS}
-    ${GOBJECT_INCLUDE_DIRS})
+include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
 
 set(cpp_SRCS
     card.cpp
@@ -15,7 +14,6 @@ set(cpp_SRCS
     sink.cpp
     sinkinput.cpp
     modulemanager.cpp
-    gconfitem.cpp
     source.cpp
     sourceoutput.cpp
     stream.cpp
@@ -38,6 +36,11 @@ set(qml_SRCS
 set_property(SOURCE qml/dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdServiceInterface)
 qt5_add_dbus_interface(dbus_SRCS qml/dbus/osdService.xml osdservice)
 
+if (HAVE_GCONF)
+    include_directories(${GCONF_INCLUDE_DIRS} ${GOBJECT_INCLUDE_DIRS})
+    set(cpp_SRCS ${cpp_SRCS} gconfitem.cpp)
+endif()
+
 add_library(plasma-volume-declarative SHARED ${dbus_SRCS} ${cpp_SRCS} ${qml_SRCS})
 target_link_libraries(plasma-volume-declarative
     Qt5::Core
@@ -47,10 +50,15 @@ target_link_libraries(plasma-volume-declarative
     KF5::GlobalAccel
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
-    ${GCONF_LDFLAGS}
-    ${GOBJECT_LDFLAGS}
     ${CANBERRA_LIBRARIES}
 )
+
+if (HAVE_GCONF)
+    target_link_libraries(plasma-volume-declarative
+        ${GCONF_LDFLAGS}
+        ${GOBJECT_LDFLAGS}
+    )
+endif()
 
 set(PRIVATE_QML_INSTALL_DIR ${QML_INSTALL_DIR}/org/kde/plasma/private/volume)
 install(TARGETS plasma-volume-declarative DESTINATION ${PRIVATE_QML_INSTALL_DIR})

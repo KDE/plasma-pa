@@ -56,6 +56,7 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             text: i18n("Advanced Output Configuration")
+            visible: moduleManager.settingsSupported
         }
 
         ModuleManager {
@@ -71,6 +72,7 @@ ScrollView {
             checked: moduleManager.combineSinks
             onCheckedChanged: moduleManager.combineSinks = checked;
             enabled: moduleManager.loadedModules.indexOf("module-gconf") != -1
+            visible: moduleManager.settingsSupported
         }
 
         CheckBox {
@@ -81,6 +83,7 @@ ScrollView {
             checked: moduleManager.switchOnConnect
             onCheckedChanged: moduleManager.switchOnConnect = checked;
             enabled: moduleManager.loadedModules.indexOf("module-gconf") != -1
+            visible: moduleManager.settingsSupported
         }
 
         Label {
@@ -88,7 +91,7 @@ ScrollView {
             enabled: false
             font.italic: true
             text: i18n("Requires 'module-gconf' PulseAudio module")
-            visible: moduleManager.loadedModules.indexOf("module-gconf") == -1
+            visible: moduleManager.settingsSupported && moduleManager.loadedModules.indexOf("module-gconf") == -1
         }
     }
 }
