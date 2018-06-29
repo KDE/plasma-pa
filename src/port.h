@@ -40,7 +40,18 @@ public:
     template<typename PAInfo>
     void setInfo(const PAInfo *info)
     {
-        Profile::setInfo(info);
+        Availability newAvailability;
+        switch (info->available) {
+        case PA_PORT_AVAILABLE_NO:
+            newAvailability = Unavailable;
+            break;
+        case PA_PORT_AVAILABLE_YES:
+            newAvailability = Available;
+            break;
+        default:
+            newAvailability = Unknown;
+        }
+        setCommonInfo(info, newAvailability);
     }
 };
 
