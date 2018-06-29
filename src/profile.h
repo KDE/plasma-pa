@@ -49,6 +49,24 @@ public:
     template<typename PAInfo>
     void setInfo(const PAInfo *info)
     {
+        setCommonInfo(info, info->available ? Available : Unavailable);
+    }
+
+    QString name() const;
+    QString description() const;
+    quint32 priority() const;
+    Availability availability() const;
+
+signals:
+    void nameChanged();
+    void descriptionChanged();
+    void priorityChanged();
+    void availabilityChanged();
+
+protected:
+    template<typename PAInfo>
+    void setCommonInfo(const PAInfo *info, Availability newAvailability)
+    {
         // Description is optional. Name not so much as we need some ID.
         Q_ASSERT(info->name);
         QString infoName = QString::fromUtf8(info->name);
@@ -68,23 +86,11 @@ public:
             emit priorityChanged();
         }
 
-        Availability newAvailability = info->available ? Available : Unavailable;
         if (m_availability != newAvailability) {
             m_availability = newAvailability;
             emit availabilityChanged();
         }
     }
-
-    QString name() const;
-    QString description() const;
-    quint32 priority() const;
-    Availability availability() const;
-
-signals:
-    void nameChanged();
-    void descriptionChanged();
-    void priorityChanged();
-    void availabilityChanged();
 
 private:
     QString m_name;
