@@ -38,7 +38,7 @@ class Module : public PulseObject
     Q_PROPERTY(QString argument READ argument NOTIFY argumentChanged)
 
 public:
-    Module(QObject *parent);
+    explicit Module(QObject *parent);
 
     void update(const pa_module_info *info);
 

@@ -34,7 +34,7 @@ class Port : public Profile
 
 public:
 
-    Port(QObject *parent);
+    explicit Port(QObject *parent);
     ~Port() override;
 
     template<typename PAInfo>

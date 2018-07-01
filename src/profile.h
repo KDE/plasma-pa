@@ -43,7 +43,7 @@ public:
     };
     Q_ENUM(Availability)
 
-    Profile(QObject *parent);
+    explicit Profile(QObject *parent);
     ~Profile() override;
 
     template<typename PAInfo>

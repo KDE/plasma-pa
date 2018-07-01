@@ -38,7 +38,7 @@ class CardPort : public Port
     Q_OBJECT
     Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
 public:
-    CardPort(QObject *parent = nullptr) : Port(parent) {}
+    explicit CardPort(QObject *parent = nullptr) : Port(parent) {}
     ~CardPort() override {}
 
 //    int direction;                      /**< A #pa_direction enum, indicating the direction of this port. */
@@ -83,7 +83,7 @@ class Card : public PulseObject
     Q_PROPERTY(quint32 activeProfileIndex READ activeProfileIndex WRITE setActiveProfileIndex NOTIFY activeProfileIndexChanged)
     Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)
 public:
-    Card(QObject *parent);
+    explicit Card(QObject *parent);
 
     void update(const pa_card_info *info);
 

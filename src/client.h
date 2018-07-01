@@ -35,7 +35,7 @@ class Client : public PulseObject
     Q_OBJECT
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
 public:
-    Client(QObject *parent);
+    explicit Client(QObject *parent);
     ~Client() override;
 
     void update(const pa_client_info *info);

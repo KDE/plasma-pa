@@ -40,7 +40,7 @@ public:
      * @brief PAOperation
      * @param operation operation to manage the scope of
      */
-    PAOperation(pa_operation *operation = nullptr);
+    explicit PAOperation(pa_operation *operation = nullptr);
     ~PAOperation();
 
     PAOperation &operator =(pa_operation *operation);

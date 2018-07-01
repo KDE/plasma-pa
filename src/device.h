@@ -126,7 +126,7 @@ signals:
     void defaultChanged();
 
 protected:
-    Device(QObject *parent);
+    explicit Device(QObject *parent);
 
 private:
     State stateFromPaState(int value) const;

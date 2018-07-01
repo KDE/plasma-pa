@@ -66,7 +66,7 @@ signals:
     void propertiesChanged();
 
 protected:
-    PulseObject(QObject *parent);
+    explicit PulseObject(QObject *parent);
     ~PulseObject() override;
 
     Context *context() const;

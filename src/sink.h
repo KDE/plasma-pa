@@ -30,7 +30,7 @@ class Sink : public Device
 {
     Q_OBJECT
 public:
-    Sink(QObject *parent);
+    explicit Sink(QObject *parent);
 
     void update(const pa_sink_info *info);
     void setVolume(qint64 volume) override;

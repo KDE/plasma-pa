@@ -38,7 +38,7 @@ class VolumeObject : public PulseObject
     Q_PROPERTY(QStringList channels READ channels NOTIFY channelsChanged)
     Q_PROPERTY(QList<qreal> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
 public:
-    VolumeObject(QObject *parent);
+    explicit VolumeObject(QObject *parent);
     ~VolumeObject() override;
 
     template <typename PAInfo>

@@ -91,7 +91,7 @@ signals:
     void corkedChanged();
 
 protected:
-    Stream(QObject *parent);
+    explicit Stream(QObject *parent);
     ~Stream() override;
 
     quint32 m_deviceIndex;

@@ -74,7 +74,7 @@ class CardModel : public AbstractModel
 {
     Q_OBJECT
 public:
-    CardModel(QObject *parent = nullptr);
+    explicit CardModel(QObject *parent = nullptr);
 };
 
 class SinkModel : public AbstractModel
@@ -88,7 +88,7 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    SinkModel(QObject *parent = nullptr);
+    explicit SinkModel(QObject *parent = nullptr);
     Sink *defaultSink() const;
     Sink *preferredSink() const;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
@@ -110,7 +110,7 @@ class SinkInputModel : public AbstractModel
 {
     Q_OBJECT
 public:
-    SinkInputModel(QObject *parent = nullptr);
+    explicit SinkInputModel(QObject *parent = nullptr);
 };
 
 class SourceModel : public AbstractModel
@@ -123,7 +123,7 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    SourceModel(QObject *parent = nullptr);
+    explicit SourceModel(QObject *parent = nullptr);
     Source *defaultSource() const;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
@@ -135,21 +135,21 @@ class SourceOutputModel : public AbstractModel
 {
     Q_OBJECT
 public:
-    SourceOutputModel(QObject *parent = nullptr);
+    explicit SourceOutputModel(QObject *parent = nullptr);
 };
 
 class StreamRestoreModel : public AbstractModel
 {
     Q_OBJECT
 public:
-    StreamRestoreModel(QObject *parent = nullptr);
+    explicit StreamRestoreModel(QObject *parent = nullptr);
 };
 
 class ModuleModel : public AbstractModel
 {
     Q_OBJECT
 public:
-    ModuleModel(QObject *parent = nullptr);
+    explicit ModuleModel(QObject *parent = nullptr);
 };
 
 } // QPulseAudio

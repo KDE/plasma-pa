@@ -28,7 +28,7 @@ class GlobalAction : public QAction
 {
     Q_OBJECT
 public:
-    GlobalAction(QObject *parent = nullptr);
+    explicit GlobalAction(QObject *parent = nullptr);
 };
 
 class GlobalActionCollection : public QQuickItem

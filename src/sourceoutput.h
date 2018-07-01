@@ -30,7 +30,7 @@ class SourceOutput : public Stream
 {
     Q_OBJECT
 public:
-    SourceOutput(QObject *parent);
+    explicit SourceOutput(QObject *parent);
 
     void update(const pa_source_output_info *info);
 

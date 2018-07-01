@@ -27,7 +27,7 @@ class VolumeOSD : public QObject
 {
     Q_OBJECT
 public:
-    VolumeOSD(QObject *parent = nullptr);
+    explicit VolumeOSD(QObject *parent = nullptr);
 
 public slots:
     void show(int percent);

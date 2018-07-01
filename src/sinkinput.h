@@ -30,7 +30,7 @@ class SinkInput : public Stream
 {
     Q_OBJECT
 public:
-    SinkInput(QObject *parent);
+    explicit SinkInput(QObject *parent);
 
     void update(const pa_sink_input_info *info);
 
