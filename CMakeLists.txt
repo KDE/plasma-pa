@@ -1,5 +1,6 @@
+cmake_minimum_required(VERSION 3.0)
+
 project(plasma-volume-control)
-cmake_minimum_required(VERSION 2.8.12)
 
 set(PROJECT_VERSION "5.13.80")
 set(PROJECT_VERSION_MAJOR 5)
