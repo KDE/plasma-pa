@@ -25,7 +25,7 @@
 #include <QStringList>
 #include <QByteArray>
 #include <QVariant>
-#include <QtDebug>
+#include <QDebug>
 
 #include "gconfitem.h"
 
