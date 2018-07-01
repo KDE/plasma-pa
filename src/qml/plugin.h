@@ -21,7 +21,7 @@
 #ifndef PLUGIN_H
 #define PLUGIN_H
 
-#include <QtQml/QQmlExtensionPlugin>
+#include <QQmlExtensionPlugin>
 
 class Plugin : public QQmlExtensionPlugin
 {
