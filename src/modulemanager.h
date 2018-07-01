@@ -43,7 +43,7 @@ class ModuleManager : public QObject
     Q_PROPERTY(QStringList loadedModules READ loadedModules NOTIFY loadedModulesChanged)
 public:
     ModuleManager(QObject *parent = nullptr);
-    ~ModuleManager();
+    ~ModuleManager() override;
     bool combineSinks() const;
     void setCombineSinks(bool combineSinks);
     bool switchOnConnect() const;

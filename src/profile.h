@@ -44,7 +44,7 @@ public:
     Q_ENUM(Availability)
 
     Profile(QObject *parent);
-    virtual ~Profile();
+    ~Profile() override;
 
     template<typename PAInfo>
     void setInfo(const PAInfo *info)

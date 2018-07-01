@@ -39,7 +39,7 @@ class VolumeObject : public PulseObject
     Q_PROPERTY(QList<qreal> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
 public:
     VolumeObject(QObject *parent);
-    virtual ~VolumeObject();
+    ~VolumeObject() override;
 
     template <typename PAInfo>
     void updateVolumeObject(PAInfo *info)

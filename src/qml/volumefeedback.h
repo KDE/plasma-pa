@@ -32,7 +32,7 @@ class VolumeFeedback : public QObject
 
 public:
     explicit VolumeFeedback(QObject *parent = nullptr);
-    ~VolumeFeedback();
+    ~VolumeFeedback() override;
 
     bool isValid() const;
 

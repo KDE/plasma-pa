@@ -50,7 +50,7 @@ signals:
     void displayNameChanged();
 
 protected:
-    virtual void componentComplete() Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void componentComplete() final;
 
 private:
     QString m_name;

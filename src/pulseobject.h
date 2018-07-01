@@ -67,7 +67,7 @@ signals:
 
 protected:
     PulseObject(QObject *parent);
-    virtual ~PulseObject();
+    ~PulseObject() override;
 
     Context *context() const;
     quint32 m_index;

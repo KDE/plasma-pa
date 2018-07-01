@@ -35,12 +35,12 @@ class KCMPulseAudio : public KQuickAddons::ConfigModule
     Q_OBJECT
 public:
     KCMPulseAudio(QObject *parent, const QVariantList &args);
-    ~KCMPulseAudio();
+    ~KCMPulseAudio() override;
 
 public slots:
-    void defaults() Q_DECL_OVERRIDE Q_DECL_FINAL;
-    void load() Q_DECL_OVERRIDE Q_DECL_FINAL;
-    void save() Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void defaults() final;
+    void load() final;
+    void save() final;
 
 private:
     Context *m_context;

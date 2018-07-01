@@ -43,7 +43,7 @@ class Context : public QObject
     Q_OBJECT
 public:
     Context(QObject *parent = nullptr);
-    ~Context();
+    ~Context() override;
 
     static Context *instance();
 

@@ -84,7 +84,7 @@ class GConfItem : public QObject
 
     /*! Finalizes a GConfItem.
      */
-    virtual ~GConfItem();
+    ~GConfItem() override;
 
     /*! Returns the root of this item, as given to the constructor.
      */

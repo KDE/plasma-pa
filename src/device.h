@@ -53,7 +53,7 @@ public:
     };
     Q_ENUMS(State);
 
-    virtual ~Device() {}
+    ~Device() override {}
 
     template <typename PAInfo>
     void updateDevice(const PAInfo *info)

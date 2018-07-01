@@ -35,7 +35,7 @@ class Port : public Profile
 public:
 
     Port(QObject *parent);
-    virtual ~Port();
+    ~Port() override;
 
     template<typename PAInfo>
     void setInfo(const PAInfo *info)

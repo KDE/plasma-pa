@@ -39,10 +39,10 @@ public:
     };
 
     ~AbstractModel() override;
-    QHash<int, QByteArray> roleNames() const Q_DECL_FINAL;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_FINAL;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-    bool setData(const QModelIndex &index, const QVariant &value, int role) Q_DECL_FINAL;
+    QHash<int, QByteArray> roleNames() const final;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const final;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role) final;
 
     Q_INVOKABLE int role(const QByteArray &roleName) const;
 
@@ -91,7 +91,7 @@ public:
     SinkModel(QObject *parent = nullptr);
     Sink *defaultSink() const;
     Sink *preferredSink() const;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 signals:
     void defaultSinkChanged();
@@ -125,7 +125,7 @@ public:
 
     SourceModel(QObject *parent = nullptr);
     Source *defaultSource() const;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 signals:
     void defaultSourceChanged();

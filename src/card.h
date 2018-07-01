@@ -39,7 +39,7 @@ class CardPort : public Port
     Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
 public:
     CardPort(QObject *parent = nullptr) : Port(parent) {}
-    virtual ~CardPort() {}
+    ~CardPort() override {}
 
 //    int direction;                      /**< A #pa_direction enum, indicating the direction of this port. */
 //    uint32_t n_profiles;                /**< Number of entries in profile array */

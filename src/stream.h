@@ -92,7 +92,7 @@ signals:
 
 protected:
     Stream(QObject *parent);
-    virtual ~Stream();
+    ~Stream() override;
 
     quint32 m_deviceIndex;
 
