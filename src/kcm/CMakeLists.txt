@@ -23,7 +23,7 @@ target_link_libraries(kcm_pulseaudio
 
 kcoreaddons_desktop_to_json(kcm_pulseaudio "kcm_pulseaudio.desktop")
 
-install(FILES kcm_pulseaudio.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(TARGETS kcm_pulseaudio DESTINATION ${PLUGIN_INSTALL_DIR}/kcms)
+install(FILES kcm_pulseaudio.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(TARGETS kcm_pulseaudio DESTINATION ${KDE_INSTALL_PLUGINDIR}/kcms)
 
 kpackage_install_package(package kcm_pulseaudio kcms)
