@@ -607,7 +607,7 @@ void Context::connectToDaemon()
     m_context = pa_context_new(api, "QPulse");
     Q_ASSERT(m_context);
 
-    if (pa_context_connect(m_context, NULL, PA_CONTEXT_NOFAIL, nullptr) < 0) {
+    if (pa_context_connect(m_context, nullptr, PA_CONTEXT_NOFAIL, nullptr) < 0) {
         pa_context_unref(m_context);
         pa_glib_mainloop_free(m_mainloop);
         m_context = nullptr;

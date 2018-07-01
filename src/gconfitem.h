@@ -80,7 +80,7 @@ class GConfItem : public QObject
         \param key    The name of the key.
         \param parent Parent object
     */
-    explicit GConfItem(const QString &keyRoot, QObject *parent = 0);
+    explicit GConfItem(const QString &keyRoot, QObject *parent = nullptr);
 
     /*! Finalizes a GConfItem.
      */
