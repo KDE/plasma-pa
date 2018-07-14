@@ -1,5 +1,5 @@
 /*
-    Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2018 Nicolas Fella <nicolas.fella@gmx.de>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,42 +18,51 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SINK_H
-#define SINK_H
-
-#include "device.h"
-#include <pulse/channelmap.h>
-#include <canberra.h>
+#include "canberracontext.h"
+#include <QObject>
 
 namespace QPulseAudio
 {
 
-class Sink : public Device
+CanberraContext *CanberraContext::s_context = nullptr;
+
+CanberraContext *CanberraContext::instance()
 {
-    Q_OBJECT
-public:
-    explicit Sink(QObject *parent);
-    virtual ~Sink();
+    if (!s_context) {
+        s_context = new CanberraContext;
+    }
+    return s_context;
+}
 
-    void update(const pa_sink_info *info);
-    void setVolume(qint64 volume) override;
-    void setMuted(bool muted) override;
-    void setActivePortIndex(quint32 port_index) override;
-    void setChannelVolume(int channel, qint64 volume) override;
+CanberraContext::CanberraContext(QObject *parent)
+    : QObject(parent)
+{
+    ca_context_create(&m_canberra);
+}
 
-    bool isDefault() const override;
-    void setDefault(bool enable) override;
 
-public slots:
-    void testChannel(const QString &name);
+CanberraContext::~CanberraContext()
+{
+    if (m_canberra) {
+        ca_context_destroy(m_canberra);
+    }
+}
 
-private:
-    pa_channel_position_t channelNameToPosition(const QString &name);
-    QString positionToChannelName(pa_channel_position_t position);
-    QString positionAsString(pa_channel_position_t pos);
+ca_context *CanberraContext::canberra()
+{
+    return m_canberra;
+}
 
-};
+void CanberraContext::ref()
+{
+    ++m_references;
+}
 
-} // QPulseAudio
-
-#endif // SINK_H
+void CanberraContext::unref()
+{
+    if (--m_references == 0) {
+        delete this;
+        s_context = nullptr;
+    }
+}
+}

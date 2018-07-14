@@ -22,6 +22,7 @@ set(cpp_SRCS
     server.cpp
     streamrestore.cpp
     module.cpp
+    canberracontext.cpp
     qml/globalactioncollection.cpp
     qml/plugin.cpp
     qml/volumeosd.cpp

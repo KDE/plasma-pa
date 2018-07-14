@@ -20,57 +20,53 @@
 */
 
 #include "volumefeedback.h"
+#include "canberracontext.h"
 
 VolumeFeedback::VolumeFeedback(QObject *parent)
     : QObject(parent)
 {
-    if (ca_context_create(&m_context) < 0) {
-        m_context = nullptr;
-        return;
-    }
-    if (ca_context_set_driver(m_context, "pulse") < 0) {
-        ca_context_destroy(m_context);
-        m_context = nullptr;
+    QPulseAudio::CanberraContext::instance()->ref();
+    if (ca_context_set_driver(QPulseAudio::CanberraContext::instance()->canberra(), "pulse") < 0) {
         return;
     }
 }
 
 VolumeFeedback::~VolumeFeedback()
 {
-    if (m_context) {
-        ca_context_destroy(m_context);
-    }
+    QPulseAudio::CanberraContext::instance()->unref();
 }
 
 bool VolumeFeedback::isValid() const
 {
-    return m_context;
+    return QPulseAudio::CanberraContext::instance()->canberra();
 }
 
 void VolumeFeedback::play(quint32 sinkIndex)
 {
-    if (!m_context) {
+    auto context = QPulseAudio::CanberraContext::instance()->canberra();
+
+    if (!context) {
         return;
     }
 
     int playing = 0;
     const int cindex = 2; // Note "2" is simply the index we've picked. It's somewhat irrelevant.
-    ca_context_playing(m_context, cindex, &playing);
+    ca_context_playing(context, cindex, &playing);
 
     // NB Depending on how this is desired to work, we may want to simply
     // skip playing, or cancel the currently playing sound and play our
     // new one... for now, let's do the latter.
     if (playing) {
-        ca_context_cancel(m_context, cindex);
+        ca_context_cancel(context, cindex);
     }
 
     char dev[64];
     snprintf(dev, sizeof(dev), "%lu", (unsigned long) sinkIndex);
-    ca_context_change_device(m_context, dev);
+    ca_context_change_device(context, dev);
 
     // Ideally we'd use something like ca_gtk_play_for_widget()...
     ca_context_play(
-        m_context,
+        context,
         cindex,
         CA_PROP_EVENT_DESCRIPTION, "Volume Control Feedback Sound",
         CA_PROP_EVENT_ID, "audio-volume-change",
@@ -79,5 +75,5 @@ void VolumeFeedback::play(quint32 sinkIndex)
         nullptr
     );
 
-    ca_context_change_device(m_context, nullptr);
+    ca_context_change_device(context, nullptr);
 }

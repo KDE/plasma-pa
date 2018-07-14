@@ -23,6 +23,8 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.3
 
 import org.kde.plasma.private.volume 0.1
+import org.kde.kcoreaddons 1.0 as KCoreAddons
+
 
 ScrollView {
     id: scrollView
@@ -92,6 +94,152 @@ ScrollView {
             font.italic: true
             text: i18n("Requires 'module-gconf' PulseAudio module")
             visible: moduleManager.settingsSupported && moduleManager.loadedModules.indexOf("module-gconf") == -1
+        }
+
+        Header {
+            Layout.fillWidth: true
+            text: i18n("Speaker Placement and Testing")
+        }
+
+        RowLayout {
+            Layout.margins: units.gridUnit / 2
+            visible: sinks.count > 1
+
+            Label {
+                text: i18nc("@label", "Output:")
+                font.bold: true
+            }
+
+            ComboBox {
+                id: sinks
+
+                property var pulseObject: null
+
+                Layout.fillWidth: true
+                textRole: "Description"
+                model: SinkModel {
+                    onRowsInserted: sinks.updatePulseObject()
+                    onRowsRemoved: sinks.updatePulseObject()
+                    onDataChanged: sinks.updatePulseObject()
+                }
+                onCurrentIndexChanged: updatePulseObject()
+                onCurrentTextChanged: updatePulseObject()
+                Component.onCompleted: updatePulseObject()
+
+                function updatePulseObject() {
+                    Qt.callLater(function() {
+                        pulseObject = model.data(model.index(sinks.currentIndex, 0), model.role("PulseObject"));
+                    });
+                }
+            }
+        }
+
+        Grid {
+            id: grid
+            columns: 3
+            spacing: 5
+            Layout.fillWidth: true
+
+            Item {
+                width: grid.width/3
+                height: 50
+
+                Button{
+                    text: i18n("Front Left")
+                    anchors.centerIn: parent
+                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Front Left") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("Front Left")
+                }
+            }
+            Item {
+                width: grid.width/3
+                height: 50
+
+                Button{
+                    text: i18n("Front Center")
+                    anchors.centerIn: parent
+                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Front Center") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("Front Center")
+                }
+            }
+            Item {
+                width: grid.width/3
+                height: 50
+
+                Button{
+                    text: i18n("Front Right")
+                    anchors.centerIn: parent
+                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Front Right") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("Front Right")
+                }
+            }
+            Item {
+                width: grid.width/3
+                height: 50
+
+                Button{
+                    text: i18n("Side Left")
+                    anchors.centerIn: parent
+                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Side Left") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("Side Left")
+
+                }
+            }
+            Item {
+                width: grid.width/3
+                height: 50
+
+                KCoreAddons.KUser {
+                    id: kuser
+                }
+
+                Image {
+                    source: kuser.faceIconUrl
+                    anchors.centerIn: parent
+                    width: 50
+                    height: 50
+                }
+            }
+            Item {
+                width: grid.width/3
+                height: 50
+                Button{
+                    text: i18n("Side Right")
+                    anchors.centerIn: parent
+                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Side Right") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("Side Right")
+                }
+            }
+            Item {
+                width: grid.width/3
+                height: 50
+                Button{
+                    text: i18n("Rear Left")
+                    anchors.centerIn: parent
+                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Rear Left") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("Rear Left")
+                }
+            }
+            Item {
+                width: grid.width/3
+                height: 50
+                Button{
+                    text: i18n("Subwoofer")
+                    anchors.centerIn: parent
+                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Subwoofer") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("Subwoofer")
+                }
+            }
+            Item {
+                width: grid.width/3
+                height: 50
+                Button{
+                    text: i18n("Rear Right")
+                    anchors.centerIn: parent
+                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Rear Right") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("Rear Right")
+                }
+            }
         }
     }
 }

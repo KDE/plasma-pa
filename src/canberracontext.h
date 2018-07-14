@@ -1,5 +1,5 @@
 /*
-    Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2018 Nicolas Fella <nicolas.fella@gmx.de>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -17,43 +17,35 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
+#pragma once
 
-#ifndef SINK_H
-#define SINK_H
-
-#include "device.h"
-#include <pulse/channelmap.h>
 #include <canberra.h>
+#include <QObject>
 
 namespace QPulseAudio
 {
 
-class Sink : public Device
+class CanberraContext : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit Sink(QObject *parent);
-    virtual ~Sink();
+    explicit CanberraContext(QObject *parent = nullptr);
+    virtual ~CanberraContext();
 
-    void update(const pa_sink_info *info);
-    void setVolume(qint64 volume) override;
-    void setMuted(bool muted) override;
-    void setActivePortIndex(quint32 port_index) override;
-    void setChannelVolume(int channel, qint64 volume) override;
+    static CanberraContext *instance();
 
-    bool isDefault() const override;
-    void setDefault(bool enable) override;
+    ca_context *canberra();
 
-public slots:
-    void testChannel(const QString &name);
+    void ref();
+    void unref();
 
 private:
-    pa_channel_position_t channelNameToPosition(const QString &name);
-    QString positionToChannelName(pa_channel_position_t position);
-    QString positionAsString(pa_channel_position_t pos);
+    ca_context *m_canberra = nullptr;
+    int m_references = 0;
+
+    static CanberraContext *s_context;
 
 };
 
-} // QPulseAudio
-
-#endif // SINK_H
+}

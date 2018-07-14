@@ -38,9 +38,6 @@ public:
 
 public slots:
     void play(quint32 sinkIndex);
-
-private:
-    ca_context *m_context = nullptr;
 };
 
 #endif // VOLUMEFEEDBACK_H
