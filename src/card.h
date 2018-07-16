@@ -63,12 +63,12 @@ public:
             Q_ASSERT(value);
             m_properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
         }
-        emit propertiesChanged();
+        Q_EMIT propertiesChanged();
     }
 
     QVariantMap properties() const { return m_properties; }
 
-signals:
+Q_SIGNALS:
     void propertiesChanged();
 
 private:
@@ -93,7 +93,7 @@ public:
     void setActiveProfileIndex(quint32 profileIndex);
     QList<QObject *> ports() const;
 
-signals:
+Q_SIGNALS:
     void nameChanged();
     void profilesChanged();
     void activeProfileIndexChanged();

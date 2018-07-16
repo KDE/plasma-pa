@@ -29,7 +29,7 @@ class VolumeOSD : public QObject
 public:
     explicit VolumeOSD(QObject *parent = nullptr);
 
-public slots:
+public Q_SLOTS:
     void show(int percent);
     void showMicrophone(int percent);
     void showText(const QString &iconName, const QString &text);

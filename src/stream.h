@@ -51,27 +51,27 @@ public:
 
         if (m_name != QString::fromUtf8(info->name)) {
             m_name = QString::fromUtf8(info->name);
-            emit nameChanged();
+            Q_EMIT nameChanged();
         }
         if (m_hasVolume != info->has_volume) {
             m_hasVolume = info->has_volume;
-            emit hasVolumeChanged();
+            Q_EMIT hasVolumeChanged();
         }
         if (m_volumeWritable != info->volume_writable) {
             m_volumeWritable = info->volume_writable;
-            emit isVolumeWritableChanged();
+            Q_EMIT isVolumeWritableChanged();
         }
         if (m_clientIndex != info->client) {
             m_clientIndex = info->client;
-            emit clientChanged();
+            Q_EMIT clientChanged();
         }
         if (m_virtualStream != (info->client == PA_INVALID_INDEX)) {
             m_virtualStream = info->client == PA_INVALID_INDEX;
-            emit virtualStreamChanged();
+            Q_EMIT virtualStreamChanged();
         }
         if (m_corked != info->corked) {
             m_corked = info->corked;
-            emit corkedChanged();
+            Q_EMIT corkedChanged();
         }
     }
 
@@ -83,7 +83,7 @@ public:
 
     virtual void setDeviceIndex(quint32 deviceIndex) = 0;
 
-signals:
+Q_SIGNALS:
     void nameChanged();
     void clientChanged();
     void virtualStreamChanged();

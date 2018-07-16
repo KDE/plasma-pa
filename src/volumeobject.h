@@ -47,12 +47,12 @@ public:
         updatePulseObject(info);
         if (m_muted != info->mute) {
             m_muted = info->mute;
-            emit mutedChanged();
+            Q_EMIT mutedChanged();
         }
         if (!pa_cvolume_equal(&m_volume, &info->volume)) {
             m_volume = info->volume;
-            emit volumeChanged();
-            emit channelVolumesChanged();
+            Q_EMIT volumeChanged();
+            Q_EMIT channelVolumesChanged();
         }
         QStringList infoChannels;
         infoChannels.reserve(info->channel_map.channels);
@@ -61,7 +61,7 @@ public:
         }
         if (m_channels != infoChannels) {
             m_channels = infoChannels;
-            emit channelsChanged();
+            Q_EMIT channelsChanged();
         }
     }
 
@@ -78,7 +78,7 @@ public:
     QList<qreal> channelVolumes() const;
     Q_INVOKABLE virtual void setChannelVolume(int channel, qint64 volume) = 0;
 
-signals:
+Q_SIGNALS:
     void volumeChanged();
     void mutedChanged();
     void hasVolumeChanged();

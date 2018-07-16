@@ -39,7 +39,7 @@ QString GlobalActionCollection::name() const
 void GlobalActionCollection::setName(const QString &name)
 {
     m_name = name;
-    emit nameChanged();
+    Q_EMIT nameChanged();
 }
 
 QString GlobalActionCollection::displayName() const
@@ -50,12 +50,12 @@ QString GlobalActionCollection::displayName() const
 void GlobalActionCollection::setDisplayName(const QString &displayName)
 {
     m_displayName = displayName;
-    emit displayNameChanged();
+    Q_EMIT displayNameChanged();
 }
 
 void GlobalActionCollection::componentComplete()
 {
-    foreach (QObject *item, children()) {
+    Q_FOREACH (QObject *item, children()) {
         GlobalAction *action = qobject_cast<GlobalAction *>(item);
         if (!action) {
             continue;

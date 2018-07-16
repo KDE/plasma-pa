@@ -35,7 +35,7 @@ void SourceOutput::update(const pa_source_output_info *info)
     updateStream(info);
     if (m_deviceIndex != info->source) {
         m_deviceIndex = info->source;
-        emit deviceIndexChanged();
+        Q_EMIT deviceIndexChanged();
     }
 }
 

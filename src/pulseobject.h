@@ -55,14 +55,14 @@ public:
             Q_ASSERT(value);
             m_properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
         }
-        emit propertiesChanged();
+        Q_EMIT propertiesChanged();
     }
 
     quint32 index() const;
     QString iconName() const;
     QVariantMap properties() const;
 
-signals:
+Q_SIGNALS:
     void propertiesChanged();
 
 protected:

@@ -191,7 +191,7 @@ void AbstractModel::propertyChanged()
     }
     int index = m_map->indexOfObject(sender());
     qCDebug(PLASMAPA) << "PROPERTY CHANGED (" << index << ") :: " << role << roleNames().value(role);
-    emit dataChanged(createIndex(index, 0), createIndex(index, 0), {role});
+    Q_EMIT dataChanged(createIndex(index, 0), createIndex(index, 0), {role});
 }
 
 void AbstractModel::onDataAdded(int index)
@@ -200,7 +200,7 @@ void AbstractModel::onDataAdded(int index)
     const QMetaObject *mo = data->metaObject();
     // We have all the data changed notify signals already stored
     auto keys = m_signalIndexToProperties.keys();
-    foreach (int index, keys) {
+    Q_FOREACH (int index, keys) {
         QMetaMethod meth = mo->method(index);
         connect(data, meth, this, propertyChangedMetaMethod());
     }
@@ -231,7 +231,7 @@ SinkModel::SinkModel(QObject *parent)
 
     connect(context()->server(), &Server::defaultSinkChanged, this, [this]() {
         updatePreferredSink();
-        emit defaultSinkChanged();
+        Q_EMIT defaultSinkChanged();
     });
 }
 
@@ -279,7 +279,7 @@ void SinkModel::updatePreferredSink()
     if (sink != m_preferredSink) {
         qCDebug(PLASMAPA) << "Changing preferred sink to" << sink << (sink ? sink->name() : "");
         m_preferredSink = sink;
-        emit preferredSinkChanged();
+        Q_EMIT preferredSinkChanged();
     }
 }
 

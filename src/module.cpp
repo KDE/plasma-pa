@@ -39,12 +39,12 @@ void Module::update(const pa_module_info *info)
     const QString infoName = QString::fromUtf8(info->name);
     if (m_name != infoName) {
         m_name = infoName;
-        emit nameChanged();
+        Q_EMIT nameChanged();
     }
     const QString infoArgument = QString::fromUtf8(info->argument);
     if (m_argument != infoArgument) {
         m_argument = infoArgument;
-        emit argumentChanged();
+        Q_EMIT argumentChanged();
     }
 }
 

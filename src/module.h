@@ -45,7 +45,7 @@ public:
     QString name() const;
     QString argument() const;
 
-signals:
+Q_SIGNALS:
     void nameChanged();
     void argumentChanged();
 

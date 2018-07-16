@@ -63,23 +63,23 @@ public:
 
         if (m_name != info->name) {
             m_name = info->name;
-            emit nameChanged();
+            Q_EMIT nameChanged();
         }
         if (m_description != info->description) {
             m_description = info->description;
-            emit descriptionChanged();
+            Q_EMIT descriptionChanged();
         }
         const char *form_factor = pa_proplist_gets(info->proplist, PA_PROP_DEVICE_FORM_FACTOR);
         if (form_factor) {
             QString formFactor = QString::fromUtf8(form_factor);
             if (m_formFactor != formFactor) {
                 m_formFactor = formFactor;
-                emit formFactorChanged();
+                Q_EMIT formFactorChanged();
             }
         }
 
         m_cardIndex = info->card;
-        emit cardIndexChanged();
+        Q_EMIT cardIndexChanged();
 
         // TODO: this rebuilds the entire port list on every update. would be
         // nicer if it actually removed what needs removing updates what needs
@@ -95,19 +95,19 @@ public:
                 m_activePortIndex = m_ports.length() - 1;
             }
         }
-        emit portsChanged();
-        emit activePortIndexChanged();
+        Q_EMIT portsChanged();
+        Q_EMIT activePortIndexChanged();
 
         State infoState = stateFromPaState(info->state);
         if (infoState != m_state) {
             m_state = infoState;
-            emit stateChanged();
+            Q_EMIT stateChanged();
         }
 
         const bool isVirtual = !(info->flags & 4); // PA_X_HARDWARE
         if (m_virtualDevice != isVirtual) {
             m_virtualDevice = isVirtual;
-            emit virtualDeviceChanged();
+            Q_EMIT virtualDeviceChanged();
         }
     }
 
@@ -123,7 +123,7 @@ public:
     virtual void setDefault(bool enable) = 0;
     bool isVirtualDevice() const;
 
-signals:
+Q_SIGNALS:
     void stateChanged();
     void nameChanged();
     void descriptionChanged();

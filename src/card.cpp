@@ -39,7 +39,7 @@ void Card::update(const pa_card_info *info)
     QString infoName = QString::fromUtf8(info->name);
     if (m_name != infoName) {
         m_name = infoName;
-        emit nameChanged();
+        Q_EMIT nameChanged();
     }
 
     qDeleteAll(m_profiles);
@@ -52,8 +52,8 @@ void Card::update(const pa_card_info *info)
             m_activeProfileIndex = m_profiles.length() - 1;
         }
     }
-    emit profilesChanged();
-    emit activeProfileIndexChanged();
+    Q_EMIT profilesChanged();
+    Q_EMIT activeProfileIndexChanged();
 
     qDeleteAll(m_ports);
     m_ports.clear();
@@ -62,7 +62,7 @@ void Card::update(const pa_card_info *info)
         port->update(*it);
         m_ports.append(port);
     }
-    emit portsChanged();
+    Q_EMIT portsChanged();
 }
 
 QString Card::name() const

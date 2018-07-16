@@ -41,7 +41,7 @@ void Client::update(const pa_client_info *info)
     QString infoName = QString::fromUtf8(info->name);
     if (m_name != infoName) {
         m_name = infoName;
-        emit nameChanged();
+        Q_EMIT nameChanged();
     }
 }
 

@@ -42,7 +42,7 @@ public:
 
     QString name() const;
 
-signals:
+Q_SIGNALS:
     void nameChanged();
 
 private:

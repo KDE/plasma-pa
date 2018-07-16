@@ -51,7 +51,7 @@ protected:
     void initRoleNames(const QMetaObject &qobjectMetaObject);
     Context *context() const;
 
-private slots:
+private Q_SLOTS:
     void propertyChanged();
 
 private:
@@ -93,7 +93,7 @@ public:
     Sink *preferredSink() const;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
-signals:
+Q_SIGNALS:
     void defaultSinkChanged();
     void preferredSinkChanged();
 
@@ -127,7 +127,7 @@ public:
     Source *defaultSource() const;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
-signals:
+Q_SIGNALS:
     void defaultSourceChanged();
 };
 

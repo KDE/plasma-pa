@@ -45,7 +45,7 @@ public:
     QString displayName() const;
     void setDisplayName(const QString &displayName);
 
-signals:
+Q_SIGNALS:
     void nameChanged();
     void displayNameChanged();
 

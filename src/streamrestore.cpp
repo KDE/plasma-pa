@@ -42,21 +42,21 @@ void StreamRestore::update(const pa_ext_stream_restore_info *info)
     const QString infoName = QString::fromUtf8(info->name);
     if (m_name != infoName) {
         m_name = infoName;
-        emit nameChanged();
+        Q_EMIT nameChanged();
     }
     const QString infoDevice = QString::fromUtf8(info->device);
     if (m_device != infoDevice) {
         m_device = infoDevice;
-        emit deviceChanged();
+        Q_EMIT deviceChanged();
     }
     if (m_muted != info->mute) {
         m_muted = info->mute;
-        emit mutedChanged();
+        Q_EMIT mutedChanged();
     }
     if (memcmp(&m_volume, &info->volume, sizeof(pa_cvolume)) != 0) {
         m_volume = info->volume;
-        emit volumeChanged();
-        emit channelVolumesChanged();
+        Q_EMIT volumeChanged();
+        Q_EMIT channelVolumesChanged();
     }
     if (memcmp(&m_channelMap, &info->channel_map, sizeof(pa_channel_map)) != 0) {
         m_channels.clear();
@@ -65,7 +65,7 @@ void StreamRestore::update(const pa_ext_stream_restore_info *info)
             m_channels << QString::fromUtf8(pa_channel_position_to_pretty_string(info->channel_map.map[i]));
         }
         m_channelMap = info->channel_map;
-        emit channelsChanged();
+        Q_EMIT channelsChanged();
     }
 }
 

@@ -44,7 +44,7 @@ public:
     bool isDefault() const override;
     void setDefault(bool enable) override;
 
-public slots:
+public Q_SLOTS:
     void testChannel(const QString &name);
 
 private:

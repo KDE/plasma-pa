@@ -47,7 +47,7 @@ public:
     void reset();
     void update(const pa_server_info *info);
 
-signals:
+Q_SIGNALS:
     void defaultSinkChanged(Sink *sink);
     void defaultSourceChanged(Source *source);
 

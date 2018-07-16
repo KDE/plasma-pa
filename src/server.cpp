@@ -66,12 +66,12 @@ void Server::reset()
 {
     if (m_defaultSink) {
         m_defaultSink = nullptr;
-        emit defaultSinkChanged(m_defaultSink);
+        Q_EMIT defaultSinkChanged(m_defaultSink);
     }
 
     if (m_defaultSource) {
         m_defaultSource = nullptr;
-        emit defaultSourceChanged(m_defaultSource);
+        Q_EMIT defaultSourceChanged(m_defaultSource);
     }
 }
 
@@ -110,13 +110,13 @@ void Server::updateDefaultDevices()
     if (m_defaultSink != sink) {
         qCDebug(PLASMAPA) << "Default sink changed" << sink;
         m_defaultSink = sink;
-        emit defaultSinkChanged(m_defaultSink);
+        Q_EMIT defaultSinkChanged(m_defaultSink);
     }
 
     if (m_defaultSource != source) {
         qCDebug(PLASMAPA) << "Default source changed" << source;
         m_defaultSource = source;
-        emit defaultSourceChanged(m_defaultSource);
+        Q_EMIT defaultSourceChanged(m_defaultSource);
     }
 }
 

@@ -37,7 +37,7 @@ public:
     KCMPulseAudio(QObject *parent, const QVariantList &args);
     ~KCMPulseAudio() override;
 
-public slots:
+public Q_SLOTS:
     void defaults() final;
     void load() final;
     void save() final;

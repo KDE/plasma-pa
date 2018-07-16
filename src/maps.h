@@ -55,7 +55,7 @@ public:
     virtual QObject *objectAt(int index) const = 0;
     virtual int indexOfObject(QObject *object) const = 0;
 
-signals:
+Q_SIGNALS:
     void aboutToBeAdded(int index);
     void added(int index);
     void aboutToBeRemoved(int index);
@@ -120,10 +120,10 @@ public:
             modelIndex++;
         }
 
-        emit aboutToBeAdded(modelIndex);
+        Q_EMIT aboutToBeAdded(modelIndex);
         m_data.insert(object->index(), object);
         Q_ASSERT(modelIndex == m_data.keys().indexOf(object->index()));
-        emit added(modelIndex);
+        Q_EMIT added(modelIndex);
     }
 
     // Context is passed in as parent because context needs to include the maps
@@ -155,9 +155,9 @@ public:
             m_pendingRemovals.insert(index);
         } else {
             const int modelIndex = m_data.keys().indexOf(index);
-            emit aboutToBeRemoved(modelIndex);
+            Q_EMIT aboutToBeRemoved(modelIndex);
             delete m_data.take(index);
-            emit removed(modelIndex);
+            Q_EMIT removed(modelIndex);
         }
     }
 

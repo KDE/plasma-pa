@@ -35,7 +35,7 @@ void SinkInput::update(const pa_sink_input_info *info)
     updateStream(info);
     if (m_deviceIndex != info->sink) {
         m_deviceIndex = info->sink;
-        emit deviceIndexChanged();
+        Q_EMIT deviceIndexChanged();
     }
 }
 

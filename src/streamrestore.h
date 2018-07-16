@@ -68,7 +68,7 @@ public:
 
     Q_INVOKABLE void setChannelVolume(int channel, qint64 volume);
 
-signals:
+Q_SIGNALS:
     void nameChanged();
     void deviceChanged();
     void volumeChanged();
