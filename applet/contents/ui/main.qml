@@ -165,6 +165,14 @@ Item {
 
             var icon = Icon.formFactorIcon(defaultSink.formFactor);
             if (!icon) {
+                // Show "muted" icon for Dummy output
+                // DEFAULT_SINK_NAME in module-always-sink.c
+                if (defaultSink.name === "auto_null") {
+                    icon = "audio-volume-muted";
+                }
+            }
+
+            if (!icon) {
                 icon = Icon.name(defaultSink.volume, defaultSink.muted);
             }
             osd.showText(icon, defaultSink.description);
