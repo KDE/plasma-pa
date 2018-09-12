@@ -66,6 +66,11 @@ QStringList VolumeObject::channels() const
     return m_channels;
 }
 
+QStringList VolumeObject::rawChannels() const
+{
+    return m_rawChannels;
+}
+
 QList<qreal> VolumeObject::channelVolumes() const
 {
     QList<qreal> ret;

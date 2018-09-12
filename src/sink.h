@@ -46,12 +46,6 @@ public:
 
 public Q_SLOTS:
     void testChannel(const QString &name);
-
-private:
-    pa_channel_position_t channelNameToPosition(const QString &name);
-    QString positionToChannelName(pa_channel_position_t position);
-    QString positionAsString(pa_channel_position_t pos);
-
 };
 
 } // QPulseAudio

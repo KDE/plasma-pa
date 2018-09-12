@@ -82,53 +82,6 @@ void Sink::setDefault(bool enable)
     }
 }
 
-pa_channel_position_t Sink::channelNameToPosition(const QString &name)
-{
-    if (name == QLatin1String("Front Left")) {
-        return PA_CHANNEL_POSITION_FRONT_LEFT;
-    } else if (name == QLatin1String("Front Center")) {
-        return PA_CHANNEL_POSITION_FRONT_CENTER;
-    } else if (name == QLatin1String("Front Right")) {
-        return PA_CHANNEL_POSITION_FRONT_RIGHT;
-    } else if (name == QLatin1String("Side Left")) {
-        return PA_CHANNEL_POSITION_SIDE_LEFT;
-    } else if (name == QLatin1String("Side Right")) {
-        return PA_CHANNEL_POSITION_SIDE_RIGHT;
-    } else if (name == QLatin1String("Rear Left")) {
-        return PA_CHANNEL_POSITION_REAR_LEFT;
-    } else if (name == QLatin1String("Rear Right")) {
-        return PA_CHANNEL_POSITION_REAR_RIGHT;
-    } else if (name == QLatin1String("Subwoofer")) {
-        return PA_CHANNEL_POSITION_SUBWOOFER;
-    }
-
-    return PA_CHANNEL_POSITION_MONO;
-}
-
-QString Sink::positionToChannelName(pa_channel_position_t position)
-{
-    switch (position) {
-    case PA_CHANNEL_POSITION_FRONT_LEFT:
-        return QStringLiteral("Front Left");
-    case PA_CHANNEL_POSITION_FRONT_RIGHT:
-        return QStringLiteral("Front Right");
-    case PA_CHANNEL_POSITION_FRONT_CENTER:
-        return QStringLiteral("Front Center");
-    case PA_CHANNEL_POSITION_SIDE_LEFT:
-        return QStringLiteral("Side Left");
-    case PA_CHANNEL_POSITION_SIDE_RIGHT:
-        return QStringLiteral("Side Right");
-    case PA_CHANNEL_POSITION_REAR_LEFT:
-        return QStringLiteral("Rear Left");
-    case PA_CHANNEL_POSITION_REAR_RIGHT:
-        return QStringLiteral("Rear Right");
-    case PA_CHANNEL_POSITION_SUBWOOFER:
-        return QStringLiteral("Subwoofer");
-    default:
-        return QStringLiteral("Mono");
-    }
-}
-
 void Sink::testChannel(const QString &name)
 {
     auto context = CanberraContext::instance()->canberra();
@@ -139,13 +92,13 @@ void Sink::testChannel(const QString &name)
     snprintf(dev, sizeof(dev), "%lu", (unsigned long) m_index);
     ca_context_change_device(context, dev);
 
-    QString sound_name =  QStringLiteral("audio-channel-") + positionAsString(channelNameToPosition(name));
+    QString sound_name =  QStringLiteral("audio-channel-") + name;
     ca_proplist *proplist;
     ca_proplist_create(&proplist);
 
     ca_proplist_sets(proplist, CA_PROP_MEDIA_ROLE, "test");
     ca_proplist_sets(proplist, CA_PROP_MEDIA_NAME, name.toLatin1().constData());
-    ca_proplist_sets(proplist, CA_PROP_CANBERRA_FORCE_CHANNEL, positionAsString(channelNameToPosition(name)).toLatin1().data());
+    ca_proplist_sets(proplist, CA_PROP_CANBERRA_FORCE_CHANNEL, name.toLatin1().data());
     ca_proplist_sets(proplist, CA_PROP_CANBERRA_ENABLE, "1");
 
     ca_proplist_sets(proplist, CA_PROP_EVENT_ID, sound_name.toLatin1().data());
@@ -163,36 +116,4 @@ void Sink::testChannel(const QString &name)
     ca_proplist_destroy(proplist);
 }
 
-QString Sink::positionAsString(pa_channel_position_t pos)
-{
-    switch (pos) {
-    case PA_CHANNEL_POSITION_FRONT_LEFT:
-        return QStringLiteral("front-left");
-    case PA_CHANNEL_POSITION_FRONT_LEFT_OF_CENTER:
-        return QStringLiteral("front-left-of-center");
-    case PA_CHANNEL_POSITION_FRONT_CENTER:
-        return QStringLiteral("front-center");
-    case PA_CHANNEL_POSITION_MONO:
-        return QStringLiteral("mono");
-    case PA_CHANNEL_POSITION_FRONT_RIGHT_OF_CENTER:
-        return QStringLiteral("front-right-of-center");
-    case PA_CHANNEL_POSITION_FRONT_RIGHT:
-        return QStringLiteral("front-right");
-    case PA_CHANNEL_POSITION_SIDE_LEFT:
-        return QStringLiteral("side-left");
-    case PA_CHANNEL_POSITION_SIDE_RIGHT:
-        return QStringLiteral("side-right");
-    case PA_CHANNEL_POSITION_REAR_LEFT:
-        return QStringLiteral("rear-left");
-    case PA_CHANNEL_POSITION_REAR_CENTER:
-        return QStringLiteral("rear-center");
-    case PA_CHANNEL_POSITION_REAR_RIGHT:
-        return QStringLiteral("rear-right");
-    case PA_CHANNEL_POSITION_SUBWOOFER:
-        return QStringLiteral("subwoofer");
-    default:
-        break;
-    }
-    return QStringLiteral("invalid");
-}
 } // QPulseAudio

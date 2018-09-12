@@ -147,8 +147,8 @@ ScrollView {
                 Button{
                     text: i18n("Front Left")
                     anchors.centerIn: parent
-                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Front Left") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("Front Left")
+                    visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("front-left") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("front-left")
                 }
             }
             Item {
@@ -158,8 +158,8 @@ ScrollView {
                 Button{
                     text: i18n("Front Center")
                     anchors.centerIn: parent
-                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Front Center") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("Front Center")
+                    visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("front-center") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("front-center")
                 }
             }
             Item {
@@ -169,8 +169,8 @@ ScrollView {
                 Button{
                     text: i18n("Front Right")
                     anchors.centerIn: parent
-                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Front Right") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("Front Right")
+                    visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("front-right") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("front-right")
                 }
             }
             Item {
@@ -180,8 +180,8 @@ ScrollView {
                 Button{
                     text: i18n("Side Left")
                     anchors.centerIn: parent
-                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Side Left") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("Side Left")
+                    visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("side-left") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("side-left")
 
                 }
             }
@@ -206,8 +206,8 @@ ScrollView {
                 Button{
                     text: i18n("Side Right")
                     anchors.centerIn: parent
-                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Side Right") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("Side Right")
+                    visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("side-right") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("side-right")
                 }
             }
             Item {
@@ -216,8 +216,8 @@ ScrollView {
                 Button{
                     text: i18n("Rear Left")
                     anchors.centerIn: parent
-                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Rear Left") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("Rear Left")
+                    visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("rear-left") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("rear-left")
                 }
             }
             Item {
@@ -226,8 +226,8 @@ ScrollView {
                 Button{
                     text: i18n("Subwoofer")
                     anchors.centerIn: parent
-                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Subwoofer") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("Subwoofer")
+                    visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("lfe") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("subwoofer")
                 }
             }
             Item {
@@ -236,8 +236,8 @@ ScrollView {
                 Button{
                     text: i18n("Rear Right")
                     anchors.centerIn: parent
-                    visible: sinks.pulseObject ? sinks.pulseObject.channels.indexOf("Rear Right") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("Rear Right")
+                    visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("rear-right") > -1 : false
+                    onClicked: sinks.pulseObject.testChannel("rear-right")
                 }
             }
         }

@@ -36,6 +36,7 @@ class VolumeObject : public PulseObject
     Q_PROPERTY(bool hasVolume READ hasVolume NOTIFY hasVolumeChanged)
     Q_PROPERTY(bool volumeWritable READ isVolumeWritable NOTIFY isVolumeWritableChanged)
     Q_PROPERTY(QStringList channels READ channels NOTIFY channelsChanged)
+    Q_PROPERTY(QStringList rawChannels READ rawChannels NOTIFY rawChannelsChanged)
     Q_PROPERTY(QList<qreal> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
 public:
     explicit VolumeObject(QObject *parent);
@@ -63,6 +64,16 @@ public:
             m_channels = infoChannels;
             Q_EMIT channelsChanged();
         }
+
+        QStringList infoRawChannels;
+        infoRawChannels.reserve(info->channel_map.channels);
+        for (int i = 0; i < info->channel_map.channels; ++i) {
+            infoRawChannels << QString::fromUtf8(pa_channel_position_to_string(info->channel_map.map[i]));
+        }
+        if (m_rawChannels != infoRawChannels) {
+            m_rawChannels = infoRawChannels;
+            Q_EMIT rawChannelsChanged();
+        }
     }
 
     qint64 volume() const;
@@ -75,6 +86,7 @@ public:
     bool isVolumeWritable() const;
 
     QStringList channels() const;
+    QStringList rawChannels() const;
     QList<qreal> channelVolumes() const;
     Q_INVOKABLE virtual void setChannelVolume(int channel, qint64 volume) = 0;
 
@@ -84,6 +96,7 @@ Q_SIGNALS:
     void hasVolumeChanged();
     void isVolumeWritableChanged();
     void channelsChanged();
+    void rawChannelsChanged();
     void channelVolumesChanged();
 
 protected:
@@ -94,6 +107,7 @@ protected:
     bool m_hasVolume;
     bool m_volumeWritable;
     QStringList m_channels;
+    QStringList m_rawChannels;
 };
 
 } // QPulseAudio
