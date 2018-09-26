@@ -44,7 +44,8 @@ Item {
     Layout.preferredHeight: units.gridUnit * 20
     Layout.preferredWidth: units.gridUnit * 20
 
-    Plasmoid.icon: paSinkModel.preferredSink ? Icon.name(paSinkModel.preferredSink.volume, paSinkModel.preferredSink.muted) : Icon.name(0, true)
+    Plasmoid.icon: paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink) ? Icon.name(paSinkModel.preferredSink.volume, paSinkModel.preferredSink.muted)
+                                                                                          : Icon.name(0, true)
     Plasmoid.switchWidth: units.gridUnit * 12
     Plasmoid.switchHeight: units.gridUnit * 12
     Plasmoid.toolTipMainText: {
@@ -61,6 +62,11 @@ Item {
     }
     Plasmoid.toolTipSubText: paSinkModel.preferredSink ? paSinkModel.preferredSink.description : ""
 
+    function isDummyOutput(output) {
+        // DEFAULT_SINK_NAME in module-always-sink.c
+        return output && output.name === "auto_null"
+    }
+
     function boundVolume(volume) {
         return Math.max(PulseAudio.MinimalVolume, Math.min(volume, maxVolumeValue));
     }
@@ -73,7 +79,7 @@ Item {
     }
 
     function increaseVolume() {
-        if (!paSinkModel.preferredSink) {
+        if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
             return;
         }
         var volume = boundVolume(paSinkModel.preferredSink.volume + volumeStep);
@@ -85,7 +91,7 @@ Item {
     }
 
     function decreaseVolume() {
-        if (!paSinkModel.preferredSink) {
+        if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
             return;
         }
         var volume = boundVolume(paSinkModel.preferredSink.volume - volumeStep);
@@ -97,7 +103,7 @@ Item {
     }
 
     function muteVolume() {
-        if (!paSinkModel.preferredSink) {
+        if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
             return;
         }
         var toMute = !paSinkModel.preferredSink.muted;
@@ -166,8 +172,7 @@ Item {
             var icon = Icon.formFactorIcon(defaultSink.formFactor);
             if (!icon) {
                 // Show "muted" icon for Dummy output
-                // DEFAULT_SINK_NAME in module-always-sink.c
-                if (defaultSink.name === "auto_null") {
+                if (isDummyOutput(defaultSink)) {
                     icon = "audio-volume-muted";
                 }
             }
