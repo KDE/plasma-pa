@@ -38,7 +38,7 @@ KCMPulseAudio::KCMPulseAudio(QObject *parent, const QVariantList &args)
     : KQuickAddons::ConfigModule(parent, args)
 {
     KAboutData *aboutData = new KAboutData("kcm_pulseaudio",
-                                           i18nc("@title", "PulseAudio"),
+                                           i18nc("@title", "Configure the Audio Volume"),
                                            global_s_versionStringFull,
                                            QStringLiteral(""),
                                            KAboutLicense::LicenseKey::GPL_V3,

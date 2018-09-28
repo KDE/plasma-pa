@@ -23,54 +23,56 @@ import QtQuick.Controls 1.3
 
 import org.kde.kcm 1.0
 import org.kde.plasma.core 2.0 as PlasmaCore /* for units.gridUnit */
-
+import org.kde.kirigami 2.5 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
-MouseArea {
+Kirigami.Page {
+    title: kcm.name
     property int wheelDelta: 0
     property QtObject sinkModel: SinkModel { }
     property QtObject sourceModel: SourceModel { }
+    ConfigModule.quickHelp: i18n("This module allows configuring the Pulseaudio sound subsystem.")
 
-    acceptedButtons: Qt.NoButton
-    implicitWidth: units.gridUnit * 30
-    implicitHeight: units.gridUnit * 30
+    contentItem: MouseArea {
+        acceptedButtons: Qt.NoButton
+        implicitWidth: units.gridUnit * 30
+        implicitHeight: units.gridUnit * 30
 
-    ConfigModule.quickHelp: i18n("This module allows to set up the Pulseaudio sound subsystem.")
+        onWheel: {
+            if (tabView.childAt(wheel.x, wheel.y).objectName != "tabbar") {
+                wheel.accepted = false;
+                return;
+            }
+            var delta = wheel.angleDelta.y || wheel.angleDelta.x;
+            wheelDelta += delta;
+            // Magic number 120 for common "one click"
+            // See: http://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
+            while (wheelDelta >= 120) {
+                wheelDelta -= 120;
+                tabView.currentIndex = Math.max(0, tabView.currentIndex - 1);
+            }
+            while (wheelDelta <= -120) {
+                wheelDelta += 120;
+                tabView.currentIndex = Math.min(tabView.count - 1, tabView.currentIndex + 1);
+            }
+        }
 
-    onWheel: {
-        if (tabView.childAt(wheel.x, wheel.y).objectName != "tabbar") {
-            wheel.accepted = false;
-            return;
-        }
-        var delta = wheel.angleDelta.y || wheel.angleDelta.x;
-        wheelDelta += delta;
-        // Magic number 120 for common "one click"
-        // See: http://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
-        while (wheelDelta >= 120) {
-            wheelDelta -= 120;
-            tabView.currentIndex = Math.max(0, tabView.currentIndex - 1);
-        }
-        while (wheelDelta <= -120) {
-            wheelDelta += 120;
-            tabView.currentIndex = Math.min(tabView.count - 1, tabView.currentIndex + 1);
-        }
-    }
+        TabView {
+            id: tabView
+            anchors.fill: parent
 
-    TabView {
-        id: tabView
-        anchors.fill: parent
-
-        Tab {
-            title: i18nc("@title:tab", "Devices")
-            Devices {}
-        }
-        Tab {
-            title: i18nc("@title:tab", "Applications")
-            Applications {}
-        }
-        Tab {
-            title: i18nc("@title:tab", "Advanced")
-            Advanced {}
+            Tab {
+                title: i18nc("@title:tab", "Devices")
+                Devices {}
+            }
+            Tab {
+                title: i18nc("@title:tab", "Applications")
+                Applications {}
+            }
+            Tab {
+                title: i18nc("@title:tab", "Advanced")
+                Advanced {}
+            }
         }
     }
 }
