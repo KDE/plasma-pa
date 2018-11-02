@@ -78,7 +78,7 @@ Comment[x-test]=xxAdjust the volume of devices and applicationsxx
 Comment[zh_CN]=调整设备和程序的音量
 Comment[zh_TW]=調整裝置與應用程式的音量
 
-Icon=org.kde.plasma.volume
+Icon=audio-volume-high
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet
 
