@@ -35,7 +35,7 @@ MouseArea {
     implicitWidth: units.gridUnit * 30
     implicitHeight: units.gridUnit * 30
 
-    ConfigModule.quickHelp: i18n("This module allows to set up the Pulseaudio sound subsystem.")
+    ConfigModule.quickHelp: i18nd("kcm_pulseaudio", "This module allows to set up the Pulseaudio sound subsystem.")
 
     onWheel: {
         if (tabView.childAt(wheel.x, wheel.y).objectName != "tabbar") {
@@ -61,15 +61,15 @@ MouseArea {
         anchors.fill: parent
 
         Tab {
-            title: i18nc("@title:tab", "Devices")
+            title: i18ndc("kcm_pulseaudio", "@title:tab", "Devices")
             Devices {}
         }
         Tab {
-            title: i18nc("@title:tab", "Applications")
+            title: i18ndc("kcm_pulseaudio", "@title:tab", "Applications")
             Applications {}
         }
         Tab {
-            title: i18nc("@title:tab", "Advanced")
+            title: i18ndc("kcm_pulseaudio", "@title:tab", "Advanced")
             Advanced {}
         }
     }

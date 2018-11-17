@@ -40,8 +40,8 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             enabled: view.count > 0
-            text: i18n("Device Profiles")
-            disabledText: i18nc("@label", "No Device Profiles Available")
+            text: i18nd("kcm_pulseaudio", "Device Profiles")
+            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Device Profiles Available")
         }
 
         ListView {
@@ -57,7 +57,7 @@ ScrollView {
 
         Header {
             Layout.fillWidth: true
-            text: i18n("Advanced Output Configuration")
+            text: i18nd("kcm_pulseaudio", "Advanced Output Configuration")
             visible: moduleManager.settingsSupported
         }
 
@@ -70,7 +70,7 @@ ScrollView {
             Layout.topMargin: units.smallSpacing
             Layout.leftMargin: units.gridUnit / 2
             Layout.rightMargin: units.gridUnit / 2
-            text: i18n("Add virtual output device for simultaneous output on all local sound cards")
+            text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")
             checked: moduleManager.combineSinks
             onCheckedChanged: moduleManager.combineSinks = checked;
             enabled: moduleManager.loadedModules.indexOf("module-gconf") != -1
@@ -81,7 +81,7 @@ ScrollView {
             Layout.fillWidth: true
             Layout.leftMargin: units.gridUnit / 2
             Layout.rightMargin: units.gridUnit / 2
-            text: i18n("Automatically switch all running streams when a new output becomes available")
+            text: i18nd("kcm_pulseaudio", "Automatically switch all running streams when a new output becomes available")
             checked: moduleManager.switchOnConnect
             onCheckedChanged: moduleManager.switchOnConnect = checked;
             enabled: moduleManager.loadedModules.indexOf("module-gconf") != -1
@@ -92,13 +92,13 @@ ScrollView {
             Layout.alignment: Qt.AlignHCenter
             enabled: false
             font.italic: true
-            text: i18n("Requires 'module-gconf' PulseAudio module")
+            text: i18nd("kcm_pulseaudio", "Requires 'module-gconf' PulseAudio module")
             visible: moduleManager.settingsSupported && moduleManager.loadedModules.indexOf("module-gconf") == -1
         }
 
         Header {
             Layout.fillWidth: true
-            text: i18n("Speaker Placement and Testing")
+            text: i18nd("kcm_pulseaudio", "Speaker Placement and Testing")
         }
 
         RowLayout {
@@ -106,7 +106,7 @@ ScrollView {
             visible: sinks.count > 1
 
             Label {
-                text: i18nc("@label", "Output:")
+                text: i18ndc("kcm_pulseaudio", "@label", "Output:")
                 font.bold: true
             }
 
@@ -145,7 +145,7 @@ ScrollView {
                 height: 50
 
                 Button{
-                    text: i18n("Front Left")
+                    text: i18nd("kcm_pulseaudio", "Front Left")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("front-left") > -1 : false
                     onClicked: sinks.pulseObject.testChannel("front-left")
@@ -156,7 +156,7 @@ ScrollView {
                 height: 50
 
                 Button{
-                    text: i18n("Front Center")
+                    text: i18nd("kcm_pulseaudio", "Front Center")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("front-center") > -1 : false
                     onClicked: sinks.pulseObject.testChannel("front-center")
@@ -167,7 +167,7 @@ ScrollView {
                 height: 50
 
                 Button{
-                    text: i18n("Front Right")
+                    text: i18nd("kcm_pulseaudio", "Front Right")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("front-right") > -1 : false
                     onClicked: sinks.pulseObject.testChannel("front-right")
@@ -178,7 +178,7 @@ ScrollView {
                 height: 50
 
                 Button{
-                    text: i18n("Side Left")
+                    text: i18nd("kcm_pulseaudio", "Side Left")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("side-left") > -1 : false
                     onClicked: sinks.pulseObject.testChannel("side-left")
@@ -204,7 +204,7 @@ ScrollView {
                 width: grid.width/3
                 height: 50
                 Button{
-                    text: i18n("Side Right")
+                    text: i18nd("kcm_pulseaudio", "Side Right")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("side-right") > -1 : false
                     onClicked: sinks.pulseObject.testChannel("side-right")
@@ -214,7 +214,7 @@ ScrollView {
                 width: grid.width/3
                 height: 50
                 Button{
-                    text: i18n("Rear Left")
+                    text: i18nd("kcm_pulseaudio", "Rear Left")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("rear-left") > -1 : false
                     onClicked: sinks.pulseObject.testChannel("rear-left")
@@ -224,7 +224,7 @@ ScrollView {
                 width: grid.width/3
                 height: 50
                 Button{
-                    text: i18n("Subwoofer")
+                    text: i18nd("kcm_pulseaudio", "Subwoofer")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("lfe") > -1 : false
                     onClicked: sinks.pulseObject.testChannel("subwoofer")
@@ -234,7 +234,7 @@ ScrollView {
                 width: grid.width/3
                 height: 50
                 Button{
-                    text: i18n("Rear Right")
+                    text: i18nd("kcm_pulseaudio", "Rear Right")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("rear-right") > -1 : false
                     onClicked: sinks.pulseObject.testChannel("rear-right")

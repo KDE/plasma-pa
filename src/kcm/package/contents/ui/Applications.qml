@@ -40,8 +40,8 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             enabled: eventStreamView.count || sinkInputView.count
-            text: i18n("Playback")
-            disabledText: i18nc("@label", "No Applications Playing Audio")
+            text: i18nd("kcm_pulseaudio", "Playback")
+            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Playing Audio")
         }
 
         ListView {
@@ -79,8 +79,8 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             enabled: sourceOutputView.count > 0
-            text: i18n("Capture")
-            disabledText: i18nc("@label", "No Applications Recording Audio")
+            text: i18nd("kcm_pulseaudio", "Capture")
+            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Recording Audio")
         }
 
         ListView {

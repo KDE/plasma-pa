@@ -85,7 +85,7 @@ RowLayout {
             y: slider.height / 1.2
             opacity: 0.5
             font.pixelSize: slider.height / 2.2
-            text: i18n("100%")
+            text: i18nd("kcm_pulseaudio", "100%")
         }
 
         Timer {
@@ -101,12 +101,12 @@ RowLayout {
         Layout.alignment: Qt.AlignHCenter
         Layout.minimumWidth: percentMetrics.advanceWidth
         horizontalAlignment: Qt.AlignRight
-        text: i18nc("volume percentage", "%1%", Math.round(value / PulseAudio.NormalVolume * 100.0))
+        text: i18ndc("kcm_pulseaudio", "volume percentage", "%1%", Math.round(value / PulseAudio.NormalVolume * 100.0))
     }
 
     TextMetrics {
         id: percentMetrics
         font: percentText.font
-        text: i18nc("only used for sizing, should be widest possible string", "100%")
+        text: i18ndc("kcm_pulseaudio", "only used for sizing, should be widest possible string", "100%")
     }
 }
