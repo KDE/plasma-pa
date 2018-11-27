@@ -70,7 +70,7 @@ ColumnLayout {
             visible: portbox.count > 1
 
             Label {
-                text: i18n("Port")
+                text: i18nd("kcm_pulseaudio", "Port")
             }
 
             ComboBox {
@@ -88,9 +88,9 @@ ColumnLayout {
                         var text = port.description;
                         if (port.availability == Port.Unavailable) {
                             if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
-                                text += i18nc("Port is unavailable", " (unavailable)");
+                                text += i18ndc("kcm_pulseaudio", "Port is unavailable", " (unavailable)");
                             } else {
-                                text += i18nc("Port is unplugged", " (unplugged)");
+                                text += i18ndc("kcm_pulseaudio", "Port is unplugged", " (unplugged)");
                             }
                         }
                         items.push(text);

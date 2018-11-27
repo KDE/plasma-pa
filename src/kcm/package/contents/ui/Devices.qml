@@ -36,8 +36,8 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             enabled: sinks.count > 0
-            text: i18n("Outputs")
-            disabledText: i18nc("@label", "No Output Devices Available")
+            text: i18nd("kcm_pulseaudio", "Outputs")
+            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Output Devices Available")
         }
 
         ListView {
@@ -54,8 +54,8 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             enabled: sources.count > 0
-            text: i18n("Inputs")
-            disabledText: i18nc("@label", "No Input Devices Available")
+            text: i18nd("kcm_pulseaudio", "Inputs")
+            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Input Devices Available")
         }
 
         ListView {

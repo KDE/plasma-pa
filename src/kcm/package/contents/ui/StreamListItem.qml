@@ -56,9 +56,9 @@ ColumnLayout {
                     Layout.fillWidth: true
                     text: {
                         if (isEventStream) {
-                            return i18n("Notification Sounds");
+                            return i18nd("kcm_pulseaudio", "Notification Sounds");
                         } else if (Client) {
-                            return i18nc("label of stream items", "%1: %2", Client.name, Name);
+                            return i18ndc("kcm_pulseaudio", "label of stream items", "%1: %2", Client.name, Name);
                         } else {
                             return Name;
                         }

@@ -25,7 +25,7 @@ ToolButton {
     property bool muted: true
 
     iconName: 'audio-volume-muted'
-    tooltip: i18n("Mute audio")
+    tooltip: i18nd("kcm_pulseaudio", "Mute audio")
     checkable: true
     checked: muted
     onMutedChanged: checked = muted

@@ -25,6 +25,6 @@ RadioButton {
     property bool isDefault: true
 
     checked: isDefault
-    text: checked ? i18n("Default") : ""
+    text: checked ? i18nd("kcm_pulseaudio", "Default") : ""
     onIsDefaultChanged: checked = isDefault
 }

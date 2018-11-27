@@ -31,7 +31,7 @@ Kirigami.Page {
     property int wheelDelta: 0
     property QtObject sinkModel: SinkModel { }
     property QtObject sourceModel: SourceModel { }
-    ConfigModule.quickHelp: i18n("This module allows configuring the Pulseaudio sound subsystem.")
+    ConfigModule.quickHelp: i18nd("kcm_pulseaudio", "This module allows configuring the Pulseaudio sound subsystem.")
 
     contentItem: MouseArea {
         acceptedButtons: Qt.NoButton
@@ -62,15 +62,15 @@ Kirigami.Page {
             anchors.fill: parent
 
             Tab {
-                title: i18nc("@title:tab", "Devices")
+                title: i18ndc("kcm_pulseaudio", "@title:tab", "Devices")
                 Devices {}
             }
             Tab {
-                title: i18nc("@title:tab", "Applications")
+                title: i18ndc("kcm_pulseaudio", "@title:tab", "Applications")
                 Applications {}
             }
             Tab {
-                title: i18nc("@title:tab", "Advanced")
+                title: i18ndc("kcm_pulseaudio", "@title:tab", "Advanced")
                 Advanced {}
             }
         }

@@ -49,7 +49,7 @@ ColumnLayout {
     RowLayout {
         Label {
             id: profileLabel
-            text: i18nc("@label", "Profile:")
+            text: i18ndc("kcm_pulseaudio", "@label", "Profile:")
             font.bold: true
         }
         ComboBox {
