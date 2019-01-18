@@ -45,6 +45,13 @@ find_package(PulseAudio 5.0.0 REQUIRED)
 find_package(Canberra REQUIRED)
 find_package(GLIB2 REQUIRED)
 
+find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)
+set_package_properties(KF5Kirigami2 PROPERTIES
+    DESCRIPTION "A QtQuick based components set"
+    PURPOSE "Required at runtime the KCM"
+    TYPE RUNTIME
+)
+
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 add_subdirectory(applet)
