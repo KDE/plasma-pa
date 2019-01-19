@@ -20,7 +20,7 @@
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.0
-import QtQuick.Controls 1.0
+import QtQuick.Controls 2.0
 
 import org.kde.plasma.private.volume 0.1
 
@@ -38,8 +38,8 @@ RowLayout {
         property bool ignoreValueChange: true
 
         Layout.fillWidth: true
-        minimumValue: PulseAudio.MinimalVolume
-        maximumValue: PulseAudio.MaximalVolume
+        from: PulseAudio.MinimalVolume
+        to: PulseAudio.MaximalVolume
         visible: HasVolume
         enabled: VolumeWritable
         opacity: Muted ? 0.5 : 1

@@ -20,16 +20,22 @@
 
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
-import QtQuick.Controls 1.3
+import QtQuick.Controls 2.3
 
 ScrollView {
     id: scrollView
 
+    contentWidth: contentLayout.width
+    contentHeight: contentLayout.height
+    clip: true
+
     ColumnLayout {
+        id: contentLayout
+
         Component.onCompleted: {
             // Normal binding causes binding loops
             width = Qt.binding(function() {
-                return scrollView.viewport.width;
+                return scrollView.width;
             });
         }
 

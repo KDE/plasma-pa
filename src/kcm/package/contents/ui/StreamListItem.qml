@@ -19,11 +19,10 @@
 */
 
 import QtQuick 2.0
-import QtQuick.Controls 1.0
+import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
 
-import org.kde.kquickcontrolsaddons 2.0
-
+import org.kde.kirigami 2.5 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
 ColumnLayout {
@@ -38,12 +37,11 @@ ColumnLayout {
         Layout.fillWidth: true
         spacing: units.smallSpacing * 2
 
-        QIconItem {
-            id: clientIcon
-
+        Kirigami.Icon {
+            Layout.alignment: Qt.AlignHCenter
             Layout.preferredHeight: delegateColumn.height * 0.60
             Layout.preferredWidth: Layout.preferredHeight
-            icon: IconName || "unknown"
+            source: IconName || "unknown"
         }
 
         ColumnLayout {

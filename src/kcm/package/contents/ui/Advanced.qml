@@ -20,7 +20,7 @@
 
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
-import QtQuick.Controls 1.3
+import QtQuick.Controls 2.2
 
 import org.kde.plasma.private.volume 0.1
 import org.kde.kcoreaddons 1.0 as KCoreAddons
@@ -29,11 +29,17 @@ import org.kde.kcoreaddons 1.0 as KCoreAddons
 ScrollView {
     id: scrollView
 
+    contentWidth: contentLayout.width
+    contentHeight: contentLayout.height
+    clip: true
+
     ColumnLayout {
+        id: contentLayout
+
         Component.onCompleted: {
             // Normal binding causes binding loops
             width = Qt.binding(function() {
-                return scrollView.viewport.width;
+                return scrollView.width;
             });
         }
 
