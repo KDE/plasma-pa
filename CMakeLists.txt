@@ -45,6 +45,21 @@ find_package(PulseAudio 5.0.0 REQUIRED)
 find_package(Canberra REQUIRED)
 find_package(GLIB2 REQUIRED)
 
+find_package(CanberraPulse)
+set_package_properties(CanberraPulse PROPERTIES
+    DESCRIPTION "Pulseaudio backend for libcanberra"
+    PURPOSE "Required for volume feedback sounds"
+    TYPE RUNTIME
+)
+
+find_package(SoundThemeFreedesktop)
+set_package_properties(SoundThemeFreedesktop PROPERTIES
+    DESCRIPTION "The standard freedesktop sound theme"
+    PURPOSE "Required for volume feedback sounds"
+    URL "https://www.freedesktop.org/wiki/Specifications/sound-theme-spec/"
+    TYPE RUNTIME
+)
+
 find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)
 set_package_properties(KF5Kirigami2 PROPERTIES
     DESCRIPTION "A QtQuick based components set"

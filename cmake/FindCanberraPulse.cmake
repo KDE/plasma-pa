@@ -1,12 +1,8 @@
-# - Find libcanberra's libraries and headers.
+# - Find libcanberra's pulseaudio backend.
 # This module defines the following variables:
 #
-#  CANBERRA_FOUND        - true if libcanberra was found
-#  CANBERRA_LIBRARIES    - libcanberra libraries to link against
-#  CANBERRA_INCLUDE_DIRS - include path for libcanberra
-#  CANBERRA_VERSION      - version of libcanberra
+#  CanberraPulse_FOUND - true if the backend was found
 #
-# Copyright (c) 2012 Raphael Kubo da Costa <rakuco@FreeBSD.org>
 # Copyright (c) 2019 Harald Sitter <sitter@kde.org>
 #
 # Redistribution and use in source and binary forms, with or without
@@ -33,25 +29,18 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-find_package(PkgConfig)
-pkg_check_modules(PC_CANBERRA libcanberra)
+find_package(Canberra)
 
-find_library(CANBERRA_LIBRARIES
-    NAMES canberra
-    HINTS ${PC_CANBERRA_LIBRARY_DIRS} ${PC_CANBERRA_LIBDIR}
+find_library(CanberraPulse_LIBRARY canberra-pulse
+    PATH_SUFFIXES libcanberra libcanberra-${CANBERRA_VERSION}
 )
-
-find_path(CANBERRA_INCLUDE_DIRS
-    NAMES canberra.h
-    HINTS ${PC_CANBERRA_INCLUDE_DIRS} ${PC_CANBERRA_INCLUDEDIR}
-)
-
-set(CANBERRA_VERSION ${PC_CANBERRA_VERSION})
 
 include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(Canberra
-    REQUIRED_VARS CANBERRA_LIBRARIES CANBERRA_INCLUDE_DIRS
-    VERSION_VAR CANBERRA_VERSION
+find_package_handle_standard_args(CanberraPulse
+    FOUND_VAR CanberraPulse_FOUND
+    REQUIRED_VARS CanberraPulse_LIBRARY
 )
+mark_as_advanced(CanberraPulse_LIBRARY)
 
-mark_as_advanced(CANBERRA_LIBRARIES CANBERRA_INCLUDE_DIRS CANBERRA_VERSION)
+# NB: CanberraPulse_LIBRARY is intentionally not documented as it serves no
+#   public purpose (it's a plugin, not a library).
