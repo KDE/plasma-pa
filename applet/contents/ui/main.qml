@@ -39,15 +39,15 @@ Item {
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
-    Layout.minimumHeight: units.gridUnit * 12
-    Layout.minimumWidth: units.gridUnit * 12
+    Layout.minimumHeight: units.gridUnit * 18
+    Layout.minimumWidth: units.gridUnit * 18
     Layout.preferredHeight: units.gridUnit * 20
     Layout.preferredWidth: units.gridUnit * 20
 
     Plasmoid.icon: paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink) ? Icon.name(paSinkModel.preferredSink.volume, paSinkModel.preferredSink.muted)
                                                                                           : Icon.name(0, true)
-    Plasmoid.switchWidth: units.gridUnit * 12
-    Plasmoid.switchHeight: units.gridUnit * 12
+    Plasmoid.switchWidth: units.gridUnit * 18
+    Plasmoid.switchHeight: units.gridUnit * 18
     Plasmoid.toolTipMainText: {
         var sink = paSinkModel.preferredSink;
         if (!sink) {
@@ -291,6 +291,8 @@ Item {
 
     Plasmoid.fullRepresentation: ColumnLayout {
         spacing: units.smallSpacing
+        Layout.minimumHeight: main.Layout.minimumHeight
+        Layout.minimumWidth: main.Layout.minimumWidth
 
         function beginMoveStream(type, stream) {
             if (type == "sink") {
