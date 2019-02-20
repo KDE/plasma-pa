@@ -300,6 +300,25 @@ PlasmaComponents.ListItem {
             });
             contextMenu.addMenuItem(menuItem);
 
+            // Switch all streams of the relevant kind to this device
+            if (type == "source") {
+                menuItem = newMenuItem();
+                menuItem.text = i18n("Record all audio via this device");
+                menuItem.icon = "mic-on" // or "mic-ready" // or "audio-input-microphone-symbolic"
+                menuItem.clicked.connect(function() {
+                    PulseObject.switchStreams();
+                });
+                contextMenu.addMenuItem(menuItem);
+            } else if (type == "sink") {
+                menuItem = newMenuItem();
+                menuItem.text = i18n("Play all audio via this device");
+                menuItem.icon = "audio-on" // or "audio-ready" // or "audio-speakers-symbolic"
+                menuItem.clicked.connect(function() {
+                    PulseObject.switchStreams();
+                });
+                contextMenu.addMenuItem(menuItem);
+            }
+
             // Ports
             if (PulseObject.ports && PulseObject.ports.length > 0) {
                 contextMenu.addMenuItem(newSeperator());

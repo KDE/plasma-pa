@@ -123,6 +123,8 @@ public:
     virtual void setDefault(bool enable) = 0;
     bool isVirtualDevice() const;
 
+    virtual Q_INVOKABLE void switchStreams() = 0;
+
 Q_SIGNALS:
     void stateChanged();
     void nameChanged();

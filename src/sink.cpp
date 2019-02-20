@@ -22,6 +22,7 @@
 
 #include "context.h"
 #include "server.h"
+#include "sinkinput.h"
 #include "canberracontext.h"
 #include <pulse/channelmap.h>
 
@@ -114,6 +115,14 @@ void Sink::testChannel(const QString &name)
 
     ca_context_change_device(context, nullptr);
     ca_proplist_destroy(proplist);
+}
+
+void Sink::switchStreams()
+{
+    auto data = context()->sinkInputs().data();
+    std::for_each(data.begin(), data.end(), [this](SinkInput* paObj) {
+        paObj->setDeviceIndex(m_index);
+    });
 }
 
 } // QPulseAudio

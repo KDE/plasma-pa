@@ -44,6 +44,8 @@ public:
     bool isDefault() const override;
     void setDefault(bool enable) override;
 
+    void switchStreams() override;
+
 public Q_SLOTS:
     void testChannel(const QString &name);
 };

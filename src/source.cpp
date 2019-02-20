@@ -22,6 +22,7 @@
 
 #include "context.h"
 #include "server.h"
+#include "sourceoutput.h"
 
 namespace QPulseAudio
 {
@@ -72,6 +73,14 @@ void Source::setDefault(bool enable)
     if (!isDefault() && enable) {
         context()->server()->setDefaultSource(this);
     }
+}
+
+void Source::switchStreams()
+{
+    auto data = context()->sourceOutputs().data();
+    std::for_each(data.begin(), data.end(), [this](SourceOutput* paObj) {
+        paObj->setDeviceIndex(m_index);
+    });
 }
 
 } // QPulseAudio
