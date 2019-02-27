@@ -32,7 +32,7 @@
 find_package(Canberra)
 
 find_library(CanberraPulse_LIBRARY canberra-pulse
-    PATH_SUFFIXES libcanberra libcanberra-${CANBERRA_VERSION}
+    PATH_SUFFIXES libcanberra libcanberra-${Canberra_VERSION}
 )
 
 include(FindPackageHandleStandardArgs)

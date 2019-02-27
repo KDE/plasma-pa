@@ -49,9 +49,9 @@ target_link_libraries(plasma-volume-declarative
     Qt5::DBus
     Qt5::Quick
     KF5::GlobalAccel
+    Canberra::Canberra
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
-    ${CANBERRA_LIBRARIES}
 )
 
 if (HAVE_GCONF)
