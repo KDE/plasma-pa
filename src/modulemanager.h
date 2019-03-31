@@ -29,11 +29,9 @@
 // Properties need fully qualified classes even with pointers.
 #include "client.h"
 
-class GConfItem;
-
 namespace QPulseAudio
 {
-class GConfModule;
+class ConfigModule;
 
 class ModuleManager : public QObject
 {
@@ -41,6 +39,8 @@ class ModuleManager : public QObject
     Q_PROPERTY(bool settingsSupported READ settingsSupported CONSTANT)
     Q_PROPERTY(bool combineSinks READ combineSinks WRITE setCombineSinks NOTIFY combineSinksChanged)
     Q_PROPERTY(bool switchOnConnect READ switchOnConnect WRITE setSwitchOnConnect NOTIFY switchOnConnectChanged)
+    Q_PROPERTY(bool configModuleLoaded READ configModuleLoaded NOTIFY loadedModulesChanged)
+    Q_PROPERTY(QString configModuleName READ configModuleName CONSTANT)
     Q_PROPERTY(QStringList loadedModules READ loadedModules NOTIFY loadedModulesChanged)
 public:
     explicit ModuleManager(QObject *parent = nullptr);
@@ -52,6 +52,8 @@ public:
     bool switchOnConnect() const;
     void setSwitchOnConnect(bool switchOnConnect);
     QStringList loadedModules() const;
+    bool configModuleLoaded() const;
+    QString configModuleName() const;
 
 Q_SIGNALS:
     void combineSinksChanged();
@@ -61,9 +63,9 @@ Q_SIGNALS:
 private:
     void updateLoadedModules();
 
-    GConfModule *m_combineSinks;
-    GConfModule *m_switchOnConnect;
-    GConfModule *m_deviceManager;
+    ConfigModule *m_combineSinks;
+    ConfigModule *m_switchOnConnect;
+    ConfigModule *m_deviceManager;
     QStringList m_loadedModules;
 };
 

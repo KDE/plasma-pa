@@ -20,11 +20,6 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMOptionalAddSubdirectory)
 
 include(FindPkgConfig)
-pkg_check_modules(GCONF gconf-2.0)
-pkg_check_modules(GOBJECT gobject-2.0)
-if (GCONF_FOUND AND GOBJECT_FOUND)
-    set(HAVE_GCONF TRUE)
-endif()
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
@@ -44,6 +39,16 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 find_package(PulseAudio 5.0.0 REQUIRED)
 find_package(Canberra REQUIRED)
 find_package(GLIB2 REQUIRED)
+
+option(USE_GCONF "Use legacy GConf instead of GSettings")
+
+pkg_check_modules(GOBJECT gobject-2.0 REQUIRED)
+if(USE_GCONF)
+    pkg_check_modules(GCONF gconf-2.0 REQUIRED)
+else()
+    find_package(GIO REQUIRED)
+    set(USE_GSETTINGS True)
+endif()
 
 find_package(CanberraPulse)
 set_package_properties(CanberraPulse PROPERTIES

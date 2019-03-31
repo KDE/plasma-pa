@@ -79,7 +79,7 @@ ScrollView {
             text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")
             checked: moduleManager.combineSinks
             onCheckedChanged: moduleManager.combineSinks = checked;
-            enabled: moduleManager.loadedModules.indexOf("module-gconf") != -1
+            enabled: moduleManager.configModuleLoaded
             visible: moduleManager.settingsSupported
         }
 
@@ -90,7 +90,7 @@ ScrollView {
             text: i18nd("kcm_pulseaudio", "Automatically switch all running streams when a new output becomes available")
             checked: moduleManager.switchOnConnect
             onCheckedChanged: moduleManager.switchOnConnect = checked;
-            enabled: moduleManager.loadedModules.indexOf("module-gconf") != -1
+            enabled: moduleManager.configModuleLoaded
             visible: moduleManager.settingsSupported
         }
 
@@ -98,8 +98,8 @@ ScrollView {
             Layout.alignment: Qt.AlignHCenter
             enabled: false
             font.italic: true
-            text: i18nd("kcm_pulseaudio", "Requires 'module-gconf' PulseAudio module")
-            visible: moduleManager.settingsSupported && moduleManager.loadedModules.indexOf("module-gconf") == -1
+            text: i18nd("kcm_pulseaudio", "Requires %1 PulseAudio module", moduleManager.configModuleName)
+            visible: moduleManager.settingsSupported && !moduleManager.configModuleLoaded
         }
 
         Header {

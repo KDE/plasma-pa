@@ -23,10 +23,15 @@
 #include "module.h"
 #include "../config.h"
 
-#if HAVE_GCONF
+#if USE_GSETTINGS
+#include "gsettingsitem.h"
+
+#define PA_SETTINGS_PATH_MODULES "/org/freedesktop/pulseaudio/module-groups"
+#endif
+
+#if USE_GCONF
 #include "gconfitem.h"
-#define PA_GCONF_ROOT "/system/pulseaudio"
-#define PA_GCONF_PATH_MODULES PA_GCONF_ROOT"/modules"
+#define PA_SETTINGS_PATH_MODULES "/system/pulseaudio/modules"
 #endif
 
 #include <QTimer>
@@ -34,29 +39,38 @@
 namespace QPulseAudio
 {
 
-#if HAVE_GCONF
-class GConfModule : public GConfItem
+#if USE_GCONF || USE_GSETTINGS
+
+#if USE_GSETTINGS
+class ConfigModule : public GSettingsItem
+#elif USE_GCONF
+class ConfigModule : public GConfItem
+#endif
 {
 public:
-    GConfModule(const QString &configName, const QString &moduleName, QObject *parent);
+    ConfigModule(const QString &configName, const QString &moduleName, QObject *parent);
     bool isEnabled() const;
     void setEnabled(bool enabled, const QVariant &args=QVariant());
 private:
     QString m_moduleName;
 };
 
-GConfModule::GConfModule(const QString &configName, const QString &moduleName, QObject *parent) :
-    GConfItem(QStringLiteral(PA_GCONF_PATH_MODULES"/") + configName, parent),
+ConfigModule::ConfigModule(const QString &configName, const QString &moduleName, QObject *parent) :
+#if USE_GSETTINGS
+    GSettingsItem(QStringLiteral(PA_SETTINGS_PATH_MODULES"/") + configName + QStringLiteral("/"), parent),
+#elif USE_GCONF
+    GConfItem(QStringLiteral(PA_SETTINGS_PATH_MODULES"/") + configName, parent),
+#endif
     m_moduleName(moduleName)
 {
 }
 
-bool GConfModule::isEnabled() const
+bool ConfigModule::isEnabled() const
 {
     return value(QStringLiteral("enabled")).toBool();
 }
 
-void GConfModule::setEnabled(bool enabled, const QVariant &args)
+void ConfigModule::setEnabled(bool enabled, const QVariant &args)
 {
     set(QStringLiteral("locked"), true);
 
@@ -69,20 +83,20 @@ void GConfModule::setEnabled(bool enabled, const QVariant &args)
     }
     set(QStringLiteral("locked"), false);
 }
-#endif
 
+#endif
 
 ModuleManager::ModuleManager(QObject *parent) :
     QObject(parent)
 {
-#if HAVE_GCONF
-    m_combineSinks = new GConfModule(QStringLiteral("combine"), QStringLiteral("module-combine"), this);
-    m_switchOnConnect = new GConfModule(QStringLiteral("switch-on-connect"), QStringLiteral("module-switch-on-connect"), this);
-    m_deviceManager = new GConfModule(QStringLiteral("device-manager"), QStringLiteral("module-device-manager"), this);
+#if USE_GCONF || USE_GSETTINGS
+    m_combineSinks = new ConfigModule(QStringLiteral("combine"), QStringLiteral("module-combine"), this);
+    m_switchOnConnect = new ConfigModule(QStringLiteral("switch-on-connect"), QStringLiteral("module-switch-on-connect"), this);
+    m_deviceManager = new ConfigModule(QStringLiteral("device-manager"), QStringLiteral("module-device-manager"), this);
 
-    connect(m_combineSinks, &GConfItem::subtreeChanged, this, &ModuleManager::combineSinksChanged);
-    connect(m_switchOnConnect, &GConfItem::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
-    connect(m_deviceManager, &GConfItem::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
+    connect(m_combineSinks, &ConfigModule::subtreeChanged, this, &ModuleManager::combineSinksChanged);
+    connect(m_switchOnConnect, &ConfigModule::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
+    connect(m_deviceManager, &ConfigModule::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
 #endif
 
     QTimer *updateModulesTimer = new QTimer(this);
@@ -100,7 +114,7 @@ ModuleManager::~ModuleManager()
 
 bool ModuleManager::settingsSupported() const
 {
-#if HAVE_GCONF
+#if USE_GCONF || USE_GSETTINGS
     return true;
 #else
     return false;
@@ -109,7 +123,7 @@ bool ModuleManager::settingsSupported() const
 
 bool ModuleManager::combineSinks() const
 {
-#if HAVE_GCONF
+#if USE_GCONF || USE_GSETTINGS
     return m_combineSinks->isEnabled();
 #else
     return false;
@@ -118,21 +132,21 @@ bool ModuleManager::combineSinks() const
 
 void ModuleManager::setCombineSinks(bool combineSinks)
 {
-#if HAVE_GCONF
+#if USE_GCONF || USE_GSETTINGS
     m_combineSinks->setEnabled(combineSinks);
 #else
-    Q_UNUSED(combineSinks)
+    Q_UNUSED(combineSinks()
 #endif
 }
 
 bool ModuleManager::switchOnConnect() const
 {
+#if USE_GCONF || USE_GSETTINGS
     //switch on connect and device-manager do the same task. Only one should be enabled
 
     //Note on the first run m_deviceManager will appear to be disabled even though it's actually running
     //because there is no gconf entry, however m_switchOnConnect will only exist if set by Plasma PA
     //hence only check this entry
-#if HAVE_GCONF
     return m_switchOnConnect->isEnabled() ;
 #else
     return false;
@@ -141,7 +155,7 @@ bool ModuleManager::switchOnConnect() const
 
 void ModuleManager::setSwitchOnConnect(bool switchOnConnect)
 {
-#if HAVE_GCONF
+#if USE_GCONF || USE_GSETTINGS
     m_deviceManager->setEnabled(!switchOnConnect);
     m_switchOnConnect->setEnabled(switchOnConnect);
 #else
@@ -164,4 +178,19 @@ void ModuleManager::updateLoadedModules()
     Q_EMIT loadedModulesChanged();
 }
 
+bool ModuleManager::configModuleLoaded() const
+{
+    return m_loadedModules.contains(configModuleName());
+}
+
+QString ModuleManager::configModuleName() const
+{
+#if USE_GCONF
+    return QStringLiteral("module-gconf");
+#elif USE_GSETTINGS
+    return QStringLiteral("module-gsettings");
+#else
+    return QString();
+#endif
+}
 }
