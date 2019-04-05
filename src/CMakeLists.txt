@@ -42,8 +42,7 @@ target_link_libraries(plasma-volume-declarative
     KF5::Notifications
     Canberra::Canberra
     ${GCONF_LDFLAGS}
-    ${GOBJECT_LDFLAGS}
-    ${CANBERRA_LIBRARIES}
+    ${GOBJECT_LIBRARIES}
 )
 
 if (USE_GCONF)
