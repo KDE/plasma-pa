@@ -27,8 +27,7 @@
 // Properties need fully qualified classes even with pointers.
 #include <PulseAudioQt/Client>
 
-class GConfItem;
-class GConfModule;
+class ConfigModule;
 
 class ModuleManager : public QObject
 {

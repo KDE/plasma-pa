@@ -18,8 +18,6 @@ target_link_libraries(kcm_pulseaudio
     KF5::I18n
     KF5::QuickAddons
     KF5::PulseAudioQt
-#     ${PULSEAUDIO_LIBRARY}
-#     ${PULSEAUDIO_MAINLOOP_LIBRARY}
 )
 
 kcoreaddons_desktop_to_json(kcm_pulseaudio "kcm_pulseaudio.desktop")

@@ -21,6 +21,8 @@
 
 #include "modulemanager.h"
 
+#include <QVector>
+
 #include <PulseAudioQt/Module>
 #include "../config.h"
 
@@ -169,7 +171,7 @@ QStringList ModuleManager::loadedModules() const
 void ModuleManager::updateLoadedModules()
 {
     m_loadedModules.clear();
-    const auto modules = PulseAudioQt::Context::instance()->modules().data();
+    const auto modules = PulseAudioQt::Context::instance()->modules();
     for (PulseAudioQt::Module *module : modules) {
         m_loadedModules.append(module->name());
     }

@@ -3,8 +3,9 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
 include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
 
 set(cpp_SRCS
+    debug.cpp
     modulemanager.cpp
-    gconfitem.cpp
+    canberracontext.cpp
     qml/globalactioncollection.cpp
     qml/plugin.cpp
     qml/microphoneindicator.cpp
