@@ -25,9 +25,6 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 
-#include <PulseAudioQt/Context>
-// #include <PulseAudioQt/PulseAudio>
-
 #include "version.h"
 
 K_PLUGIN_CLASS_WITH_JSON(KCMPulseAudio, "kcm_pulseaudio.json")
