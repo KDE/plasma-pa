@@ -498,10 +498,11 @@ void Context::streamRestoreCallback(const pa_ext_stream_restore_info *info)
         props.insert(QStringLiteral("application.icon_name"),
                      QStringLiteral("preferences-desktop-notification"));
         obj = new StreamRestore(eventRoleIndex, props, this);
+        obj->update(info);
         m_streamRestores.insert(obj);
+    } else {
+        obj->update(info);
     }
-
-    obj->update(info);
 }
 
 void Context::serverCallback(const pa_server_info *info)
