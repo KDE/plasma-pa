@@ -47,9 +47,9 @@ public:
 
     static Context *instance();
 
-    static const qint64 NormalVolume = PA_VOLUME_NORM;
-    static const qint64 MinimalVolume = 0;
-    static const qint64 MaximalVolume = (PA_VOLUME_NORM / 100.0) * 150;
+    static const qint64 NormalVolume;
+    static const qint64 MinimalVolume;
+    static const qint64 MaximalVolume;
 
     void ref();
     void unref();

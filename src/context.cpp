@@ -42,6 +42,10 @@ namespace QPulseAudio
 
 Context* Context::s_context = nullptr;
 
+const qint64 Context::NormalVolume = PA_VOLUME_NORM;
+const qint64 Context::MinimalVolume = 0;
+const qint64 Context::MaximalVolume = (PA_VOLUME_NORM / 100.0) * 150;
+
 static bool isGoodState(int eol)
 {
     if (eol < 0) {
