@@ -28,10 +28,10 @@
 #include <KLocalizedString>
 #include <KStatusNotifierItem>
 
-#include <client.h>
-#include <context.h>
-#include <pulseaudio.h>
-#include <source.h>
+#include "client.h"
+#include "context.h"
+#include "pulseaudio.h"
+#include "source.h"
 
 #include "volumeosd.h"
 
