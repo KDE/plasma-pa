@@ -32,6 +32,7 @@
 #include "port.h"
 
 #include "globalactioncollection.h"
+#include "microphoneindicator.h"
 #include "volumeosd.h"
 #include "volumefeedback.h"
 
@@ -63,6 +64,12 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");
     qmlRegisterType<VolumeFeedback>(uri, 0, 1, "VolumeFeedback");
     qmlRegisterSingletonType(uri, 0, 1, "PulseAudio", pulseaudio_singleton);
+    qmlRegisterSingletonType<MicrophoneIndicator>(uri, 0, 1, "MicrophoneIndicator",
+        [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject* {
+            Q_UNUSED(engine);
+            Q_UNUSED(jsEngine);
+            return new MicrophoneIndicator();
+    });
 
     qmlRegisterType<QPulseAudio::Client>();
     qmlRegisterType<QPulseAudio::Sink>();

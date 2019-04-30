@@ -504,4 +504,8 @@ Item {
             }
         }
     }
+
+    Component.onCompleted: {
+        MicrophoneIndicator.init();
+    }
 }

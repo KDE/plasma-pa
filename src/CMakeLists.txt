@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
+
 include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
 
 set(cpp_SRCS
@@ -25,6 +27,7 @@ set(cpp_SRCS
     canberracontext.cpp
     qml/globalactioncollection.cpp
     qml/plugin.cpp
+    qml/microphoneindicator.cpp
     qml/volumeosd.cpp
     qml/volumefeedback.cpp
 )
@@ -54,6 +57,8 @@ target_link_libraries(plasma-volume-declarative
     Qt5::DBus
     Qt5::Quick
     KF5::GlobalAccel
+    KF5::I18n
+    KF5::Notifications
     Canberra::Canberra
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
