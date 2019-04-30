@@ -27,6 +27,10 @@
 
 QVariant GSettingsItem::value(const QString &key) const
 {
+    if (!m_settings) {
+        return QVariant();
+    }
+
     GVariant *gvalue = g_settings_get_value(m_settings, key.toLatin1().data());
 
     QVariant toReturn;
@@ -49,6 +53,10 @@ QVariant GSettingsItem::value(const QString &key) const
 
 void GSettingsItem::set(const QString &key, const QVariant &val)
 {
+    if (!m_settings) {
+        return;
+    }
+
     // It might be hard to detect the right GVariant type from
     // complext QVariant types such as string lists or more detailed
     // types such as integers (GVariant has different sizes),
@@ -75,10 +83,31 @@ void GSettingsItem::set(const QString &key, const QVariant &val)
     g_variant_unref(oldValue);
 }
 
+bool GSettingsItem::isValid() const
+{
+    return m_settings;
+}
+
 GSettingsItem::GSettingsItem(const QString &key, QObject *parent)
     : QObject (parent)
 {
-    m_settings = g_settings_new_with_path("org.freedesktop.pulseaudio.module-group", key.toLatin1().data());
+    const char schemaId[] = "org.freedesktop.pulseaudio.module-group";
+
+    // g_settings_new_with_path asserts if the schema doesn't exist, check this manually to avoid an abort.
+    auto *defaultSource = g_settings_schema_source_get_default();
+    if (!defaultSource) {
+        qCWarning(PLASMAPA) << "No GSettings schemas are installed on the system";
+        return;
+    }
+
+    auto *schema = g_settings_schema_source_lookup(defaultSource, schemaId, true /*recursive*/);
+    if (!schema) {
+        qCWarning(PLASMAPA) << "Settings schema" << schemaId << "is not installed";
+        return;
+    }
+
+    m_settings = g_settings_new_with_path(schemaId, key.toLatin1().data());
+    g_settings_schema_unref(schema);
 
     g_signal_connect(m_settings, "changed", G_CALLBACK(GSettingsItem::settingChanged), this);
 }

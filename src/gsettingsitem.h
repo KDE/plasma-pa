@@ -38,12 +38,13 @@ class GSettingsItem : public QObject
     QVariant value(const QString &key) const;
     void set(const QString &key, const QVariant &val);
 
+    bool isValid() const;
 
 Q_SIGNALS:
     void subtreeChanged();
 
 private:
-    GSettings *m_settings;
+    GSettings *m_settings = nullptr;
 
 static void settingChanged(GSettings *settings, const gchar *key, gpointer data)
 {
