@@ -109,7 +109,9 @@ Item {
         var toMute = !paSinkModel.preferredSink.muted;
         paSinkModel.preferredSink.muted = toMute;
         osd.show(toMute ? 0 : volumePercent(paSinkModel.preferredSink.volume, maxVolumeValue));
-        playFeedback();
+        if (!toMute) {
+            playFeedback();
+        }
     }
 
     function increaseMicrophoneVolume() {
