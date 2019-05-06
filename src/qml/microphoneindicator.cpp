@@ -72,7 +72,8 @@ void MicrophoneIndicator::scheduleUpdate()
 
 void MicrophoneIndicator::update()
 {
-    if (m_sourceOutputModel->rowCount() == 0) {
+    const QStringList names = appNames();
+    if (names.isEmpty()) {
         m_showOsdOnUpdate = false;
         delete m_sni;
         m_sni = nullptr;
@@ -137,9 +138,6 @@ void MicrophoneIndicator::update()
         }
     }
 
-    QStringList names = appNames();
-    Q_ASSERT(!names.isEmpty());
-
     m_sni->setTitle(i18n("Microphone"));
     m_sni->setIconByName(iconName);
 
@@ -164,16 +162,9 @@ bool MicrophoneIndicator::muted() const
 {
     static const int s_mutedRole = m_sourceModel->role(QByteArrayLiteral("Muted"));
     Q_ASSERT(s_mutedRole > -1);
-    static const int s_virtualStreamRole = m_sourceModel->role(QByteArrayLiteral("VirtualStream"));
-    Q_ASSERT(s_virtualStreamRole > -1);
 
     for (int row = 0; row < m_sourceModel->rowCount(); ++row) {
         const QModelIndex idx = m_sourceModel->index(row);
-        if (idx.data(s_virtualStreamRole).toBool()) {
-            qDebug() << "iggen virt";
-            continue;
-        }
-
         if (!idx.data(s_mutedRole).toBool()) {
             // this is deliberately checking if *all* microphones are muted rather than the preferred one
             return false;
@@ -187,19 +178,12 @@ void MicrophoneIndicator::setMuted(bool muted)
 {
     static const int s_mutedRole = m_sourceModel->role(QByteArrayLiteral("Muted"));
     Q_ASSERT(s_mutedRole > -1);
-    static const int s_virtualStreamRole = m_sourceModel->role(QByteArrayLiteral("VirtualStream"));
-    Q_ASSERT(s_virtualStreamRole > -1);
 
     m_showOsdOnUpdate = true;
 
     if (muted) {
         for (int row = 0; row < m_sourceModel->rowCount(); ++row) {
             const QModelIndex idx = m_sourceModel->index(row);
-            if (idx.data(s_virtualStreamRole).toBool()) {
-                qDebug() << "iggen virt set muted";
-                continue;
-            }
-
             if (!idx.data(s_mutedRole).toBool()) {
                 m_sourceModel->setData(idx, true, s_mutedRole);
                 m_mutedIndices.append(QPersistentModelIndex(idx));
@@ -279,12 +263,18 @@ QStringList MicrophoneIndicator::appNames() const
     Q_ASSERT(s_nameRole > -1);
     static const int s_clientRole = m_sourceOutputModel->role(QByteArrayLiteral("Client"));
     Q_ASSERT(s_clientRole > -1);
+    static const int s_virtualStreamRole = m_sourceOutputModel->role(QByteArrayLiteral("VirtualStream"));
+    Q_ASSERT(s_virtualStreamRole > -1);
 
     QStringList names;
     names.reserve(m_sourceOutputModel->rowCount());
 
     for (int i = 0; i < m_sourceOutputModel->rowCount(); ++i) {
         const QModelIndex idx = m_sourceOutputModel->index(i);
+
+        if (idx.data(s_virtualStreamRole).toBool()) {
+            continue;
+        }
 
         Client *client = qobject_cast<Client *>(idx.data(s_clientRole).value<QObject *>());
 
