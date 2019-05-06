@@ -54,6 +54,8 @@ MicrophoneIndicator::MicrophoneIndicator(QObject *parent)
     m_updateTimer->setInterval(0);
     m_updateTimer->setSingleShot(true);
     connect(m_updateTimer, &QTimer::timeout, this, &MicrophoneIndicator::update);
+
+    scheduleUpdate();
 }
 
 MicrophoneIndicator::~MicrophoneIndicator() = default;
