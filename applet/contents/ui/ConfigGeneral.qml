@@ -18,79 +18,69 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.0
-import QtQuick.Controls 1.0
+import QtQuick 2.5
+import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.5 as QQC2
+
+import org.kde.kirigami 2.5 as Kirigami
 
 import org.kde.plasma.private.volume 0.1
 
-Item {
+Kirigami.FormLayout {
     property alias cfg_maximumVolume: maximumVolume.value
     property alias cfg_volumeStep: volumeStep.value
     property alias cfg_volumeFeedback: volumeFeedback.checked
     property alias cfg_outputChangeOsd: outputChangeOsd.checked
 
-    ColumnLayout {
-        Layout.fillWidth: true
+    VolumeFeedback {
+        id: feedback
+    }
 
-        GroupBox {
-            Layout.fillWidth: true
-            flat: true
-            title: i18n("Volume")
 
-            GridLayout {
-                columns: 2
-                Layout.fillWidth: true
+    QQC2.SpinBox {
+        id: maximumVolume
 
-                Label {
-                    Layout.alignment: Qt.AlignRight
-                    text: i18n("Maximum volume:")
-                }
+        Kirigami.FormData.label: i18n("Maximum volume:")
 
-                SpinBox {
-                    id: maximumVolume
-                    minimumValue: 100
-                    maximumValue: 150
-                    stepSize: 1
-                    suffix: i18n("%")
-                }
-
-                Label {
-                    Layout.alignment: Qt.AlignRight
-                    text: i18n("Volume step:")
-                }
-
-                SpinBox {
-                    id: volumeStep
-                    minimumValue: 1
-                    maximumValue: 100
-                    stepSize: 1
-                    suffix: i18n("%")
-                }
-            }
-        }
-
-        GroupBox {
-            Layout.fillWidth: true
-            flat: true
-            title: i18n("Behavior")
-
-            ColumnLayout {
-                CheckBox {
-                    id: volumeFeedback
-                    text: i18n("Volume feedback")
-                    enabled: feedback.valid
-                }
-
-                CheckBox {
-                    id: outputChangeOsd
-                    text: i18n("Visual feedback when default output device changes")
-                }
-            }
+        from: 100
+        to: 150
+        stepSize: 1
+        textFromValue: function(value) {
+            return value + "%";
         }
     }
 
-    VolumeFeedback {
-        id: feedback
+    QQC2.SpinBox {
+        id: volumeStep
+        implicitWidth: maximumVolume.width
+
+        Kirigami.FormData.label: i18n("Volume step:")
+
+        from: 1
+        to: 100
+        stepSize: 1
+        textFromValue: function(value) {
+            return value + "%";
+        }
+    }
+
+
+    Item {
+        Kirigami.FormData.isSection: true
+    }
+
+
+    QQC2.CheckBox {
+        id: volumeFeedback
+
+        Kirigami.FormData.label: i18n("Provide visual feedback:")
+
+        text: i18n("When volume changes")
+        enabled: feedback.valid
+    }
+
+    QQC2.CheckBox {
+        id: outputChangeOsd
+        text: i18n("When default output device changes")
     }
 }
