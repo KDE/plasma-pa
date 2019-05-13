@@ -280,10 +280,9 @@ QStringList MicrophoneIndicator::appNames() const
 
         Client *client = qobject_cast<Client *>(idx.data(s_clientRole).value<QObject *>());
 
-        if (client) {
-            names.append(client->name());
-        } else {
-            names.append(idx.data(s_nameRole).toString());
+        const QString name = client ? client->name() : idx.data(s_nameRole).toString();
+        if (!names.contains(name)) {
+            names.append(name);
         }
     }
 
