@@ -62,7 +62,7 @@ target_link_libraries(plasma-volume-declarative
     Canberra::Canberra
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}
-    ${GOBJECT_LIBRARIES}
+    ${GOBJECT_LDFLAGS}
 )
 
 if (USE_GCONF)
