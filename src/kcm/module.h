@@ -23,12 +23,7 @@
 
 #include <KQuickAddons/ConfigModule>
 
-class CardModel;
 class Context;
-class SinkInputModel;
-class SinkModel;
-class SourceModel;
-class SourceOutputModel;
 
 class KCMPulseAudio : public KQuickAddons::ConfigModule
 {
