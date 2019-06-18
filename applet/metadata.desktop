@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Audio Volume
 Name[ar]=مستوى الصّوت
+Name[ast]=Volume del audiu
 Name[ca]=Volum de l'àudio
 Name[ca@valencia]=Volum de l'àudio
 Name[cs]=Hlasitost zvuku
@@ -40,6 +41,7 @@ Name[x-test]=xxAudio Volumexx
 Name[zh_CN]=音频音量
 Name[zh_TW]=音效音量
 Comment=Adjust the volume of devices and applications
+Comment[ast]=Axusta'l volume de los preseos y aplicaciones
 Comment[ca]=Ajusta el volum dels dispositius i les aplicacions
 Comment[ca@valencia]=Ajusta el volum dels dispositius i les aplicacions
 Comment[cs]=Upravit hlasitost zařízení a aplikací
