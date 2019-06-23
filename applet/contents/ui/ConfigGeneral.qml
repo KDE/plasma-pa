@@ -73,14 +73,14 @@ Kirigami.FormLayout {
     QQC2.CheckBox {
         id: volumeFeedback
 
-        Kirigami.FormData.label: i18n("Provide visual feedback:")
+        Kirigami.FormData.label: i18n("Feedback:")
 
-        text: i18n("When volume changes")
+        text: i18n("Play sound when volume changes")
         enabled: feedback.valid
     }
 
     QQC2.CheckBox {
         id: outputChangeOsd
-        text: i18n("When default output device changes")
+        text: i18n("Display notification when default output device changes")
     }
 }
