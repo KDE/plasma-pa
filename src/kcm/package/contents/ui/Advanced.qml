@@ -202,8 +202,8 @@ ScrollView {
                 Image {
                     source: kuser.faceIconUrl
                     anchors.centerIn: parent
-                    width: 50
-                    height: 50
+                    sourceSize.width: 50
+                    sourceSize.height: 50
                 }
             }
             Item {
