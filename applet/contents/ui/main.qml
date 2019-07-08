@@ -21,7 +21,7 @@
 import QtQuick 2.2
 import QtQuick.Layouts 1.0
 
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
@@ -39,6 +39,9 @@ Item {
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
+    // DEFAULT_SINK_NAME in module-always-sink.c
+    readonly property string dummyOutputName: "auto_null"
+
     Layout.minimumHeight: units.gridUnit * 18
     Layout.minimumWidth: units.gridUnit * 18
     Layout.preferredHeight: units.gridUnit * 20
@@ -50,7 +53,7 @@ Item {
     Plasmoid.switchHeight: units.gridUnit * 18
     Plasmoid.toolTipMainText: {
         var sink = paSinkModel.preferredSink;
-        if (!sink) {
+        if (!sink || isDummyOutput(sink)) {
             return displayName;
         }
 
@@ -60,11 +63,10 @@ Item {
             return i18n("Volume at %1%", volumePercent(sink.volume));
         }
     }
-    Plasmoid.toolTipSubText: paSinkModel.preferredSink ? paSinkModel.preferredSink.description : ""
+    Plasmoid.toolTipSubText: paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink) ? paSinkModel.preferredSink.description : ""
 
     function isDummyOutput(output) {
-        // DEFAULT_SINK_NAME in module-always-sink.c
-        return output && output.name === "auto_null"
+        return output && output.name === dummyOutputName;
     }
 
     function boundVolume(volume) {
@@ -171,6 +173,11 @@ Item {
                 return;
             }
 
+            var description = defaultSink.description;
+            if (isDummyOutput(defaultSink)) {
+                description = i18n("No output device");
+            }
+
             var icon = Icon.formFactorIcon(defaultSink.formFactor);
             if (!icon) {
                 // Show "muted" icon for Dummy output
@@ -182,7 +189,7 @@ Item {
             if (!icon) {
                 icon = Icon.name(defaultSink.volume, defaultSink.muted);
             }
-            osd.showText(icon, defaultSink.description);
+            osd.showText(icon, description);
         }
     }
 
@@ -442,10 +449,20 @@ Item {
                         Layout.minimumHeight: contentHeight
                         Layout.maximumHeight: contentHeight
 
-                        model: PulseObjectFilterModel {
+                        model: PlasmaCore.SortFilterModel {
                             sortRole: "SortByDefault"
                             sortOrder: Qt.DescendingOrder
                             sourceModel: paSinkModel
+
+                            filterCallback: function (source_row, value) {
+                                var idx = sourceModel.index(source_row, 0);
+
+                                if (sourceModel.data(idx, sourceModel.role("Name")) === dummyOutputName) {
+                                    return false;
+                                }
+
+                                return true;
+                            }
                         }
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
