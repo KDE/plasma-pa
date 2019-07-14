@@ -406,7 +406,7 @@ Item {
                     Header {
                         Layout.fillWidth: true
                         visible: sourceOutputView.count > 0 && !streamsView.simpleMode
-                        text: i18n("Capture Streams")
+                        text: i18n("Recording Streams")
                     }
                     ListView {
                         id: sourceOutputView
@@ -475,7 +475,7 @@ Item {
                         id: sourceViewHeader
                         Layout.fillWidth: true
                         visible: sourceView.count > 0 && !devicesView.simpleMode
-                        text: i18n("Capture Devices")
+                        text: i18n("Recording Devices")
                     }
                     ListView {
                         id: sourceView

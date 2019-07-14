@@ -84,7 +84,7 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             enabled: sourceOutputView.count > 0
-            text: i18nd("kcm_pulseaudio", "Capture")
+            text: i18nd("kcm_pulseaudio", "Recording")
             disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Recording Audio")
         }
 
