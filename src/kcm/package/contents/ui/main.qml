@@ -42,6 +42,12 @@ Kirigami.Page {
         TabBar {
             id: tabView
 
+            // Tab styles generally assume that they're touching the inner layout,
+            // not the frame, so we need to move the tab bar down a pixel and make
+            // sure it's drawn on top of the frame
+            Layout.bottomMargin: -1
+            z: 1
+
             TabButton {
                 text: i18ndc("kcm_pulseaudio", "@title:tab", "Devices")
             }
