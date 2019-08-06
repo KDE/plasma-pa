@@ -261,6 +261,11 @@ void MicrophoneIndicator::showOsd()
 
 QStringList MicrophoneIndicator::appNames() const
 {
+    // If there are no microphones present, there's nothing to record
+    if (m_sourceModel->rowCount() == 0) {
+        return QStringList();
+    }
+
     static const int s_nameRole = m_sourceOutputModel->role(QByteArrayLiteral("Name"));
     Q_ASSERT(s_nameRole > -1);
     static const int s_clientRole = m_sourceOutputModel->role(QByteArrayLiteral("Client"));
