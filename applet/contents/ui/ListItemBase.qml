@@ -172,10 +172,6 @@ PlasmaComponents.ListItem {
                                 Volume = value;
                                 Muted = value == 0;
 
-                                if (type == "sink") {
-                                    playFeedback(Index);
-                                }
-
                                 if (!pressed) {
                                     updateTimer.restart();
                                 }
@@ -190,6 +186,10 @@ PlasmaComponents.ListItem {
                                 // whereas PA rejected the volume change and is
                                 // still at v15 (e.g.).
                                 updateTimer.restart();
+
+                                if (type == "sink") {
+                                    playFeedback(Index);
+                                }
                             }
                         }
 
