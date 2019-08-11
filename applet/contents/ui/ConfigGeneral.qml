@@ -42,7 +42,7 @@ Kirigami.FormLayout {
 
         Kirigami.FormData.label: i18n("Maximum volume:")
 
-        from: 100
+        from: 10
         to: 150
         stepSize: 1
         textFromValue: function(value) {
