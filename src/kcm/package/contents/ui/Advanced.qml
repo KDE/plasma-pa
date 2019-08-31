@@ -130,11 +130,15 @@ ScrollView {
                 }
                 onCurrentIndexChanged: updatePulseObject()
                 onCurrentTextChanged: updatePulseObject()
-                Component.onCompleted: updatePulseObject()
+                Component.onCompleted: {
+                    sinks.currentIndex = 0
+                    updatePulseObject()
+                }
 
                 function updatePulseObject() {
                     Qt.callLater(function() {
-                        pulseObject = model.data(model.index(sinks.currentIndex, 0), model.role("PulseObject"));
+                        // When the combobox isn't shown currentIndex is -1, so use 0 in that case
+                        pulseObject = model.data(model.index(Math.max(sinks.currentIndex, 0), 0), model.role("PulseObject"));
                     });
                 }
             }
