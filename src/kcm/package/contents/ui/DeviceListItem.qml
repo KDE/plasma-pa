@@ -44,17 +44,13 @@ ColumnLayout {
             text: Description
         }
 
-        DefaultDeviceButton {
+        Button {
+            text: i18n("Default device")
+            icon.name: "favorite"
             visible: delegate.ListView.view.count > 1
-            isDefault: Default
-            onCheckedChanged: {
-                if (!checked) {
-                    // Cannot unset default device
-                    checked = isDefault;
-                } else {
-                    Default = true;
-                }
-            }
+            checkable: true
+            checked: Default
+            onClicked: Default = true;
         }
 
         MuteButton {

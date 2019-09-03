@@ -24,6 +24,7 @@ import QtQuick.Layouts 1.0
 
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.draganddrop 2.0 as DragAndDrop
@@ -52,12 +53,15 @@ PlasmaComponents.ListItem {
 
         RowLayout {
             id: rowLayout
-            width: parent.width
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.rightMargin: LayoutMirroring.enabled ? 0 : units.smallSpacing
+            anchors.leftMargin: LayoutMirroring.enabled ? units.smallSpacing : 0
             spacing: units.smallSpacing
 
             PlasmaCore.IconItem {
                 id: clientIcon
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 Layout.preferredHeight: column.height * 0.75
                 Layout.preferredWidth: Layout.preferredHeight
                 source: "unknown"
@@ -116,6 +120,7 @@ PlasmaComponents.ListItem {
                         wrapMode: Text.NoWrap
                         elide: Text.ElideRight
                     }
+
                     SmallToolButton {
                         id: contextMenuButton
                         icon: "application-menu"
@@ -214,6 +219,24 @@ PlasmaComponents.ListItem {
                         text: i18nc("only used for sizing, should be widest possible string", "100%")
                     }
                 }
+
+                RowLayout {
+                    Layout.fillWidth: true
+
+                    Item {
+                        Layout.fillWidth: true
+                    }
+
+                    PlasmaComponents3.Button {
+                        id: defaultButton
+                        text: i18n("Default Device")
+                        icon.name: "favorite"
+                        checkable: true
+                        checked: PulseObject.default
+                        visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)
+                        onClicked: PulseObject.default = true;
+                    }
+                }
             }
         }
 
@@ -264,28 +287,6 @@ PlasmaComponents.ListItem {
 
         function loadDynamicActions() {
             contextMenu.clearMenuItems();
-
-            // Mute
-            var menuItem = newMenuItem();
-            menuItem.text = i18nc("Checkable switch for (un-)muting sound output.", "Mute");
-            menuItem.checkable = true;
-            menuItem.checked = Muted;
-            menuItem.clicked.connect(function() {
-                Muted = !Muted
-            });
-            contextMenu.addMenuItem(menuItem);
-
-            // Default
-            if (typeof PulseObject.default === "boolean") {
-                var menuItem = newMenuItem();
-                menuItem.text = i18nc("Checkable switch to change the current default output.", "Default");
-                menuItem.checkable = true;
-                menuItem.checked = PulseObject.default
-                menuItem.clicked.connect(function() {
-                    PulseObject.default = true
-                });
-                contextMenu.addMenuItem(menuItem);
-            }
 
             // Raise max volume
             menuItem = newMenuItem();
