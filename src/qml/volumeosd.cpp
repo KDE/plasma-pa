@@ -22,8 +22,8 @@
 
 #include "osdservice.h"
 
-#define SERVICE QLatin1Literal("org.kde.plasmashell")
-#define PATH QLatin1Literal("/org/kde/osdService")
+#define SERVICE QLatin1String("org.kde.plasmashell")
+#define PATH QLatin1String("/org/kde/osdService")
 #define CONNECTION QDBusConnection::sessionBus()
 
 VolumeOSD::VolumeOSD(QObject *parent)
