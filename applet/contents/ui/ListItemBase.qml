@@ -148,7 +148,7 @@ PlasmaComponents.ListItem {
 
                         Layout.fillWidth: true
                         minimumValue: PulseAudio.MinimalVolume
-                        maximumValue: raiseMaxVolume ? PulseAudio.MaximalVolume : maxVolumeValue
+                        maximumValue: raiseMaxVolume ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
                         stepSize: maximumValue / (maximumValue / PulseAudio.NormalVolume * 100.0)
                         visible: HasVolume
                         enabled: VolumeWritable
