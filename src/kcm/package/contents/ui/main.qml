@@ -32,6 +32,7 @@ Kirigami.Page {
     property QtObject sinkModel: SinkModel { }
     property QtObject sourceModel: SourceModel { }
     ConfigModule.quickHelp: i18nd("kcm_pulseaudio", "This module allows configuring the Pulseaudio sound subsystem.")
+    implicitHeight: Kirigami.Units.gridUnit * 28
 
     // TODO: replace this TabBar-plus-Frame-in-a-ColumnLayout with whatever shakes
     // out of https://bugs.kde.org/show_bug.cgi?id=394296
