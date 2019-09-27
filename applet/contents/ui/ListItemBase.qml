@@ -1,5 +1,6 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2019 Sefa Eyeoglu <contact@scrumplex.net>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -135,6 +136,7 @@ PlasmaComponents.ListItem {
                         readonly property bool isPlayback: type.substring(0, 4) == "sink"
                         icon: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                         onClicked: Muted = !Muted
+                        checked: Muted
                         tooltip: i18n("Mute %1", textLabel.text)
 
                     }

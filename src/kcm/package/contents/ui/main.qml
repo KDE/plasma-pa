@@ -1,5 +1,6 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2019 Sefa Eyeoglu <contact@scrumplex.net>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -31,6 +32,7 @@ Kirigami.Page {
     title: kcm.name
     property QtObject sinkModel: SinkModel { }
     property QtObject sourceModel: SourceModel { }
+    property int maxVolumeValue: PulseAudio.NormalVolume // the applet supports changing this value. We will just assume 65536 (100%)
     ConfigModule.quickHelp: i18nd("kcm_pulseaudio", "This module allows configuring the Pulseaudio sound subsystem.")
     implicitHeight: Kirigami.Units.gridUnit * 28
 

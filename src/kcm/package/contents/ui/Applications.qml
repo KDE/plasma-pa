@@ -1,6 +1,7 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
     Copyright 2016 David Rosca <nowrep@gmail.com>
+    Copyright 2019 Sefa Eyeoglu <contact@scrumplex.net>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -45,7 +46,7 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             enabled: eventStreamView.count || sinkInputView.count
-            text: i18nd("kcm_pulseaudio", "Playback")
+            text: i18nd("kcm_pulseaudio", "Playback Streams")
             disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Playing Audio")
         }
 
@@ -62,6 +63,7 @@ ScrollView {
             }
             delegate: StreamListItem {
                 deviceModel: sinkModel
+                isPlayback: true
             }
         }
 
@@ -78,13 +80,14 @@ ScrollView {
             }
             delegate: StreamListItem {
                 deviceModel: sinkModel
+                isPlayback: true
             }
         }
 
         Header {
             Layout.fillWidth: true
             enabled: sourceOutputView.count > 0
-            text: i18nd("kcm_pulseaudio", "Recording")
+            text: i18nd("kcm_pulseaudio", "Recording Streams")
             disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Recording Audio")
         }
 
@@ -102,6 +105,7 @@ ScrollView {
 
             delegate: StreamListItem {
                 deviceModel: sourceModel
+                isPlayback: false
             }
         }
     }

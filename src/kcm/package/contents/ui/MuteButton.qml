@@ -1,5 +1,6 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2019 Sefa Eyeoglu <contact@scrumplex.net>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -19,14 +20,18 @@
 */
 
 import QtQuick 2.0
-import QtQuick.Controls 1.0
+import QtQuick.Controls 2.5 as QQC2
+import "../code/icon.js" as Icon
 
-Button {
+QQC2.ToolButton {
     property bool muted: true
 
-    iconName: 'audio-volume-muted'
-    tooltip: i18nd("kcm_pulseaudio", "Mute audio")
+    icon.name: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
     checkable: true
     checked: muted
     onMutedChanged: checked = muted
+
+    QQC2.ToolTip {
+        text: i18ndc("kcm_pulseaudio", "Mute audio stream", "Mute %1", inputText.text) // a little hacky
+    }
 }

@@ -1,5 +1,6 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2019 Sefa Eyeoglu <contact@scrumplex.net>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -30,6 +31,7 @@ ColumnLayout {
 
     property alias deviceModel: deviceComboBox.model
     readonly property bool isEventStream: Name == "sink-input-by-media-role:event"
+    property bool isPlayback: type.substring(0, 4) == "sink"
 
     width: parent.width
 
@@ -39,7 +41,7 @@ ColumnLayout {
 
         Kirigami.Icon {
             Layout.alignment: Qt.AlignHCenter
-            Layout.preferredHeight: delegateColumn.height * 0.60
+            Layout.preferredHeight: delegateColumn.height * 0.75
             Layout.preferredWidth: Layout.preferredHeight
             source: IconName || "unknown"
         }
@@ -71,14 +73,16 @@ ColumnLayout {
                     Layout.preferredWidth: delegate.width / 3
                     visible: !isEventStream && count > 1
                 }
+            }
 
+            RowLayout {
                 MuteButton {
                     muted: Muted
                     onCheckedChanged: Muted = checked
                 }
-            }
 
-            VolumeSlider {}
+                VolumeSlider {}
+            }
         }
     }
 

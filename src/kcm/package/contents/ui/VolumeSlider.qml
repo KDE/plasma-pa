@@ -1,5 +1,6 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2019 Sefa Eyeoglu <contact@scrumplex.net>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -20,14 +21,14 @@
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.0
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.5 as QQC2
 
 import org.kde.plasma.private.volume 0.1
 
 RowLayout {
     Layout.bottomMargin: hundredPercentLabel.height
 
-    Slider {
+    QQC2.Slider {
         id: slider
 
         // Helper properties to allow async slider updates.
@@ -40,6 +41,8 @@ RowLayout {
         Layout.fillWidth: true
         from: PulseAudio.MinimalVolume
         to: PulseAudio.MaximalVolume
+        // TODO: implement a way to hide tickmarks
+        // stepSize: to / (PulseAudio.MaximalVolume / PulseAudio.NormalVolume * 100.0) 
         visible: HasVolume
         enabled: VolumeWritable
         opacity: Muted ? 0.5 : 1
@@ -77,12 +80,12 @@ RowLayout {
             }
         }
 
-        Label {
+        QQC2.Label {
             id: hundredPercentLabel
-            readonly property real hundredPos: (slider.width / slider.maximumValue) * PulseAudio.NormalVolume
+            readonly property real hundredPos: (slider.width / slider.to) * PulseAudio.NormalVolume
             z: slider.z - 1
             x: (Qt.application.layoutDirection == Qt.RightToLeft ? slider.width - hundredPos : hundredPos) - width / 2
-            y: slider.height / 1.2
+            y: slider.height
             opacity: 0.5
             font.pixelSize: slider.height / 2.2
             text: i18nd("kcm_pulseaudio", "100%")
@@ -95,7 +98,7 @@ RowLayout {
         }
     }
 
-    Label {
+    QQC2.Label {
         id: percentText
         readonly property real value: PulseObject.volume > slider.maximumValue ? PulseObject.volume : slider.value
         Layout.alignment: Qt.AlignHCenter

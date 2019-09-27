@@ -1,5 +1,6 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
+    Copyright 2019 Sefa Eyeoglu <contact@scrumplex.net>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -42,8 +43,8 @@ ScrollView {
         Header {
             Layout.fillWidth: true
             enabled: sinks.count > 0
-            text: i18nd("kcm_pulseaudio", "Outputs")
-            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Output Devices Available")
+            text: i18nd("kcm_pulseaudio", "Playback Devices")
+            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Playback Devices Available")
         }
 
         ListView {
@@ -54,14 +55,16 @@ ScrollView {
             interactive: false
             spacing: units.smallSpacing * 2
             model: sinkModel
-            delegate: DeviceListItem {}
+            delegate: DeviceListItem {
+                isPlayback: true
+            }
         }
 
         Header {
             Layout.fillWidth: true
             enabled: sources.count > 0
-            text: i18nd("kcm_pulseaudio", "Inputs")
-            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Input Devices Available")
+            text: i18nd("kcm_pulseaudio", "Recording Devices")
+            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Recording Devices Available")
         }
 
         ListView {
@@ -71,7 +74,9 @@ ScrollView {
             Layout.margins: units.gridUnit / 2
             interactive: false
             model: sourceModel
-            delegate: DeviceListItem {}
+            delegate: DeviceListItem {
+                isPlayback: false
+            }
         }
     }
 }
