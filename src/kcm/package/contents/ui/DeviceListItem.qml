@@ -25,6 +25,7 @@ import QtQuick.Layouts 1.0
 
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.plasma.private.volume 0.1
+import "../code/icon.js" as Icon
 
 ColumnLayout {
     id: delegate
@@ -39,7 +40,7 @@ ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
             Layout.preferredHeight: delegateColumn.height * 0.75
             Layout.preferredWidth: Layout.preferredHeight
-            source: IconName || "audio-card"
+            source: Icon.formFactorIcon(FormFactor) || IconName || "audio-card"
         }
 
         ColumnLayout {
