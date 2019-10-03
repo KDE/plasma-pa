@@ -120,6 +120,40 @@ PlasmaComponents.ListItem {
                         opacity: 0.6
                         wrapMode: Text.NoWrap
                         elide: Text.ElideRight
+                        visible: !portbox.visible
+                    }
+
+                    PlasmaComponents3.ComboBox {
+                        id: portbox
+                        visible: portbox.count > 1
+                        Layout.minimumWidth: units.gridUnit * 10
+                        model: {
+                            var items = [];
+                            for (var i = 0; i < PulseObject.ports.length; ++i) {
+                                var port = PulseObject.ports[i];
+                                if (port.availability != Port.Unavailable) {
+                                    items.push(port.description);
+                                }
+                            }
+                            return items
+                        }
+                        currentIndex: ActivePortIndex
+                        onActivated: ActivePortIndex = index
+                    }
+
+                    Item {
+                        visible: portbox.visible
+                        Layout.fillWidth: true
+                    }
+
+                    PlasmaComponents3.ToolButton {
+                        id: defaultButton
+                        text: i18n("Default Device")
+                        icon.name: "favorite"
+                        checkable: true
+                        checked: PulseObject.default
+                        visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)
+                        onClicked: PulseObject.default = true;
                     }
 
                     SmallToolButton {
@@ -221,24 +255,6 @@ PlasmaComponents.ListItem {
                         text: i18nc("only used for sizing, should be widest possible string", "100%")
                     }
                 }
-
-                RowLayout {
-                    Layout.fillWidth: true
-
-                    Item {
-                        Layout.fillWidth: true
-                    }
-
-                    PlasmaComponents3.Button {
-                        id: defaultButton
-                        text: i18n("Default Device")
-                        icon.name: "favorite"
-                        checkable: true
-                        checked: PulseObject.default
-                        visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)
-                        onClicked: PulseObject.default = true;
-                    }
-                }
             }
         }
 
@@ -320,40 +336,6 @@ PlasmaComponents.ListItem {
                     PulseObject.switchStreams();
                 });
                 contextMenu.addMenuItem(menuItem);
-            }
-
-            // Ports
-            if (PulseObject.ports && PulseObject.ports.length > 0) {
-                contextMenu.addMenuItem(newSeperator());
-
-                var isMultiplePorts = (1 < PulseObject.ports.length);
-                var menuItem = newMenuItem();
-                menuItem.text = i18nc("Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)", "Ports");
-                menuItem.section = true;
-                contextMenu.addMenuItem(menuItem);
-
-                for (var i = 0; i < PulseObject.ports.length; i++) {
-                    var port = PulseObject.ports[i];
-                    var menuItem = newMenuItem();
-                    menuItem.text = port.description;
-                    if (port.availability == Port.Unavailable) {
-                        if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
-                            menuItem.text += i18nc("Port is unavailable", " (unavailable)");
-                        } else {
-                            menuItem.text += i18nc("Port is unplugged", " (unplugged)");
-                        }
-                    }
-                    menuItem.enabled = isMultiplePorts;
-                    menuItem.checkable = true;
-                    menuItem.checked = i === PulseObject.activePortIndex;
-                    var setActivePort = function(portIndex) {
-                        return function() {
-                            PulseObject.activePortIndex = portIndex;
-                        };
-                    };
-                    menuItem.clicked.connect(setActivePort(i));
-                    contextMenu.addMenuItem(menuItem);
-                }
             }
 
             // Choose output / input device

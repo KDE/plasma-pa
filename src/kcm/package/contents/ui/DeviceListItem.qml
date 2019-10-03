@@ -51,39 +51,31 @@ ColumnLayout {
                 Label {
                     id: inputText
                     Layout.fillWidth: true
+                    visible: !portbox.visible
                     elide: Text.ElideRight
                     text: !currentPort ? Description : i18ndc("kcm_pulseaudio", "label of device items", "%1 (%2)", currentPort.description, Description)
-                }
-
-                Label {
-                    visible: portbox.count > 1
-                    text: i18nd("kcm_pulseaudio", "Port:")
                 }
 
                 ComboBox {
                     id: portbox
                     visible: portbox.count > 1
-                    readonly property var ports: Ports
-                    onModelChanged: currentIndex = ActivePortIndex
+                    model: {
+                        var items = [];
+                        for (var i = 0; i < Ports.length; ++i) {
+                            var port = Ports[i];
+                            if (port.availability != Port.Unavailable) {
+                                items.push(port.description);
+                            }
+                        }
+                        return items
+                    }
                     currentIndex: ActivePortIndex
                     onActivated: ActivePortIndex = index
+                }
 
-                    onPortsChanged: {
-                        var items = [];
-                        for (var i = 0; i < ports.length; ++i) {
-                            var port = ports[i];
-                            var text = port.description;
-                            if (port.availability == Port.Unavailable) {
-                                if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
-                                    text += i18ndc("kcm_pulseaudio", "Port is unavailable", " (unavailable)");
-                                } else {
-                                    text += i18ndc("kcm_pulseaudio", "Port is unplugged", " (unplugged)");
-                                }
-                            }
-                            items.push(text);
-                        }
-                        model = items;
-                    }
+                Item {
+                    visible: portbox.visible
+                    Layout.fillWidth: true
                 }
 
                 Button {
