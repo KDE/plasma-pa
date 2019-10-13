@@ -149,7 +149,7 @@ PlasmaComponents.ListItem {
                     PlasmaComponents3.ToolButton {
                         id: defaultButton
                         text: i18n("Default Device")
-                        icon.name: "favorite"
+                        icon.name: PulseObject.default ? "starred-symbolic" : "non-starred-symbolic"
                         checkable: true
                         checked: PulseObject.default
                         visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)

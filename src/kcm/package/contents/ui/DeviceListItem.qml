@@ -80,7 +80,7 @@ ColumnLayout {
 
                 Button {
                     text: i18n("Default Device")
-                    icon.name: "favorite"
+                    icon.name: Default ? "starred-symbolic" : "non-starred-symbolic"
                     visible: delegate.ListView.view.count > 1
                     checkable: true
                     checked: Default
