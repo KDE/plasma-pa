@@ -45,8 +45,12 @@ Kirigami.FormLayout {
         from: 10
         to: 150
         stepSize: 1
+        editable: true
         textFromValue: function(value) {
             return value + "%";
+        }
+        valueFromText: function(text) {
+            return parseInt(text);
         }
     }
 
@@ -59,8 +63,12 @@ Kirigami.FormLayout {
         from: 1
         to: 100
         stepSize: 1
+        editable: true
         textFromValue: function(value) {
             return value + "%";
+        }
+        valueFromText: function(text) {
+            return parseInt(text);
         }
     }
 
