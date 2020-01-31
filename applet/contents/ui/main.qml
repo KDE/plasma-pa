@@ -23,6 +23,7 @@ import QtQuick.Layouts 1.0
 
 import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
 
@@ -63,7 +64,16 @@ Item {
             return i18n("Volume at %1%", volumePercent(sink.volume));
         }
     }
-    Plasmoid.toolTipSubText: paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink) ? paSinkModel.preferredSink.description : ""
+    Plasmoid.toolTipSubText: {
+        if (paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink)) {
+            var port = paSinkModel.preferredSink.ports[paSinkModel.preferredSink.activePortIndex];
+            if (port) {
+                return port.description
+            }
+            return paSinkModel.preferredSink.name
+        }
+        return ""
+    }
 
     function isDummyOutput(output) {
         return output && output.name === dummyOutputName;
@@ -298,6 +308,11 @@ Item {
         id: feedback
     }
 
+    PlasmaCore.Svg {
+        id: lineSvg
+        imagePath: "widgets/line"
+    }
+
     Plasmoid.fullRepresentation: ColumnLayout {
         spacing: units.smallSpacing
         Layout.preferredHeight: main.Layout.preferredHeight
@@ -306,12 +321,11 @@ Item {
         function beginMoveStream(type, stream) {
             if (type == "sink") {
                 sourceView.visible = false;
-                sourceViewHeader.visible = false;
             } else if (type == "source") {
                 sinkView.visible = false;
-                sinkViewHeader.visible = false;
             }
 
+            devicesLine.visible = false;
             tabBar.currentTab = devicesTab;
         }
 
@@ -319,9 +333,8 @@ Item {
             tabBar.currentTab = streamsTab;
 
             sourceView.visible = true;
-            sourceViewHeader.visible = true;
+            devicesLine.visible = true;
             sinkView.visible = true;
-            sinkViewHeader.visible = true;
         }
 
         RowLayout {
@@ -341,16 +354,6 @@ Item {
                 PlasmaComponents.TabButton {
                     id: streamsTab
                     text: i18n("Applications")
-                }
-            }
-
-            PlasmaComponents.ToolButton {
-                Layout.alignment: Qt.AlignBottom
-                tooltip: plasmoid.action("configure").text
-                iconName: "configure"
-                Accessible.name: tooltip
-                onClicked: {
-                    plasmoid.action("configure").trigger();
                 }
             }
         }
@@ -373,17 +376,13 @@ Item {
 
                 ColumnLayout {
                     id: streamsView
+                    spacing: 0
                     visible: tabBar.currentTab == streamsTab
                     readonly property bool simpleMode: (sinkInputView.count >= 1 && sourceOutputView.count == 0) || (sinkInputView.count == 0 && sourceOutputView.count >= 1)
                     property int maximumWidth: scrollView.viewport.width
                     width: maximumWidth
                     Layout.maximumWidth: maximumWidth
 
-                    Header {
-                        Layout.fillWidth: true
-                        visible: sinkInputView.count > 0 && !streamsView.simpleMode
-                        text: i18n("Playback Streams")
-                    }
                     ListView {
                         id: sinkInputView
 
@@ -399,15 +398,20 @@ Item {
                         delegate: StreamListItem {
                             type: "sink-input"
                             draggable: sinkView.count > 1
-                            onlyOne: streamsView.simpleMode
                         }
                     }
 
-                    Header {
-                        Layout.fillWidth: true
-                        visible: sourceOutputView.count > 0 && !streamsView.simpleMode
-                        text: i18n("Recording Streams")
+                    PlasmaCore.SvgItem {
+                        elementId: "horizontal-line"
+                        Layout.preferredWidth: scrollView.viewport.width - units.smallSpacing * 4
+                        Layout.preferredHeight: naturalSize.height
+                        Layout.leftMargin: units.smallSpacing * 2
+                        Layout.rightMargin: units.smallSpacing * 2
+                        Layout.topMargin: units.smallSpacing
+                        svg: lineSvg
+                        visible: sinkInputView.model.count > 0 && sourceOutputView.model.count > 0
                     }
+
                     ListView {
                         id: sourceOutputView
 
@@ -423,7 +427,6 @@ Item {
                         delegate: StreamListItem {
                             type: "source-input"
                             draggable: sourceView.count > 1
-                            onlyOne: streamsView.simpleMode
                         }
                     }
                 }
@@ -435,19 +438,15 @@ Item {
                     property int maximumWidth: scrollView.viewport.width
                     width: maximumWidth
                     Layout.maximumWidth: maximumWidth
+                    spacing: 0
 
-                    Header {
-                        id: sinkViewHeader
-                        Layout.fillWidth: true
-                        visible: sinkView.count > 0 && !devicesView.simpleMode
-                        text: i18n("Playback Devices")
-                    }
                     ListView {
                         id: sinkView
 
                         Layout.fillWidth: true
                         Layout.minimumHeight: contentHeight
                         Layout.maximumHeight: contentHeight
+                        spacing: 0
 
                         model: PlasmaCore.SortFilterModel {
                             sortRole: "SortByDefault"
@@ -467,16 +466,20 @@ Item {
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
                             type: "sink"
-                            onlyOne: devicesView.simpleMode
                         }
                     }
 
-                    Header {
-                        id: sourceViewHeader
-                        Layout.fillWidth: true
-                        visible: sourceView.count > 0 && !devicesView.simpleMode
-                        text: i18n("Recording Devices")
+                    PlasmaCore.SvgItem {
+                        id: devicesLine
+                        elementId: "horizontal-line"
+                        Layout.preferredWidth: scrollView.viewport.width - units.smallSpacing * 4
+                        Layout.leftMargin: units.smallSpacing * 2
+                        Layout.rightMargin: Layout.leftMargin
+                        Layout.topMargin: units.smallSpacing
+                        svg: lineSvg
+                        visible: sinkView.model.count > 0 && sourceView.model.count > 0 && (sinkView.model.count > 1 || sourceView.model.count > 1)
                     }
+
                     ListView {
                         id: sourceView
 
@@ -492,7 +495,6 @@ Item {
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
                             type: "source"
-                            onlyOne: devicesView.simpleMode
                         }
                     }
                 }
@@ -520,6 +522,29 @@ Item {
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }
+            }
+        }
+
+        PlasmaCore.SvgItem {
+            elementId: "horizontal-line"
+            Layout.fillWidth: true
+            Layout.topMargin: 0 - units.smallSpacing / 2
+            Layout.leftMargin: 0 - units.smallSpacing * 1.5
+            Layout.rightMargin: Layout.leftMargin
+            svg: lineSvg
+        }
+
+        RowLayout {
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            PlasmaComponents.ToolButton {
+                tooltip: plasmoid.action("configure").text
+                iconName: "configure"
+                Accessible.name: tooltip
+                onClicked: plasmoid.action("configure").trigger()
             }
         }
     }

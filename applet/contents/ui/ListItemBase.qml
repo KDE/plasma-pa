@@ -36,8 +36,7 @@ import "../code/icon.js" as Icon
 PlasmaComponents.ListItem {
     id: item
 
-    property alias label: textLabel.text
-    property alias labelOpacity: textLabel.opacity
+    property alias label: defaultButton.text
     property alias draggable: dragArea.enabled
     property alias icon: clientIcon.source
     property alias iconUsesPlasmaTheme: clientIcon.usesPlasmaTheme
@@ -45,20 +44,18 @@ PlasmaComponents.ListItem {
 
     checked: dropArea.containsDrag
     opacity: (draggedStream && draggedStream.deviceIndex == Index) ? 0.3 : 1.0
+    separatorVisible: false
 
     ListView.delayRemove: dragArea.dragActive
 
     Item {
         width: parent.width
-        height: rowLayout.height
+        height: column.height
 
         RowLayout {
             id: rowLayout
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.rightMargin: LayoutMirroring.enabled ? 0 : units.smallSpacing
-            anchors.leftMargin: LayoutMirroring.enabled ? units.smallSpacing : 0
-            spacing: units.smallSpacing
 
             PlasmaCore.IconItem {
                 id: clientIcon
@@ -66,6 +63,7 @@ PlasmaComponents.ListItem {
                 Layout.preferredHeight: column.height * 0.75
                 Layout.preferredWidth: Layout.preferredHeight
                 source: "unknown"
+                visible: type === "sink-input" || type === "source-input"
 
                 onSourceChanged: {
                     if (!valid && source != "unknown") {
@@ -107,53 +105,30 @@ PlasmaComponents.ListItem {
 
             ColumnLayout {
                 id: column
-                spacing: 1
+                spacing: 0
 
                 RowLayout {
-                    Layout.fillWidth: true
+                    Layout.minimumHeight: contextMenuButton.height
 
-                    PlasmaExtras.Heading {
-                        id: textLabel
-                        Layout.fillWidth: true
-                        height: undefined
-                        level: 5
-                        opacity: 0.6
-                        wrapMode: Text.NoWrap
-                        elide: Text.ElideRight
-                        visible: !portbox.visible
+                    PlasmaComponents3.RadioButton {
+                        id: defaultButton
+                        Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
+                        Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
+                        spacing: units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
+                        checked: PulseObject.default ? PulseObject.default : false
+                        visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)
+                        onClicked: PulseObject.default = true;
                     }
 
-                    PlasmaComponents3.ComboBox {
-                        id: portbox
-                        visible: portbox.count > 1
-                        Layout.minimumWidth: units.gridUnit * 10
-                        model: {
-                            var items = [];
-                            for (var i = 0; i < PulseObject.ports.length; ++i) {
-                                var port = PulseObject.ports[i];
-                                if (port.availability != Port.Unavailable) {
-                                    items.push(port.description);
-                                }
-                            }
-                            return items
-                        }
-                        currentIndex: ActivePortIndex
-                        onActivated: ActivePortIndex = index
+                    Label {
+                        id: soloLabel
+                        text: defaultButton.text
+                        visible: !defaultButton.visible
+                        elide: Text.ElideRight
                     }
 
                     Item {
-                        visible: portbox.visible
                         Layout.fillWidth: true
-                    }
-
-                    PlasmaComponents3.ToolButton {
-                        id: defaultButton
-                        text: i18n("Default Device")
-                        icon.name: PulseObject.default ? "starred-symbolic" : "non-starred-symbolic"
-                        checkable: true
-                        checked: PulseObject.default
-                        visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)
-                        onClicked: PulseObject.default = true;
                     }
 
                     SmallToolButton {
@@ -161,18 +136,18 @@ PlasmaComponents.ListItem {
                         icon: "application-menu"
                         checkable: true
                         onClicked: contextMenu.show()
-                        tooltip: i18n("Show additional options for %1", textLabel.text)
+                        tooltip: i18n("Show additional options for %1", defaultButton.text)
                     }
                 }
 
                 RowLayout {
                     SmallToolButton {
+                        id: muteButton
                         readonly property bool isPlayback: type.substring(0, 4) == "sink"
                         icon: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                         onClicked: Muted = !Muted
                         checked: Muted
-                        tooltip: i18n("Mute %1", textLabel.text)
-
+                        tooltip: i18n("Mute %1", defaultButton.text)
                     }
 
                     PlasmaComponents.Slider {
@@ -195,7 +170,7 @@ PlasmaComponents.ListItem {
                         enabled: VolumeWritable
                         opacity: Muted ? 0.5 : 1
 
-                        Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", textLabel.text)
+                        Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
 
                         Component.onCompleted: {
                             ignoreValueChange = false;
@@ -320,7 +295,7 @@ PlasmaComponents.ListItem {
             contextMenu.addMenuItem(menuItem);
 
             // Switch all streams of the relevant kind to this device
-            if (type == "source") {
+            if (type == "source" && sourceView.model.count > 1) {
                 menuItem = newMenuItem();
                 menuItem.text = i18n("Record all audio via this device");
                 menuItem.icon = "mic-on" // or "mic-ready" // or "audio-input-microphone-symbolic"
@@ -328,7 +303,7 @@ PlasmaComponents.ListItem {
                     PulseObject.switchStreams();
                 });
                 contextMenu.addMenuItem(menuItem);
-            } else if (type == "sink") {
+            } else if (type == "sink" && sinkView.model.count > 1) {
                 menuItem = newMenuItem();
                 menuItem.text = i18n("Play all audio via this device");
                 menuItem.icon = "audio-on" // or "audio-ready" // or "audio-speakers-symbolic"
@@ -338,8 +313,48 @@ PlasmaComponents.ListItem {
                 contextMenu.addMenuItem(menuItem);
             }
 
+            // Ports
+            // Intentionally only shown when there are at least two available ports.
+            if (PulseObject.ports && PulseObject.ports.length > 1) {
+                contextMenu.addMenuItem(newSeperator());
+
+                var menuItem = newMenuItem();
+                menuItem.text = i18nc("Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)", "Ports");
+                menuItem.section = true;
+                contextMenu.addMenuItem(menuItem);
+                menuItem.visible = false;
+
+                var menuItemsPorts = [];
+                var availablePorts = 0;
+                for (var i = 0; i < PulseObject.ports.length; i++) {
+                    var port = PulseObject.ports[i];
+                    if (port.availability != Port.Unavailable) {
+                        menuItemsPorts[availablePorts] = newMenuItem();
+                        menuItemsPorts[availablePorts].text = port.description;
+                        menuItemsPorts[availablePorts].checkable = true;
+                        menuItemsPorts[availablePorts].checked = i === PulseObject.activePortIndex;
+                        var setActivePort = function(portIndex) {
+                            return function() {
+                                PulseObject.activePortIndex = portIndex;
+                            };
+                        };
+                        menuItemsPorts[availablePorts].clicked.connect(setActivePort(i));
+                        contextMenu.addMenuItem(menuItemsPorts[availablePorts]);
+                        menuItemsPorts[availablePorts].visible = false;
+                        availablePorts++;
+                    }
+                }
+
+                if (1 < availablePorts){
+                    menuItem.visible = true;
+                    for (var i = 0; i < availablePorts; i++) {
+                        menuItemsPorts[i].visible = true;
+                    }
+                }
+            }
+
             // Choose output / input device
-            // By choice only shown when there are at least two options
+            // Intentionally only shown when there are at least two options
             if ((type == "sink-input" && sinkView.model.count > 1) || (type == "source-input" && sourceView.model.count > 1)) {
                 contextMenu.addMenuItem(newSeperator());
                 var menuItem = newMenuItem();

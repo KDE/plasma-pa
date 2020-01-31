@@ -24,20 +24,27 @@ import "../code/icon.js" as Icon
 
 ListItemBase {
     readonly property var currentPort: Ports[ActivePortIndex]
-    property bool onlyOne: false
 
     draggable: false
     label: {
-        if (!currentPort) {
-            return Description
-        } else {
-            if (onlyOne) {
-                return currentPort.description
-            } else {
-                return i18nc("label of device items", "%1 (%2)", currentPort.description, Description)
+        if (currentPort) {
+            var model = type === "sink" ? paSinkModel : paSourceModel;
+            var itemLength = currentPort.description.length;
+            for (var i = 0; i < model.rowCount(); i++) {
+                if (i !== index) {
+                    var port  = model.data(model.index(i, 0), model.role("Ports"))
+                                [model.data(model.index(i, 0), model.role("ActivePortIndex"))];
+                    if (port.description) {
+                        var length = Math.min(itemLength, port.description.length)
+                        if (currentPort.description.substring(0, length) === port.description.substring(0, length)) {
+                            return i18nc("label of device items", "%1 (%2)", currentPort.description, Description);
+                        }
+                    }
+                }
             }
+            return currentPort.description;
+        } else {
+            return Description;
         }
     }
-    labelOpacity: onlyOne ? 1 : 0.6
-    icon: Icon.formFactorIcon(FormFactor) || IconName
 }
