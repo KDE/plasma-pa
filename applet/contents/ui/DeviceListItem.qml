@@ -20,12 +20,15 @@
 
 import QtQuick 2.0
 
+import org.kde.plasma.private.volume 0.1
+
 import "../code/icon.js" as Icon
 
 ListItemBase {
     readonly property var currentPort: Ports[ActivePortIndex]
     readonly property var currentActivePortIndex: ActivePortIndex
     readonly property var currentMuted: Muted
+    readonly property var activePortIndex: ActivePortIndex
 
     draggable: false
     label: {
@@ -61,6 +64,19 @@ ListItemBase {
             plasmoid.configuration.globalMuteDevices = [];
             plasmoid.configuration.globalMute = false;
             globalMute = false;
+        }
+    }
+
+    // Prevent an unavailable port selection. UI allows selection of an unavailable port, until it gets refresh,
+    // because there is no call from pulseaudio for availability change.
+    onActivePortIndexChanged: {
+        if (currentPort.availability === Port.Unavailable) {
+            for (var i = 0; i < Ports.length; i++) {
+                if (Ports[i].availability === Port.Available) {
+                    ActivePortIndex = i;
+                    return
+                }
+            }
         }
     }
 }

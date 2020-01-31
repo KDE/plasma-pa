@@ -137,6 +137,24 @@ PlasmaComponents.ListItem {
                         checkable: true
                         onClicked: contextMenu.show()
                         tooltip: i18n("Show additional options for %1", defaultButton.text)
+                        visible: {
+                            if (((type == "sink-input" || type == "sink") && sinkView.model.count > 1)
+                                || ((type == "source-input" || type == "source") && sourceView.model.count > 1)) {
+                                return true;
+                            } else if (PulseObject.ports) {
+                                var foundFirstAvailablePort = false;
+                                for (var i = 0; i < PulseObject.ports.length; i++) {
+                                    if (PulseObject.ports[i].availability != Port.Unavailable) {
+                                        if (foundFirstAvailablePort) {
+                                            return true;
+                                        } else {
+                                            foundFirstAvailablePort = true;
+                                        }
+                                    }
+                                }
+                            }
+                            return false;
+                        }
                     }
                 }
 
@@ -282,7 +300,7 @@ PlasmaComponents.ListItem {
             contextMenu.clearMenuItems();
 
             // Switch all streams of the relevant kind to this device
-            if (type == "source") {
+            if (type == "source" && sourceView.model.count > 1) {
                 menuItem = newMenuItem();
                 menuItem.text = i18n("Record all audio via this device");
                 menuItem.icon = "mic-on" // or "mic-ready" // or "audio-input-microphone-symbolic"
@@ -290,7 +308,7 @@ PlasmaComponents.ListItem {
                     PulseObject.switchStreams();
                 });
                 contextMenu.addMenuItem(menuItem);
-            } else if (type == "sink") {
+            } else if (type == "sink" && sinkView.model.count > 1) {
                 menuItem = newMenuItem();
                 menuItem.text = i18n("Play all audio via this device");
                 menuItem.icon = "audio-on" // or "audio-ready" // or "audio-speakers-symbolic"
