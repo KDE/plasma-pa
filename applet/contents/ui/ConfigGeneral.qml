@@ -38,7 +38,6 @@ Kirigami.FormLayout {
 
     QQC2.SpinBox {
         id: volumeStep
-        implicitWidth: maximumVolume.width
 
         Kirigami.FormData.label: i18n("Volume step:")
 
