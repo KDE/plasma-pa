@@ -39,7 +39,7 @@ ListItemBase {
                 if (i !== index) {
                     var port  = model.data(model.index(i, 0), model.role("Ports"))
                                 [model.data(model.index(i, 0), model.role("ActivePortIndex"))];
-                    if (port.description) {
+                    if (port && port.description) {
                         var length = Math.min(itemLength, port.description.length)
                         if (currentPort.description.substring(0, length) === port.description.substring(0, length)) {
                             return i18nc("label of device items", "%1 (%2)", currentPort.description, Description);
