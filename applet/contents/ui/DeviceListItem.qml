@@ -24,6 +24,8 @@ import "../code/icon.js" as Icon
 
 ListItemBase {
     readonly property var currentPort: Ports[ActivePortIndex]
+    readonly property var currentActivePortIndex: ActivePortIndex
+    readonly property var currentMuted: Muted
 
     draggable: false
     label: {
@@ -45,6 +47,20 @@ ListItemBase {
             return currentPort.description;
         } else {
             return Description;
+        }
+    }
+
+    onCurrentActivePortIndexChanged: {
+        if (type === "sink" && globalMute && !Muted) {
+            Muted = true;
+        }
+    }
+
+    onCurrentMutedChanged: {
+        if (type === "sink" && globalMute && !Muted) {
+            plasmoid.configuration.globalMuteDevices = [];
+            plasmoid.configuration.globalMute = false;
+            globalMute = false;
         }
     }
 }

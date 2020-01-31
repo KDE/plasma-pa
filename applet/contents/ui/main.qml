@@ -35,6 +35,7 @@ Item {
     id: main
 
     property bool volumeFeedback: Plasmoid.configuration.volumeFeedback
+    property bool globalMute: Plasmoid.configuration.globalMute
     property int raiseMaxVolumeValue: 150
     property int maxVolumeValue: Math.round(raiseMaxVolumeValue * PulseAudio.NormalVolume / 100.0)
     property int currentMaxVolumeValue: plasmoid.configuration.raiseMaximumVolume ? maxVolumeValue : PulseAudio.NormalVolume
@@ -121,9 +122,15 @@ Item {
             return;
         }
         var toMute = !paSinkModel.preferredSink.muted;
-        paSinkModel.preferredSink.muted = toMute;
-        osd.show(toMute ? 0 : volumePercent(paSinkModel.preferredSink.volume, currentMaxVolumeValue));
-        if (!toMute) {
+        if (toMute) {
+            enableGlobalMute();
+            osd.show(0);
+        } else {
+            if (globalMute) {
+                disableGlobalMute();
+            }
+            paSinkModel.preferredSink.muted = toMute;
+            osd.show(volumePercent(paSinkModel.preferredSink.volume, currentMaxVolumeValue));
             playFeedback();
         }
     }
@@ -169,6 +176,41 @@ Item {
         feedback.play(sinkIndex);
     }
 
+    function enableGlobalMute() {
+        var role = paSinkModel.role("Muted");
+        var rowCount = paSinkModel.rowCount();
+        // List for devices that are already muted. Will use to keep muted after disable GlobalMute.
+        var globalMuteDevices = [];
+
+        for (var i = 0; i < rowCount; i++) {
+            var idx = paSinkModel.index(i, 0);
+            var name = paSinkModel.data(idx, paSinkModel.role("Name"));
+            if (paSinkModel.data(idx, role) === false) {
+                paSinkModel.setData(idx, true, role);
+            } else {
+                globalMuteDevices.push(name + "." + paSinkModel.data(idx, paSinkModel.role("ActivePortIndex")));
+            }
+        }
+        // If all the devices were muted, will unmute them all with disable GlobalMute.
+        plasmoid.configuration.globalMuteDevices = globalMuteDevices.length < rowCount ? globalMuteDevices : [];
+        plasmoid.configuration.globalMute = true;
+        globalMute = true;
+    }
+
+    function disableGlobalMute() {
+        var role = paSinkModel.role("Muted");
+        for (var i = 0; i < paSinkModel.rowCount(); i++) {
+            var idx = paSinkModel.index(i, 0);
+            var name = paSinkModel.data(idx, paSinkModel.role("Name")) + "." + paSinkModel.data(idx, paSinkModel.role("ActivePortIndex"));
+            if (plasmoid.configuration.globalMuteDevices.indexOf(name) === -1) {
+                paSinkModel.setData(idx, false, role);
+            }
+        }
+        plasmoid.configuration.globalMuteDevices = [];
+        plasmoid.configuration.globalMute = false;
+        globalMute = false;
+    }
+
     SinkModel {
         id: paSinkModel
 
@@ -202,6 +244,18 @@ Item {
                 icon = Icon.name(defaultSink.volume, defaultSink.muted);
             }
             osd.showText(icon, description);
+        }
+
+        onRowsInserted: {
+            if (globalMute) {
+                var role = paSinkModel.role("Muted");
+                for (var i = 0; i < paSinkModel.rowCount(); i++) {
+                    var idx = paSinkModel.index(i, 0);
+                    if (paSinkModel.data(idx, role) === false) {
+                        paSinkModel.setData(idx, true, role);
+                    }
+                }
+            }
         }
     }
 
@@ -561,6 +615,20 @@ Item {
 
             Item {
                 Layout.fillWidth: true
+            }
+
+            PlasmaComponents.ToolButton {
+                id: globalMuteCheckbox
+                iconName: "audio-volume-muted"
+                onClicked: {
+                    if (!globalMute) {
+                        enableGlobalMute();
+                    } else {
+                        disableGlobalMute();
+                    }
+                }
+                checked: globalMute
+                tooltip: i18n("Force mute all playback devices")
             }
 
             PlasmaComponents.ToolButton {
