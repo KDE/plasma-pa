@@ -27,7 +27,6 @@ import org.kde.kirigami 2.5 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
 Kirigami.FormLayout {
-    property alias cfg_maximumVolume: maximumVolume.value
     property alias cfg_volumeStep: volumeStep.value
     property alias cfg_volumeFeedback: volumeFeedback.checked
     property alias cfg_outputChangeOsd: outputChangeOsd.checked
@@ -36,23 +35,6 @@ Kirigami.FormLayout {
         id: feedback
     }
 
-
-    QQC2.SpinBox {
-        id: maximumVolume
-
-        Kirigami.FormData.label: i18n("Maximum volume:")
-
-        from: 10
-        to: 150
-        stepSize: 1
-        editable: true
-        textFromValue: function(value) {
-            return value + "%";
-        }
-        valueFromText: function(text) {
-            return parseInt(text);
-        }
-    }
 
     QQC2.SpinBox {
         id: volumeStep

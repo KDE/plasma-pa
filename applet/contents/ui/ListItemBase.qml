@@ -159,12 +159,12 @@ PlasmaComponents.ListItem {
                         // changes trigger volume changes trigger value changes.
                         property int volume: Volume
                         property bool ignoreValueChange: true
-                        property bool forceRaiseMaxVolume: false
-                        readonly property bool raiseMaxVolume: forceRaiseMaxVolume || volume >= PulseAudio.NormalVolume * 1.01
+                        readonly property bool forceRaiseMaxVolume: (raiseMaximumVolumeCheckbox.checked && (type === "sink" || type === "source"))
+                                                                    || volume >= PulseAudio.NormalVolume * 1.01
 
                         Layout.fillWidth: true
                         minimumValue: PulseAudio.MinimalVolume
-                        maximumValue: raiseMaxVolume ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
+                        maximumValue: forceRaiseMaxVolume ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
                         stepSize: maximumValue / (maximumValue / PulseAudio.NormalVolume * 100.0)
                         visible: HasVolume
                         enabled: VolumeWritable
@@ -281,21 +281,8 @@ PlasmaComponents.ListItem {
         function loadDynamicActions() {
             contextMenu.clearMenuItems();
 
-            // Raise max volume
-            menuItem = newMenuItem();
-            menuItem.text = i18n("Raise maximum volume");
-            menuItem.checkable = true;
-            menuItem.checked = slider.forceRaiseMaxVolume;
-            menuItem.clicked.connect(function() {
-                slider.forceRaiseMaxVolume = !slider.forceRaiseMaxVolume;
-                if (!slider.forceRaiseMaxVolume && Volume > PulseAudio.NormalVolume) {
-                    Volume = PulseAudio.NormalVolume;
-                }
-            });
-            contextMenu.addMenuItem(menuItem);
-
             // Switch all streams of the relevant kind to this device
-            if (type == "source" && sourceView.model.count > 1) {
+            if (type == "source") {
                 menuItem = newMenuItem();
                 menuItem.text = i18n("Record all audio via this device");
                 menuItem.icon = "mic-on" // or "mic-ready" // or "audio-input-microphone-symbolic"
@@ -303,7 +290,7 @@ PlasmaComponents.ListItem {
                     PulseObject.switchStreams();
                 });
                 contextMenu.addMenuItem(menuItem);
-            } else if (type == "sink" && sinkView.model.count > 1) {
+            } else if (type == "sink") {
                 menuItem = newMenuItem();
                 menuItem.text = i18n("Play all audio via this device");
                 menuItem.icon = "audio-on" // or "audio-ready" // or "audio-speakers-symbolic"

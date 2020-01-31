@@ -35,7 +35,9 @@ Item {
     id: main
 
     property bool volumeFeedback: Plasmoid.configuration.volumeFeedback
-    property int maxVolumeValue: Math.round(Plasmoid.configuration.maximumVolume * PulseAudio.NormalVolume / 100.0)
+    property int raiseMaxVolumeValue: 150
+    property int maxVolumeValue: Math.round(raiseMaxVolumeValue * PulseAudio.NormalVolume / 100.0)
+    property int currentMaxVolumeValue: plasmoid.configuration.raiseMaximumVolume ? maxVolumeValue : PulseAudio.NormalVolume
     property int volumeStep: Math.round(Plasmoid.configuration.volumeStep * PulseAudio.NormalVolume / 100.0)
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
@@ -80,7 +82,7 @@ Item {
     }
 
     function boundVolume(volume) {
-        return Math.max(PulseAudio.MinimalVolume, Math.min(volume, maxVolumeValue));
+        return Math.max(PulseAudio.MinimalVolume, Math.min(volume, currentMaxVolumeValue));
     }
 
     function volumePercent(volume, max) {
@@ -95,7 +97,7 @@ Item {
             return;
         }
         var volume = boundVolume(paSinkModel.preferredSink.volume + volumeStep);
-        var percent = volumePercent(volume, maxVolumeValue);
+        var percent = volumePercent(volume, currentMaxVolumeValue);
         paSinkModel.preferredSink.muted = percent == 0;
         paSinkModel.preferredSink.volume = volume;
         osd.show(percent);
@@ -107,7 +109,7 @@ Item {
             return;
         }
         var volume = boundVolume(paSinkModel.preferredSink.volume - volumeStep);
-        var percent = volumePercent(volume, maxVolumeValue);
+        var percent = volumePercent(volume, currentMaxVolumeValue);
         paSinkModel.preferredSink.muted = percent == 0;
         paSinkModel.preferredSink.volume = volume;
         osd.show(percent);
@@ -120,7 +122,7 @@ Item {
         }
         var toMute = !paSinkModel.preferredSink.muted;
         paSinkModel.preferredSink.muted = toMute;
-        osd.show(toMute ? 0 : volumePercent(paSinkModel.preferredSink.volume, maxVolumeValue));
+        osd.show(toMute ? 0 : volumePercent(paSinkModel.preferredSink.volume, currentMaxVolumeValue));
         if (!toMute) {
             playFeedback();
         }
@@ -535,6 +537,27 @@ Item {
         }
 
         RowLayout {
+
+            PlasmaComponents3.CheckBox {
+                id: raiseMaximumVolumeCheckbox
+                // Align center, with the devices mute icon. Calculating the size based on SmallToolButton.qml. '4' is margin in ListItem.
+                Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
+                Layout.rightMargin: !LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
+                spacing: Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + units.smallSpacing
+                checked: plasmoid.configuration.raiseMaximumVolume
+                onToggled: {
+                    plasmoid.configuration.raiseMaximumVolume = checked
+                    if (!checked) {
+                        for (var i = 0; i < paSinkModel.rowCount(); i++) {
+                            if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
+                                paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
+                            }
+                        }
+                    }
+                }
+                text: i18n("Raise maximum volume")
+                enabled: false // Intentionally disabled, see D26256
+            }
 
             Item {
                 Layout.fillWidth: true

@@ -23,7 +23,7 @@ function name(volume, muted, prefix) {
         prefix = "audio-volume";
     }
     var icon = null;
-    var percent = volume / maxVolumeValue;
+    var percent = volume / currentMaxVolumeValue;
     if (percent <= 0.0 || muted) {
         icon = prefix + "-muted";
     } else if (percent <= 0.25) {
