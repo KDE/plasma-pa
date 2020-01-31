@@ -610,7 +610,6 @@ Item {
                     }
                 }
                 text: i18n("Raise maximum volume")
-                enabled: false // Intentionally disabled, see D26256
             }
 
             Item {
