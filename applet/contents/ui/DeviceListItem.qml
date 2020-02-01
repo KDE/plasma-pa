@@ -32,7 +32,7 @@ ListItemBase {
 
     draggable: false
     label: {
-        if (currentPort) {
+        if (currentPort && currentPort.description) {
             var model = type === "sink" ? paSinkModel : paSourceModel;
             var itemLength = currentPort.description.length;
             for (var i = 0; i < model.rowCount(); i++) {
@@ -70,7 +70,7 @@ ListItemBase {
     // Prevent an unavailable port selection. UI allows selection of an unavailable port, until it gets refresh,
     // because there is no call from pulseaudio for availability change.
     onActivePortIndexChanged: {
-        if (currentPort.availability === Port.Unavailable) {
+        if (currentPort && currentPort.availability === Port.Unavailable) {
             for (var i = 0; i < Ports.length; i++) {
                 if (Ports[i].availability === Port.Available) {
                     ActivePortIndex = i;
