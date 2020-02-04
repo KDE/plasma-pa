@@ -53,7 +53,8 @@ PlasmaComponents.ListItem {
         height: column.height
 
         RowLayout {
-            id: rowLayout
+            id: controlsRow
+            spacing: units.smallSpacing
             anchors.left: parent.left
             anchors.right: parent.right
 
@@ -108,10 +109,13 @@ PlasmaComponents.ListItem {
                 spacing: 0
 
                 RowLayout {
-                    Layout.minimumHeight: contextMenuButton.height
+                    Layout.minimumHeight: contextMenuButton.implicitHeight
 
                     PlasmaComponents3.RadioButton {
                         id: defaultButton
+                        // Maximum width of the button need to match the text. Empty area must not change the default device.
+                        Layout.maximumWidth: controlsRow.width - Layout.leftMargin - Layout.rightMargin
+                                              - (contextMenuButton.visible ? contextMenuButton.implicitWidth + units.smallSpacing * 2 : 0)
                         Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                         Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                         spacing: units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
@@ -120,8 +124,9 @@ PlasmaComponents.ListItem {
                         onClicked: PulseObject.default = true;
                     }
 
-                    Label {
+                    PlasmaComponents3.Label {
                         id: soloLabel
+                        Layout.fillWidth: true
                         text: defaultButton.text
                         visible: !defaultButton.visible
                         elide: Text.ElideRight
@@ -129,6 +134,7 @@ PlasmaComponents.ListItem {
 
                     Item {
                         Layout.fillWidth: true
+                        visible: contextMenuButton.visble
                     }
 
                     SmallToolButton {
