@@ -434,7 +434,6 @@ Item {
                     id: streamsView
                     spacing: 0
                     visible: tabBar.currentTab == streamsTab
-                    readonly property bool simpleMode: (sinkInputView.count >= 1 && sourceOutputView.count == 0) || (sinkInputView.count == 0 && sourceOutputView.count >= 1)
                     property int maximumWidth: scrollView.viewport.width
                     width: maximumWidth
                     Layout.maximumWidth: maximumWidth
@@ -490,7 +489,6 @@ Item {
                 ColumnLayout {
                     id: devicesView
                     visible: tabBar.currentTab == devicesTab
-                    readonly property bool simpleMode: sinkView.count == 1 && sourceView.count == 1
                     property int maximumWidth: scrollView.viewport.width
                     width: maximumWidth
                     Layout.maximumWidth: maximumWidth
@@ -522,6 +520,7 @@ Item {
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
                             type: "sink"
+                            onlyone: sinkView.count === 1
                         }
                     }
 
@@ -551,6 +550,7 @@ Item {
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
                             type: "source"
+                            onlyone: sourceView.count === 1
                         }
                     }
                 }

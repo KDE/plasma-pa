@@ -29,28 +29,17 @@ ListItemBase {
     readonly property var currentActivePortIndex: ActivePortIndex
     readonly property var currentMuted: Muted
     readonly property var activePortIndex: ActivePortIndex
+    property bool onlyone: false
 
     draggable: false
     label: {
-        if (currentPort && currentPort.description) {
-            var model = type === "sink" ? paSinkModel : paSourceModel;
-            var itemLength = currentPort.description.length;
-            for (var i = 0; i < model.rowCount(); i++) {
-                if (i !== index) {
-                    var port  = model.data(model.index(i, 0), model.role("Ports"))
-                                [model.data(model.index(i, 0), model.role("ActivePortIndex"))];
-                    if (port && port.description) {
-                        var length = Math.min(itemLength, port.description.length)
-                        if (currentPort.description.substring(0, length) === port.description.substring(0, length)) {
-                            return i18nc("label of device items", "%1 (%2)", currentPort.description, Description);
-                        }
-                    }
-                }
+        if (currentPort) {
+            if (onlyone) {
+                return currentPort.description;
             }
-            return currentPort.description;
-        } else {
-            return Description;
+            return i18nc("label of device items", "%1 (%2)", currentPort.description, Description);
         }
+        return Description;
     }
 
     onCurrentActivePortIndexChanged: {
