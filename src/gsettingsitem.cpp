@@ -58,7 +58,7 @@ void GSettingsItem::set(const QString &key, const QVariant &val)
     }
 
     // It might be hard to detect the right GVariant type from
-    // complext QVariant types such as string lists or more detailed
+    // complex QVariant types such as string lists or more detailed
     // types such as integers (GVariant has different sizes),
     // therefore we get the current value for the key and convert
     // to QVariant using the GVariant type

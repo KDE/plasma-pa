@@ -91,7 +91,7 @@ class GConfItem : public QObject
     QString root() const;
 
     /*! Returns the current value of this item, as a QVariant.
-     * subkey is realtive to the provided root.
+     * subkey is relative to the provided root.
      */
     QVariant value(const QString &subKey) const;
 
