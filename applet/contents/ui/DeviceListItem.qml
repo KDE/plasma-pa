@@ -62,17 +62,4 @@ ListItemBase {
             globalMute = false;
         }
     }
-
-    // Prevent an unavailable port selection. UI allows selection of an unavailable port, until it gets refresh,
-    // because there is no call from pulseaudio for availability change.
-    onActivePortIndexChanged: {
-        if (currentPort && currentPort.availability === Port.Unavailable) {
-            for (var i = 0; i < Ports.length; i++) {
-                if (Ports[i].availability === Port.Available) {
-                    ActivePortIndex = i;
-                    return
-                }
-            }
-        }
-    }
 }

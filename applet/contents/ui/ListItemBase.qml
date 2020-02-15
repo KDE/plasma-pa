@@ -144,10 +144,16 @@ PlasmaComponents.ListItem {
                         onClicked: contextMenu.show()
                         tooltip: i18n("Show additional options for %1", defaultButton.text)
                         visible: {
+                            // if it is a sink type and there are at least two sink devices. Same for source type.
                             if (((type == "sink-input" || type == "sink") && sinkView.model.count > 1)
                                 || ((type == "source-input" || type == "source") && sourceView.model.count > 1)) {
                                 return true;
-                            } else if (PulseObject.ports) {
+                            } else if (PulseObject.ports && PulseObject.ports.length > 1) {
+                                // In case an unavailable port is active.
+                                if (PulseObject.ports[PulseObject.activePortIndex].availability == Port.Unavailable) {
+                                    return true;
+                                }
+                                // If there are at least two available ports.
                                 var foundFirstAvailablePort = false;
                                 for (var i = 0; i < PulseObject.ports.length; i++) {
                                     if (PulseObject.ports[i].availability != Port.Unavailable) {
@@ -325,7 +331,7 @@ PlasmaComponents.ListItem {
             }
 
             // Ports
-            // Intentionally only shown when there are at least two available ports.
+            // Intentionally only shown when there are at least two ports.
             if (PulseObject.ports && PulseObject.ports.length > 1) {
                 contextMenu.addMenuItem(newSeperator());
 
@@ -333,33 +339,53 @@ PlasmaComponents.ListItem {
                 menuItem.text = i18nc("Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)", "Ports");
                 menuItem.section = true;
                 contextMenu.addMenuItem(menuItem);
-                menuItem.visible = false;
 
-                var menuItemsPorts = [];
-                var availablePorts = 0;
-                for (var i = 0; i < PulseObject.ports.length; i++) {
-                    var port = PulseObject.ports[i];
-                    if (port.availability != Port.Unavailable) {
-                        menuItemsPorts[availablePorts] = newMenuItem();
-                        menuItemsPorts[availablePorts].text = port.description;
-                        menuItemsPorts[availablePorts].checkable = true;
-                        menuItemsPorts[availablePorts].checked = i === PulseObject.activePortIndex;
-                        var setActivePort = function(portIndex) {
-                            return function() {
-                                PulseObject.activePortIndex = portIndex;
-                            };
-                        };
-                        menuItemsPorts[availablePorts].clicked.connect(setActivePort(i));
-                        contextMenu.addMenuItem(menuItemsPorts[availablePorts]);
-                        menuItemsPorts[availablePorts].visible = false;
-                        availablePorts++;
+                var setActivePort = function(portIndex) {
+                    return function() {
+                        PulseObject.activePortIndex = portIndex;
+                    };
+                };
+
+                // If an unavailable port is active, show all the ports.
+                if (PulseObject.ports[PulseObject.activePortIndex].availability == Port.Unavailable) {
+                    for (var i = 0; i < PulseObject.ports.length; i++) {
+                        var port = PulseObject.ports[i];
+                        var menuItem = newMenuItem();
+                        if (port.availability == Port.Unavailable) {
+                            if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
+                                menuItem.text = i18nc("Port is unavailable", "%1 (unavailable)", port.description);
+                            } else {
+                                menuItem.text = i18nc("Port is unplugged", "%1 (unplugged)", port.description);
+                            }
+                        } else {
+                            menuItem.text = port.description;
+                        }
+                        menuItem.checkable = true;
+                        menuItem.checked = i === PulseObject.activePortIndex;
+                        menuItem.clicked.connect(setActivePort(i));
+                        contextMenu.addMenuItem(menuItem);
                     }
-                }
+                } else { // Hide ports that are unavailable and only show if there are at least two available
+                    var menuItemsPorts = [];
+                    var availablePorts = 0;
+                    for (var i = 0; i < PulseObject.ports.length; i++) {
+                        var port = PulseObject.ports[i];
+                        if (port.availability != Port.Unavailable) {
+                            menuItemsPorts[availablePorts] = newMenuItem();
+                            menuItemsPorts[availablePorts].text = port.description;
+                            menuItemsPorts[availablePorts].checkable = true;
+                            menuItemsPorts[availablePorts].checked = i === PulseObject.activePortIndex;
+                            menuItemsPorts[availablePorts].clicked.connect(setActivePort(i));
+                            contextMenu.addMenuItem(menuItemsPorts[availablePorts]);
+                            availablePorts++;
+                        }
+                    }
 
-                if (1 < availablePorts){
-                    menuItem.visible = true;
-                    for (var i = 0; i < availablePorts; i++) {
-                        menuItemsPorts[i].visible = true;
+                    if (availablePorts <= 1){
+                        menuItem.visible = false;
+                        for (var i = 0; i < availablePorts; i++) {
+                            menuItemsPorts[i].visible = false;
+                        }
                     }
                 }
             }
