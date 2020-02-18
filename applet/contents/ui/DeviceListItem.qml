@@ -33,13 +33,20 @@ ListItemBase {
 
     draggable: false
     label: {
-        if (currentPort) {
-            if (onlyone) {
+        if (currentPort && currentPort.description) {
+            if (onlyone || !Description) {
                 return currentPort.description;
+            } else {
+                return i18nc("label of device items", "%1 (%2)", currentPort.description, Description);
             }
-            return i18nc("label of device items", "%1 (%2)", currentPort.description, Description);
         }
-        return Description;
+        if (Description) {
+            return Description;
+        }
+        if (Name) {
+            return Name;
+        }
+        return i18n("Device name not found");
     }
 
     onCurrentActivePortIndexChanged: {

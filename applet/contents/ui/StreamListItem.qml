@@ -25,7 +25,16 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.private.volume 0.1
 
 ListItemBase {
-    label: Client ? Client.name : Name
+    label: {
+        if (Client && Client.name) {
+            return Client.name;
+        }
+        if (Name) {
+            return Name;
+        }
+        return i18n("Stream name not found");
+    }
+
     icon: IconName
     iconUsesPlasmaTheme: false
 }

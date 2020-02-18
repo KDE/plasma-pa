@@ -134,7 +134,7 @@ PlasmaComponents.ListItem {
 
                     Item {
                         Layout.fillWidth: true
-                        visible: contextMenuButton.visble
+                        visible: contextMenuButton.visible
                     }
 
                     SmallToolButton {
