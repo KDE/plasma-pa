@@ -140,7 +140,7 @@ Item {
             return;
         }
         var volume = boundVolume(paSourceModel.defaultSource.volume + volumeStep);
-        var percent = volumePercent(volume);
+        var percent = volumePercent(volume, currentMaxVolumeValue);
         paSourceModel.defaultSource.muted = percent == 0;
         paSourceModel.defaultSource.volume = volume;
         osd.showMicrophone(percent);
@@ -151,7 +151,7 @@ Item {
             return;
         }
         var volume = boundVolume(paSourceModel.defaultSource.volume - volumeStep);
-        var percent = volumePercent(volume);
+        var percent = volumePercent(volume, currentMaxVolumeValue);
         paSourceModel.defaultSource.muted = percent == 0;
         paSourceModel.defaultSource.volume = volume;
         osd.showMicrophone(percent);
@@ -163,7 +163,7 @@ Item {
         }
         var toMute = !paSourceModel.defaultSource.muted;
         paSourceModel.defaultSource.muted = toMute;
-        osd.showMicrophone(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume));
+        osd.showMicrophone(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume, currentMaxVolumeValue));
     }
 
     function playFeedback(sinkIndex) {
@@ -605,6 +605,11 @@ Item {
                         for (var i = 0; i < paSinkModel.rowCount(); i++) {
                             if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
                                 paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
+                            }
+                        }
+                        for (var i = 0; i < paSourceModel.rowCount(); i++) {
+                            if (paSourceModel.data(paSourceModel.index(i, 0), paSourceModel.role("Volume")) > PulseAudio.NormalVolume) {
+                                paSourceModel.setData(paSourceModel.index(i, 0), PulseAudio.NormalVolume, paSourceModel.role("Volume"));
                             }
                         }
                     }
