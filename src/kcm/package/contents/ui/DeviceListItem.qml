@@ -106,12 +106,16 @@ ColumnLayout {
 
         MuteButton {
             id: muteButton
-            Layout.topMargin: -(height - icon.height) / 2
+            Layout.alignment: Qt.AlignTop
+            Layout.topMargin: -Math.round((height - volumeSlider.height) / 2)
             muted: Muted
             onCheckedChanged: Muted = checked
             toolTipText: !currentPort ? Description : currentPort.description
         }
 
-        VolumeSlider {}
+        VolumeSlider {
+            id: volumeSlider
+            Layout.alignment: Qt.AlignTop
+        }
     }
 }

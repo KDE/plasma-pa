@@ -77,12 +77,17 @@ ColumnLayout {
 
             RowLayout {
                 MuteButton {
+                    Layout.alignment: Qt.AlignTop
+                    Layout.topMargin: -Math.round((height - volumeSlider.height) / 2)
                     muted: Muted
                     onCheckedChanged: Muted = checked
                     toolTipText: inputText.text
                 }
 
-                VolumeSlider {}
+                VolumeSlider {
+                    id: volumeSlider
+                    Layout.alignment: Qt.AlignTop
+                }
             }
         }
     }
