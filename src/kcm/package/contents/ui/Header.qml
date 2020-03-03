@@ -33,7 +33,9 @@ ColumnLayout {
 
         Label {
             id: heading
-            anchors.centerIn: parent
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            elide: Text.ElideRight
             font.weight: Font.DemiBold
         }
     }
@@ -41,6 +43,9 @@ ColumnLayout {
     Label {
         id: disabledLabel
         Layout.alignment: Qt.AlignCenter
+        Layout.fillWidth: true
+        horizontalAlignment: Text.AlignHCenter
+        elide: Text.ElideRight
         visible: text && !parent.enabled
         font.italic: true
     }

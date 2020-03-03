@@ -68,6 +68,7 @@ Kirigami.Page {
 
             StackLayout {
                 anchors.fill: parent
+                anchors.margins: -Kirigami.Units.smallSpacing
 
                 currentIndex: tabView.currentIndex
 
