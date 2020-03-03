@@ -29,6 +29,7 @@ import "../code/icon.js" as Icon
 
 ColumnLayout {
     id: delegate
+    spacing: Kirigami.Units.smallSpacing * 2
     width: parent.width
 
     property bool isPlayback: type.substring(0, 4) == "sink"
@@ -36,69 +37,81 @@ ColumnLayout {
     readonly property var currentPort: Ports[ActivePortIndex]
 
     RowLayout {
-        Kirigami.Icon {
-            Layout.alignment: Qt.AlignHCenter
-            Layout.preferredHeight: delegateColumn.height * 0.75
-            Layout.preferredWidth: Layout.preferredHeight
-            source: Icon.formFactorIcon(FormFactor) || IconName || "audio-card"
+        spacing: Kirigami.Units.smallSpacing
+        Layout.minimumHeight: portbox.implicitHeight
+
+        RadioButton {
+            id: defaultButton
+            // Maximum width of the button need to match the text. Empty area must not change the default device.
+            Layout.maximumWidth: delegate.width - Layout.leftMargin - Layout.rightMargin
+                                    - (portbox.visible ? Kirigami.Units.gridUnit + portLabel.implicitWidth + Kirigami.Units.smallSpacing + portbox.implicitWidth : 0)
+            // Margins and spacing are set to center RadioButton with muteButton, and text with VolumeSlider.
+            Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
+            Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
+            spacing: Kirigami.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
+            checked: Default
+            visible: delegate.ListView.view.count > 1
+            onClicked: Default = true
+            text: !currentPort ? Description : i18ndc("kcm_pulseaudio", "label of device items", "%1 (%2)", currentPort.description, Description)
         }
 
-        ColumnLayout {
-            id: delegateColumn
+        Label {
+            id: soloLabel
+            Layout.maximumWidth: delegate.width - (portbox.visible ? Kirigami.Units.gridUnit + portLabel.implicitWidth + Kirigami.Units.smallSpacing + portbox.implicitWidth : 0)
+            text: defaultButton.text
+            visible: delegate.ListView.view.count <= 1
+            elide: Text.ElideRight
+        }
+
+        Item {
             Layout.fillWidth: true
+            visible: portbox.visible
+        }
 
-            RowLayout {
-                Label {
-                    id: inputText
-                    Layout.fillWidth: true
-                    visible: !portbox.visible
-                    elide: Text.ElideRight
-                    text: !currentPort ? Description : i18ndc("kcm_pulseaudio", "label of device items", "%1 (%2)", currentPort.description, Description)
-                }
+        Label {
+            id: portLabel
+            visible: portbox.visible
+            text: i18nd("kcm_pulseaudio", "Port:")
+        }
 
-                ComboBox {
-                    id: portbox
-                    visible: portbox.count > 1
-                    model: {
-                        var items = [];
-                        for (var i = 0; i < Ports.length; ++i) {
-                            var port = Ports[i];
-                            if (port.availability != Port.Unavailable) {
-                                items.push(port.description);
-                            }
+        ComboBox {
+            id: portbox
+            readonly property var ports: Ports
+            visible: portbox.count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
+            onModelChanged: currentIndex = ActivePortIndex
+            currentIndex: ActivePortIndex
+            onActivated: ActivePortIndex = index
+
+            onPortsChanged: {
+                var items = [];
+                for (var i = 0; i < ports.length; ++i) {
+                    var port = ports[i];
+                    var text = port.description;
+                    if (port.availability == Port.Unavailable) {
+                        if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
+                            text += i18ndc("kcm_pulseaudio", "Port is unavailable", " (unavailable)");
+                        } else {
+                            text += i18ndc("kcm_pulseaudio", "Port is unplugged", " (unplugged)");
                         }
-                        return items
                     }
-                    currentIndex: ActivePortIndex
-                    onActivated: ActivePortIndex = index
+                    items.push(text);
                 }
-
-                Item {
-                    visible: portbox.visible
-                    Layout.fillWidth: true
-                }
-
-                Button {
-                    text: i18n("Default Device")
-                    icon.name: Default ? "starred-symbolic" : "non-starred-symbolic"
-                    visible: delegate.ListView.view.count > 1
-                    checkable: true
-                    checked: Default
-                    onClicked: Default = true;
-                }
-            }
-
-            RowLayout {
-                MuteButton {
-                    Layout.topMargin: -(height - icon.height) / 2
-                    muted: Muted
-                    onCheckedChanged: Muted = checked
-                }
-
-                VolumeSlider {}
+                model = items;
             }
         }
     }
 
-    ListItemSeperator { view: delegate.ListView.view }
+    RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+
+        MuteButton {
+            id: muteButton
+            Layout.topMargin: -(height - icon.height) / 2
+            muted: Muted
+            onCheckedChanged: Muted = checked
+            toolTipText: !currentPort ? Description : currentPort.description
+        }
+
+        VolumeSlider {}
+    }
 }

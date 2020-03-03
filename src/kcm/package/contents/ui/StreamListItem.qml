@@ -79,6 +79,7 @@ ColumnLayout {
                 MuteButton {
                     muted: Muted
                     onCheckedChanged: Muted = checked
+                    toolTipText: inputText.text
                 }
 
                 VolumeSlider {}

@@ -25,6 +25,7 @@ import "../code/icon.js" as Icon
 
 QQC2.ToolButton {
     property bool muted: true
+    property var toolTipText
 
     icon.name: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
     checkable: true
@@ -32,6 +33,6 @@ QQC2.ToolButton {
     onMutedChanged: checked = muted
 
     QQC2.ToolTip {
-        text: i18ndc("kcm_pulseaudio", "Mute audio stream", "Mute %1", inputText.text) // a little hacky
+        text: i18ndc("kcm_pulseaudio", "Mute audio stream", "Mute %1", toolTipText)
     }
 }

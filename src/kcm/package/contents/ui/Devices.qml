@@ -23,6 +23,8 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.3
 
+import org.kde.kirigami 2.5 as Kirigami
+
 ScrollView {
     id: scrollView
 
@@ -49,9 +51,9 @@ ScrollView {
                 id: sinks
                 Layout.fillWidth: true
                 Layout.preferredHeight: contentHeight
-                Layout.margins: units.gridUnit / 2
+                Layout.margins: Kirigami.Units.gridUnit / 2
                 interactive: false
-                spacing: units.smallSpacing * 2
+                spacing: Kirigami.Units.gridUnit
                 model: sinkModel
                 delegate: DeviceListItem {
                     isPlayback: true
@@ -69,8 +71,9 @@ ScrollView {
                 id: sources
                 Layout.fillWidth: true
                 Layout.preferredHeight: contentHeight
-                Layout.margins: units.gridUnit / 2
+                Layout.margins: Kirigami.Units.gridUnit / 2
                 interactive: false
+                spacing: Kirigami.Units.gridUnit
                 model: sourceModel
                 delegate: DeviceListItem {
                     isPlayback: false
