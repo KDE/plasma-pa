@@ -557,7 +557,7 @@ Item {
 
                 PlasmaExtras.Heading {
                     level: 4
-                    opacity: 0.8
+                    enabled: false
                     width: parent.width
                     height: scrollView.height
                     visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
@@ -569,7 +569,7 @@ Item {
 
                 PlasmaExtras.Heading {
                     level: 4
-                    opacity: 0.8
+                    enabled: false
                     width: parent.width
                     height: scrollView.height
                     visible: devicesView.visible && !sinkView.count && !sourceView.count
