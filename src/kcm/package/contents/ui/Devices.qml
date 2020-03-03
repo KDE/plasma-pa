@@ -26,56 +26,55 @@ import QtQuick.Controls 2.3
 ScrollView {
     id: scrollView
 
-    contentWidth: contentLayout.width
-    contentHeight: contentLayout.height
+    contentHeight: contentItem.height
     clip: true
 
-    ColumnLayout {
-        id: contentLayout
+    Item {
+    id: contentItem
+    width: scrollView.availableWidth
+    height: contentLayout.implicitHeight
 
-        Component.onCompleted: {
-            // Normal binding causes binding loops
-            width = Qt.binding(function() {
-                return scrollView.width;
-            });
-        }
+        ColumnLayout {
+            id: contentLayout
+            width: scrollView.availableWidth
 
-        Header {
-            Layout.fillWidth: true
-            enabled: sinks.count > 0
-            text: i18nd("kcm_pulseaudio", "Playback Devices")
-            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Playback Devices Available")
-        }
-
-        ListView {
-            id: sinks
-            Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
-            Layout.margins: units.gridUnit / 2
-            interactive: false
-            spacing: units.smallSpacing * 2
-            model: sinkModel
-            delegate: DeviceListItem {
-                isPlayback: true
+            Header {
+                Layout.fillWidth: true
+                enabled: sinks.count > 0
+                text: i18nd("kcm_pulseaudio", "Playback Devices")
+                disabledText: i18ndc("kcm_pulseaudio", "@label", "No Playback Devices Available")
             }
-        }
 
-        Header {
-            Layout.fillWidth: true
-            enabled: sources.count > 0
-            text: i18nd("kcm_pulseaudio", "Recording Devices")
-            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Recording Devices Available")
-        }
+            ListView {
+                id: sinks
+                Layout.fillWidth: true
+                Layout.preferredHeight: contentHeight
+                Layout.margins: units.gridUnit / 2
+                interactive: false
+                spacing: units.smallSpacing * 2
+                model: sinkModel
+                delegate: DeviceListItem {
+                    isPlayback: true
+                }
+            }
 
-        ListView {
-            id: sources
-            Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
-            Layout.margins: units.gridUnit / 2
-            interactive: false
-            model: sourceModel
-            delegate: DeviceListItem {
-                isPlayback: false
+            Header {
+                Layout.fillWidth: true
+                enabled: sources.count > 0
+                text: i18nd("kcm_pulseaudio", "Recording Devices")
+                disabledText: i18ndc("kcm_pulseaudio", "@label", "No Recording Devices Available")
+            }
+
+            ListView {
+                id: sources
+                Layout.fillWidth: true
+                Layout.preferredHeight: contentHeight
+                Layout.margins: units.gridUnit / 2
+                interactive: false
+                model: sourceModel
+                delegate: DeviceListItem {
+                    isPlayback: false
+                }
             }
         }
     }

@@ -29,83 +29,82 @@ import org.kde.plasma.private.volume 0.1
 ScrollView {
     id: scrollView
 
-    contentWidth: contentLayout.width
-    contentHeight: contentLayout.height
+    contentHeight: contentItem.height
     clip: true
 
-    ColumnLayout {
-        id: contentLayout
+    Item {
+        id: contentItem
+        width: scrollView.availableWidth
+        height: contentLayout.implicitHeight
 
-        Component.onCompleted: {
-            // Normal binding causes binding loops
-            width = Qt.binding(function() {
-                return scrollView.width;
-            });
-        }
+        ColumnLayout {
+            id: contentLayout
+            anchors.fill: parent
 
-        Header {
-            Layout.fillWidth: true
-            enabled: eventStreamView.count || sinkInputView.count
-            text: i18nd("kcm_pulseaudio", "Playback Streams")
-            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Playing Audio")
-        }
-
-        ListView {
-            id: eventStreamView
-            Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
-            Layout.margins: units.gridUnit / 2
-            interactive: false
-            spacing: units.largeSpacing
-            model: PulseObjectFilterModel {
-                filters: [ { role: "Name", value: "sink-input-by-media-role:event" } ]
-                sourceModel: StreamRestoreModel {}
-            }
-            delegate: StreamListItem {
-                deviceModel: sinkModel
-                isPlayback: true
-            }
-        }
-
-        ListView {
-            id: sinkInputView
-            Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
-            Layout.margins: units.gridUnit / 2
-            interactive: false
-            spacing: units.largeSpacing
-            model: PulseObjectFilterModel {
-                filters: [ { role: "VirtualStream", value: false } ]
-                sourceModel: SinkInputModel {}
-            }
-            delegate: StreamListItem {
-                deviceModel: sinkModel
-                isPlayback: true
-            }
-        }
-
-        Header {
-            Layout.fillWidth: true
-            enabled: sourceOutputView.count > 0
-            text: i18nd("kcm_pulseaudio", "Recording Streams")
-            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Recording Audio")
-        }
-
-        ListView {
-            id: sourceOutputView
-            Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
-            Layout.margins: units.gridUnit / 2
-            interactive: false
-            spacing: units.largeSpacing
-            model: PulseObjectFilterModel {
-                filters: [ { role: "VirtualStream", value: false } ]
-                sourceModel: SourceOutputModel {}
+            Header {
+                Layout.fillWidth: true
+                enabled: eventStreamView.count || sinkInputView.count
+                text: i18nd("kcm_pulseaudio", "Playback Streams")
+                disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Playing Audio")
             }
 
-            delegate: StreamListItem {
-                deviceModel: sourceModel
-                isPlayback: false
+            ListView {
+                id: eventStreamView
+                Layout.fillWidth: true
+                Layout.preferredHeight: contentHeight
+                Layout.margins: units.gridUnit / 2
+                interactive: false
+                spacing: units.largeSpacing
+                model: PulseObjectFilterModel {
+                    filters: [ { role: "Name", value: "sink-input-by-media-role:event" } ]
+                    sourceModel: StreamRestoreModel {}
+                }
+                delegate: StreamListItem {
+                    deviceModel: sinkModel
+                    isPlayback: true
+                }
+            }
+
+            ListView {
+                id: sinkInputView
+                Layout.fillWidth: true
+                Layout.preferredHeight: contentHeight
+                Layout.margins: units.gridUnit / 2
+                interactive: false
+                spacing: units.largeSpacing
+                model: PulseObjectFilterModel {
+                    filters: [ { role: "VirtualStream", value: false } ]
+                    sourceModel: SinkInputModel {}
+                }
+                delegate: StreamListItem {
+                    deviceModel: sinkModel
+                    isPlayback: true
+                }
+            }
+
+            Header {
+                Layout.fillWidth: true
+                enabled: sourceOutputView.count > 0
+                text: i18nd("kcm_pulseaudio", "Recording Streams")
+                disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Recording Audio")
+            }
+
+            ListView {
+                id: sourceOutputView
+                Layout.fillWidth: true
+                Layout.preferredHeight: contentHeight
+                Layout.margins: units.gridUnit / 2
+                interactive: false
+                spacing: units.largeSpacing
+                model: PulseObjectFilterModel {
+                    filters: [ { role: "VirtualStream", value: false } ]
+                    sourceModel: SourceOutputModel {}
+                }
+
+                delegate: StreamListItem {
+                    deviceModel: sourceModel
+                    isPlayback: false
+                }
             }
         }
     }
