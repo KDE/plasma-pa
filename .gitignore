@@ -1,3 +1,6 @@
 build/
 *.user
 *.kdev4
+.clang-format
+CMakeLists.txt.user*
+/build*/
