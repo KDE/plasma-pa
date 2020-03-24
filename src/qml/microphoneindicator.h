@@ -32,7 +32,7 @@ class KStatusNotifierItem;
 
 class VolumeOSD;
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Source;
 class SourceModel;
@@ -62,13 +62,13 @@ private:
 
     void adjustVolume(int direction);
 
-    static int volumePercent(QPulseAudio::Source *source);
+    static int volumePercent(PulseAudioQt::Source *source);
     void showOsd();
 
     QStringList appNames() const;
 
-    QPulseAudio::SourceModel *m_sourceModel = nullptr; // microphone devices
-    QPulseAudio::SourceOutputModel *m_sourceOutputModel = nullptr; // recording streams
+    PulseAudioQt::SourceModel *m_sourceModel = nullptr; // microphone devices
+    PulseAudioQt::SourceOutputModel *m_sourceOutputModel = nullptr; // recording streams
 
     KStatusNotifierItem *m_sni = nullptr;
     QPointer<QAction> m_muteAction;
