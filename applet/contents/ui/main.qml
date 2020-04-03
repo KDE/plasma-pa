@@ -101,7 +101,7 @@ Item {
         var percent = volumePercent(volume, currentMaxVolumeValue);
         paSinkModel.preferredSink.muted = percent == 0;
         paSinkModel.preferredSink.volume = volume;
-        osd.show(percent);
+        osd.showVolume(percent);
         playFeedback();
     }
 
@@ -113,7 +113,7 @@ Item {
         var percent = volumePercent(volume, currentMaxVolumeValue);
         paSinkModel.preferredSink.muted = percent == 0;
         paSinkModel.preferredSink.volume = volume;
-        osd.show(percent);
+        osd.showVolume(percent);
         playFeedback();
     }
 
@@ -124,13 +124,13 @@ Item {
         var toMute = !paSinkModel.preferredSink.muted;
         if (toMute) {
             enableGlobalMute();
-            osd.show(0);
+            osd.showMute(0);
         } else {
             if (globalMute) {
                 disableGlobalMute();
             }
             paSinkModel.preferredSink.muted = toMute;
-            osd.show(volumePercent(paSinkModel.preferredSink.volume, currentMaxVolumeValue));
+            osd.showMute(volumePercent(paSinkModel.preferredSink.volume, currentMaxVolumeValue));
             playFeedback();
         }
     }
@@ -143,7 +143,7 @@ Item {
         var percent = volumePercent(volume, currentMaxVolumeValue);
         paSourceModel.defaultSource.muted = percent == 0;
         paSourceModel.defaultSource.volume = volume;
-        osd.showMicrophone(percent);
+        osd.showMic(percent);
     }
 
     function decreaseMicrophoneVolume() {
@@ -154,7 +154,7 @@ Item {
         var percent = volumePercent(volume, currentMaxVolumeValue);
         paSourceModel.defaultSource.muted = percent == 0;
         paSourceModel.defaultSource.volume = volume;
-        osd.showMicrophone(percent);
+        osd.showMic(percent);
     }
 
     function muteMicrophone() {
@@ -163,7 +163,7 @@ Item {
         }
         var toMute = !paSourceModel.defaultSource.muted;
         paSourceModel.defaultSource.muted = toMute;
-        osd.showMicrophone(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume, currentMaxVolumeValue));
+        osd.showMicMute(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume, currentMaxVolumeValue));
     }
 
     function playFeedback(sinkIndex) {
@@ -175,6 +175,7 @@ Item {
         }
         feedback.play(sinkIndex);
     }
+
 
     function enableGlobalMute() {
         var role = paSinkModel.role("Muted");
@@ -358,6 +359,30 @@ Item {
 
     VolumeOSD {
         id: osd
+
+        function showVolume(text) {
+            if (!main.Plasmoid.configuration.volumeOsd)
+                return
+            show(text)
+        }
+
+        function showMute(text) {
+            if (!main.Plasmoid.configuration.muteOsd)
+                return
+            show(text)
+        }
+
+        function showMic(text) {
+            if (!main.Plasmoid.configuration.micOsd)
+                return
+            showMicrophone(text)
+        }
+
+        function showMicMute(text) {
+            if (!main.Plasmoid.configuration.muteOsd)
+                return
+            showMicrophone(text)
+        }
     }
 
     VolumeFeedback {
