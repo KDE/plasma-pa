@@ -100,6 +100,13 @@ qint64 StreamRestore::volume() const
 void StreamRestore::setVolume(qint64 volume)
 {
     pa_cvolume vol = m_cache.valid ? m_cache.volume : m_volume;
+
+    // If no channel exists force one. We need one to be able to control the volume
+    // See https://bugs.kde.org/show_bug.cgi?id=407397
+    if (vol.channels == 0) {
+        vol.channels = 1;
+    }
+
     for (int i = 0; i < vol.channels; ++i) {
         vol.values[i] = volume;
     }
@@ -189,6 +196,13 @@ void StreamRestore::writeChanges(const pa_cvolume &volume, bool muted, const QSt
     info.volume = volume;
     info.device = deviceData.isEmpty() ? nullptr : deviceData.constData();
     info.mute = muted;
+
+    // If no channel exists force one. We need one to be able to control the volume
+    // See https://bugs.kde.org/show_bug.cgi?id=407397
+    if (info.channel_map.channels == 0) {
+        info.channel_map.channels = 1;
+        info.channel_map.map[0] = PA_CHANNEL_POSITION_MONO;
+    }
 
     m_cache.valid = true;
     m_cache.volume = volume;
