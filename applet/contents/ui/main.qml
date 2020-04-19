@@ -394,8 +394,7 @@ Item {
         imagePath: "widgets/line"
     }
 
-    Plasmoid.fullRepresentation: ColumnLayout {
-        spacing: units.smallSpacing
+    Plasmoid.fullRepresentation: PlasmaComponents3.Page {
         Layout.preferredHeight: main.Layout.preferredHeight
         Layout.preferredWidth: main.Layout.preferredWidth
 
@@ -418,253 +417,254 @@ Item {
             sinkView.visible = true;
         }
 
-        RowLayout {
-            spacing: units.smallSpacing
-            Layout.fillWidth: true
+        header: PlasmaExtras.PlasmoidHeading {
+            RowLayout {
+                spacing: units.smallSpacing
+                anchors.fill: parent
 
-            PlasmaComponents.TabBar {
-                id: tabBar
-                Layout.fillWidth: true
-                activeFocusOnTab: true
+                PlasmaComponents.TabBar {
+                    id: tabBar
+                    Layout.fillWidth: true
+                    activeFocusOnTab: true
 
-                PlasmaComponents.TabButton {
-                    id: devicesTab
-                    text: i18n("Devices")
-                }
+                    PlasmaComponents.TabButton {
+                        id: devicesTab
+                        text: i18n("Devices")
+                    }
 
-                PlasmaComponents.TabButton {
-                    id: streamsTab
-                    text: i18n("Applications")
+                    PlasmaComponents.TabButton {
+                        id: streamsTab
+                        text: i18n("Applications")
+                    }
                 }
             }
         }
 
-        PlasmaExtras.ScrollArea {
-            id: scrollView;
+        ColumnLayout {
+            anchors.fill: parent
 
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            PlasmaExtras.ScrollArea {
+                id: scrollView
 
-            horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
-            flickableItem.boundsBehavior: Flickable.StopAtBounds;
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-            //our scroll isn't a list of delegates, all internal items are tab focussable, making this redundant
-            activeFocusOnTab: false
+                horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+                flickableItem.boundsBehavior: Flickable.StopAtBounds;
 
-            Item {
-                width: streamsView.visible ? streamsView.width : devicesView.width
-                height: streamsView.visible ? streamsView.height : devicesView.height
+                //our scroll isn't a list of delegates, all internal items are tab focussable, making this redundant
+                activeFocusOnTab: false
 
-                ColumnLayout {
-                    id: streamsView
-                    spacing: 0
-                    visible: tabBar.currentTab == streamsTab
-                    property int maximumWidth: scrollView.viewport.width
-                    width: maximumWidth
-                    Layout.maximumWidth: maximumWidth
+                Item {
+                    width: streamsView.visible ? streamsView.width : devicesView.width
+                    height: streamsView.visible ? streamsView.height : devicesView.height
 
-                    ListView {
-                        id: sinkInputView
+                    ColumnLayout {
+                        id: streamsView
+                        spacing: 0
+                        visible: tabBar.currentTab == streamsTab
+                        property int maximumWidth: scrollView.viewport.width
+                        width: maximumWidth
+                        Layout.maximumWidth: maximumWidth
 
-                        Layout.fillWidth: true
-                        Layout.minimumHeight: contentHeight
-                        Layout.maximumHeight: contentHeight
+                        ListView {
+                            id: sinkInputView
 
-                        model: PulseObjectFilterModel {
-                            filters: [ { role: "VirtualStream", value: false } ]
-                            sourceModel: SinkInputModel {}
+                            Layout.fillWidth: true
+                            Layout.minimumHeight: contentHeight
+                            Layout.maximumHeight: contentHeight
+
+                            model: PulseObjectFilterModel {
+                                filters: [ { role: "VirtualStream", value: false } ]
+                                sourceModel: SinkInputModel {}
+                            }
+                            boundsBehavior: Flickable.StopAtBounds;
+                            delegate: StreamListItem {
+                                type: "sink-input"
+                                draggable: sinkView.count > 1
+                            }
                         }
-                        boundsBehavior: Flickable.StopAtBounds;
-                        delegate: StreamListItem {
-                            type: "sink-input"
-                            draggable: sinkView.count > 1
+
+                        PlasmaCore.SvgItem {
+                            elementId: "horizontal-line"
+                            Layout.preferredWidth: scrollView.viewport.width - units.smallSpacing * 4
+                            Layout.preferredHeight: naturalSize.height
+                            Layout.leftMargin: units.smallSpacing * 2
+                            Layout.rightMargin: units.smallSpacing * 2
+                            Layout.topMargin: units.smallSpacing
+                            svg: lineSvg
+                            visible: sinkInputView.model.count > 0 && sourceOutputView.model.count > 0
+                        }
+
+                        ListView {
+                            id: sourceOutputView
+
+                            Layout.fillWidth: true
+                            Layout.minimumHeight: contentHeight
+                            Layout.maximumHeight: contentHeight
+
+                            model: PulseObjectFilterModel {
+                                filters: [ { role: "VirtualStream", value: false } ]
+                                sourceModel: SourceOutputModel {}
+                            }
+                            boundsBehavior: Flickable.StopAtBounds;
+                            delegate: StreamListItem {
+                                type: "source-input"
+                                draggable: sourceView.count > 1
+                            }
                         }
                     }
 
-                    PlasmaCore.SvgItem {
-                        elementId: "horizontal-line"
-                        Layout.preferredWidth: scrollView.viewport.width - units.smallSpacing * 4
-                        Layout.preferredHeight: naturalSize.height
-                        Layout.leftMargin: units.smallSpacing * 2
-                        Layout.rightMargin: units.smallSpacing * 2
-                        Layout.topMargin: units.smallSpacing
-                        svg: lineSvg
-                        visible: sinkInputView.model.count > 0 && sourceOutputView.model.count > 0
-                    }
-
-                    ListView {
-                        id: sourceOutputView
-
-                        Layout.fillWidth: true
-                        Layout.minimumHeight: contentHeight
-                        Layout.maximumHeight: contentHeight
-
-                        model: PulseObjectFilterModel {
-                            filters: [ { role: "VirtualStream", value: false } ]
-                            sourceModel: SourceOutputModel {}
-                        }
-                        boundsBehavior: Flickable.StopAtBounds;
-                        delegate: StreamListItem {
-                            type: "source-input"
-                            draggable: sourceView.count > 1
-                        }
-                    }
-                }
-
-                ColumnLayout {
-                    id: devicesView
-                    visible: tabBar.currentTab == devicesTab
-                    property int maximumWidth: scrollView.viewport.width
-                    width: maximumWidth
-                    Layout.maximumWidth: maximumWidth
-                    spacing: 0
-
-                    ListView {
-                        id: sinkView
-
-                        Layout.fillWidth: true
-                        Layout.minimumHeight: contentHeight
-                        Layout.maximumHeight: contentHeight
+                    ColumnLayout {
+                        id: devicesView
+                        visible: tabBar.currentTab == devicesTab
+                        property int maximumWidth: scrollView.viewport.width
+                        width: maximumWidth
+                        Layout.maximumWidth: maximumWidth
                         spacing: 0
 
-                        model: PlasmaCore.SortFilterModel {
-                            sortRole: "SortByDefault"
-                            sortOrder: Qt.DescendingOrder
-                            sourceModel: paSinkModel
+                        ListView {
+                            id: sinkView
 
-                            filterCallback: function (source_row, value) {
-                                var idx = sourceModel.index(source_row, 0);
+                            Layout.fillWidth: true
+                            Layout.minimumHeight: contentHeight
+                            Layout.maximumHeight: contentHeight
+                            spacing: 0
 
-                                if (sourceModel.data(idx, sourceModel.role("Name")) === dummyOutputName) {
-                                    return false;
+                            model: PlasmaCore.SortFilterModel {
+                                sortRole: "SortByDefault"
+                                sortOrder: Qt.DescendingOrder
+                                sourceModel: paSinkModel
+
+                                filterCallback: function (source_row, value) {
+                                    var idx = sourceModel.index(source_row, 0);
+
+                                    if (sourceModel.data(idx, sourceModel.role("Name")) === dummyOutputName) {
+                                        return false;
+                                    }
+
+                                    return true;
                                 }
-
-                                return true;
+                            }
+                            boundsBehavior: Flickable.StopAtBounds;
+                            delegate: DeviceListItem {
+                                type: "sink"
+                                onlyone: sinkView.count === 1
                             }
                         }
-                        boundsBehavior: Flickable.StopAtBounds;
-                        delegate: DeviceListItem {
-                            type: "sink"
-                            onlyone: sinkView.count === 1
+
+                        PlasmaCore.SvgItem {
+                            id: devicesLine
+                            elementId: "horizontal-line"
+                            Layout.preferredWidth: scrollView.viewport.width - units.smallSpacing * 4
+                            Layout.leftMargin: units.smallSpacing * 2
+                            Layout.rightMargin: Layout.leftMargin
+                            Layout.topMargin: units.smallSpacing
+                            svg: lineSvg
+                            visible: sinkView.model.count > 0 && sourceView.model.count > 0 && (sinkView.model.count > 1 || sourceView.model.count > 1)
+                        }
+
+                        ListView {
+                            id: sourceView
+
+                            Layout.fillWidth: true
+                            Layout.minimumHeight: contentHeight
+                            Layout.maximumHeight: contentHeight
+
+                            model: PulseObjectFilterModel {
+                                sortRole: "SortByDefault"
+                                sortOrder: Qt.DescendingOrder
+                                sourceModel: paSourceModel
+                            }
+                            boundsBehavior: Flickable.StopAtBounds;
+                            delegate: DeviceListItem {
+                                type: "source"
+                                onlyone: sourceView.count === 1
+                            }
                         }
                     }
 
-                    PlasmaCore.SvgItem {
-                        id: devicesLine
-                        elementId: "horizontal-line"
-                        Layout.preferredWidth: scrollView.viewport.width - units.smallSpacing * 4
-                        Layout.leftMargin: units.smallSpacing * 2
-                        Layout.rightMargin: Layout.leftMargin
-                        Layout.topMargin: units.smallSpacing
-                        svg: lineSvg
-                        visible: sinkView.model.count > 0 && sourceView.model.count > 0 && (sinkView.model.count > 1 || sourceView.model.count > 1)
+                    PlasmaExtras.Heading {
+                        level: 4
+                        enabled: false
+                        width: parent.width
+                        height: scrollView.height
+                        visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
+                        text: i18n("No applications playing or recording audio")
+                        wrapMode: Text.WordWrap
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
                     }
 
-                    ListView {
-                        id: sourceView
-
-                        Layout.fillWidth: true
-                        Layout.minimumHeight: contentHeight
-                        Layout.maximumHeight: contentHeight
-
-                        model: PulseObjectFilterModel {
-                            sortRole: "SortByDefault"
-                            sortOrder: Qt.DescendingOrder
-                            sourceModel: paSourceModel
-                        }
-                        boundsBehavior: Flickable.StopAtBounds;
-                        delegate: DeviceListItem {
-                            type: "source"
-                            onlyone: sourceView.count === 1
-                        }
+                    PlasmaExtras.Heading {
+                        level: 4
+                        enabled: false
+                        width: parent.width
+                        height: scrollView.height
+                        visible: devicesView.visible && !sinkView.count && !sourceView.count
+                        text: i18n("No output or input devices found")
+                        wrapMode: Text.WordWrap
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
                     }
-                }
-
-                PlasmaExtras.Heading {
-                    level: 4
-                    enabled: false
-                    width: parent.width
-                    height: scrollView.height
-                    visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
-                    text: i18n("No applications playing or recording audio")
-                    wrapMode: Text.WordWrap
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                }
-
-                PlasmaExtras.Heading {
-                    level: 4
-                    enabled: false
-                    width: parent.width
-                    height: scrollView.height
-                    visible: devicesView.visible && !sinkView.count && !sourceView.count
-                    text: i18n("No output or input devices found")
-                    wrapMode: Text.WordWrap
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
                 }
             }
         }
 
-        PlasmaCore.SvgItem {
-            elementId: "horizontal-line"
-            Layout.fillWidth: true
-            Layout.topMargin: 0 - units.smallSpacing / 2
-            Layout.leftMargin: 0 - units.smallSpacing * 1.5
-            Layout.rightMargin: Layout.leftMargin
-            svg: lineSvg
-        }
+        footer: PlasmaExtras.PlasmoidHeading {
+            location: PlasmaExtras.PlasmoidHeading.Location.Footer
+            RowLayout {
+                anchors.fill: parent
 
-        RowLayout {
-
-            PlasmaComponents3.CheckBox {
-                id: raiseMaximumVolumeCheckbox
-                // Align center, with the devices mute icon. Calculating the size based on SmallToolButton.qml. '4' is margin in ListItem.
-                Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
-                Layout.rightMargin: !LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
-                spacing: Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + units.smallSpacing
-                checked: plasmoid.configuration.raiseMaximumVolume
-                onToggled: {
-                    plasmoid.configuration.raiseMaximumVolume = checked
-                    if (!checked) {
-                        for (var i = 0; i < paSinkModel.rowCount(); i++) {
-                            if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
-                                paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
+                PlasmaComponents3.CheckBox {
+                    id: raiseMaximumVolumeCheckbox
+                    // Align center, with the devices mute icon. Calculating the size based on SmallToolButton.qml. '4' is margin in ListItem.
+                    Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
+                    Layout.rightMargin: !LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
+                    spacing: Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + units.smallSpacing
+                    checked: plasmoid.configuration.raiseMaximumVolume
+                    onToggled: {
+                        plasmoid.configuration.raiseMaximumVolume = checked
+                        if (!checked) {
+                            for (var i = 0; i < paSinkModel.rowCount(); i++) {
+                                if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
+                                    paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
+                                }
                             }
-                        }
-                        for (var i = 0; i < paSourceModel.rowCount(); i++) {
-                            if (paSourceModel.data(paSourceModel.index(i, 0), paSourceModel.role("Volume")) > PulseAudio.NormalVolume) {
-                                paSourceModel.setData(paSourceModel.index(i, 0), PulseAudio.NormalVolume, paSourceModel.role("Volume"));
+                            for (var i = 0; i < paSourceModel.rowCount(); i++) {
+                                if (paSourceModel.data(paSourceModel.index(i, 0), paSourceModel.role("Volume")) > PulseAudio.NormalVolume) {
+                                    paSourceModel.setData(paSourceModel.index(i, 0), PulseAudio.NormalVolume, paSourceModel.role("Volume"));
+                                }
                             }
                         }
                     }
+                    text: i18n("Raise maximum volume")
                 }
-                text: i18n("Raise maximum volume")
-            }
 
-            Item {
-                Layout.fillWidth: true
-            }
+                Item {
+                    Layout.fillWidth: true
+                }
 
-            PlasmaComponents.ToolButton {
-                id: globalMuteCheckbox
-                iconName: "audio-volume-muted"
-                onClicked: {
-                    if (!globalMute) {
-                        enableGlobalMute();
-                    } else {
-                        disableGlobalMute();
+                PlasmaComponents.ToolButton {
+                    id: globalMuteCheckbox
+                    iconName: "audio-volume-muted"
+                    onClicked: {
+                        if (!globalMute) {
+                            enableGlobalMute();
+                        } else {
+                            disableGlobalMute();
+                        }
                     }
+                    checked: globalMute
+                    tooltip: i18n("Force mute all playback devices")
                 }
-                checked: globalMute
-                tooltip: i18n("Force mute all playback devices")
-            }
 
-            PlasmaComponents.ToolButton {
-                tooltip: plasmoid.action("configure").text
-                iconName: "configure"
-                Accessible.name: tooltip
-                onClicked: plasmoid.action("configure").trigger()
+                PlasmaComponents.ToolButton {
+                    tooltip: plasmoid.action("configure").text
+                    iconName: "configure"
+                    Accessible.name: tooltip
+                    onClicked: plasmoid.action("configure").trigger()
+                }
             }
         }
     }
