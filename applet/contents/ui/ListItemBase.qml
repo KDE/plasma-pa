@@ -141,7 +141,10 @@ PlasmaComponents.ListItem {
                         id: contextMenuButton
                         icon: "application-menu"
                         checkable: true
-                        onClicked: contextMenu.show()
+                        onClicked: {
+                            contextMenu.visualParent = this;
+                            contextMenu.showRelative();
+                        }
                         tooltip: i18n("Show additional options for %1", defaultButton.text)
                         visible: {
                             // if it is a sink type and there are at least two sink devices. Same for source type.
@@ -284,15 +287,24 @@ PlasmaComponents.ListItem {
                 fill: parent
                 leftMargin: clientIcon.width
             }
-            acceptedButtons: Qt.MiddleButton
-            onClicked: Muted = !Muted
+            acceptedButtons: Qt.MiddleButton | Qt.RightButton
+            onPressed: {
+                if (mouse.button === Qt.RightButton) {
+                    contextMenu.visualParent = this;
+                    contextMenu.show(mouse.x, mouse.y);
+                }
+            }
+            onClicked: {
+                if (mouse.button === Qt.MiddleButton) {
+                    Muted = !Muted;
+                }
+            }
         }
     }
 
     PlasmaComponents.ContextMenu {
         id: contextMenu
 
-        visualParent: contextMenuButton
         placement: PlasmaCore.Types.BottomPosedLeftAlignedPopup
 
         onStatusChanged: {
@@ -422,7 +434,12 @@ PlasmaComponents.ListItem {
             }
         }
 
-        function show() {
+        function show(x, y) {
+            loadDynamicActions();
+            open(x, y);
+        }
+
+        function showRelative(){
             loadDynamicActions();
             openRelative();
         }
