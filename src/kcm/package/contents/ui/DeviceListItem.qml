@@ -65,7 +65,6 @@ ColumnLayout {
 
         Item {
             Layout.fillWidth: true
-            visible: portbox.visible
         }
 
         Label {
@@ -99,6 +98,41 @@ ColumnLayout {
                 model = items;
             }
         }
+
+        Button {
+            id: unlockChannelsButton
+            Accessible.name: i18n("Adjust channels individually")
+            icon.name: "object-unlocked"
+            checkable: true
+
+            onClicked: {
+                if (checked) {
+                    return;
+                }
+
+                // When unifying channels again, set all of them to the same value
+                // as to not keep an odd difference when adjusting them in unison
+                let volumes = ChannelVolumes;
+                for (let i = 0, count = RawChannels.length; i < count; ++i) {
+                    volumes[i] = Volume;
+                }
+                // NOTE "ChannelVolumes = volumes" does not work as the
+                // AbstractModel does not have the magic JS Array to Qt List
+                // conversion stuff and only sees our Array as a QJSValue
+                PulseObject.channelVolumes = volumes;
+            }
+
+            // Default to individual mode when a channel has a different volume
+            Component.onCompleted: {
+                checked = ChannelVolumes.some((volume) => {
+                    return volume !== ChannelVolumes[0];
+                });
+            }
+
+            ToolTip {
+                text: unlockChannelsButton.Accessible.name
+            }
+        }
     }
 
     RowLayout {
@@ -113,9 +147,58 @@ ColumnLayout {
             toolTipText: !currentPort ? Description : currentPort.description
         }
 
-        VolumeSlider {
-            id: volumeSlider
-            Layout.alignment: Qt.AlignTop
+        GridLayout {
+            columns: 2
+
+            VolumeSlider {
+                id: volumeSlider
+                Layout.columnSpan: 2
+                Layout.column: 0
+                Layout.row: 1
+                Layout.alignment: Qt.AlignTop
+                visible: !unlockChannelsButton.checked
+
+                value: Volume
+                onMoved: {
+                    Volume = value;
+                    Muted = (value === 0);
+                }
+            }
+
+            Repeater {
+                model: unlockChannelsButton.checked ? Channels : null
+
+                Label {
+                    Layout.alignment: Qt.AlignTop | Qt.AlignRight
+                    Layout.column: 0
+                    Layout.row: index + 1
+                    text: i18nc("Placeholder is channel name", "%1:", modelData)
+                }
+            }
+
+            Repeater {
+                id: channelSliderRepeater
+                model: unlockChannelsButton.checked ? RawChannels : null
+
+                VolumeSlider {
+                    Layout.column: 1
+                    Layout.row: index + 1
+                    Layout.fillWidth: true
+                    hundredPercentLabelVisible: index === channelSliderRepeater.count -1
+
+                    value: ChannelVolumes[index]
+                    onMoved: {
+                        PulseObject.setChannelVolume(index, value);
+
+                        // volumes are updated async, so we'll just assume it worked here
+                        let newChannelVolumes = ChannelVolumes;
+                        newChannelVolumes[index] = value;
+                        Muted = newChannelVolumes.every((volume) => {
+                            return volume === 0;
+                        });
+                    }
+                }
+            }
         }
     }
 }

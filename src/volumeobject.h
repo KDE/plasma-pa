@@ -37,7 +37,7 @@ class VolumeObject : public PulseObject
     Q_PROPERTY(bool volumeWritable READ isVolumeWritable NOTIFY isVolumeWritableChanged)
     Q_PROPERTY(QStringList channels READ channels NOTIFY channelsChanged)
     Q_PROPERTY(QStringList rawChannels READ rawChannels NOTIFY rawChannelsChanged)
-    Q_PROPERTY(QList<qreal> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
+    Q_PROPERTY(QVector<qint64> channelVolumes READ channelVolumes WRITE setChannelVolumes NOTIFY channelVolumesChanged)
 public:
     explicit VolumeObject(QObject *parent);
     ~VolumeObject() override;
@@ -87,7 +87,9 @@ public:
 
     QStringList channels() const;
     QStringList rawChannels() const;
-    QList<qreal> channelVolumes() const;
+
+    QVector<qint64> channelVolumes() const;
+    virtual void setChannelVolumes(const QVector<qint64> &channelVolumes) = 0;
     Q_INVOKABLE virtual void setChannelVolume(int channel, qint64 volume) = 0;
 
 Q_SIGNALS:

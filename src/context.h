@@ -111,6 +111,26 @@ public:
     }
 
     template <typename PAFunction>
+    void setGenericVolumes(quint32 index, QVector<qint64> channelVolumes,
+                           pa_cvolume cVolume, PAFunction pa_set_volume)
+    {
+        if (!m_context) {
+            return;
+        }
+        Q_ASSERT(channelVolumes.count() == cVolume.channels);
+
+        pa_cvolume newCVolume = cVolume;
+        for (int i = 0; i < channelVolumes.count(); ++i) {
+            newCVolume.values[i] = qBound<qint64>(0, channelVolumes.at(i), PA_VOLUME_MAX);
+        }
+
+        if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, nullptr, nullptr))) {
+            qCWarning(PLASMAPA) <<  "pa_set_volume failed";
+            return;
+        }
+    }
+
+    template <typename PAFunction>
     void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
     {
         if (!m_context) {

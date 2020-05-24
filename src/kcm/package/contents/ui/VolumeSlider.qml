@@ -26,19 +26,22 @@ import QtQuick.Controls 2.5 as QQC2
 import org.kde.plasma.private.volume 0.1
 
 RowLayout {
-    Layout.bottomMargin: hundredPercentLabel.height
+    id: sliderRow
+
+    Layout.bottomMargin: hundredPercentLabelVisible ? hundredPercentLabel.height : 0
+
+    signal moved()
+
+    property alias value: slider.value
+
+    property bool hundredPercentLabelVisible: true
 
     QQC2.Slider {
         id: slider
 
-        // Helper properties to allow async slider updates.
-        // While we are sliding we must not react to value updates
-        // as otherwise we can easily end up in a loop where value
-        // changes trigger volume changes trigger value changes.
-        property int volume: Volume
-        property bool ignoreValueChange: true
-
         Layout.fillWidth: true
+
+        value: Volume
         from: PulseAudio.MinimalVolume
         to: PulseAudio.MaximalVolume
         // TODO: implement a way to hide tickmarks
@@ -46,39 +49,7 @@ RowLayout {
         visible: HasVolume
         enabled: VolumeWritable
         opacity: Muted ? 0.5 : 1
-
-        Component.onCompleted: {
-            ignoreValueChange = false;
-        }
-
-        onVolumeChanged: {
-            var oldIgnoreValueChange = ignoreValueChange;
-            ignoreValueChange = true;
-            value = Volume;
-            ignoreValueChange = oldIgnoreValueChange;
-        }
-
-        onValueChanged: {
-            if (!ignoreValueChange) {
-                Volume = value;
-                Muted = value == 0;
-
-                if (!pressed) {
-                    updateTimer.restart();
-                }
-            }
-        }
-
-        onPressedChanged: {
-            if (!pressed) {
-                // Make sure to sync the volume once the button was
-                // released.
-                // Otherwise it might be that the slider is at v10
-                // whereas PA rejected the volume change and is
-                // still at v15 (e.g.).
-                updateTimer.restart();
-            }
-        }
+        onMoved: sliderRow.moved()
 
         QQC2.Label {
             id: hundredPercentLabel
@@ -86,15 +57,10 @@ RowLayout {
             z: slider.z - 1
             x: (Qt.application.layoutDirection == Qt.RightToLeft ? slider.width - hundredPos : hundredPos) - width / 2
             y: slider.height
+            visible: sliderRow.hundredPercentLabelVisible
             opacity: 0.5
             font.pixelSize: slider.height / 2.2
             text: i18nd("kcm_pulseaudio", "100%")
-        }
-
-        Timer {
-            id: updateTimer
-            interval: 200
-            onTriggered: slider.value = Volume
         }
     }
 

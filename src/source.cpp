@@ -63,6 +63,11 @@ void Source::setChannelVolume(int channel, qint64 volume)
     context()->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_source_volume_by_index);
 }
 
+void Source::setChannelVolumes(const QVector<qint64> &volumes)
+{
+    context()->setGenericVolumes(index(), volumes, cvolume(), &pa_context_set_source_volume_by_index);
+}
+
 bool Source::isDefault() const
 {
     return context()->server()->defaultSource() == this;

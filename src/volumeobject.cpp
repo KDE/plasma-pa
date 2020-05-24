@@ -71,9 +71,9 @@ QStringList VolumeObject::rawChannels() const
     return m_rawChannels;
 }
 
-QList<qreal> VolumeObject::channelVolumes() const
+QVector<qint64> VolumeObject::channelVolumes() const
 {
-    QList<qreal> ret;
+    QVector<qint64> ret;
     ret.reserve(m_volume.channels);
     for (int i = 0; i < m_volume.channels; ++i) {
         ret << m_volume.values[i];

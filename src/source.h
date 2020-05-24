@@ -37,6 +37,7 @@ public:
     void setMuted(bool muted) override;
     void setActivePortIndex(quint32 port_index) override;
     void setChannelVolume(int channel, qint64 volume) override;
+    void setChannelVolumes(const QVector<qint64> &volumes) override;
 
     bool isDefault() const override;
     void setDefault(bool enable) override;

@@ -71,6 +71,11 @@ void Sink::setChannelVolume(int channel, qint64 volume)
     context()->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
+void Sink::setChannelVolumes(const QVector<qint64> &channelVolumes)
+{
+    context()->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_volume_by_index);
+}
+
 bool Sink::isDefault() const
 {
     return context()->server()->defaultSink() == this;
