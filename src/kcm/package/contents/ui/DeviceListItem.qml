@@ -137,7 +137,11 @@ ColumnLayout {
         MuteButton {
             id: muteButton
             Layout.alignment: Qt.AlignTop
-            Layout.topMargin: -Math.round((height - volumeSlider.height) / 2)
+            Layout.topMargin: {
+                // Center the mute button around the main slider, or the first channel slider
+                const sliderHeight = channelSliderRepeater.count > 0 ? channelSliderRepeater.itemAt(0).height : volumeSlider.height;
+                return -Math.round((height - sliderHeight) / 2);
+            }
             muted: Muted
             onCheckedChanged: Muted = checked
             toolTipText: !currentPort ? Description : currentPort.description
