@@ -45,6 +45,7 @@ ColumnLayout {
             // Maximum width of the button need to match the text. Empty area must not change the default device.
             Layout.maximumWidth: delegate.width - Layout.leftMargin - Layout.rightMargin
                                     - (portbox.visible ? Kirigami.Units.gridUnit + portLabel.implicitWidth + Kirigami.Units.smallSpacing + portbox.implicitWidth : 0)
+                                    - balanceButton.width
             // Margins and spacing are set to center RadioButton with muteButton, and text with VolumeSlider.
             Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
             Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
@@ -57,7 +58,9 @@ ColumnLayout {
 
         Label {
             id: soloLabel
-            Layout.maximumWidth: delegate.width - (portbox.visible ? Kirigami.Units.gridUnit + portLabel.implicitWidth + Kirigami.Units.smallSpacing + portbox.implicitWidth : 0)
+            Layout.maximumWidth: delegate.width
+                                    - (portbox.visible ? Kirigami.Units.gridUnit + portLabel.implicitWidth + Kirigami.Units.smallSpacing + portbox.implicitWidth : 0)
+                                    - balanceButton.width
             text: defaultButton.text
             visible: delegate.ListView.view.count <= 1
             elide: Text.ElideRight
