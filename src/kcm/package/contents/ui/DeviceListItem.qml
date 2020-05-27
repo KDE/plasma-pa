@@ -100,9 +100,9 @@ ColumnLayout {
         }
 
         Button {
-            id: unlockChannelsButton
-            Accessible.name: i18n("Adjust channels individually")
-            icon.name: "object-unlocked"
+            id: balanceButton
+            text: i18nc("Audio balance (e.g. control left/right volume individually", "Balance")
+            icon.name: "view-media-equalizer"
             checkable: true
 
             onClicked: {
@@ -128,10 +128,6 @@ ColumnLayout {
                     return volume !== ChannelVolumes[0];
                 });
             }
-
-            ToolTip {
-                text: unlockChannelsButton.Accessible.name
-            }
         }
     }
 
@@ -156,7 +152,7 @@ ColumnLayout {
                 Layout.column: 0
                 Layout.row: 1
                 Layout.alignment: Qt.AlignTop
-                visible: !unlockChannelsButton.checked
+                visible: !balanceButton.checked
 
                 value: Volume
                 onMoved: {
@@ -166,7 +162,7 @@ ColumnLayout {
             }
 
             Repeater {
-                model: unlockChannelsButton.checked ? Channels : null
+                model: balanceButton.checked ? Channels : null
 
                 Label {
                     Layout.alignment: Qt.AlignTop | Qt.AlignRight
@@ -178,7 +174,7 @@ ColumnLayout {
 
             Repeater {
                 id: channelSliderRepeater
-                model: unlockChannelsButton.checked ? RawChannels : null
+                model: balanceButton.checked ? RawChannels : null
 
                 VolumeSlider {
                     Layout.column: 1
