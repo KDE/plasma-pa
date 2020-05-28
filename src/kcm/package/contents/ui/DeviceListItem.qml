@@ -151,13 +151,12 @@ ColumnLayout {
         }
 
         GridLayout {
-            columns: 2
+            rows: Math.max(1, channelSliderRepeater.count)
+            flow: GridLayout.TopToBottom
 
             VolumeSlider {
                 id: volumeSlider
                 Layout.columnSpan: 2
-                Layout.column: 0
-                Layout.row: 1
                 Layout.alignment: Qt.AlignTop
                 visible: !balanceButton.checked
 
@@ -173,8 +172,6 @@ ColumnLayout {
 
                 Label {
                     Layout.alignment: Qt.AlignTop | Qt.AlignRight
-                    Layout.column: 0
-                    Layout.row: index + 1
                     text: i18nc("Placeholder is channel name", "%1:", modelData)
                 }
             }
@@ -184,8 +181,6 @@ ColumnLayout {
                 model: balanceButton.checked ? RawChannels : null
 
                 VolumeSlider {
-                    Layout.column: 1
-                    Layout.row: index + 1
                     Layout.fillWidth: true
                     hundredPercentLabelVisible: index === channelSliderRepeater.count -1
 
