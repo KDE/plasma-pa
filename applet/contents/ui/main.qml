@@ -355,6 +355,12 @@ Item {
             shortcut: Qt.Key_MicMute
             onTriggered: muteMicrophone()
         }
+        GlobalAction {
+            objectName: "mic_push_to_talk"
+            text: i18n("Push to Talk")
+            //shortcut: Qt.MetaModifier + Qt.Key_B // FIXME come up with a better shortcut
+            onTriggered: MicrophoneIndicator.pushToTalk()
+        }
     }
 
     VolumeOSD {

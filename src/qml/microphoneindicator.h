@@ -49,10 +49,14 @@ public:
 
     Q_INVOKABLE void init();
 
+    Q_INVOKABLE void pushToTalk();
+
 Q_SIGNALS:
     void enabledChanged();
 
 private:
+    VolumeOSD *osd();
+
     void scheduleUpdate();
     void update();
 
@@ -64,6 +68,8 @@ private:
 
     static int volumePercent(QPulseAudio::Source *source);
     void showOsd();
+
+    void setPushToTalkMode(bool pushToTalkMode);
 
     QStringList appNames() const;
 
@@ -82,5 +88,10 @@ private:
     int m_wheelDelta = 0;
 
     QTimer *m_updateTimer;
+
+    QPointer<QAction> m_pushToTalkModeAction;
+    bool m_pushToTalkMode = false;
+    bool m_wasMutedBeforePushToTalkMode = false;
+    QTimer *m_pushToTalkDisableTimer = nullptr;
 
 };

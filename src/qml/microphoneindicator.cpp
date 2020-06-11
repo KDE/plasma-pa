@@ -21,11 +21,15 @@
 #include "microphoneindicator.h"
 
 #include <QAction>
+#include <QGuiApplication>
 #include <QIcon>
 #include <QMenu>
 #include <QTimer>
+#include <QStyleHints>
 
+#include <KGlobalAccel>
 #include <KLocalizedString>
+#include <KNotification>
 #include <KStatusNotifierItem>
 
 #include "client.h"
@@ -84,10 +88,14 @@ void MicrophoneIndicator::update()
 
     if (!m_sni) {
         m_sni = new KStatusNotifierItem(QStringLiteral("microphone"));
+        m_sni->setTitle(i18n("Microphone"));
         m_sni->setCategory(KStatusNotifierItem::Hardware);
         // always Active since it is completely removed when microphone isn't in use
         m_sni->setStatus(KStatusNotifierItem::Active);
 
+        connect(m_sni, &KStatusNotifierItem::activateRequested, this, [this] {
+            setPushToTalkMode(!m_pushToTalkMode);
+        });
         // but also middle click to be consistent with volume icon
         connect(m_sni, &KStatusNotifierItem::secondaryActivateRequested, this, &MicrophoneIndicator::toggleMuted);
 
@@ -114,6 +122,10 @@ void MicrophoneIndicator::update()
         m_muteAction->setCheckable(true);
         connect(m_muteAction.data(), &QAction::triggered, this, &MicrophoneIndicator::setMuted);
 
+        m_pushToTalkModeAction = menu->addAction(QIcon::fromTheme(QStringLiteral("irc-voice")), i18n("Push to Talk"));
+        m_pushToTalkModeAction->setCheckable(true);
+        connect(m_pushToTalkModeAction, &QAction::triggered, this, &MicrophoneIndicator::setPushToTalkMode);
+
         // don't let it quit plasmashell
         m_sni->setStandardActionsEnabled(false);
     }
@@ -122,9 +134,15 @@ void MicrophoneIndicator::update()
 
     QString iconName;
     if (allMuted) {
-        iconName = QStringLiteral("microphone-sensitivity-muted");
+        if (m_pushToTalkMode) {
+            iconName = QStringLiteral("irc-unvoice"); // TODO proper icon
+        } else {
+            iconName = QStringLiteral("microphone-sensitivity-muted");
+        }
     } else {
-        if (Source *defaultSource = m_sourceModel->defaultSource()) {
+        if (m_pushToTalkMode) {
+            iconName = QStringLiteral("irc-voice"); // TODO proper icon
+        } else if (Source *defaultSource = m_sourceModel->defaultSource()) {
             const int percent = volumePercent(defaultSource);
             iconName = QStringLiteral("microphone-sensitivity");
             // it deliberately never shows the "muted" icon unless *all* microphones are muted
@@ -140,7 +158,6 @@ void MicrophoneIndicator::update()
         }
     }
 
-    m_sni->setTitle(i18n("Microphone"));
     m_sni->setIconByName(iconName);
 
     QString tooltip = i18nc("App is using mic", "%1 is using the microphone", names.constFirst());
@@ -148,7 +165,9 @@ void MicrophoneIndicator::update()
         tooltip = i18nc("List of apps is using mic", "%1 are using the microphone", names.join(i18nc("list separator", ", ")));
     }
 
-    m_sni->setToolTip(QIcon::fromTheme(iconName), i18n("Microphone"), tooltip);
+    m_sni->setToolTip(QIcon::fromTheme(iconName),
+                      m_pushToTalkMode ? i18n("Microphone (Push to talk)") : i18n("Microphone"),
+                      tooltip);
 
     if (m_muteAction) {
         m_muteAction->setChecked(allMuted);
@@ -181,7 +200,9 @@ void MicrophoneIndicator::setMuted(bool muted)
     static const int s_mutedRole = m_sourceModel->role(QByteArrayLiteral("Muted"));
     Q_ASSERT(s_mutedRole > -1);
 
-    m_showOsdOnUpdate = true;
+    if (!m_pushToTalkMode) {
+        m_showOsdOnUpdate = true;
+    }
 
     if (muted) {
         for (int row = 0; row < m_sourceModel->rowCount(); ++row) {
@@ -244,18 +265,22 @@ int MicrophoneIndicator::volumePercent(Source *source)
     return source->isMuted() ? 0 : qRound(source->volume() / static_cast<qreal>(Context::NormalVolume) * 100);
 }
 
-void MicrophoneIndicator::showOsd()
+VolumeOSD *MicrophoneIndicator::osd()
 {
     if (!m_osd) {
         m_osd = new VolumeOSD(this);
     }
+    return m_osd;
+}
 
+void MicrophoneIndicator::showOsd()
+{
     auto *preferredSource = m_sourceModel->defaultSource();
     if (!preferredSource) {
         return;
     }
 
-    m_osd->showMicrophone(volumePercent(preferredSource));
+    osd()->showMicrophone(volumePercent(preferredSource));
 
 }
 
@@ -292,4 +317,75 @@ QStringList MicrophoneIndicator::appNames() const
     }
 
     return names;
+}
+
+void MicrophoneIndicator::setPushToTalkMode(bool pushToTalkMode)
+{
+    m_pushToTalkMode = pushToTalkMode;
+
+    if (!pushToTalkMode) {
+        setMuted(m_wasMutedBeforePushToTalkMode);
+        return;
+    }
+
+    // FIXME take this from GlobalActionCollection thingie in main.qml, maybe add a Q_INVOKABLE to get current shortcut
+    const auto shortcuts = KGlobalAccel::self()->globalShortcut(QStringLiteral("kmix"), QStringLiteral("mic_push_to_talk"));
+    // FIXME proper notifyrc
+    if (shortcuts.isEmpty()) {
+        KNotification *notification = KNotification::event(KNotification::Notification, i18n("No Push to Talk Shortcut"),
+                                                   i18n("set a shortcut to use it blabla"),
+                                                   QStringLiteral("irc-voice"));
+        notification->setActions({i18n("Configure Shortcuts...")});
+        connect(notification, &KNotification::action1Activated, this, [this] {
+            // FIXME open global shortcuts kcm
+        });
+        return;
+    }
+
+    if (!m_pushToTalkDisableTimer) {
+        m_pushToTalkDisableTimer = new QTimer(this);
+        m_pushToTalkDisableTimer->setSingleShot(true);
+        connect(m_pushToTalkDisableTimer, &QTimer::timeout, this, [this] {
+            setMuted(true);
+            // TODO better text for when mic is muted again
+            osd()->showText(QStringLiteral("irc-unvoice"), i18nc("Push to talk button released, microphone muted again", "Don't Speak"));
+        });
+    }
+
+    KNotification *notification = KNotification::event(KNotification::Notification,
+                                                       i18n("Push to Talk Enabled"),
+                                                       i18nc("Placeholder is keyboard shortcut",
+                                                             "Press and hold '%1' when you want to speak. Click the microphone icon to disable push to talk.",
+                                                             shortcuts.first().toString(QKeySequence::NativeText)),
+                                                       // TODO better icon
+                                                       QStringLiteral("irc-voice"));
+    // Mark as response to explicit user action ("enabling push to talk mode")
+    notification->setHint(QStringLiteral("x-kde-user-action-feedback"), true);
+
+    m_wasMutedBeforePushToTalkMode = muted();
+    setMuted(true);
+}
+
+void MicrophoneIndicator::pushToTalk()
+{
+    if (!m_pushToTalkMode) {
+        // FIXME store push to talk setting
+        setPushToTalkMode(true);
+        return;
+    }
+
+    QStyleHints *styleHints = qApp->styleHints();
+
+    if (!m_pushToTalkDisableTimer->isActive()) {
+        setMuted(false);
+        // TODO proper icon
+        osd()->showText(QStringLiteral("irc-voice"), i18nc("Push to talk button depressed, microphone unmuted", "Speak..."));
+        // First key repeat comes after a long delay
+        // multiply by two to have some margin in case Plasma is busy
+        m_pushToTalkDisableTimer->start(styleHints->keyboardInputInterval() * 2);
+        return;
+    }
+
+    // subsequent invocations are in quick succession
+    m_pushToTalkDisableTimer->start(styleHints->keyboardAutoRepeatRate() * 2); // restart
 }
