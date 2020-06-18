@@ -40,6 +40,7 @@ Name[sv]=Ljudvolym
 Name[tg]=Баландии садо
 Name[tr]=Ses Seviyesi
 Name[uk]=Гучність
+Name[x-test]=xxAudio Volumexx
 Name[zh_CN]=音频音量
 Name[zh_TW]=音效音量
 Comment=Adjust the volume of devices and applications
@@ -82,6 +83,7 @@ Comment[sv]=Justera enhets- och programvolym
 Comment[tg]=Танзим кардани баландии садои дастгоҳҳо ва барномаҳо
 Comment[tr]=Cihazların ve uygulamaların ses düzeyini ayarla
 Comment[uk]=Коригування гучності пристроїв і звуків програм
+Comment[x-test]=xxAdjust the volume of devices and applicationsxx
 Comment[zh_CN]=调整设备和程序的音量
 Comment[zh_TW]=調整裝置與應用程式的音量
 
