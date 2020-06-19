@@ -60,7 +60,7 @@ ScrollView {
                     sourceModel: StreamRestoreModel {}
                 }
                 delegate: StreamListItem {
-                    deviceModel: sinkModel
+                    deviceModel: paSinkModel
                     isPlayback: true
                 }
             }
@@ -77,7 +77,7 @@ ScrollView {
                     sourceModel: SinkInputModel {}
                 }
                 delegate: StreamListItem {
-                    deviceModel: sinkModel
+                    deviceModel: paSinkModel
                     isPlayback: true
                 }
             }

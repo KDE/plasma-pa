@@ -37,6 +37,7 @@ public:
     enum ItemRole {
         PulseObjectRole = Qt::UserRole + 1
     };
+    Q_ENUM(ItemRole)
 
     ~AbstractModel() override;
     QHash<int, QByteArray> roleNames() const final;
@@ -86,7 +87,7 @@ public:
     enum ItemRole {
         SortByDefaultRole = PulseObjectRole + 1
     };
-    Q_ENUMS(ItemRole)
+    Q_ENUM(ItemRole)
 
     explicit SinkModel(QObject *parent = nullptr);
     Sink *defaultSink() const;
@@ -121,7 +122,7 @@ public:
     enum ItemRole {
         SortByDefaultRole = PulseObjectRole + 1
     };
-    Q_ENUMS(ItemRole)
+    Q_ENUM(ItemRole)
 
     explicit SourceModel(QObject *parent = nullptr);
     Source *defaultSource() const;

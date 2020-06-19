@@ -36,6 +36,8 @@ ColumnLayout {
 
     readonly property var currentPort: Ports[ActivePortIndex]
 
+    opacity: (Ports.length === 1 && Ports[0].availability == Port.Unavailable) ? 0.5 : 1
+
     RowLayout {
         spacing: Kirigami.Units.smallSpacing
         Layout.minimumHeight: portbox.implicitHeight

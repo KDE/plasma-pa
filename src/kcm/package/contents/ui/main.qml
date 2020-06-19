@@ -30,8 +30,8 @@ import org.kde.plasma.private.volume 0.1
 
 Kirigami.Page {
     title: kcm.name
-    property QtObject sinkModel: SinkModel { }
-    property QtObject sourceModel: SourceModel { }
+    property QtObject paSinkModel: SinkModel { }
+    property QtObject paSourceModel: SourceModel { }
     property int maxVolumeValue: PulseAudio.NormalVolume // the applet supports changing this value. We will just assume 65536 (100%)
     ConfigModule.quickHelp: i18nd("kcm_pulseaudio", "This module allows configuring the Pulseaudio sound subsystem.")
     implicitHeight: Kirigami.Units.gridUnit * 28

@@ -531,20 +531,11 @@ Item {
                             Layout.maximumHeight: contentHeight
                             spacing: 0
 
-                            model: PlasmaCore.SortFilterModel {
+                            model: PulseObjectFilterModel {
                                 sortRole: "SortByDefault"
                                 sortOrder: Qt.DescendingOrder
+                                filterOutInactiveDevices: true
                                 sourceModel: paSinkModel
-
-                                filterCallback: function (source_row, value) {
-                                    var idx = sourceModel.index(source_row, 0);
-
-                                    if (sourceModel.data(idx, sourceModel.role("Name")) === dummyOutputName) {
-                                        return false;
-                                    }
-
-                                    return true;
-                                }
                             }
                             boundsBehavior: Flickable.StopAtBounds;
                             delegate: DeviceListItem {
@@ -574,6 +565,7 @@ Item {
                             model: PulseObjectFilterModel {
                                 sortRole: "SortByDefault"
                                 sortOrder: Qt.DescendingOrder
+                                filterOutInactiveDevices: true
                                 sourceModel: paSourceModel
                             }
                             boundsBehavior: Flickable.StopAtBounds;

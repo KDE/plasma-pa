@@ -25,11 +25,31 @@ import QtQuick.Controls 2.3
 
 import org.kde.kirigami 2.5 as Kirigami
 
+import org.kde.plasma.private.volume 0.1
+
 ScrollView {
     id: scrollView
 
     contentHeight: contentItem.height
     clip: true
+
+    PulseObjectFilterModel {
+        id: paSinkFilterModel
+
+        sortRole: "SortByDefault"
+        sortOrder: Qt.DescendingOrder
+        filterOutInactiveDevices: true
+        sourceModel: paSinkModel
+    }
+
+    PulseObjectFilterModel {
+        id: paSourceFilterModel
+
+        sortRole: "SortByDefault"
+        sortOrder: Qt.DescendingOrder
+        filterOutInactiveDevices: true
+        sourceModel: paSourceModel
+    }
 
     Item {
     id: contentItem
@@ -54,7 +74,7 @@ ScrollView {
                 Layout.margins: Kirigami.Units.gridUnit / 2
                 interactive: false
                 spacing: Kirigami.Units.gridUnit
-                model: sinkModel
+                model: inactiveDevicesButton.checked ? paSinkModel : paSinkFilterModel
                 delegate: DeviceListItem {
                     isPlayback: true
                 }
@@ -74,10 +94,25 @@ ScrollView {
                 Layout.margins: Kirigami.Units.gridUnit / 2
                 interactive: false
                 spacing: Kirigami.Units.gridUnit
-                model: sourceModel
+                model: inactiveDevicesButton.checked ? paSourceModel : paSourceFilterModel
                 delegate: DeviceListItem {
                     isPlayback: false
                 }
+            }
+
+            Button {
+                id: inactiveDevicesButton
+
+                Layout.alignment: Qt.AlignHCenter
+                Layout.margins: Kirigami.Units.gridUnit
+
+                checkable: true
+
+                text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
+                icon.name: "view-visible"
+
+                // Only show if there actually are any inactive devices
+                visible: (paSourceModel.rowCount != paSourceFilterModel.rowCount) || (paSinkModel.rowCount != paSinkFilterModel.rowCount)
             }
         }
     }
