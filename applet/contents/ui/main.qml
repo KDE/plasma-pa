@@ -36,9 +36,8 @@ Item {
 
     property bool volumeFeedback: Plasmoid.configuration.volumeFeedback
     property bool globalMute: Plasmoid.configuration.globalMute
-    property int raiseMaxVolumeValue: 150
-    property int maxVolumeValue: Math.round(raiseMaxVolumeValue * PulseAudio.NormalVolume / 100.0)
-    property int currentMaxVolumeValue: plasmoid.configuration.raiseMaximumVolume ? maxVolumeValue : PulseAudio.NormalVolume
+    property int currentMaxVolumePercent: plasmoid.configuration.raiseMaximumVolume ? 150 : 100
+    property int currentMaxVolumeValue: currentMaxVolumePercent * PulseAudio.NormalVolume / 100.00
     property int volumeStep: Math.round(Plasmoid.configuration.volumeStep * PulseAudio.NormalVolume / 100.0)
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
@@ -86,11 +85,8 @@ Item {
         return Math.max(PulseAudio.MinimalVolume, Math.min(volume, currentMaxVolumeValue));
     }
 
-    function volumePercent(volume, max) {
-        if (!max) {
-            max = PulseAudio.NormalVolume;
-        }
-        return Math.round(volume / max * 100.0);
+    function volumePercent(volume) {
+        return Math.round(volume / PulseAudio.NormalVolume * 100.0);
     }
 
     function increaseVolume() {
@@ -98,7 +94,7 @@ Item {
             return;
         }
         var volume = boundVolume(paSinkModel.preferredSink.volume + volumeStep);
-        var percent = volumePercent(volume, currentMaxVolumeValue);
+        var percent = volumePercent(volume);
         paSinkModel.preferredSink.muted = percent == 0;
         paSinkModel.preferredSink.volume = volume;
         osd.showVolume(percent);
@@ -110,7 +106,7 @@ Item {
             return;
         }
         var volume = boundVolume(paSinkModel.preferredSink.volume - volumeStep);
-        var percent = volumePercent(volume, currentMaxVolumeValue);
+        var percent = volumePercent(volume);
         paSinkModel.preferredSink.muted = percent == 0;
         paSinkModel.preferredSink.volume = volume;
         osd.showVolume(percent);
@@ -130,7 +126,7 @@ Item {
                 disableGlobalMute();
             }
             paSinkModel.preferredSink.muted = toMute;
-            osd.showMute(volumePercent(paSinkModel.preferredSink.volume, currentMaxVolumeValue));
+            osd.showMute(volumePercent(paSinkModel.preferredSink.volume));
             playFeedback();
         }
     }
@@ -140,7 +136,7 @@ Item {
             return;
         }
         var volume = boundVolume(paSourceModel.defaultSource.volume + volumeStep);
-        var percent = volumePercent(volume, currentMaxVolumeValue);
+        var percent = volumePercent(volume);
         paSourceModel.defaultSource.muted = percent == 0;
         paSourceModel.defaultSource.volume = volume;
         osd.showMic(percent);
@@ -151,7 +147,7 @@ Item {
             return;
         }
         var volume = boundVolume(paSourceModel.defaultSource.volume - volumeStep);
-        var percent = volumePercent(volume, currentMaxVolumeValue);
+        var percent = volumePercent(volume);
         paSourceModel.defaultSource.muted = percent == 0;
         paSourceModel.defaultSource.volume = volume;
         osd.showMic(percent);
@@ -163,7 +159,7 @@ Item {
         }
         var toMute = !paSourceModel.defaultSource.muted;
         paSourceModel.defaultSource.muted = toMute;
-        osd.showMicMute(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume, currentMaxVolumeValue));
+        osd.showMicMute(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume));
     }
 
     function playFeedback(sinkIndex) {
@@ -363,13 +359,13 @@ Item {
         function showVolume(text) {
             if (!main.Plasmoid.configuration.volumeOsd)
                 return
-            show(text)
+            show(text, currentMaxVolumePercent)
         }
 
         function showMute(text) {
             if (!main.Plasmoid.configuration.muteOsd)
                 return
-            show(text)
+            show(text, currentMaxVolumePercent)
         }
 
         function showMic(text) {

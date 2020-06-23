@@ -20,6 +20,10 @@
     <method name="volumeChanged">
       <arg name="percent" type="i" direction="in"/>
     </method>
+    <method name="volumeChanged">
+      <arg name="percent" type="i" direction="in" />
+      <arg name="maximumPercent" type="i" direction="in" />
+    </method>
     <method name="microphoneVolumeChanged">
       <arg name="percent" type="i" direction="in"/>
     </method>

@@ -31,10 +31,10 @@ VolumeOSD::VolumeOSD(QObject *parent)
 {
 }
 
-void VolumeOSD::show(int percent)
+void VolumeOSD::show(int percent, int maximumPercent)
 {
     OsdServiceInterface osdService(SERVICE, PATH, CONNECTION);
-    osdService.volumeChanged(percent);
+    osdService.volumeChanged(percent, maximumPercent);
 }
 
 void VolumeOSD::showMicrophone(int percent)
