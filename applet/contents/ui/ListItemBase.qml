@@ -251,10 +251,25 @@ PlasmaComponents.ListItem {
                     PlasmaComponents.Label {
                         id: percentText
                         readonly property real value: PulseObject.volume > slider.maximumValue ? PulseObject.volume : slider.value
+                        readonly property real displayValue: Math.round(value / PulseAudio.NormalVolume * 100.0)
                         Layout.alignment: Qt.AlignHCenter
                         Layout.minimumWidth: percentMetrics.advanceWidth
                         horizontalAlignment: Qt.AlignRight
-                        text: i18nc("volume percentage", "%1%", Math.round(value / PulseAudio.NormalVolume * 100.0))
+                        text: i18nc("volume percentage", "%1%", displayValue)
+                        // Display a subtle visual indication that the volume
+                        // might be dangerously high
+                        // ------------------------------------------------
+                        // Keep this in sync with the copies in VolumeSlider.qml
+                        // and plasma-workspace:OSDItem.qml
+                        color: {
+                            if (displayValue <= 100) {
+                                return theme.textColor
+                            } else if (displayValue > 100 && displayValue <= 125) {
+                                return theme.neutralTextColor
+                            } else {
+                                return theme.negativeTextColor
+                            }
+                        }
                     }
 
                     TextMetrics {
