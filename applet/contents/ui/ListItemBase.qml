@@ -24,7 +24,7 @@ import QtQuick.Controls 1.0
 import QtQuick.Layouts 1.0
 
 import org.kde.kquickcontrolsaddons 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 2.0 as PlasmaComponents // for contextMenu and ListItem
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
@@ -139,13 +139,12 @@ PlasmaComponents.ListItem {
 
                     SmallToolButton {
                         id: contextMenuButton
-                        icon: "application-menu"
+                        icon.name: "application-menu"
                         checkable: true
                         onClicked: {
                             contextMenu.visualParent = this;
                             contextMenu.showRelative();
                         }
-                        tooltip: i18n("Show additional options for %1", defaultButton.text)
                         visible: {
                             // if it is a sink type and there are at least two sink devices. Same for source type.
                             if (((type == "sink-input" || type == "sink") && sinkView.model.count > 1)
@@ -170,6 +169,9 @@ PlasmaComponents.ListItem {
                             }
                             return false;
                         }
+                        PlasmaComponents3.ToolTip {
+                            text: i18n("Show additional options for %1", defaultButton.text)
+                        }
                     }
                 }
 
@@ -177,13 +179,16 @@ PlasmaComponents.ListItem {
                     SmallToolButton {
                         id: muteButton
                         readonly property bool isPlayback: type.substring(0, 4) == "sink"
-                        icon: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
+                        icon.name: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                         onClicked: Muted = !Muted
                         checked: Muted
-                        tooltip: i18n("Mute %1", defaultButton.text)
+
+                        PlasmaComponents3.ToolTip {
+                            text: i18n("Mute %1", defaultButton.text)
+                        }
                     }
 
-                    PlasmaComponents.Slider {
+                    PlasmaComponents3.Slider {
                         id: slider
 
                         // Helper properties to allow async slider updates.
@@ -196,9 +201,9 @@ PlasmaComponents.ListItem {
                                                                     || volume >= PulseAudio.NormalVolume * 1.01
 
                         Layout.fillWidth: true
-                        minimumValue: PulseAudio.MinimalVolume
-                        maximumValue: forceRaiseMaxVolume ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
-                        stepSize: maximumValue / (maximumValue / PulseAudio.NormalVolume * 100.0)
+                        from: PulseAudio.MinimalVolume
+                        to: forceRaiseMaxVolume ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
+                        stepSize: to / (to / PulseAudio.NormalVolume * 100.0)
                         visible: HasVolume
                         enabled: VolumeWritable
                         opacity: Muted ? 0.5 : 1
@@ -248,9 +253,9 @@ PlasmaComponents.ListItem {
                             onTriggered: slider.value = Volume
                         }
                     }
-                    PlasmaComponents.Label {
+                    PlasmaComponents3.Label {
                         id: percentText
-                        readonly property real value: PulseObject.volume > slider.maximumValue ? PulseObject.volume : slider.value
+                        readonly property real value: PulseObject.volume > slider.to ? PulseObject.volume : slider.value
                         readonly property real displayValue: Math.round(value / PulseAudio.NormalVolume * 100.0)
                         Layout.alignment: Qt.AlignHCenter
                         Layout.minimumWidth: percentMetrics.advanceWidth

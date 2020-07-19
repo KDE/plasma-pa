@@ -20,8 +20,6 @@
 
 import QtQuick 2.0
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-
 import org.kde.plasma.private.volume 0.1
 
 ListItemBase {

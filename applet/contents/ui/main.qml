@@ -22,7 +22,7 @@ import QtQuick 2.2
 import QtQuick.Layouts 1.0
 
 import org.kde.plasma.core 2.1 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 2.0 as PlasmaComponents // PC3 TabBar/TabButton need work first
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
@@ -633,9 +633,9 @@ Item {
                     Layout.fillWidth: true
                 }
 
-                PlasmaComponents.ToolButton {
+                PlasmaComponents3.ToolButton {
                     id: globalMuteCheckbox
-                    iconName: "audio-volume-muted"
+                    icon.name: "audio-volume-muted"
                     onClicked: {
                         if (!globalMute) {
                             enableGlobalMute();
@@ -644,14 +644,21 @@ Item {
                         }
                     }
                     checked: globalMute
-                    tooltip: i18n("Force mute all playback devices")
+
+                    Accessible.name: i18n("Force mute all playback devices")
+                    PlasmaComponents3.ToolTip {
+                        text: i18n("Force mute all playback devices")
+                    }
                 }
 
-                PlasmaComponents.ToolButton {
-                    tooltip: plasmoid.action("configure").text
-                    iconName: "configure"
-                    Accessible.name: tooltip
+                PlasmaComponents3.ToolButton {
+                    icon.name: "configure"
                     onClicked: plasmoid.action("configure").trigger()
+
+                    Accessible.name: plasmoid.action("configure").text
+                    PlasmaComponents3.ToolTip {
+                        text: plasmoid.action("configure").text
+                    }
                 }
             }
         }

@@ -19,7 +19,8 @@
 */
 
 import QtQuick 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 2.0 as PlasmaComponents // for ListItem
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 PlasmaComponents.ListItem {
     property alias text: label.text
@@ -27,7 +28,7 @@ PlasmaComponents.ListItem {
     height: units.gridUnit * 1.5
     sectionDelegate: true
 
-    PlasmaComponents.Label {
+    PlasmaComponents3.Label {
         id: label
         anchors.centerIn: parent
         font.weight: Font.DemiBold
