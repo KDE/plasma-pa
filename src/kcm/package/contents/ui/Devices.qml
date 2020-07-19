@@ -74,7 +74,7 @@ ScrollView {
                 Layout.margins: Kirigami.Units.gridUnit / 2
                 interactive: false
                 spacing: Kirigami.Units.gridUnit
-                model: inactiveDevicesButton.checked ? paSinkModel : paSinkFilterModel
+                model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSinkModel : paSinkFilterModel
                 delegate: DeviceListItem {
                     isPlayback: true
                 }
@@ -94,7 +94,7 @@ ScrollView {
                 Layout.margins: Kirigami.Units.gridUnit / 2
                 interactive: false
                 spacing: Kirigami.Units.gridUnit
-                model: inactiveDevicesButton.checked ? paSourceModel : paSourceFilterModel
+                model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSourceModel : paSourceFilterModel
                 delegate: DeviceListItem {
                     isPlayback: false
                 }

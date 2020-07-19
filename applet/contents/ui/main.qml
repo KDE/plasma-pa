@@ -256,8 +256,24 @@ Item {
         }
     }
 
+    PulseObjectFilterModel {
+        id: paSinkFilterModel
+        sortRole: "SortByDefault"
+        sortOrder: Qt.DescendingOrder
+        filterOutInactiveDevices: true
+        sourceModel: paSinkModel
+    }
+
     SourceModel {
         id: paSourceModel
+    }
+
+    PulseObjectFilterModel {
+        id: paSourceFilterModel
+        sortRole: "SortByDefault"
+        sortOrder: Qt.DescendingOrder
+        filterOutInactiveDevices: true
+        sourceModel: paSourceModel
     }
 
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
@@ -527,12 +543,8 @@ Item {
                             Layout.maximumHeight: contentHeight
                             spacing: 0
 
-                            model: PulseObjectFilterModel {
-                                sortRole: "SortByDefault"
-                                sortOrder: Qt.DescendingOrder
-                                filterOutInactiveDevices: true
-                                sourceModel: paSinkModel
-                            }
+                            model: showHiddenDevices.checked || !showHiddenDevices.visible ? paSinkModel : paSinkFilterModel
+
                             boundsBehavior: Flickable.StopAtBounds;
                             delegate: DeviceListItem {
                                 type: "sink"
@@ -558,12 +570,8 @@ Item {
                             Layout.minimumHeight: contentHeight
                             Layout.maximumHeight: contentHeight
 
-                            model: PulseObjectFilterModel {
-                                sortRole: "SortByDefault"
-                                sortOrder: Qt.DescendingOrder
-                                filterOutInactiveDevices: true
-                                sourceModel: paSourceModel
-                            }
+                            model: showHiddenDevices.checked || !showHiddenDevices.visible ? paSourceModel : paSourceFilterModel
+
                             boundsBehavior: Flickable.StopAtBounds;
                             delegate: DeviceListItem {
                                 type: "source"
@@ -631,6 +639,21 @@ Item {
 
                 Item {
                     Layout.fillWidth: true
+                }
+
+                PlasmaComponents3.ToolButton {
+                    id: showHiddenDevices
+                    icon.name: "view-visible"
+
+                    // Only show if there actually are any inactive devices
+                    visible: (paSourceModel.rowCount != paSourceFilterModel.rowCount) || (paSinkModel.rowCount != paSinkFilterModel.rowCount)
+
+                    checkable: true
+
+                    Accessible.name: i18n("show hidden devices")
+                    PlasmaComponents3.ToolTip {
+                        text: i18n("Show hidden devices")
+                    }
                 }
 
                 PlasmaComponents3.ToolButton {
