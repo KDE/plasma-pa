@@ -106,7 +106,7 @@ ColumnLayout {
 
         Button {
             id: balanceButton
-            text: i18nc("Audio balance (e.g. control left/right volume individually", "Balance")
+            text: i18ndc("kcm_pulseaudio", "Audio balance (e.g. control left/right volume individually", "Balance")
             icon.name: "view-media-equalizer"
             checkable: true
 
@@ -174,7 +174,7 @@ ColumnLayout {
 
                 Label {
                     Layout.alignment: Qt.AlignTop | Qt.AlignRight
-                    text: i18nc("Placeholder is channel name", "%1:", modelData)
+                    text: i18ndc("kcm_pulseaudio", "Placeholder is channel name", "%1:", modelData)
                 }
             }
 
