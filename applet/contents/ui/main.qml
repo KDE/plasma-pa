@@ -646,7 +646,7 @@ Item {
                     icon.name: "view-visible"
 
                     // Only show if there actually are any inactive devices
-                    visible: (paSourceModel.rowCount != paSourceFilterModel.rowCount) || (paSinkModel.rowCount != paSinkFilterModel.rowCount)
+                    visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
 
                     checkable: true
 

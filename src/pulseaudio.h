@@ -37,6 +37,8 @@ public:
     enum ItemRole {
         PulseObjectRole = Qt::UserRole + 1
     };
+    Q_PROPERTY(int count READ rowCount NOTIFY countChanged)
+
     Q_ENUM(ItemRole)
 
     ~AbstractModel() override;
@@ -46,6 +48,9 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value, int role) final;
 
     Q_INVOKABLE int role(const QByteArray &roleName) const;
+
+Q_SIGNALS:
+    void countChanged();
 
 protected:
     AbstractModel(const MapBaseQObject *map, QObject *parent);

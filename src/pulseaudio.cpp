@@ -48,6 +48,7 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     connect(m_map, &MapBaseQObject::added, this, [this](int index) {
         onDataAdded(index);
         endInsertRows();
+        Q_EMIT countChanged();
     });
     connect(m_map, &MapBaseQObject::aboutToBeRemoved, this, [this](int index) {
         beginRemoveRows(QModelIndex(), index, index);
@@ -55,6 +56,7 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     connect(m_map, &MapBaseQObject::removed, this, [this](int index) {
         Q_UNUSED(index);
         endRemoveRows();
+        Q_EMIT countChanged();
     });
 }
 
