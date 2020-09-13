@@ -2,6 +2,7 @@
 Name=Sound
 Name[ar]=الصّوت
 Name[ast]=Soníu
+Name[az]=Səs
 Name[ca]=So
 Name[ca@valencia]=So
 Name[cs]=Zvuk
@@ -47,6 +48,7 @@ Name[zh_TW]=音效
 Comment=Configure Sound
 Comment[ar]=اضبط الصّوت
 Comment[ast]=Configura'l soníu
+Comment[az]=Səsi tənzimləmək
 Comment[ca]=Configura el so
 Comment[ca@valencia]=Configura el so
 Comment[cs]=Nastavit zvuk
