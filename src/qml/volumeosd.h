@@ -30,7 +30,7 @@ public:
     explicit VolumeOSD(QObject *parent = nullptr);
 
 public Q_SLOTS:
-    void show(int percent, int maximumPercent);
+    void show(int percent, int maximumPercent = 100);
     void showMicrophone(int percent);
     void showText(const QString &iconName, const QString &text);
 };
