@@ -686,8 +686,7 @@ Item {
             }
         }
     }
-
     Component.onCompleted: {
-        MicrophoneIndicator.init();
+        MicrophoneIndicator.addApplet(plasmoid)
     }
 }

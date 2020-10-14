@@ -37,6 +37,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Notifications
     I18n
     Plasma
+    PlasmaQuick
 )
 find_package(PulseAudio 5.0.0 REQUIRED)
 find_package(Canberra REQUIRED)

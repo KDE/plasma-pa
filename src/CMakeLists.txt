@@ -59,6 +59,7 @@ target_link_libraries(plasma-volume-declarative
     KF5::GlobalAccel
     KF5::I18n
     KF5::Notifications
+    KF5::PlasmaQuick
     Canberra::Canberra
     ${PULSEAUDIO_LIBRARY}
     ${PULSEAUDIO_MAINLOOP_LIBRARY}

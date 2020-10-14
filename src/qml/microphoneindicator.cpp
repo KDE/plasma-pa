@@ -27,6 +27,7 @@
 
 #include <KLocalizedString>
 #include <KStatusNotifierItem>
+#include <PlasmaQuick/AppletQuickItem>
 
 #include "client.h"
 #include "context.h"
@@ -60,9 +61,12 @@ MicrophoneIndicator::MicrophoneIndicator(QObject *parent)
 
 MicrophoneIndicator::~MicrophoneIndicator() = default;
 
-void MicrophoneIndicator::init()
+void MicrophoneIndicator::addApplet(PlasmaQuick::AppletQuickItem *item)
 {
-    // does nothing, just prompts QML engine to create an instance of the singleton
+    m_applets.push_back(item);
+    connect(item, &PlasmaQuick::AppletQuickItem::destroyed, this, [this, item] {
+        m_applets.removeAll(item);
+    });
 }
 
 void MicrophoneIndicator::scheduleUpdate()
@@ -88,6 +92,16 @@ void MicrophoneIndicator::update()
         // always Active since it is completely removed when microphone isn't in use
         m_sni->setStatus(KStatusNotifierItem::Active);
 
+        connect(m_sni, &KStatusNotifierItem::activateRequested, this, [this] (bool active, const QPoint &pos) {
+            using Applet = PlasmaQuick::AppletQuickItem;
+            Applet *nearestApplet = *std::min_element(m_applets.begin(), m_applets.end(), [&pos] (const Applet *left, const Applet *right) {
+                auto distance = [] (const Applet *applet, const QPoint &point) {
+                    return QLineF(QPointF(0, 0), applet->mapFromGlobal(point)).length();
+                };
+                return distance(left, pos) < distance(right, pos);
+            });
+            nearestApplet->setExpanded(!nearestApplet->isExpanded());
+        });
         // but also middle click to be consistent with volume icon
         connect(m_sni, &KStatusNotifierItem::secondaryActivateRequested, this, &MicrophoneIndicator::toggleMuted);
 

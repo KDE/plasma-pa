@@ -39,6 +39,10 @@ class SourceModel;
 class SourceOutputModel;
 }
 
+namespace PlasmaQuick {
+class AppletQuickItem;
+}
+
 class MicrophoneIndicator : public QObject
 {
     Q_OBJECT
@@ -47,7 +51,7 @@ public:
     explicit MicrophoneIndicator(QObject *parent = nullptr);
     ~MicrophoneIndicator() override;
 
-    Q_INVOKABLE void init();
+    Q_INVOKABLE void addApplet(PlasmaQuick::AppletQuickItem *applet);
 
 Q_SIGNALS:
     void enabledChanged();
@@ -82,5 +86,7 @@ private:
     int m_wheelDelta = 0;
 
     QTimer *m_updateTimer;
+
+    QVector<PlasmaQuick::AppletQuickItem*> m_applets;
 
 };
