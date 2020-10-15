@@ -435,20 +435,20 @@ PlasmaComponents.ListItem {
                 menuItem.section = true;
                 contextMenu.addMenuItem(menuItem);
                 var sModel = type == "sink-input" ? sinkView.model : sourceView.model;
-
                 for (var i = 0; i < sModel.count; ++i) {
-                    var data = sModel.get(i);
+                    const modelIndex = sModel.index(i, 0)
+                    const index = sModel.data(modelIndex, sModel.role("Index"))
                     var menuItem = newMenuItem();
-                    menuItem.text = data.Description;
+                    menuItem.text = sModel.data(modelIndex, sModel.role("Description"));
                     menuItem.enabled = true;
                     menuItem.checkable = true;
-                    menuItem.checked = data.Index === PulseObject.deviceIndex;
+                    menuItem.checked = index === PulseObject.deviceIndex;
                     var setActiveSink = function(sinkIndex) {
                         return function() {
                             PulseObject.deviceIndex = sinkIndex;
                         };
                     };
-                    menuItem.clicked.connect(setActiveSink(data.Index));
+                    menuItem.clicked.connect(setActiveSink(index));
                     contextMenu.addMenuItem(menuItem);
                 }
             }
