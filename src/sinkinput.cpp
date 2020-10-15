@@ -22,6 +22,8 @@
 
 #include "context.h"
 
+#include "sink.h"
+
 namespace QPulseAudio
 {
 
@@ -36,6 +38,10 @@ void SinkInput::update(const pa_sink_input_info *info)
     if (m_deviceIndex != info->sink) {
         m_deviceIndex = info->sink;
         Q_EMIT deviceIndexChanged();
+    }
+    if (m_sinkIndex != info->sink) {
+        m_sinkIndex = info->sink;
+        Q_EMIT sourceIndexChanged();
     }
 }
 
@@ -62,6 +68,20 @@ void SinkInput::setChannelVolume(int channel, qint64 volume)
 void SinkInput::setChannelVolumes(const QVector<qint64> &channelVolumes)
 {
     context()->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_input_volume);
+}
+
+quint32 SinkInput::sourceIndex() const
+{
+    auto sink = qobject_cast<Sink*>(context()->sinks().data().value(m_sinkIndex));
+    if (!sink) {
+        return -1;
+    }
+    return sink->sourceIndex();
+}
+
+quint32 SinkInput::streamIndex() const
+{
+    return m_index;
 }
 
 } // QPulseAudio

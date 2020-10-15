@@ -56,6 +56,8 @@ public:
 
     bool isValid() { return m_context && m_mainloop; }
 
+    pa_context *context() const { return m_context; }
+
     const SinkMap &sinks() const { return m_sinks; }
     const SinkInputMap &sinkInputs() const { return m_sinkInputs; }
     const SourceMap &sources() const { return m_sources; }

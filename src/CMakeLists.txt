@@ -17,6 +17,7 @@ set(cpp_SRCS
     source.cpp
     sourceoutput.cpp
     stream.cpp
+    volumemonitor.cpp
     volumeobject.cpp
     debug.cpp
     server.cpp

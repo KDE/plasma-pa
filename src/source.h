@@ -43,6 +43,8 @@ public:
     void setDefault(bool enable) override;
 
     void switchStreams() override;
+
+    quint32 sourceIndex() const override;
 };
 
 } // QPulseAudio

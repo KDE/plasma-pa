@@ -43,6 +43,10 @@ Sink::~Sink()
 void Sink::update(const pa_sink_info *info)
 {
     updateDevice(info);
+    if (m_sourceIndex != info->monitor_source) {
+        m_sourceIndex = info->monitor_source;
+        Q_EMIT sourceIndexChanged();
+    }
 }
 
 void Sink::setVolume(qint64 volume)
@@ -127,6 +131,11 @@ void Sink::switchStreams()
     std::for_each(data.begin(), data.end(), [this](SinkInput* paObj) {
         paObj->setDeviceIndex(m_index);
     });
+}
+
+quint32 Sink::sourceIndex() const
+{
+    return m_sourceIndex;
 }
 
 } // QPulseAudio

@@ -37,6 +37,8 @@
 #include "streamrestore.h"
 #include "module.h"
 
+#include <KLocalizedString>
+
 namespace QPulseAudio
 {
 
@@ -111,7 +113,8 @@ static void source_output_cb(pa_context *context, const pa_source_output_info *i
     if (const char *app = pa_proplist_gets(info->proplist, PA_PROP_APPLICATION_ID)) {
         if (strcmp(app, "org.PulseAudio.pavucontrol") == 0
                 || strcmp(app, "org.gnome.VolumeControl") == 0
-                || strcmp(app, "org.kde.kmixd") == 0)
+                || strcmp(app, "org.kde.kmixd") == 0
+                || strcmp(app, "org.kde.plasma-pa") == 0)
             return;
     }
     Q_ASSERT(context);
@@ -610,7 +613,13 @@ void Context::connectToDaemon()
 
     pa_mainloop_api *api = pa_glib_mainloop_get_api(m_mainloop);
     Q_ASSERT(api);
-    m_context = pa_context_new(api, "QPulse");
+
+    pa_proplist *proplist = pa_proplist_new();
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_NAME, i18nc("Name shown in debug pulseaudio tools", "Plasma PA").toUtf8().constData());
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_ID, "org.kde.plasma-pa");
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "audio-card");
+    m_context = pa_context_new_with_proplist(api, nullptr, proplist);
+    pa_proplist_free(proplist);
     Q_ASSERT(m_context);
 
     if (pa_context_connect(m_context, nullptr, PA_CONTEXT_NOFAIL, nullptr) < 0) {

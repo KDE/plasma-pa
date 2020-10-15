@@ -47,8 +47,13 @@ public:
 
     void switchStreams() override;
 
+    quint32 sourceIndex() const override;
+
 public Q_SLOTS:
     void testChannel(const QString &name);
+
+private:
+    quint32 m_sourceIndex = -1;
 };
 
 } // QPulseAudio

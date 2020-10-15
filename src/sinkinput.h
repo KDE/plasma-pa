@@ -41,6 +41,12 @@ public:
     void setChannelVolume(int channel, qint64 volume) override;
     void setChannelVolumes(const QVector<qint64> &channelVolumes) override;
     void setDeviceIndex(quint32 deviceIndex) override;
+
+    quint32 sourceIndex() const override;
+    quint32 streamIndex() const override;
+
+private:
+    quint32 m_sinkIndex = -1;
 };
 
 } // QPulseAudio
