@@ -430,6 +430,8 @@ Item {
         }
 
         header: PlasmaExtras.PlasmoidHeading {
+            //this removes bottom padding to allow tabbar to touch the edge  
+            bottomInset: 0
             RowLayout {
                 spacing: units.smallSpacing
                 anchors.fill: parent
