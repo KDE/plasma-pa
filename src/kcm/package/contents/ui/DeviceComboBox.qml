@@ -1,6 +1,7 @@
 /*
     Copyright 2014-2015 Harald Sitter <sitter@kde.org>
     Copyright 2016 David Rosca <nowrep@gmail.com>
+    Copyright 2020 David Redondo <kde@david-redondo.de>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -23,43 +24,10 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 
 ComboBox {
-    onModelChanged: updateIndex()
-    onCountChanged: updateIndex()
+    textRole: "Description"
+    valueRole: "Index"
 
-    onActivated: {
-        if (index === -1) {
-            return;
-        }
+    onActivated: DeviceIndex = currentValue
 
-        DeviceIndex = modelIndexToDeviceIndex(index);
-    }
-
-    function updateIndex() {
-        currentIndex = deviceIndexToModelIndex(DeviceIndex);
-    }
-
-    function deviceIndexToModelIndex(deviceIndex) {
-        textRole = 'Index';
-        var searchString = '';
-        if (deviceIndex !== 0) {
-            searchString = '' + deviceIndex;
-        }
-        var modelIndex = find(searchString);
-        textRole = 'Description';
-        return modelIndex;
-    }
-
-    function modelIndexToDeviceIndex(modelIndex) {
-        textRole = 'Index';
-        var deviceIndex = Number(textAt(modelIndex));
-        textRole = 'Description';
-        return deviceIndex;
-    }
-
-    Connections {
-        target: PulseObject
-        onDeviceIndexChanged: updateIndex();
-    }
-
-    Component.onCompleted: updateIndex();
+    Component.onCompleted: currentIndex = indexOfValue(DeviceIndex)
 }
