@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Sound
+Name=Audio
 Name[ar]=الصّوت
 Name[ast]=Soníu
 Name[az]=Səs
@@ -45,7 +45,7 @@ Name[uk]=Звук
 Name[x-test]=xxSoundxx
 Name[zh_CN]=声音
 Name[zh_TW]=音效
-Comment=Configure Sound
+Comment=Configure audio devices and volume
 Comment[ar]=اضبط الصّوت
 Comment[ast]=Configura'l soníu
 Comment[az]=Səsi tənzimləmək
@@ -97,9 +97,14 @@ X-KDE-PluginInfo-Author=Harald Sitter
 X-KDE-PluginInfo-Email=sitter@kde.org
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-Name=kcm_pulseaudio
-X-KDE-ServiceTypes=Plasma/Generic
+X-KDE-ServiceTypes=KCModule
 X-Plasma-API=declarativeappletscript
 X-KDE-FormFactors=handset,tablet,mediacenter,desktop
-
+X-KDE-Library=kcm_pulseaudio
 X-Plasma-MainScript=ui/main.qml
-X-Plasma-RemoteLocation=
+X-KDE-ParentApp=kcontrol
+X-KDE-System-Settings-Parent-Category=hardware
+X-KDE-Weight=60
+X-KDE-PluginKeyword=kcm_pulseaudio
+X-DocPath=kcontrol/plasma-pa/index.html
+X-KDE-Keywords=Sound,Volume,Output,Input,Speakers,Microphone,Audio,Music,PulseAudio,Pulse
