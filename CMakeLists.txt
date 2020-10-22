@@ -18,9 +18,13 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
+include(ECMSetupVersion)
 include(ECMOptionalAddSubdirectory)
-
 include(FindPkgConfig)
+
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX PLASMAPA
+    VERSION_HEADER ${CMAKE_BINARY_DIR}/version.h)
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core

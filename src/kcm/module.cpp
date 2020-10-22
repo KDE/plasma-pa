@@ -37,7 +37,7 @@ KCMPulseAudio::KCMPulseAudio(QObject *parent, const QVariantList &args)
 {
     KAboutData *aboutData = new KAboutData("kcm_pulseaudio",
                                            i18nc("@title", "Audio"),
-                                           global_s_versionStringFull,
+                                           QStringLiteral(PLASMAPA_VERSION_STRING),
                                            QStringLiteral(""),
                                            KAboutLicense::LicenseKey::GPL_V3,
                                            i18nc("@info:credit", "Copyright 2015 Harald Sitter"));
