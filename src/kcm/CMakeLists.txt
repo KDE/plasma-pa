@@ -1,14 +1,7 @@
 include_directories(${CMAKE_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
 
-file(GLOB QML_SRCS package/contents/ui/*.qml)
-
-set(kcm_SRCS
-    ${QML_SRCS}
-    module.cpp
-)
-
-add_library(kcm_pulseaudio MODULE ${kcm_SRCS})
+add_library(kcm_pulseaudio MODULE module.cpp)
 
 target_link_libraries(kcm_pulseaudio
     Qt5::Quick
