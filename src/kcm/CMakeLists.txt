@@ -1,7 +1,7 @@
-include_directories(${CMAKE_BINARY_DIR})
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
-
 add_library(kcm_pulseaudio MODULE module.cpp)
+
+target_include_directories(kcm_pulseaudio PRIVATE ${CMAKE_BINARY_DIR})
+target_include_directories(kcm_pulseaudio PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
 
 target_link_libraries(kcm_pulseaudio
     Qt5::Quick
