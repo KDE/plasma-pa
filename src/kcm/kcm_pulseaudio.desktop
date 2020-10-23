@@ -1,7 +1,6 @@
 [Desktop Entry]
 Type=Service
 Icon=kmix
-Exec=kcmshell5 kcm_pulseaudio
 
 X-KDE-FormFactors=handset,tablet,mediacenter,desktop
 X-KDE-Library=kcm_pulseaudio
