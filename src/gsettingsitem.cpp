@@ -18,9 +18,7 @@
  */
 
 #include <QString>
-#include <QVariant>
 
-#include <gio/gio.h>
 
 #include "gsettingsitem.h"
 #include "debug.h"

@@ -24,7 +24,6 @@
 #include "server.h"
 #include "sinkinput.h"
 #include "canberracontext.h"
-#include <pulse/channelmap.h>
 
 namespace QPulseAudio
 {

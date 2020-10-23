@@ -19,7 +19,6 @@
 */
 
 #include "canberracontext.h"
-#include <QObject>
 
 namespace QPulseAudio
 {
