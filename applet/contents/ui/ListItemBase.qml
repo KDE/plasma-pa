@@ -333,9 +333,6 @@ PlasmaComponents.ListItem {
             }
         }
 
-        function newSeperator() {
-            return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem { separator: true }", contextMenu);
-        }
         function newMenuItem() {
             return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem {}", contextMenu);
         }
@@ -365,8 +362,6 @@ PlasmaComponents.ListItem {
             // Ports
             // Intentionally only shown when there are at least two ports.
             if (PulseObject.ports && PulseObject.ports.length > 1) {
-                contextMenu.addMenuItem(newSeperator());
-
                 var menuItem = newMenuItem();
                 menuItem.text = i18nc("Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)", "Ports");
                 menuItem.section = true;
@@ -425,7 +420,6 @@ PlasmaComponents.ListItem {
             // Choose output / input device
             // Intentionally only shown when there are at least two options
             if ((type == "sink-input" && sinkView.model.count > 1) || (type == "source-input" && sourceView.model.count > 1)) {
-                contextMenu.addMenuItem(newSeperator());
                 var menuItem = newMenuItem();
                 if (type == "sink-input") {
                     menuItem.text = i18nc("Heading for a list of possible output devices (speakers, headphones, ...) to choose", "Play audio using");
