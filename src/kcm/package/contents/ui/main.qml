@@ -26,7 +26,6 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
 
 import org.kde.kcm 1.3
-import org.kde.plasma.core 2.0 as PlasmaCore /* for units.gridUnit */
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
@@ -143,7 +142,7 @@ ScrollViewKCM {
                     Layout.fillWidth: true
                     Layout.preferredHeight: contentHeight
                     interactive: false
-                    spacing: units.largeSpacing
+                    spacing: Kirigami.Units.largeSpacing
                     model: PulseObjectFilterModel {
                         filters: [ { role: "Name", value: "sink-input-by-media-role:event" } ]
                         sourceModel: StreamRestoreModel {}
@@ -159,7 +158,7 @@ ScrollViewKCM {
                     Layout.fillWidth: true
                     Layout.preferredHeight: contentHeight
                     interactive: false
-                    spacing: units.largeSpacing
+                    spacing: Kirigami.Units.largeSpacing
                     model: PulseObjectFilterModel {
                         filters: [ { role: "VirtualStream", value: false } ]
                         sourceModel: SinkInputModel {}
@@ -182,7 +181,7 @@ ScrollViewKCM {
                     Layout.fillWidth: true
                     Layout.preferredHeight: contentHeight
                     interactive: false
-                    spacing: units.largeSpacing
+                    spacing: Kirigami.Units.largeSpacing
                     model: PulseObjectFilterModel {
                         filters: [ { role: "VirtualStream", value: false } ]
                         sourceModel: SourceOutputModel {}

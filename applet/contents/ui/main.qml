@@ -45,10 +45,10 @@ Item {
     // DEFAULT_SINK_NAME in module-always-sink.c
     readonly property string dummyOutputName: "auto_null"
 
-    Layout.minimumHeight: units.gridUnit * 8
-    Layout.minimumWidth: units.gridUnit * 14
-    Layout.preferredHeight: units.gridUnit * 21
-    Layout.preferredWidth: units.gridUnit * 24
+    Layout.minimumHeight: PlasmaCore.Units.gridUnit * 8
+    Layout.minimumWidth: PlasmaCore.Units.gridUnit * 14
+    Layout.preferredHeight: PlasmaCore.Units.gridUnit * 21
+    Layout.preferredWidth: PlasmaCore.Units.gridUnit * 24
     Plasmoid.switchHeight: Layout.minimumHeight
     Plasmoid.switchWidth: Layout.minimumWidth
 
@@ -433,7 +433,7 @@ Item {
             //this removes bottom padding to allow tabbar to touch the edge
             bottomPadding: -bottomInset
             RowLayout {
-                spacing: units.smallSpacing
+                spacing: PlasmaCore.Units.smallSpacing
                 anchors.fill: parent
 
                 PlasmaComponents.TabBar {
@@ -501,11 +501,11 @@ Item {
 
                         PlasmaCore.SvgItem {
                             elementId: "horizontal-line"
-                            Layout.preferredWidth: scrollView.viewport.width - units.smallSpacing * 4
+                            Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
                             Layout.preferredHeight: naturalSize.height
-                            Layout.leftMargin: units.smallSpacing * 2
-                            Layout.rightMargin: units.smallSpacing * 2
-                            Layout.topMargin: units.smallSpacing
+                            Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
+                            Layout.rightMargin: PlasmaCore.Units.smallSpacing * 2
+                            Layout.topMargin: PlasmaCore.Units.smallSpacing
                             svg: lineSvg
                             visible: sinkInputView.model.count > 0 && sourceOutputView.model.count > 0
                         }
@@ -557,10 +557,10 @@ Item {
                         PlasmaCore.SvgItem {
                             id: devicesLine
                             elementId: "horizontal-line"
-                            Layout.preferredWidth: scrollView.viewport.width - units.smallSpacing * 4
-                            Layout.leftMargin: units.smallSpacing * 2
+                            Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
+                            Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
                             Layout.rightMargin: Layout.leftMargin
-                            Layout.topMargin: units.smallSpacing
+                            Layout.topMargin: PlasmaCore.Units.smallSpacing
                             svg: lineSvg
                             visible: sinkView.model.count > 0 && sourceView.model.count > 0 && (sinkView.model.count > 1 || sourceView.model.count > 1)
                         }
@@ -617,9 +617,9 @@ Item {
                 PlasmaComponents3.CheckBox {
                     id: raiseMaximumVolumeCheckbox
                     // Align center, with the devices mute icon. Calculating the size based on SmallToolButton.qml. '4' is margin in ListItem.
-                    Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
-                    Layout.rightMargin: !LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
-                    spacing: Math.round((Math.ceil(units.iconSizes.small + units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + units.smallSpacing
+                    Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(PlasmaCore.Units.iconSizes.small + PlasmaCore.Units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
+                    Layout.rightMargin: !LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(PlasmaCore.Units.iconSizes.small + PlasmaCore.Units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
+                    spacing: Math.round((Math.ceil(PlasmaCore.Units.iconSizes.small + PlasmaCore.Units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + PlasmaCore.Units.smallSpacing
                     checked: plasmoid.configuration.raiseMaximumVolume
                     onToggled: {
                         plasmoid.configuration.raiseMaximumVolume = checked

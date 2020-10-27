@@ -21,11 +21,12 @@
 import QtQuick 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents // for ListItem
 import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.core 2.0 as PlasmaCore
 
 PlasmaComponents.ListItem {
     property alias text: label.text
 
-    height: units.gridUnit * 1.5
+    height: PlasmaCore.Units.gridUnit * 1.5
     sectionDelegate: true
 
     PlasmaComponents3.Label {

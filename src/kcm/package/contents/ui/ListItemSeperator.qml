@@ -21,6 +21,8 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.0
 
+import org.kde.kirigami 2.5 as Kirigami
+
 Rectangle {
     property ListView view
 
@@ -28,7 +30,7 @@ Rectangle {
 
     visible: (view.count != 0) && (view.count != (index + 1))
     color: systemPalette.mid
-    height: Math.ceil(units.gridUnit / 20)
+    height: Math.ceil(Kirigami.Units.gridUnit / 20)
 
     SystemPalette {
         id: systemPalette

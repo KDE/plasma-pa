@@ -25,6 +25,7 @@ import QtQuick.Controls 2.2
 import org.kde.plasma.private.volume 0.1
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.kcm 1.3 as KCM
+import org.kde.kirigami 2.5 as Kirigami
 
 KCM.SimpleKCM {
 
@@ -43,9 +44,9 @@ KCM.SimpleKCM {
             id: view
             Layout.fillWidth: true
             Layout.preferredHeight: contentHeight
-            Layout.margins: units.gridUnit / 2
+            Layout.margins: Kirigami.Units.gridUnit / 2
             interactive: false
-            spacing: units.smallSpacing * 2
+            spacing: Kirigami.Units.smallSpacing * 2
             model: CardModel {}
             delegate: CardListItem {}
         }
@@ -62,9 +63,9 @@ KCM.SimpleKCM {
 
         CheckBox {
             Layout.fillWidth: true
-            Layout.topMargin: units.smallSpacing
-            Layout.leftMargin: units.gridUnit / 2
-            Layout.rightMargin: units.gridUnit / 2
+            Layout.topMargin: Kirigami.Units.smallSpacing
+            Layout.leftMargin: Kirigami.Units.gridUnit / 2
+            Layout.rightMargin: Kirigami.Units.gridUnit / 2
             text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")
             checked: moduleManager.combineSinks
             onCheckedChanged: moduleManager.combineSinks = checked;
@@ -74,8 +75,8 @@ KCM.SimpleKCM {
 
         CheckBox {
             Layout.fillWidth: true
-            Layout.leftMargin: units.gridUnit / 2
-            Layout.rightMargin: units.gridUnit / 2
+            Layout.leftMargin: Kirigami.Units.gridUnit / 2
+            Layout.rightMargin: Kirigami.Units.gridUnit / 2
             text: i18nd("kcm_pulseaudio", "Automatically switch all running streams when a new output becomes available")
             checked: moduleManager.switchOnConnect
             onCheckedChanged: moduleManager.switchOnConnect = checked;
@@ -97,7 +98,7 @@ KCM.SimpleKCM {
         }
 
         RowLayout {
-            Layout.margins: units.gridUnit / 2
+            Layout.margins: Kirigami.Units.gridUnit / 2
             visible: sinks.count > 1
 
             Label {

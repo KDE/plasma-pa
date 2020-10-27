@@ -37,7 +37,7 @@ ColumnLayout {
 
     RowLayout {
         Layout.fillWidth: true
-        spacing: units.smallSpacing * 2
+        spacing: Kirigami.Units.smallSpacing * 2
 
         Kirigami.Icon {
             Layout.alignment: Qt.AlignHCenter
@@ -68,8 +68,8 @@ ColumnLayout {
 
                 DeviceComboBox {
                     id: deviceComboBox
-                    Layout.leftMargin: units.smallSpacing
-                    Layout.rightMargin: units.smallSpacing
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
                     Layout.preferredWidth: delegate.width / 3
                     visible: !isEventStream && count > 1
                 }

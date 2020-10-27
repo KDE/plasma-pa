@@ -54,7 +54,7 @@ PlasmaComponents.ListItem {
 
         RowLayout {
             id: controlsRow
-            spacing: units.smallSpacing
+            spacing: PlasmaCore.Units.smallSpacing
             anchors.left: parent.left
             anchors.right: parent.right
 
@@ -115,10 +115,10 @@ PlasmaComponents.ListItem {
                         id: defaultButton
                         // Maximum width of the button need to match the text. Empty area must not change the default device.
                         Layout.maximumWidth: controlsRow.width - Layout.leftMargin - Layout.rightMargin
-                                              - (contextMenuButton.visible ? contextMenuButton.implicitWidth + units.smallSpacing * 2 : 0)
+                                              - (contextMenuButton.visible ? contextMenuButton.implicitWidth + PlasmaCore.Units.smallSpacing * 2 : 0)
                         Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                         Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
-                        spacing: units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
+                        spacing: PlasmaCore.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                         checked: PulseObject.default ? PulseObject.default : false
                         visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)
                         onClicked: PulseObject.default = true;

@@ -22,14 +22,16 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.0
 
+import org.kde.kirigami 2.5 as Kirigami
+
 ColumnLayout {
     property alias text: heading.text
     property alias disabledText: disabledLabel.text
 
     Item {
         Layout.fillWidth: true
-        Layout.preferredHeight: units.gridUnit * 1.5
-        Layout.topMargin: units.smallSpacing
+        Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5
+        Layout.topMargin: Kirigami.Units.smallSpacing
 
         Label {
             id: heading
