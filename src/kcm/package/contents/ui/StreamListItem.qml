@@ -23,7 +23,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
 
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
 ColumnLayout {
@@ -98,8 +98,9 @@ ColumnLayout {
         }
     }
 
-    ListItemSeperator {
-        view: delegate.ListView.view
+    Kirigami.Separator {
+        visible: (delegate.ListView.view.count != 0) && (delegate.ListView.view.count != (index + 1))
+        Layout.fillWidth: true
 
         Component.onCompleted: {
             if (isEventStream) {
