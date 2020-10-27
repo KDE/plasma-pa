@@ -210,6 +210,36 @@ PlasmaComponents.ListItem {
 
                         Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
 
+                        background:  PlasmaCore.FrameSvgItem {
+                            imagePath: "widgets/slider"
+                            prefix: "groove"
+                            width: parent.availableWidth
+                            height: margins.top + margins.bottom
+                            anchors.centerIn: parent
+                            scale: parent.mirrored ? -1 : 1
+
+                            PlasmaCore.FrameSvgItem {
+                                imagePath: "widgets/slider"
+                                prefix: "groove-highlight"
+                                anchors.left: parent.left
+                                y: (parent.height - height) / 2
+                                width: Math.max(margins.left + margins.right, slider.handle.x * meter.volume)
+                                height: Math.max(margins.top + margins.bottom, parent.height)
+                                opacity: meter.available && (meter.volume > 0 || animation.running)
+                                VolumeMonitor {
+                                    id: meter
+                                    target: parent.visible ? PulseObject : null
+                                }
+                                Behavior on width {
+                                    NumberAnimation  {
+                                        id: animation
+                                        duration: PlasmaCore.Units.shortDuration
+                                        easing.type: Easing.OutQuad
+                                    }
+                                }
+                            }
+                        }
+
                         Component.onCompleted: {
                             ignoreValueChange = false;
                         }
