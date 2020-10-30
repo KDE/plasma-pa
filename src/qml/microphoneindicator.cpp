@@ -1,5 +1,7 @@
 /*
     Copyright 2019 Kai Uwe Broulik <kde@privat.broulik.de>
+    Copyright 2020 MBition GmbH,
+        Author: Kai Uwe Broulik <kai_uwe.broulik@mbition.io>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -50,6 +52,7 @@ MicrophoneIndicator::MicrophoneIndicator(QObject *parent)
 
     connect(m_sourceOutputModel, &QAbstractItemModel::rowsInserted, this, &MicrophoneIndicator::scheduleUpdate);
     connect(m_sourceOutputModel, &QAbstractItemModel::rowsRemoved, this, &MicrophoneIndicator::scheduleUpdate);
+    connect(m_sourceOutputModel, &QAbstractItemModel::dataChanged, this, &MicrophoneIndicator::scheduleUpdate);
 
     m_updateTimer->setInterval(0);
     m_updateTimer->setSingleShot(true);
@@ -74,8 +77,8 @@ void MicrophoneIndicator::scheduleUpdate()
 
 void MicrophoneIndicator::update()
 {
-    const QStringList names = appNames();
-    if (names.isEmpty()) {
+    const auto apps = recordingApplications();
+    if (apps.isEmpty()) {
         m_showOsdOnUpdate = false;
         delete m_sni;
         m_sni = nullptr;
@@ -142,13 +145,7 @@ void MicrophoneIndicator::update()
 
     m_sni->setTitle(i18n("Microphone"));
     m_sni->setIconByName(iconName);
-
-    QString tooltip = i18nc("App is using mic", "%1 is using the microphone", names.constFirst());
-    if (names.count() > 1) {
-        tooltip = i18nc("List of apps is using mic", "%1 are using the microphone", names.join(i18nc("list separator", ", ")));
-    }
-
-    m_sni->setToolTip(QIcon::fromTheme(iconName), i18n("Microphone"), tooltip);
+    m_sni->setToolTip(QIcon::fromTheme(iconName), i18n("Microphone"), toolTipForApps(apps));
 
     if (m_muteAction) {
         m_muteAction->setChecked(allMuted);
@@ -259,22 +256,19 @@ void MicrophoneIndicator::showOsd()
 
 }
 
-QStringList MicrophoneIndicator::appNames() const
+QVector<QModelIndex> MicrophoneIndicator::recordingApplications() const
 {
+    QVector<QModelIndex> indices;
+
     // If there are no microphones present, there's nothing to record
     if (m_sourceModel->rowCount() == 0) {
-        return QStringList();
+        return indices;
     }
 
-    static const int s_nameRole = m_sourceOutputModel->role(QByteArrayLiteral("Name"));
-    Q_ASSERT(s_nameRole > -1);
-    static const int s_clientRole = m_sourceOutputModel->role(QByteArrayLiteral("Client"));
-    Q_ASSERT(s_clientRole > -1);
     static const int s_virtualStreamRole = m_sourceOutputModel->role(QByteArrayLiteral("VirtualStream"));
     Q_ASSERT(s_virtualStreamRole > -1);
 
-    QStringList names;
-    names.reserve(m_sourceOutputModel->rowCount());
+    indices.reserve(m_sourceOutputModel->rowCount());
 
     for (int i = 0; i < m_sourceOutputModel->rowCount(); ++i) {
         const QModelIndex idx = m_sourceOutputModel->index(i);
@@ -283,13 +277,71 @@ QStringList MicrophoneIndicator::appNames() const
             continue;
         }
 
-        Client *client = qobject_cast<Client *>(idx.data(s_clientRole).value<QObject *>());
+        indices.append(idx);
+    }
 
-        const QString name = client ? client->name() : idx.data(s_nameRole).toString();
-        if (!names.contains(name)) {
-            names.append(name);
+    return indices;
+}
+
+QString MicrophoneIndicator::toolTipForApps(const QVector<QModelIndex> &apps) const
+{
+    Q_ASSERT(!apps.isEmpty());
+
+    if (apps.count() > 1) {
+        QStringList names;
+        names.reserve(apps.count());
+        for (const QModelIndex &idx : apps) {
+            names.append(sourceOutputDisplayName(idx));
+        }
+        names.removeDuplicates();
+        // Still more than one app?
+        if (names.count() > 1) {
+            return i18nc("List of apps is using mic", "%1 are using the microphone", names.join(i18nc("list separator", ", ")));
         }
     }
 
-    return names;
+    const QModelIndex appIdx = apps.constFirst();
+
+    // If there is more than one microphone, show which one is being used.
+    // An app could record multiple microphones simultaneously, or the user having the same app running
+    // multiple times recording the same microphone, but this isn't covered here for simplicity.
+    if (apps.count() == 1 && m_sourceModel->rowCount() > 1) {
+        static const int s_sourceModelDescriptionRole = m_sourceModel->role(QByteArrayLiteral("Description"));
+        Q_ASSERT(s_sourceModelDescriptionRole > -1);
+        static const int s_sourceModelIndexRole = m_sourceModel->role("Index");
+        Q_ASSERT(s_sourceModelIndexRole > -1);
+
+        static const int s_sourceOutputModelDeviceIndexRole = m_sourceOutputModel->role("DeviceIndex");
+        Q_ASSERT(s_sourceOutputModelDeviceIndexRole > -1);
+
+        const int sourceOutputDeviceIndex = appIdx.data(s_sourceOutputModelDeviceIndexRole).toInt();
+
+        for (int i = 0; i < m_sourceModel->rowCount(); ++i) {
+            const QModelIndex sourceDeviceIdx = m_sourceModel->index(i, 0);
+            const int sourceDeviceIndex = sourceDeviceIdx.data(s_sourceModelIndexRole).toInt();
+
+            if (sourceDeviceIndex == sourceOutputDeviceIndex) {
+                return i18nc("App %1 is using mic with name %2",
+                             "%1 is using the microphone (%2)",
+                             sourceOutputDisplayName(appIdx),
+                             sourceDeviceIdx.data(s_sourceModelDescriptionRole).toString());
+            }
+        }
+    }
+
+    return i18nc("App is using mic", "%1 is using the microphone", sourceOutputDisplayName(appIdx));
+}
+
+QString MicrophoneIndicator::sourceOutputDisplayName(const QModelIndex &idx) const
+{
+    Q_ASSERT(idx.model() == m_sourceOutputModel);
+
+    static const int s_nameRole = m_sourceOutputModel->role(QByteArrayLiteral("Name"));
+    Q_ASSERT(s_nameRole > -1);
+    static const int s_clientRole = m_sourceOutputModel->role(QByteArrayLiteral("Client"));
+    Q_ASSERT(s_clientRole > -1);
+
+    auto *client = qobject_cast<Client *>(idx.data(s_clientRole).value<QObject *>());
+
+    return client ? client->name() : idx.data(s_nameRole).toString();
 }

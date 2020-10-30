@@ -1,5 +1,7 @@
 /*
     Copyright 2019 Kai Uwe Broulik <kde@privat.broulik.de>
+    Copyright 2020 MBition GmbH,
+        Author: Kai Uwe Broulik <kai_uwe.broulik@mbition.io>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -65,7 +67,9 @@ private:
     static int volumePercent(QPulseAudio::Source *source);
     void showOsd();
 
-    QStringList appNames() const;
+    QVector<QModelIndex> recordingApplications() const;
+    QString toolTipForApps(const QVector<QModelIndex> &apps) const;
+    QString sourceOutputDisplayName(const QModelIndex &idx) const;
 
     QPulseAudio::SourceModel *m_sourceModel = nullptr; // microphone devices
     QPulseAudio::SourceOutputModel *m_sourceOutputModel = nullptr; // recording streams
