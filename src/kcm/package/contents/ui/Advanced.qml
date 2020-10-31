@@ -33,11 +33,11 @@ KCM.SimpleKCM {
 
     ColumnLayout {
 
-        Header {
-            Layout.fillWidth: true
-            enabled: view.count > 0
+        Label {
+            Layout.alignment: Qt.AlignHCenter
+            visible: view.count > 0
             text: i18nd("kcm_pulseaudio", "Device Profiles")
-            disabledText: i18ndc("kcm_pulseaudio", "@label", "No Device Profiles Available")
+            font.weight: Font.DemiBold
         }
 
         ListView {
@@ -51,10 +51,11 @@ KCM.SimpleKCM {
             delegate: CardListItem {}
         }
 
-        Header {
-            Layout.fillWidth: true
+        Label {
+            Layout.alignment: Qt.AlignHCenter
             text: i18nd("kcm_pulseaudio", "Advanced Output Configuration")
             visible: moduleManager.settingsSupported
+            font.weight: Font.DemiBold
         }
 
         ModuleManager {
@@ -92,9 +93,10 @@ KCM.SimpleKCM {
             visible: moduleManager.settingsSupported && !moduleManager.configModuleLoaded
         }
 
-        Header {
-            Layout.fillWidth: true
+        Label {
+            Layout.alignment: Qt.AlignHCenter
             text: i18nd("kcm_pulseaudio", "Speaker Placement and Testing")
+            font.weight: Font.DemiBold
         }
 
         RowLayout {
