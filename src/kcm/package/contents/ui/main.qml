@@ -26,7 +26,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
 
 import org.kde.kcm 1.3
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
 ScrollViewKCM {
@@ -68,129 +68,127 @@ ScrollViewKCM {
 
         contentWidth: column.width
         contentHeight: column.height
+        clip: true
 
-        Item {
+        ColumnLayout {
+            id: column
             width: flickable.width
 
-            ColumnLayout {
-                id: column
+            Kirigami.ListSectionHeader {
+                Layout.fillWidth: true
+                visible: sinks.count > 0
+                text: i18nd("kcm_pulseaudio", "Playback Devices")
+            }
 
-                anchors.left: parent.left
-                anchors.leftMargin: Kirigami.Units.largeSpacing
-                anchors.right: parent.right
-                anchors.rightMargin: Kirigami.Units.largeSpacing
-                anchors.top: parent.top
+            ListView {
+                id: sinks
+                Layout.fillWidth: true
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.preferredHeight: contentHeight
+                interactive: false
+                spacing: Kirigami.Units.gridUnit
+                model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSinkModel : paSinkFilterModel
+                delegate: DeviceListItem {
+                    isPlayback: true
+                }
+            }
 
-                Header {
-                    Layout.fillWidth: true
-                    enabled: sinks.count > 0
-                    text: i18nd("kcm_pulseaudio", "Playback Devices")
-                    disabledText: i18ndc("kcm_pulseaudio", "@label", "No Playback Devices Available")
+            Kirigami.ListSectionHeader {
+                Layout.fillWidth: true
+                visible: sources.count > 0
+                text: i18nd("kcm_pulseaudio", "Recording Devices")
+            }
+
+            ListView {
+                id: sources
+                Layout.fillWidth: true
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.preferredHeight: contentHeight
+                interactive: false
+                spacing: Kirigami.Units.gridUnit
+                model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSourceModel : paSourceFilterModel
+                delegate: DeviceListItem {
+                    isPlayback: false
+                }
+            }
+
+            Button {
+                id: inactiveDevicesButton
+                Layout.alignment: Qt.AlignHCenter
+                checkable: true
+                text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
+                icon.name: "view-visible"
+
+                // Only show if there actually are any inactive devices
+                visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
+            }
+
+            Kirigami.ListSectionHeader {
+                Layout.fillWidth: true
+                visible: eventStreamView.count || sinkInputView.count
+                text: i18nd("kcm_pulseaudio", "Playback Streams")
+            }
+
+            ListView {
+                id: eventStreamView
+                Layout.fillWidth: true
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.preferredHeight: contentHeight
+                interactive: false
+                spacing: Kirigami.Units.largeSpacing
+                model: PulseObjectFilterModel {
+                    filters: [ { role: "Name", value: "sink-input-by-media-role:event" } ]
+                    sourceModel: StreamRestoreModel {}
+                }
+                delegate: StreamListItem {
+                    deviceModel: paSinkModel
+                    isPlayback: true
+                }
+            }
+
+            ListView {
+                id: sinkInputView
+                Layout.fillWidth: true
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.preferredHeight: contentHeight
+                interactive: false
+                spacing: Kirigami.Units.largeSpacing
+                model: PulseObjectFilterModel {
+                    filters: [ { role: "VirtualStream", value: false } ]
+                    sourceModel: SinkInputModel {}
+                }
+                delegate: StreamListItem {
+                    deviceModel: paSinkModel
+                    isPlayback: true
+                }
+            }
+
+            Kirigami.ListSectionHeader {
+                Layout.fillWidth: true
+                visible: sourceOutputView.count > 0
+                text: i18nd("kcm_pulseaudio", "Recording Streams")
+            }
+
+            ListView {
+                id: sourceOutputView
+                Layout.fillWidth: true
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.preferredHeight: contentHeight
+                interactive: false
+                spacing: Kirigami.Units.largeSpacing
+                model: PulseObjectFilterModel {
+                    filters: [ { role: "VirtualStream", value: false } ]
+                    sourceModel: SourceOutputModel {}
                 }
 
-                ListView {
-                    id: sinks
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: contentHeight
-                    interactive: false
-                    spacing: Kirigami.Units.gridUnit
-                    model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSinkModel : paSinkFilterModel
-                    delegate: DeviceListItem {
-                        isPlayback: true
-                    }
-                }
-
-                Header {
-                    Layout.fillWidth: true
-                    enabled: sources.count > 0
-                    text: i18nd("kcm_pulseaudio", "Recording Devices")
-                    disabledText: i18ndc("kcm_pulseaudio", "@label", "No Recording Devices Available")
-                }
-
-                ListView {
-                    id: sources
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: contentHeight
-                    interactive: false
-                    spacing: Kirigami.Units.gridUnit
-                    model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSourceModel : paSourceFilterModel
-                    delegate: DeviceListItem {
-                        isPlayback: false
-                    }
-                }
-
-                Button {
-                    id: inactiveDevicesButton
-                    Layout.alignment: Qt.AlignHCenter
-                    checkable: true
-                    text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
-                    icon.name: "view-visible"
-
-                    // Only show if there actually are any inactive devices
-                    visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
-                }
-
-                Header {
-                    Layout.fillWidth: true
-                    enabled: eventStreamView.count || sinkInputView.count
-                    text: i18nd("kcm_pulseaudio", "Playback Streams")
-                    disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Playing Audio")
-                }
-
-                ListView {
-                    id: eventStreamView
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: contentHeight
-                    interactive: false
-                    spacing: Kirigami.Units.largeSpacing
-                    model: PulseObjectFilterModel {
-                        filters: [ { role: "Name", value: "sink-input-by-media-role:event" } ]
-                        sourceModel: StreamRestoreModel {}
-                    }
-                    delegate: StreamListItem {
-                        deviceModel: paSinkModel
-                        isPlayback: true
-                    }
-                }
-
-                ListView {
-                    id: sinkInputView
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: contentHeight
-                    interactive: false
-                    spacing: Kirigami.Units.largeSpacing
-                    model: PulseObjectFilterModel {
-                        filters: [ { role: "VirtualStream", value: false } ]
-                        sourceModel: SinkInputModel {}
-                    }
-                    delegate: StreamListItem {
-                        deviceModel: paSinkModel
-                        isPlayback: true
-                    }
-                }
-
-                Header {
-                    Layout.fillWidth: true
-                    enabled: sourceOutputView.count > 0
-                    text: i18nd("kcm_pulseaudio", "Recording Streams")
-                    disabledText: i18ndc("kcm_pulseaudio", "@label", "No Applications Recording Audio")
-                }
-
-                ListView {
-                    id: sourceOutputView
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: contentHeight
-                    interactive: false
-                    spacing: Kirigami.Units.largeSpacing
-                    model: PulseObjectFilterModel {
-                        filters: [ { role: "VirtualStream", value: false } ]
-                        sourceModel: SourceOutputModel {}
-                    }
-
-                    delegate: StreamListItem {
-                        deviceModel: sourceModel
-                        isPlayback: false
-                    }
+                delegate: StreamListItem {
+                    deviceModel: sourceModel
+                    isPlayback: false
                 }
             }
         }
