@@ -114,17 +114,6 @@ ScrollViewKCM {
                 }
             }
 
-            Button {
-                id: inactiveDevicesButton
-                Layout.alignment: Qt.AlignHCenter
-                checkable: true
-                text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
-                icon.name: "view-visible"
-
-                // Only show if there actually are any inactive devices
-                visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
-            }
-
             Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
                 visible: eventStreamView.count || sinkInputView.count
@@ -195,6 +184,17 @@ ScrollViewKCM {
     }
 
     footer: RowLayout {
+
+        Button {
+            id: inactiveDevicesButton
+            checkable: true
+            text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
+            icon.name: "view-visible"
+
+            // Only show if there actually are any inactive devices
+            visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
+        }
+
         Button {
             text: i18n("Configure...")
             icon.name: "configure"
