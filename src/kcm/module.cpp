@@ -30,7 +30,7 @@
 
 #include "version.h"
 
-K_PLUGIN_CLASS_WITH_JSON(KCMPulseAudio, "kcm_pulseaudio.json")
+K_PLUGIN_CLASS_WITH_JSON(KCMPulseAudio, "metadata.json")
 
 KCMPulseAudio::KCMPulseAudio(QObject *parent, const QVariantList &args)
     : KQuickAddons::ConfigModule(parent, args)
