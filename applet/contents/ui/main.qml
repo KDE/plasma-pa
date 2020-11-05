@@ -677,6 +677,8 @@ Item {
                 }
 
                 PlasmaComponents3.ToolButton {
+                    visible: plasmoid.containmentType !== PlasmaCore.Types.CustomEmbeddedContainment
+
                     icon.name: "configure"
                     onClicked: plasmoid.action("configure").trigger()
 
