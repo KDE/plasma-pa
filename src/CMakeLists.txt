@@ -1,7 +1,5 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
 
-include_directories(${PULSEAUDIO_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR})
-
 set(cpp_SRCS
     card.cpp
     client.cpp
@@ -41,12 +39,10 @@ set_property(SOURCE qml/dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdService
 qt5_add_dbus_interface(dbus_SRCS qml/dbus/osdService.xml osdservice)
 
 if (USE_GCONF)
-    include_directories(${GCONF_INCLUDE_DIRS} ${GOBJECT_INCLUDE_DIRS})
     set(cpp_SRCS ${cpp_SRCS} gconfitem.cpp)
 endif()
 
 if (USE_GSETTINGS)
-    include_directories(${GIO_INCLUDE_DIRS} ${GOBJECT_INCLUDE_DIRS})
     set(cpp_SRCS ${cpp_SRCS} gsettingsitem.cpp)
 endif()
 
@@ -60,22 +56,16 @@ target_link_libraries(plasma-volume-declarative
     KF5::I18n
     KF5::Notifications
     Canberra::Canberra
-    ${PULSEAUDIO_LIBRARY}
-    ${PULSEAUDIO_MAINLOOP_LIBRARY}
-    ${GOBJECT_LDFLAGS}
+    PkgConfig::LIBPULSE
+    PkgConfig::LIBPULSE_MAINLOOP
 )
 
 if (USE_GCONF)
-    target_link_libraries(plasma-volume-declarative
-        ${GCONF_LDFLAGS}
-    )
+    target_link_libraries(plasma-volume-declarative PkgConfig::GCONF PkgConfig::GOBJECT)
 endif()
 
 if (USE_GSETTINGS)
-    target_link_libraries(plasma-volume-declarative
-        ${GIO_LIBRARIES}
-        GLIB2::GLIB2
-    )
+    target_link_libraries(plasma-volume-declarative PkgConfig::GIO)
 endif()
 
 set(PRIVATE_QML_INSTALL_DIR ${KDE_INSTALL_QMLDIR}/org/kde/plasma/private/volume)

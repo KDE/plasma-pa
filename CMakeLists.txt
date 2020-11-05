@@ -44,17 +44,18 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     Plasma
 )
-find_package(PulseAudio 5.0.0 REQUIRED)
+
 find_package(Canberra REQUIRED)
-find_package(GLIB2 REQUIRED)
 
 option(USE_GCONF "Use legacy GConf instead of GSettings")
 
-pkg_check_modules(GOBJECT gobject-2.0 REQUIRED)
+pkg_check_modules(LIBPULSE libpulse REQUIRED IMPORTED_TARGET)
+pkg_check_modules(LIBPULSE_MAINLOOP libpulse-mainloop-glib REQUIRED IMPORTED_TARGET)
 if(USE_GCONF)
-    pkg_check_modules(GCONF gconf-2.0 REQUIRED)
+    pkg_check_modules(GCONF gconf-2.0 REQUIRED IMPORTED_TARGET)
+    pkg_check_modules(GOBJECT gobject-2.0 REQUIRED IMPORTED_TARGET)
 else()
-    find_package(GIO REQUIRED)
+    pkg_check_modules(GIO gio-2.0 REQUIRED IMPORTED_TARGET)
     set(USE_GSETTINGS True)
 endif()
 

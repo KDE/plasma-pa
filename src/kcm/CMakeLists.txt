@@ -1,7 +1,6 @@
 add_library(kcm_pulseaudio MODULE module.cpp)
 
 target_include_directories(kcm_pulseaudio PRIVATE ${CMAKE_BINARY_DIR})
-target_include_directories(kcm_pulseaudio PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
 
 target_link_libraries(kcm_pulseaudio
     Qt5::Quick
@@ -9,8 +8,6 @@ target_link_libraries(kcm_pulseaudio
     KF5::Declarative
     KF5::I18n
     KF5::QuickAddons
-    ${PULSEAUDIO_LIBRARY}
-    ${PULSEAUDIO_MAINLOOP_LIBRARY}
 )
 
 kcoreaddons_desktop_to_json(kcm_pulseaudio "package/metadata.desktop")
