@@ -23,8 +23,6 @@
 
 #include <KQuickAddons/ConfigModule>
 
-class Context;
-
 class KCMPulseAudio : public KQuickAddons::ConfigModule
 {
     Q_OBJECT
@@ -36,9 +34,6 @@ public Q_SLOTS:
     void defaults() final;
     void load() final;
     void save() final;
-
-private:
-    Context *m_context;
 };
 
 #endif // MODULE_H

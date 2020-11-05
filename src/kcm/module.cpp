@@ -21,12 +21,8 @@
 #include "module.h"
 
 #include <KAboutData>
-#include <KDeclarative/KDeclarative>
 #include <KLocalizedString>
 #include <KPluginFactory>
-
-#include <context.h>
-#include <pulseaudio.h>
 
 #include "version.h"
 
