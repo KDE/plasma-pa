@@ -10,7 +10,6 @@
 #include <QByteArray>
 #include <QVariant>
 #include <QDebug>
-
 #include "gconfitem.h"
 
 #include <glib.h>

@@ -6,7 +6,10 @@
 
 
 #include "modulemanager.h"
-#include "module.h"
+
+#include <QVector>
+
+#include <PulseAudioQt/Module>
 #include "../config.h"
 
 #if USE_GSETTINGS
@@ -21,9 +24,6 @@
 #endif
 
 #include <QTimer>
-
-namespace QPulseAudio
-{
 
 #if USE_GCONF || USE_GSETTINGS
 
@@ -89,8 +89,8 @@ ModuleManager::ModuleManager(QObject *parent) :
     updateModulesTimer->setInterval(500);
     updateModulesTimer->setSingleShot(true);
     connect(updateModulesTimer, &QTimer::timeout, this, &ModuleManager::updateLoadedModules);
-    connect(&Context::instance()->modules(), &MapBaseQObject::added, updateModulesTimer, static_cast<void(QTimer::*)(void)>(&QTimer::start));
-    connect(&Context::instance()->modules(), &MapBaseQObject::removed, updateModulesTimer, static_cast<void(QTimer::*)(void)>(&QTimer::start));
+    connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::moduleAdded, updateModulesTimer, static_cast<void(QTimer::*)(void)>(&QTimer::start));
+    connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::moduleRemoved, updateModulesTimer, static_cast<void(QTimer::*)(void)>(&QTimer::start));
     updateLoadedModules();
 }
 
@@ -157,8 +157,8 @@ QStringList ModuleManager::loadedModules() const
 void ModuleManager::updateLoadedModules()
 {
     m_loadedModules.clear();
-    const auto modules = Context::instance()->modules().data();
-    for (Module *module : modules) {
+    const auto modules = PulseAudioQt::Context::instance()->modules();
+    for (PulseAudioQt::Module *module : modules) {
         m_loadedModules.append(module->name());
     }
     Q_EMIT loadedModulesChanged();
@@ -178,5 +178,4 @@ QString ModuleManager::configModuleName() const
 #else
     return QString();
 #endif
-}
 }

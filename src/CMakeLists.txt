@@ -1,28 +1,9 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
 
 set(cpp_SRCS
-    card.cpp
-    client.cpp
-    context.cpp
-    device.cpp
-    maps.cpp
-    operation.cpp
-    port.cpp
-    profile.cpp
-    pulseaudio.cpp
-    pulseobject.cpp
-    sink.cpp
-    sinkinput.cpp
-    modulemanager.cpp
-    source.cpp
-    sourceoutput.cpp
-    stream.cpp
     volumemonitor.cpp
-    volumeobject.cpp
     debug.cpp
-    server.cpp
-    streamrestore.cpp
-    module.cpp
+    modulemanager.cpp
     canberracontext.cpp
     qml/globalactioncollection.cpp
     qml/listitemmenu.cpp
@@ -50,10 +31,10 @@ endif()
 
 add_library(plasma-volume-declarative SHARED ${dbus_SRCS} ${cpp_SRCS} ${qml_SRCS})
 target_link_libraries(plasma-volume-declarative
-    Qt::Core
     Qt::Gui
     Qt::DBus
     Qt::Quick
+    KF5::PulseAudioQt
     KF5::GlobalAccel
     KF5::I18n
     KF5::Notifications

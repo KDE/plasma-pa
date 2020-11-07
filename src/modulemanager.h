@@ -9,14 +9,10 @@
 
 #include <QString>
 
-#include <pulse/introspect.h>
-
-#include "context.h"
+#include <PulseAudioQt/Context>
 // Properties need fully qualified classes even with pointers.
-#include "client.h"
+#include <PulseAudioQt/Client>
 
-namespace QPulseAudio
-{
 class ConfigModule;
 
 class ModuleManager : public QObject
@@ -54,7 +50,5 @@ private:
     ConfigModule *m_deviceManager;
     QStringList m_loadedModules;
 };
-
-} // QPulseAudio
 
 #endif // STREAM_H
