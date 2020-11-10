@@ -25,7 +25,6 @@ import QtQuick.Layouts 1.0
 
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.plasma.private.volume 0.1
-import "../code/icon.js" as Icon
 
 ColumnLayout {
     id: delegate

@@ -35,37 +35,3 @@ function name(volume, muted, prefix) {
     }
     return icon;
 }
-
-function formFactorIcon(formFactor) {
-    switch(formFactor) {
-        case "internal":
-            return "audio-card";
-        case "speaker":
-            return "audio-speakers-symbolic";
-        case "phone":
-            return "phone";
-        case "handset":
-            return "phone";
-        case "tv":
-            return "video-television";
-        case "webcam":
-            return "camera-web";
-        case "microphone":
-            return "audio-input-microphone";
-        case "headset":
-            return "audio-headset";
-        case "headphone":
-            return "audio-headphones";
-        case "hands-free":
-            return "hands-free";
-        case "car":
-            return "car";
-        case "hifi":
-            return "hifi";
-        case "computer":
-            return "computer";
-        case "portable":
-            return "portable";
-    }
-    return "";
-}
