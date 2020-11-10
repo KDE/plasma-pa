@@ -229,7 +229,8 @@ KCM.SimpleKCM {
                     text: i18nd("kcm_pulseaudio", "Subwoofer")
                     anchors.centerIn: parent
                     visible: sinks.pulseObject ? sinks.pulseObject.rawChannels.indexOf("lfe") > -1 : false
-                    onClicked: sinks.pulseObject.testChannel("subwoofer")
+                    // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
+                    onClicked: sinks.pulseObject.testChannel("rear-center")
                 }
             }
             Item {
