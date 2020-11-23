@@ -72,15 +72,8 @@ void Plugin::registerTypes(const char* uri)
             Q_UNUSED(jsEngine);
             return new MicrophoneIndicator();
     });
-#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
-    qmlRegisterType<QPulseAudio::Client>();
-    qmlRegisterType<QPulseAudio::Sink>();
-    qmlRegisterType<QPulseAudio::Source>();
-    qmlRegisterType<QPulseAudio::VolumeObject>();
-#else
     qmlRegisterAnonymousType<QPulseAudio::Client>(uri, 1);
     qmlRegisterAnonymousType<QPulseAudio::Sink>(uri, 1);
     qmlRegisterAnonymousType<QPulseAudio::Source>(uri, 1);
     qmlRegisterAnonymousType<QPulseAudio::VolumeObject>(uri, 1);
-#endif
 }
