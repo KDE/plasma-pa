@@ -6,14 +6,6 @@ PlasmaCore.SortFilterModel {
     property var filters: []
     property bool filterOutInactiveDevices: false
 
-    // Not readonly because we have to assign to it below, even though you
-    // really shouldn't change it from outside of this model
-    property int count: rowCount()
-
-    onRowsInserted: count = rowCount()
-    onRowsRemoved: count = rowCount()
-    onModelReset: count = rowCount()
-
     filterCallback: function(source_row, value) {
         var idx = sourceModel.index(source_row, 0);
 
