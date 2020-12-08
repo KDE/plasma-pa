@@ -430,25 +430,79 @@ Item {
         }
 
         header: PlasmaExtras.PlasmoidHeading {
-            //this removes bottom padding to allow tabbar to touch the edge
-            bottomPadding: -bottomInset
+            // Make this toolbar's buttons align vertically with the ones above
+            rightPadding: -PlasmaCore.Units.devicePixelRatio
+
             RowLayout {
-                spacing: PlasmaCore.Units.smallSpacing
                 anchors.fill: parent
 
-                PlasmaComponents.TabBar {
-                    id: tabBar
-                    Layout.fillWidth: true
-                    activeFocusOnTab: true
-
-                    PlasmaComponents.TabButton {
-                        id: devicesTab
-                        text: i18n("Devices")
+                PlasmaComponents3.CheckBox {
+                    id: raiseMaximumVolumeCheckbox
+                    checked: plasmoid.configuration.raiseMaximumVolume
+                    onToggled: {
+                        plasmoid.configuration.raiseMaximumVolume = checked
+                        if (!checked) {
+                            for (var i = 0; i < paSinkModel.rowCount(); i++) {
+                                if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
+                                    paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
+                                }
+                            }
+                            for (var i = 0; i < paSourceModel.rowCount(); i++) {
+                                if (paSourceModel.data(paSourceModel.index(i, 0), paSourceModel.role("Volume")) > PulseAudio.NormalVolume) {
+                                    paSourceModel.setData(paSourceModel.index(i, 0), PulseAudio.NormalVolume, paSourceModel.role("Volume"));
+                                }
+                            }
+                        }
                     }
+                    text: i18n("Raise maximum volume")
+                }
 
-                    PlasmaComponents.TabButton {
-                        id: streamsTab
-                        text: i18n("Applications")
+                Item {
+                    Layout.fillWidth: true
+                }
+
+                PlasmaComponents3.ToolButton {
+                    id: showHiddenDevices
+                    icon.name: "view-visible"
+
+                    // Only show if there actually are any inactive devices
+                    visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
+
+                    checkable: true
+
+                    Accessible.name: i18n("show hidden devices")
+                    PlasmaComponents3.ToolTip {
+                        text: i18n("Show hidden devices")
+                    }
+                }
+
+                PlasmaComponents3.ToolButton {
+                    id: globalMuteCheckbox
+                    icon.name: "audio-volume-muted"
+                    onClicked: {
+                        if (!globalMute) {
+                            enableGlobalMute();
+                        } else {
+                            disableGlobalMute();
+                        }
+                    }
+                    checked: globalMute
+
+                    Accessible.name: i18n("Force mute all playback devices")
+                    PlasmaComponents3.ToolTip {
+                        text: i18n("Force mute all playback devices")
+                    }
+                }
+
+                PlasmaComponents3.ToolButton {
+                    visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+
+                    icon.name: "configure"
+                    onClicked: plasmoid.action("configure").trigger()
+
+                    Accessible.name: plasmoid.action("configure").text
+                    PlasmaComponents3.ToolTip {
+                        text: plasmoid.action("configure").text
                     }
                 }
             }
@@ -611,80 +665,26 @@ Item {
 
         footer: PlasmaExtras.PlasmoidHeading {
             location: PlasmaExtras.PlasmoidHeading.Location.Footer
+            // Allow tabbar to touch the footer's top border
+            topPadding: -topInset
+
             RowLayout {
                 anchors.fill: parent
 
-                PlasmaComponents3.CheckBox {
-                    id: raiseMaximumVolumeCheckbox
-                    // Align center, with the devices mute icon. Calculating the size based on SmallToolButton.qml. '4' is margin in ListItem.
-                    Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(PlasmaCore.Units.iconSizes.small + PlasmaCore.Units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
-                    Layout.rightMargin: !LayoutMirroring.enabled ? 0 : Math.round((Math.ceil(PlasmaCore.Units.iconSizes.small + PlasmaCore.Units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + 4
-                    spacing: Math.round((Math.ceil(PlasmaCore.Units.iconSizes.small + PlasmaCore.Units.smallSpacing * 2) - raiseMaximumVolumeCheckbox.indicator.width) / 2) + PlasmaCore.Units.smallSpacing
-                    checked: plasmoid.configuration.raiseMaximumVolume
-                    onToggled: {
-                        plasmoid.configuration.raiseMaximumVolume = checked
-                        if (!checked) {
-                            for (var i = 0; i < paSinkModel.rowCount(); i++) {
-                                if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
-                                    paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
-                                }
-                            }
-                            for (var i = 0; i < paSourceModel.rowCount(); i++) {
-                                if (paSourceModel.data(paSourceModel.index(i, 0), paSourceModel.role("Volume")) > PulseAudio.NormalVolume) {
-                                    paSourceModel.setData(paSourceModel.index(i, 0), PulseAudio.NormalVolume, paSourceModel.role("Volume"));
-                                }
-                            }
-                        }
-                    }
-                    text: i18n("Raise maximum volume")
-                }
-
-                Item {
+                PlasmaComponents.TabBar {
+                    id: tabBar
                     Layout.fillWidth: true
-                }
+                    activeFocusOnTab: true
+                    tabPosition: Qt.BottomEdge
 
-                PlasmaComponents3.ToolButton {
-                    id: showHiddenDevices
-                    icon.name: "view-visible"
-
-                    // Only show if there actually are any inactive devices
-                    visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
-
-                    checkable: true
-
-                    Accessible.name: i18n("show hidden devices")
-                    PlasmaComponents3.ToolTip {
-                        text: i18n("Show hidden devices")
+                    PlasmaComponents.TabButton {
+                        id: devicesTab
+                        text: i18n("Devices")
                     }
-                }
 
-                PlasmaComponents3.ToolButton {
-                    id: globalMuteCheckbox
-                    icon.name: "audio-volume-muted"
-                    onClicked: {
-                        if (!globalMute) {
-                            enableGlobalMute();
-                        } else {
-                            disableGlobalMute();
-                        }
-                    }
-                    checked: globalMute
-
-                    Accessible.name: i18n("Force mute all playback devices")
-                    PlasmaComponents3.ToolTip {
-                        text: i18n("Force mute all playback devices")
-                    }
-                }
-
-                PlasmaComponents3.ToolButton {
-                    visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
-
-                    icon.name: "configure"
-                    onClicked: plasmoid.action("configure").trigger()
-
-                    Accessible.name: plasmoid.action("configure").text
-                    PlasmaComponents3.ToolTip {
-                        text: plasmoid.action("configure").text
+                    PlasmaComponents.TabButton {
+                        id: streamsTab
+                        text: i18n("Applications")
                     }
                 }
             }
