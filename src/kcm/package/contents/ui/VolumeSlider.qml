@@ -22,6 +22,7 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.5 as QQC2
+import org.kde.kirigami 2.5 as Kirigami
 
 import org.kde.plasma.private.volume 0.1
 
@@ -79,11 +80,11 @@ RowLayout {
         // and plasma-workspace:OSDItem.qml
         color: {
             if (displayValue <= 100) {
-                return theme.textColor
+                return Kirigami.Theme.textColor
             } else if (displayValue > 100 && displayValue <= 125) {
-                return theme.neutralTextColor
+                return Kirigami.Theme.neutralTextColor
             } else {
-                return theme.negativeTextColor
+                return Kirigami.Theme.negativeTextColor
             }
         }
     }
