@@ -706,5 +706,7 @@ Item {
         MicrophoneIndicator.init();
 
         plasmoid.setAction("forceMute", i18n("Force mute all playback devices"), "audio-volume-muted");
+        plasmoid.action("forceMute").checkable = true;
+        plasmoid.action("forceMute").checked = Qt.binding(() => {return globalMute;});
     }
 }
