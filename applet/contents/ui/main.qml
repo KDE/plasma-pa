@@ -462,21 +462,6 @@ Item {
                 }
 
                 PlasmaComponents3.ToolButton {
-                    id: showHiddenDevices
-                    icon.name: "view-visible"
-
-                    // Only show if there actually are any inactive devices
-                    visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
-
-                    checkable: true
-
-                    Accessible.name: i18n("show hidden devices")
-                    PlasmaComponents3.ToolTip {
-                        text: i18n("Show hidden devices")
-                    }
-                }
-
-                PlasmaComponents3.ToolButton {
                     id: globalMuteCheckbox
 
                     visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
@@ -602,7 +587,7 @@ Item {
                             Layout.maximumHeight: contentHeight
                             spacing: 0
 
-                            model: showHiddenDevices.checked || !showHiddenDevices.visible ? paSinkModel : paSinkFilterModel
+                            model: paSinkFilterModel
 
                             boundsBehavior: Flickable.StopAtBounds;
                             delegate: DeviceListItem {
@@ -629,7 +614,7 @@ Item {
                             Layout.minimumHeight: contentHeight
                             Layout.maximumHeight: contentHeight
 
-                            model: showHiddenDevices.checked || !showHiddenDevices.visible ? paSourceModel : paSourceFilterModel
+                            model: paSourceFilterModel
 
                             boundsBehavior: Flickable.StopAtBounds;
                             delegate: DeviceListItem {
