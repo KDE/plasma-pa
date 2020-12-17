@@ -478,6 +478,9 @@ Item {
 
                 PlasmaComponents3.ToolButton {
                     id: globalMuteCheckbox
+
+                    visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+
                     icon.name: "audio-volume-muted"
                     onClicked: {
                         if (!globalMute) {
@@ -691,7 +694,17 @@ Item {
         }
     }
 
+    function action_forceMute() {
+        if (!globalMute) {
+            enableGlobalMute();
+        } else {
+            disableGlobalMute();
+        }
+    }
+
     Component.onCompleted: {
         MicrophoneIndicator.init();
+
+        plasmoid.setAction("forceMute", i18n("Force mute all playback devices"), "audio-volume-muted");
     }
 }
