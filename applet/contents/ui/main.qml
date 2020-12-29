@@ -93,7 +93,7 @@ Item {
         if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
             return;
         }
-        var volume = boundVolume(paSinkModel.preferredSink.volume + volumeStep);
+        var volume = boundVolume(Math.ceil((paSinkModel.preferredSink.volume + volumeStep) / volumeStep) * volumeStep);
         var percent = volumePercent(volume);
         paSinkModel.preferredSink.muted = percent == 0;
         paSinkModel.preferredSink.volume = volume;
@@ -105,7 +105,7 @@ Item {
         if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
             return;
         }
-        var volume = boundVolume(paSinkModel.preferredSink.volume - volumeStep);
+        var volume = boundVolume(Math.floor((paSinkModel.preferredSink.volume - volumeStep) / volumeStep) * volumeStep);
         var percent = volumePercent(volume);
         paSinkModel.preferredSink.muted = percent == 0;
         paSinkModel.preferredSink.volume = volume;
