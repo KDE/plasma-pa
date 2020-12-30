@@ -496,149 +496,144 @@ Item {
             }
         }
 
-        ColumnLayout {
+        PlasmaExtras.ScrollArea {
+            id: scrollView
+
             anchors.fill: parent
 
-            PlasmaExtras.ScrollArea {
-                id: scrollView
+            horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+            flickableItem.boundsBehavior: Flickable.StopAtBounds;
 
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+            //our scroll isn't a list of delegates, all internal items are tab focussable, making this redundant
+            activeFocusOnTab: false
 
-                horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
-                flickableItem.boundsBehavior: Flickable.StopAtBounds;
+            Item {
+                width: streamsView.visible ? streamsView.width : devicesView.width
+                height: streamsView.visible ? streamsView.height : devicesView.height
 
-                //our scroll isn't a list of delegates, all internal items are tab focussable, making this redundant
-                activeFocusOnTab: false
+                ColumnLayout {
+                    id: streamsView
+                    spacing: 0
+                    visible: tabBar.currentTab == streamsTab
+                    property int maximumWidth: scrollView.viewport.width
+                    width: maximumWidth
+                    Layout.maximumWidth: maximumWidth
 
-                Item {
-                    width: streamsView.visible ? streamsView.width : devicesView.width
-                    height: streamsView.visible ? streamsView.height : devicesView.height
+                    ListView {
+                        id: sinkInputView
 
-                    ColumnLayout {
-                        id: streamsView
-                        spacing: 0
-                        visible: tabBar.currentTab == streamsTab
-                        property int maximumWidth: scrollView.viewport.width
-                        width: maximumWidth
-                        Layout.maximumWidth: maximumWidth
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: contentHeight
+                        Layout.maximumHeight: contentHeight
 
-                        ListView {
-                            id: sinkInputView
-
-                            Layout.fillWidth: true
-                            Layout.minimumHeight: contentHeight
-                            Layout.maximumHeight: contentHeight
-
-                            model: PulseObjectFilterModel {
-                                filters: [ { role: "VirtualStream", value: false } ]
-                                sourceModel: SinkInputModel {}
-                            }
-                            boundsBehavior: Flickable.StopAtBounds;
-                            delegate: StreamListItem {
-                                type: "sink-input"
-                                draggable: sinkView.count > 1
-                            }
+                        model: PulseObjectFilterModel {
+                            filters: [ { role: "VirtualStream", value: false } ]
+                            sourceModel: SinkInputModel {}
                         }
-
-                        PlasmaCore.SvgItem {
-                            elementId: "horizontal-line"
-                            Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
-                            Layout.preferredHeight: naturalSize.height
-                            Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
-                            Layout.rightMargin: PlasmaCore.Units.smallSpacing * 2
-                            Layout.topMargin: PlasmaCore.Units.smallSpacing
-                            svg: lineSvg
-                            visible: sinkInputView.model.count > 0 && sourceOutputView.model.count > 0
-                        }
-
-                        ListView {
-                            id: sourceOutputView
-
-                            Layout.fillWidth: true
-                            Layout.minimumHeight: contentHeight
-                            Layout.maximumHeight: contentHeight
-
-                            model: PulseObjectFilterModel {
-                                filters: [ { role: "VirtualStream", value: false } ]
-                                sourceModel: SourceOutputModel {}
-                            }
-                            boundsBehavior: Flickable.StopAtBounds;
-                            delegate: StreamListItem {
-                                type: "source-input"
-                                draggable: sourceView.count > 1
-                            }
+                        boundsBehavior: Flickable.StopAtBounds;
+                        delegate: StreamListItem {
+                            type: "sink-input"
+                            draggable: sinkView.count > 1
                         }
                     }
 
-                    ColumnLayout {
-                        id: devicesView
-                        visible: tabBar.currentTab == devicesTab
-                        property int maximumWidth: scrollView.viewport.width
-                        width: maximumWidth
-                        Layout.maximumWidth: maximumWidth
+                    PlasmaCore.SvgItem {
+                        elementId: "horizontal-line"
+                        Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
+                        Layout.preferredHeight: naturalSize.height
+                        Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
+                        Layout.rightMargin: PlasmaCore.Units.smallSpacing * 2
+                        Layout.topMargin: PlasmaCore.Units.smallSpacing
+                        svg: lineSvg
+                        visible: sinkInputView.model.count > 0 && sourceOutputView.model.count > 0
+                    }
+
+                    ListView {
+                        id: sourceOutputView
+
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: contentHeight
+                        Layout.maximumHeight: contentHeight
+
+                        model: PulseObjectFilterModel {
+                            filters: [ { role: "VirtualStream", value: false } ]
+                            sourceModel: SourceOutputModel {}
+                        }
+                        boundsBehavior: Flickable.StopAtBounds;
+                        delegate: StreamListItem {
+                            type: "source-input"
+                            draggable: sourceView.count > 1
+                        }
+                    }
+                }
+
+                ColumnLayout {
+                    id: devicesView
+                    visible: tabBar.currentTab == devicesTab
+                    property int maximumWidth: scrollView.viewport.width
+                    width: maximumWidth
+                    Layout.maximumWidth: maximumWidth
+                    spacing: 0
+
+                    ListView {
+                        id: sinkView
+
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: contentHeight
+                        Layout.maximumHeight: contentHeight
                         spacing: 0
 
-                        ListView {
-                            id: sinkView
+                        model: paSinkFilterModel
 
-                            Layout.fillWidth: true
-                            Layout.minimumHeight: contentHeight
-                            Layout.maximumHeight: contentHeight
-                            spacing: 0
-
-                            model: paSinkFilterModel
-
-                            boundsBehavior: Flickable.StopAtBounds;
-                            delegate: DeviceListItem {
-                                type: "sink"
-                                onlyone: sinkView.count === 1
-                            }
-                        }
-
-                        PlasmaCore.SvgItem {
-                            id: devicesLine
-                            elementId: "horizontal-line"
-                            Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
-                            Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
-                            Layout.rightMargin: Layout.leftMargin
-                            Layout.topMargin: PlasmaCore.Units.smallSpacing
-                            svg: lineSvg
-                            visible: sinkView.model.count > 0 && sourceView.model.count > 0 && (sinkView.model.count > 1 || sourceView.model.count > 1)
-                        }
-
-                        ListView {
-                            id: sourceView
-
-                            Layout.fillWidth: true
-                            Layout.minimumHeight: contentHeight
-                            Layout.maximumHeight: contentHeight
-
-                            model: paSourceFilterModel
-
-                            boundsBehavior: Flickable.StopAtBounds;
-                            delegate: DeviceListItem {
-                                type: "source"
-                                onlyone: sourceView.count === 1
-                            }
+                        boundsBehavior: Flickable.StopAtBounds;
+                        delegate: DeviceListItem {
+                            type: "sink"
+                            onlyone: sinkView.count === 1
                         }
                     }
 
+                    PlasmaCore.SvgItem {
+                        id: devicesLine
+                        elementId: "horizontal-line"
+                        Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
+                        Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
+                        Layout.rightMargin: Layout.leftMargin
+                        Layout.topMargin: PlasmaCore.Units.smallSpacing
+                        svg: lineSvg
+                        visible: sinkView.model.count > 0 && sourceView.model.count > 0 && (sinkView.model.count > 1 || sourceView.model.count > 1)
+                    }
+
+                    ListView {
+                        id: sourceView
+
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: contentHeight
+                        Layout.maximumHeight: contentHeight
+
+                        model: paSourceFilterModel
+
+                        boundsBehavior: Flickable.StopAtBounds;
+                        delegate: DeviceListItem {
+                            type: "source"
+                            onlyone: sourceView.count === 1
+                        }
+                    }
                 }
 
-                PlasmaExtras.PlaceholderMessage {
-                    width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
-                    anchors.centerIn: parent
-                    visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
-                    text: i18n("No applications playing or recording audio")
-                }
+            }
 
-                PlasmaExtras.PlaceholderMessage {
-                    width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
-                    anchors.centerIn: parent
-                    visible: devicesView.visible && !sinkView.count && !sourceView.count
-                    text: i18n("No output or input devices found")
-                }
+            PlasmaExtras.PlaceholderMessage {
+                width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
+                anchors.centerIn: parent
+                visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
+                text: i18n("No applications playing or recording audio")
+            }
+
+            PlasmaExtras.PlaceholderMessage {
+                width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
+                anchors.centerIn: parent
+                visible: devicesView.visible && !sinkView.count && !sourceView.count
+                text: i18n("No output or input devices found")
             }
         }
 
