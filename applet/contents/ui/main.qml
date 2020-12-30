@@ -621,19 +621,20 @@ Item {
                 }
 
             }
+        }
 
-            PlasmaExtras.PlaceholderMessage {
-                width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
-                anchors.centerIn: parent
-                visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
-                text: i18n("No applications playing or recording audio")
-            }
-
-            PlasmaExtras.PlaceholderMessage {
-                width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
-                anchors.centerIn: parent
-                visible: devicesView.visible && !sinkView.count && !sourceView.count
-                text: i18n("No output or input devices found")
+        PlasmaExtras.PlaceholderMessage {
+            width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
+            anchors.centerIn: parent
+            visible: text.length != 0
+            text: {
+                if (streamsView.visible && !sinkInputView.count && !sourceOutputView.count) {
+                    return i18n("No applications playing or recording audio")
+                } else if (devicesView.visible && !sinkView.count && !sourceView.count) {
+                    return i18n("No output or input devices found")
+                } else {
+                    return ""
+                }
             }
         }
 
