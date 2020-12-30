@@ -624,29 +624,20 @@ Item {
                         }
                     }
 
-                    PlasmaExtras.Heading {
-                        level: 4
-                        enabled: false
-                        width: parent.width
-                        height: scrollView.height
-                        visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
-                        text: i18n("No applications playing or recording audio")
-                        wrapMode: Text.WordWrap
-                        verticalAlignment: Text.AlignVCenter
-                        horizontalAlignment: Text.AlignHCenter
-                    }
+                }
 
-                    PlasmaExtras.Heading {
-                        level: 4
-                        enabled: false
-                        width: parent.width
-                        height: scrollView.height
-                        visible: devicesView.visible && !sinkView.count && !sourceView.count
-                        text: i18n("No output or input devices found")
-                        wrapMode: Text.WordWrap
-                        verticalAlignment: Text.AlignVCenter
-                        horizontalAlignment: Text.AlignHCenter
-                    }
+                PlasmaExtras.PlaceholderMessage {
+                    width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
+                    anchors.centerIn: parent
+                    visible: streamsView.visible && !sinkInputView.count && !sourceOutputView.count
+                    text: i18n("No applications playing or recording audio")
+                }
+
+                PlasmaExtras.PlaceholderMessage {
+                    width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
+                    anchors.centerIn: parent
+                    visible: devicesView.visible && !sinkView.count && !sourceView.count
+                    text: i18n("No output or input devices found")
                 }
             }
         }
