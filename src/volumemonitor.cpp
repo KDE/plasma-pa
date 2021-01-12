@@ -83,6 +83,8 @@ void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject* target)
     if (target) {
         createStream();
     }
+
+    Q_EMIT targetChanged();
 }
 
 void VolumeMonitor::createStream()
