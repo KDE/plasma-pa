@@ -49,6 +49,11 @@ bool VolumeMonitor::isAvailable() const
 
 void VolumeMonitor::updateVolume(qreal volume)
 {
+    // qFuzzyCompare cannot compare against 0.
+    if (qFuzzyCompare(1 + m_volume, 1 + volume)) {
+        return;
+    }
+
     m_volume = volume;
     Q_EMIT volumeChanged();
 }
