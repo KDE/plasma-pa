@@ -36,6 +36,7 @@ void SourceOutput::update(const pa_source_output_info *info)
     if (m_deviceIndex != info->source) {
         m_deviceIndex = info->source;
         Q_EMIT deviceIndexChanged();
+        Q_EMIT sourceIndexChanged();
     }
 }
 
@@ -62,6 +63,11 @@ void SourceOutput::setChannelVolume(int channel, qint64 volume)
 void SourceOutput::setChannelVolumes(const QVector<qint64> &channelVolumes)
 {
     context()->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_source_output_volume);
+}
+
+quint32 SourceOutput::sourceIndex() const
+{
+    return m_deviceIndex;
 }
 
 } // QPulseAudio
