@@ -100,7 +100,7 @@ X-Plasma-MainScript=ui/main.qml
 
 X-Plasma-NotificationArea=true
 X-Plasma-NotificationAreaCategory=Hardware
-X-Plasma-ConfigPlugins=kcm_pulseaudio
+#X-Plasma-ConfigPlugins=kcm_pulseaudio FIXME reenable when the applet config dialog properly handles multipage KCMs
 
 X-KDE-PluginInfo-Name=org.kde.plasma.volume
 X-KDE-PluginInfo-Category=Multimedia

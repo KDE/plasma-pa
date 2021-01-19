@@ -26,6 +26,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents // PC3 TabBar/TabButton
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
+import org.kde.kquickcontrolsaddons 2.0 as KQCAddons
 
 import org.kde.plasma.private.volume 0.1
 
@@ -674,11 +675,19 @@ Item {
         }
     }
 
+    function action_openKcm() {
+        KQCAddons.KCMShell.openSystemSettings("kcm_pulseaudio");
+    }
+
     Component.onCompleted: {
         MicrophoneIndicator.init();
 
         plasmoid.setAction("forceMute", i18n("Force mute all playback devices"), "audio-volume-muted");
         plasmoid.action("forceMute").checkable = true;
         plasmoid.action("forceMute").checked = Qt.binding(() => {return globalMute;});
+
+        // FIXME only while Multi-page KCMs are broken when embedded in plasmoid config
+        plasmoid.setAction("openKcm", i18n("&Configure Audio Devices..."), "audio-volume-high");
+        plasmoid.action("openKcm").visible = (KQCAddons.KCMShell.authorize("kcm_pulseaudio.desktop").length > 0);
     }
 }
