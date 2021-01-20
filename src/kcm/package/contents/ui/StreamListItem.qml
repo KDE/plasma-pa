@@ -68,8 +68,6 @@ ColumnLayout {
 
                 DeviceComboBox {
                     id: deviceComboBox
-                    Layout.leftMargin: Kirigami.Units.smallSpacing
-                    Layout.rightMargin: Kirigami.Units.smallSpacing
                     Layout.preferredWidth: delegate.width / 3
                     visible: !isEventStream && count > 1
                 }
