@@ -433,33 +433,27 @@ Item {
         header: PlasmaExtras.PlasmoidHeading {
             // Make this toolbar's buttons align vertically with the ones above
             rightPadding: -PlasmaCore.Units.devicePixelRatio
+            // Allow tabbar to touch the header's bottom border
+            bottomPadding: -bottomInset
 
             RowLayout {
                 anchors.fill: parent
 
-                PlasmaComponents3.CheckBox {
-                    id: raiseMaximumVolumeCheckbox
-                    checked: plasmoid.configuration.raiseMaximumVolume
-                    onToggled: {
-                        plasmoid.configuration.raiseMaximumVolume = checked
-                        if (!checked) {
-                            for (var i = 0; i < paSinkModel.rowCount(); i++) {
-                                if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
-                                    paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
-                                }
-                            }
-                            for (var i = 0; i < paSourceModel.rowCount(); i++) {
-                                if (paSourceModel.data(paSourceModel.index(i, 0), paSourceModel.role("Volume")) > PulseAudio.NormalVolume) {
-                                    paSourceModel.setData(paSourceModel.index(i, 0), PulseAudio.NormalVolume, paSourceModel.role("Volume"));
-                                }
-                            }
-                        }
-                    }
-                    text: i18n("Raise maximum volume")
-                }
-
-                Item {
+                PlasmaComponents.TabBar {
+                    id: tabBar
                     Layout.fillWidth: true
+                    activeFocusOnTab: true
+                    tabPosition: Qt.TopEdge
+
+                    PlasmaComponents.TabButton {
+                        id: devicesTab
+                        text: i18n("Devices")
+                    }
+
+                    PlasmaComponents.TabButton {
+                        id: streamsTab
+                        text: i18n("Applications")
+                    }
                 }
 
                 PlasmaComponents3.ToolButton {
@@ -640,29 +634,30 @@ Item {
         }
 
         footer: PlasmaExtras.PlasmoidHeading {
+            height: parent.header.height
             location: PlasmaExtras.PlasmoidHeading.Location.Footer
-            // Allow tabbar to touch the footer's top border
-            topPadding: -topInset
+            PlasmaComponents3.CheckBox {
+                id: raiseMaximumVolumeCheckbox
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
 
-            RowLayout {
-                anchors.fill: parent
-
-                PlasmaComponents.TabBar {
-                    id: tabBar
-                    Layout.fillWidth: true
-                    activeFocusOnTab: true
-                    tabPosition: Qt.BottomEdge
-
-                    PlasmaComponents.TabButton {
-                        id: devicesTab
-                        text: i18n("Devices")
-                    }
-
-                    PlasmaComponents.TabButton {
-                        id: streamsTab
-                        text: i18n("Applications")
+                checked: plasmoid.configuration.raiseMaximumVolume
+                onToggled: {
+                    plasmoid.configuration.raiseMaximumVolume = checked
+                    if (!checked) {
+                        for (var i = 0; i < paSinkModel.rowCount(); i++) {
+                            if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
+                                paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
+                            }
+                        }
+                        for (var i = 0; i < paSourceModel.rowCount(); i++) {
+                            if (paSourceModel.data(paSourceModel.index(i, 0), paSourceModel.role("Volume")) > PulseAudio.NormalVolume) {
+                                paSourceModel.setData(paSourceModel.index(i, 0), PulseAudio.NormalVolume, paSourceModel.role("Volume"));
+                            }
+                        }
                     }
                 }
+                text: i18n("Raise maximum volume")
             }
         }
     }
