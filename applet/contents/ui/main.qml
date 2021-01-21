@@ -527,6 +527,7 @@ Item {
                         }
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: StreamListItem {
+                            width: sinkInputView.width
                             type: "sink-input"
                             draggable: sinkView.count > 1
                         }
@@ -556,6 +557,7 @@ Item {
                         }
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: StreamListItem {
+                            width: sourceOutputView.width
                             type: "source-input"
                             draggable: sourceView.count > 1
                         }
@@ -582,6 +584,7 @@ Item {
 
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
+                            width: sinkView.width
                             type: "sink"
                             onlyone: sinkView.count === 1
                         }
@@ -609,6 +612,7 @@ Item {
 
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: DeviceListItem {
+                            width: sourceView.width
                             type: "source"
                             onlyone: sourceView.count === 1
                         }
