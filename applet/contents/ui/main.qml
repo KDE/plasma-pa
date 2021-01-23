@@ -445,6 +445,26 @@ Item {
                     activeFocusOnTab: true
                     tabPosition: Qt.TopEdge
 
+                    currentTab: {
+                        switch (plasmoid.configuration.currentTab) {
+                        case "devices":
+                            return devicesTab;
+                        case "streams":
+                            return streamsTab;
+                        }
+                    }
+
+                    onCurrentTabChanged: {
+                        switch (currentTab) {
+                        case devicesTab:
+                            plasmoid.configuration.currentTab = "devices";
+                            break;
+                        case streamsTab:
+                            plasmoid.configuration.currentTab = "streams";
+                            break;
+                        }
+                    }
+
                     PlasmaComponents.TabButton {
                         id: devicesTab
                         text: i18n("Devices")

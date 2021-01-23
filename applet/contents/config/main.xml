@@ -6,6 +6,10 @@
   <kcfgfile name=""/>
 
   <group name="General">
+    <entry name="currentTab" type="String">
+      <label>Currently shown tab (devices, streams)</label>
+      <default>devices</default>
+    </entry>
     <entry name="raiseMaximumVolume" type="Bool">
       <default>false</default>
     </entry>
