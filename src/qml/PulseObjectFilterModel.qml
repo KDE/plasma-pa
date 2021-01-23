@@ -6,6 +6,10 @@ PlasmaCore.SortFilterModel {
     property var filters: []
     property bool filterOutInactiveDevices: false
 
+    function role(name) {
+        return sourceModel.role(name);
+    }
+
     filterCallback: function(source_row, value) {
         var idx = sourceModel.index(source_row, 0);
 
