@@ -69,7 +69,7 @@ KCM.SimpleKCM {
             Layout.rightMargin: Kirigami.Units.gridUnit / 2
             text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")
             checked: moduleManager.combineSinks
-            onCheckedChanged: moduleManager.combineSinks = checked;
+            onToggled: moduleManager.combineSinks = checked;
             enabled: moduleManager.configModuleLoaded
             visible: moduleManager.settingsSupported
         }
@@ -80,7 +80,7 @@ KCM.SimpleKCM {
             Layout.rightMargin: Kirigami.Units.gridUnit / 2
             text: i18nd("kcm_pulseaudio", "Automatically switch all running streams when a new output becomes available")
             checked: moduleManager.switchOnConnect
-            onCheckedChanged: moduleManager.switchOnConnect = checked;
+            onToggled: moduleManager.switchOnConnect = checked;
             enabled: moduleManager.configModuleLoaded
             visible: moduleManager.settingsSupported
         }
