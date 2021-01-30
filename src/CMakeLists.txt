@@ -49,10 +49,10 @@ endif()
 
 add_library(plasma-volume-declarative SHARED ${dbus_SRCS} ${cpp_SRCS} ${qml_SRCS})
 target_link_libraries(plasma-volume-declarative
-    Qt5::Core
-    Qt5::Gui
-    Qt5::DBus
-    Qt5::Quick
+    Qt::Core
+    Qt::Gui
+    Qt::DBus
+    Qt::Quick
     KF5::GlobalAccel
     KF5::I18n
     KF5::Notifications
