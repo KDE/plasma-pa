@@ -58,7 +58,7 @@ void StreamRestore::update(const pa_ext_stream_restore_info *info)
         Q_EMIT volumeChanged();
         Q_EMIT channelVolumesChanged();
     }
-    if (pa_channel_map_equal(&m_channelMap, &info->channel_map)) {
+    if (!pa_channel_map_equal(&m_channelMap, &info->channel_map)) {
         m_channels.clear();
         m_channels.reserve(info->channel_map.channels);
         for (int i = 0; i < info->channel_map.channels; ++i) {
