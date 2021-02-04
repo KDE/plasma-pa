@@ -24,7 +24,7 @@ import QtQuick.Controls 1.0
 import QtQuick.Layouts 1.0
 
 import org.kde.kquickcontrolsaddons 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents // for contextMenu and ListItem
+import org.kde.plasma.components 2.0 as PlasmaComponents // for ListItem
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
@@ -82,7 +82,7 @@ PlasmaComponents.ListItem {
                     }
 
                     onDragStarted: {
-                        draggedStream = PulseObject;
+                        draggedStream = model.PulseObject;
                         beginMoveStream(type == "sink-input" ? "sink" : "source");
                     }
 
@@ -119,9 +119,9 @@ PlasmaComponents.ListItem {
                         Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                         Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                         spacing: PlasmaCore.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
-                        checked: PulseObject.default ? PulseObject.default : false
+                        checked: model.PulseObject.hasOwnProperty("default") ? model.PulseObject.default : false
                         visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)
-                        onClicked: PulseObject.default = true;
+                        onClicked: model.PulseObject.default = true;
                     }
 
                     PlasmaComponents3.Label {
@@ -140,35 +140,13 @@ PlasmaComponents.ListItem {
                     SmallToolButton {
                         id: contextMenuButton
                         icon.name: "application-menu"
-                        checkable: true
+                        checked: contextMenu.visible && contextMenu.visualParent === this
                         onClicked: {
                             contextMenu.visualParent = this;
-                            contextMenu.showRelative();
+                            contextMenu.openRelative();
                         }
-                        visible: {
-                            // if it is a sink type and there are at least two sink devices. Same for source type.
-                            if (((type == "sink-input" || type == "sink") && sinkView.model.count > 1)
-                                || ((type == "source-input" || type == "source") && sourceView.model.count > 1)) {
-                                return true;
-                            } else if (PulseObject.ports && PulseObject.ports.length > 1) {
-                                // In case an unavailable port is active.
-                                if (PulseObject.ports[PulseObject.activePortIndex].availability == Port.Unavailable) {
-                                    return true;
-                                }
-                                // If there are at least two available ports.
-                                var foundFirstAvailablePort = false;
-                                for (var i = 0; i < PulseObject.ports.length; i++) {
-                                    if (PulseObject.ports[i].availability != Port.Unavailable) {
-                                        if (foundFirstAvailablePort) {
-                                            return true;
-                                        } else {
-                                            foundFirstAvailablePort = true;
-                                        }
-                                    }
-                                }
-                            }
-                            return false;
-                        }
+                        visible: contextMenu.hasContent
+
                         PlasmaComponents3.ToolTip {
                             text: i18n("Show additional options for %1", defaultButton.text)
                         }
@@ -228,7 +206,7 @@ PlasmaComponents.ListItem {
                                 opacity: meter.available && (meter.volume > 0 || animation.running)
                                 VolumeMonitor {
                                     id: meter
-                                    target: parent.visible ? PulseObject : null
+                                    target: parent.visible ? model.PulseObject : null
                                 }
                                 Behavior on width {
                                     NumberAnimation  {
@@ -285,7 +263,7 @@ PlasmaComponents.ListItem {
                     }
                     PlasmaComponents3.Label {
                         id: percentText
-                        readonly property real value: PulseObject.volume > slider.to ? PulseObject.volume : slider.value
+                        readonly property real value: model.PulseObject.volume > slider.to ? model.PulseObject.volume : slider.value
                         readonly property real displayValue: Math.round(value / PulseAudio.NormalVolume * 100.0)
                         Layout.alignment: Qt.AlignHCenter
                         Layout.minimumWidth: percentMetrics.advanceWidth
@@ -341,7 +319,7 @@ PlasmaComponents.ListItem {
             onPressed: {
                 if (mouse.button === Qt.RightButton) {
                     contextMenu.visualParent = this;
-                    contextMenu.show(mouse.x, mouse.y);
+                    contextMenu.open(mouse.x, mouse.y);
                 }
             }
             onClicked: {
@@ -352,140 +330,28 @@ PlasmaComponents.ListItem {
         }
     }
 
-    PlasmaComponents.ContextMenu {
+    ListItemMenu {
         id: contextMenu
-
-        placement: PlasmaCore.Types.BottomPosedLeftAlignedPopup
-
-        onStatusChanged: {
-            if (status == PlasmaComponents.DialogStatus.Closed) {
-                contextMenuButton.checked = false;
+        pulseObject: model.PulseObject
+        cardModel: paCardModel
+        itemType: {
+            switch (item.type) {
+            case "sink":
+                return ListItemMenu.Sink;
+            case "sink-input":
+                return ListItemMenu.SinkInput;
+            case "source":
+                return ListItemMenu.Source;
+            case "source-input":
+                return ListItemMenu.SourceOutput;
             }
         }
-
-        function newMenuItem() {
-            return Qt.createQmlObject("import org.kde.plasma.components 2.0 as PlasmaComponents; PlasmaComponents.MenuItem {}", contextMenu);
-        }
-
-        function loadDynamicActions() {
-            contextMenu.clearMenuItems();
-
-            // Switch all streams of the relevant kind to this device
-            if (type == "source" && sourceView.model.count > 1) {
-                menuItem = newMenuItem();
-                menuItem.text = i18n("Record all audio via this device");
-                menuItem.icon = "mic-on" // or "mic-ready" // or "audio-input-microphone-symbolic"
-                menuItem.clicked.connect(function() {
-                    PulseObject.switchStreams();
-                });
-                contextMenu.addMenuItem(menuItem);
-            } else if (type == "sink" && sinkView.model.count > 1) {
-                menuItem = newMenuItem();
-                menuItem.text = i18n("Play all audio via this device");
-                menuItem.icon = "audio-on" // or "audio-ready" // or "audio-speakers-symbolic"
-                menuItem.clicked.connect(function() {
-                    PulseObject.switchStreams();
-                });
-                contextMenu.addMenuItem(menuItem);
+        sourceModel: {
+            if (item.type.includes("sink")) {
+                return sinkView.model;
+            } else if (item.type.includes("source")) {
+                return sourceView.model;
             }
-
-            // Ports
-            // Intentionally only shown when there are at least two ports.
-            if (PulseObject.ports && PulseObject.ports.length > 1) {
-                var menuItem = newMenuItem();
-                menuItem.text = i18nc("Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)", "Ports");
-                menuItem.section = true;
-                contextMenu.addMenuItem(menuItem);
-
-                var setActivePort = function(portIndex) {
-                    return function() {
-                        PulseObject.activePortIndex = portIndex;
-                    };
-                };
-
-                // If an unavailable port is active, show all the ports.
-                if (PulseObject.ports[PulseObject.activePortIndex].availability == Port.Unavailable) {
-                    for (var i = 0; i < PulseObject.ports.length; i++) {
-                        var port = PulseObject.ports[i];
-                        var menuItem = newMenuItem();
-                        if (port.availability == Port.Unavailable) {
-                            if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
-                                menuItem.text = i18nc("Port is unavailable", "%1 (unavailable)", port.description);
-                            } else {
-                                menuItem.text = i18nc("Port is unplugged", "%1 (unplugged)", port.description);
-                            }
-                        } else {
-                            menuItem.text = port.description;
-                        }
-                        menuItem.checkable = true;
-                        menuItem.checked = i === PulseObject.activePortIndex;
-                        menuItem.clicked.connect(setActivePort(i));
-                        contextMenu.addMenuItem(menuItem);
-                    }
-                } else { // Hide ports that are unavailable and only show if there are at least two available
-                    var menuItemsPorts = [];
-                    var availablePorts = 0;
-                    for (var i = 0; i < PulseObject.ports.length; i++) {
-                        var port = PulseObject.ports[i];
-                        if (port.availability != Port.Unavailable) {
-                            menuItemsPorts[availablePorts] = newMenuItem();
-                            menuItemsPorts[availablePorts].text = port.description;
-                            menuItemsPorts[availablePorts].checkable = true;
-                            menuItemsPorts[availablePorts].checked = i === PulseObject.activePortIndex;
-                            menuItemsPorts[availablePorts].clicked.connect(setActivePort(i));
-                            contextMenu.addMenuItem(menuItemsPorts[availablePorts]);
-                            availablePorts++;
-                        }
-                    }
-
-                    if (availablePorts <= 1){
-                        menuItem.visible = false;
-                        for (var i = 0; i < availablePorts; i++) {
-                            menuItemsPorts[i].visible = false;
-                        }
-                    }
-                }
-            }
-
-            // Choose output / input device
-            // Intentionally only shown when there are at least two options
-            if ((type == "sink-input" && sinkView.model.count > 1) || (type == "source-input" && sourceView.model.count > 1)) {
-                var menuItem = newMenuItem();
-                if (type == "sink-input") {
-                    menuItem.text = i18nc("Heading for a list of possible output devices (speakers, headphones, ...) to choose", "Play audio using");
-                } else {
-                    menuItem.text = i18nc("Heading for a list of possible input devices (built-in microphone, headset, ...) to choose", "Record audio using");
-                }
-                menuItem.section = true;
-                contextMenu.addMenuItem(menuItem);
-                var sModel = type == "sink-input" ? sinkView.model : sourceView.model;
-                for (var i = 0; i < sModel.count; ++i) {
-                    const modelIndex = sModel.index(i, 0)
-                    const index = sModel.data(modelIndex, sModel.role("Index"))
-                    var menuItem = newMenuItem();
-                    menuItem.text = sModel.data(modelIndex, sModel.role("Description"));
-                    menuItem.enabled = true;
-                    menuItem.checkable = true;
-                    menuItem.checked = index === PulseObject.deviceIndex;
-                    var setActiveSink = function(sinkIndex) {
-                        return function() {
-                            PulseObject.deviceIndex = sinkIndex;
-                        };
-                    };
-                    menuItem.clicked.connect(setActiveSink(index));
-                    contextMenu.addMenuItem(menuItem);
-                }
-            }
-        }
-
-        function show(x, y) {
-            loadDynamicActions();
-            open(x, y);
-        }
-
-        function showRelative(){
-            loadDynamicActions();
-            openRelative();
         }
     }
 }

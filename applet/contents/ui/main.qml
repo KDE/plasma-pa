@@ -277,6 +277,10 @@ Item {
         sourceModel: paSourceModel
     }
 
+    CardModel {
+        id: paCardModel
+    }
+
     Plasmoid.compactRepresentation: PlasmaCore.IconItem {
         source: plasmoid.icon
         active: mouseArea.containsMouse

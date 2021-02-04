@@ -25,6 +25,7 @@ set(cpp_SRCS
     module.cpp
     canberracontext.cpp
     qml/globalactioncollection.cpp
+    qml/listitemmenu.cpp
     qml/plugin.cpp
     qml/microphoneindicator.cpp
     qml/volumeosd.cpp
