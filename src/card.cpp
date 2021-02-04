@@ -42,27 +42,60 @@ void Card::update(const pa_card_info *info)
         Q_EMIT nameChanged();
     }
 
-    qDeleteAll(m_profiles);
-    m_profiles.clear();
+    const quint32 oldActiveProfileIndex = m_activeProfileIndex;
+    bool profilesHaveChanged = false;
+    int i = 0;
     for (auto **it = info->profiles2; it && *it != nullptr; ++it) {
-        Profile *profile = new Profile(this);
-        profile->setInfo(*it);
-        m_profiles.append(profile);
-        if (info->active_profile2 == *it) {
-            m_activeProfileIndex = m_profiles.length() - 1;
+        if (i < m_profiles.count()) {
+            Profile *profile = static_cast<Profile *>(m_profiles.at(i));
+            profilesHaveChanged |= profile->setInfo(*it);
+        } else {
+            Profile *profile = new Profile(this);
+            profile->setInfo(*it);
+            m_profiles.append(profile);
+            profilesHaveChanged = true;
         }
+        if (info->active_profile2 == *it) {
+            m_activeProfileIndex = i;
+        }
+        ++i;
     }
-    Q_EMIT profilesChanged();
-    Q_EMIT activeProfileIndexChanged();
 
-    qDeleteAll(m_ports);
-    m_ports.clear();
-    for (auto **it = info->ports; it && *it != nullptr; ++it) {
-        CardPort *port = new CardPort(this);
-        port->update(*it);
-        m_ports.append(port);
+    while (m_profiles.count() > i) {
+        delete m_profiles.takeLast();
+        profilesHaveChanged = true;
     }
-    Q_EMIT portsChanged();
+
+    if (profilesHaveChanged) {
+        Q_EMIT profilesChanged();
+    }
+    if (profilesHaveChanged || m_activeProfileIndex != oldActiveProfileIndex) {
+        Q_EMIT activeProfileIndexChanged();
+    }
+
+    bool portsHaveChanged = false;
+    i = 0;
+    for (auto **ports = info->ports; ports && *ports != nullptr; ++ports) {
+        if (i < m_ports.count()) {
+            Port *port = static_cast<Port *>(m_ports.at(i));
+            portsHaveChanged |= port->setInfo(*ports);
+        } else {
+            Port *port = new Port(this);
+            port->setInfo(*ports);
+            m_ports.append(port);
+            portsHaveChanged = true;
+        }
+        ++i;
+    }
+
+    while (m_ports.count() > i) {
+        delete m_ports.takeLast();
+        portsHaveChanged = true;
+    }
+
+    if (portsHaveChanged) {
+        Q_EMIT portsChanged();
+    }
 }
 
 QString Card::name() const

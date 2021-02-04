@@ -38,7 +38,7 @@ public:
     ~Port() override;
 
     template<typename PAInfo>
-    void setInfo(const PAInfo *info)
+    bool setInfo(const PAInfo *info)
     {
         Availability newAvailability;
         switch (info->available) {
@@ -51,7 +51,7 @@ public:
         default:
             newAvailability = Unknown;
         }
-        setCommonInfo(info, newAvailability);
+        return setCommonInfo(info, newAvailability);
     }
 };
 

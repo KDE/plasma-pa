@@ -43,7 +43,7 @@ public:
     {
         m_index = info->index;
 
-        m_properties.clear();
+        QVariantMap properties;
         void *it = nullptr;
         while (const char *key = pa_proplist_iterate(info->proplist, &it)) {
             Q_ASSERT(key);
@@ -53,9 +53,13 @@ public:
                 continue;
             }
             Q_ASSERT(value);
-            m_properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
+            properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
         }
-        Q_EMIT propertiesChanged();
+
+        if (m_properties != properties) {
+            m_properties = properties;
+            Q_EMIT propertiesChanged();
+        }
     }
 
     quint32 index() const;

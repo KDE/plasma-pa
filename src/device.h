@@ -78,25 +78,41 @@ public:
             }
         }
 
-        m_cardIndex = info->card;
-        Q_EMIT cardIndexChanged();
-
-        // TODO: this rebuilds the entire port list on every update. would be
-        // nicer if it actually removed what needs removing updates what needs
-        // updating and adds what needs adding. Alas, this is a tad more
-        // involved.
-        qDeleteAll(m_ports);
-        m_ports.clear();
-        for (auto **ports = info->ports; ports && *ports != nullptr; ++ports) {
-            Port *port = new Port(this);
-            port->setInfo(*ports);
-            m_ports.append(port);
-            if (info->active_port == *ports) {
-                m_activePortIndex = m_ports.length() - 1;
-            }
+        if (m_cardIndex != info->card) {
+            m_cardIndex = info->card;
+            Q_EMIT cardIndexChanged();
         }
-        Q_EMIT portsChanged();
-        Q_EMIT activePortIndexChanged();
+
+        const quint32 oldActivePortIndex = m_activePortIndex;
+        bool portsHaveChanged = false;
+        int i = 0;
+        for (auto **ports = info->ports; ports && *ports != nullptr; ++ports) {
+            if (i < m_ports.count()) {
+                Port *port = static_cast<Port *>(m_ports.at(i));
+                portsHaveChanged |= port->setInfo(*ports);
+            } else {
+                Port *port = new Port(this);
+                port->setInfo(*ports);
+                m_ports.append(port);
+                portsHaveChanged = true;
+            }
+            if (info->active_port == *ports) {
+                m_activePortIndex = i;
+            }
+            ++i;
+        }
+
+        while (m_ports.count() > i) {
+            delete m_ports.takeLast();
+            portsHaveChanged = true;
+        }
+
+        if (portsHaveChanged) {
+            Q_EMIT portsChanged();
+        }
+        if (portsHaveChanged || m_activePortIndex != oldActivePortIndex) {
+            Q_EMIT activePortIndexChanged();
+        }
 
         State infoState = stateFromPaState(info->state);
         if (infoState != m_state) {

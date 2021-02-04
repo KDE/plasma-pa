@@ -51,7 +51,7 @@ public:
     {
         setInfo(info);
 
-        m_properties.clear();
+        QVariantMap properties;
         void *it = nullptr;
         while (const char *key = pa_proplist_iterate(info->proplist, &it)) {
             Q_ASSERT(key);
@@ -61,9 +61,13 @@ public:
                 continue;
             }
             Q_ASSERT(value);
-            m_properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
+            properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
         }
-        Q_EMIT propertiesChanged();
+
+        if (m_properties != properties) {
+            m_properties = properties;
+            Q_EMIT propertiesChanged();
+        }
     }
 
     QVariantMap properties() const { return m_properties; }
@@ -102,7 +106,7 @@ Q_SIGNALS:
 private:
     QString m_name;
     QList<QObject *> m_profiles;
-    quint32 m_activeProfileIndex;
+    quint32 m_activeProfileIndex = -1;
     QList<QObject *> m_ports;
 };
 
