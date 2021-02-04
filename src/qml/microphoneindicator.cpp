@@ -93,6 +93,7 @@ void MicrophoneIndicator::update()
 
         // but also middle click to be consistent with volume icon
         connect(m_sni, &KStatusNotifierItem::secondaryActivateRequested, this, &MicrophoneIndicator::toggleMuted);
+        connect(m_sni, &KStatusNotifierItem::activateRequested, this, &MicrophoneIndicator::toggleMuted);
 
         connect(m_sni, &KStatusNotifierItem::scrollRequested, this, [this](int delta, Qt::Orientation orientation) {
             if (orientation != Qt::Vertical) {
