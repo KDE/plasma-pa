@@ -41,6 +41,7 @@ PlasmaComponents.ListItem {
     property alias icon: clientIcon.source
     property alias iconUsesPlasmaTheme: clientIcon.usesPlasmaTheme
     property string type
+    property string fullNameToShowOnHover: ""
 
     checked: dropArea.containsDrag
     opacity: (draggedStream && draggedStream.deviceIndex == Index) ? 0.3 : 1.0
@@ -124,12 +125,48 @@ PlasmaComponents.ListItem {
                         onClicked: model.PulseObject.default = true;
                     }
 
-                    PlasmaComponents3.Label {
-                        id: soloLabel
+                    RowLayout {
                         Layout.fillWidth: true
-                        text: defaultButton.text
                         visible: !defaultButton.visible
-                        elide: Text.ElideRight
+
+                        // User-friendly name
+                        PlasmaComponents3.Label {
+                            Layout.fillWidth: !longDescription.visible
+                            text: defaultButton.text
+                            elide: Text.ElideRight
+
+                            MouseArea {
+                                id: labelHoverHandler
+
+                                // Only want to handle hover for the width of
+                                // the actual text item itself
+                                anchors.left: parent.left
+                                anchors.top: parent.top
+                                width: parent.contentWidth
+                                height: parent.contentHeight
+
+                                hoverEnabled: true
+                                acceptedButtons: Qt.NoButton
+                            }
+                        }
+                        // Possibly not user-friendly description; only show on hover
+                        PlasmaComponents3.Label {
+                            id: longDescription
+
+                            Layout.fillWidth: true
+                            visible: opacity > 0
+                            opacity: labelHoverHandler.containsMouse ? 1 : 0
+                            Behavior on opacity {
+                                NumberAnimation {
+                                    duration: PlasmaCore.Units.shortDuration
+                                    easing.type: Easing.InOutQuad
+                                }
+                            }
+
+                            // Not a word puzzle because this is not a translated string
+                            text: "(" + item.fullNameToShowOnHover + ")"
+                            elide: Text.ElideRight
+                        }
                     }
 
                     Item {

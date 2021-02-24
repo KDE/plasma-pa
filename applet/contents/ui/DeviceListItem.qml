@@ -31,6 +31,8 @@ ListItemBase {
     readonly property var activePortIndex: ActivePortIndex
     property bool onlyone: false
 
+    fullNameToShowOnHover: onlyone ? Description : ""
+
     draggable: false
     label: {
         if (currentPort && currentPort.description) {
