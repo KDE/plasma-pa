@@ -146,7 +146,9 @@ void MicrophoneIndicator::update()
 
     m_sni->setTitle(i18n("Microphone"));
     m_sni->setIconByName(iconName);
-    m_sni->setToolTip(QIcon::fromTheme(iconName), i18n("Microphone"), toolTipForApps(apps));
+    m_sni->setToolTip(QIcon::fromTheme(iconName),
+                      allMuted ? i18n("Microphone Muted") : i18n("Microphone"),
+                      toolTipForApps(apps));
 
     if (m_muteAction) {
         m_muteAction->setChecked(allMuted);
