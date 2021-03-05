@@ -131,6 +131,7 @@ PlasmaComponents.ListItem {
                                 width: parent.contentWidth
                                 height: parent.contentHeight
 
+                                enabled: item.fullNameToShowOnHover.length > 0
                                 hoverEnabled: true
                                 acceptedButtons: Qt.NoButton
                             }
