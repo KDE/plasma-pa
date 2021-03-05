@@ -46,7 +46,7 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<PulseAudioQt::ModuleModel>(uri, 0, 1, "ModuleModel");
     qmlRegisterUncreatableType<PulseAudioQt::Profile>(uri, 0, 1, "Profile", QString());
     qmlRegisterUncreatableType<PulseAudioQt::Port>(uri, 0, 1, "Port", QString());
-    qmlRegisterType<QPulseAudio::VolumeMonitor>(uri, 0, 01, "VolumeMonitor");
+    qmlRegisterType<VolumeMonitor>(uri, 0, 01, "VolumeMonitor");
     qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
     qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
     qmlRegisterType<ListItemMenu>(uri, 0, 1, "ListItemMenu");
@@ -63,5 +63,5 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterAnonymousType<PulseAudioQt::Client>(uri, 1);
     qmlRegisterAnonymousType<PulseAudioQt::Sink>(uri, 1);
     qmlRegisterAnonymousType<PulseAudioQt::Source>(uri, 1);
-    qmlRegisterAnonymousType<QPulseAudio::VolumeObject>(uri, 1);
+    qmlRegisterAnonymousType<PulseAudioQt::VolumeObject>(uri, 1);
 }

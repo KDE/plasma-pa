@@ -14,7 +14,7 @@ class QAbstractItemModel;
 class QMenu;
 class QQuickItem;
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class CardModel;
 class PulseObject;
@@ -27,11 +27,11 @@ class ListItemMenu : public QObject, public QQmlParserStatus
 
     Q_PROPERTY(ItemType itemType READ itemType WRITE setItemType NOTIFY itemTypeChanged)
 
-    Q_PROPERTY(QPulseAudio::PulseObject *pulseObject READ pulseObject WRITE setPulseObject NOTIFY pulseObjectChanged)
+    Q_PROPERTY(PulseAudioQt::PulseObject *pulseObject READ pulseObject WRITE setPulseObject NOTIFY pulseObjectChanged)
 
     Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel NOTIFY sourceModelChanged)
 
-    Q_PROPERTY(QPulseAudio::CardModel *cardModel READ cardModel WRITE setCardModel NOTIFY cardModelChanged)
+    Q_PROPERTY(PulseAudioQt::CardModel *cardModel READ cardModel WRITE setCardModel NOTIFY cardModelChanged)
 
     Q_PROPERTY(bool visible READ isVisible NOTIFY visibleChanged)
 
@@ -56,16 +56,16 @@ public:
     void setItemType(ItemType itemType);
     Q_SIGNAL void itemTypeChanged();
 
-    QPulseAudio::PulseObject *pulseObject() const;
-    void setPulseObject(QPulseAudio::PulseObject *pulseObject);
+    PulseAudioQt::PulseObject *pulseObject() const;
+    void setPulseObject(PulseAudioQt::PulseObject *pulseObject);
     Q_SIGNAL void pulseObjectChanged();
 
     QAbstractItemModel *sourceModel() const;
     void setSourceModel(QAbstractItemModel *sourceModel);
     Q_SIGNAL void sourceModelChanged();
 
-    QPulseAudio::CardModel *cardModel() const;
-    void setCardModel(QPulseAudio::CardModel *cardModel);
+    PulseAudioQt::CardModel *cardModel() const;
+    void setCardModel(PulseAudioQt::CardModel *cardModel);
     Q_SIGNAL void cardModelChanged();
 
     bool isVisible() const;
@@ -97,7 +97,7 @@ private:
     QPointer<QQuickItem> m_visualParent;
 
     ItemType m_itemType = None;
-    QPointer<QPulseAudio::PulseObject> m_pulseObject;
+    QPointer<PulseAudioQt::PulseObject> m_pulseObject;
     QPointer<QAbstractItemModel> m_sourceModel;
-    QPointer<QPulseAudio::CardModel> m_cardModel;
+    QPointer<PulseAudioQt::CardModel> m_cardModel;
 };

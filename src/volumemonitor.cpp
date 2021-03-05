@@ -8,24 +8,22 @@
 
 #include <pulse/pulseaudio.h>
 
-#include "context.h"
+#include <PulseAudioQt/Context>
 #include "debug.h"
-#include "volumeobject.h"
+#include <PulseAudioQt/VolumeObject>
 
 #include <QtGlobal>
 
-using namespace QPulseAudio;
+using namespace PulseAudioQt;
 
 VolumeMonitor::VolumeMonitor(QObject* parent)
     : QObject(parent)
 {
-    Context::instance()->ref();
 }
 
 VolumeMonitor::~VolumeMonitor()
 {
     setTarget(nullptr);
-    Context::instance()->unref();
 }
 
 bool VolumeMonitor::isAvailable() const
@@ -44,12 +42,12 @@ void VolumeMonitor::updateVolume(qreal volume)
     Q_EMIT volumeChanged();
 }
 
-QPulseAudio::VolumeObject * QPulseAudio::VolumeMonitor::target() const
+PulseAudioQt::VolumeObject * VolumeMonitor::target() const
 {
     return m_target.data();
 }
 
-void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject* target)
+void VolumeMonitor::setTarget(PulseAudioQt::VolumeObject* target)
 {
     if (target == m_target) {
         return;
@@ -77,8 +75,8 @@ void VolumeMonitor::createStream()
 {
     Q_ASSERT(!m_stream);
 
-    uint32_t sourceIdx = m_target->sourceIndex();
-    uint32_t streamIdx = m_target->streamIndex();
+    uint32_t sourceIdx;// = m_target->sourceIndex();
+    uint32_t streamIdx;// = m_target->streamIndex();
 
     if (sourceIdx == PA_INVALID_INDEX) {
         return;
@@ -99,10 +97,10 @@ void VolumeMonitor::createStream()
 
     snprintf(t, sizeof(t), "%u", sourceIdx);
 
-    if (!(m_stream = pa_stream_new(Context::instance()->context(), "PlasmaPA-VolumeMeter", &ss, nullptr))) {
-        qCWarning(PLASMAPA) << "Failed to create stream";
-        return;
-    }
+//     if (!(m_stream = pa_stream_new(Context::instance()->context(), "PlasmaPA-VolumeMeter", &ss, nullptr))) {
+//         qCWarning(PLASMAPA) << "Failed to create stream";
+//         return;
+//     }
 
     if (streamIdx != PA_INVALID_INDEX) {
         pa_stream_set_monitor_stream(m_stream, streamIdx);

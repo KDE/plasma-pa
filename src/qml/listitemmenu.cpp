@@ -14,15 +14,16 @@
 
 #include <KLocalizedString>
 
-#include "card.h"
+#include <PulseAudioQt/Card>
+#include <PulseAudioQt/Device>
+#include <PulseAudioQt/Port>
+#include <PulseAudioQt/PulseObject>
+#include <PulseAudioQt/Stream>
 #include "debug.h"
-#include "device.h"
-#include "port.h"
-#include "pulseaudio.h"
-#include "pulseobject.h"
-#include "stream.h"
+#include <PulseAudioQt/Models>
+// #include "pulseaudio.h"
 
-using namespace QPulseAudio;
+using namespace PulseAudioQt;
 
 static const auto s_offProfile = QLatin1String("off");
 
@@ -57,12 +58,12 @@ void ListItemMenu::setItemType(ItemType itemType)
     }
 }
 
-QPulseAudio::PulseObject *ListItemMenu::pulseObject() const
+PulseAudioQt::PulseObject *ListItemMenu::pulseObject() const
 {
     return m_pulseObject.data();
 }
 
-void ListItemMenu::setPulseObject(QPulseAudio::PulseObject *pulseObject)
+void ListItemMenu::setPulseObject(PulseAudioQt::PulseObject *pulseObject)
 {
     if (m_pulseObject.data() != pulseObject) {
         // TODO is Qt clever enough to catch the disconnect from base class?
@@ -72,7 +73,7 @@ void ListItemMenu::setPulseObject(QPulseAudio::PulseObject *pulseObject)
 
         m_pulseObject = pulseObject;
 
-        if (auto *device = qobject_cast<QPulseAudio::Device *>(m_pulseObject.data())) {
+        if (auto *device = qobject_cast<PulseAudioQt::Device *>(m_pulseObject.data())) {
             connect(device, &Device::activePortIndexChanged, this, &ListItemMenu::update);
             connect(device, &Device::portsChanged, this, &ListItemMenu::update);
         }
@@ -109,12 +110,12 @@ void ListItemMenu::setSourceModel(QAbstractItemModel *sourceModel)
     Q_EMIT sourceModelChanged();
 }
 
-QPulseAudio::CardModel *ListItemMenu::cardModel() const
+PulseAudioQt::CardModel *ListItemMenu::cardModel() const
 {
     return m_cardModel.data();
 }
 
-void ListItemMenu::setCardModel(QPulseAudio::CardModel *cardModel)
+void ListItemMenu::setCardModel(PulseAudioQt::CardModel *cardModel)
 {
     if (m_cardModel.data() == cardModel) {
         return;
@@ -178,7 +179,7 @@ bool ListItemMenu::checkHasContent()
         return true;
     }
 
-    auto *device = qobject_cast<QPulseAudio::Device *>(m_pulseObject.data());
+    auto *device = qobject_cast<PulseAudioQt::Device *>(m_pulseObject.data());
 
     if (device) {
         const auto ports = device->ports();
@@ -326,7 +327,7 @@ QMenu *ListItemMenu::createMenu()
         setVisible(false);
     });
 
-    if (auto *device = qobject_cast<QPulseAudio::Device *>(m_pulseObject.data())) {
+    if (auto *device = qobject_cast<PulseAudioQt::Device *>(m_pulseObject.data())) {
         // Switch all streams of the relevant kind to this device
         if (m_sourceModel->rowCount() > 1) {
             QAction *switchStreamsAction = nullptr;
@@ -343,7 +344,7 @@ QMenu *ListItemMenu::createMenu()
             }
 
             if (switchStreamsAction) {
-                connect(switchStreamsAction, &QAction::triggered, device, &Device::switchStreams);
+//                 connect(switchStreamsAction, &QAction::triggered, device, &Device::switchStreams);
             }
         }
 
@@ -467,7 +468,7 @@ QMenu *ListItemMenu::createMenu()
     }
 
     // Choose output / input device
-    auto *stream = qobject_cast<QPulseAudio::Stream *>(m_pulseObject.data());
+    auto *stream = qobject_cast<PulseAudioQt::Stream *>(m_pulseObject.data());
     if (stream && m_sourceModel && m_sourceModel->rowCount() > 1) {
         if (m_itemType == SinkInput || m_itemType == SourceOutput) {
             if (m_itemType == SinkInput) {
