@@ -539,6 +539,7 @@ Item {
                         delegate: StreamListItem {
                             width: sinkInputView.width
                             type: "sink-input"
+                            devicesModel: sinkView.model
                             draggable: sinkView.count > 1
                         }
                     }
@@ -569,6 +570,7 @@ Item {
                         delegate: StreamListItem {
                             width: sourceOutputView.width
                             type: "source-input"
+                            devicesModel: sourceView.model
                             draggable: sourceView.count > 1
                         }
                     }

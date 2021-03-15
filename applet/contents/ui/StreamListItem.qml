@@ -9,6 +9,10 @@ import QtQuick 2.0
 import org.kde.plasma.private.volume 0.1
 
 ListItemBase {
+    id: item
+
+    property QtObject devicesModel
+
     label: {
         if (Client && Client.name) {
             return Client.name;
@@ -17,6 +21,25 @@ ListItemBase {
             return Name;
         }
         return i18n("Stream name not found");
+    }
+    fullNameToShowOnHover: {
+        if (devicesModel.count > 1) {
+            const indexRole = devicesModel.role("Index");
+            const descriptionRole = devicesModel.role("Description");
+
+            for (let i = 0; i < devicesModel.count; ++i) {
+                const idx = devicesModel.index(i, 0);
+                const deviceIndex = devicesModel.data(idx, indexRole);
+
+                if (deviceIndex !== DeviceIndex) {
+                    continue;
+                }
+
+                return devicesModel.data(idx, descriptionRole);
+            }
+        }
+
+        return "";
     }
 
     icon: IconName
