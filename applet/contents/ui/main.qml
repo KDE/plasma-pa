@@ -83,11 +83,11 @@ Item {
     }
 
     function boundVolume(volume) {
-        return Math.max(PulseAudio.MinimalVolume, Math.min(volume, currentMaxVolumeValue));
+        return Math.max(PulseAudio.MinimalVolume, Math.min(Math.floor(volume), currentMaxVolumeValue));
     }
 
     function volumePercent(volume) {
-        return Math.round(volume / PulseAudio.NormalVolume * 100.0);
+        return Math.floor(volume / PulseAudio.NormalVolume * 100.0);
     }
 
     function increaseVolume() {
