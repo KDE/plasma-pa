@@ -21,7 +21,7 @@ class AbstractModel : public QAbstractListModel
     Q_OBJECT
 public:
     enum ItemRole {
-        PulseObjectRole = Qt::UserRole + 1
+        PulseObjectRole = Qt::UserRole + 1,
     };
     Q_PROPERTY(int count READ rowCount NOTIFY countChanged)
 
@@ -76,7 +76,7 @@ class SinkModel : public AbstractModel
     Q_PROPERTY(QPulseAudio::Sink *preferredSink READ preferredSink NOTIFY preferredSinkChanged)
 public:
     enum ItemRole {
-        SortByDefaultRole = PulseObjectRole + 1
+        SortByDefaultRole = PulseObjectRole + 1,
     };
     Q_ENUM(ItemRole)
 
@@ -111,7 +111,7 @@ class SourceModel : public AbstractModel
     Q_PROPERTY(QPulseAudio::Source *defaultSource READ defaultSource NOTIFY defaultSourceChanged)
 public:
     enum ItemRole {
-        SortByDefaultRole = PulseObjectRole + 1
+        SortByDefaultRole = PulseObjectRole + 1,
     };
     Q_ENUM(ItemRole)
 

@@ -25,7 +25,7 @@ public:
     enum Availability {
         Unknown,
         Available,
-        Unavailable
+        Unavailable,
     };
     Q_ENUM(Availability)
 

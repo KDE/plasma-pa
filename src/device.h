@@ -36,7 +36,7 @@ public:
         RunningState,
         IdleState,
         SuspendedState,
-        UnknownState
+        UnknownState,
     };
     Q_ENUMS(State);
 
