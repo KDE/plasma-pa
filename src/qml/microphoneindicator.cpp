@@ -215,8 +215,8 @@ void MicrophoneIndicator::adjustVolume(int direction)
 
     const int step = qRound(5 * Context::NormalVolume / 100.0);
 
-    const auto newVolume = qBound(Context::MinimalVolume,
-                                  source->volume() + direction * step,
+    const auto newVolume = qBound(Context::MinimalVolume, //
+                                  source->volume() + direction * step, //
                                   Context::NormalVolume);
 
     source->setVolume(newVolume);
