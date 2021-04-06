@@ -52,8 +52,9 @@ static bool isGoodState(int eol)
 
 static void sink_cb(pa_context *context, const pa_sink_info *info, int eol, void *data)
 {
-    if (!isGoodState(eol))
+    if (!isGoodState(eol)) {
         return;
+    }
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->sinkCallback(info);
@@ -61,8 +62,9 @@ static void sink_cb(pa_context *context, const pa_sink_info *info, int eol, void
 
 static void sink_input_callback(pa_context *context, const pa_sink_input_info *info, int eol, void *data)
 {
-    if (!isGoodState(eol))
+    if (!isGoodState(eol)) {
         return;
+    }
     // pulsesink probe is used by gst-pulse only to query sink formats (not for playback)
     if (qstrcmp(info->name, "pulsesink probe") == 0) {
         return;
@@ -80,11 +82,13 @@ static void sink_input_callback(pa_context *context, const pa_sink_input_info *i
 
 static void source_cb(pa_context *context, const pa_source_info *info, int eol, void *data)
 {
-    if (!isGoodState(eol))
+    if (!isGoodState(eol)) {
         return;
+    }
     // FIXME: This forces excluding monitors
-    if (info->monitor_of_sink != PA_INVALID_INDEX)
+    if (info->monitor_of_sink != PA_INVALID_INDEX) {
         return;
+    }
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->sourceCallback(info);
@@ -92,15 +96,17 @@ static void source_cb(pa_context *context, const pa_source_info *info, int eol, 
 
 static void source_output_cb(pa_context *context, const pa_source_output_info *info, int eol, void *data)
 {
-    if (!isGoodState(eol))
+    if (!isGoodState(eol)) {
         return;
+    }
     // FIXME: This forces excluding these apps
     if (const char *app = pa_proplist_gets(info->proplist, PA_PROP_APPLICATION_ID)) {
         if (strcmp(app, "org.PulseAudio.pavucontrol") == 0 //
             || strcmp(app, "org.gnome.VolumeControl") == 0 //
             || strcmp(app, "org.kde.kmixd") == 0 //
-            || strcmp(app, "org.kde.plasma-pa") == 0)
+            || strcmp(app, "org.kde.plasma-pa") == 0) {
             return;
+        }
     }
     Q_ASSERT(context);
     Q_ASSERT(data);
@@ -109,8 +115,9 @@ static void source_output_cb(pa_context *context, const pa_source_output_info *i
 
 static void client_cb(pa_context *context, const pa_client_info *info, int eol, void *data)
 {
-    if (!isGoodState(eol))
+    if (!isGoodState(eol)) {
         return;
+    }
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->clientCallback(info);
@@ -118,8 +125,9 @@ static void client_cb(pa_context *context, const pa_client_info *info, int eol, 
 
 static void card_cb(pa_context *context, const pa_card_info *info, int eol, void *data)
 {
-    if (!isGoodState(eol))
+    if (!isGoodState(eol)) {
         return;
+    }
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->cardCallback(info);
@@ -127,8 +135,9 @@ static void card_cb(pa_context *context, const pa_card_info *info, int eol, void
 
 static void module_info_list_cb(pa_context *context, const pa_module_info *info, int eol, void *data)
 {
-    if (!isGoodState(eol))
+    if (!isGoodState(eol)) {
         return;
+    }
     Q_ASSERT(context);
     Q_ASSERT(data);
     ((Context *)data)->moduleCallback(info);

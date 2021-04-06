@@ -79,8 +79,9 @@ void Sink::setDefault(bool enable)
 void Sink::testChannel(const QString &name)
 {
     auto context = CanberraContext::instance()->canberra();
-    if (!context)
+    if (!context) {
         return;
+    }
 
     char dev[64];
     snprintf(dev, sizeof(dev), "%lu", (unsigned long)m_index);

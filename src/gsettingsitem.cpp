@@ -100,6 +100,7 @@ GSettingsItem::GSettingsItem(const QString &key, QObject *parent)
 GSettingsItem::~GSettingsItem()
 {
     g_settings_sync();
-    if (m_settings)
+    if (m_settings) {
         g_object_unref(m_settings);
+    }
 }
