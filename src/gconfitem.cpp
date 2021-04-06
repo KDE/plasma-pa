@@ -6,27 +6,26 @@
  * SPDX-License-Identifier: LGPL-2.1-only
  */
 
-#include <QString>
 #include <QByteArray>
-#include <QVariant>
 #include <QDebug>
+#include <QString>
+#include <QVariant>
 
 #include "gconfitem.h"
 
-#include <glib.h>
-#include <gconf/gconf-value.h>
 #include <gconf/gconf-client.h>
+#include <gconf/gconf-value.h>
+#include <glib.h>
 
-struct GConfItemPrivate
-{
+struct GConfItemPrivate {
     QString root;
     QVariant value;
     guint notify_id;
 
-    static void notify_trampoline(GConfClient*, guint, GConfEntry *, gpointer);
+    static void notify_trampoline(GConfClient *, guint, GConfEntry *, gpointer);
 };
 
-#define withClient(c) for(GConfClient *c = (gconf_client_get_default()); c; g_object_unref(c), c=NULL)
+#define withClient(c) for (GConfClient *c = (gconf_client_get_default()); c; g_object_unref(c), c = NULL)
 
 static QByteArray convertKey(QString key)
 {
@@ -62,20 +61,18 @@ static QVariant convertValue(GConfValue *src)
             return QVariant(QString::fromUtf8(gconf_value_get_string(src)));
         case GCONF_VALUE_LIST:
             switch (gconf_value_get_list_type(src)) {
-            case GCONF_VALUE_STRING:
-                {
-                    QStringList result;
-                    for (GSList *elts = gconf_value_get_list(src); elts; elts = elts->next)
-                        result.append(QString::fromUtf8(gconf_value_get_string((GConfValue *)elts->data)));
-                    return QVariant(result);
-                }
-            default:
-                {
-                    QList<QVariant> result;
-                    for (GSList *elts = gconf_value_get_list(src); elts; elts = elts->next)
-                        result.append(convertValue((GConfValue *)elts->data));
-                    return QVariant(result);
-                }
+            case GCONF_VALUE_STRING: {
+                QStringList result;
+                for (GSList *elts = gconf_value_get_list(src); elts; elts = elts->next)
+                    result.append(QString::fromUtf8(gconf_value_get_string((GConfValue *)elts->data)));
+                return QVariant(result);
+            }
+            default: {
+                QList<QVariant> result;
+                for (GSList *elts = gconf_value_get_list(src); elts; elts = elts->next)
+                    result.append(convertValue((GConfValue *)elts->data));
+                return QVariant(result);
+            }
             }
         case GCONF_VALUE_SCHEMA:
         default:
@@ -86,14 +83,14 @@ static QVariant convertValue(GConfValue *src)
 
 static GConfValue *convertString(const QString &str)
 {
-    GConfValue *v = gconf_value_new (GCONF_VALUE_STRING);
-    gconf_value_set_string (v, str.toUtf8().data());
+    GConfValue *v = gconf_value_new(GCONF_VALUE_STRING);
+    gconf_value_set_string(v, str.toUtf8().data());
     return v;
 }
 
-static GConfValueType primitiveType (const QVariant &elt)
+static GConfValueType primitiveType(const QVariant &elt)
 {
-    switch(elt.type()) {
+    switch (elt.type()) {
     case QVariant::String:
         return GCONF_VALUE_STRING;
     case QVariant::Int:
@@ -112,7 +109,7 @@ static GConfValueType uniformType(const QList<QVariant> &list)
     GConfValueType result = GCONF_VALUE_INVALID;
 
     Q_FOREACH (const QVariant &elt, list) {
-        GConfValueType elt_type = primitiveType (elt);
+        GConfValueType elt_type = primitiveType(elt);
 
         if (elt_type == GCONF_VALUE_INVALID)
             return GCONF_VALUE_INVALID;
@@ -124,7 +121,7 @@ static GConfValueType uniformType(const QList<QVariant> &list)
     }
 
     if (result == GCONF_VALUE_INVALID)
-        return GCONF_VALUE_STRING;  // empty list.
+        return GCONF_VALUE_STRING; // empty list.
     else
         return result;
 }
@@ -133,55 +130,51 @@ static int convertValue(const QVariant &src, GConfValue **valp)
 {
     GConfValue *v;
 
-    switch(src.type()) {
+    switch (src.type()) {
     case QVariant::Invalid:
         v = nullptr;
         break;
     case QVariant::Bool:
-        v = gconf_value_new (GCONF_VALUE_BOOL);
-        gconf_value_set_bool (v, src.toBool());
+        v = gconf_value_new(GCONF_VALUE_BOOL);
+        gconf_value_set_bool(v, src.toBool());
         break;
     case QVariant::Int:
-        v = gconf_value_new (GCONF_VALUE_INT);
-        gconf_value_set_int (v, src.toInt());
+        v = gconf_value_new(GCONF_VALUE_INT);
+        gconf_value_set_int(v, src.toInt());
         break;
     case QVariant::Double:
-        v = gconf_value_new (GCONF_VALUE_FLOAT);
-        gconf_value_set_float (v, src.toDouble());
+        v = gconf_value_new(GCONF_VALUE_FLOAT);
+        gconf_value_set_float(v, src.toDouble());
         break;
     case QVariant::String:
         v = convertString(src.toString());
         break;
-    case QVariant::StringList:
-        {
+    case QVariant::StringList: {
+        GSList *elts = nullptr;
+        v = gconf_value_new(GCONF_VALUE_LIST);
+        gconf_value_set_list_type(v, GCONF_VALUE_STRING);
+        Q_FOREACH (const QString &str, src.toStringList())
+            elts = g_slist_prepend(elts, convertString(str));
+        gconf_value_set_list_nocopy(v, g_slist_reverse(elts));
+        break;
+    }
+    case QVariant::List: {
+        GConfValueType elt_type = uniformType(src.toList());
+        if (elt_type == GCONF_VALUE_INVALID)
+            v = nullptr;
+        else {
             GSList *elts = nullptr;
             v = gconf_value_new(GCONF_VALUE_LIST);
-            gconf_value_set_list_type(v, GCONF_VALUE_STRING);
-            Q_FOREACH (const QString &str, src.toStringList())
-                elts = g_slist_prepend(elts, convertString(str));
-            gconf_value_set_list_nocopy(v, g_slist_reverse(elts));
-            break;
-        }
-    case QVariant::List:
-        {
-            GConfValueType elt_type = uniformType(src.toList());
-            if (elt_type == GCONF_VALUE_INVALID)
-                v = nullptr;
-            else
-            {
-                GSList *elts = nullptr;
-                v = gconf_value_new(GCONF_VALUE_LIST);
-                gconf_value_set_list_type(v, elt_type);
-                Q_FOREACH (const QVariant &elt, src.toList())
-                {
-                    GConfValue *val = nullptr;
-                    convertValue(elt, &val);  // guaranteed to succeed.
-                    elts = g_slist_prepend(elts, val);
-                }
-                gconf_value_set_list_nocopy(v, g_slist_reverse(elts));
+            gconf_value_set_list_type(v, elt_type);
+            Q_FOREACH (const QVariant &elt, src.toList()) {
+                GConfValue *val = nullptr;
+                convertValue(elt, &val); // guaranteed to succeed.
+                elts = g_slist_prepend(elts, val);
             }
-            break;
+            gconf_value_set_list_nocopy(v, g_slist_reverse(elts));
         }
+        break;
+    }
     default:
         return 0;
     }
@@ -190,17 +183,14 @@ static int convertValue(const QVariant &src, GConfValue **valp)
     return 1;
 }
 
-void GConfItemPrivate::notify_trampoline (GConfClient*,
-                                             guint,
-                                             GConfEntry *entry,
-                                             gpointer data)
+void GConfItemPrivate::notify_trampoline(GConfClient *, guint, GConfEntry *entry, gpointer data)
 {
     GConfItem *item = (GConfItem *)data;
 
-    item->update_value (true, entry->key, convertValue(entry->value));
+    item->update_value(true, entry->key, convertValue(entry->value));
 }
 
-void GConfItem::update_value (bool emit_signal, const QString& key, const QVariant& value)
+void GConfItem::update_value(bool emit_signal, const QString &key, const QVariant &value)
 {
     QVariant new_value;
 
@@ -217,14 +207,15 @@ QString GConfItem::root() const
 QVariant GConfItem::value(const QString &subKey) const
 {
     QVariant new_value;
-    withClient(client) {
+    withClient(client)
+    {
         GError *error = nullptr;
         QByteArray k = convertKey(priv->root + '/' + subKey);
         GConfValue *v = gconf_client_get(client, k.data(), &error);
 
         if (error) {
             qWarning() << error->message;
-            g_error_free (error);
+            g_error_free(error);
             new_value = QVariant();
         } else {
             new_value = convertValue(v);
@@ -237,7 +228,8 @@ QVariant GConfItem::value(const QString &subKey) const
 
 void GConfItem::set(const QString &subKey, const QVariant &val)
 {
-    withClient(client) {
+    withClient(client)
+    {
         QByteArray k = convertKey(priv->root + '/' + subKey);
         GConfValue *v;
         if (convertValue(val, &v)) {
@@ -264,14 +256,15 @@ QList<QString> GConfItem::listDirs() const
 {
     QList<QString> children;
 
-    withClient(client) {
+    withClient(client)
+    {
         QByteArray k = convertKey(priv->root);
         GSList *dirs = gconf_client_all_dirs(client, k.data(), nullptr);
         for (GSList *d = dirs; d; d = d->next) {
             children.append(convertKey((char *)d->data));
-            g_free (d->data);
+            g_free(d->data);
         }
-        g_slist_free (dirs);
+        g_slist_free(dirs);
     }
 
     return children;
@@ -281,39 +274,40 @@ QList<QString> GConfItem::listEntries() const
 {
     QList<QString> children;
 
-    withClient(client) {
+    withClient(client)
+    {
         QByteArray k = convertKey(priv->root);
         GSList *entries = gconf_client_all_entries(client, k.data(), nullptr);
         for (GSList *e = entries; e; e = e->next) {
             children.append(convertKey(((GConfEntry *)e->data)->key));
-            gconf_entry_free ((GConfEntry *)e->data);
+            gconf_entry_free((GConfEntry *)e->data);
         }
-        g_slist_free (entries);
+        g_slist_free(entries);
     }
 
     return children;
 }
 
 GConfItem::GConfItem(const QString &key, QObject *parent)
-    : QObject (parent),
-    priv(new GConfItemPrivate)
+    : QObject(parent)
+    , priv(new GConfItemPrivate)
 {
     priv->root = key;
-    withClient(client) {
+    withClient(client)
+    {
         QByteArray k = convertKey(priv->root);
-        gconf_client_add_dir (client, k.data(), GCONF_CLIENT_PRELOAD_ONELEVEL, nullptr);
-        priv->notify_id = gconf_client_notify_add (client, k.data(),
-                                                   GConfItemPrivate::notify_trampoline, this,
-                                                   nullptr, nullptr);
+        gconf_client_add_dir(client, k.data(), GCONF_CLIENT_PRELOAD_ONELEVEL, nullptr);
+        priv->notify_id = gconf_client_notify_add(client, k.data(), GConfItemPrivate::notify_trampoline, this, nullptr, nullptr);
     }
 }
 
 GConfItem::~GConfItem()
 {
-    withClient(client) {
+    withClient(client)
+    {
         QByteArray k = convertKey(priv->root);
-        gconf_client_notify_remove (client, priv->notify_id);
-        gconf_client_remove_dir (client, k.data(), nullptr);
+        gconf_client_notify_remove(client, priv->notify_id);
+        gconf_client_remove_dir(client, k.data(), nullptr);
     }
     delete priv;
 }

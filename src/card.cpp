@@ -12,7 +12,6 @@
 
 namespace QPulseAudio
 {
-
 Card::Card(QObject *parent)
     : PulseObject(parent)
 {

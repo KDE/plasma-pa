@@ -5,12 +5,11 @@
 */
 #pragma once
 
-#include <canberra.h>
 #include <QObject>
+#include <canberra.h>
 
 namespace QPulseAudio
 {
-
 class CanberraContext : public QObject
 {
     Q_OBJECT
@@ -31,7 +30,6 @@ private:
     int m_references = 0;
 
     static CanberraContext *s_context;
-
 };
 
 }

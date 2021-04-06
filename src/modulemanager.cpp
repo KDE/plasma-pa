@@ -4,10 +4,9 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-
 #include "modulemanager.h"
-#include "module.h"
 #include "../config.h"
+#include "module.h"
 
 #if USE_GSETTINGS
 #include "gsettingsitem.h"
@@ -24,7 +23,6 @@
 
 namespace QPulseAudio
 {
-
 #if USE_GCONF || USE_GSETTINGS
 
 #if USE_GSETTINGS
@@ -36,16 +34,20 @@ class ConfigModule : public GConfItem
 public:
     ConfigModule(const QString &configName, const QString &moduleName, QObject *parent);
     bool isEnabled() const;
-    void setEnabled(bool enabled, const QVariant &args=QVariant());
+    void setEnabled(bool enabled, const QVariant &args = QVariant());
+
 private:
     QString m_moduleName;
 };
 
-ConfigModule::ConfigModule(const QString &configName, const QString &moduleName, QObject *parent) :
+ConfigModule::ConfigModule(const QString &configName, const QString &moduleName, QObject *parent)
+    :
 #if USE_GSETTINGS
-    GSettingsItem(QStringLiteral(PA_SETTINGS_PATH_MODULES"/") + configName + QStringLiteral("/"), parent),
+    GSettingsItem(QStringLiteral(PA_SETTINGS_PATH_MODULES "/") + configName + QStringLiteral("/"), parent)
+    ,
 #elif USE_GCONF
-    GConfItem(QStringLiteral(PA_SETTINGS_PATH_MODULES"/") + configName, parent),
+    GConfItem(QStringLiteral(PA_SETTINGS_PATH_MODULES "/") + configName, parent)
+    ,
 #endif
     m_moduleName(moduleName)
 {
@@ -72,8 +74,8 @@ void ConfigModule::setEnabled(bool enabled, const QVariant &args)
 
 #endif
 
-ModuleManager::ModuleManager(QObject *parent) :
-    QObject(parent)
+ModuleManager::ModuleManager(QObject *parent)
+    : QObject(parent)
 {
 #if USE_GCONF || USE_GSETTINGS
     m_combineSinks = new ConfigModule(QStringLiteral("combine"), QStringLiteral("module-combine"), this);
@@ -89,14 +91,12 @@ ModuleManager::ModuleManager(QObject *parent) :
     updateModulesTimer->setInterval(500);
     updateModulesTimer->setSingleShot(true);
     connect(updateModulesTimer, &QTimer::timeout, this, &ModuleManager::updateLoadedModules);
-    connect(&Context::instance()->modules(), &MapBaseQObject::added, updateModulesTimer, static_cast<void(QTimer::*)(void)>(&QTimer::start));
-    connect(&Context::instance()->modules(), &MapBaseQObject::removed, updateModulesTimer, static_cast<void(QTimer::*)(void)>(&QTimer::start));
+    connect(&Context::instance()->modules(), &MapBaseQObject::added, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));
+    connect(&Context::instance()->modules(), &MapBaseQObject::removed, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));
     updateLoadedModules();
 }
 
-ModuleManager::~ModuleManager()
-{
-};
+ModuleManager::~ModuleManager(){};
 
 bool ModuleManager::settingsSupported() const
 {
@@ -128,12 +128,12 @@ void ModuleManager::setCombineSinks(bool combineSinks)
 bool ModuleManager::switchOnConnect() const
 {
 #if USE_GCONF || USE_GSETTINGS
-    //switch on connect and device-manager do the same task. Only one should be enabled
+    // switch on connect and device-manager do the same task. Only one should be enabled
 
-    //Note on the first run m_deviceManager will appear to be disabled even though it's actually running
-    //because there is no gconf entry, however m_switchOnConnect will only exist if set by Plasma PA
-    //hence only check this entry
-    return m_switchOnConnect->isEnabled() ;
+    // Note on the first run m_deviceManager will appear to be disabled even though it's actually running
+    // because there is no gconf entry, however m_switchOnConnect will only exist if set by Plasma PA
+    // hence only check this entry
+    return m_switchOnConnect->isEnabled();
 #else
     return false;
 #endif

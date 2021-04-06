@@ -12,10 +12,8 @@
 
 struct pa_stream;
 
-
 namespace QPulseAudio
 {
-
 class VolumeObject;
 
 /**
@@ -29,7 +27,7 @@ class VolumeMonitor : public QObject
      * This is the "PulseObject" role of any SinkInput, Sink or Output model
      * Setting to null will stop streaming
      */
-    Q_PROPERTY(QPulseAudio::VolumeObject* target READ target WRITE setTarget NOTIFY targetChanged)
+    Q_PROPERTY(QPulseAudio::VolumeObject *target READ target WRITE setTarget NOTIFY targetChanged)
     /**
      * The peak output for the volume at any given moment
      * Value is normalised between 0 and 1
@@ -42,18 +40,18 @@ class VolumeMonitor : public QObject
     Q_PROPERTY(bool available READ isAvailable NOTIFY availableChanged)
 
 public:
-    VolumeMonitor(QObject *parent=nullptr);
+    VolumeMonitor(QObject *parent = nullptr);
     ~VolumeMonitor();
 
     bool isAvailable() const;
 
-    VolumeObject* target() const;
+    VolumeObject *target() const;
     void setTarget(VolumeObject *target);
 
 Q_SIGNALS:
-        void volumeChanged();
-        void targetChanged();
-        void availableChanged();
+    void volumeChanged();
+    void targetChanged();
+    void availableChanged();
 
 private:
     void createStream();

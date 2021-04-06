@@ -7,9 +7,8 @@
 
 #include <QString>
 
-
-#include "gsettingsitem.h"
 #include "debug.h"
+#include "gsettingsitem.h"
 
 QVariant GSettingsItem::value(const QString &key) const
 {
@@ -75,7 +74,7 @@ bool GSettingsItem::isValid() const
 }
 
 GSettingsItem::GSettingsItem(const QString &key, QObject *parent)
-    : QObject (parent)
+    : QObject(parent)
 {
     const char schemaId[] = "org.freedesktop.pulseaudio.module-group";
 

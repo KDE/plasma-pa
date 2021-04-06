@@ -8,7 +8,6 @@
 
 namespace QPulseAudio
 {
-
 CanberraContext *CanberraContext::s_context = nullptr;
 
 CanberraContext *CanberraContext::instance()
@@ -24,7 +23,6 @@ CanberraContext::CanberraContext(QObject *parent)
 {
     ca_context_create(&m_canberra);
 }
-
 
 CanberraContext::~CanberraContext()
 {

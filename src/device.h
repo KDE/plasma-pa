@@ -11,13 +11,12 @@
 
 #include <pulse/volume.h>
 
-#include "volumeobject.h"
 #include "port.h"
 #include "pulseobject.h"
+#include "volumeobject.h"
 
 namespace QPulseAudio
 {
-
 class Device : public VolumeObject
 {
     Q_OBJECT
@@ -40,9 +39,11 @@ public:
     };
     Q_ENUMS(State);
 
-    ~Device() override {}
+    ~Device() override
+    {
+    }
 
-    template <typename PAInfo>
+    template<typename PAInfo>
     void updateDevice(const PAInfo *info)
     {
         updateVolumeObject(info);

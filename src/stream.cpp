@@ -8,7 +8,6 @@
 
 namespace QPulseAudio
 {
-
 Stream::Stream(QObject *parent)
     : VolumeObject(parent)
     , m_deviceIndex(PA_INVALID_INDEX)

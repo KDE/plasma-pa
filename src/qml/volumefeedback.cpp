@@ -47,19 +47,21 @@ void VolumeFeedback::play(quint32 sinkIndex)
     }
 
     char dev[64];
-    snprintf(dev, sizeof(dev), "%lu", (unsigned long) sinkIndex);
+    snprintf(dev, sizeof(dev), "%lu", (unsigned long)sinkIndex);
     ca_context_change_device(context, dev);
 
     // Ideally we'd use something like ca_gtk_play_for_widget()...
-    ca_context_play(
-        context,
-        cindex,
-        CA_PROP_EVENT_DESCRIPTION, "Volume Control Feedback Sound",
-        CA_PROP_EVENT_ID, "audio-volume-change",
-        CA_PROP_CANBERRA_CACHE_CONTROL, "permanent",
-        CA_PROP_CANBERRA_ENABLE, "1",
-        nullptr
-    );
+    ca_context_play(context,
+                    cindex,
+                    CA_PROP_EVENT_DESCRIPTION,
+                    "Volume Control Feedback Sound",
+                    CA_PROP_EVENT_ID,
+                    "audio-volume-change",
+                    CA_PROP_CANBERRA_CACHE_CONTROL,
+                    "permanent",
+                    CA_PROP_CANBERRA_ENABLE,
+                    "1",
+                    nullptr);
 
     ca_context_change_device(context, nullptr);
 }

@@ -12,7 +12,6 @@
 
 namespace QPulseAudio
 {
-
 Module::Module(QObject *parent)
     : PulseObject(parent)
 {

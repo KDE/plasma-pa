@@ -13,13 +13,11 @@
 
 namespace QPulseAudio
 {
-
 class Port : public Profile
 {
     Q_OBJECT
 
 public:
-
     explicit Port(QObject *parent);
     ~Port() override;
 

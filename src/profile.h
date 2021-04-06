@@ -12,7 +12,6 @@
 
 namespace QPulseAudio
 {
-
 class Profile : public QObject
 {
     Q_OBJECT
@@ -21,7 +20,6 @@ class Profile : public QObject
     Q_PROPERTY(quint32 priority READ priority NOTIFY priorityChanged)
     Q_PROPERTY(Availability availability READ availability NOTIFY availabilityChanged)
 public:
-
     enum Availability {
         Unknown,
         Available,

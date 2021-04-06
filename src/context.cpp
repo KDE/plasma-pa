@@ -7,28 +7,27 @@
 #include "context.h"
 #include "server.h"
 
-#include <QAbstractEventDispatcher>
 #include "debug.h"
+#include <QAbstractEventDispatcher>
+#include <QDBusConnection>
+#include <QDBusServiceWatcher>
 #include <QMutexLocker>
 #include <QTimer>
-#include <QDBusServiceWatcher>
-#include <QDBusConnection>
 
 #include "card.h"
 #include "client.h"
+#include "module.h"
 #include "sink.h"
 #include "sinkinput.h"
 #include "source.h"
 #include "sourceoutput.h"
 #include "streamrestore.h"
-#include "module.h"
 
 #include <KLocalizedString>
 
 namespace QPulseAudio
 {
-
-Context* Context::s_context = nullptr;
+Context *Context::s_context = nullptr;
 
 const qint64 Context::NormalVolume = PA_VOLUME_NORM;
 const qint64 Context::MinimalVolume = 0;
@@ -98,9 +97,9 @@ static void source_output_cb(pa_context *context, const pa_source_output_info *i
     // FIXME: This forces excluding these apps
     if (const char *app = pa_proplist_gets(info->proplist, PA_PROP_APPLICATION_ID)) {
         if (strcmp(app, "org.PulseAudio.pavucontrol") == 0 //
-                || strcmp(app, "org.gnome.VolumeControl") == 0 //
-                || strcmp(app, "org.kde.kmixd") == 0 //
-                || strcmp(app, "org.kde.plasma-pa") == 0)
+            || strcmp(app, "org.gnome.VolumeControl") == 0 //
+            || strcmp(app, "org.kde.kmixd") == 0 //
+            || strcmp(app, "org.kde.plasma-pa") == 0)
             return;
     }
     Q_ASSERT(context);
@@ -348,14 +347,12 @@ void Context::subscribeCallback(pa_context *context, pa_subscription_event_type_
         }
         break;
 
-
     case PA_SUBSCRIPTION_EVENT_SERVER:
         if (!PAOperation(pa_context_get_server_info(context, server_cb, this))) {
             qCWarning(PLASMAPA) << "pa_context_get_server_info() failed";
             return;
         }
         break;
-
     }
 }
 
@@ -370,15 +367,13 @@ void Context::contextStateCallback(pa_context *c)
         if (m_context == c) {
             pa_context_set_subscribe_callback(c, subscribe_cb, this);
 
-            if (!PAOperation(pa_context_subscribe(c, (pa_subscription_mask_t)
-                                           (PA_SUBSCRIPTION_MASK_SINK|
-                                            PA_SUBSCRIPTION_MASK_SOURCE|
-                                            PA_SUBSCRIPTION_MASK_CLIENT|
-                                            PA_SUBSCRIPTION_MASK_SINK_INPUT|
-                                            PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT|
-                                            PA_SUBSCRIPTION_MASK_CARD|
-                                            PA_SUBSCRIPTION_MASK_MODULE|
-                                            PA_SUBSCRIPTION_MASK_SERVER), nullptr, nullptr))) {
+            if (!PAOperation(
+                    pa_context_subscribe(c,
+                                         (pa_subscription_mask_t)(PA_SUBSCRIPTION_MASK_SINK | PA_SUBSCRIPTION_MASK_SOURCE | PA_SUBSCRIPTION_MASK_CLIENT
+                                                                  | PA_SUBSCRIPTION_MASK_SINK_INPUT | PA_SUBSCRIPTION_MASK_SOURCE_OUTPUT
+                                                                  | PA_SUBSCRIPTION_MASK_CARD | PA_SUBSCRIPTION_MASK_MODULE | PA_SUBSCRIPTION_MASK_SERVER),
+                                         nullptr,
+                                         nullptr))) {
                 qCWarning(PLASMAPA) << "pa_context_subscribe() failed";
                 return;
             }
@@ -488,8 +483,7 @@ void Context::streamRestoreCallback(const pa_ext_stream_restore_info *info)
 
     if (!obj) {
         QVariantMap props;
-        props.insert(QStringLiteral("application.icon_name"),
-                     QStringLiteral("preferences-desktop-notification"));
+        props.insert(QStringLiteral("application.icon_name"), QStringLiteral("preferences-desktop-notification"));
         obj = new StreamRestore(eventRoleIndex, props, this);
         obj->update(info);
         m_streamRestores.insert(obj);
@@ -509,10 +503,7 @@ void Context::setCardProfile(quint32 index, const QString &profile)
         return;
     }
     qCDebug(PLASMAPA) << index << profile;
-    if (!PAOperation(pa_context_set_card_profile_by_index(m_context,
-                                                          index,
-                                                          profile.toUtf8().constData(),
-                                                          nullptr, nullptr))) {
+    if (!PAOperation(pa_context_set_card_profile_by_index(m_context, index, profile.toUtf8().constData(), nullptr, nullptr))) {
         qCWarning(PLASMAPA) << "pa_context_set_card_profile_by_index failed";
         return;
     }
@@ -524,18 +515,13 @@ void Context::setDefaultSink(const QString &name)
         return;
     }
     const QByteArray nameData = name.toUtf8();
-    if (!PAOperation(pa_context_set_default_sink(m_context,
-                                                 nameData.constData(),
-                                                 nullptr,
-                                                 nullptr))) {
+    if (!PAOperation(pa_context_set_default_sink(m_context, nameData.constData(), nullptr, nullptr))) {
         qCWarning(PLASMAPA) << "pa_context_set_default_sink failed";
     }
 
     // Change device for all entries in stream-restore database
     m_newDefaultSink = name;
-    if (!PAOperation(pa_ext_stream_restore_read(m_context,
-                                                ext_stream_restore_change_sink_cb,
-                                                this))) {
+    if (!PAOperation(pa_ext_stream_restore_read(m_context, ext_stream_restore_change_sink_cb, this))) {
         qCWarning(PLASMAPA) << "pa_ext_stream_restore_read failed";
     }
 }
@@ -546,18 +532,13 @@ void Context::setDefaultSource(const QString &name)
         return;
     }
     const QByteArray nameData = name.toUtf8();
-    if (!PAOperation(pa_context_set_default_source(m_context,
-                                                 nameData.constData(),
-                                                 nullptr,
-                                                 nullptr))) {
+    if (!PAOperation(pa_context_set_default_source(m_context, nameData.constData(), nullptr, nullptr))) {
         qCWarning(PLASMAPA) << "pa_context_set_default_source failed";
     }
 
     // Change device for all entries in stream-restore database
     m_newDefaultSource = name;
-    if (!PAOperation(pa_ext_stream_restore_read(m_context,
-                                                ext_stream_restore_change_source_cb,
-                                                this))) {
+    if (!PAOperation(pa_ext_stream_restore_read(m_context, ext_stream_restore_change_source_cb, this))) {
         qCWarning(PLASMAPA) << "pa_ext_stream_restore_read failed";
     }
 }
@@ -567,13 +548,7 @@ void Context::streamRestoreWrite(const pa_ext_stream_restore_info *info)
     if (!m_context) {
         return;
     }
-    if (!PAOperation(pa_ext_stream_restore_write(m_context,
-                                                 PA_UPDATE_REPLACE,
-                                                 info,
-                                                 1,
-                                                 true,
-                                                 nullptr,
-                                                 nullptr))) {
+    if (!PAOperation(pa_ext_stream_restore_write(m_context, PA_UPDATE_REPLACE, info, 1, true, nullptr, nullptr))) {
         qCWarning(PLASMAPA) << "pa_ext_stream_restore_write failed";
     }
 }
@@ -585,13 +560,13 @@ void Context::connectToDaemon()
     }
 
     // We require a glib event loop
-    if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib") &&
-        !QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("GlibEventDispatcher")) {
+    if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")
+        && !QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("GlibEventDispatcher")) {
         qCWarning(PLASMAPA) << "Disabling PulseAudio integration for lack of GLib event loop";
         return;
     }
 
-    qCDebug(PLASMAPA) <<  "Attempting connection to PulseAudio sound daemon";
+    qCDebug(PLASMAPA) << "Attempting connection to PulseAudio sound daemon";
     if (!m_mainloop) {
         m_mainloop = pa_glib_mainloop_new(nullptr);
         Q_ASSERT(m_mainloop);

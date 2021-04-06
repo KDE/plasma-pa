@@ -8,7 +8,6 @@
 
 namespace QPulseAudio
 {
-
 Profile::Profile(QObject *parent)
     : QObject(parent)
     , m_name()

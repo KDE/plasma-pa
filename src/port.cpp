@@ -8,7 +8,6 @@
 
 namespace QPulseAudio
 {
-
 Port::Port(QObject *parent)
     : Profile(parent)
 {

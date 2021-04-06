@@ -14,7 +14,6 @@
 
 namespace QPulseAudio
 {
-
 class Context;
 
 class PulseObject : public QObject
@@ -24,7 +23,7 @@ class PulseObject : public QObject
     Q_PROPERTY(QString iconName READ iconName CONSTANT)
     Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
 public:
-    template <typename PAInfo>
+    template<typename PAInfo>
     void updatePulseObject(PAInfo *info)
     {
         m_index = info->index;

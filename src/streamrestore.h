@@ -13,7 +13,6 @@
 
 namespace QPulseAudio
 {
-
 class StreamRestore : public PulseObject
 {
     Q_OBJECT

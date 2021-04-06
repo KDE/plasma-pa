@@ -8,12 +8,11 @@
 #define SINK_H
 
 #include "device.h"
-#include <pulse/channelmap.h>
 #include <canberra.h>
+#include <pulse/channelmap.h>
 
 namespace QPulseAudio
 {
-
 class Sink : public Device
 {
     Q_OBJECT

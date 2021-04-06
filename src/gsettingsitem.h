@@ -8,9 +8,9 @@
 #ifndef GSETTINGSITEM_H
 #define GSETTINGSITEM_H
 
-#include <QVariant>
-#include <QStringList>
 #include <QObject>
+#include <QStringList>
+#include <QVariant>
 
 #include <gio/gio.h>
 
@@ -18,8 +18,7 @@ class GSettingsItem : public QObject
 {
     Q_OBJECT
 
- public:
-
+public:
     explicit GSettingsItem(const QString &key, QObject *parent = nullptr);
     virtual ~GSettingsItem() override;
 
@@ -34,15 +33,14 @@ Q_SIGNALS:
 private:
     GSettings *m_settings = nullptr;
 
-static void settingChanged(GSettings *settings, const gchar *key, gpointer data)
-{
-    Q_UNUSED(settings)
-    Q_UNUSED(key)
+    static void settingChanged(GSettings *settings, const gchar *key, gpointer data)
+    {
+        Q_UNUSED(settings)
+        Q_UNUSED(key)
 
-    GSettingsItem *self = static_cast<GSettingsItem *>(data);
-    Q_EMIT self->subtreeChanged();
-}
-
+        GSettingsItem *self = static_cast<GSettingsItem *>(data);
+        Q_EMIT self->subtreeChanged();
+    }
 };
 
 #endif // GCONFITEM_H

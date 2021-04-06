@@ -11,7 +11,6 @@
 
 namespace QPulseAudio
 {
-
 /**
  * @brief The PAOperation class
  * Helps with management of pa_operations. pa_operations need to be expicitly
@@ -29,13 +28,13 @@ public:
     explicit PAOperation(pa_operation *operation = nullptr);
     ~PAOperation();
 
-    PAOperation &operator =(pa_operation *operation);
+    PAOperation &operator=(pa_operation *operation);
 
     /**
      * @brief operator !
      * @return whether or not there is an operation pointer
      */
-    bool operator !();
+    bool operator!();
 
     /**
      * @brief operator bool representing whether there is an operation
@@ -46,7 +45,7 @@ public:
      * @brief operator *
      * @return pointer to internal pa_operation object
      */
-    pa_operation *&operator *();
+    pa_operation *&operator*();
 
 private:
     pa_operation *m_operation;

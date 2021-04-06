@@ -11,8 +11,8 @@
 
 #include <pulse/volume.h>
 
-#include "volumeobject.h"
 #include "pulseobject.h"
+#include "volumeobject.h"
 
 #include "context.h"
 // Properties need fully qualified classes even with pointers.
@@ -20,7 +20,6 @@
 
 namespace QPulseAudio
 {
-
 class Stream : public VolumeObject
 {
     Q_OBJECT
@@ -30,7 +29,7 @@ class Stream : public VolumeObject
     Q_PROPERTY(quint32 deviceIndex READ deviceIndex WRITE setDeviceIndex NOTIFY deviceIndexChanged)
     Q_PROPERTY(bool corked READ isCorked NOTIFY corkedChanged)
 public:
-    template <typename PAInfo>
+    template<typename PAInfo>
     void updateStream(const PAInfo *info)
     {
         updateVolumeObject(info);

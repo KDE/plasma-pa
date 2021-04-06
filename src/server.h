@@ -12,7 +12,6 @@
 
 namespace QPulseAudio
 {
-
 class Sink;
 class Source;
 class Context;

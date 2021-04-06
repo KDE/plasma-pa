@@ -56,11 +56,11 @@ QPulseAudio::Device::State QPulseAudio::Device::stateFromPaState(int value) cons
     switch (value) {
     case -1: // PA_X_INVALID_STATE
         return InvalidState;
-    case 0:  // PA_X_RUNNING
+    case 0: // PA_X_RUNNING
         return RunningState;
-    case 1:  // PA_X_IDLE
+    case 1: // PA_X_IDLE
         return IdleState;
-    case 2:  // PA_X_SUSPENDED
+    case 2: // PA_X_SUSPENDED
         return SuspendedState;
     default:
         return UnknownState;

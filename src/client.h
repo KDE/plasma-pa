@@ -15,7 +15,6 @@
 
 namespace QPulseAudio
 {
-
 class Client : public PulseObject
 {
     Q_OBJECT

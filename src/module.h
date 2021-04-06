@@ -16,7 +16,6 @@
 
 namespace QPulseAudio
 {
-
 class Module : public PulseObject
 {
     Q_OBJECT

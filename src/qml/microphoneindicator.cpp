@@ -31,7 +31,6 @@ MicrophoneIndicator::MicrophoneIndicator(QObject *parent)
     , m_sourceOutputModel(new SourceOutputModel(this))
     , m_updateTimer(new QTimer(this))
 {
-
     connect(m_sourceModel, &QAbstractItemModel::rowsInserted, this, &MicrophoneIndicator::scheduleUpdate);
     connect(m_sourceModel, &QAbstractItemModel::rowsRemoved, this, &MicrophoneIndicator::scheduleUpdate);
     connect(m_sourceModel, &QAbstractItemModel::dataChanged, this, &MicrophoneIndicator::scheduleUpdate);
@@ -132,9 +131,7 @@ void MicrophoneIndicator::update()
 
     m_sni->setTitle(i18n("Microphone"));
     m_sni->setIconByName(iconName);
-    m_sni->setToolTip(QIcon::fromTheme(iconName),
-                      allMuted ? i18n("Microphone Muted") : i18n("Microphone"),
-                      toolTipForApps(apps));
+    m_sni->setToolTip(QIcon::fromTheme(iconName), allMuted ? i18n("Microphone Muted") : i18n("Microphone"), toolTipForApps(apps));
 
     if (m_muteAction) {
         m_muteAction->setChecked(allMuted);
@@ -242,7 +239,6 @@ void MicrophoneIndicator::showOsd()
     }
 
     m_osd->showMicrophone(volumePercent(preferredSource));
-
 }
 
 QVector<QModelIndex> MicrophoneIndicator::recordingApplications() const

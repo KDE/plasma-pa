@@ -6,13 +6,12 @@
 
 #include "server.h"
 #include "context.h"
+#include "debug.h"
 #include "sink.h"
 #include "source.h"
-#include "debug.h"
 
 namespace QPulseAudio
 {
-
 Server::Server(Context *context)
     : QObject(context)
     , m_defaultSink(nullptr)
@@ -69,7 +68,7 @@ void Server::update(const pa_server_info *info)
     updateDefaultDevices();
 }
 
-template <typename Type, typename Map>
+template<typename Type, typename Map>
 static Type *findByName(const Map &map, const QString &name)
 {
     Type *out = nullptr;

@@ -10,7 +10,6 @@
 
 namespace QPulseAudio
 {
-
 SourceOutput::SourceOutput(QObject *parent)
     : Stream(parent)
 {

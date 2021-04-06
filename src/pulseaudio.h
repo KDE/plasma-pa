@@ -14,7 +14,7 @@
 
 namespace QPulseAudio
 {
-    class Context;
+class Context;
 
 class AbstractModel : public QAbstractListModel
 {
@@ -59,7 +59,9 @@ private:
 private:
     // Prevent leaf-classes from default constructing as we want to enforce
     // them passing us a context or explicit nullptrs.
-    AbstractModel() {}
+    AbstractModel()
+    {
+    }
 };
 
 class CardModel : public AbstractModel

@@ -72,5 +72,4 @@ private:
     int m_wheelDelta = 0;
 
     QTimer *m_updateTimer;
-
 };

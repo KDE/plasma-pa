@@ -10,7 +10,6 @@
 
 namespace QPulseAudio
 {
-
 Client::Client(QObject *parent)
     : PulseObject(parent)
 {

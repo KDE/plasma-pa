@@ -11,12 +11,11 @@
 #include <QMap>
 #include <QObject>
 
-#include <pulse/pulseaudio.h>
 #include <pulse/ext-stream-restore.h>
+#include <pulse/pulseaudio.h>
 
 namespace QPulseAudio
 {
-
 // Used for typedefs.
 class Card;
 class Client;
@@ -58,9 +57,14 @@ template<typename Type, typename PAInfo>
 class MapBase : public MapBaseQObject
 {
 public:
-    ~MapBase() override {}
+    ~MapBase() override
+    {
+    }
 
-    const QMap<quint32, Type *> &data() const { return m_data; }
+    const QMap<quint32, Type *> &data() const
+    {
+        return m_data;
+    }
 
     int count() const override
     {

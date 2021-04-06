@@ -11,7 +11,6 @@
 
 namespace QPulseAudio
 {
-
 class SourceOutput : public Stream
 {
     Q_OBJECT

@@ -6,14 +6,13 @@
 
 #include "sink.h"
 
+#include "canberracontext.h"
 #include "context.h"
 #include "server.h"
 #include "sinkinput.h"
-#include "canberracontext.h"
 
 namespace QPulseAudio
 {
-
 Sink::Sink(QObject *parent)
     : Device(parent)
 {
@@ -84,10 +83,10 @@ void Sink::testChannel(const QString &name)
         return;
 
     char dev[64];
-    snprintf(dev, sizeof(dev), "%lu", (unsigned long) m_index);
+    snprintf(dev, sizeof(dev), "%lu", (unsigned long)m_index);
     ca_context_change_device(context, dev);
 
-    QString sound_name =  QStringLiteral("audio-channel-") + name;
+    QString sound_name = QStringLiteral("audio-channel-") + name;
     ca_proplist *proplist;
     ca_proplist_create(&proplist);
 
@@ -114,7 +113,7 @@ void Sink::testChannel(const QString &name)
 void Sink::switchStreams()
 {
     auto data = context()->sinkInputs().data();
-    std::for_each(data.begin(), data.end(), [this](SinkInput* paObj) {
+    std::for_each(data.begin(), data.end(), [this](SinkInput *paObj) {
         paObj->setDeviceIndex(m_index);
     });
 }

@@ -12,7 +12,6 @@
 
 namespace QPulseAudio
 {
-
 Source::Source(QObject *parent)
     : Device(parent)
 {
@@ -69,7 +68,7 @@ void Source::setDefault(bool enable)
 void Source::switchStreams()
 {
     auto data = context()->sourceOutputs().data();
-    std::for_each(data.begin(), data.end(), [this](SourceOutput* paObj) {
+    std::for_each(data.begin(), data.end(), [this](SourceOutput *paObj) {
         paObj->setDeviceIndex(m_index);
     });
 }

@@ -11,17 +11,16 @@
 #include <QObject>
 #include <QSet>
 
+#include <pulse/ext-stream-restore.h>
+#include <pulse/glib-mainloop.h>
 #include <pulse/mainloop.h>
 #include <pulse/pulseaudio.h>
-#include <pulse/glib-mainloop.h>
-#include <pulse/ext-stream-restore.h>
 
 #include "maps.h"
 #include "operation.h"
 
 namespace QPulseAudio
 {
-
 class Server;
 
 class Context : public QObject
@@ -40,21 +39,60 @@ public:
     void ref();
     void unref();
 
-    bool isValid() { return m_context && m_mainloop; }
+    bool isValid()
+    {
+        return m_context && m_mainloop;
+    }
 
-    pa_context *context() const { return m_context; }
+    pa_context *context() const
+    {
+        return m_context;
+    }
 
-    const SinkMap &sinks() const { return m_sinks; }
-    const SinkInputMap &sinkInputs() const { return m_sinkInputs; }
-    const SourceMap &sources() const { return m_sources; }
-    const SourceOutputMap &sourceOutputs() const { return m_sourceOutputs; }
-    const ClientMap &clients() const { return m_clients; }
-    const CardMap &cards() const { return m_cards; }
-    const ModuleMap &modules() const { return m_modules; }
-    const StreamRestoreMap &streamRestores() const { return m_streamRestores; }
-    Server *server() const { return m_server; }
-    QString newDefaultSink() const { return m_newDefaultSink; }
-    QString newDefaultSource() const { return m_newDefaultSource; }
+    const SinkMap &sinks() const
+    {
+        return m_sinks;
+    }
+    const SinkInputMap &sinkInputs() const
+    {
+        return m_sinkInputs;
+    }
+    const SourceMap &sources() const
+    {
+        return m_sources;
+    }
+    const SourceOutputMap &sourceOutputs() const
+    {
+        return m_sourceOutputs;
+    }
+    const ClientMap &clients() const
+    {
+        return m_clients;
+    }
+    const CardMap &cards() const
+    {
+        return m_cards;
+    }
+    const ModuleMap &modules() const
+    {
+        return m_modules;
+    }
+    const StreamRestoreMap &streamRestores() const
+    {
+        return m_streamRestores;
+    }
+    Server *server() const
+    {
+        return m_server;
+    }
+    QString newDefaultSink() const
+    {
+        return m_newDefaultSink;
+    }
+    QString newDefaultSource() const
+    {
+        return m_newDefaultSource;
+    }
 
     void subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index);
     void contextStateCallback(pa_context *context);
@@ -74,9 +112,8 @@ public:
     void setDefaultSource(const QString &name);
     void streamRestoreWrite(const pa_ext_stream_restore_info *info);
 
-    template <typename PAFunction>
-    void setGenericVolume(quint32 index, int channel, qint64 newVolume,
-                          pa_cvolume cVolume, PAFunction pa_set_volume)
+    template<typename PAFunction>
+    void setGenericVolume(quint32 index, int channel, qint64 newVolume, pa_cvolume cVolume, PAFunction pa_set_volume)
     {
         if (!m_context) {
             return;
@@ -93,14 +130,13 @@ public:
             newCVolume.values[channel] = newVolume;
         }
         if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, nullptr, nullptr))) {
-            qCWarning(PLASMAPA) <<  "pa_set_volume failed";
+            qCWarning(PLASMAPA) << "pa_set_volume failed";
             return;
         }
     }
 
-    template <typename PAFunction>
-    void setGenericVolumes(quint32 index, QVector<qint64> channelVolumes,
-                           pa_cvolume cVolume, PAFunction pa_set_volume)
+    template<typename PAFunction>
+    void setGenericVolumes(quint32 index, QVector<qint64> channelVolumes, pa_cvolume cVolume, PAFunction pa_set_volume)
     {
         if (!m_context) {
             return;
@@ -113,52 +149,42 @@ public:
         }
 
         if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, nullptr, nullptr))) {
-            qCWarning(PLASMAPA) <<  "pa_set_volume failed";
+            qCWarning(PLASMAPA) << "pa_set_volume failed";
             return;
         }
     }
 
-    template <typename PAFunction>
+    template<typename PAFunction>
     void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
     {
         if (!m_context) {
             return;
         }
         if (!PAOperation(pa_set_mute(m_context, index, mute, nullptr, nullptr))) {
-            qCWarning(PLASMAPA) <<  "pa_set_mute failed";
+            qCWarning(PLASMAPA) << "pa_set_mute failed";
             return;
         }
     }
 
-    template <typename PAFunction>
+    template<typename PAFunction>
     void setGenericPort(quint32 index, const QString &portName, PAFunction pa_set_port)
     {
         if (!m_context) {
             return;
         }
-        if (!PAOperation(pa_set_port(m_context,
-                                     index,
-                                     portName.toUtf8().constData(),
-                                     nullptr,
-                                     nullptr))) {
+        if (!PAOperation(pa_set_port(m_context, index, portName.toUtf8().constData(), nullptr, nullptr))) {
             qCWarning(PLASMAPA) << "pa_set_port failed";
             return;
         }
     }
 
-    template <typename PAFunction>
-    void setGenericDeviceForStream(quint32 streamIndex,
-                                   quint32 deviceIndex,
-                                   PAFunction pa_move_stream_to_device)
+    template<typename PAFunction>
+    void setGenericDeviceForStream(quint32 streamIndex, quint32 deviceIndex, PAFunction pa_move_stream_to_device)
     {
         if (!m_context) {
             return;
         }
-        if (!PAOperation(pa_move_stream_to_device(m_context,
-                                                  streamIndex,
-                                                  deviceIndex,
-                                                  nullptr,
-                                                  nullptr))) {
+        if (!PAOperation(pa_move_stream_to_device(m_context, streamIndex, deviceIndex, nullptr, nullptr))) {
             qCWarning(PLASMAPA) << "pa_move_stream_to_device failed";
             return;
         }
@@ -186,7 +212,7 @@ private:
     QString m_newDefaultSource;
 
     int m_references;
-    static Context* s_context;
+    static Context *s_context;
 };
 
 } // QPulseAudio

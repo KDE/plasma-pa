@@ -8,34 +8,34 @@
 
 #include <QQmlEngine>
 
-#include "pulseaudio.h"
 #include "client.h"
-#include "sink.h"
-#include "source.h"
 #include "context.h"
 #include "modulemanager.h"
-#include "profile.h"
 #include "port.h"
+#include "profile.h"
+#include "pulseaudio.h"
+#include "sink.h"
+#include "source.h"
 #include "volumemonitor.h"
 
 #include "globalactioncollection.h"
 #include "listitemmenu.h"
 #include "microphoneindicator.h"
-#include "volumeosd.h"
 #include "volumefeedback.h"
+#include "volumeosd.h"
 
 static QJSValue pulseaudio_singleton(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
     Q_UNUSED(engine)
 
     QJSValue object = scriptEngine->newObject();
-    object.setProperty(QStringLiteral("NormalVolume"), (double) QPulseAudio::Context::NormalVolume);
-    object.setProperty(QStringLiteral("MinimalVolume"), (double) QPulseAudio::Context::MinimalVolume);
-    object.setProperty(QStringLiteral("MaximalVolume"), (double) QPulseAudio::Context::MaximalVolume);
+    object.setProperty(QStringLiteral("NormalVolume"), (double)QPulseAudio::Context::NormalVolume);
+    object.setProperty(QStringLiteral("MinimalVolume"), (double)QPulseAudio::Context::MinimalVolume);
+    object.setProperty(QStringLiteral("MaximalVolume"), (double)QPulseAudio::Context::MaximalVolume);
     return object;
 }
 
-void Plugin::registerTypes(const char* uri)
+void Plugin::registerTypes(const char *uri)
 {
     qmlRegisterType<QPulseAudio::CardModel>(uri, 0, 1, "CardModel");
     qmlRegisterType<QPulseAudio::SinkModel>(uri, 0, 1, "SinkModel");
@@ -55,11 +55,10 @@ void Plugin::registerTypes(const char* uri)
     qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");
     qmlRegisterType<VolumeFeedback>(uri, 0, 1, "VolumeFeedback");
     qmlRegisterSingletonType(uri, 0, 1, "PulseAudio", pulseaudio_singleton);
-    qmlRegisterSingletonType<MicrophoneIndicator>(uri, 0, 1, "MicrophoneIndicator",
-        [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject* {
-            Q_UNUSED(engine);
-            Q_UNUSED(jsEngine);
-            return new MicrophoneIndicator();
+    qmlRegisterSingletonType<MicrophoneIndicator>(uri, 0, 1, "MicrophoneIndicator", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
+        Q_UNUSED(engine);
+        Q_UNUSED(jsEngine);
+        return new MicrophoneIndicator();
     });
     qmlRegisterAnonymousType<QPulseAudio::Client>(uri, 1);
     qmlRegisterAnonymousType<QPulseAudio::Sink>(uri, 1);

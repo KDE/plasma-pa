@@ -13,7 +13,6 @@
 
 namespace QPulseAudio
 {
-
 class VolumeObject : public PulseObject
 {
     Q_OBJECT
@@ -28,7 +27,7 @@ public:
     explicit VolumeObject(QObject *parent);
     ~VolumeObject() override;
 
-    template <typename PAInfo>
+    template<typename PAInfo>
     void updateVolumeObject(PAInfo *info)
     {
         updatePulseObject(info);
@@ -78,8 +77,14 @@ public:
     virtual void setChannelVolumes(const QVector<qint64> &channelVolumes) = 0;
     Q_INVOKABLE virtual void setChannelVolume(int channel, qint64 volume) = 0;
 
-    virtual quint32 sourceIndex() const {return -1;};
-    virtual quint32 streamIndex() const {return -1;};
+    virtual quint32 sourceIndex() const
+    {
+        return -1;
+    };
+    virtual quint32 streamIndex() const
+    {
+        return -1;
+    };
 
 Q_SIGNALS:
     void volumeChanged();

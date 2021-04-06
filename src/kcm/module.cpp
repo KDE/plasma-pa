@@ -24,9 +24,7 @@ KCMPulseAudio::KCMPulseAudio(QObject *parent, const QVariantList &args)
                                            KAboutLicense::LicenseKey::GPL_V3,
                                            i18nc("@info:credit", "Copyright 2015 Harald Sitter"));
 
-    aboutData->addAuthor(i18nc("@info:credit", "Harald Sitter"),
-                        i18nc("@info:credit", "Author"),
-                        QStringLiteral("apachelogger@kubuntu.org"));
+    aboutData->addAuthor(i18nc("@info:credit", "Harald Sitter"), i18nc("@info:credit", "Author"), QStringLiteral("apachelogger@kubuntu.org"));
 
     setAboutData(aboutData);
     setButtons(Help);

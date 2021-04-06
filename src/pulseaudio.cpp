@@ -7,21 +7,20 @@
 
 #include "pulseaudio.h"
 
-#include "debug.h"
 #include "card.h"
+#include "debug.h"
+#include "module.h"
+#include "server.h"
 #include "sink.h"
 #include "sinkinput.h"
 #include "source.h"
 #include "sourceoutput.h"
-#include "server.h"
 #include "streamrestore.h"
-#include "module.h"
 
 #include <QMetaEnum>
 
 namespace QPulseAudio
 {
-
 AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     : QAbstractListModel(parent)
     , m_map(map)
@@ -48,8 +47,8 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
 
 AbstractModel::~AbstractModel()
 {
-    //deref context after we've deleted this object
-    //see https://bugs.kde.org/show_bug.cgi?id=371215
+    // deref context after we've deleted this object
+    // see https://bugs.kde.org/show_bug.cgi?id=371215
     Context::instance()->unref();
 }
 
@@ -81,7 +80,7 @@ QVariant AbstractModel::data(const QModelIndex &index, int role) const
     if (role == PulseObjectRole) {
         return QVariant::fromValue(data);
     } else if (role == Qt::DisplayRole) {
-        return static_cast<PulseObject*>(data)->properties().value(QStringLiteral("name")).toString();
+        return static_cast<PulseObject *>(data)->properties().value(QStringLiteral("name")).toString();
     }
     int property = m_objectProperties.value(role, -1);
     if (property == -1) {
@@ -285,8 +284,7 @@ Sink *SinkModel::findPreferredSink() const
         QMapIterator<quint32, Sink *> it(context()->sinks().data());
         while (it.hasNext()) {
             it.next();
-            if ((it.value()->isVirtualDevice() && !it.value()->isDefault())
-                    || it.value()->state() != state) {
+            if ((it.value()->isVirtualDevice() && !it.value()->isDefault()) || it.value()->state() != state) {
                 continue;
             }
             if (!ret) {

@@ -11,7 +11,6 @@
 
 namespace QPulseAudio
 {
-
 class SinkInput : public Stream
 {
     Q_OBJECT

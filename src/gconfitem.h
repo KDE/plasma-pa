@@ -11,9 +11,9 @@
 #ifndef GCONFITEM_H
 #define GCONFITEM_H
 
-#include <QVariant>
-#include <QStringList>
 #include <QObject>
+#include <QStringList>
+#include <QVariant>
 
 /*!
 
@@ -55,12 +55,11 @@
 
 */
 
-
 class GConfItem : public QObject
 {
     Q_OBJECT
 
- public:
+public:
     /*! Initializes a GConfItem to access the GConf key denoted by
         \a key.  Key names should follow the normal GConf conventions
         like "/myapp/settings/first".
@@ -106,17 +105,17 @@ class GConfItem : public QObject
     */
     QList<QString> listEntries() const;
 
- Q_SIGNALS:
+Q_SIGNALS:
     /*! Emitted when some value in subtree of this item changes
-      */
+     */
 
-    void subtreeChanged(const QString& key, const QVariant& value);
+    void subtreeChanged(const QString &key, const QVariant &value);
 
- private:
+private:
     friend struct GConfItemPrivate;
     struct GConfItemPrivate *priv;
 
-    void update_value(bool emit_signal,  const QString& key, const QVariant& value);
+    void update_value(bool emit_signal, const QString &key, const QVariant &value);
 };
 
 #endif // GCONFITEM_H

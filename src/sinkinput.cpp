@@ -12,7 +12,6 @@
 
 namespace QPulseAudio
 {
-
 SinkInput::SinkInput(QObject *parent)
     : Stream(parent)
 {
@@ -58,7 +57,7 @@ void SinkInput::setChannelVolumes(const QVector<qint64> &channelVolumes)
 
 quint32 SinkInput::sourceIndex() const
 {
-    auto sink = qobject_cast<Sink*>(context()->sinks().data().value(m_sinkIndex));
+    auto sink = qobject_cast<Sink *>(context()->sinks().data().value(m_sinkIndex));
     if (!sink) {
         return -1;
     }

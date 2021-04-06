@@ -8,7 +8,6 @@
 
 namespace QPulseAudio
 {
-
 PAOperation::PAOperation(pa_operation *operation)
     : m_operation(operation)
 {
@@ -21,18 +20,18 @@ PAOperation::~PAOperation()
     }
 }
 
-PAOperation &PAOperation::operator =(pa_operation *operation)
+PAOperation &PAOperation::operator=(pa_operation *operation)
 {
     m_operation = operation;
     return *this;
 }
 
-bool PAOperation::operator !()
+bool PAOperation::operator!()
 {
     return !m_operation;
 }
 
-pa_operation *&PAOperation::operator *()
+pa_operation *&PAOperation::operator*()
 {
     return m_operation;
 }

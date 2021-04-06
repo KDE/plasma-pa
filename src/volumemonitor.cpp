@@ -16,7 +16,7 @@
 
 using namespace QPulseAudio;
 
-VolumeMonitor::VolumeMonitor(QObject* parent)
+VolumeMonitor::VolumeMonitor(QObject *parent)
     : QObject(parent)
 {
     Context::instance()->ref();
@@ -44,12 +44,12 @@ void VolumeMonitor::updateVolume(qreal volume)
     Q_EMIT volumeChanged();
 }
 
-QPulseAudio::VolumeObject * QPulseAudio::VolumeMonitor::target() const
+QPulseAudio::VolumeObject *QPulseAudio::VolumeMonitor::target() const
 {
     return m_target.data();
 }
 
-void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject* target)
+void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject *target)
 {
     if (target == m_target) {
         return;
@@ -95,7 +95,7 @@ void VolumeMonitor::createStream()
 
     memset(&attr, 0, sizeof(attr));
     attr.fragsize = sizeof(float);
-    attr.maxlength = (uint32_t) -1;
+    attr.maxlength = (uint32_t)-1;
 
     snprintf(t, sizeof(t), "%u", sourceIdx);
 
@@ -111,7 +111,7 @@ void VolumeMonitor::createStream()
     pa_stream_set_read_callback(m_stream, read_callback, this);
     pa_stream_set_suspended_callback(m_stream, suspended_callback, this);
 
-    flags = (pa_stream_flags_t) (PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY);
+    flags = (pa_stream_flags_t)(PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY);
 
     if (pa_stream_connect_record(m_stream, t, &attr, flags) < 0) {
         pa_stream_unref(m_stream);
@@ -123,14 +123,15 @@ void VolumeMonitor::createStream()
 
 void VolumeMonitor::suspended_callback(pa_stream *s, void *userdata)
 {
-    VolumeMonitor *w = static_cast<VolumeMonitor*>(userdata);
+    VolumeMonitor *w = static_cast<VolumeMonitor *>(userdata);
     if (pa_stream_is_suspended(s)) {
-            w->updateVolume(-1);
+        w->updateVolume(-1);
     }
 }
 
-void VolumeMonitor::read_callback(pa_stream *s, size_t length, void *userdata) {
-    VolumeMonitor *w = static_cast<VolumeMonitor*>(userdata);
+void VolumeMonitor::read_callback(pa_stream *s, size_t length, void *userdata)
+{
+    VolumeMonitor *w = static_cast<VolumeMonitor *>(userdata);
     const void *data;
     double volume;
 
@@ -151,7 +152,7 @@ void VolumeMonitor::read_callback(pa_stream *s, size_t length, void *userdata) {
     Q_ASSERT(length > 0);
     Q_ASSERT(length % sizeof(float) == 0);
 
-    volume = ((const float*) data)[length / sizeof(float) -1];
+    volume = ((const float *)data)[length / sizeof(float) - 1];
 
     pa_stream_drop(s);
 

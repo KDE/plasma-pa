@@ -8,7 +8,6 @@
 
 namespace QPulseAudio
 {
-
 VolumeObject::VolumeObject(QObject *parent)
     : PulseObject(parent)
     , m_muted(true)
