@@ -25,7 +25,7 @@ Item {
     property bool globalMute: Plasmoid.configuration.globalMute
     property int currentMaxVolumePercent: plasmoid.configuration.raiseMaximumVolume ? 150 : 100
     property int currentMaxVolumeValue: currentMaxVolumePercent * PulseAudio.NormalVolume / 100.00
-    property int volumeStep: Math.round(Plasmoid.configuration.volumeStep * PulseAudio.NormalVolume / 100.0)
+    property int volumePercentStep: Plasmoid.configuration.volumeStep
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
@@ -69,35 +69,41 @@ Item {
     }
 
     function boundVolume(volume) {
-        return Math.max(PulseAudio.MinimalVolume, Math.min(Math.floor(volume), currentMaxVolumeValue));
+        return Math.max(PulseAudio.MinimalVolume, Math.min(volume, currentMaxVolumeValue));
     }
 
     function volumePercent(volume) {
-        return Math.floor(volume / PulseAudio.NormalVolume * 100.0);
+        return Math.round(volume / PulseAudio.NormalVolume * 100.0);
+    }
+
+    // Increment a VolumeObject (Sink or Source) by %volume.
+    function changeVolumeByPercent(volumeObject, deltaPercent) {
+        const oldVolume = volumeObject.volume;
+        const oldPercent = volumePercent(oldVolume);
+        const targetPercent = oldPercent + deltaPercent;
+        const newVolume = boundVolume(Math.round(PulseAudio.NormalVolume * (targetPercent/100)));
+        const newPercent = volumePercent(newVolume);
+        volumeObject.muted = newPercent == 0;
+        volumeObject.volume = newVolume;
+        return newPercent;
+    }
+
+    // Increment the preferredSink by %volume.
+    function changeSpeakerVolume(deltaPercent) {
+        if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
+            return;
+        }
+        const newPercent = changeVolumeByPercent(paSinkModel.preferredSink, deltaPercent);
+        osd.showVolume(newPercent);
+        playFeedback();
     }
 
     function increaseVolume() {
-        if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
-            return;
-        }
-        var volume = boundVolume(paSinkModel.preferredSink.volume + volumeStep);
-        var percent = volumePercent(volume);
-        paSinkModel.preferredSink.muted = percent == 0;
-        paSinkModel.preferredSink.volume = volume;
-        osd.showVolume(percent);
-        playFeedback();
+        changeSpeakerVolume(volumePercentStep);
     }
 
     function decreaseVolume() {
-        if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
-            return;
-        }
-        var volume = boundVolume(paSinkModel.preferredSink.volume - volumeStep);
-        var percent = volumePercent(volume);
-        paSinkModel.preferredSink.muted = percent == 0;
-        paSinkModel.preferredSink.volume = volume;
-        osd.showVolume(percent);
-        playFeedback();
+        changeSpeakerVolume(-volumePercentStep);
     }
 
     function muteVolume() {
@@ -118,26 +124,21 @@ Item {
         }
     }
 
-    function increaseMicrophoneVolume() {
+    // Increment the defaultSource by %volume.
+    function changeMicrophoneVolume(deltaPercent) {
         if (!paSourceModel.defaultSource) {
             return;
         }
-        var volume = boundVolume(paSourceModel.defaultSource.volume + volumeStep);
-        var percent = volumePercent(volume);
-        paSourceModel.defaultSource.muted = percent == 0;
-        paSourceModel.defaultSource.volume = volume;
-        osd.showMic(percent);
+        const newPercent = changeVolumeByPercent(paSourceModel.defaultSource, deltaPercent);
+        osd.showMic(newPercent);
+    }
+
+    function increaseMicrophoneVolume() {
+        changeMicrophoneVolume(volumePercentStep);
     }
 
     function decreaseMicrophoneVolume() {
-        if (!paSourceModel.defaultSource) {
-            return;
-        }
-        var volume = boundVolume(paSourceModel.defaultSource.volume - volumeStep);
-        var percent = volumePercent(volume);
-        paSourceModel.defaultSource.muted = percent == 0;
-        paSourceModel.defaultSource.volume = volume;
-        osd.showMic(percent);
+        changeMicrophoneVolume(-volumePercentStep);
     }
 
     function muteMicrophone() {
