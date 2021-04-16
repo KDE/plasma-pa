@@ -300,11 +300,11 @@ PlasmaComponents.ListItem {
                         // and plasma-workspace:OSDItem.qml
                         color: {
                             if (displayValue <= 100) {
-                                return theme.textColor
+                                return PlasmaCore.Theme.textColor
                             } else if (displayValue > 100 && displayValue <= 125) {
-                                return theme.neutralTextColor
+                                return PlasmaCore.Theme.neutralTextColor
                             } else {
-                                return theme.negativeTextColor
+                                return PlasmaCore.Theme.negativeTextColor
                             }
                         }
                     }
