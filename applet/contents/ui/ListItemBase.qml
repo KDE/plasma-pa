@@ -378,4 +378,43 @@ PlasmaComponents.ListItem {
             }
         }
     }
+
+    function setVolumeByPercent(targetPercent) {
+        model.PulseObject.volume = Math.round(PulseAudio.NormalVolume * (targetPercent/100));
+    }
+
+    Keys.onPressed: {
+        if (event.key == Qt.Key_M) {
+            muteButton.clicked();
+        } else if (event.key == Qt.Key_0) {
+            setVolumeByPercent(0);
+        } else if (event.key == Qt.Key_1) {
+            setVolumeByPercent(10);
+        } else if (event.key == Qt.Key_2) {
+            setVolumeByPercent(20);
+        } else if (event.key == Qt.Key_3) {
+            setVolumeByPercent(30);
+        } else if (event.key == Qt.Key_4) {
+            setVolumeByPercent(40);
+        } else if (event.key == Qt.Key_5) {
+            setVolumeByPercent(50);
+        } else if (event.key == Qt.Key_6) {
+            setVolumeByPercent(60);
+        } else if (event.key == Qt.Key_7) {
+            setVolumeByPercent(70);
+        } else if (event.key == Qt.Key_8) {
+            setVolumeByPercent(80);
+        } else if (event.key == Qt.Key_9) {
+            setVolumeByPercent(90);
+        } else if (event.key == Qt.Key_Return) {
+            if (defaultButton.visible) {
+                defaultButton.clicked();
+            }
+        } else if (event.key == Qt.Key_Menu) {
+            contextMenuButton.clicked();
+        } else {
+            return; // don't accept the key press
+        }
+        event.accepted = true;
+    }
 }
