@@ -59,6 +59,11 @@ Item {
             if (port) {
                 return port.description
             }
+
+            if (paSinkModel.preferredSink.description) {
+                return paSinkModel.preferredSink.description
+            }
+
             return paSinkModel.preferredSink.name
         }
         return ""
