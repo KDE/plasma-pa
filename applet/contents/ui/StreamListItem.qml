@@ -42,6 +42,16 @@ ListItemBase {
         return "";
     }
 
-    icon: IconName
+    icon: {
+        if (IconName.length !== 0) {
+            return IconName
+        }
+
+        if (item.type === "source-output") {
+            return "audio-input-microphone"
+        }
+
+        return "audio-volume-high"
+    }
     iconUsesPlasmaTheme: false
 }
