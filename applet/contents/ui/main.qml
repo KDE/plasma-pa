@@ -575,7 +575,7 @@ Item {
                         boundsBehavior: Flickable.StopAtBounds;
                         delegate: StreamListItem {
                             width: sourceOutputView.width
-                            type: "source-input"
+                            type: "source-output"
                             devicesModel: sourceView.model
                             draggable: sourceView.count > 1
                         }

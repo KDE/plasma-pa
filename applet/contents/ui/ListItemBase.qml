@@ -51,7 +51,7 @@ PlasmaComponents.ListItem {
                 Layout.preferredHeight: column.height * 0.75
                 Layout.preferredWidth: Layout.preferredHeight
                 source: "unknown"
-                visible: type === "sink-input" || type === "source-input"
+                visible: type === "sink-input" || type === "source-output"
 
                 onSourceChanged: {
                     if (!valid && source != "unknown") {
@@ -366,7 +366,7 @@ PlasmaComponents.ListItem {
                 return ListItemMenu.SinkInput;
             case "source":
                 return ListItemMenu.Source;
-            case "source-input":
+            case "source-output":
                 return ListItemMenu.SourceOutput;
             }
         }
