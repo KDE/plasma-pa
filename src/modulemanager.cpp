@@ -7,6 +7,7 @@
 #include "modulemanager.h"
 #include "../config.h"
 #include "module.h"
+#include "server.h"
 
 #if USE_GSETTINGS
 #include "gsettingsitem.h"
@@ -100,6 +101,13 @@ ModuleManager::~ModuleManager(){};
 
 bool ModuleManager::settingsSupported() const
 {
+    // PipeWire does not (yet) have support for module-switch-on-connect and module-combine-sink
+    // Also switching streams is the default there
+    // TODO Check whether there is a PipeWire-specific way to do these
+    if (Context::instance()->server()->isPipeWire()) {
+        return false;
+    }
+
 #if USE_GCONF || USE_GSETTINGS
     return true;
 #else

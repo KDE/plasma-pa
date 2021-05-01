@@ -32,6 +32,8 @@ public:
     void reset();
     void update(const pa_server_info *info);
 
+    bool isPipeWire() const;
+
 Q_SIGNALS:
     void defaultSinkChanged(Sink *sink);
     void defaultSourceChanged(Source *source);
@@ -43,6 +45,7 @@ private:
     QString m_defaultSourceName;
     Sink *m_defaultSink;
     Source *m_defaultSource;
+    bool m_isPipeWire;
 };
 
 } // QPulseAudio
