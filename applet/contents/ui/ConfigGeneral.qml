@@ -28,6 +28,9 @@ Kirigami.FormLayout {
     QQC2.SpinBox {
         id: volumeStep
 
+        // So it doesn't resize itself when showing a 2 or 3-digit number
+        Layout.minimumWidth: Kirigami.Units.gridUnit * 3
+
         Kirigami.FormData.label: i18n("Volume step:")
 
         from: 1
