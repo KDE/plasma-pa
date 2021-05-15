@@ -59,6 +59,24 @@ PlasmaComponents.ListItem {
                     }
                 }
 
+                PlasmaCore.IconItem {
+                    anchors {
+                        right: parent.right
+                        bottom: parent.bottom
+                        margins: PlasmaCore.Units.smallSpacing
+                    }
+                    width: PlasmaCore.Units.iconSizes.small
+                    height: width
+                    source: item.type === "sink-input" || item.type === "source-output" ? "emblem-pause" : ""
+                    visible: valid && Corked
+
+                    PlasmaComponents3.ToolTip {
+                        visible: parent.visible && dragMouseArea.containsMouse
+                        text: item.type === "source-output" ? i18n("Currently not recording")
+                                                            : i18n("Currently not playing")
+                    }
+                }
+
                 DragAndDrop.DragArea {
                     id: dragArea
                     anchors.fill: parent
@@ -79,9 +97,11 @@ PlasmaComponents.ListItem {
                     }
 
                     MouseArea {
+                        id: dragMouseArea
                         anchors.fill: parent
                         cursorShape: dragArea.enabled ? (pressed && pressedButtons === Qt.LeftButton ? Qt.ClosedHandCursor : Qt.OpenHandCursor) : undefined
                         acceptedButtons: Qt.LeftButton | Qt.MiddleButton
+                        hoverEnabled: true
                         onClicked: {
                             if (mouse.button === Qt.MiddleButton) {
                                 Muted = !Muted;
