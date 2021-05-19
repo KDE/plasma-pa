@@ -46,7 +46,7 @@ void VolumeMonitor::updateVolume(qreal volume)
 
 QPulseAudio::VolumeObject *QPulseAudio::VolumeMonitor::target() const
 {
-    return m_target.data();
+    return m_target;
 }
 
 void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject *target)
@@ -67,6 +67,9 @@ void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject *target)
     m_target = target;
 
     if (target) {
+        connect(target, &QObject::destroyed, this, [this] {
+            setTarget(nullptr);
+        });
         createStream();
     }
 
