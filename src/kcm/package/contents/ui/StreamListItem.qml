@@ -17,7 +17,7 @@ ColumnLayout {
 
     property alias deviceModel: deviceComboBox.model
     readonly property bool isEventStream: Name == "sink-input-by-media-role:event"
-    property bool isPlayback: type.substring(0, 4) == "sink"
+    property bool isPlayback
 
     width: parent ? parent.width : undefined
 
