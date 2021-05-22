@@ -29,7 +29,17 @@ ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
             implicitHeight: Kirigami.Units.iconSizes.large
             implicitWidth: implicitHeight
-            source: IconName || "unknown"
+            source: {
+                if (IconName.length !== 0) {
+                    return IconName
+                }
+
+                if (delegate.isPlayback) {
+                    return "audio-volume-high"
+                } else {
+                    return "audio-input-microphone"
+                }
+            }
         }
 
         ColumnLayout {
