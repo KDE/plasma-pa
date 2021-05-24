@@ -361,7 +361,7 @@ Item {
         GlobalAction {
             objectName: "mic_mute"
             text: i18n("Mute Microphone")
-            shortcut: Qt.Key_MicMute
+            shortcuts: [Qt.Key_MicMute, Qt.MetaModifier | Qt.Key_VolumeMute]
             onTriggered: muteMicrophone()
         }
     }
