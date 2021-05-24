@@ -13,6 +13,8 @@
 class GlobalAction : public QAction
 {
     Q_OBJECT
+    // These members exist in QAction but only "shortcut" is exposed to the metaobject
+    Q_PROPERTY(QList<QKeySequence> shortcuts READ shortcuts WRITE setShortcuts NOTIFY changed)
 public:
     explicit GlobalAction(QObject *parent = nullptr);
 };
