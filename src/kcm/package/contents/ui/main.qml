@@ -182,7 +182,7 @@ ScrollViewKCM {
         }
 
         Button {
-            text: i18n("Configure...")
+            text: i18n("Configure…")
             icon.name: "configure"
             Layout.alignment: Qt.AlignRight
             onClicked: kcm.push("Advanced.qml")

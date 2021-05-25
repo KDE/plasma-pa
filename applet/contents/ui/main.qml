@@ -704,7 +704,7 @@ Item {
         plasmoid.action("forceMute").checked = Qt.binding(() => {return globalMute;});
 
         // FIXME only while Multi-page KCMs are broken when embedded in plasmoid config
-        plasmoid.setAction("openKcm", i18n("&Configure Audio Devices..."), "audio-volume-high");
+        plasmoid.setAction("openKcm", i18n("&Configure Audio Devices…"), "audio-volume-high");
         plasmoid.action("openKcm").visible = (KQCAddons.KCMShell.authorize("kcm_pulseaudio.desktop").length > 0);
     }
 }
