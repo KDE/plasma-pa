@@ -89,23 +89,53 @@ ColumnLayout {
 
     RowLayout {
         Item {
+            Layout.leftMargin: Kirigami.Units.largeSpacing * 3
             Layout.fillWidth: true
         }
 
         Label {
+            id: profileLabel
+            visible: profileBox.visible
+            text: i18ndc("kcm_pulseaudio", "@label", "Profile:")
+        }
+
+        ComboBox {
+            id: profileBox
+
+            readonly property var profiles: paCardModel.data(paCardModel.index(CardIndex, 0), paCardModel.role("Profiles"))
+            readonly property var activeProfileIndex: paCardModel.data(paCardModel.index(CardIndex, 0), paCardModel.role("ActiveProfileIndex"))
+
+            Layout.maximumWidth: portBox.visible ? Kirigami.Units.gridUnit * 10 : -1
+
+            model: profiles.filter(function (profile) {
+                return profile.availability === Profile.Available;
+            })
+            visible: count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
+            // NOTE: model resets (i.e. profiles property changes) will reset
+            // the currentIndex, so force it to be set on model changes, otherwise
+            // it would eventually become 0 when it shouldn't be.
+            onModelChanged: currentIndex = model.indexOf(profiles[activeProfileIndex])
+            // TODO: Update the currentIndex when the card has switched profile externally
+            textRole: "description"
+            onActivated: paCardModel.setData(paCardModel.index(CardIndex, 0), profiles.indexOf(model[index]), paCardModel.role("ActiveProfileIndex"))
+        }
+
+        Label {
             id: portLabel
-            visible: portbox.visible
+            visible: portBox.visible
             text: i18nd("kcm_pulseaudio", "Port:")
             Layout.leftMargin: Kirigami.Units.largeSpacing * 3
         }
 
         ComboBox {
-            id: portbox
+            id: portBox
             readonly property var ports: Ports
-            visible: portbox.count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
+            visible: portBox.count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
             onModelChanged: currentIndex = ActivePortIndex
             currentIndex: ActivePortIndex
             onActivated: ActivePortIndex = index
+
+            Layout.maximumWidth: profileBox.visible ? Kirigami.Units.gridUnit * 10 : -1
 
             onPortsChanged: {
                 var items = [];

@@ -49,6 +49,10 @@ ScrollViewKCM {
         sourceModel: paSourceModel
     }
 
+    CardModel {
+        id: paCardModel
+    }
+
     view: Flickable {
         id: flickable
 
