@@ -72,7 +72,7 @@ Grid {
             id: kuser
         }
 
-        Image {
+        Kirigami.Avatar {
             source: kuser.faceIconUrl
             anchors.centerIn: parent
             sourceSize.width: 50
