@@ -47,38 +47,6 @@ ColumnLayout {
             elide: Text.ElideRight
         }
 
-        Label {
-            id: portLabel
-            visible: portbox.visible
-            text: i18nd("kcm_pulseaudio", "Port:")
-        }
-
-        ComboBox {
-            id: portbox
-            readonly property var ports: Ports
-            visible: portbox.count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
-            onModelChanged: currentIndex = ActivePortIndex
-            currentIndex: ActivePortIndex
-            onActivated: ActivePortIndex = index
-
-            onPortsChanged: {
-                var items = [];
-                for (var i = 0; i < ports.length; ++i) {
-                    var port = ports[i];
-                    var text = port.description;
-                    if (port.availability == Port.Unavailable) {
-                        if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
-                            text += i18ndc("kcm_pulseaudio", "Port is unavailable", " (unavailable)");
-                        } else {
-                            text += i18ndc("kcm_pulseaudio", "Port is unplugged", " (unplugged)");
-                        }
-                    }
-                    items.push(text);
-                }
-                model = items;
-            }
-        }
-
         Button {
             id: balanceButton
             text: i18ndc("kcm_pulseaudio", "Audio balance (e.g. control left/right volume individually", "Balance")
@@ -107,6 +75,45 @@ ColumnLayout {
                 checked = ChannelVolumes.some((volume) => {
                     return volume !== ChannelVolumes[0];
                 });
+            }
+        }
+    }
+
+    RowLayout {
+        Item {
+            Layout.fillWidth: true
+        }
+
+        Label {
+            id: portLabel
+            visible: portbox.visible
+            text: i18nd("kcm_pulseaudio", "Port:")
+            Layout.leftMargin: Kirigami.Units.largeSpacing * 3
+        }
+
+        ComboBox {
+            id: portbox
+            readonly property var ports: Ports
+            visible: portbox.count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
+            onModelChanged: currentIndex = ActivePortIndex
+            currentIndex: ActivePortIndex
+            onActivated: ActivePortIndex = index
+
+            onPortsChanged: {
+                var items = [];
+                for (var i = 0; i < ports.length; ++i) {
+                    var port = ports[i];
+                    var text = port.description;
+                    if (port.availability == Port.Unavailable) {
+                        if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
+                            text += i18ndc("kcm_pulseaudio", "Port is unavailable", " (unavailable)");
+                        } else {
+                            text += i18ndc("kcm_pulseaudio", "Port is unplugged", " (unplugged)");
+                        }
+                    }
+                    items.push(text);
+                }
+                model = items;
             }
         }
     }
