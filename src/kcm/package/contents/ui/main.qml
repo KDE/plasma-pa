@@ -54,6 +54,10 @@ ScrollViewKCM {
         sourceModel: paSourceModel
     }
 
+    ModuleManager {
+        id: moduleManager
+    }
+
     view: Flickable {
         id: flickable
 
@@ -203,23 +207,48 @@ ScrollViewKCM {
         }
     }
 
-    footer: RowLayout {
+    footer: ColumnLayout {
+        // FIXME: Settings randomly do not appear
+        CheckBox {
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.smallSpacing
+            Layout.leftMargin: Kirigami.Units.gridUnit / 2
+            Layout.rightMargin: Kirigami.Units.gridUnit / 2
+            text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")
+            checked: moduleManager.combineSinks
+            onToggled: moduleManager.combineSinks = checked;
+            enabled: moduleManager.configModuleLoaded
+            visible: moduleManager.settingsSupported
+        }
+
+        CheckBox {
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.gridUnit / 2
+            Layout.rightMargin: Kirigami.Units.gridUnit / 2
+            text: i18nd("kcm_pulseaudio", "Automatically switch all running streams when a new output becomes available")
+            checked: moduleManager.switchOnConnect
+            onToggled: moduleManager.switchOnConnect = checked;
+            enabled: moduleManager.configModuleLoaded
+            visible: moduleManager.settingsSupported
+        }
+
+        Label {
+            Layout.alignment: Qt.AlignHCenter
+            enabled: false
+            font.italic: true
+            text: i18nd("kcm_pulseaudio", "Requires %1 PulseAudio module", moduleManager.configModuleName)
+            visible: moduleManager.settingsSupported && !moduleManager.configModuleLoaded
+        }
 
         Button {
             id: inactiveDevicesButton
+            Layout.alignment: Qt.AlignRight
             checkable: true
             text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
             icon.name: "view-visible"
 
             // Only show if there actually are any inactive devices
             visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
-        }
-
-        Button {
-            text: i18n("Configure…")
-            icon.name: "configure"
-            Layout.alignment: Qt.AlignRight
-            onClicked: kcm.push("Advanced.qml")
         }
     }
 
