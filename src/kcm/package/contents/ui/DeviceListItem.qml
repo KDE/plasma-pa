@@ -48,6 +48,14 @@ ColumnLayout {
         }
 
         Button {
+            id: testButton
+            text: i18ndc("kcm_pulseaudio", "Perform an audio test of the device", "Test")
+            icon.name: "audio-speakers-symbolic"
+            visible: isPlayback
+            onClicked: testOverlay.testSink(index);
+        }
+
+        Button {
             id: balanceButton
             text: i18ndc("kcm_pulseaudio", "Audio balance (e.g. control left/right volume individually", "Balance")
             icon.name: "view-media-equalizer"

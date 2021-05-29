@@ -188,4 +188,27 @@ ScrollViewKCM {
             onClicked: kcm.push("Advanced.qml")
         }
     }
+
+
+    Kirigami.OverlaySheet {
+        id: testOverlay
+
+        property string description: ""
+
+        function testSink(index) {
+            let modelIndex = sinks.model.index(Math.max(index, 0), 0);
+            testItem.sinkObject = sinks.model.data(modelIndex, sinks.model.role("PulseObject"));
+            testOverlay.description = sinks.model.data(modelIndex, sinks.model.role("Description"));
+            testOverlay.open();
+        }
+
+        header: Label {
+            text: i18nd("kcm_pulseaudio", "Testing %1", testOverlay.description)
+        }
+
+        SinkTest {
+            id: testItem
+            Layout.fillWidth: true
+        }
+    }
 }
