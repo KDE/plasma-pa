@@ -20,24 +20,6 @@ KCM.SimpleKCM {
 
         Label {
             Layout.alignment: Qt.AlignHCenter
-            visible: view.count > 0
-            text: i18nd("kcm_pulseaudio", "Device Profiles")
-            font.weight: Font.DemiBold
-        }
-
-        ListView {
-            id: view
-            Layout.fillWidth: true
-            Layout.preferredHeight: contentHeight
-            Layout.margins: Kirigami.Units.gridUnit / 2
-            interactive: false
-            spacing: Kirigami.Units.smallSpacing * 2
-            model: CardModel {}
-            delegate: CardListItem {}
-        }
-
-        Label {
-            Layout.alignment: Qt.AlignHCenter
             text: i18nd("kcm_pulseaudio", "Advanced Output Configuration")
             visible: moduleManager.settingsSupported
             font.weight: Font.DemiBold

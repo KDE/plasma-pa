@@ -13,6 +13,7 @@ import QtQuick.Controls 2.0
 
 import org.kde.kcm 1.3
 import org.kde.kirigami 2.12 as Kirigami
+import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.plasma.private.volume 0.1
 
 ScrollViewKCM {
@@ -31,6 +32,10 @@ ScrollViewKCM {
         id: paSourceModel
     }
 
+    CardModel {
+        id: paCardModel
+    }
+
     PulseObjectFilterModel {
         id: paSinkFilterModel
 
@@ -47,10 +52,6 @@ ScrollViewKCM {
         sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
         sourceModel: paSourceModel
-    }
-
-    CardModel {
-        id: paCardModel
     }
 
     view: Flickable {
@@ -102,6 +103,35 @@ ScrollViewKCM {
                 delegate: DeviceListItem {
                     isPlayback: false
                 }
+            }
+
+            Kirigami.ListSectionHeader {
+                Layout.fillWidth: true
+                visible: inactiveCards.count > 0
+                text: i18nd("kcm_pulseaudio", "Inactive Cards")
+            }
+
+            ListView {
+                id: inactiveCards
+                Layout.fillWidth: true
+                Layout.preferredHeight: contentHeight
+                Layout.margins: Kirigami.Units.gridUnit / 2
+                interactive: false
+                spacing: Kirigami.Units.smallSpacing * 2
+
+                model: PlasmaCore.SortFilterModel {
+                    sourceModel: paCardModel
+                    function role(name) {
+                        return sourceModel.role(name);
+                    }
+                    filterCallback: function(source_row, value) {
+                        let idx = sourceModel.index(source_row, 0);
+                        let profiles = sourceModel.data(idx, sourceModel.role("Profiles"))
+                        let activeProfileIndex = sourceModel.data(idx, sourceModel.role("ActiveProfileIndex"))
+                        return profiles[activeProfileIndex].name == "off";
+                    }
+                }
+                delegate: CardListItem {}
             }
 
             Kirigami.ListSectionHeader {
