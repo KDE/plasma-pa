@@ -208,7 +208,6 @@ ScrollViewKCM {
     }
 
     footer: ColumnLayout {
-        // FIXME: Settings randomly do not appear
         CheckBox {
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.smallSpacing

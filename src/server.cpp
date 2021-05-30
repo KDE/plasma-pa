@@ -16,6 +16,7 @@ Server::Server(Context *context)
     : QObject(context)
     , m_defaultSink(nullptr)
     , m_defaultSource(nullptr)
+    , m_isPipeWire(false)
 {
     Q_ASSERT(context);
 
@@ -67,6 +68,8 @@ void Server::update(const pa_server_info *info)
     m_isPipeWire = QString::fromUtf8(info->server_name).contains("PipeWire");
 
     updateDefaultDevices();
+
+    Q_EMIT updated();
 }
 
 template<typename Type, typename Map>

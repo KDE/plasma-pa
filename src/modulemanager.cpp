@@ -88,6 +88,8 @@ ModuleManager::ModuleManager(QObject *parent)
     connect(m_deviceManager, &ConfigModule::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
 #endif
 
+    connect(Context::instance()->server(), &Server::updated, this, &ModuleManager::serverUpdated);
+
     QTimer *updateModulesTimer = new QTimer(this);
     updateModulesTimer->setInterval(500);
     updateModulesTimer->setSingleShot(true);
