@@ -73,7 +73,7 @@ ScrollViewKCM {
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 Layout.preferredHeight: contentHeight
                 interactive: false
-                spacing: Kirigami.Units.gridUnit
+                spacing: Kirigami.Units.largeSpacing
                 model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSinkModel : paSinkFilterModel
                 delegate: DeviceListItem {
                     isPlayback: true
@@ -93,7 +93,7 @@ ScrollViewKCM {
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 Layout.preferredHeight: contentHeight
                 interactive: false
-                spacing: Kirigami.Units.gridUnit
+                spacing: Kirigami.Units.largeSpacing
                 model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSourceModel : paSourceFilterModel
                 delegate: DeviceListItem {
                     isPlayback: false
