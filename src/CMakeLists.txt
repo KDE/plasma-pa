@@ -38,7 +38,7 @@ set(qml_SRCS
 )
 
 set_property(SOURCE qml/dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdServiceInterface)
-qt5_add_dbus_interface(dbus_SRCS qml/dbus/osdService.xml osdservice)
+qt_add_dbus_interface(dbus_SRCS qml/dbus/osdService.xml osdservice)
 
 if (USE_GCONF)
     set(cpp_SRCS ${cpp_SRCS} gconfitem.cpp)
