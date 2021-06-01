@@ -40,6 +40,12 @@ Grid {
             visible: sinkObject ? sinkObject.rawChannels.indexOf("front-center") > -1 : false
             onClicked: sinkObject.testChannel("front-center")
         }
+        Button{
+            text: i18nd("kcm_pulseaudio", "Mono")
+            anchors.centerIn: parent
+            visible: sinkObject ? sinkObject.rawChannels.indexOf("mono") > -1 : false
+            onClicked: sinkObject.testChannel("mono")
+        }
     }
     Item {
         width: grid.width/3
