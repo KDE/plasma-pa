@@ -3,6 +3,7 @@
     SPDX-FileCopyrightText: 2016 David Rosca <nowrep@gmail.com>
     SPDX-FileCopyrightText: 2019 Sefa Eyeoglu <contact@scrumplex.net>
     SPDX-FileCopyrightText: 2020 Nicolas Fella <nicolas.fella@gmx.de>
+    SPDX-FileCopyrightText: 2021 Ismael Asensio <isma.af@gmail.com>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -11,8 +12,9 @@ import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
 
+import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.kcm 1.3
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.13 as Kirigami
 import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.plasma.private.volume 0.1
 
@@ -255,22 +257,106 @@ ScrollViewKCM {
     Kirigami.OverlaySheet {
         id: testOverlay
 
+        property var sinkObject: null
         property string description: ""
+        property string iconName: "audio-card"
+        property string profile: ""
+        property string port: ""
 
         function testSink(index) {
             let modelIndex = sinks.model.index(Math.max(index, 0), 0);
-            testItem.sinkObject = sinks.model.data(modelIndex, sinks.model.role("PulseObject"));
-            testOverlay.description = sinks.model.data(modelIndex, sinks.model.role("Description"));
+            sinkObject = sinks.model.data(modelIndex, sinks.model.role("PulseObject"));
+            description = sinks.model.data(modelIndex, sinks.model.role("Description"));
+
+            let ports = sinks.model.data(modelIndex, sinks.model.role("Ports"));
+            port = ports.length > 1 ? ports[sinks.model.data(modelIndex, sinks.model.role("ActivePortIndex"))].description : "";
+
+            let cardIndex = paCardModel.index(sinks.model.data(modelIndex, sinks.model.role("CardIndex")), 0);
+            if (cardIndex.valid) {
+                let profiles = paCardModel.data(cardIndex, paCardModel.role("Profiles")) || [];
+                iconName = paCardModel.data(cardIndex, paCardModel.role("IconName")) || "audio-card";
+                profile = profiles.length > 1 ? profiles[paCardModel.data(cardIndex, paCardModel.role("ActiveProfileIndex"))].description : "";
+            } else {
+                iconName = "audio-card";
+                profile = "";
+            }
+
             testOverlay.open();
         }
 
-        header: Label {
-            text: i18nd("kcm_pulseaudio", "Testing %1", testOverlay.description)
+        function channelData(channel) {
+            switch (channel) {
+                case "front-left": return {text: i18nd("kcm_pulseaudio", "Front Left"), row: 0, column: 0};
+                case "front-center": return {text: i18nd("kcm_pulseaudio", "Front Center"), row: 0, column: 1};
+                case "front-right": return {text: i18nd("kcm_pulseaudio", "Front Right"), row: 0, column: 2};
+                case "side-left": return {text: i18nd("kcm_pulseaudio", "Side Left"), row: 1, column: 0};
+                case "side-right": return {text: i18nd("kcm_pulseaudio", "Side Right"), row: 1, column: 2};
+                case "rear-left": return {text: i18nd("kcm_pulseaudio", "Rear Left"), row: 2, column: 0};
+                case "lfe": return {text: i18nd("kcm_pulseaudio", "Subwoofer"), row: 2, column: 1};
+                case "rear-right": return {text: i18nd("kcm_pulseaudio", "Rear Right"), row: 2, column: 2};
+                case "mono" : return {text: i18nd("kcm_pulseaudio", "Mono"), row: 0, column: 1};
+            }
         }
 
-        SinkTest {
-            id: testItem
-            Layout.fillWidth: true
+        header: GridLayout {
+            columns: 2
+            rowSpacing: Kirigami.Units.smallSpacing
+
+            Kirigami.Icon {
+                source: testOverlay.iconName || "audio-card"
+                Layout.rowSpan: 3
+                Layout.alignment: Qt.AlignCenter
+            }
+            Label {
+                text: testOverlay.description
+                font.bold: true
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+            }
+            Label {
+                text: {
+                    if (testOverlay.port.length === 0) { return testOverlay.profile }
+                    if (testOverlay.profile.length === 0) { return testOverlay.port }
+                    return testOverlay.profile + " / " + testOverlay.port
+                }
+                visible: text.length > 0
+                Layout.fillWidth: true
+                elide: Text.ElideRight
+            }
+        }
+
+        GridLayout {
+            id: layoutTest
+            columns: 3
+
+            Kirigami.Avatar {
+                KCoreAddons.KUser {
+                    id: kuser
+                }
+                source: kuser.faceIconUrl
+                sourceSize.width: Kirigami.Units.gridUnit * 3
+                sourceSize.height: Kirigami.Units.gridUnit * 3
+                Layout.row: 1
+                Layout.column: 1
+                Layout.alignment: Qt.AlignCenter
+
+            }
+
+            Repeater {
+                model: testOverlay.sinkObject && testOverlay.sinkObject.rawChannels
+
+                delegate: Button {
+                    text: testOverlay.channelData(modelData).text
+                    Layout.row: testOverlay.channelData(modelData).row
+                    Layout.column: testOverlay.channelData(modelData).column
+                    Layout.alignment: Qt.AlignCenter
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 10
+                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+                    // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
+                    onClicked: testOverlay.sinkObject.testChannel(modelData === "lfe" ? "rear-center" : modelData)
+                }
+            }
         }
     }
 }
