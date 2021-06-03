@@ -107,14 +107,14 @@ ColumnLayout {
 
             Layout.maximumWidth: portBox.visible ? Kirigami.Units.gridUnit * 10 : -1
 
-            model: profiles.filter(function (profile) {
+            model: profiles ? profiles.filter(function (profile) {
                 return profile.availability === Profile.Available;
-            })
+            }) : []
             visible: count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
             // NOTE: model resets (i.e. profiles property changes) will reset
             // the currentIndex, so force it to be set on model changes, otherwise
             // it would eventually become 0 when it shouldn't be.
-            onModelChanged: currentIndex = model.indexOf(profiles[activeProfileIndex])
+            onModelChanged: currentIndex = profiles ? model.indexOf(profiles[activeProfileIndex]) : -1
             // TODO: Update the currentIndex when the card has switched profile externally
             textRole: "description"
             onActivated: paCardModel.setData(paCardModel.index(CardIndex, 0), profiles.indexOf(model[index]), paCardModel.role("ActiveProfileIndex"))
