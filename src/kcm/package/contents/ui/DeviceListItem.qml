@@ -110,7 +110,7 @@ ColumnLayout {
             model: profiles ? profiles.filter(function (profile) {
                 return profile.availability === Profile.Available;
             }) : []
-            visible: count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
+            visible: profileBox.count > 1
             // NOTE: model resets (i.e. profiles property changes) will reset
             // the currentIndex, so force it to be set on model changes, otherwise
             // it would eventually become 0 when it shouldn't be.
@@ -130,7 +130,7 @@ ColumnLayout {
         ComboBox {
             id: portBox
             readonly property var ports: Ports
-            visible: portBox.count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
+            visible: portBox.count > 1
             onModelChanged: currentIndex = ActivePortIndex
             currentIndex: ActivePortIndex
             onActivated: ActivePortIndex = index
