@@ -36,6 +36,15 @@ ScrollViewKCM {
 
     CardModel {
         id: paCardModel
+
+        function indexOfCardNumber(cardNumber) {
+            for (var idx = 0; idx < count; idx++) {
+                if (data(index(idx, 0), role("Index")) == cardNumber) {
+                    return index(idx, 0);
+                }
+            }
+            return null;
+        }
     }
 
     PulseObjectFilterModel {
@@ -272,8 +281,8 @@ ScrollViewKCM {
             let ports = sinks.model.data(modelIndex, sinks.model.role("Ports"));
             port = ports.length > 1 ? ports[sinks.model.data(modelIndex, sinks.model.role("ActivePortIndex"))].description : "";
 
-            let cardIndex = paCardModel.index(sinks.model.data(modelIndex, sinks.model.role("CardIndex")), 0);
-            if (cardIndex.valid) {
+            let cardIndex = paCardModel.indexOfCardNumber(sinks.model.data(modelIndex, sinks.model.role("CardIndex")));
+            if (cardIndex) {
                 let profiles = paCardModel.data(cardIndex, paCardModel.role("Profiles")) || [];
                 profile = profiles.length > 1 ? profiles[paCardModel.data(cardIndex, paCardModel.role("ActiveProfileIndex"))].description : "";
             } else {

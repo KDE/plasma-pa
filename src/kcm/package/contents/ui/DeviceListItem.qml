@@ -102,8 +102,9 @@ ColumnLayout {
         ComboBox {
             id: profileBox
 
-            readonly property var profiles: paCardModel.data(paCardModel.index(CardIndex, 0), paCardModel.role("Profiles"))
-            readonly property var activeProfileIndex: paCardModel.data(paCardModel.index(CardIndex, 0), paCardModel.role("ActiveProfileIndex"))
+            readonly property var cardIdx: paCardModel.indexOfCardNumber(CardIndex)
+            readonly property var profiles: cardIdx ? paCardModel.data(cardIdx, paCardModel.role("Profiles")) : []
+            readonly property int activeProfileIndex: cardIdx ? paCardModel.data(cardIdx, paCardModel.role("ActiveProfileIndex")) : -1
 
             Layout.maximumWidth: portBox.visible ? Kirigami.Units.gridUnit * 10 : -1
 
@@ -117,7 +118,7 @@ ColumnLayout {
             onModelChanged: currentIndex = profiles ? model.indexOf(profiles[activeProfileIndex]) : -1
             // TODO: Update the currentIndex when the card has switched profile externally
             textRole: "description"
-            onActivated: paCardModel.setData(paCardModel.index(CardIndex, 0), profiles.indexOf(model[index]), paCardModel.role("ActiveProfileIndex"))
+            onActivated: paCardModel.setData(cardIdx, profiles.indexOf(model[index]), paCardModel.role("ActiveProfileIndex"))
         }
 
         Label {
