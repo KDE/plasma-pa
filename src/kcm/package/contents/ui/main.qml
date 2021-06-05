@@ -267,6 +267,7 @@ ScrollViewKCM {
             let modelIndex = sinks.model.index(Math.max(index, 0), 0);
             sinkObject = sinks.model.data(modelIndex, sinks.model.role("PulseObject"));
             description = sinks.model.data(modelIndex, sinks.model.role("Description"));
+            iconName = sinks.model.data(modelIndex, sinks.model.role("IconName")) || "audio-card";
 
             let ports = sinks.model.data(modelIndex, sinks.model.role("Ports"));
             port = ports.length > 1 ? ports[sinks.model.data(modelIndex, sinks.model.role("ActivePortIndex"))].description : "";
@@ -274,10 +275,8 @@ ScrollViewKCM {
             let cardIndex = paCardModel.index(sinks.model.data(modelIndex, sinks.model.role("CardIndex")), 0);
             if (cardIndex.valid) {
                 let profiles = paCardModel.data(cardIndex, paCardModel.role("Profiles")) || [];
-                iconName = paCardModel.data(cardIndex, paCardModel.role("IconName")) || "audio-card";
                 profile = profiles.length > 1 ? profiles[paCardModel.data(cardIndex, paCardModel.role("ActiveProfileIndex"))].description : "";
             } else {
-                iconName = "audio-card";
                 profile = "";
             }
 
