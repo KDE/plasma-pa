@@ -43,7 +43,7 @@ ScrollViewKCM {
                     return index(idx, 0);
                 }
             }
-            return null;
+            return index(-1, 0);
         }
     }
 
@@ -281,12 +281,11 @@ ScrollViewKCM {
             let ports = sinks.model.data(modelIndex, sinks.model.role("Ports"));
             port = ports.length > 1 ? ports[sinks.model.data(modelIndex, sinks.model.role("ActivePortIndex"))].description : "";
 
+            profile = "";
             let cardIndex = paCardModel.indexOfCardNumber(sinks.model.data(modelIndex, sinks.model.role("CardIndex")));
-            if (cardIndex) {
+            if (cardIndex.valid) {
                 let profiles = paCardModel.data(cardIndex, paCardModel.role("Profiles")) || [];
                 profile = profiles.length > 1 ? profiles[paCardModel.data(cardIndex, paCardModel.role("ActiveProfileIndex"))].description : "";
-            } else {
-                profile = "";
             }
 
             testOverlay.open();
