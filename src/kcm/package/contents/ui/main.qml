@@ -219,6 +219,17 @@ ScrollViewKCM {
     }
 
     footer: ColumnLayout {
+        Button {
+            id: inactiveDevicesButton
+            Layout.alignment: Qt.AlignRight
+            checkable: true
+            text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
+            icon.name: "view-visible"
+
+            // Only show if there actually are any inactive devices
+            visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
+        }
+
         CheckBox {
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.smallSpacing
@@ -248,17 +259,6 @@ ScrollViewKCM {
             font.italic: true
             text: i18nd("kcm_pulseaudio", "Requires %1 PulseAudio module", moduleManager.configModuleName)
             visible: moduleManager.settingsSupported && !moduleManager.configModuleLoaded
-        }
-
-        Button {
-            id: inactiveDevicesButton
-            Layout.alignment: Qt.AlignRight
-            checkable: true
-            text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
-            icon.name: "view-visible"
-
-            // Only show if there actually are any inactive devices
-            visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
         }
     }
 
