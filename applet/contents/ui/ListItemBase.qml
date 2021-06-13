@@ -14,7 +14,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents // for ListItem
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.draganddrop 2.0 as DragAndDrop
+
 import org.kde.plasma.private.volume 0.1
 
 import "../code/icon.js" as Icon
@@ -23,7 +23,7 @@ PlasmaComponents.ListItem {
     id: item
 
     property alias label: defaultButton.text
-    property alias draggable: dragArea.enabled
+    property alias draggable: dragMouseArea.enabled
     property alias icon: clientIcon.source
     property alias iconUsesPlasmaTheme: clientIcon.usesPlasmaTheme
     property string type
@@ -33,7 +33,7 @@ PlasmaComponents.ListItem {
     opacity: (draggedStream && draggedStream.deviceIndex == Index) ? 0.3 : 1.0
     separatorVisible: false
 
-    ListView.delayRemove: dragArea.dragActive
+    ListView.delayRemove: dragMouseArea.drag.active
 
     Item {
         width: parent.width
@@ -77,37 +77,40 @@ PlasmaComponents.ListItem {
                     }
                 }
 
-                DragAndDrop.DragArea {
-                    id: dragArea
+                Drag.active: dragMouseArea.drag.active
+                Drag.dragType: Drag.Automatic
+                Drag.mimeData: ["x-kde-plasmapa"] // unused, as we track internally
+                Drag.onDragStarted: {
+                    draggedStream = model.PulseObject;
+                    beginMoveStream(type == "sink-input" ? "sink" : "source");
+                }
+                Drag.onDragFinished: {
+                    draggedStream = null;
+                    endMoveStream();
+                }
+
+                MouseArea {
+                    id: dragMouseArea
                     anchors.fill: parent
-                    delegate: parent
-
-                    mimeData {
-                        source: item
-                    }
-
-                    onDragStarted: {
-                        draggedStream = model.PulseObject;
-                        beginMoveStream(type == "sink-input" ? "sink" : "source");
-                    }
-
-                    onDrop: {
-                        draggedStream = null;
-                        endMoveStream();
-                    }
-
-                    MouseArea {
-                        id: dragMouseArea
-                        anchors.fill: parent
-                        cursorShape: dragArea.enabled ? (pressed && pressedButtons === Qt.LeftButton ? Qt.ClosedHandCursor : Qt.OpenHandCursor) : undefined
-                        acceptedButtons: Qt.LeftButton | Qt.MiddleButton
-                        hoverEnabled: true
-                        onClicked: {
-                            if (mouse.button === Qt.MiddleButton) {
-                                Muted = !Muted;
-                            }
+                    cursorShape: pressed && pressedButtons === Qt.LeftButton ? Qt.ClosedHandCursor : Qt.OpenHandCursor
+                    acceptedButtons: Qt.LeftButton | Qt.MiddleButton
+                    hoverEnabled: true
+                    onClicked: {
+                        if (mouse.button === Qt.MiddleButton) {
+                            Muted = !Muted;
                         }
                     }
+
+                    onPressed: {
+                        if (mouse.button !== Qt.LeftButton) {
+                            return;
+                        }
+                        parent.grabToImage(function(result) {
+                            parent.Drag.imageSource = result.url
+                        })
+                    }
+
+                    drag.target: parent
                 }
             }
 
@@ -338,18 +341,18 @@ PlasmaComponents.ListItem {
             }
         }
 
-        DragAndDrop.DropArea {
+        DropArea {
             id: dropArea
             anchors.fill: parent
             enabled: draggedStream
 
-            onDragEnter: {
+            onEntered: {
                 if (draggedStream.deviceIndex == Index) {
-                    event.ignore();
+                    drag.accepted = false;
                 }
             }
 
-            onDrop: {
+            onDropped: {
                 draggedStream.deviceIndex = Index;
             }
         }
