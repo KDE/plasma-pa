@@ -94,31 +94,10 @@ ColumnLayout {
         }
 
         Label {
-            id: profileLabel
-            visible: profileBox.visible
-            text: i18ndc("kcm_pulseaudio", "@label", "Profile:")
-        }
-
-        ComboBox {
-            id: profileBox
-
-            readonly property var card: paCardModel.data(paCardModel.indexOfCardNumber(CardIndex), paCardModel.role("PulseObject"))
-
-            Layout.maximumWidth: portBox.visible ? Kirigami.Units.gridUnit * 10 : -1
-            visible: profileBox.count > 1
-            textRole: "description"
-
-            model: card ? card.profiles.filter(profile => profile.availability === Profile.Available) : []
-            currentIndex: card ? model.indexOf(card.profiles[card.activeProfileIndex]) : -1
-
-            onActivated: card.activeProfileIndex = card.profiles.indexOf(model[index])
-        }
-
-        Label {
             id: portLabel
             visible: portBox.visible
             text: i18nd("kcm_pulseaudio", "Port:")
-            Layout.leftMargin: Kirigami.Units.largeSpacing * 3
+            Layout.leftMargin: Kirigami.Units.largeSpacing * 2
         }
 
         ComboBox {
@@ -147,6 +126,28 @@ ColumnLayout {
                 }
                 model = items;
             }
+        }
+
+        Label {
+            id: profileLabel
+            visible: profileBox.visible
+            text: i18ndc("kcm_pulseaudio", "@label", "Profile:")
+            Layout.leftMargin: Kirigami.Units.largeSpacing * 2
+        }
+
+        ComboBox {
+            id: profileBox
+
+            readonly property var card: paCardModel.data(paCardModel.indexOfCardNumber(CardIndex), paCardModel.role("PulseObject"))
+
+            Layout.maximumWidth: portBox.visible ? Kirigami.Units.gridUnit * 10 : -1
+            visible: profileBox.count > 1
+            textRole: "description"
+
+            model: card ? card.profiles.filter(profile => profile.availability === Profile.Available) : []
+            currentIndex: card ? model.indexOf(card.profiles[card.activeProfileIndex]) : -1
+
+            onActivated: card.activeProfileIndex = card.profiles.indexOf(model[index])
         }
     }
 
