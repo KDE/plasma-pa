@@ -108,8 +108,6 @@ ColumnLayout {
             currentIndex: ActivePortIndex
             onActivated: ActivePortIndex = index
 
-            Layout.maximumWidth: profileBox.visible ? Kirigami.Units.gridUnit * 10 : -1
-
             onPortsChanged: {
                 var items = [];
                 for (var i = 0; i < ports.length; ++i) {
@@ -140,7 +138,6 @@ ColumnLayout {
 
             readonly property var card: paCardModel.data(paCardModel.indexOfCardNumber(CardIndex), paCardModel.role("PulseObject"))
 
-            Layout.maximumWidth: portBox.visible ? Kirigami.Units.gridUnit * 10 : -1
             visible: profileBox.count > 1
             textRole: "description"
 
