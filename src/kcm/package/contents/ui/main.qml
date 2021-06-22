@@ -338,6 +338,7 @@ ScrollViewKCM {
         GridLayout {
             id: layoutTest
             columns: 3
+            LayoutMirroring.enabled: false  // To preserve spacial layout on RTL
 
             Kirigami.Avatar {
                 KCoreAddons.KUser {
