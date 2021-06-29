@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Audio
+Name[ar]=الصوت
 Name[ast]=Audiu
 Name[az]=Səs
 Name[ca]=Àudio
@@ -38,6 +39,7 @@ Name[x-test]=xxAudioxx
 Name[zh_CN]=音频
 Name[zh_TW]=音效
 Comment=Configure audio devices and volume
+Comment[ar]=اضبط أجهزة الصّوت ومستوى الصوت
 Comment[ast]=Configura los preseos d'audiu y el so volume
 Comment[az]=Səs cihazları və səs səviyyəsini tənzimləmək
 Comment[ca]=Configura els dispositius d'àudio i el volum
@@ -92,6 +94,7 @@ X-KDE-Weight=60
 X-KDE-PluginKeyword=kcm_pulseaudio
 X-DocPath=kcontrol/plasma-pa/index.html
 X-KDE-Keywords=Sound,Volume,Output,Input,Speakers,Microphone,Audio,Music,PulseAudio,Pulse
+X-KDE-Keywords[ar]=صوت,مستوى,خرج,موسيقى,Pulse,سماعات,خرج,إدخال,ميكروفون,مسجل
 X-KDE-Keywords[ast]=Soníu,Volume,Salida,Entrada,Altavoces,Micrófonu,Altavoz,Auriculares,Auricular,Audiu,Música,PulseAudio,Pulsu
 X-KDE-Keywords[az]=Sound,Volume,Output,Input,Speakers,Microphone,Audio,Music,PulseAudio,Pulse,Səs,Səviyyə,Çıxış,Giriş,Səsucaldıcılar,Mikrofon,Musiqi
 X-KDE-Keywords[ca]=So,Volum,Sortida,Entrada,Altaveus,Micròfon,Àudio,Música,PulseAudio,Pulse
