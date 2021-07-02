@@ -58,7 +58,17 @@ void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject *target)
     if (m_stream) {
         pa_stream_set_read_callback(m_stream, nullptr, nullptr);
         pa_stream_set_suspended_callback(m_stream, nullptr, nullptr);
-        pa_stream_disconnect(m_stream);
+        if (pa_stream_get_state(m_stream) == PA_STREAM_CREATING) {
+            pa_stream_set_state_callback(
+                m_stream,
+                [](pa_stream *s, void *) {
+                    pa_stream_disconnect(s);
+                    pa_stream_set_state_callback(s, nullptr, nullptr);
+                },
+                nullptr);
+        } else {
+            pa_stream_disconnect(m_stream);
+        }
         pa_stream_unref(m_stream);
         m_stream = nullptr;
         Q_EMIT availableChanged();
