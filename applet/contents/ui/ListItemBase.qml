@@ -250,7 +250,7 @@ PlasmaComponents.ListItem {
                                 opacity: meter.available && (meter.volume > 0 || animation.running)
                                 VolumeMonitor {
                                     id: meter
-                                    target: slider.visible ? model.PulseObject : null
+                                    target: slider.visible && model.PulseObject ? model.PulseObject : null
                                 }
                                 Behavior on width {
                                     NumberAnimation  {
