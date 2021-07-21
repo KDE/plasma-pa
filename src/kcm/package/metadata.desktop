@@ -91,7 +91,6 @@ X-Plasma-MainScript=ui/main.qml
 X-KDE-ParentApp=kcontrol
 X-KDE-System-Settings-Parent-Category=hardware
 X-KDE-Weight=60
-X-KDE-PluginKeyword=kcm_pulseaudio
 X-DocPath=kcontrol/plasma-pa/index.html
 X-KDE-Keywords=Sound,Volume,Output,Input,Speakers,Microphone,Audio,Music,PulseAudio,Pulse
 X-KDE-Keywords[ar]=صوت,مستوى,خرج,موسيقى,Pulse,سماعات,خرج,إدخال,ميكروفون,مسجل
