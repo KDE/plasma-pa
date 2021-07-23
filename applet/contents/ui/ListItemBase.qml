@@ -185,7 +185,7 @@ PlasmaComponents.ListItem {
                         id: contextMenuButton
                         icon.name: "application-menu"
                         checked: contextMenu.visible && contextMenu.visualParent === this
-                        onClicked: {
+                        onPressed: {
                             contextMenu.visualParent = this;
                             contextMenu.openRelative();
                         }
