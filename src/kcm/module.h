@@ -13,7 +13,7 @@ class KCMPulseAudio : public KQuickAddons::ConfigModule
 {
     Q_OBJECT
 public:
-    KCMPulseAudio(QObject *parent, const QVariantList &args);
+    KCMPulseAudio(QObject *parent, const KPluginMetaData &plugin, const QVariantList &args);
     ~KCMPulseAudio() override;
 
 public Q_SLOTS:

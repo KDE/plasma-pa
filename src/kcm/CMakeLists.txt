@@ -1,12 +1,9 @@
 add_library(kcm_pulseaudio MODULE module.cpp)
 
-target_include_directories(kcm_pulseaudio PRIVATE ${CMAKE_BINARY_DIR})
-
 target_link_libraries(kcm_pulseaudio
     Qt::Quick
     KF5::CoreAddons
     KF5::Declarative
-    KF5::I18n
     KF5::QuickAddons
 )
 
