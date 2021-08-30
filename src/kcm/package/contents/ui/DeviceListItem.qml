@@ -65,13 +65,15 @@ ColumnLayout {
                 var items = [];
                 for (var i = 0; i < ports.length; ++i) {
                     var port = ports[i];
-                    var text = port.description;
+                    var text;
                     if (port.availability == Port.Unavailable) {
                         if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
-                            text += i18ndc("kcm_pulseaudio", "Port is unavailable", " (unavailable)");
+                            text = i18ndc("kcm_pulseaudio", "Port is unavailable", "%1 (unavailable)", port.description);
                         } else {
-                            text += i18ndc("kcm_pulseaudio", "Port is unplugged", " (unplugged)");
+                            text = i18ndc("kcm_pulseaudio", "Port is unplugged", "%1 (unplugged)", port.description);
                         }
+                    } else {
+                        text = port.description;
                     }
                     items.push(text);
                 }
