@@ -104,10 +104,16 @@ Item {
     }
 
     function increaseVolume() {
+        if (globalMute) {
+            disableGlobalMute();
+        }
         changeSpeakerVolume(volumePercentStep);
     }
 
     function decreaseVolume() {
+        if (globalMute) {
+            disableGlobalMute();
+        }
         changeSpeakerVolume(-volumePercentStep);
     }
 
