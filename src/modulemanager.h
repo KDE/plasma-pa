@@ -22,7 +22,7 @@ class ConfigModule;
 class ModuleManager : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool settingsSupported READ settingsSupported CONSTANT)
+    Q_PROPERTY(bool settingsSupported READ settingsSupported NOTIFY serverUpdated)
     Q_PROPERTY(bool combineSinks READ combineSinks WRITE setCombineSinks NOTIFY combineSinksChanged)
     Q_PROPERTY(bool switchOnConnect READ switchOnConnect WRITE setSwitchOnConnect NOTIFY switchOnConnectChanged)
     Q_PROPERTY(bool configModuleLoaded READ configModuleLoaded NOTIFY loadedModulesChanged)
@@ -45,6 +45,7 @@ Q_SIGNALS:
     void combineSinksChanged();
     void switchOnConnectChanged();
     void loadedModulesChanged();
+    void serverUpdated();
 
 private:
     void updateLoadedModules();

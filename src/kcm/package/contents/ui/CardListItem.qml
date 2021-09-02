@@ -16,6 +16,8 @@ ColumnLayout {
     width: parent.width
 
     RowLayout {
+        Layout.fillWidth: true
+
         Kirigami.Icon {
             Layout.alignment: Qt.AlignHCenter
             width: height
@@ -29,16 +31,13 @@ ColumnLayout {
             text: Properties["device.description"] || Name
             elide: Text.ElideRight
         }
-    }
 
-    RowLayout {
         Label {
             id: profileLabel
             text: i18ndc("kcm_pulseaudio", "@label", "Profile:")
-            font.bold: true
         }
+
         ComboBox {
-            Layout.fillWidth: true
             model: Profiles.filter(function (profile) {
                 return profile.availability === Profile.Available;
             })

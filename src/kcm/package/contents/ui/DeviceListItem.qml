@@ -47,38 +47,12 @@ ColumnLayout {
             elide: Text.ElideRight
         }
 
-        Label {
-            id: portLabel
-            visible: portbox.visible
-            text: i18nd("kcm_pulseaudio", "Port:")
-        }
-
-        ComboBox {
-            id: portbox
-            readonly property var ports: Ports
-            visible: portbox.count > 1 && delegate.width - Kirigami.Units.gridUnit * 8 > implicitWidth
-            onModelChanged: currentIndex = ActivePortIndex
-            currentIndex: ActivePortIndex
-            onActivated: ActivePortIndex = index
-
-            onPortsChanged: {
-                var items = [];
-                for (var i = 0; i < ports.length; ++i) {
-                    var port = ports[i];
-                    var text;
-                    if (port.availability == Port.Unavailable) {
-                        if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
-                            text = i18ndc("kcm_pulseaudio", "Port is unavailable", "%1 (unavailable)", port.description);
-                        } else {
-                            text = i18ndc("kcm_pulseaudio", "Port is unplugged", "%1 (unplugged)", port.description);
-                        }
-                    } else {
-                        text = port.description;
-                    }
-                    items.push(text);
-                }
-                model = items;
-            }
+        Button {
+            id: testButton
+            text: i18ndc("kcm_pulseaudio", "Perform an audio test of the device", "Test")
+            icon.name: "audio-speakers-symbolic"
+            visible: isPlayback
+            onClicked: testOverlay.testSink(index);
         }
 
         Button {
@@ -110,6 +84,69 @@ ColumnLayout {
                     return volume !== ChannelVolumes[0];
                 });
             }
+        }
+    }
+
+    RowLayout {
+        Item {
+            Layout.leftMargin: Kirigami.Units.largeSpacing * 3
+            Layout.fillWidth: true
+        }
+
+        Label {
+            id: portLabel
+            visible: portBox.visible
+            text: i18nd("kcm_pulseaudio", "Port:")
+            Layout.leftMargin: Kirigami.Units.largeSpacing * 2
+        }
+
+        ComboBox {
+            id: portBox
+            readonly property var ports: Ports
+            visible: portBox.count > 1
+            onModelChanged: currentIndex = ActivePortIndex
+            currentIndex: ActivePortIndex
+            onActivated: ActivePortIndex = index
+
+            onPortsChanged: {
+                var items = [];
+                for (var i = 0; i < ports.length; ++i) {
+                    var port = ports[i];
+                    var text;
+                    if (port.availability == Port.Unavailable) {
+                        if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
+                            text = i18ndc("kcm_pulseaudio", "Port is unavailable", "%1 (unavailable)", port.description);
+                        } else {
+                            text = i18ndc("kcm_pulseaudio", "Port is unplugged", "%1 (unplugged)", port.description);
+                        }
+                    } else {
+                        text = port.description;
+                    }
+                    items.push(text);
+                }
+                model = items;
+            }
+        }
+
+        Label {
+            id: profileLabel
+            visible: profileBox.visible
+            text: i18ndc("kcm_pulseaudio", "@label", "Profile:")
+            Layout.leftMargin: Kirigami.Units.largeSpacing * 2
+        }
+
+        ComboBox {
+            id: profileBox
+
+            readonly property var card: paCardModel.data(paCardModel.indexOfCardNumber(CardIndex), paCardModel.role("PulseObject"))
+
+            visible: profileBox.count > 1
+            textRole: "description"
+
+            model: card ? card.profiles.filter(profile => profile.availability === Profile.Available) : []
+            currentIndex: card ? model.indexOf(card.profiles[card.activeProfileIndex]) : -1
+
+            onActivated: card.activeProfileIndex = card.profiles.indexOf(model[index])
         }
     }
 
@@ -177,5 +214,11 @@ ColumnLayout {
                 }
             }
         }
+    }
+
+    Kirigami.Separator {
+        visible: (delegate.ListView.view.count != 0) && (delegate.ListView.view.count != (index + 1))
+        Layout.topMargin: delegate.ListView.view.spacing - delegate.spacing
+        Layout.fillWidth: true
     }
 }

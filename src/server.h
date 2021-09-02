@@ -37,6 +37,7 @@ public:
 Q_SIGNALS:
     void defaultSinkChanged(Sink *sink);
     void defaultSourceChanged(Source *source);
+    void updated();
 
 private:
     void updateDefaultDevices();
