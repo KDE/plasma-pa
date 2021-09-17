@@ -232,6 +232,8 @@ PlasmaComponents.ListItem {
 
                         Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
 
+                        handle.clip: true // prevents a visual glitch, BUG 434927
+
                         background:  PlasmaCore.FrameSvgItem {
                             imagePath: "widgets/slider"
                             prefix: "groove"
@@ -248,6 +250,7 @@ PlasmaComponents.ListItem {
                                 width: Math.max(margins.left + margins.right, slider.handle.x * meter.volume)
                                 height: Math.max(margins.top + margins.bottom, parent.height)
                                 opacity: meter.available && (meter.volume > 0 || animation.running)
+                                clip: true // prevents a visual glitch, BUG 434927
                                 VolumeMonitor {
                                     id: meter
                                     target: slider.visible && model.PulseObject ? model.PulseObject : null
