@@ -23,6 +23,8 @@ ColumnLayout {
 
     opacity: (Ports.length === 1 && Ports[0].availability == Port.Unavailable) ? 0.5 : 1
 
+    property var pulseObject: model.PulseObject
+
     RowLayout {
         spacing: Kirigami.Units.smallSpacing
         Layout.fillWidth: true
@@ -75,7 +77,7 @@ ColumnLayout {
                 // NOTE "ChannelVolumes = volumes" does not work as the
                 // AbstractModel does not have the magic JS Array to Qt List
                 // conversion stuff and only sees our Array as a QJSValue
-                PulseObject.channelVolumes = volumes;
+                delegate.pulseObject.channelVolumes = volumes;
             }
 
             // Default to individual mode when a channel has a different volume
@@ -202,7 +204,7 @@ ColumnLayout {
 
                     value: ChannelVolumes[index]
                     onMoved: {
-                        PulseObject.setChannelVolume(index, value);
+                        delegate.pulseObject.setChannelVolume(index, value);
 
                         // volumes are updated async, so we'll just assume it worked here
                         let newChannelVolumes = ChannelVolumes;
