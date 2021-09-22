@@ -83,6 +83,8 @@ void Sink::testChannel(const QString &name)
         return;
     }
 
+    ca_context_set_driver(context, "pulse");
+
     char dev[64];
     snprintf(dev, sizeof(dev), "%lu", (unsigned long)m_index);
     ca_context_change_device(context, dev);
