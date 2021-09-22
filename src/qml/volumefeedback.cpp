@@ -12,7 +12,7 @@ VolumeFeedback::VolumeFeedback(QObject *parent)
     : QObject(parent)
 {
     QPulseAudio::CanberraContext::instance()->ref();
-    if (ca_context_set_driver(QPulseAudio::CanberraContext::instance()->canberra(), "pulse") < 0) {
+    if (ca_context_set_driver(QPulseAudio::CanberraContext::instance()->canberra(), "pulse") != CA_SUCCESS) {
         return;
     }
 }

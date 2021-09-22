@@ -99,10 +99,10 @@ void Sink::testChannel(const QString &name)
     ca_proplist_sets(proplist, CA_PROP_CANBERRA_ENABLE, "1");
 
     ca_proplist_sets(proplist, CA_PROP_EVENT_ID, sound_name.toLatin1().data());
-    if (ca_context_play_full(context, 0, proplist, nullptr, NULL) < 0) {
+    if (ca_context_play_full(context, 0, proplist, nullptr, NULL) != CA_SUCCESS) {
         // Try a different sound name.
         ca_proplist_sets(proplist, CA_PROP_EVENT_ID, "audio-test-signal");
-        if (ca_context_play_full(context, 0, proplist, nullptr, NULL) < 0) {
+        if (ca_context_play_full(context, 0, proplist, nullptr, NULL) != CA_SUCCESS) {
             // Finaly try this... if this doesn't work, then stuff it.
             ca_proplist_sets(proplist, CA_PROP_EVENT_ID, "bell-window-system");
             ca_context_play_full(context, 0, proplist, nullptr, NULL);
