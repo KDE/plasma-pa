@@ -8,8 +8,7 @@ import QtQuick 2.2
 import QtQuick.Layouts 1.0
 
 import org.kde.plasma.core 2.1 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents // PC3 TabBar/TabButton need work first
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.components 3.0 as PC3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
 import org.kde.kquickcontrolsaddons 2.0 as KQCAddons
@@ -409,7 +408,7 @@ Item {
         imagePath: "widgets/line"
     }
 
-    Plasmoid.fullRepresentation: PlasmaComponents3.Page {
+    Plasmoid.fullRepresentation: PC3.Page {
         Layout.preferredHeight: main.Layout.preferredHeight
         Layout.preferredWidth: main.Layout.preferredWidth
 
@@ -421,11 +420,11 @@ Item {
             }
 
             devicesLine.visible = false;
-            tabBar.currentTab = devicesTab;
+            tabBar.currentIndex = devicesTab.PC3.TabBar.index;
         }
 
         function endMoveStream() {
-            tabBar.currentTab = streamsTab;
+            tabBar.currentIndex = streamsTab.PC3.TabBar.index;
 
             sourceView.visible = true;
             devicesLine.visible = true;
@@ -441,44 +440,43 @@ Item {
             RowLayout {
                 anchors.fill: parent
 
-                PlasmaComponents.TabBar {
+                PC3.TabBar {
                     id: tabBar
                     Layout.fillWidth: true
-                    activeFocusOnTab: true
-                    tabPosition: Qt.TopEdge
+                    Layout.fillHeight: true
 
-                    currentTab: {
+                    currentIndex: {
                         switch (plasmoid.configuration.currentTab) {
                         case "devices":
-                            return devicesTab;
+                            return devicesTab.PC3.TabBar.index;
                         case "streams":
-                            return streamsTab;
+                            return streamsTab.PC3.TabBar.index;
                         }
                     }
 
-                    onCurrentTabChanged: {
-                        switch (currentTab) {
-                        case devicesTab:
+                    onCurrentIndexChanged: {
+                        switch (currentIndex) {
+                        case devicesTab.PC3.TabBar.index:
                             plasmoid.configuration.currentTab = "devices";
                             break;
-                        case streamsTab:
+                        case streamsTab.PC3.TabBar.index:
                             plasmoid.configuration.currentTab = "streams";
                             break;
                         }
                     }
 
-                    PlasmaComponents.TabButton {
+                    PC3.TabButton {
                         id: devicesTab
                         text: i18n("Devices")
                     }
 
-                    PlasmaComponents.TabButton {
+                    PC3.TabButton {
                         id: streamsTab
                         text: i18n("Applications")
                     }
                 }
 
-                PlasmaComponents3.ToolButton {
+                PC3.ToolButton {
                     id: globalMuteCheckbox
 
                     visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
@@ -494,19 +492,19 @@ Item {
                     checked: globalMute
 
                     Accessible.name: i18n("Force mute all playback devices")
-                    PlasmaComponents3.ToolTip {
+                    PC3.ToolTip {
                         text: i18n("Force mute all playback devices")
                     }
                 }
 
-                PlasmaComponents3.ToolButton {
+                PC3.ToolButton {
                     visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
 
                     icon.name: "configure"
                     onClicked: plasmoid.action("configure").trigger()
 
                     Accessible.name: plasmoid.action("configure").text
-                    PlasmaComponents3.ToolTip {
+                    PC3.ToolTip {
                         text: plasmoid.action("configure").text
                     }
                 }
@@ -531,7 +529,7 @@ Item {
                 ColumnLayout {
                     id: streamsView
                     spacing: 0
-                    visible: tabBar.currentTab == streamsTab
+                    visible: tabBar.currentItem === streamsTab
                     property int maximumWidth: scrollView.viewport.width
                     width: maximumWidth
                     Layout.maximumWidth: maximumWidth
@@ -590,7 +588,7 @@ Item {
 
                 ColumnLayout {
                     id: devicesView
-                    visible: tabBar.currentTab == devicesTab
+                    visible: tabBar.currentItem === devicesTab
                     property int maximumWidth: scrollView.viewport.width
                     width: maximumWidth
                     Layout.maximumWidth: maximumWidth
@@ -664,7 +662,7 @@ Item {
         footer: PlasmaExtras.PlasmoidHeading {
             height: parent.header.height
             location: PlasmaExtras.PlasmoidHeading.Location.Footer
-            PlasmaComponents3.CheckBox {
+            PC3.CheckBox {
                 id: raiseMaximumVolumeCheckbox
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter

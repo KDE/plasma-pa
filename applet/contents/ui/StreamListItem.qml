@@ -42,7 +42,7 @@ ListItemBase {
         return "";
     }
 
-    icon: {
+    iconSource: {
         if (IconName.length !== 0) {
             return IconName
         }
