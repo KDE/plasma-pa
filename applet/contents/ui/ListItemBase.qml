@@ -218,7 +218,8 @@ PC3.ItemDelegate {
 
                     Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
 
-                    handle.clip: true // prevents a visual glitch, BUG 434927
+                    // Prevents the groove from showing through the handle
+                    layer.enabled: opacity < 1
 
                     background:  PlasmaCore.FrameSvgItem {
                         imagePath: "widgets/slider"
