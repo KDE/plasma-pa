@@ -221,13 +221,24 @@ PC3.ItemDelegate {
                     // Prevents the groove from showing through the handle
                     layer.enabled: opacity < 1
 
-                    background:  PlasmaCore.FrameSvgItem {
+                    background: PlasmaCore.FrameSvgItem {
                         imagePath: "widgets/slider"
                         prefix: "groove"
                         width: parent.availableWidth
                         height: margins.top + margins.bottom
                         anchors.centerIn: parent
                         scale: parent.mirrored ? -1 : 1
+
+                        PlasmaCore.FrameSvgItem {
+                            imagePath: "widgets/slider"
+                            prefix: "groove-highlight"
+                            width: slider.visualPosition * slider.availableWidth
+                            height: parent.height
+                            anchors.left: parent.left
+                            anchors.verticalCenter: parent.verticalCenter
+                            opacity: 0.5
+                            scale: parent.mirrored ? -1 : 1
+                        }
 
                         PlasmaCore.FrameSvgItem {
                             imagePath: "widgets/slider"
