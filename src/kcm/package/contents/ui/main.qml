@@ -353,6 +353,11 @@ ScrollViewKCM {
 
             }
 
+            SpeakerTest {
+                id: tester
+                sink: testOverlay.sinkObject
+            }
+
             Repeater {
                 model: testOverlay.sinkObject && testOverlay.sinkObject.rawChannels
 
@@ -365,7 +370,7 @@ ScrollViewKCM {
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 10
                     Layout.preferredHeight: Kirigami.Units.gridUnit * 2
                     // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
-                    onClicked: testOverlay.sinkObject.testChannel(modelData === "lfe" ? "rear-center" : modelData)
+                    onClicked: tester.testChannel(modelData === "lfe" ? "rear-center" : modelData)
                 }
             }
         }

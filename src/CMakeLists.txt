@@ -24,6 +24,7 @@ set(cpp_SRCS
     streamrestore.cpp
     module.cpp
     canberracontext.cpp
+    speakertest.cpp
     qml/globalactioncollection.cpp
     qml/listitemmenu.cpp
     qml/plugin.cpp
