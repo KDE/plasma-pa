@@ -37,6 +37,8 @@ static QJSValue pulseaudio_singleton(QQmlEngine *engine, QJSEngine *scriptEngine
 
 void Plugin::registerTypes(const char *uri)
 {
+    QPulseAudio::Context::setApplicationId(QStringLiteral("org.kde.plasma-pa"));
+
     qmlRegisterType<QPulseAudio::CardModel>(uri, 0, 1, "CardModel");
     qmlRegisterType<QPulseAudio::SinkModel>(uri, 0, 1, "SinkModel");
     qmlRegisterType<QPulseAudio::SinkInputModel>(uri, 0, 1, "SinkInputModel");

@@ -112,6 +112,8 @@ public:
     void setDefaultSource(const QString &name);
     void streamRestoreWrite(const pa_ext_stream_restore_info *info);
 
+    static void setApplicationId(const QString &applicationId);
+
     template<typename PAFunction>
     void setGenericVolume(quint32 index, int channel, qint64 newVolume, pa_cvolume cVolume, PAFunction pa_set_volume)
     {
@@ -213,6 +215,7 @@ private:
 
     int m_references;
     static Context *s_context;
+    static QString s_applicationId;
 };
 
 } // QPulseAudio
