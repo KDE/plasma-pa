@@ -31,10 +31,13 @@ public:
 
     void switchStreams() override;
 
-    quint32 sourceIndex() const override;
+    quint32 monitorIndex() const;
+
+Q_SIGNALS:
+    void monitorIndexChanged();
 
 private:
-    quint32 m_sourceIndex = -1;
+    quint32 m_monitorIndex = -1;
 };
 
 } // QPulseAudio

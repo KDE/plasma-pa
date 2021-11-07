@@ -73,9 +73,4 @@ void Source::switchStreams()
     });
 }
 
-quint32 Source::sourceIndex() const
-{
-    return index();
-}
-
 } // QPulseAudio

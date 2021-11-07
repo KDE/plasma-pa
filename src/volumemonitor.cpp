@@ -10,6 +10,10 @@
 
 #include "context.h"
 #include "debug.h"
+#include "sink.h"
+#include "sinkinput.h"
+#include "source.h"
+#include "sourceoutput.h"
 #include "volumeobject.h"
 
 #include <QtGlobal>
@@ -90,8 +94,25 @@ void VolumeMonitor::createStream()
 {
     Q_ASSERT(!m_stream);
 
-    uint32_t sourceIdx = m_target->sourceIndex();
-    uint32_t streamIdx = m_target->streamIndex();
+    uint32_t sourceIdx = PA_INVALID_INDEX;
+    uint32_t streamIdx = PA_INVALID_INDEX;
+
+    if (auto *sinkInput = qobject_cast<SinkInput *>(m_target)) {
+        Sink *sink = Context::instance()->sinks().data().value(sinkInput->deviceIndex());
+        if (sink) {
+            sourceIdx = sink->monitorIndex();
+        }
+        streamIdx = sinkInput->index();
+    } else if (auto *sourceOutput = qobject_cast<SourceOutput *>(m_target)) {
+        sourceIdx = sourceOutput->deviceIndex();
+        streamIdx = sourceOutput->index();
+    } else if (auto *sink = qobject_cast<Sink *>(m_target)) {
+        sourceIdx = sink->monitorIndex();
+    } else if (auto *source = qobject_cast<Source *>(m_target)) {
+        sourceIdx = source->index();
+    } else {
+        Q_UNREACHABLE();
+    }
 
     if (sourceIdx == PA_INVALID_INDEX) {
         return;
