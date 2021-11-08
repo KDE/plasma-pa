@@ -661,11 +661,11 @@ Item {
 
         footer: PlasmaExtras.PlasmoidHeading {
             height: parent.header.height
-            PC3.CheckBox {
+            contentItem: PC3.CheckBox {
                 id: raiseMaximumVolumeCheckbox
-                anchors.left: parent.left
-                anchors.leftMargin: PlasmaCore.Units.smallSpacing
-                anchors.verticalCenter: parent.verticalCenter
+
+                leftPadding: PlasmaCore.Units.smallSpacing
+                rightPadding: PlasmaCore.Units.smallSpacing
 
                 checked: plasmoid.configuration.raiseMaximumVolume
                 onToggled: {
