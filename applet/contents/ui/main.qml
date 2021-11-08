@@ -413,9 +413,9 @@ Item {
         Layout.preferredWidth: main.Layout.preferredWidth
 
         function beginMoveStream(type, stream) {
-            if (type == "sink") {
+            if (type === "sink") {
                 sourceView.visible = false;
-            } else if (type == "source") {
+            } else if (type === "source") {
                 sinkView.visible = false;
             }
 
@@ -647,14 +647,14 @@ Item {
         PlasmaExtras.PlaceholderMessage {
             width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
             anchors.centerIn: parent
-            visible: text.length != 0
+            visible: text.length !== 0
             text: {
                 if (streamsView.visible && !sinkInputView.count && !sourceOutputView.count) {
-                    return i18n("No applications playing or recording audio")
+                    return i18n("No applications playing or recording audio");
                 } else if (devicesView.visible && !sinkView.count && !sourceView.count) {
-                    return i18n("No output or input devices found")
+                    return i18n("No output or input devices found");
                 } else {
-                    return ""
+                    return "";
                 }
             }
         }
@@ -705,7 +705,7 @@ Item {
 
         plasmoid.setAction("forceMute", i18n("Force mute all playback devices"), "audio-volume-muted");
         plasmoid.action("forceMute").checkable = true;
-        plasmoid.action("forceMute").checked = Qt.binding(() => {return globalMute;});
+        plasmoid.action("forceMute").checked = Qt.binding(() => globalMute);
 
         // FIXME only while Multi-page KCMs are broken when embedded in plasmoid config
         plasmoid.setAction("openKcm", i18n("&Configure Audio Devices…"), "audio-volume-high");

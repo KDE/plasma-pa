@@ -24,12 +24,13 @@ PC3.ItemDelegate {
     property alias draggable: dragMouseArea.enabled
     property alias iconSource: clientIcon.source
     property alias iconUsesPlasmaTheme: clientIcon.usesPlasmaTheme
-    property string type
+    // TODO: convert to a proper enum?
+    property string /* "sink" | "sink-input" | "source" | "source-output" */ type
     property string fullNameToShowOnHover: ""
 
     highlighted: dropArea.containsDrag
     background.visible: highlighted
-    opacity: (draggedStream && draggedStream.deviceIndex == Index) ? 0.3 : 1.0
+    opacity: (draggedStream && draggedStream.deviceIndex === Index) ? 0.3 : 1.0
 
     ListView.delayRemove: clientIcon.Drag.active
 
@@ -43,10 +44,10 @@ PC3.ItemDelegate {
             implicitHeight: PlasmaCore.Units.iconSizes.medium
             implicitWidth: implicitHeight
             source: "unknown"
-            visible: type === "sink-input" || type === "source-output"
+            visible: item.type === "sink-input" || item.type === "source-output"
 
             onSourceChanged: {
-                if (!valid && source != "unknown") {
+                if (!valid && source !== "unknown") {
                     source = "unknown";
                 }
             }
@@ -62,8 +63,8 @@ PC3.ItemDelegate {
                 visible: valid && Corked
 
                 PC3.ToolTip.visible: visible && dragMouseArea.containsMouse
-                PC3.ToolTip.text: item.type === "source-output" ?
-                    i18n("Currently not recording")
+                PC3.ToolTip.text: item.type === "source-output"
+                    ? i18n("Currently not recording")
                     : i18n("Currently not playing")
                 PC3.ToolTip.delay: 700
             }
@@ -80,16 +81,16 @@ PC3.ItemDelegate {
                     Muted = !Muted;
                 }
                 onPressed: if (mouse.button === Qt.LeftButton) {
-                    clientIcon.grabToImage((result) => {
-                        return clientIcon.Drag.imageSource = result.url
-                    })
+                    clientIcon.grabToImage(result => {
+                        clientIcon.Drag.imageSource = result.url;
+                    });
                 }
             }
             Drag.active: dragMouseArea.drag.active
             Drag.dragType: Drag.Automatic
             Drag.onDragStarted: {
                 draggedStream = model.PulseObject;
-                beginMoveStream(type == "sink-input" ? "sink" : "source");
+                beginMoveStream(item.type === "sink-input" ? "sink" : "source");
             }
             Drag.onDragFinished: {
                 draggedStream = null;
@@ -113,7 +114,7 @@ PC3.ItemDelegate {
                     Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                     spacing: PlasmaCore.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                     checked: model.PulseObject.hasOwnProperty("default") ? model.PulseObject.default : false
-                    visible: (type == "sink" && sinkView.model.count > 1) || (type == "source" && sourceView.model.count > 1)
+                    visible: (item.type === "sink" && sinkView.model.count > 1) || (item.type === "source" && sourceView.model.count > 1)
                     onClicked: model.PulseObject.default = true;
                 }
 
@@ -186,7 +187,7 @@ PC3.ItemDelegate {
             RowLayout {
                 SmallToolButton {
                     id: muteButton
-                    readonly property bool isPlayback: type.substring(0, 4) == "sink"
+                    readonly property bool isPlayback: item.type.startsWith("sink")
                     icon.name: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                     onClicked: Muted = !Muted
                     checked: Muted
@@ -205,7 +206,7 @@ PC3.ItemDelegate {
                     // changes trigger volume changes trigger value changes.
                     property int volume: Volume
                     property bool ignoreValueChange: true
-                    readonly property bool forceRaiseMaxVolume: (raiseMaximumVolumeCheckbox.checked && (type === "sink" || type === "source"))
+                    readonly property bool forceRaiseMaxVolume: (raiseMaximumVolumeCheckbox.checked && (item.type === "sink" || item.type === "source"))
                                                                 || volume >= PulseAudio.NormalVolume * 1.01
 
                     Layout.fillWidth: true
@@ -277,7 +278,7 @@ PC3.ItemDelegate {
                     onValueChanged: {
                         if (!ignoreValueChange) {
                             Volume = value;
-                            Muted = value == 0;
+                            Muted = value === 0;
 
                             if (!pressed) {
                                 updateTimer.restart();
@@ -294,7 +295,7 @@ PC3.ItemDelegate {
                             // still at v15 (e.g.).
                             updateTimer.restart();
 
-                            if (type == "sink") {
+                            if (type === "sink") {
                                 playFeedback(Index);
                             }
                         }
@@ -385,9 +386,9 @@ PC3.ItemDelegate {
             }
         }
         sourceModel: {
-            if (item.type.includes("sink")) {
+            if (item.type.startsWith("sink")) {
                 return sinkView.model;
-            } else if (item.type.includes("source")) {
+            } else if (item.type.startsWith("source")) {
                 return sourceView.model;
             }
         }
