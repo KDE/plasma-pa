@@ -665,6 +665,7 @@ Item {
             PC3.CheckBox {
                 id: raiseMaximumVolumeCheckbox
                 anchors.left: parent.left
+                anchors.leftMargin: PlasmaCore.Units.smallSpacing
                 anchors.verticalCenter: parent.verticalCenter
 
                 checked: plasmoid.configuration.raiseMaximumVolume
