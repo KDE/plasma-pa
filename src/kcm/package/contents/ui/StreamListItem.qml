@@ -72,6 +72,7 @@ ColumnLayout {
                     id: volumeSlider
                     Layout.alignment: Qt.AlignTop
 
+                    visible: HasVolume
                     value: Volume
                     onMoved: {
                         Volume = value;

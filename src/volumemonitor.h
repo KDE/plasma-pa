@@ -10,12 +10,12 @@
 #include <QPointer>
 #include <QQmlParserStatus>
 
+#include <PulseAudioQt/VolumeObject>
+
 struct pa_stream;
 
 namespace QPulseAudio
 {
-class VolumeObject;
-
 /**
  * This class provides a way to see the "peak" volume currently playing of any VolumeObject
  */
@@ -27,7 +27,7 @@ class VolumeMonitor : public QObject
      * This is the "PulseObject" role of any SinkInput, Sink or Output model
      * Setting to null will stop streaming
      */
-    Q_PROPERTY(QPulseAudio::VolumeObject *target READ target WRITE setTarget NOTIFY targetChanged)
+    Q_PROPERTY(PulseAudioQt::VolumeObject *target READ target WRITE setTarget NOTIFY targetChanged)
     /**
      * The peak output for the volume at any given moment
      * Value is normalised between 0 and 1
@@ -45,8 +45,8 @@ public:
 
     bool isAvailable() const;
 
-    VolumeObject *target() const;
-    void setTarget(VolumeObject *target);
+    PulseAudioQt::VolumeObject *target() const;
+    void setTarget(PulseAudioQt::VolumeObject *target);
 
 Q_SIGNALS:
     void volumeChanged();
@@ -59,7 +59,7 @@ private:
     static void read_callback(pa_stream *s, size_t length, void *userdata);
     static void suspended_callback(pa_stream *s, void *userdata);
 
-    VolumeObject *m_target;
+    PulseAudioQt::VolumeObject *m_target;
     pa_stream *m_stream = nullptr;
 
     qreal m_volume = 0;

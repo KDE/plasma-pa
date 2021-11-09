@@ -7,21 +7,21 @@
 
 #pragma once
 
-#include "sink.h"
+#include <PulseAudioQt/Sink>
 
 #include <QObject>
 
 class SpeakerTest : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QPulseAudio::Sink *sink READ sink WRITE setSink NOTIFY sinkChanged)
+    Q_PROPERTY(PulseAudioQt::Sink *sink READ sink WRITE setSink NOTIFY sinkChanged)
 public:
-    QPulseAudio::Sink *sink() const;
-    void setSink(QPulseAudio::Sink *sink);
+    PulseAudioQt::Sink *sink() const;
+    void setSink(PulseAudioQt::Sink *sink);
     Q_SIGNAL void sinkChanged();
 
     Q_INVOKABLE void testChannel(const QString &name);
 
 private:
-    QPulseAudio::Sink *m_sink;
+    PulseAudioQt::Sink *m_sink;
 };

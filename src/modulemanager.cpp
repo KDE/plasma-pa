@@ -5,9 +5,13 @@
 */
 
 #include "modulemanager.h"
+
+#include <QVector>
+
+#include <PulseAudioQt/Module>
+#include <PulseAudioQt/Server>
+
 #include "../config.h"
-#include "module.h"
-#include "server.h"
 
 #if USE_GSETTINGS
 #include "gsettingsitem.h"
@@ -22,8 +26,6 @@
 
 #include <QTimer>
 
-namespace QPulseAudio
-{
 #if USE_GCONF || USE_GSETTINGS
 
 #if USE_GSETTINGS
@@ -88,14 +90,14 @@ ModuleManager::ModuleManager(QObject *parent)
     connect(m_deviceManager, &ConfigModule::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
 #endif
 
-    connect(Context::instance()->server(), &Server::updated, this, &ModuleManager::serverUpdated);
+    connect(PulseAudioQt::Context::instance()->server(), &PulseAudioQt::Server::isPipeWireChanged, this, &ModuleManager::isPipeWireChanged);
 
     QTimer *updateModulesTimer = new QTimer(this);
     updateModulesTimer->setInterval(500);
     updateModulesTimer->setSingleShot(true);
     connect(updateModulesTimer, &QTimer::timeout, this, &ModuleManager::updateLoadedModules);
-    connect(&Context::instance()->modules(), &MapBaseQObject::added, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));
-    connect(&Context::instance()->modules(), &MapBaseQObject::removed, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));
+    connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::moduleAdded, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));
+    connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::moduleRemoved, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));
     updateLoadedModules();
 }
 
@@ -106,7 +108,7 @@ bool ModuleManager::settingsSupported() const
     // PipeWire does not (yet) have support for module-switch-on-connect and module-combine-sink
     // Also switching streams is the default there
     // TODO Check whether there is a PipeWire-specific way to do these
-    if (Context::instance()->server()->isPipeWire()) {
+    if (PulseAudioQt::Context::instance()->server()->isPipeWire()) {
         return false;
     }
 
@@ -167,8 +169,8 @@ QStringList ModuleManager::loadedModules() const
 void ModuleManager::updateLoadedModules()
 {
     m_loadedModules.clear();
-    const auto modules = Context::instance()->modules().data();
-    for (Module *module : modules) {
+    const auto modules = PulseAudioQt::Context::instance()->modules();
+    for (PulseAudioQt::Module *module : modules) {
         m_loadedModules.append(module->name());
     }
     Q_EMIT loadedModulesChanged();
@@ -188,5 +190,4 @@ QString ModuleManager::configModuleName() const
 #else
     return QString();
 #endif
-}
 }

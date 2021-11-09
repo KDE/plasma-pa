@@ -9,12 +9,12 @@
 
 #include "canberracontext.h"
 
-QPulseAudio::Sink *SpeakerTest::sink() const
+PulseAudioQt::Sink *SpeakerTest::sink() const
 {
     return m_sink;
 }
 
-void SpeakerTest::setSink(QPulseAudio::Sink *sink)
+void SpeakerTest::setSink(PulseAudioQt::Sink *sink)
 {
     if (m_sink != sink) {
         m_sink = sink;

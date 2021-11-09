@@ -9,20 +9,16 @@
 
 #include <QString>
 
-#include <pulse/introspect.h>
-
-#include "context.h"
+#include <PulseAudioQt/Context>
 // Properties need fully qualified classes even with pointers.
-#include "client.h"
+#include <PulseAudioQt/Client>
 
-namespace QPulseAudio
-{
 class ConfigModule;
 
 class ModuleManager : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool settingsSupported READ settingsSupported NOTIFY serverUpdated)
+    Q_PROPERTY(bool settingsSupported READ settingsSupported NOTIFY isPipeWireChanged)
     Q_PROPERTY(bool combineSinks READ combineSinks WRITE setCombineSinks NOTIFY combineSinksChanged)
     Q_PROPERTY(bool switchOnConnect READ switchOnConnect WRITE setSwitchOnConnect NOTIFY switchOnConnectChanged)
     Q_PROPERTY(bool configModuleLoaded READ configModuleLoaded NOTIFY loadedModulesChanged)
@@ -45,7 +41,7 @@ Q_SIGNALS:
     void combineSinksChanged();
     void switchOnConnectChanged();
     void loadedModulesChanged();
-    void serverUpdated();
+    void isPipeWireChanged();
 
 private:
     void updateLoadedModules();
@@ -55,7 +51,5 @@ private:
     ConfigModule *m_deviceManager;
     QStringList m_loadedModules;
 };
-
-} // QPulseAudio
 
 #endif // STREAM_H

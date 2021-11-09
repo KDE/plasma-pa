@@ -8,13 +8,14 @@
 
 #include <pulse/pulseaudio.h>
 
-#include "context.h"
 #include "debug.h"
-#include "sink.h"
-#include "sinkinput.h"
-#include "source.h"
-#include "sourceoutput.h"
-#include "volumeobject.h"
+
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Sink>
+#include <PulseAudioQt/SinkInput>
+#include <PulseAudioQt/Source>
+#include <PulseAudioQt/SourceOutput>
+#include <PulseAudioQt/VolumeObject>
 
 #include <QtGlobal>
 
@@ -23,13 +24,11 @@ using namespace QPulseAudio;
 VolumeMonitor::VolumeMonitor(QObject *parent)
     : QObject(parent)
 {
-    Context::instance()->ref();
 }
 
 VolumeMonitor::~VolumeMonitor()
 {
     setTarget(nullptr);
-    Context::instance()->unref();
 }
 
 bool VolumeMonitor::isAvailable() const
@@ -48,12 +47,12 @@ void VolumeMonitor::updateVolume(qreal volume)
     Q_EMIT volumeChanged();
 }
 
-QPulseAudio::VolumeObject *QPulseAudio::VolumeMonitor::target() const
+PulseAudioQt::VolumeObject *QPulseAudio::VolumeMonitor::target() const
 {
     return m_target;
 }
 
-void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject *target)
+void QPulseAudio::VolumeMonitor::setTarget(PulseAudioQt::VolumeObject *target)
 {
     if (target == m_target) {
         return;
@@ -97,18 +96,23 @@ void VolumeMonitor::createStream()
     uint32_t sourceIdx = PA_INVALID_INDEX;
     uint32_t streamIdx = PA_INVALID_INDEX;
 
-    if (auto *sinkInput = qobject_cast<SinkInput *>(m_target)) {
-        Sink *sink = Context::instance()->sinks().data().value(sinkInput->deviceIndex());
-        if (sink) {
-            sourceIdx = sink->monitorIndex();
+    if (auto *sinkInput = qobject_cast<PulseAudioQt::SinkInput *>(m_target)) {
+        const auto sinks = PulseAudioQt::Context::instance()->sinks();
+
+        auto sink = std::find_if(sinks.begin(), sinks.end(), [sinkInput](auto *s) {
+            return s->index() == sinkInput->deviceIndex();
+        });
+
+        if (sink != sinks.end()) {
+            sourceIdx = (*sink)->monitorIndex();
         }
         streamIdx = sinkInput->index();
-    } else if (auto *sourceOutput = qobject_cast<SourceOutput *>(m_target)) {
+    } else if (auto *sourceOutput = qobject_cast<PulseAudioQt::SourceOutput *>(m_target)) {
         sourceIdx = sourceOutput->deviceIndex();
         streamIdx = sourceOutput->index();
-    } else if (auto *sink = qobject_cast<Sink *>(m_target)) {
+    } else if (auto *sink = qobject_cast<PulseAudioQt::Sink *>(m_target)) {
         sourceIdx = sink->monitorIndex();
-    } else if (auto *source = qobject_cast<Source *>(m_target)) {
+    } else if (auto *source = qobject_cast<PulseAudioQt::Source *>(m_target)) {
         sourceIdx = source->index();
     } else {
         Q_UNREACHABLE();
@@ -133,7 +137,7 @@ void VolumeMonitor::createStream()
 
     snprintf(t, sizeof(t), "%u", sourceIdx);
 
-    if (!(m_stream = pa_stream_new(Context::instance()->context(), "PlasmaPA-VolumeMeter", &ss, nullptr))) {
+    if (!(m_stream = pa_stream_new(PulseAudioQt::Context::instance()->context(), "PlasmaPA-VolumeMeter", &ss, nullptr))) {
         qCWarning(PLASMAPA) << "Failed to create stream";
         return;
     }

@@ -6,6 +6,8 @@
 
 #include "listitemmenu.h"
 
+#include "debug.h"
+
 #include <QAbstractItemModel>
 #include <QMenu>
 #include <QQuickItem>
@@ -14,15 +16,14 @@
 
 #include <KLocalizedString>
 
-#include "card.h"
-#include "debug.h"
-#include "device.h"
-#include "port.h"
-#include "pulseaudio.h"
-#include "pulseobject.h"
-#include "stream.h"
-
-using namespace QPulseAudio;
+#include <PulseAudioQt/Card>
+#include <PulseAudioQt/Device>
+#include <PulseAudioQt/Port>
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Models>
+#include <PulseAudioQt/PulseObject>
+#include <PulseAudioQt/SinkInput>
+#include <PulseAudioQt/Stream>
 
 static const auto s_offProfile = QLatin1String("off");
 
@@ -57,12 +58,12 @@ void ListItemMenu::setItemType(ItemType itemType)
     }
 }
 
-QPulseAudio::PulseObject *ListItemMenu::pulseObject() const
+PulseAudioQt::PulseObject *ListItemMenu::pulseObject() const
 {
     return m_pulseObject.data();
 }
 
-void ListItemMenu::setPulseObject(QPulseAudio::PulseObject *pulseObject)
+void ListItemMenu::setPulseObject(PulseAudioQt::PulseObject *pulseObject)
 {
     if (m_pulseObject.data() != pulseObject) {
         // TODO is Qt clever enough to catch the disconnect from base class?
@@ -72,9 +73,9 @@ void ListItemMenu::setPulseObject(QPulseAudio::PulseObject *pulseObject)
 
         m_pulseObject = pulseObject;
 
-        if (auto *device = qobject_cast<QPulseAudio::Device *>(m_pulseObject.data())) {
-            connect(device, &Device::activePortIndexChanged, this, &ListItemMenu::update);
-            connect(device, &Device::portsChanged, this, &ListItemMenu::update);
+        if (auto *device = qobject_cast<PulseAudioQt::Device *>(m_pulseObject.data())) {
+            connect(device, &PulseAudioQt::Device::activePortIndexChanged, this, &ListItemMenu::update);
+            connect(device, &PulseAudioQt::Device::portsChanged, this, &ListItemMenu::update);
         }
 
         update();
@@ -109,12 +110,12 @@ void ListItemMenu::setSourceModel(QAbstractItemModel *sourceModel)
     Q_EMIT sourceModelChanged();
 }
 
-QPulseAudio::CardModel *ListItemMenu::cardModel() const
+PulseAudioQt::CardModel *ListItemMenu::cardModel() const
 {
     return m_cardModel.data();
 }
 
-void ListItemMenu::setCardModel(QPulseAudio::CardModel *cardModel)
+void ListItemMenu::setCardModel(PulseAudioQt::CardModel *cardModel)
 {
     if (m_cardModel.data() == cardModel) {
         return;
@@ -129,11 +130,14 @@ void ListItemMenu::setCardModel(QPulseAudio::CardModel *cardModel)
         const int profilesRole = m_cardModel->role("Profiles");
         Q_ASSERT(profilesRole > -1);
 
-        connect(m_cardModel, &CardModel::dataChanged, this, [this, profilesRole](const QModelIndex &, const QModelIndex &, const QVector<int> &roles) {
-            if (roles.isEmpty() || roles.contains(profilesRole)) {
-                update();
-            }
-        });
+        connect(m_cardModel,
+                &PulseAudioQt::CardModel::dataChanged,
+                this,
+                [this, profilesRole](const QModelIndex &, const QModelIndex &, const QVector<int> &roles) {
+                    if (roles.isEmpty() || roles.contains(profilesRole)) {
+                        update();
+                    }
+                });
     }
 
     update();
@@ -178,15 +182,15 @@ bool ListItemMenu::checkHasContent()
         return true;
     }
 
-    auto *device = qobject_cast<QPulseAudio::Device *>(m_pulseObject.data());
+    auto *device = qobject_cast<PulseAudioQt::Device *>(m_pulseObject.data());
 
     if (device) {
         const auto ports = device->ports();
         if (ports.length() > 1) {
             // In case an unavailable port is active.
             if (device->activePortIndex() != static_cast<quint32>(-1)) {
-                auto *activePort = static_cast<Port *>(ports.at(device->activePortIndex()));
-                if (activePort->availability() == Port::Unavailable) {
+                auto *activePort = static_cast<PulseAudioQt::Port *>(ports.at(device->activePortIndex()));
+                if (activePort->availability() == PulseAudioQt::Port::Unavailable) {
                     return true;
                 }
             }
@@ -194,8 +198,8 @@ bool ListItemMenu::checkHasContent()
             // If there are at least two available ports.
             int availablePorts = 0;
             for (auto *portObject : ports) {
-                auto *port = static_cast<Port *>(portObject);
-                if (port->availability() == Port::Unavailable) {
+                auto *port = static_cast<PulseAudioQt::Port *>(portObject);
+                if (port->availability() == PulseAudioQt::Port::Unavailable) {
                     continue;
                 }
 
@@ -211,15 +215,15 @@ bool ListItemMenu::checkHasContent()
 
             for (int i = 0; i < m_cardModel->rowCount(); ++i) {
                 const QModelIndex cardIdx = m_cardModel->index(i, 0);
-                Card *card = qobject_cast<Card *>(cardIdx.data(cardModelPulseObjectRole).value<QObject *>());
+                PulseAudioQt::Card *card = qobject_cast<PulseAudioQt::Card *>(cardIdx.data(cardModelPulseObjectRole).value<QObject *>());
 
                 if (card->index() == device->cardIndex()) {
                     // If there are at least two available profiles on the corresponding card.
                     const auto profiles = card->profiles();
                     int availableProfiles = 0;
                     for (auto *profileObject : profiles) {
-                        auto *profile = static_cast<Profile *>(profileObject);
-                        if (profile->availability() == Profile::Unavailable) {
+                        auto *profile = static_cast<PulseAudioQt::Profile *>(profileObject);
+                        if (profile->availability() == PulseAudioQt::Profile::Unavailable) {
                             continue;
                         }
 
@@ -287,7 +291,7 @@ void ListItemMenu::openRelative()
 static int getModelRole(QObject *model, const QByteArray &name)
 {
     // Can either be an AbstractModel, then it's easy
-    if (auto *abstractModel = qobject_cast<AbstractModel *>(model)) {
+    if (auto *abstractModel = qobject_cast<PulseAudioQt::AbstractModel *>(model)) {
         return abstractModel->role(name);
     }
 
@@ -326,7 +330,7 @@ QMenu *ListItemMenu::createMenu()
         setVisible(false);
     });
 
-    if (auto *device = qobject_cast<QPulseAudio::Device *>(m_pulseObject.data())) {
+    if (auto *device = qobject_cast<PulseAudioQt::Device *>(m_pulseObject.data())) {
         // Switch all streams of the relevant kind to this device
         if (m_sourceModel->rowCount() > 1) {
             QAction *switchStreamsAction = nullptr;
@@ -343,7 +347,12 @@ QMenu *ListItemMenu::createMenu()
             }
 
             if (switchStreamsAction) {
-                connect(switchStreamsAction, &QAction::triggered, device, &Device::switchStreams);
+                connect(switchStreamsAction, &QAction::triggered, this, [device] {
+                    const auto streams = PulseAudioQt::Context::instance()->sinkInputs();
+                    for (auto *stream : streams) {
+                        stream->setDeviceIndex(device->index());
+                    }
+                });
             }
         }
 
@@ -351,17 +360,17 @@ QMenu *ListItemMenu::createMenu()
         const auto ports = device->ports();
         bool activePortUnavailable = false;
         if (device->activePortIndex() != static_cast<quint32>(-1)) {
-            auto *activePort = static_cast<Port *>(ports.at(device->activePortIndex()));
-            activePortUnavailable = activePort->availability() == Port::Unavailable;
+            auto *activePort = static_cast<PulseAudioQt::Port *>(ports.at(device->activePortIndex()));
+            activePortUnavailable = activePort->availability() == PulseAudioQt::Port::Unavailable;
         }
 
-        QMap<int, Port *> availablePorts;
+        QMap<int, PulseAudioQt::Port *> availablePorts;
         for (int i = 0; i < ports.count(); ++i) {
-            auto *port = static_cast<Port *>(ports.at(i));
+            auto *port = static_cast<PulseAudioQt::Port *>(ports.at(i));
 
             // If an unavailable port is active, show all the ports,
             // otherwise show only the available ones
-            if (activePortUnavailable || port->availability() != Port::Unavailable) {
+            if (activePortUnavailable || port->availability() != PulseAudioQt::Port::Unavailable) {
                 availablePorts.insert(i, port);
             }
         }
@@ -373,11 +382,11 @@ QMenu *ListItemMenu::createMenu()
 
             for (auto it = availablePorts.constBegin(), end = availablePorts.constEnd(); it != end; ++it) {
                 const int i = it.key();
-                Port *port = it.value();
+                PulseAudioQt::Port *port = it.value();
 
                 QAction *item = nullptr;
 
-                if (port->availability() == Port::Unavailable) {
+                if (port->availability() == PulseAudioQt::Port::Unavailable) {
                     if (port->name() == QLatin1String("analog-output-speaker") || port->name() == QLatin1String("analog-input-microphone-internal")) {
                         item = menu->addAction(i18nc("Port is unavailable", "%1 (unavailable)", port->description()));
                     } else {
@@ -402,10 +411,10 @@ QMenu *ListItemMenu::createMenu()
             const int cardModelPulseObjectRole = m_cardModel->role("PulseObject");
             Q_ASSERT(cardModelPulseObjectRole != -1);
 
-            Card *card = nullptr;
+            PulseAudioQt::Card *card = nullptr;
             for (int i = 0; i < m_cardModel->rowCount(); ++i) {
                 const QModelIndex cardIdx = m_cardModel->index(i, 0);
-                Card *candidateCard = qobject_cast<Card *>(cardIdx.data(cardModelPulseObjectRole).value<QObject *>());
+                PulseAudioQt::Card *candidateCard = qobject_cast<PulseAudioQt::Card *>(cardIdx.data(cardModelPulseObjectRole).value<QObject *>());
 
                 if (candidateCard && candidateCard->index() == device->cardIndex()) {
                     card = candidateCard;
@@ -414,14 +423,14 @@ QMenu *ListItemMenu::createMenu()
             }
 
             if (card) {
-                QMap<int, Profile *> availableProfiles;
+                QMap<int, PulseAudioQt::Profile *> availableProfiles;
 
                 const auto profiles = card->profiles();
                 for (int i = 0; i < profiles.count(); ++i) {
-                    auto *profile = static_cast<Profile *>(profiles.at(i));
+                    auto *profile = static_cast<PulseAudioQt::Profile *>(profiles.at(i));
 
                     // TODO should we also check "if current profile is unavailable" like with ports?
-                    if (profile->availability() == Profile::Unavailable) {
+                    if (profile->availability() == PulseAudioQt::Profile::Unavailable) {
                         continue;
                     }
 
@@ -448,7 +457,7 @@ QMenu *ListItemMenu::createMenu()
                     QActionGroup *profileGroup = new QActionGroup(profilesMenu);
                     for (auto it = availableProfiles.constBegin(), end = availableProfiles.constEnd(); it != end; ++it) {
                         const int i = it.key();
-                        Profile *profile = it.value();
+                        PulseAudioQt::Profile *profile = it.value();
 
                         auto *profileAction = profilesMenu->addAction(profile->description());
                         profileAction->setCheckable(true);
@@ -467,7 +476,7 @@ QMenu *ListItemMenu::createMenu()
     }
 
     // Choose output / input device
-    auto *stream = qobject_cast<QPulseAudio::Stream *>(m_pulseObject.data());
+    auto *stream = qobject_cast<PulseAudioQt::Stream *>(m_pulseObject.data());
     if (stream && m_sourceModel && m_sourceModel->rowCount() > 1) {
         if (m_itemType == SinkInput || m_itemType == SourceOutput) {
             if (m_itemType == SinkInput) {

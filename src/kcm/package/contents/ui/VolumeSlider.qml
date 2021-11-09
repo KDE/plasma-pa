@@ -33,7 +33,6 @@ RowLayout {
         to: PulseAudio.MaximalVolume
         // TODO: implement a way to hide tickmarks
         // stepSize: to / (PulseAudio.MaximalVolume / PulseAudio.NormalVolume * 100.0) 
-        visible: HasVolume
         enabled: VolumeWritable
         opacity: Muted ? 0.5 : 1
         onMoved: sliderRow.moved()
