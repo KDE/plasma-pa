@@ -88,7 +88,6 @@ X-KDE-PluginInfo-Email=sitter@kde.org
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-Name=kcm_pulseaudio
 X-KDE-ServiceTypes=KCModule
-X-Plasma-API=declarativeappletscript
 X-KDE-FormFactors=handset,tablet,mediacenter,desktop
 X-KDE-Library=kcm_pulseaudio
 X-Plasma-MainScript=ui/main.qml
