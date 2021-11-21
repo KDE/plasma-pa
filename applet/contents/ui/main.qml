@@ -160,14 +160,32 @@ Item {
         osd.showMicMute(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume));
     }
 
-    function playFeedback(sinkIndex) {
+    VolumeMonitor {
+        id: currentVolumeMeter
+    }
+
+    PulseObjectFilterModel {
+        id: streamsForDevice
+        sourceModel: SinkInputModel {}
+    }
+
+    function playFeedback(sink) {
         if (!volumeFeedback) {
             return;
         }
-        if (sinkIndex == undefined) {
-            sinkIndex = paSinkModel.preferredSink.index;
+        if (sink == undefined) {
+            sink = paSinkModel.preferredSink;
         }
-        feedback.play(sinkIndex);
+        // if any streams on this device have current volume > 0, no need to play feedback
+        streamsForDevice.filters = [ { role: "VirtualStream", value: false }, { role: "DeviceIndex", value: sink.index } ]
+        for (var i = 0; i < streamsForDevice.rowCount(); i++) {
+            var idx = streamsForDevice.index(i, 0);
+            currentVolumeMeter.target = streamsForDevice.data(idx, streamsForDevice.role("PulseObject"));
+            if (currentVolumeMeter.volume > 0) {
+                return;
+            }
+        }
+        feedback.play(sink.index);
     }
 
 

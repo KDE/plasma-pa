@@ -295,7 +295,7 @@ PC3.ItemDelegate {
                             updateTimer.restart();
 
                             if (type == "sink") {
-                                playFeedback(Index);
+                                playFeedback(model);
                             }
                         }
                     }
