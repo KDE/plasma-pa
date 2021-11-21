@@ -14,7 +14,7 @@ ListItemBase {
     property QtObject devicesModel
 
     label: {
-        if (Client && Client.name) {
+        if (Client && Client.name && Client.name != "pipewire-media-session") {
             return Client.name;
         }
         if (Name) {
