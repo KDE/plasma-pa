@@ -177,7 +177,7 @@ Item {
             sink = paSinkModel.preferredSink;
         }
         // if any streams on this device have current volume > 0, no need to play feedback
-        streamsForDevice.filters = [ { role: "VirtualStream", value: false }, { role: "DeviceIndex", value: sink.index } ]
+        streamsForDevice.filters = [ { role: "VirtualStream", value: false }, { role: "DeviceIndex", value: sink.index }, { role: "Corked", value: false } ]
         for (var i = 0; i < streamsForDevice.rowCount(); i++) {
             var idx = streamsForDevice.index(i, 0);
             currentVolumeMeter.target = streamsForDevice.data(idx, streamsForDevice.role("PulseObject"));
