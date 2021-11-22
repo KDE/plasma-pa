@@ -399,33 +399,35 @@ PC3.ItemDelegate {
     }
 
     Keys.onPressed: {
-        if (event.key == Qt.Key_M) {
+        const k = event.key;
+
+        if (k === Qt.Key_M) {
             muteButton.clicked();
-        } else if (event.key == Qt.Key_0) {
+        } else if (k === Qt.Key_0) {
             setVolumeByPercent(0);
-        } else if (event.key == Qt.Key_1) {
+        } else if (k === Qt.Key_1) {
             setVolumeByPercent(10);
-        } else if (event.key == Qt.Key_2) {
+        } else if (k === Qt.Key_2) {
             setVolumeByPercent(20);
-        } else if (event.key == Qt.Key_3) {
+        } else if (k === Qt.Key_3) {
             setVolumeByPercent(30);
-        } else if (event.key == Qt.Key_4) {
+        } else if (k === Qt.Key_4) {
             setVolumeByPercent(40);
-        } else if (event.key == Qt.Key_5) {
+        } else if (k === Qt.Key_5) {
             setVolumeByPercent(50);
-        } else if (event.key == Qt.Key_6) {
+        } else if (k === Qt.Key_6) {
             setVolumeByPercent(60);
-        } else if (event.key == Qt.Key_7) {
+        } else if (k === Qt.Key_7) {
             setVolumeByPercent(70);
-        } else if (event.key == Qt.Key_8) {
+        } else if (k === Qt.Key_8) {
             setVolumeByPercent(80);
-        } else if (event.key == Qt.Key_9) {
+        } else if (k === Qt.Key_9) {
             setVolumeByPercent(90);
-        } else if (event.key == Qt.Key_Return) {
+        } else if (k === Qt.Key_Return) {
             if (defaultButton.visible) {
                 defaultButton.clicked();
             }
-        } else if (event.key == Qt.Key_Menu) {
+        } else if (k === Qt.Key_Menu) {
             contextMenuButton.clicked();
         } else {
             return; // don't accept the key press
