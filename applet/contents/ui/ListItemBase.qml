@@ -403,26 +403,8 @@ PC3.ItemDelegate {
 
         if (k === Qt.Key_M) {
             muteButton.clicked();
-        } else if (k === Qt.Key_0) {
-            setVolumeByPercent(0);
-        } else if (k === Qt.Key_1) {
-            setVolumeByPercent(10);
-        } else if (k === Qt.Key_2) {
-            setVolumeByPercent(20);
-        } else if (k === Qt.Key_3) {
-            setVolumeByPercent(30);
-        } else if (k === Qt.Key_4) {
-            setVolumeByPercent(40);
-        } else if (k === Qt.Key_5) {
-            setVolumeByPercent(50);
-        } else if (k === Qt.Key_6) {
-            setVolumeByPercent(60);
-        } else if (k === Qt.Key_7) {
-            setVolumeByPercent(70);
-        } else if (k === Qt.Key_8) {
-            setVolumeByPercent(80);
-        } else if (k === Qt.Key_9) {
-            setVolumeByPercent(90);
+        } else if (k >= Qt.Key_0 && k <= Qt.Key_9) {
+            setVolumeByPercent((k - Qt.Key_0) * 10);
         } else if (k === Qt.Key_Return) {
             if (defaultButton.visible) {
                 defaultButton.clicked();
