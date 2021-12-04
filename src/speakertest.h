@@ -15,13 +15,19 @@ class SpeakerTest : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QPulseAudio::Sink *sink READ sink WRITE setSink NOTIFY sinkChanged)
+    Q_PROPERTY(QStringList playingChannels READ playingChannels NOTIFY playingChannelsChanged)
 public:
     QPulseAudio::Sink *sink() const;
     void setSink(QPulseAudio::Sink *sink);
     Q_SIGNAL void sinkChanged();
 
+    QStringList playingChannels() const;
+    Q_SIGNAL void playingChannelsChanged();
+    void playingFinished(const QString &name);
+
     Q_INVOKABLE void testChannel(const QString &name);
 
 private:
     QPulseAudio::Sink *m_sink;
+    QStringList m_playingChannels;
 };

@@ -296,15 +296,15 @@ ScrollViewKCM {
 
         function channelData(channel) {
             switch (channel) {
-                case "front-left": return {text: i18nd("kcm_pulseaudio", "Front Left"), row: 0, column: 0};
-                case "front-center": return {text: i18nd("kcm_pulseaudio", "Front Center"), row: 0, column: 1};
-                case "front-right": return {text: i18nd("kcm_pulseaudio", "Front Right"), row: 0, column: 2};
-                case "side-left": return {text: i18nd("kcm_pulseaudio", "Side Left"), row: 1, column: 0};
-                case "side-right": return {text: i18nd("kcm_pulseaudio", "Side Right"), row: 1, column: 2};
-                case "rear-left": return {text: i18nd("kcm_pulseaudio", "Rear Left"), row: 2, column: 0};
-                case "lfe": return {text: i18nd("kcm_pulseaudio", "Subwoofer"), row: 2, column: 1};
-                case "rear-right": return {text: i18nd("kcm_pulseaudio", "Rear Right"), row: 2, column: 2};
-                case "mono" : return {text: i18nd("kcm_pulseaudio", "Mono"), row: 0, column: 1};
+                case "front-left": return {text: i18nd("kcm_pulseaudio", "Front Left"), row: 0, column: 0, angle: 45};
+                case "front-center": return {text: i18nd("kcm_pulseaudio", "Front Center"), row: 0, column: 1, angle: 90};
+                case "front-right": return {text: i18nd("kcm_pulseaudio", "Front Right"), row: 0, column: 2, angle: 135};
+                case "side-left": return {text: i18nd("kcm_pulseaudio", "Side Left"), row: 1, column: 0, angle: 0};
+                case "side-right": return {text: i18nd("kcm_pulseaudio", "Side Right"), row: 1, column: 2, angle: 180};
+                case "rear-left": return {text: i18nd("kcm_pulseaudio", "Rear Left"), row: 2, column: 0, angle: -45};
+                case "lfe": return {text: i18nd("kcm_pulseaudio", "Subwoofer"), row: 2, column: 1, angle: -90};
+                case "rear-right": return {text: i18nd("kcm_pulseaudio", "Rear Right"), row: 2, column: 2, angle: -135};
+                case "mono" : return {text: i18nd("kcm_pulseaudio", "Mono"), row: 0, column: 1, angle: 90};
             }
         }
 
@@ -338,6 +338,8 @@ ScrollViewKCM {
         GridLayout {
             id: layoutTest
             columns: 3
+            rowSpacing: Kirigami.Units.gridUnit
+
             LayoutMirroring.enabled: false  // To preserve spacial layout on RTL
 
             Kirigami.Avatar {
@@ -345,8 +347,11 @@ ScrollViewKCM {
                     id: kuser
                 }
                 source: kuser.faceIconUrl
-                sourceSize.width: Kirigami.Units.gridUnit * 3
-                sourceSize.height: Kirigami.Units.gridUnit * 3
+                implicitWidth: Kirigami.Units.gridUnit * 4
+                implicitHeight: implicitWidth
+                sourceSize.width: implicitWidth
+                sourceSize.height: implicitWidth
+
                 Layout.row: 1
                 Layout.column: 1
                 Layout.alignment: Qt.AlignCenter
@@ -361,17 +366,48 @@ ScrollViewKCM {
             Repeater {
                 model: testOverlay.sinkObject && testOverlay.sinkObject.rawChannels
 
-                delegate: Button {
-                    text: testOverlay.channelData(modelData).text
-                    Layout.row: testOverlay.channelData(modelData).row
-                    Layout.column: testOverlay.channelData(modelData).column
+                delegate: ToolButton {
+                    readonly property var channelData: testOverlay.channelData(modelData)
+                    readonly property bool isPlaying: tester.playingChannels.includes(modelData)
+
+                    Layout.row: channelData.row
+                    Layout.column: channelData.column
                     Layout.alignment: Qt.AlignCenter
                     Layout.fillWidth: true
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 10
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 8
+                    Layout.preferredHeight: Kirigami.Units.gridUnit * 4
+
+                    contentItem: ColumnLayout {
+                        anchors.fill: parent
+
+                        Kirigami.Icon {
+                            source: "audio-speakers-symbolic"
+                            color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                            Layout.fillWidth: true
+                            rotation: channelData.angle
+                        }
+
+                        Text {
+                            text: channelData.text
+                            color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                            Layout.alignment: Qt.AlignCenter
+                        }
+                    }
+
                     // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
                     onClicked: tester.testChannel(modelData === "lfe" ? "rear-center" : modelData)
                 }
+            }
+
+            Label {
+                text: i18nd("kcm_pulseaudio", "Click on any speaker to test sound")
+                font: Kirigami.Theme.smallFont
+
+                Layout.row: 3
+                Layout.columnSpan: 3
+                Layout.alignment: Qt.AlignCenter
             }
         }
     }
