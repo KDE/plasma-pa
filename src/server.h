@@ -44,9 +44,9 @@ private:
 
     QString m_defaultSinkName;
     QString m_defaultSourceName;
-    Sink *m_defaultSink;
-    Source *m_defaultSource;
-    bool m_isPipeWire;
+    Sink *m_defaultSink = nullptr;
+    Source *m_defaultSource = nullptr;
+    bool m_isPipeWire = false;
 };
 
 } // QPulseAudio

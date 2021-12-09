@@ -57,8 +57,8 @@ private:
     QString toolTipForApps(const QVector<QModelIndex> &apps) const;
     QString sourceOutputDisplayName(const QModelIndex &idx) const;
 
-    QPulseAudio::SourceModel *m_sourceModel = nullptr; // microphone devices
-    QPulseAudio::SourceOutputModel *m_sourceOutputModel = nullptr; // recording streams
+    QPulseAudio::SourceModel *const m_sourceModel = nullptr; // microphone devices
+    QPulseAudio::SourceOutputModel *const m_sourceOutputModel = nullptr; // recording streams
 
     KStatusNotifierItem *m_sni = nullptr;
     QPointer<QAction> m_muteAction;
@@ -71,5 +71,5 @@ private:
 
     int m_wheelDelta = 0;
 
-    QTimer *m_updateTimer;
+    QTimer *const m_updateTimer;
 };

@@ -23,7 +23,7 @@ void Client::update(const pa_client_info *info)
 {
     updatePulseObject(info);
 
-    QString infoName = QString::fromUtf8(info->name);
+    const QString infoName = QString::fromUtf8(info->name);
     if (m_name != infoName) {
         m_name = infoName;
         Q_EMIT nameChanged();

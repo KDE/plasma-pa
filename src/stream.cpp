@@ -12,8 +12,6 @@ Stream::Stream(QObject *parent)
     : VolumeObject(parent)
     , m_deviceIndex(PA_INVALID_INDEX)
     , m_clientIndex(PA_INVALID_INDEX)
-    , m_virtualStream(false)
-    , m_corked(false)
 {
     m_volumeWritable = false;
     m_hasVolume = false;

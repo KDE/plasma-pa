@@ -10,9 +10,6 @@ namespace QPulseAudio
 {
 VolumeObject::VolumeObject(QObject *parent)
     : PulseObject(parent)
-    , m_muted(true)
-    , m_hasVolume(true)
-    , m_volumeWritable(true)
 {
     pa_cvolume_init(&m_volume);
 }

@@ -12,7 +12,6 @@ namespace QPulseAudio
 {
 StreamRestore::StreamRestore(quint32 index, const QVariantMap &properties, QObject *parent)
     : PulseObject(parent)
-    , m_muted(false)
 {
     memset(&m_volume, 0, sizeof(m_volume));
     memset(&m_channelMap, 0, sizeof(m_channelMap));

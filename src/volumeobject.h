@@ -90,9 +90,9 @@ protected:
     pa_cvolume cvolume() const;
 
     pa_cvolume m_volume;
-    bool m_muted;
-    bool m_hasVolume;
-    bool m_volumeWritable;
+    bool m_muted = true;
+    bool m_hasVolume = true;
+    bool m_volumeWritable = true;
     QStringList m_channels;
     QStringList m_rawChannels;
 };

@@ -23,7 +23,7 @@ PlasmaCore.SortFilterModel {
         if (filters.length > 0) {
             for (var i = 0; i < filters.length; ++i) {
                 var filter = filters[i];
-                if (sourceModel.data(idx, sourceModel.role(filter.role)) != filter.value) {
+                if (sourceModel.data(idx, sourceModel.role(filter.role)) !== filter.value) {
                     return false;
                 }
             }
@@ -32,7 +32,7 @@ PlasmaCore.SortFilterModel {
         // Optionally exclude inactive devices
         if (filterOutInactiveDevices) {
             var ports = sourceModel.data(idx, sourceModel.role("PulseObject")).ports;
-            if (ports.length === 1 && ports[0].availability == Port.Unavailable) {
+            if (ports.length === 1 && ports[0].availability === Port.Unavailable) {
                 return false;
             }
         }

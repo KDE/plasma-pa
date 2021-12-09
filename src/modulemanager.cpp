@@ -21,6 +21,9 @@
 #endif
 
 #include <QTimer>
+#include <chrono>
+
+using namespace std::chrono_literals;
 
 namespace QPulseAudio
 {
@@ -91,7 +94,7 @@ ModuleManager::ModuleManager(QObject *parent)
     connect(Context::instance()->server(), &Server::updated, this, &ModuleManager::serverUpdated);
 
     QTimer *updateModulesTimer = new QTimer(this);
-    updateModulesTimer->setInterval(500);
+    updateModulesTimer->setInterval(500ms);
     updateModulesTimer->setSingleShot(true);
     connect(updateModulesTimer, &QTimer::timeout, this, &ModuleManager::updateLoadedModules);
     connect(&Context::instance()->modules(), &MapBaseQObject::added, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));

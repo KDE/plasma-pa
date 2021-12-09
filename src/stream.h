@@ -84,8 +84,8 @@ protected:
 private:
     QString m_name;
     quint32 m_clientIndex;
-    bool m_virtualStream;
-    bool m_corked;
+    bool m_virtualStream = false;
+    bool m_corked = false;
 };
 
 } // QPulseAudio

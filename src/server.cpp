@@ -14,9 +14,6 @@ namespace QPulseAudio
 {
 Server::Server(Context *context)
     : QObject(context)
-    , m_defaultSink(nullptr)
-    , m_defaultSource(nullptr)
-    , m_isPipeWire(false)
 {
     Q_ASSERT(context);
 
