@@ -16,7 +16,8 @@ find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\" -DQT_NO_KEYWORDS)
-
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050c00)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055800)
 include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
