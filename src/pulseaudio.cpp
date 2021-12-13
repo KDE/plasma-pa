@@ -186,8 +186,8 @@ void AbstractModel::onDataAdded(int index)
     QObject *data = m_map->objectAt(index);
     const QMetaObject *mo = data->metaObject();
     // We have all the data changed notify signals already stored
-    auto keys = m_signalIndexToProperties.keys();
-    Q_FOREACH (int index, keys) {
+    const auto keys = m_signalIndexToProperties.keys();
+    for (const int index : keys) {
         QMetaMethod meth = mo->method(index);
         connect(data, meth, this, propertyChangedMetaMethod());
     }

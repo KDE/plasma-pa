@@ -41,7 +41,8 @@ void GlobalActionCollection::setDisplayName(const QString &displayName)
 
 void GlobalActionCollection::componentComplete()
 {
-    Q_FOREACH (QObject *item, children()) {
+    const auto childs{children()};
+    for (QObject *item : childs) {
         GlobalAction *action = qobject_cast<GlobalAction *>(item);
         if (!action) {
             continue;
