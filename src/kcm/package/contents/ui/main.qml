@@ -375,13 +375,13 @@ ScrollViewKCM {
 
                     Layout.row: channelData.row
                     Layout.column: channelData.column
-                    Layout.alignment: Qt.AlignCenter
                     Layout.fillWidth: true
+                    Layout.fillHeight: true
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 8
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 4
+                    Layout.minimumHeight: Kirigami.Units.gridUnit * 4
 
                     contentItem: ColumnLayout {
-                        anchors.fill: parent
+                        spacing: 0
 
                         Kirigami.Icon {
                             source: "audio-speakers-symbolic"
@@ -389,13 +389,19 @@ ScrollViewKCM {
                             implicitWidth: Kirigami.Units.iconSizes.medium
                             implicitHeight: Kirigami.Units.iconSizes.medium
                             Layout.fillWidth: true
+                            Layout.margins: Kirigami.Units.smallSpacing
                             rotation: channelData.angle
                         }
 
-                        Text {
+                        Label {
                             text: channelData.text
                             color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                            Layout.alignment: Qt.AlignCenter
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            Layout.margins: Kirigami.Units.smallSpacing
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignTop
+                            wrapMode: Text.WordWrap
                         }
                     }
 
