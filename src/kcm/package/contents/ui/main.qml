@@ -243,11 +243,14 @@ ScrollViewKCM {
             ToolTip.visible: !enabled && hovered
             ToolTip.text: i18nd("kcm_pulseaudio", "Requires %1 PulseAudio module", moduleManager.configModuleName)
 
+            checkable: true
+            checked: configureMenu.opened
             onClicked: configureMenu.open()
 
             Menu {
                 id: configureMenu
                 y: -height - Kirigami.Units.smallSpacing
+                modal: true
 
                 MenuItem {
                     text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")
