@@ -405,15 +405,12 @@ ScrollViewKCM {
                     onClicked: tester.testChannel(modelData === "lfe" ? "rear-center" : modelData)
                 }
             }
+        }
 
-            Label {
-                text: i18nd("kcm_pulseaudio", "Click on any speaker to test sound")
-                font: Kirigami.Theme.smallFont
-
-                Layout.row: 3
-                Layout.columnSpan: 3
-                Layout.alignment: Qt.AlignCenter
-            }
+        footer: Label {
+            text: i18nd("kcm_pulseaudio", "Click on any speaker to test sound")
+            font: Kirigami.Theme.smallFont
+            horizontalAlignment: Qt.AlignHCenter
         }
     }
 }
