@@ -38,9 +38,10 @@ ScrollViewKCM {
         id: paCardModel
 
         function indexOfCardNumber(cardNumber) {
-            for (var idx = 0; idx < count; idx++) {
-                if (data(index(idx, 0), role("Index")) == cardNumber) {
-                    return index(idx, 0);
+            for (let idx = 0; idx < count; idx++) {
+                const ii = index(idx, 0);
+                if (data(ii, role("Index")) == cardNumber) {
+                    return ii;
                 }
             }
             return index(-1, 0);
@@ -139,10 +140,10 @@ ScrollViewKCM {
                     function role(name) {
                         return sourceModel.role(name);
                     }
-                    filterCallback: function(source_row, value) {
-                        let idx = sourceModel.index(source_row, 0);
-                        let profiles = sourceModel.data(idx, sourceModel.role("Profiles"))
-                        let activeProfileIndex = sourceModel.data(idx, sourceModel.role("ActiveProfileIndex"))
+                    filterCallback: (source_row, value) => {
+                        const idx = sourceModel.index(source_row, 0);
+                        const profiles = sourceModel.data(idx, sourceModel.role("Profiles"))
+                        const activeProfileIndex = sourceModel.data(idx, sourceModel.role("ActiveProfileIndex"))
                         return profiles[activeProfileIndex].name == "off";
                     }
                 }
@@ -279,16 +280,16 @@ ScrollViewKCM {
         property string port: ""
 
         function testSink(index) {
-            let modelIndex = sinks.model.index(Math.max(index, 0), 0);
+            const modelIndex = sinks.model.index(Math.max(index, 0), 0);
             sinkObject = sinks.model.data(modelIndex, sinks.model.role("PulseObject"));
             description = sinks.model.data(modelIndex, sinks.model.role("Description"));
             iconName = sinks.model.data(modelIndex, sinks.model.role("IconName")) || "audio-card";
 
-            let ports = sinks.model.data(modelIndex, sinks.model.role("Ports"));
+            const ports = sinks.model.data(modelIndex, sinks.model.role("Ports"));
             port = ports.length > 1 ? ports[sinks.model.data(modelIndex, sinks.model.role("ActivePortIndex"))].description : "";
 
             profile = "";
-            let cardIndex = paCardModel.indexOfCardNumber(sinks.model.data(modelIndex, sinks.model.role("CardIndex")));
+            const cardIndex = paCardModel.indexOfCardNumber(sinks.model.data(modelIndex, sinks.model.role("CardIndex")));
             if (cardIndex.valid) {
                 let profiles = paCardModel.data(cardIndex, paCardModel.role("Profiles")) || [];
                 profile = profiles.length > 1 ? profiles[paCardModel.data(cardIndex, paCardModel.role("ActiveProfileIndex"))].description : "";
@@ -298,16 +299,17 @@ ScrollViewKCM {
         }
 
         function channelData(channel) {
+            // TODO: Use come attribute to disable formatter here, when we have one
             switch (channel) {
-                case "front-left": return {text: i18nd("kcm_pulseaudio", "Front Left"), row: 0, column: 0, angle: 45};
-                case "front-center": return {text: i18nd("kcm_pulseaudio", "Front Center"), row: 0, column: 1, angle: 90};
-                case "front-right": return {text: i18nd("kcm_pulseaudio", "Front Right"), row: 0, column: 2, angle: 135};
-                case "side-left": return {text: i18nd("kcm_pulseaudio", "Side Left"), row: 1, column: 0, angle: 0};
-                case "side-right": return {text: i18nd("kcm_pulseaudio", "Side Right"), row: 1, column: 2, angle: 180};
-                case "rear-left": return {text: i18nd("kcm_pulseaudio", "Rear Left"), row: 2, column: 0, angle: -45};
-                case "lfe": return {text: i18nd("kcm_pulseaudio", "Subwoofer"), row: 2, column: 1, angle: -90};
-                case "rear-right": return {text: i18nd("kcm_pulseaudio", "Rear Right"), row: 2, column: 2, angle: -135};
-                case "mono" : return {text: i18nd("kcm_pulseaudio", "Mono"), row: 0, column: 1, angle: 90};
+                case "front-left":   return { text: i18nd("kcm_pulseaudio", "Front Left"),   row: 0, column: 0, angle:   45 };
+                case "front-center": return { text: i18nd("kcm_pulseaudio", "Front Center"), row: 0, column: 1, angle:   90 };
+                case "front-right":  return { text: i18nd("kcm_pulseaudio", "Front Right"),  row: 0, column: 2, angle:  135 };
+                case "side-left":    return { text: i18nd("kcm_pulseaudio", "Side Left"),    row: 1, column: 0, angle:    0 };
+                case "side-right":   return { text: i18nd("kcm_pulseaudio", "Side Right"),   row: 1, column: 2, angle:  180 };
+                case "rear-left":    return { text: i18nd("kcm_pulseaudio", "Rear Left"),    row: 2, column: 0, angle:  -45 };
+                case "lfe":          return { text: i18nd("kcm_pulseaudio", "Subwoofer"),    row: 2, column: 1, angle:  -90 };
+                case "rear-right":   return { text: i18nd("kcm_pulseaudio", "Rear Right"),   row: 2, column: 2, angle: -135 };
+                case "mono" :        return { text: i18nd("kcm_pulseaudio", "Mono"),         row: 0, column: 1, angle:   90 };
             }
         }
 
@@ -328,9 +330,9 @@ ScrollViewKCM {
             }
             Label {
                 text: {
-                    if (testOverlay.port.length === 0) { return testOverlay.profile }
-                    if (testOverlay.profile.length === 0) { return testOverlay.port }
-                    return testOverlay.profile + " / " + testOverlay.port
+                    if (testOverlay.port.length === 0) { return testOverlay.profile; }
+                    if (testOverlay.profile.length === 0) { return testOverlay.port; }
+                    return testOverlay.profile + " / " + testOverlay.port;
                 }
                 visible: text.length > 0
                 Layout.fillWidth: true
