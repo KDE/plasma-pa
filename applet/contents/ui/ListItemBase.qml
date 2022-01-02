@@ -20,6 +20,7 @@ import "../code/icon.js" as Icon
 PC3.ItemDelegate {
     id: item
 
+    required property var model
     property alias label: defaultButton.text
     property alias draggable: dragMouseArea.enabled
     property alias iconSource: clientIcon.source
@@ -60,7 +61,7 @@ PC3.ItemDelegate {
                 implicitHeight: PlasmaCore.Units.iconSizes.small
                 implicitWidth: implicitHeight
                 source: item.type === "sink-input" || item.type === "source-output" ? "emblem-pause" : ""
-                visible: valid && Corked
+                visible: valid && item.model.Corked
 
                 PC3.ToolTip.visible: visible && dragMouseArea.containsMouse
                 PC3.ToolTip.text: item.type === "source-output"
@@ -78,7 +79,7 @@ PC3.ItemDelegate {
                 hoverEnabled: true
                 drag.target: clientIcon
                 onClicked: if (mouse.button === Qt.MiddleButton) {
-                    Muted = !Muted;
+                    item.model.Muted = !item.model.Muted;
                 }
                 onPressed: if (mouse.button === Qt.LeftButton) {
                     clientIcon.grabToImage(result => {
@@ -114,7 +115,7 @@ PC3.ItemDelegate {
                     Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                     spacing: PlasmaCore.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                     checked: model.PulseObject.hasOwnProperty("default") ? model.PulseObject.default : false
-                    visible: (item.type === "sink" && sinkView.model.count > 1) || (item.type === "source" && sourceView.model.count > 1)
+                    visible: (item.type === "sink" || item.type === "source") && item.ListView.view.count > 1
                     onClicked: model.PulseObject.default = true;
                 }
 
@@ -188,9 +189,9 @@ PC3.ItemDelegate {
                 SmallToolButton {
                     id: muteButton
                     readonly property bool isPlayback: item.type.startsWith("sink")
-                    icon.name: Icon.name(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
-                    onClicked: Muted = !Muted
-                    checked: Muted
+                    icon.name: Icon.name(item.model.Volume, item.model.Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
+                    onClicked: item.model.Muted = !item.model.Muted
+                    checked: item.model.Muted
 
                     PC3.ToolTip.visible: hovered
                     PC3.ToolTip.text: i18n("Mute %1", defaultButton.text)
@@ -204,7 +205,7 @@ PC3.ItemDelegate {
                     // While we are sliding we must not react to value updates
                     // as otherwise we can easily end up in a loop where value
                     // changes trigger volume changes trigger value changes.
-                    property int volume: Volume
+                    property int volume: item.model.Volume
                     property bool ignoreValueChange: true
                     readonly property bool forceRaiseMaxVolume: (raiseMaximumVolumeCheckbox.checked && (item.type === "sink" || item.type === "source"))
                                                                 || volume >= PulseAudio.NormalVolume * 1.01
@@ -213,9 +214,9 @@ PC3.ItemDelegate {
                     from: PulseAudio.MinimalVolume
                     to: forceRaiseMaxVolume ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
                     stepSize: to / (to / PulseAudio.NormalVolume * 100.0)
-                    visible: HasVolume
-                    enabled: VolumeWritable
-                    opacity: Muted ? 0.5 : 1
+                    visible: item.model.HasVolume
+                    enabled: item.model.VolumeWritable
+                    opacity: item.model.Muted ? 0.5 : 1
 
                     Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
 
@@ -271,14 +272,14 @@ PC3.ItemDelegate {
                     onVolumeChanged: {
                         var oldIgnoreValueChange = ignoreValueChange;
                         ignoreValueChange = true;
-                        value = Volume;
+                        value = item.model.Volume;
                         ignoreValueChange = oldIgnoreValueChange;
                     }
 
                     onValueChanged: {
                         if (!ignoreValueChange) {
-                            Volume = value;
-                            Muted = value === 0;
+                            item.model.Volume = value;
+                            item.model.Muted = value === 0;
 
                             if (!pressed) {
                                 updateTimer.restart();
@@ -304,7 +305,7 @@ PC3.ItemDelegate {
                     Timer {
                         id: updateTimer
                         interval: 200
-                        onTriggered: slider.value = Volume
+                        onTriggered: slider.value = item.model.Volume
                     }
                 }
                 PC3.Label {
@@ -353,7 +354,7 @@ PC3.ItemDelegate {
         }
         onClicked: {
             if (mouse.button === Qt.MiddleButton) {
-                Muted = !Muted;
+                item.model.Muted = !item.model.Muted;
             }
         }
     }
@@ -385,12 +386,8 @@ PC3.ItemDelegate {
                 return ListItemMenu.SourceOutput;
             }
         }
-        sourceModel: {
-            if (item.type.startsWith("sink")) {
-                return sinkView.model;
-            } else if (item.type.startsWith("source")) {
-                return sourceView.model;
-            }
+        sourceModel: if (item.type.startsWith("sink") || item.type.startsWith("source")) {
+            return item.ListView.view.model
         }
     }
 

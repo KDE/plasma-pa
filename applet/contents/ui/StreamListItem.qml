@@ -14,11 +14,11 @@ ListItemBase {
     property QtObject devicesModel
 
     label: {
-        if (Client && Client.name && Client.name != "pipewire-media-session") {
-            return Client.name;
+        if (model.Client && model.Client.name && model.Client.name != "pipewire-media-session") {
+            return model.Client.name;
         }
-        if (Name) {
-            return Name;
+        if (model.Name) {
+            return model.Name;
         }
         return i18n("Stream name not found");
     }
@@ -31,7 +31,7 @@ ListItemBase {
                 const idx = devicesModel.index(i, 0);
                 const deviceIndex = devicesModel.data(idx, indexRole);
 
-                if (deviceIndex !== DeviceIndex) {
+                if (deviceIndex !== model.DeviceIndex) {
                     continue;
                 }
 
@@ -43,8 +43,8 @@ ListItemBase {
     }
 
     iconSource: {
-        if (IconName.length !== 0) {
-            return IconName
+        if (model.IconName.length !== 0) {
+            return model.IconName
         }
 
         if (item.type === "source-output") {
