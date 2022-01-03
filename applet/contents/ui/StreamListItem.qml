@@ -13,6 +13,7 @@ ListItemBase {
 
     property QtObject devicesModel
 
+    draggable: devicesModel && devicesModel.count > 1
     label: {
         if (model.Client && model.Client.name && model.Client.name != "pipewire-media-session") {
             return model.Client.name;

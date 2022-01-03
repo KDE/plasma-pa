@@ -206,7 +206,8 @@ Item {
         globalMute = false;
     }
 
-    SinkModel {
+    // Output devices
+    readonly property SinkModel paSinkModel: SinkModel {
         id: paSinkModel
 
         property bool initalDefaultSinkIsSet: false
@@ -254,6 +255,16 @@ Item {
         }
     }
 
+    // Input devices
+    readonly property SourceModel paSourceModel: SourceModel { id: paSourceModel }
+
+    // Confusingly, Sink Input is what PulseAudio calls streams that send audio to an output device
+    readonly property SinkInputModel paSinkInputModel: SinkInputModel { id: paSinkInputModel }
+
+    // Confusingly, Source Output is what PulseAudio calls streams that take audio from an input device
+    readonly property SourceOutputModel paSourceOutputModel: SourceOutputModel { id: paSourceOutputModel }
+
+    // active output devices
     readonly property PulseObjectFilterModel paSinkFilterModel: PulseObjectFilterModel {
         id: paSinkFilterModel
         sortRole: "SortByDefault"
@@ -262,10 +273,7 @@ Item {
         sourceModel: paSinkModel
     }
 
-    SourceModel {
-        id: paSourceModel
-    }
-
+    // active input devices
     readonly property PulseObjectFilterModel paSourceFilterModel: PulseObjectFilterModel {
         id: paSourceFilterModel
         sortRole: "SortByDefault"
@@ -274,7 +282,21 @@ Item {
         sourceModel: paSourceModel
     }
 
-    CardModel {
+    // non-virtual streams going to output devices
+    readonly property PulseObjectFilterModel paSinkInputFilterModel: PulseObjectFilterModel {
+        id: paSinkInputFilterModel
+        filters: [ { role: "VirtualStream", value: false } ]
+        sourceModel: paSinkInputModel
+    }
+
+    // non-virtual streams coming from input devices
+    readonly property PulseObjectFilterModel paSourceOutputFilterModel: PulseObjectFilterModel {
+        id: paSourceOutputFilterModel
+        filters: [ { role: "VirtualStream", value: false } ]
+        sourceModel: paSourceOutputModel
+    }
+
+    readonly property CardModel paCardModel: CardModel {
         id: paCardModel
     }
 
@@ -415,21 +437,16 @@ Item {
 
         function beginMoveStream(type, stream) {
             if (type === "sink") {
-                sourceView.visible = false;
+                contentView.hiddenTypes = "source"
             } else if (type === "source") {
-                sinkView.visible = false;
+                contentView.hiddenTypes = "sink"
             }
-
-            devicesLine.visible = false;
-            tabBar.currentIndex = devicesTab.PC3.TabBar.index;
+            tabBar.setCurrentIndex(devicesTab.PC3.TabBar.index)
         }
 
         function endMoveStream() {
-            tabBar.currentIndex = streamsTab.PC3.TabBar.index;
-
-            sourceView.visible = true;
-            devicesLine.visible = true;
-            sinkView.visible = true;
+            contentView.hiddenTypes = []
+            tabBar.setCurrentIndex(streamsTab.PC3.TabBar.index)
         }
 
         header: PlasmaExtras.PlasmoidHeading {
@@ -512,148 +529,118 @@ Item {
             }
         }
 
-        PC3.ScrollView {
-            id: scrollView
-
-            anchors.fill: parent
-
-            // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
-            PC3.ScrollBar.horizontal.policy: PC3.ScrollBar.AlwaysOff
-
-            // our scroll isn't a list of delegates, all internal items are tab focussable, making this redundant
-            activeFocusOnTab: false
-
-            Item {
-                width: streamsView.visible ? streamsView.width : devicesView.width
-                height: streamsView.visible ? streamsView.height : devicesView.height
-
-                ColumnLayout {
-                    id: streamsView
-                    spacing: 0
-                    visible: tabBar.currentItem === streamsTab
-                    property int maximumWidth: scrollView.availableWidth
-                    width: maximumWidth
-                    Layout.maximumWidth: maximumWidth
-
-                    ListView {
-                        id: sinkInputView
-
-                        Layout.fillWidth: true
-                        Layout.minimumHeight: contentHeight
-                        Layout.maximumHeight: contentHeight
-
-
-                        model: PulseObjectFilterModel {
-                            filters: [ { role: "VirtualStream", value: false } ]
-                            sourceModel: SinkInputModel {}
-                        }
-                        delegate: StreamListItem {
-                            width: sinkInputView.width - (scrollView.PC3.ScrollBar.vertical.visible ? PlasmaCore.Units.smallSpacing * 4 : 0)
-                            type: "sink-input"
-                            devicesModel: sinkView.model
-                            draggable: sinkView.count > 1
-                        }
-                    }
-
-                    PlasmaCore.SvgItem {
-                        elementId: "horizontal-line"
-                        Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
-                        Layout.preferredHeight: naturalSize.height
-                        Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
-                        Layout.rightMargin: PlasmaCore.Units.smallSpacing * 2
-                        Layout.topMargin: PlasmaCore.Units.smallSpacing
-                        svg: lineSvg
-                        visible: sinkInputView.model.count > 0 && sourceOutputView.model.count > 0
-                    }
-
-                    ListView {
-                        id: sourceOutputView
-
-                        Layout.fillWidth: true
-
-                        Layout.minimumHeight: contentHeight
-                        Layout.maximumHeight: contentHeight
-
-                        model: PulseObjectFilterModel {
-                            filters: [ { role: "VirtualStream", value: false } ]
-                            sourceModel: SourceOutputModel {}
-                        }
-                        delegate: StreamListItem {
-                            width: sourceOutputView.width - (scrollView.PC3.ScrollBar.vertical.visible ? PlasmaCore.Units.smallSpacing * 4 : 0)
-                            type: "source-output"
-                            devicesModel: sourceView.model
-                            draggable: sourceView.count > 1
-                        }
+        // NOTE: using a StackView instead of a SwipeView partly because
+        // SwipeView would never start with the correct initial view when the
+        // last saved view was the streams view.
+        // We also don't need to be able to swipe between views.
+        contentItem: HorizontalStackView {
+            id: contentView
+            property var hiddenTypes: []
+            initialItem: plasmoid.configuration.currentTab === "streams" ? streamsView : devicesView
+            movementTransitionsEnabled: currentItem !== null
+            TwoPartView {
+                id: devicesView
+                upperModel: paSinkFilterModel
+                upperType: "sink"
+                lowerModel: paSourceFilterModel
+                lowerType: "source"
+                placeholderText: i18n("No output or input devices found")
+                upperDelegate: DeviceListItem {
+                    width: ListView.view.width
+                    type: devicesView.upperType
+                }
+                lowerDelegate: DeviceListItem {
+                    width: ListView.view.width
+                    type: devicesView.lowerType
+                }
+            }
+            // NOTE: Don't unload this while dragging and dropping a stream
+            // to a device or else the D&D operation will be cancelled.
+            TwoPartView {
+                id: streamsView
+                upperModel: paSinkInputFilterModel
+                upperType: "sink-input"
+                lowerModel: paSourceOutputFilterModel
+                lowerType: "source-output"
+                placeholderText: i18n("No applications playing or recording audio")
+                upperDelegate: StreamListItem {
+                    width: ListView.view.width
+                    type: streamsView.upperType
+                    devicesModel: paSinkFilterModel
+                }
+                lowerDelegate: StreamListItem {
+                    width: ListView.view.width
+                    type: streamsView.lowerType
+                    devicesModel: paSourceFilterModel
+                }
+            }
+            Connections {
+                target: tabBar
+                function onCurrentIndexChanged() {
+                    if (tabBar.currentItem === devicesTab) {
+                        contentView.reverseTransitions = false
+                        contentView.replace(devicesView)
+                    } else if (tabBar.currentItem === streamsTab) {
+                        contentView.reverseTransitions = true
+                        contentView.replace(streamsView)
                     }
                 }
+            }
+        }
 
+        component TwoPartView : PC3.ScrollView {
+            id: scrollView
+            required property PulseObjectFilterModel upperModel
+            required property string upperType
+            required property Component upperDelegate
+            required property PulseObjectFilterModel lowerModel
+            required property string lowerType
+            required property Component lowerDelegate
+            property string placeholderText: ""
+            PC3.ScrollBar.horizontal.policy: PC3.ScrollBar.AlwaysOff
+            Loader {
+                parent: scrollView
+                anchors.centerIn: parent
+                width: parent.width -  PlasmaCore.Units.gridUnit * 4
+                active: visible
+                visible: scrollView.placeholderText.length > 0 && !upperSection.visible && !lowerSection.visible
+                sourceComponent: PlasmaExtras.PlaceholderMessage {
+                    text: scrollView.placeholderText
+                }
+            }
+            contentItem: Flickable {
+                contentHeight: layout.implicitHeight
                 ColumnLayout {
-                    id: devicesView
-                    visible: tabBar.currentItem === devicesTab
-                    property int maximumWidth: scrollView.availableWidth
-                    width: maximumWidth
-                    Layout.maximumWidth: maximumWidth
+                    id: layout
+                    width: parent.width
                     spacing: 0
-
                     ListView {
-                        id: sinkView
-
+                        id: upperSection
+                        visible: count && !contentView.hiddenTypes.includes(scrollView.upperType)
+                        interactive: false
                         Layout.fillWidth: true
-                        Layout.minimumHeight: contentHeight
-                        Layout.maximumHeight: contentHeight
-                        model: paSinkFilterModel
-
-                        boundsBehavior: Flickable.StopAtBounds;
-                        delegate: DeviceListItem {
-                            width: sinkView.width - (scrollView.PC3.ScrollBar.vertical.visible ? PlasmaCore.Units.smallSpacing * 4 : 0)
-                            type: "sink"
-                            onlyone: sinkView.count === 1
-                        }
+                        implicitHeight: contentHeight
+                        model: scrollView.upperModel
+                        delegate: scrollView.upperDelegate
                     }
-
                     PlasmaCore.SvgItem {
-                        id: devicesLine
                         elementId: "horizontal-line"
-                        Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
+                        Layout.fillWidth: true
                         Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
                         Layout.rightMargin: Layout.leftMargin
                         Layout.topMargin: PlasmaCore.Units.smallSpacing
                         svg: lineSvg
-                        visible: sinkView.model.count > 0 && sourceView.model.count > 0 && (sinkView.model.count > 1 || sourceView.model.count > 1)
+                        visible: upperSection.visible && lowerSection.visible
                     }
-
                     ListView {
-                        id: sourceView
-
+                        id: lowerSection
+                        visible: count && !contentView.hiddenTypes.includes(scrollView.lowerType)
+                        interactive: false
                         Layout.fillWidth: true
-                        Layout.minimumHeight: contentHeight
-                        Layout.maximumHeight: contentHeight
-
-                        model: paSourceFilterModel
-
-                        boundsBehavior: Flickable.StopAtBounds;
-                        delegate: DeviceListItem {
-                            width: sourceView.width - (scrollView.PC3.ScrollBar.vertical.visible ? PlasmaCore.Units.smallSpacing * 4 : 0)
-                            type: "source"
-                            onlyone: sourceView.count === 1
-                        }
+                        implicitHeight: contentHeight
+                        model: scrollView.lowerModel
+                        delegate: scrollView.lowerDelegate
                     }
-                }
-
-            }
-        }
-
-        PlasmaExtras.PlaceholderMessage {
-            width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
-            anchors.centerIn: parent
-            visible: text.length !== 0
-            text: {
-                if (streamsView.visible && !sinkInputView.count && !sourceOutputView.count) {
-                    return i18n("No applications playing or recording audio");
-                } else if (devicesView.visible && !sinkView.count && !sourceView.count) {
-                    return i18n("No output or input devices found");
-                } else {
-                    return "";
                 }
             }
         }

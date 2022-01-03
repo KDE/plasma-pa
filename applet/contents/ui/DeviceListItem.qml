@@ -14,14 +14,13 @@ ListItemBase {
     readonly property var currentPort: model.Ports[model.ActivePortIndex]
     readonly property bool muted: model.Muted
     readonly property int activePortIndex: model.ActivePortIndex
-    property bool onlyone: false
 
-    fullNameToShowOnHover: onlyone ? model.Description : ""
+    fullNameToShowOnHover: ListView.view.count === 1 ? model.Description : ""
 
     draggable: false
     label: {
         if (currentPort && currentPort.description) {
-            if (onlyone || !model.Description) {
+            if (ListView.view.count === 1 || !model.Description) {
                 return currentPort.description;
             } else {
                 return i18nc("label of device items", "%1 (%2)", currentPort.description, model.Description);
