@@ -31,7 +31,7 @@ PC3.ItemDelegate {
 
     highlighted: dropArea.containsDrag
     background.visible: highlighted
-    opacity: (draggedStream && draggedStream.deviceIndex === Index) ? 0.3 : 1.0
+    opacity: (plasmoid.rootItem.draggedStream && plasmoid.rootItem.draggedStream.deviceIndex === item.model.Index) ? 0.3 : 1.0
 
     ListView.delayRemove: clientIcon.Drag.active
 
@@ -90,11 +90,11 @@ PC3.ItemDelegate {
             Drag.active: dragMouseArea.drag.active
             Drag.dragType: Drag.Automatic
             Drag.onDragStarted: {
-                draggedStream = model.PulseObject;
+                plasmoid.rootItem.draggedStream = item.model.PulseObject;
                 beginMoveStream(item.type === "sink-input" ? "sink" : "source");
             }
             Drag.onDragFinished: {
-                draggedStream = null;
+                plasmoid.rootItem.draggedStream = null;
                 endMoveStream();
             }
         }
@@ -114,9 +114,9 @@ PC3.ItemDelegate {
                     Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                     Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                     spacing: PlasmaCore.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
-                    checked: model.PulseObject.hasOwnProperty("default") ? model.PulseObject.default : false
+                    checked: item.model.PulseObject.hasOwnProperty("default") ? item.model.PulseObject.default : false
                     visible: (item.type === "sink" || item.type === "source") && item.ListView.view.count > 1
-                    onClicked: model.PulseObject.default = true;
+                    onClicked: item.model.PulseObject.default = true;
                 }
 
                 RowLayout {
@@ -253,7 +253,7 @@ PC3.ItemDelegate {
                             clip: true // prevents a visual glitch, BUG 434927
                             VolumeMonitor {
                                 id: meter
-                                target: slider.visible && model.PulseObject ? model.PulseObject : null
+                                target: slider.visible && item.model.PulseObject ? item.model.PulseObject : null
                             }
                             Behavior on width {
                                 NumberAnimation  {
@@ -297,7 +297,7 @@ PC3.ItemDelegate {
                             updateTimer.restart();
 
                             if (type === "sink") {
-                                playFeedback(Index);
+                                playFeedback(item.model.Index);
                             }
                         }
                     }
@@ -310,7 +310,7 @@ PC3.ItemDelegate {
                 }
                 PC3.Label {
                     id: percentText
-                    readonly property real value: model.PulseObject.volume > slider.to ? model.PulseObject.volume : slider.value
+                    readonly property real value: item.model.PulseObject.volume > slider.to ? item.model.PulseObject.volume : slider.value
                     readonly property real displayValue: Math.round(value / PulseAudio.NormalVolume * 100.0)
                     Layout.alignment: Qt.AlignHCenter
                     Layout.minimumWidth: percentMetrics.advanceWidth
@@ -364,9 +364,9 @@ PC3.ItemDelegate {
         z: -1
         parent: item
         anchors.fill: parent
-        enabled: draggedStream && draggedStream.deviceIndex !== Index
+        enabled: plasmoid.rootItem.draggedStream && plasmoid.rootItem.draggedStream.deviceIndex !== item.model.Index
         onDropped: {
-            draggedStream.deviceIndex = Index;
+            plasmoid.rootItem.draggedStream.deviceIndex = item.model.Index;
         }
     }
 
@@ -386,13 +386,15 @@ PC3.ItemDelegate {
                 return ListItemMenu.SourceOutput;
             }
         }
-        sourceModel: if (item.type.startsWith("sink") || item.type.startsWith("source")) {
-            return item.ListView.view.model
+        sourceModel: if (item.type.startsWith("sink")) {
+            return plasmoid.rootItem.paSinkFilterModel
+        }  else if (item.type.startsWith("source")) {
+            return plasmoid.rootItem.paSourceFilterModel
         }
     }
 
     function setVolumeByPercent(targetPercent) {
-        model.PulseObject.volume = Math.round(PulseAudio.NormalVolume * (targetPercent/100));
+        item.model.PulseObject.volume = Math.round(PulseAudio.NormalVolume * (targetPercent/100));
     }
 
     Keys.onPressed: {

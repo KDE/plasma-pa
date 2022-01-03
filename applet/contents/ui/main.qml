@@ -254,7 +254,7 @@ Item {
         }
     }
 
-    PulseObjectFilterModel {
+    readonly property PulseObjectFilterModel paSinkFilterModel: PulseObjectFilterModel {
         id: paSinkFilterModel
         sortRole: "SortByDefault"
         sortOrder: Qt.DescendingOrder
@@ -266,7 +266,7 @@ Item {
         id: paSourceModel
     }
 
-    PulseObjectFilterModel {
+    readonly property PulseObjectFilterModel paSourceFilterModel: PulseObjectFilterModel {
         id: paSourceFilterModel
         sortRole: "SortByDefault"
         sortOrder: Qt.DescendingOrder
