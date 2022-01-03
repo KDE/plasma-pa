@@ -373,7 +373,7 @@ PC3.ItemDelegate {
     ListItemMenu {
         id: contextMenu
         pulseObject: model.PulseObject
-        cardModel: paCardModel
+        cardModel: plasmoid.rootItem.paCardModel
         itemType: {
             switch (item.type) {
             case "sink":
