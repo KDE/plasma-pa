@@ -557,7 +557,7 @@ Item {
 
                     PlasmaCore.SvgItem {
                         elementId: "horizontal-line"
-                        Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
+                        Layout.fillWidth: true
                         Layout.preferredHeight: naturalSize.height
                         Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
                         Layout.rightMargin: PlasmaCore.Units.smallSpacing * 2
@@ -614,7 +614,7 @@ Item {
                     PlasmaCore.SvgItem {
                         id: devicesLine
                         elementId: "horizontal-line"
-                        Layout.preferredWidth: scrollView.viewport.width - PlasmaCore.Units.smallSpacing * 4
+                        Layout.fillWidth: true
                         Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
                         Layout.rightMargin: Layout.leftMargin
                         Layout.topMargin: PlasmaCore.Units.smallSpacing
