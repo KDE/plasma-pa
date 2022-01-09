@@ -615,11 +615,13 @@ Item {
                         id: devicesLine
                         elementId: "horizontal-line"
                         Layout.fillWidth: true
+                        Layout.preferredHeight: naturalSize.height
                         Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
-                        Layout.rightMargin: Layout.leftMargin
+                        Layout.rightMargin: PlasmaCore.Units.smallSpacing * 2
                         Layout.topMargin: PlasmaCore.Units.smallSpacing
                         svg: lineSvg
-                        visible: sinkView.model.count > 0 && sourceView.model.count > 0 && (sinkView.model.count > 1 || sourceView.model.count > 1)
+                        visible: sinkView.model.count > 0 && sourceView.model.count > 0
+                             && (sinkView.model.count > 1 || sourceView.model.count > 1)
                     }
 
                     ListView {
