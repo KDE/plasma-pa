@@ -300,46 +300,44 @@ Item {
         id: paCardModel
     }
 
-    Plasmoid.compactRepresentation: PlasmaCore.IconItem {
-        source: plasmoid.icon
-        active: mouseArea.containsMouse
-        colorGroup: PlasmaCore.ColorScope.colorGroup
+    Plasmoid.compactRepresentation:MouseArea {
+        property int wheelDelta: 0
+        property bool wasExpanded: false
 
-        MouseArea {
-            id: mouseArea
-
-            property int wheelDelta: 0
-            property bool wasExpanded: false
-
+        anchors.fill: parent
+        hoverEnabled: true
+        acceptedButtons: Qt.LeftButton | Qt.MiddleButton
+        onPressed: {
+            if (mouse.button == Qt.LeftButton) {
+                wasExpanded = plasmoid.expanded;
+            } else if (mouse.button == Qt.MiddleButton) {
+                muteVolume();
+            }
+        }
+        onClicked: {
+            if (mouse.button == Qt.LeftButton) {
+                plasmoid.expanded = !wasExpanded;
+            }
+        }
+        onWheel: {
+            var delta = wheel.angleDelta.y || wheel.angleDelta.x;
+            wheelDelta += delta;
+            // Magic number 120 for common "one click"
+            // See: https://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
+            while (wheelDelta >= 120) {
+                wheelDelta -= 120;
+                increaseVolume();
+            }
+            while (wheelDelta <= -120) {
+                wheelDelta += 120;
+                decreaseVolume();
+            }
+        }
+        PlasmaCore.IconItem {
             anchors.fill: parent
-            hoverEnabled: true
-            acceptedButtons: Qt.LeftButton | Qt.MiddleButton
-            onPressed: {
-                if (mouse.button == Qt.LeftButton) {
-                    wasExpanded = plasmoid.expanded;
-                } else if (mouse.button == Qt.MiddleButton) {
-                    muteVolume();
-                }
-            }
-            onClicked: {
-                if (mouse.button == Qt.LeftButton) {
-                    plasmoid.expanded = !wasExpanded;
-                }
-            }
-            onWheel: {
-                var delta = wheel.angleDelta.y || wheel.angleDelta.x;
-                wheelDelta += delta;
-                // Magic number 120 for common "one click"
-                // See: https://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
-                while (wheelDelta >= 120) {
-                    wheelDelta -= 120;
-                    increaseVolume();
-                }
-                while (wheelDelta <= -120) {
-                    wheelDelta += 120;
-                    decreaseVolume();
-                }
-            }
+            source: plasmoid.icon
+            active: parent.containsMouse
+            colorGroup: PlasmaCore.ColorScope.colorGroup
         }
     }
 
