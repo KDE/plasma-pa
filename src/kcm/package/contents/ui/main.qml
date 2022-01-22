@@ -19,8 +19,13 @@ import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.plasma.private.volume 0.1
 
 ScrollViewKCM {
+    id: root
 
     property int maxVolumeValue: PulseAudio.NormalVolume // the applet supports changing this value. We will just assume 65536 (100%)
+
+    readonly property bool hasInactiveDevices: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
+    property bool showInactiveDevices: false
+
     ConfigModule.quickHelp: i18nd("kcm_pulseaudio", "This module allows configuring the Pulseaudio sound subsystem.")
 
     implicitHeight: Kirigami.Units.gridUnit * 28
@@ -69,6 +74,41 @@ ScrollViewKCM {
         id: moduleManager
     }
 
+
+    actions.main: Kirigami.Action {
+        id: inactiveDevicesButton
+        checkable: true
+        text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
+        icon.name: "view-visible"
+        onToggled: showInactiveDevices = checked
+
+        // Only show if there actually are any inactive devices
+        visible: hasInactiveDevices
+    }
+
+    actions.contextualActions: Kirigami.Action {
+        id: configureButton
+        visible: moduleManager.settingsSupported
+        enabled: moduleManager.configModuleLoaded
+        text: i18nd("kcm_pulseaudio", "Configure…")
+        icon.name: "configure"
+
+        tooltip: !enabled && hovered ? i18nd("kcm_pulseaudio", "Requires %1 PulseAudio module", moduleManager.configModuleName) : null
+
+        Kirigami.Action {
+            text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")
+            checkable: true
+            checked: moduleManager.combineSinks
+            onToggled: moduleManager.combineSinks = checked;
+        }
+        Kirigami.Action {
+            text: i18nd("kcm_pulseaudio", "Automatically switch all running streams when a new output becomes available")
+            checkable: true
+            checked: moduleManager.switchOnConnect
+            onToggled: moduleManager.switchOnConnect = checked;
+        }
+    }
+
     view: Flickable {
         id: flickable
 
@@ -94,7 +134,7 @@ ScrollViewKCM {
                 Layout.preferredHeight: contentHeight
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
-                model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSinkModel : paSinkFilterModel
+                model: inactiveDevicesButton.checked || !hasInactiveDevices ? paSinkModel : paSinkFilterModel
                 delegate: DeviceListItem {
                     isPlayback: true
                 }
@@ -114,7 +154,7 @@ ScrollViewKCM {
                 Layout.preferredHeight: contentHeight
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
-                model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSourceModel : paSourceFilterModel
+                model: inactiveDevicesButton.checked || !hasInactiveDevices ? paSourceModel : paSourceFilterModel
                 delegate: DeviceListItem {
                     isPlayback: false
                 }
@@ -213,56 +253,6 @@ ScrollViewKCM {
                 delegate: StreamListItem {
                     deviceModel: sourceModel
                     isPlayback: false
-                }
-            }
-        }
-    }
-
-    footer: RowLayout {
-        Item {
-            Layout.fillWidth: true
-        }
-
-        Button {
-            id: inactiveDevicesButton
-            checkable: true
-            text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
-            icon.name: "view-visible"
-
-            // Only show if there actually are any inactive devices
-            visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
-        }
-
-        Button {
-            id: configureButton
-            visible: moduleManager.settingsSupported
-            enabled: moduleManager.configModuleLoaded
-            text: i18nd("kcm_pulseaudio", "Configure…")
-            icon.name: "configure"
-
-            ToolTip.visible: !enabled && hovered
-            ToolTip.text: i18nd("kcm_pulseaudio", "Requires %1 PulseAudio module", moduleManager.configModuleName)
-
-            checkable: true
-            checked: configureMenu.opened
-            onClicked: configureMenu.open()
-
-            Menu {
-                id: configureMenu
-                y: -height - Kirigami.Units.smallSpacing
-                modal: true
-
-                MenuItem {
-                    text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")
-                    checkable: true
-                    checked: moduleManager.combineSinks
-                    onToggled: moduleManager.combineSinks = checked;
-                }
-                MenuItem {
-                    text: i18nd("kcm_pulseaudio", "Automatically switch all running streams when a new output becomes available")
-                    checkable: true
-                    checked: moduleManager.switchOnConnect
-                    onToggled: moduleManager.switchOnConnect = checked;
                 }
             }
         }
