@@ -595,7 +595,10 @@ Item {
             required property string lowerType
             required property Component lowerDelegate
             property string placeholderText: ""
+
+             // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
             PC3.ScrollBar.horizontal.policy: PC3.ScrollBar.AlwaysOff
+
             Loader {
                 parent: scrollView
                 anchors.centerIn: parent
