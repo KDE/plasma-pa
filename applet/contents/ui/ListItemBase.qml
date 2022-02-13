@@ -238,7 +238,6 @@ PC3.ItemDelegate {
                             height: parent.height
                             anchors.left: parent.left
                             anchors.verticalCenter: parent.verticalCenter
-                            opacity: 0.5
                             scale: parent.mirrored ? -1 : 1
                         }
 
@@ -250,6 +249,7 @@ PC3.ItemDelegate {
                             width: Math.max(margins.left + margins.right, slider.handle.x * meter.volume)
                             height: Math.max(margins.top + margins.bottom, parent.height)
                             opacity: meter.available && (meter.volume > 0 || animation.running)
+                            status: PlasmaCore.FrameSvgItem.Selected
                             clip: true // prevents a visual glitch, BUG 434927
                             VolumeMonitor {
                                 id: meter
