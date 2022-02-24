@@ -13,7 +13,13 @@ ComboBox {
     textRole: "Description"
     valueRole: "Index"
 
+    property int deviceIndex: DeviceIndex
+
     onActivated: DeviceIndex = currentValue
+
+    onDeviceIndexChanged: {
+        currentIndex = indexOfValue(DeviceIndex)
+    }
 
     Component.onCompleted: currentIndex = indexOfValue(DeviceIndex)
 }
