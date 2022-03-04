@@ -9,6 +9,7 @@
 #include "context.h"
 
 #include <QIcon>
+#include <QVariant>
 
 namespace QPulseAudio
 {

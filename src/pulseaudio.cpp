@@ -11,9 +11,7 @@
 #include "debug.h"
 #include "module.h"
 #include "server.h"
-#include "sink.h"
 #include "sinkinput.h"
-#include "source.h"
 #include "sourceoutput.h"
 #include "streamrestore.h"
 
