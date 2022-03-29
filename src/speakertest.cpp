@@ -21,14 +21,13 @@ void finish_callback(ca_context *c, unsigned int id, int error_code, void *userd
 {
     Q_UNUSED(c)
     Q_UNUSED(id)
-    Q_UNUSED(error_code)
 
     if (userdata == nullptr) {
         return;
     }
 
     CallbackData *cb_data = static_cast<CallbackData *>(userdata);
-    cb_data->object->playingFinished(cb_data->name);
+    cb_data->object->playingFinished(cb_data->name, error_code);
 
     delete (cb_data);
 };
@@ -63,7 +62,7 @@ void SpeakerTest::testChannel(const QString &name)
     snprintf(dev, sizeof(dev), "%lu", (unsigned long)m_sink->index());
     ca_context_change_device(context, dev);
 
-    QString sound_name = QStringLiteral("audio-channel-") + name;
+    QString sound_name = QStringLiteral("audio-channel-%1").arg(name);
     void *cb_data = new CallbackData{this, name};
 
     ca_proplist *proplist;
@@ -74,14 +73,21 @@ void SpeakerTest::testChannel(const QString &name)
     ca_proplist_sets(proplist, CA_PROP_CANBERRA_FORCE_CHANNEL, name.toLatin1().data());
     ca_proplist_sets(proplist, CA_PROP_CANBERRA_ENABLE, "1");
 
-    ca_proplist_sets(proplist, CA_PROP_EVENT_ID, sound_name.toLatin1().data());
-    if (ca_context_play_full(context, 0, proplist, finish_callback, cb_data) != CA_SUCCESS) {
-        // Try a different sound name.
-        ca_proplist_sets(proplist, CA_PROP_EVENT_ID, "audio-test-signal");
-        if (ca_context_play_full(context, 0, proplist, finish_callback, cb_data) != CA_SUCCESS) {
-            // Finaly try this... if this doesn't work, then stuff it.
-            ca_proplist_sets(proplist, CA_PROP_EVENT_ID, "bell-window-system");
-            ca_context_play_full(context, 0, proplist, finish_callback, cb_data);
+    int error_code = CA_SUCCESS;
+    for (const QString &soundName : {sound_name,
+                                     QStringLiteral("audio-test-signal"), // Fallback sounds
+                                     QStringLiteral("bell-window-system"),
+                                     QString()}) {
+        if (soundName.isEmpty()) {
+            // We are here because all of the fallback sounds failed to play
+            playingFinished(name, error_code);
+            break;
+        }
+
+        ca_proplist_sets(proplist, CA_PROP_EVENT_ID, soundName.toLatin1().data());
+        error_code = ca_context_play_full(context, 0, proplist, finish_callback, cb_data);
+        if (error_code == CA_SUCCESS) {
+            break;
         }
     }
 
@@ -94,8 +100,12 @@ QStringList SpeakerTest::playingChannels() const
     return m_playingChannels;
 }
 
-void SpeakerTest::playingFinished(const QString &name)
+void SpeakerTest::playingFinished(const QString &name, int errorCode)
 {
     m_playingChannels.removeOne(name);
     Q_EMIT playingChannelsChanged();
+
+    if (errorCode != CA_SUCCESS) {
+        Q_EMIT showErrorMessage(ca_strerror(errorCode));
+    };
 }

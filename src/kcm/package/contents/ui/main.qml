@@ -268,6 +268,17 @@ ScrollViewKCM {
         }
     }
 
+    SpeakerTest {
+        id: tester
+        sink: testOverlay.sinkObject
+
+        onShowErrorMessage: message => {
+            testError.text = i18ndc("kcm_pulseaudio",
+                                    "%1 is an error string produced by an external component, and probably untranslated",
+                                    "Error trying to play a test sound. \nThe system said: \"%1\"", message);
+            testError.visible = true;
+        }
+    }
 
     Kirigami.OverlaySheet {
         id: testOverlay
@@ -338,85 +349,89 @@ ScrollViewKCM {
             }
         }
 
-        GridLayout {
-            id: layoutTest
-            columns: 3
-            rowSpacing: Kirigami.Units.gridUnit
+        ColumnLayout {
+            Kirigami.InlineMessage {
+                id: testError
+                type: Kirigami.MessageType.Error
+                showCloseButton: true
+                Layout.fillWidth: true
+            }
 
-            LayoutMirroring.enabled: false  // To preserve spacial layout on RTL
+            GridLayout {
+                columns: 3
+                rowSpacing: Kirigami.Units.gridUnit
 
-            Kirigami.Avatar {
-                KCoreAddons.KUser {
-                    id: kuser
+                LayoutMirroring.enabled: false  // To preserve spacial layout on RTL
+
+                Kirigami.Avatar {
+                    KCoreAddons.KUser {
+                        id: kuser
+                    }
+                    source: kuser.faceIconUrl
+                    implicitWidth: Kirigami.Units.gridUnit * 4
+                    implicitHeight: implicitWidth
+                    sourceSize.width: implicitWidth
+                    sourceSize.height: implicitWidth
+
+                    Layout.row: 1
+                    Layout.column: 1
+                    Layout.alignment: Qt.AlignCenter
+
                 }
-                source: kuser.faceIconUrl
-                implicitWidth: Kirigami.Units.gridUnit * 4
-                implicitHeight: implicitWidth
-                sourceSize.width: implicitWidth
-                sourceSize.height: implicitWidth
 
-                Layout.row: 1
-                Layout.column: 1
-                Layout.alignment: Qt.AlignCenter
+                Repeater {
+                    model: testOverlay.sinkObject && testOverlay.sinkObject.rawChannels
 
-            }
+                    delegate: ToolButton {
+                        readonly property var channelData: testOverlay.channelData(modelData)
+                        readonly property bool isPlaying: tester.playingChannels.includes(modelData)
 
-            SpeakerTest {
-                id: tester
-                sink: testOverlay.sinkObject
-            }
+                        Layout.row: channelData.row
+                        Layout.column: channelData.column
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.preferredWidth: Kirigami.Units.gridUnit * 8
+                        Layout.minimumHeight: Kirigami.Units.gridUnit * 4
 
-            Repeater {
-                model: testOverlay.sinkObject && testOverlay.sinkObject.rawChannels
+                        contentItem: ColumnLayout {
+                            spacing: 0
 
-                delegate: ToolButton {
-                    readonly property var channelData: testOverlay.channelData(modelData)
-                    readonly property bool isPlaying: tester.playingChannels.includes(modelData)
+                            Kirigami.Icon {
+                                source: "audio-speakers-symbolic"
+                                color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                                implicitWidth: Kirigami.Units.iconSizes.medium
+                                implicitHeight: Kirigami.Units.iconSizes.medium
+                                Layout.fillWidth: true
+                                Layout.margins: Kirigami.Units.smallSpacing
+                                rotation: channelData.angle
+                            }
 
-                    Layout.row: channelData.row
-                    Layout.column: channelData.column
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 8
-                    Layout.minimumHeight: Kirigami.Units.gridUnit * 4
-
-                    contentItem: ColumnLayout {
-                        spacing: 0
-
-                        Kirigami.Icon {
-                            source: "audio-speakers-symbolic"
-                            color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                            implicitWidth: Kirigami.Units.iconSizes.medium
-                            implicitHeight: Kirigami.Units.iconSizes.medium
-                            Layout.fillWidth: true
-                            Layout.margins: Kirigami.Units.smallSpacing
-                            rotation: channelData.angle
+                            Label {
+                                text: channelData.text
+                                color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                                Layout.fillWidth: true
+                                Layout.fillHeight: true
+                                Layout.margins: Kirigami.Units.smallSpacing
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignTop
+                                wrapMode: Text.WordWrap
+                            }
                         }
 
-                        Label {
-                            text: channelData.text
-                            color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            Layout.margins: Kirigami.Units.smallSpacing
-                            horizontalAlignment: Text.AlignHCenter
-                            verticalAlignment: Text.AlignTop
-                            wrapMode: Text.WordWrap
+                        onClicked: {
+                            testError.visible = false;
+                            // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
+                            tester.testChannel(modelData === "lfe" ? "rear-center" : modelData);
                         }
                     }
-
-                    // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
-                    onClicked: tester.testChannel(modelData === "lfe" ? "rear-center" : modelData)
                 }
             }
 
             Label {
                 text: i18nd("kcm_pulseaudio", "Click on any speaker to test sound")
                 font: Kirigami.Theme.smallFont
-
-                Layout.row: 3
-                Layout.columnSpan: 3
                 Layout.alignment: Qt.AlignCenter
+                Layout.topMargin: Kirigami.Units.gridUnit
             }
         }
     }

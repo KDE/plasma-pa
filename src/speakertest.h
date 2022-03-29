@@ -23,9 +23,10 @@ public:
 
     QStringList playingChannels() const;
     Q_SIGNAL void playingChannelsChanged();
-    void playingFinished(const QString &name);
+    void playingFinished(const QString &name, int errorCode);
 
     Q_INVOKABLE void testChannel(const QString &name);
+    Q_SIGNAL void showErrorMessage(const QString &message);
 
 private:
     QPulseAudio::Sink *m_sink;
