@@ -5,6 +5,11 @@ import org.kde.plasma.private.volume 0.1
 PlasmaCore.SortFilterModel {
     property var filters: []
     property bool filterOutInactiveDevices: false
+    property bool filterVirtualDevices: false
+
+    onFilterVirtualDevicesChanged: {
+        invalidate()
+    }
 
     function role(name) {
         return sourceModel.role(name);
@@ -36,6 +41,11 @@ PlasmaCore.SortFilterModel {
                 return false;
             }
         }
+
+        if (filterVirtualDevices && sourceModel.data(idx, sourceModel.role("PulseObject")).virtualDevice) {
+            return false;
+        }
+
         return true;
     }
 }

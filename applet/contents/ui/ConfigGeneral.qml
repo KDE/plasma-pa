@@ -19,6 +19,7 @@ Kirigami.FormLayout {
     property alias cfg_micOsd: micOsd.checked
     property alias cfg_muteOsd: muteOsd.checked
     property alias cfg_outputChangeOsd: outputChangeOsd.checked
+    property alias cfg_showVirtualDevices: showVirtualDevices.checked
 
     VolumeFeedback {
         id: feedback
@@ -44,7 +45,6 @@ Kirigami.FormLayout {
             return parseInt(text);
         }
     }
-
 
     Item {
         Kirigami.FormData.isSection: true
@@ -83,5 +83,15 @@ Kirigami.FormLayout {
     QQC2.CheckBox {
         id: outputChangeOsd
         text: i18n("Default output device")
+    }
+
+    Item {
+        Kirigami.FormData.isSection: true
+    }
+
+    QQC2.CheckBox {
+        id: showVirtualDevices
+        Kirigami.FormData.label: i18nc("@title", "Display:")
+        text: i18n("Show virtual devices")
     }
 }
