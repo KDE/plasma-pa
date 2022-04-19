@@ -405,8 +405,7 @@ ScrollViewKCM {
                         }
                     }
 
-                    // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
-                    onClicked: tester.testChannel(modelData === "lfe" ? "rear-center" : modelData)
+                    onClicked: tester.testChannel(modelData);
                 }
             }
 

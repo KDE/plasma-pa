@@ -63,7 +63,6 @@ void SpeakerTest::testChannel(const QString &name)
     snprintf(dev, sizeof(dev), "%lu", (unsigned long)m_sink->index());
     ca_context_change_device(context, dev);
 
-    QString sound_name = QStringLiteral("audio-channel-") + name;
     void *cb_data = new CallbackData{this, name};
 
     ca_proplist *proplist;
@@ -73,6 +72,9 @@ void SpeakerTest::testChannel(const QString &name)
     ca_proplist_sets(proplist, CA_PROP_MEDIA_NAME, name.toLatin1().constData());
     ca_proplist_sets(proplist, CA_PROP_CANBERRA_FORCE_CHANNEL, name.toLatin1().data());
     ca_proplist_sets(proplist, CA_PROP_CANBERRA_ENABLE, "1");
+
+    // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
+    const QString sound_name = (name == QLatin1String("lfe")) ? QStringLiteral("audio-channel-rear-center") : QStringLiteral("audio-channel-%1").arg(name);
 
     ca_proplist_sets(proplist, CA_PROP_EVENT_ID, sound_name.toLatin1().data());
     if (ca_context_play_full(context, 0, proplist, finish_callback, cb_data) != CA_SUCCESS) {
