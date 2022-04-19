@@ -420,8 +420,7 @@ ScrollViewKCM {
 
                         onClicked: {
                             testError.visible = false;
-                            // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
-                            tester.testChannel(modelData === "lfe" ? "rear-center" : modelData);
+                            tester.testChannel(modelData);
                         }
                     }
                 }
