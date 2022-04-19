@@ -272,7 +272,7 @@ Item {
         sortRole: "SortByDefault"
         sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
-        filterVirtualDevices: main.showVirtualDevices
+        filterVirtualDevices: !main.showVirtualDevices
         sourceModel: paSinkModel
     }
 
@@ -282,7 +282,7 @@ Item {
         sortRole: "SortByDefault"
         sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
-        filterVirtualDevices: main.showVirtualDevices
+        filterVirtualDevices: !main.showVirtualDevices
         sourceModel: paSourceModel
     }
 
