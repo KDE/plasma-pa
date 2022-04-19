@@ -194,7 +194,7 @@ PC3.ItemDelegate {
                     checked: item.model.Muted
 
                     PC3.ToolTip.visible: hovered
-                    PC3.ToolTip.text: i18n("Mute %1", defaultButton.text)
+                    PC3.ToolTip.text: item.model.Muted ? i18n("Unmute %1", defaultButton.text) : i18n("Mute %1", defaultButton.text)
                     PC3.ToolTip.delay: 700
                 }
 
