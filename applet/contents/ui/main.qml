@@ -546,6 +546,7 @@ Item {
                 upperType: "sink"
                 lowerModel: paSourceFilterModel
                 lowerType: "source"
+                iconName: "audio-volume-muted"
                 placeholderText: i18n("No output or input devices found")
                 upperDelegate: DeviceListItem {
                     width: ListView.view.width
@@ -564,6 +565,7 @@ Item {
                 upperType: "sink-input"
                 lowerModel: paSourceOutputFilterModel
                 lowerType: "source-output"
+                iconName: "edit-none"
                 placeholderText: i18n("No applications playing or recording audio")
                 upperDelegate: StreamListItem {
                     width: ListView.view.width
@@ -598,6 +600,7 @@ Item {
             required property PulseObjectFilterModel lowerModel
             required property string lowerType
             required property Component lowerDelegate
+            property string iconName: null
             property string placeholderText: ""
 
              // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
@@ -610,6 +613,7 @@ Item {
                 active: visible
                 visible: scrollView.placeholderText.length > 0 && !upperSection.visible && !lowerSection.visible
                 sourceComponent: PlasmaExtras.PlaceholderMessage {
+                    iconName: scrollView.iconName
                     text: scrollView.placeholderText
                 }
             }
