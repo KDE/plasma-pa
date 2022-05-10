@@ -59,7 +59,7 @@ private:
     static void read_callback(pa_stream *s, size_t length, void *userdata);
     static void suspended_callback(pa_stream *s, void *userdata);
 
-    VolumeObject *m_target;
+    VolumeObject *m_target = nullptr;
     pa_stream *m_stream = nullptr;
 
     qreal m_volume = 0;
