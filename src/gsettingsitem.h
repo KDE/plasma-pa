@@ -38,7 +38,7 @@ private:
         Q_UNUSED(settings)
         Q_UNUSED(key)
 
-        GSettingsItem *self = static_cast<GSettingsItem *>(data);
+        auto *self = static_cast<GSettingsItem *>(data);
         Q_EMIT self->subtreeChanged();
     }
 };

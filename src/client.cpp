@@ -15,9 +15,7 @@ Client::Client(QObject *parent)
 {
 }
 
-Client::~Client()
-{
-}
+Client::~Client() = default;
 
 void Client::update(const pa_client_info *info)
 {

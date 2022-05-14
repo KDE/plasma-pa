@@ -26,7 +26,7 @@ void finish_callback(ca_context *c, unsigned int id, int error_code, void *userd
         return;
     }
 
-    CallbackData *cb_data = static_cast<CallbackData *>(userdata);
+    auto *cb_data = static_cast<CallbackData *>(userdata);
     cb_data->object->playingFinished(cb_data->name, error_code);
 
     delete (cb_data);

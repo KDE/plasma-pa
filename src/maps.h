@@ -57,9 +57,7 @@ template<typename Type, typename PAInfo>
 class MapBase : public MapBaseQObject
 {
 public:
-    ~MapBase() override
-    {
-    }
+    ~MapBase() override = default;
 
     const QMap<quint32, Type *> &data() const
     {
@@ -156,14 +154,14 @@ protected:
     QSet<quint32> m_pendingRemovals;
 };
 
-typedef MapBase<Sink, pa_sink_info> SinkMap;
-typedef MapBase<SinkInput, pa_sink_input_info> SinkInputMap;
-typedef MapBase<Source, pa_source_info> SourceMap;
-typedef MapBase<SourceOutput, pa_source_output_info> SourceOutputMap;
-typedef MapBase<Client, pa_client_info> ClientMap;
-typedef MapBase<Card, pa_card_info> CardMap;
-typedef MapBase<Module, pa_module_info> ModuleMap;
-typedef MapBase<StreamRestore, pa_ext_stream_restore_info> StreamRestoreMap;
+using SinkMap = MapBase<Sink, pa_sink_info>;
+using SinkInputMap = MapBase<SinkInput, pa_sink_input_info>;
+using SourceMap = MapBase<Source, pa_source_info>;
+using SourceOutputMap = MapBase<SourceOutput, pa_source_output_info>;
+using ClientMap = MapBase<Client, pa_client_info>;
+using CardMap = MapBase<Card, pa_card_info>;
+using ModuleMap = MapBase<Module, pa_module_info>;
+using StreamRestoreMap = MapBase<StreamRestore, pa_ext_stream_restore_info>;
 
 } // QPulseAudio
 

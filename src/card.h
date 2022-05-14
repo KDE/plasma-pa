@@ -27,9 +27,7 @@ public:
         : Port(parent)
     {
     }
-    ~CardPort() override
-    {
-    }
+    ~CardPort() override = default;
 
     //    int direction;                      /**< A #pa_direction enum, indicating the direction of this port. */
     //    uint32_t n_profiles;                /**< Number of entries in profile array */

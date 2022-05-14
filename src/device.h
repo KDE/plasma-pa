@@ -39,9 +39,7 @@ public:
     };
     Q_ENUMS(State);
 
-    ~Device() override
-    {
-    }
+    ~Device() override = default;
 
     template<typename PAInfo>
     void updateDevice(const PAInfo *info)

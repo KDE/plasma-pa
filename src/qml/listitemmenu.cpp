@@ -320,7 +320,7 @@ QMenu *ListItemMenu::createMenu()
         return nullptr;
     }
 
-    QMenu *menu = new QMenu();
+    auto *menu = new QMenu();
     menu->setAttribute(Qt::WA_DeleteOnClose);
 
     connect(menu, &QMenu::aboutToHide, this, [this] {
@@ -446,7 +446,7 @@ QMenu *ListItemMenu::createMenu()
                         menu->addSection(title);
                     }
 
-                    QActionGroup *profileGroup = new QActionGroup(profilesMenu);
+                    auto *profileGroup = new QActionGroup(profilesMenu);
                     for (auto it = availableProfiles.constBegin(), end = availableProfiles.constEnd(); it != end; ++it) {
                         const int i = it.key();
                         Profile *profile = it.value();

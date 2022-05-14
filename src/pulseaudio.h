@@ -61,9 +61,7 @@ private:
 private:
     // Prevent leaf-classes from default constructing as we want to enforce
     // them passing us a context or explicit nullptrs.
-    AbstractModel()
-    {
-    }
+    AbstractModel() = default;
 };
 
 class CardModel : public AbstractModel

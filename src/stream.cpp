@@ -17,9 +17,7 @@ Stream::Stream(QObject *parent)
     m_hasVolume = false;
 }
 
-Stream::~Stream()
-{
-}
+Stream::~Stream() = default;
 
 QString Stream::name() const
 {

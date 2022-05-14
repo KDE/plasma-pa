@@ -67,7 +67,7 @@ ModuleManager::ModuleManager(QObject *parent)
 
     connect(Context::instance()->server(), &Server::updated, this, &ModuleManager::serverUpdated);
 
-    QTimer *updateModulesTimer = new QTimer(this);
+    auto *updateModulesTimer = new QTimer(this);
     updateModulesTimer->setInterval(500ms);
     updateModulesTimer->setSingleShot(true);
     connect(updateModulesTimer, &QTimer::timeout, this, &ModuleManager::updateLoadedModules);
@@ -76,7 +76,8 @@ ModuleManager::ModuleManager(QObject *parent)
     updateLoadedModules();
 }
 
-ModuleManager::~ModuleManager(){};
+ModuleManager::~ModuleManager() = default;
+;
 
 bool ModuleManager::settingsSupported() const
 {

@@ -191,7 +191,7 @@ static void ext_stream_restore_change_sink_cb(pa_context *context, const pa_ext_
     Q_ASSERT(context);
     Q_ASSERT(data);
     if (qstrncmp(info->name, "sink-input-by", 13) == 0) {
-        Context *context = static_cast<Context *>(data);
+        auto *context = static_cast<Context *>(data);
         const QByteArray deviceData = context->newDefaultSink().toUtf8();
         pa_ext_stream_restore_info newinfo;
         newinfo.name = info->name;
@@ -211,7 +211,7 @@ static void ext_stream_restore_change_source_cb(pa_context *context, const pa_ex
     Q_ASSERT(context);
     Q_ASSERT(data);
     if (qstrncmp(info->name, "source-output-by", 16) == 0) {
-        Context *context = static_cast<Context *>(data);
+        auto *context = static_cast<Context *>(data);
         const QByteArray deviceData = context->newDefaultSource().toUtf8();
         pa_ext_stream_restore_info newinfo;
         newinfo.name = info->name;
@@ -232,10 +232,10 @@ Context::Context(QObject *parent)
     , m_mainloop(nullptr)
     , m_references(0)
 {
-    QDBusServiceWatcher *watcher = new QDBusServiceWatcher(QStringLiteral("org.pulseaudio.Server"), //
-                                                           QDBusConnection::sessionBus(),
-                                                           QDBusServiceWatcher::WatchForRegistration,
-                                                           this);
+    auto *watcher = new QDBusServiceWatcher(QStringLiteral("org.pulseaudio.Server"), //
+                                            QDBusConnection::sessionBus(),
+                                            QDBusServiceWatcher::WatchForRegistration,
+                                            this);
     connect(watcher, &QDBusServiceWatcher::serviceRegistered, this, &Context::connectToDaemon);
     connectToDaemon();
 }
@@ -490,7 +490,7 @@ void Context::streamRestoreCallback(const pa_ext_stream_restore_info *info)
     }
 
     const int eventRoleIndex = 1;
-    StreamRestore *obj = qobject_cast<StreamRestore *>(m_streamRestores.data().value(eventRoleIndex));
+    auto *obj = qobject_cast<StreamRestore *>(m_streamRestores.data().value(eventRoleIndex));
 
     if (!obj) {
         QVariantMap props;

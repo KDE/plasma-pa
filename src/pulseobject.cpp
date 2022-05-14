@@ -18,9 +18,7 @@ PulseObject::PulseObject(QObject *parent)
 {
 }
 
-PulseObject::~PulseObject()
-{
-}
+PulseObject::~PulseObject() = default;
 
 Context *PulseObject::context() const
 {
@@ -69,7 +67,7 @@ QString PulseObject::iconName() const
         return name;
     }
 
-    return QString();
+    return {};
 }
 
 QVariantMap PulseObject::properties() const

@@ -157,7 +157,7 @@ void VolumeMonitor::createStream()
 
 void VolumeMonitor::suspended_callback(pa_stream *s, void *userdata)
 {
-    VolumeMonitor *w = static_cast<VolumeMonitor *>(userdata);
+    auto *w = static_cast<VolumeMonitor *>(userdata);
     if (pa_stream_is_suspended(s)) {
         w->updateVolume(-1);
     }
@@ -165,7 +165,7 @@ void VolumeMonitor::suspended_callback(pa_stream *s, void *userdata)
 
 void VolumeMonitor::read_callback(pa_stream *s, size_t length, void *userdata)
 {
-    VolumeMonitor *w = static_cast<VolumeMonitor *>(userdata);
+    auto *w = static_cast<VolumeMonitor *>(userdata);
     const void *data;
     double volume;
 

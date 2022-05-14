@@ -14,9 +14,7 @@ VolumeObject::VolumeObject(QObject *parent)
     pa_cvolume_init(&m_volume);
 }
 
-VolumeObject::~VolumeObject()
-{
-}
+VolumeObject::~VolumeObject() = default;
 
 qint64 VolumeObject::volume() const
 {

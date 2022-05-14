@@ -13,9 +13,7 @@ GlobalAction::GlobalAction(QObject *parent)
 {
 }
 
-GlobalActionCollection::GlobalActionCollection()
-{
-}
+GlobalActionCollection::GlobalActionCollection() = default;
 
 QString GlobalActionCollection::name() const
 {
@@ -43,7 +41,7 @@ void GlobalActionCollection::componentComplete()
 {
     const auto childs{children()};
     for (QObject *item : childs) {
-        GlobalAction *action = qobject_cast<GlobalAction *>(item);
+        auto *action = qobject_cast<GlobalAction *>(item);
         if (!action) {
             continue;
         }

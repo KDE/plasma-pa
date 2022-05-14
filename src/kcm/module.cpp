@@ -16,9 +16,7 @@ KCMPulseAudio::KCMPulseAudio(QObject *parent, const KPluginMetaData &metaData, c
     setButtons(Help);
 }
 
-KCMPulseAudio::~KCMPulseAudio()
-{
-}
+KCMPulseAudio::~KCMPulseAudio() = default;
 
 void KCMPulseAudio::load()
 {

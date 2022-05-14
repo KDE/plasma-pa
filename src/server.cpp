@@ -91,7 +91,7 @@ static Type *findByName(const Map &map, const QString &name)
 void Server::updateDefaultDevices()
 {
     Sink *sink = findByName<Sink>(Context::instance()->sinks().data(), m_defaultSinkName);
-    Source *source = findByName<Source>(Context::instance()->sources().data(), m_defaultSourceName);
+    auto *source = findByName<Source>(Context::instance()->sources().data(), m_defaultSourceName);
 
     if (m_defaultSink != sink) {
         qCDebug(PLASMAPA) << "Default sink changed" << sink;

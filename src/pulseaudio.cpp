@@ -57,7 +57,7 @@ QHash<int, QByteArray> AbstractModel::roleNames() const
         return m_roles;
     }
     Q_UNREACHABLE();
-    return QHash<int, QByteArray>();
+    return {};
 }
 
 int AbstractModel::rowCount(const QModelIndex &parent) const
@@ -71,7 +71,7 @@ int AbstractModel::rowCount(const QModelIndex &parent) const
 QVariant AbstractModel::data(const QModelIndex &index, int role) const
 {
     if (!hasIndex(index.row(), index.column())) {
-        return QVariant();
+        return {};
     }
     QObject *data = m_map->objectAt(index.row());
     Q_ASSERT(data);
@@ -82,7 +82,7 @@ QVariant AbstractModel::data(const QModelIndex &index, int role) const
     }
     int property = m_objectProperties.value(role, -1);
     if (property == -1) {
-        return QVariant();
+        return {};
     }
     return data->metaObject()->property(property).read(data);
 }
@@ -196,7 +196,7 @@ QMetaMethod AbstractModel::propertyChangedMetaMethod() const
     auto mo = metaObject();
     int methodIndex = mo->indexOfMethod("propertyChanged()");
     if (methodIndex == -1) {
-        return QMetaMethod();
+        return {};
     }
     return mo->method(methodIndex);
 }

@@ -32,10 +32,10 @@ void Card::update(const pa_card_info *info)
     int i = 0;
     for (auto **it = info->profiles2; it && *it != nullptr; ++it) {
         if (i < m_profiles.count()) {
-            Profile *profile = static_cast<Profile *>(m_profiles.at(i));
+            auto *profile = static_cast<Profile *>(m_profiles.at(i));
             profilesHaveChanged |= profile->setInfo(*it);
         } else {
-            Profile *profile = new Profile(this);
+            auto *profile = new Profile(this);
             profile->setInfo(*it);
             m_profiles.append(profile);
             profilesHaveChanged = true;

@@ -13,8 +13,6 @@ Port::Port(QObject *parent)
 {
 }
 
-Port::~Port()
-{
-}
+Port::~Port() = default;
 
 } // QPulseAudio

@@ -17,9 +17,7 @@ Profile::Profile(QObject *parent)
 {
 }
 
-Profile::~Profile()
-{
-}
+Profile::~Profile() = default;
 
 QString Profile::name() const
 {

@@ -18,9 +18,7 @@ Sink::Sink(QObject *parent)
     connect(context()->server(), &Server::defaultSinkChanged, this, &Sink::defaultChanged);
 }
 
-Sink::~Sink()
-{
-}
+Sink::~Sink() = default;
 
 void Sink::update(const pa_sink_info *info)
 {

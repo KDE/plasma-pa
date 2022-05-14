@@ -13,7 +13,7 @@
 QVariant GSettingsItem::value(const QString &key) const
 {
     if (!m_settings) {
-        return QVariant();
+        return {};
     }
 
     GVariant *gvalue = g_settings_get_value(m_settings, key.toLatin1().data());
