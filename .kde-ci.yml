@@ -15,3 +15,5 @@ Dependencies:
     'frameworks/plasma-framework': '@latest'
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']
