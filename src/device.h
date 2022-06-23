@@ -37,7 +37,7 @@ public:
         SuspendedState,
         UnknownState,
     };
-    Q_ENUMS(State);
+    Q_ENUMS(State)
 
     ~Device() override = default;
 
