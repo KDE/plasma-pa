@@ -600,7 +600,7 @@ Item {
             required property PulseObjectFilterModel lowerModel
             required property string lowerType
             required property Component lowerDelegate
-            property string iconName: null
+            property string iconName: ""
             property string placeholderText: ""
 
              // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
