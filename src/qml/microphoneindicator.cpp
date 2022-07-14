@@ -62,6 +62,13 @@ void MicrophoneIndicator::scheduleUpdate()
 
 void MicrophoneIndicator::update()
 {
+    const bool allMuted = muted();
+    if (m_muted != allMuted) {
+        m_muted = allMuted;
+        // Microphone got toggled, show hint again next time an app uses it while muted.
+        m_showMutedHint = m_config.microphoneUsedWhileMutedOsd();
+    }
+
     const auto apps = recordingApplications();
     if (apps.isEmpty()) {
         m_showOsdOnUpdate = false;
@@ -69,6 +76,8 @@ void MicrophoneIndicator::update()
         m_sni = nullptr;
         return;
     }
+
+    bool shouldShowOsd = m_showOsdOnUpdate;
 
     if (!m_sni) {
         m_sni = new KStatusNotifierItem(QStringLiteral("microphone"));
@@ -105,9 +114,13 @@ void MicrophoneIndicator::update()
 
         // don't let it quit plasmashell
         m_sni->setStandardActionsEnabled(false);
-    }
 
-    const bool allMuted = muted();
+        // If an app started using the microphone but it's muted, show the OSD as a reminder.
+        if (allMuted && m_showMutedHint) {
+            shouldShowOsd = true;
+            m_showMutedHint = false;
+        }
+    }
 
     QString iconName;
     if (allMuted) {
@@ -137,10 +150,10 @@ void MicrophoneIndicator::update()
         m_muteAction->setChecked(allMuted);
     }
 
-    if (m_showOsdOnUpdate) {
+    if (shouldShowOsd) {
         showOsd();
-        m_showOsdOnUpdate = false;
     }
+    m_showOsdOnUpdate = false;
 }
 
 bool MicrophoneIndicator::muted() const

@@ -81,6 +81,13 @@ Kirigami.Page {
             }
 
             QQC2.CheckBox {
+                id: micUsedWhileMutedOsd
+                checked: config.microphoneUsedWhileMutedOsd
+                onToggled: { config.microphoneUsedWhileMutedOsd = checked; config.save() }
+                text: i18n("Microphone is being used while muted")
+            }
+
+            QQC2.CheckBox {
                 id: muteOsd
                 checked: config.muteOsd
                 onToggled: { config.muteOsd = checked; config.save() }

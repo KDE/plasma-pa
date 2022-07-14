@@ -13,6 +13,8 @@
 #include <QPointer>
 #include <QVector>
 
+#include "globalconfig.h"
+
 class QAction;
 class QTimer;
 
@@ -60,14 +62,18 @@ private:
     QPulseAudio::SourceModel *const m_sourceModel = nullptr; // microphone devices
     QPulseAudio::SourceOutputModel *const m_sourceOutputModel = nullptr; // recording streams
 
+    GlobalConfig m_config;
+
     KStatusNotifierItem *m_sni = nullptr;
     QPointer<QAction> m_muteAction;
     QPointer<QAction> m_dontAgainAction;
 
     QVector<QPersistentModelIndex> m_mutedIndices;
+    bool m_muted = false;
 
     VolumeOSD *m_osd = nullptr;
     bool m_showOsdOnUpdate = false;
+    bool m_showMutedHint = true;
 
     int m_wheelDelta = 0;
 
