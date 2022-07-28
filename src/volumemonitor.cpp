@@ -105,7 +105,6 @@ void VolumeMonitor::createStream()
         streamIdx = sinkInput->index();
     } else if (auto *sourceOutput = qobject_cast<SourceOutput *>(m_target)) {
         sourceIdx = sourceOutput->deviceIndex();
-        streamIdx = sourceOutput->index();
     } else if (auto *sink = qobject_cast<Sink *>(m_target)) {
         sourceIdx = sink->monitorIndex();
     } else if (auto *source = qobject_cast<Source *>(m_target)) {
