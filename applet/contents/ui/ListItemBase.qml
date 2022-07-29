@@ -183,9 +183,9 @@ PC3.ItemDelegate {
 
                     Accessible.description: i18n("Show additional options for %1", defaultButton.text)
 
-                    PC3.ToolTip.visible: hovered
-                    PC3.ToolTip.text: i18n("Show additional options for %1", defaultButton.text)
-                    PC3.ToolTip.delay: 700
+                    PC3.ToolTip {
+                        text: parent.Accessible.description
+                    }
                 }
             }
 
