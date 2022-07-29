@@ -193,6 +193,10 @@ PC3.ItemDelegate {
                     onClicked: item.model.Muted = !item.model.Muted
                     checked: item.model.Muted
 
+                    text: item.model.Muted ? i18nc("@action:button", "Unmute") : i18nc("@action:button", "Mute")
+
+                    Accessible.description: item.model.Muted ? i18n("Unmute %1", defaultButton.text) : i18n("Mute %1", defaultButton.text)
+
                     PC3.ToolTip.visible: hovered
                     PC3.ToolTip.text: item.model.Muted ? i18n("Unmute %1", defaultButton.text) : i18n("Mute %1", defaultButton.text)
                     PC3.ToolTip.delay: 700

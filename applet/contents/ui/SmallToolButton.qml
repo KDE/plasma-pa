@@ -15,4 +15,6 @@ PlasmaComponents3.ToolButton {
     readonly property int size: Math.ceil(PlasmaCore.Units.iconSizes.small + PlasmaCore.Units.smallSpacing * 2)
     implicitWidth: size
     implicitHeight: size
+
+    display: PlasmaComponents3.AbstractButton.IconOnly
 }
