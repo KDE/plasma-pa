@@ -182,6 +182,7 @@ PC3.ItemDelegate {
                     text: i18nc("@action:button", "Additional Options")
 
                     Accessible.description: i18n("Show additional options for %1", defaultButton.text)
+                    Accessible.role: Accessible.ButtonMenu
 
                     PC3.ToolTip {
                         text: parent.Accessible.description
