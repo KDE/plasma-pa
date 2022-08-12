@@ -13,5 +13,6 @@ Dependencies:
     'frameworks/knotifications': '@latest'
     'frameworks/kpackage': '@latest'
     'frameworks/plasma-framework': '@latest'
+    'frameworks/kcmutils': '@latest'
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']

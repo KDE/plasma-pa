@@ -1,4 +1,4 @@
-add_library(kcm_pulseaudio MODULE module.cpp)
+kcoreaddons_add_plugin(kcm_pulseaudio SOURCES module.cpp INSTALL_NAMESPACE "plasma/kcms/systemsettings")
 
 target_link_libraries(kcm_pulseaudio
     Qt::Quick
@@ -7,9 +7,6 @@ target_link_libraries(kcm_pulseaudio
     KF5::QuickAddons
 )
 
-kcoreaddons_desktop_to_json(kcm_pulseaudio "package/metadata.desktop")
-
-install(FILES package/metadata.desktop RENAME kcm_pulseaudio.desktop DESTINATION ${KDE_INSTALL_KSERVICESDIR})
-install(TARGETS kcm_pulseaudio DESTINATION ${KDE_INSTALL_PLUGINDIR}/kcms)
+kcmutils_generate_desktop_file(kcm_pulseaudio)
 
 kpackage_install_package(package kcm_pulseaudio kcms)
