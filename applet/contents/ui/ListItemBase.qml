@@ -225,7 +225,12 @@ PC3.ItemDelegate {
                     visible: item.model.HasVolume
                     enabled: item.model.VolumeWritable
                     opacity: item.model.Muted ? 0.5 : 1
-
+                    Behavior on to {
+                        NumberAnimation {
+                            duration: PlasmaCore.Units.shortDuration
+                            easing.type: Easing.InOutQuad
+                        }
+                    }
                     Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
 
                     // Prevents the groove from showing through the handle
