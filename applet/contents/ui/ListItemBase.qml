@@ -28,11 +28,13 @@ PC3.ItemDelegate {
     property string /* "sink" | "sink-input" | "source" | "source-output" */ type
     property string fullNameToShowOnHover: ""
 
-    highlighted: dropArea.containsDrag
+    highlighted: dropArea.containsDrag || activeFocus
     background.visible: highlighted
     opacity: (plasmoid.rootItem.draggedStream && plasmoid.rootItem.draggedStream.deviceIndex === item.model.Index) ? 0.3 : 1.0
 
     ListView.delayRemove: clientIcon.Drag.active
+
+    Keys.forwardTo: [slider]
 
     contentItem: RowLayout {
         id: controlsRow

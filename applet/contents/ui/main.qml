@@ -437,6 +437,8 @@ Item {
         Layout.preferredWidth: main.Layout.preferredWidth
         collapseMarginsHint: true
 
+        KeyNavigation.down: tabBar.currentItem
+
         function beginMoveStream(type, stream) {
             if (type === "sink") {
                 contentView.hiddenTypes = "source"
@@ -473,6 +475,8 @@ Item {
                             return streamsTab.PC3.TabBar.index;
                         }
                     }
+
+                    Keys.onDownPressed: contentView.currentItem.contentItem.upperListView.itemAtIndex(0).forceActiveFocus();
 
                     onCurrentIndexChanged: {
                         switch (currentIndex) {
@@ -619,6 +623,10 @@ Item {
             }
             contentItem: Flickable {
                 contentHeight: layout.implicitHeight
+
+                property ListView upperListView: upperSection.visible ? upperSection : lowerSection
+                property ListView lowerListView: lowerSection.visible ? lowerSection : upperSection
+
                 ColumnLayout {
                     id: layout
                     width: parent.width
@@ -631,6 +639,29 @@ Item {
                         implicitHeight: contentHeight
                         model: scrollView.upperModel
                         delegate: scrollView.upperDelegate
+                        focus: visible
+
+                        Keys.onDownPressed: {
+                            if (currentIndex < count - 1) {
+                                incrementCurrentIndex();
+                                currentItem.forceActiveFocus();
+                            } else if (lowerSection.visible) {
+                                lowerSection.currentIndex = 0;
+                                lowerSection.currentItem.forceActiveFocus();
+                            } else {
+                                raiseMaximumVolumeCheckbox.forceActiveFocus(Qt.TabFocusReason);
+                            }
+                            event.accepted = true;
+                        }
+                        Keys.onUpPressed: {
+                            if (currentIndex > 0) {
+                                decrementCurrentIndex();
+                                currentItem.forceActiveFocus();
+                            } else {
+                                tabBar.currentItem.forceActiveFocus(Qt.BacktabFocusReason);
+                            }
+                            event.accepted = true;
+                        }
                     }
                     PlasmaCore.SvgItem {
                         elementId: "horizontal-line"
@@ -649,6 +680,29 @@ Item {
                         implicitHeight: contentHeight
                         model: scrollView.lowerModel
                         delegate: scrollView.lowerDelegate
+                        focus: visible && !upperSection.visible
+
+                        Keys.onDownPressed: {
+                            if (currentIndex < count - 1) {
+                                incrementCurrentIndex();
+                                currentItem.forceActiveFocus();
+                            } else {
+                                raiseMaximumVolumeCheckbox.forceActiveFocus(Qt.TabFocusReason);
+                            }
+                            event.accepted = true;
+                        }
+                        Keys.onUpPressed: {
+                            if (currentIndex > 0) {
+                                decrementCurrentIndex();
+                                currentItem.forceActiveFocus();
+                            } else if (upperSection.visible) {
+                                upperSection.currentIndex = upperSection.count - 1;
+                                upperSection.currentItem.forceActiveFocus();
+                            } else {
+                                tabBar.currentItem.forceActiveFocus(Qt.BacktabFocusReason);
+                            }
+                            event.accepted = true;
+                        }
                     }
                 }
             }
@@ -663,6 +717,10 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
 
                 checked: plasmoid.configuration.raiseMaximumVolume
+
+                KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
+                Keys.onUpPressed: KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
+
                 onToggled: {
                     plasmoid.configuration.raiseMaximumVolume = checked
                     if (!checked) {
