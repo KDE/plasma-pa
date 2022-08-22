@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2014-2015 Harald Sitter <sitter@kde.org>
+    SPDX-FileCopyrightText: 2022 ivan (@ratijas) tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -49,6 +50,7 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterType<QPulseAudio::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
     qmlRegisterType<QPulseAudio::ModuleModel>(uri, 0, 1, "ModuleModel");
     qmlRegisterType<QPulseAudio::VolumeMonitor>(uri, 0, 01, "VolumeMonitor");
+    qmlRegisterUncreatableType<QPulseAudio::VolumeObject>(uri, 0, 1, "VolumeObject", QString());
     qmlRegisterUncreatableType<QPulseAudio::PulseObject>(uri, 0, 1, "PulseObject", QString());
     qmlRegisterUncreatableType<QPulseAudio::Profile>(uri, 0, 1, "Profile", QString());
     qmlRegisterUncreatableType<QPulseAudio::Port>(uri, 0, 1, "Port", QString());
@@ -67,5 +69,4 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterAnonymousType<QPulseAudio::Client>(uri, 1);
     qmlRegisterAnonymousType<QPulseAudio::Sink>(uri, 1);
     qmlRegisterAnonymousType<QPulseAudio::Source>(uri, 1);
-    qmlRegisterAnonymousType<QPulseAudio::VolumeObject>(uri, 1);
 }

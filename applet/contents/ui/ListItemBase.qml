@@ -1,16 +1,17 @@
 /*
     SPDX-FileCopyrightText: 2014-2015 Harald Sitter <sitter@kde.org>
     SPDX-FileCopyrightText: 2019 Sefa Eyeoglu <contact@scrumplex.net>
+    SPDX-FileCopyrightText: 2022 ivan (@ratijas) tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-import QtQuick 2.4
-import QtQuick.Layouts 1.0
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
 
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 3.0 as PC3
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.private.volume 0.1
 
@@ -208,17 +209,11 @@ PC3.ItemDelegate {
                     }
                 }
 
-                PC3.Slider {
+                VolumeSlider {
                     id: slider
 
-                    // Helper properties to allow async slider updates.
-                    // While we are sliding we must not react to value updates
-                    // as otherwise we can easily end up in a loop where value
-                    // changes trigger volume changes trigger value changes.
-                    property int volume: item.model.Volume
-                    property bool ignoreValueChange: true
                     readonly property bool forceRaiseMaxVolume: (raiseMaximumVolumeCheckbox.checked && (item.type === "sink" || item.type === "source"))
-                                                                || volume >= PulseAudio.NormalVolume * 1.01
+                                                                || item.model.Volume >= PulseAudio.NormalVolume * 1.01
 
                     Layout.fillWidth: true
                     from: PulseAudio.MinimalVolume
@@ -226,7 +221,8 @@ PC3.ItemDelegate {
                     stepSize: to / (to / PulseAudio.NormalVolume * 100.0)
                     visible: item.model.HasVolume
                     enabled: item.model.VolumeWritable
-                    opacity: item.model.Muted ? 0.5 : 1
+                    muted: item.model.Muted
+                    volumeObject: item.model.PulseObject
                     Behavior on to {
                         NumberAnimation {
                             duration: PlasmaCore.Units.shortDuration
@@ -235,73 +231,11 @@ PC3.ItemDelegate {
                     }
                     Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
 
-                    // Prevents the groove from showing through the handle
-                    layer.enabled: opacity < 1
-
-                    background: PlasmaCore.FrameSvgItem {
-                        imagePath: "widgets/slider"
-                        prefix: "groove"
-                        width: parent.availableWidth
-                        height: margins.top + margins.bottom
-                        anchors.centerIn: parent
-                        scale: parent.mirrored ? -1 : 1
-
-                        PlasmaCore.FrameSvgItem {
-                            imagePath: "widgets/slider"
-                            prefix: "groove-highlight"
-                            width: slider.visualPosition * slider.availableWidth
-                            height: parent.height
-                            anchors.left: parent.left
-                            anchors.verticalCenter: parent.verticalCenter
-                            scale: parent.mirrored ? -1 : 1
-                        }
-
-                        PlasmaCore.FrameSvgItem {
-                            imagePath: "widgets/slider"
-                            prefix: "groove-highlight"
-                            anchors.left: parent.left
-                            y: (parent.height - height) / 2
-                            width: Math.max(margins.left + margins.right, slider.handle.x * meter.volume)
-                            height: Math.max(margins.top + margins.bottom, parent.height)
-                            opacity: meter.available && (meter.volume > 0 || animation.running)
-                            status: PlasmaCore.FrameSvgItem.Selected
-                            clip: true // prevents a visual glitch, BUG 434927
-                            VolumeMonitor {
-                                id: meter
-                                target: slider.visible && item.model.PulseObject ? item.model.PulseObject : null
-                            }
-                            Behavior on width {
-                                NumberAnimation  {
-                                    id: animation
-                                    duration: PlasmaCore.Units.shortDuration
-                                    easing.type: Easing.OutQuad
-                                }
-                            }
-                        }
+                    value: item.model.Volume
+                    onMoved: {
+                        item.model.Volume = value;
+                        item.model.Muted = value === 0;
                     }
-
-                    Component.onCompleted: {
-                        ignoreValueChange = false;
-                    }
-
-                    onVolumeChanged: {
-                        var oldIgnoreValueChange = ignoreValueChange;
-                        ignoreValueChange = true;
-                        value = item.model.Volume;
-                        ignoreValueChange = oldIgnoreValueChange;
-                    }
-
-                    onValueChanged: {
-                        if (!ignoreValueChange) {
-                            item.model.Volume = value;
-                            item.model.Muted = value === 0;
-
-                            if (!pressed) {
-                                updateTimer.restart();
-                            }
-                        }
-                    }
-
                     onPressedChanged: {
                         if (!pressed) {
                             // Make sure to sync the volume once the button was
@@ -309,18 +243,11 @@ PC3.ItemDelegate {
                             // Otherwise it might be that the slider is at v10
                             // whereas PA rejected the volume change and is
                             // still at v15 (e.g.).
-                            updateTimer.restart();
-
+                            value = Qt.binding(() => item.model.Volume);
                             if (type === "sink") {
                                 playFeedback(item.model.Index);
                             }
                         }
-                    }
-
-                    Timer {
-                        id: updateTimer
-                        interval: 200
-                        onTriggered: slider.value = item.model.Volume
                     }
                 }
                 PC3.Label {
