@@ -23,33 +23,35 @@ ColumnLayout {
 
     RowLayout {
         Layout.fillWidth: true
-        spacing: Kirigami.Units.smallSpacing * 2
-
-        Kirigami.Icon {
-            Layout.alignment: Qt.AlignHCenter
-            implicitHeight: Kirigami.Units.iconSizes.large
-            implicitWidth: implicitHeight
-            source: {
-                if (IconName.length !== 0) {
-                    return IconName
-                }
-
-                if (delegate.isPlayback) {
-                    return "audio-speakers-symbolic"
-                } else {
-                    return "audio-input-microphone-symbolic"
-                }
-            }
-        }
 
         ColumnLayout {
             id: delegateColumn
             Layout.fillWidth: true
+            spacing: Kirigami.Units.smallSpacing
 
             RowLayout {
+                spacing: Kirigami.Units.largeSpacing
+
+                Kirigami.Icon {
+                    Layout.alignment: Qt.AlignHCenter
+                    width: height
+                    height: Kirigami.Units.iconSizes.medium
+                    source: {
+                        if (IconName.length !== 0) {
+                            return IconName
+                        }
+
+                        if (delegate.isPlayback) {
+                            return "audio-speakers-symbolic"
+                        } else {
+                            return "audio-input-microphone-symbolic"
+                        }
+                    }
+                }
                 Label {
                     id: inputText
                     Layout.fillWidth: true
+                    Layout.preferredHeight: deviceComboBox.implicitHeight
                     text: {
                         if (isEventStream) {
                             return i18nd("kcm_pulseaudio", "Notification Sounds");
@@ -64,11 +66,22 @@ ColumnLayout {
                         }
                     }
                     elide: Text.ElideRight
+
+                    // Show tooltip on hover when text elided
+                    ToolTip {
+                        text: parent.text
+                        visible: parent.truncated && inputTextMouseArea.containsMouse
+                    }
+                    MouseArea {
+                        id: inputTextMouseArea
+                        anchors.fill: parent
+                        hoverEnabled: true
+                    }
                 }
 
                 DeviceComboBox {
                     id: deviceComboBox
-                    Layout.preferredWidth: delegate.width / 3
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 12
                     visible: !isEventStream && count > 1
                 }
             }
@@ -76,7 +89,6 @@ ColumnLayout {
             RowLayout {
                 MuteButton {
                     Layout.alignment: Qt.AlignTop
-                    Layout.topMargin: -Math.round((height - volumeSlider.height) / 2)
                     muted: Muted
                     onCheckedChanged: Muted = checked
                     toolTipText: inputText.text
@@ -84,7 +96,7 @@ ColumnLayout {
 
                 VolumeSlider {
                     id: volumeSlider
-                    Layout.alignment: Qt.AlignTop
+                    Layout.alignment: Qt.AlignVCenter
 
                     value: Volume
                     onMoved: {
@@ -98,6 +110,7 @@ ColumnLayout {
 
     Kirigami.Separator {
         visible: (delegate.ListView.view.count != 0) && (delegate.ListView.view.count != (index + 1))
+        Layout.topMargin: Kirigami.Units.smallSpacing
         Layout.fillWidth: true
 
         Component.onCompleted: {

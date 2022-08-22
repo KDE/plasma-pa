@@ -15,13 +15,9 @@ import org.kde.plasma.private.volume 0.1
 RowLayout {
     id: sliderRow
 
-    Layout.bottomMargin: hundredPercentLabelVisible ? hundredPercentLabel.height : 0
-
     signal moved()
 
     property alias value: slider.value
-
-    property bool hundredPercentLabelVisible: true
 
     QQC2.Slider {
         id: slider
@@ -31,24 +27,18 @@ RowLayout {
         value: Volume
         from: PulseAudio.MinimalVolume
         to: PulseAudio.MaximalVolume
-        // TODO: implement a way to hide tickmarks
-        // stepSize: to / (PulseAudio.MaximalVolume / PulseAudio.NormalVolume * 100.0) 
+        // TODO: implement a way to hide tickmarks (stepSize is also required to scroll)
+        // stepSize: to / (PulseAudio.MaximalVolume / PulseAudio.NormalVolume * 100.0)
         visible: HasVolume
         enabled: VolumeWritable
         opacity: Muted ? 0.5 : 1
-        onMoved: sliderRow.moved()
-
-        QQC2.Label {
-            id: hundredPercentLabel
-            readonly property real hundredPos: (slider.width / slider.to) * PulseAudio.NormalVolume
-            z: slider.z - 1
-            x: (Qt.application.layoutDirection == Qt.RightToLeft ? slider.width - hundredPos : hundredPos) - width / 2
-            y: slider.height
-            visible: sliderRow.hundredPercentLabelVisible
-            opacity: 0.5
-            font.pixelSize: slider.height / 2.2
-            text: i18nd("kcm_pulseaudio", "100%")
+        onMoved: {
+            // Since it is not possible to use stepSize without tickmarks being displayed, force 1% steps
+            // Unfortunately without stepSize, it cannot snap visually whilst scrolling by changing value instead of Volume as it breaks the binding
+            Volume = Math.round(value * 100 / PulseAudio.NormalVolume) * PulseAudio.NormalVolume / 100
+            sliderRow.moved()
         }
+
     }
 
     QQC2.Label {

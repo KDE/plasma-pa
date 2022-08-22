@@ -82,15 +82,18 @@ ScrollViewKCM {
 
             Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
-                visible: sinks.count > 0
+                visible: sinks.visible
                 text: i18nd("kcm_pulseaudio", "Playback Devices")
             }
 
             ListView {
                 id: sinks
+                visible: count > 0
                 Layout.fillWidth: true
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 Layout.preferredHeight: contentHeight
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
@@ -102,15 +105,18 @@ ScrollViewKCM {
 
             Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
-                visible: sources.count > 0
+                visible: sources.visible
                 text: i18nd("kcm_pulseaudio", "Recording Devices")
             }
 
             ListView {
                 id: sources
+                visible: count > 0
                 Layout.fillWidth: true
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 Layout.preferredHeight: contentHeight
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
@@ -122,18 +128,21 @@ ScrollViewKCM {
 
             Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
-                visible: inactiveCards.count > 0
+                visible: inactiveCards.visible
                 text: i18nd("kcm_pulseaudio", "Inactive Cards")
             }
 
             ListView {
                 id: inactiveCards
+                visible: count > 0
                 Layout.fillWidth: true
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 Layout.preferredHeight: contentHeight
-                Layout.margins: Kirigami.Units.gridUnit / 2
                 interactive: false
-                spacing: Kirigami.Units.smallSpacing * 2
-
+                spacing: Kirigami.Units.largeSpacing
                 model: PlasmaCore.SortFilterModel {
                     sourceModel: paCardModel
                     function role(name) {
@@ -151,15 +160,19 @@ ScrollViewKCM {
 
             Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
-                visible: eventStreamView.count || sinkInputView.count
+                visible: eventStreamView.visible || sinkInputView.visible
                 text: i18nd("kcm_pulseaudio", "Playback Streams")
             }
 
             ListView {
                 id: eventStreamView
+                visible: count > 0
                 Layout.fillWidth: true
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                // Only have a bottom margin if the ListView beneath is empty and not visible
+                Layout.bottomMargin: sinkInputView.visible ? 0 : Kirigami.Units.smallSpacing
                 Layout.preferredHeight: contentHeight
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
@@ -175,9 +188,12 @@ ScrollViewKCM {
 
             ListView {
                 id: sinkInputView
+                visible: count > 0
                 Layout.fillWidth: true
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 Layout.preferredHeight: contentHeight
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
@@ -193,15 +209,18 @@ ScrollViewKCM {
 
             Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
-                visible: sourceOutputView.count > 0
+                visible: sourceOutputView.visible
                 text: i18nd("kcm_pulseaudio", "Recording Streams")
             }
 
             ListView {
                 id: sourceOutputView
+                visible: count > 0
                 Layout.fillWidth: true
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 Layout.rightMargin: Kirigami.Units.largeSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 Layout.preferredHeight: contentHeight
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing

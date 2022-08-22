@@ -17,11 +17,12 @@ ColumnLayout {
 
     RowLayout {
         Layout.fillWidth: true
+        spacing: Kirigami.Units.largeSpacing
 
         Kirigami.Icon {
             Layout.alignment: Qt.AlignHCenter
             width: height
-            height: nameLabel.contentHeight
+            height: Kirigami.Units.iconSizes.medium
             source: IconName || "audio-card"
         }
 
@@ -30,6 +31,17 @@ ColumnLayout {
             Layout.fillWidth: true
             text: Properties["device.description"] || Name
             elide: Text.ElideRight
+
+            // Show tooltip on hover when text elided
+            ToolTip {
+                text: parent.text
+                visible: parent.truncated && inputTextMouseArea.containsMouse
+            }
+            MouseArea {
+                id: inputTextMouseArea
+                anchors.fill: parent
+                hoverEnabled: true
+            }
         }
 
         Label {
@@ -38,6 +50,7 @@ ColumnLayout {
         }
 
         ComboBox {
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 12
             model: Profiles.filter(function (profile) {
                 return profile.availability === Profile.Available;
             })
@@ -52,6 +65,7 @@ ColumnLayout {
 
     Kirigami.Separator {
         visible: (delegate.ListView.view.count != 0) && (delegate.ListView.view.count != (index + 1))
+        Layout.topMargin: Kirigami.Units.smallSpacing
         Layout.fillWidth: true
     }
 }
