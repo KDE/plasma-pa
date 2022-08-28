@@ -102,10 +102,7 @@
         "Name[uk]": "Аудіо",
         "Name[x-test]": "xxAudioxx",
         "Name[zh_CN]": "音频",
-        "Name[zh_TW]": "音效",
-        "ServiceTypes": [
-            "KCModule"
-        ]
+        "Name[zh_TW]": "音效"
     },
     "X-DocPath": "kcontrol/plasma-pa/index.html",
     "X-KDE-Keywords": "sound,volume,output,input,speakers,microphone,audio,music,hardware,devices,alsa,pulseaudio,pipewire,jack,hdmi,recording,playback,streams,sink,balance,audio balance,mono,stereo,surround,sound card,right speaker,left speaker,center speaker,notification sounds,analog,digital,headphone,headphones,earbuds,headset,earpiece,channel,channels,2.0,2.1,5.1,6.1,7.1",
@@ -143,8 +140,6 @@
     "X-KDE-Keywords[uk]": "sound,volume,output,input,speakers,microphone,audio,music,hardware,devices,alsa,pulseaudio,pipewire,jack,hdmi,recording,playback,streams,sink,balance,audio balance,mono,stereo,surround,sound card,right speaker,left speaker,center speaker,notification sounds,analog,digital,headphone,headphones,earbuds,headset,earpiece,channel,channels,2.0,2.1,5.1,6.1,7.1,звук,гучність,виведення,вихід,введення,вхід,гучномовці,спікери,динаміки,мікрофон,звук,аудіо,музика,обладнання,апаратне забезпечення,пристрої,алса,пульсаудіо,пульсавдіо,пайпвайр,пайпває,джек,ейчдіемай,хдма,запис,відтворення,потоки,баланс,баланс звуку,моно,стерео,просторовий,звукова картка,правий динамік,лівий динамік,центральний динамік,звуки сповіщень,аналоговий,цифровий,навушник,навушники,вкладиші,гарнітура,канал,канали",
     "X-KDE-Keywords[x-test]": "xxsoundxx,xxvolumexx,xxoutputxx,xxinputxx,xxspeakersxx,xxmicrophonexx,xxaudioxx,xxmusicxx,xxhardwarexx,xxdevicesxx,xxalsaxx,xxpulseaudioxx,xxpipewirexx,xxjackxx,xxhdmixx,xxrecordingxx,xxplaybackxx,xxstreamsxx,xxsinkxx,xxbalancexx,xxaudio balancexx,xxmonoxx,xxstereoxx,xxsurroundxx,xxsound cardxx,xxright speakerxx,xxleft speakerxx,xxcenter speakerxx,xxnotification soundsxx,xxanalogxx,xxdigitalxx,xxheadphonexx,xxheadphonesxx,xxearbudsxx,xxheadsetxx,xxearpiecexx,xxchannelxx,xxchannelsxx,xx2.0xx,xx2.1xx,xx5.1xx,xx6.1xx,xx7.1xx",
     "X-KDE-Keywords[zh_CN]": "sound,volume,output,input,speakers,microphone,audio,music,hardware,devices,alsa,pulseaudio,pipewire,jack,hdmi,recording,playback,streams,sink,balance,audio balance,mono,stereo,surround,sound card,right speaker,left speaker,center speaker,notification sounds,analog,digital,headphone,headphones,earbuds,headset,earpiece,channel,channels,2.0,2.1,5.1,6.1,7.1,声音,音量,输出,输入,扬声器,音箱,麦克风,音频,音乐,硬件,设备,录音,播放,回放,流,平衡,音频平衡,声道平衡,单声道,立体声,环绕声,声卡,右扬声器,右音箱,左扬声器,左音箱,中扬声器,中置音箱,通知声音,通知声效,模拟,数字,耳机,耳塞,头戴式,头戴式耳机,听筒,话筒,声道",
-    "X-KDE-ParentApp": "kcontrol",
     "X-KDE-System-Settings-Parent-Category": "hardware",
-    "X-KDE-Weight": 60,
-    "X-Plasma-MainScript": "ui/main.qml"
+    "X-KDE-Weight": 60
 }
