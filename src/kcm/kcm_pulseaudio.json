@@ -3,10 +3,30 @@
         "Authors": [
             {
                 "Email": "sitter@kde.org",
-                "Name": "Harald Sitter"
+                "Name": "Harald Sitter",
+                "Name[ar]": "هارالد سِتِر",
+                "Name[ca@valencia]": "Harald Sitter",
+                "Name[ca]": "Harald Sitter",
+                "Name[en_GB]": "Harald Sitter",
+                "Name[eu]": "Harald Sitter",
+                "Name[nl]": "Harald Sitter",
+                "Name[pt]": "Harald Sitter",
+                "Name[tr]": "Harald Sitter",
+                "Name[uk]": "Harald Sitter",
+                "Name[x-test]": "xxHarald Sitterxx"
             }
         ],
         "Description": "Configure audio devices and volume",
+        "Description[ar]": "اضبط أجهزة الصّوت ومستوى الصوت",
+        "Description[ca@valencia]": "Configura els dispositius d'àudio i el volum",
+        "Description[ca]": "Configura els dispositius d'àudio i el volum",
+        "Description[en_GB]": "Configure audio devices and volume",
+        "Description[eu]": "Konfiguratu audio gailuak eta bolumena",
+        "Description[nl]": "Audio-apparaten en -volume configureren",
+        "Description[pt]": "Configurar os dispositivos de áudio e o volume",
+        "Description[tr]": "Ses aygıtlarını ve düzeyini yapılandır",
+        "Description[uk]": "Налаштування звукових пристроїв та гучності",
+        "Description[x-test]": "xxConfigure audio devices and volumexx",
         "FormFactors": [
             "handset",
             "tablet",
