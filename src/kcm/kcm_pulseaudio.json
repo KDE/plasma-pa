@@ -14,6 +14,7 @@
                 "Name[fr]": "Harald Sitter",
                 "Name[nl]": "Harald Sitter",
                 "Name[pt]": "Harald Sitter",
+                "Name[ta]": "ஹரால்டு சிட்டர்",
                 "Name[tr]": "Harald Sitter",
                 "Name[uk]": "Harald Sitter",
                 "Name[x-test]": "xxHarald Sitterxx"
@@ -30,7 +31,8 @@
         "Description[fr]": "Configurer les périphériques et le volume audio",
         "Description[nl]": "Audio-apparaten en -volume configureren",
         "Description[pt]": "Configurar os dispositivos de áudio e o volume",
-        "Description[tr]": "Ses aygıtlarını ve düzeyini yapılandır",
+        "Description[ta]": "ஒலி சாதனங்களையும் ஒலியின் அளவையும் அமையுங்கள்",
+        "Description[tr]": "Ses aygıtlarını ve düzeyini yapılandırın",
         "Description[uk]": "Налаштування звукових пристроїв та гучності",
         "Description[x-test]": "xxConfigure audio devices and volumexx",
         "FormFactors": [
