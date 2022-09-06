@@ -433,6 +433,8 @@ Item {
     }
 
     Plasmoid.fullRepresentation: PlasmaExtras.Representation {
+        id: fullRep
+
         Layout.preferredHeight: main.Layout.preferredHeight
         Layout.preferredWidth: main.Layout.preferredWidth
         collapseMarginsHint: true
@@ -476,7 +478,7 @@ Item {
                         }
                     }
 
-                    Keys.onDownPressed: contentView.currentItem.contentItem.upperListView.itemAtIndex(0).forceActiveFocus();
+                    KeyNavigation.down: contentView.currentItem.contentItem.upperListView.itemAtIndex(0)
 
                     onCurrentIndexChanged: {
                         switch (currentIndex) {
@@ -492,11 +494,15 @@ Item {
                     PC3.TabButton {
                         id: devicesTab
                         text: i18n("Devices")
+
+                        KeyNavigation.up: fullRep.KeyNavigation.up
                     }
 
                     PC3.TabButton {
                         id: streamsTab
                         text: i18n("Applications")
+
+                        KeyNavigation.up: fullRep.KeyNavigation.up
                     }
                 }
 
