@@ -322,6 +322,10 @@ QMenu *ListItemMenu::createMenu()
 
     auto *menu = new QMenu();
     menu->setAttribute(Qt::WA_DeleteOnClose);
+    // Breeze and Oxygen have rounded corners on menus. They set this attribute in polish()
+    // but at that time the underlying surface has already been created where setting this
+    // flag makes no difference anymore (Bug 385311)
+    menu->setAttribute(Qt::WA_TranslucentBackground);
 
     connect(menu, &QMenu::aboutToHide, this, [this] {
         setVisible(false);
