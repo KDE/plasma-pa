@@ -28,6 +28,7 @@
                 "Name[x-test]": "xxHarald Sitterxx"
             }
         ],
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_pulseaudio",
         "Description": "Configure audio devices and volume",
         "Description[ar]": "اضبط أجهزة الصّوت ومستوى الصوت",
         "Description[bg]": "Конфигуриране на звукови устройства и сила на звука",
