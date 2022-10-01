@@ -730,22 +730,9 @@ Item {
                 KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
                 Keys.onUpPressed: KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
 
-                onToggled: {
-                    plasmoid.configuration.raiseMaximumVolume = checked
-                    if (!checked) {
-                        for (var i = 0; i < paSinkModel.rowCount(); i++) {
-                            if (paSinkModel.data(paSinkModel.index(i, 0), paSinkModel.role("Volume")) > PulseAudio.NormalVolume) {
-                                paSinkModel.setData(paSinkModel.index(i, 0), PulseAudio.NormalVolume, paSinkModel.role("Volume"));
-                            }
-                        }
-                        for (var i = 0; i < paSourceModel.rowCount(); i++) {
-                            if (paSourceModel.data(paSourceModel.index(i, 0), paSourceModel.role("Volume")) > PulseAudio.NormalVolume) {
-                                paSourceModel.setData(paSourceModel.index(i, 0), PulseAudio.NormalVolume, paSourceModel.role("Volume"));
-                            }
-                        }
-                    }
-                }
                 text: i18n("Raise maximum volume")
+
+                onToggled: plasmoid.configuration.raiseMaximumVolume = checked
             }
         }
     }

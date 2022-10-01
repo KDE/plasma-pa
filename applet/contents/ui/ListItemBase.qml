@@ -213,22 +213,15 @@ PC3.ItemDelegate {
                     id: slider
 
                     readonly property bool forceRaiseMaxVolume: (raiseMaximumVolumeCheckbox.checked && (item.type === "sink" || item.type === "source"))
-                                                                || item.model.Volume >= PulseAudio.NormalVolume * 1.01
 
                     Layout.fillWidth: true
                     from: PulseAudio.MinimalVolume
-                    to: forceRaiseMaxVolume ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
+                    to: forceRaiseMaxVolume || item.model.Volume >= PulseAudio.NormalVolume * 1.01 ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
                     stepSize: to / (to / PulseAudio.NormalVolume * 100.0)
                     visible: item.model.HasVolume
                     enabled: item.model.VolumeWritable
                     muted: item.model.Muted
                     volumeObject: item.model.PulseObject
-                    Behavior on to {
-                        NumberAnimation {
-                            duration: PlasmaCore.Units.shortDuration
-                            easing.type: Easing.InOutQuad
-                        }
-                    }
                     Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
 
                     value: item.model.Volume
@@ -247,6 +240,36 @@ PC3.ItemDelegate {
                             if (type === "sink") {
                                 playFeedback(item.model.Index);
                             }
+                        }
+                    }
+                    onForceRaiseMaxVolumeChanged: {
+                        if (forceRaiseMaxVolume) {
+                            toAnimation.from = PulseAudio.NormalVolume;
+                            toAnimation.to = PulseAudio.MaximalVolume;
+                        } else {
+                            toAnimation.from = PulseAudio.MaximalVolume;
+                            toAnimation.to = PulseAudio.NormalVolume;
+                        }
+                        seqAnimation.restart();
+                    }
+
+                    function updateVolume() {
+                        if (!forceRaiseMaxVolume && item.model.Volume > PulseAudio.NormalVolume) {
+                            item.model.Volume = PulseAudio.NormalVolume;
+                        }
+                    }
+
+                    SequentialAnimation {
+                        id: seqAnimation
+                        NumberAnimation {
+                            id: toAnimation
+                            target: slider
+                            property: "to"
+                            duration: PlasmaCore.Units.shortDuration
+                            easing.type: Easing.InOutQuad
+                        }
+                        ScriptAction {
+                            script: slider.updateVolume()
                         }
                     }
                 }
