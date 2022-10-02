@@ -1,0 +1,416 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2019, 2020, 2021.
+# Kristof Kiszel <ulysses@fsf.hu>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-15 00:46+0000\n"
+"PO-Revision-Date: 2021-12-07 09:47+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.11.90\n"
+
+#: context.cpp:590
+#, kde-format
+msgctxt "Name shown in debug pulseaudio tools"
+msgid "Plasma PA"
+msgstr "Plasma PA"
+
+#: kcm/package/contents/ui/CardListItem.qml:49
+#: kcm/package/contents/ui/DeviceListItem.qml:124
+#, kde-format
+msgctxt "@label"
+msgid "Profile:"
+msgstr "Profil:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:44
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:85
+#, kde-format
+msgid "Port:"
+msgstr "Port:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:108 qml/listitemmenu.cpp:387
+#, kde-format
+msgctxt "Port is unavailable"
+msgid "%1 (unavailable)"
+msgstr "%1 (nem érhető el)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:110 qml/listitemmenu.cpp:389
+#, kde-format
+msgctxt "Port is unplugged"
+msgid "%1 (unplugged)"
+msgstr "%1 (nincs csatlakoztatva)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:177
+#, kde-format
+msgctxt "Placeholder is channel name"
+msgid "%1:"
+msgstr "%1:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:210
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test"
+msgstr "Teszt"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:219
+#, kde-format
+msgctxt "Audio balance (e.g. control left/right volume individually"
+msgid "Balance"
+msgstr "Balansz"
+
+#: kcm/package/contents/ui/main.qml:24
+#, kde-format
+msgid "This module allows configuring the Pulseaudio sound subsystem."
+msgstr "Ez a modul lehetővé teszi a Pulseaudio alrendszer beállítását."
+
+#: kcm/package/contents/ui/main.qml:86
+#, kde-format
+msgid "Playback Devices"
+msgstr "Lejátszóeszközök"
+
+#: kcm/package/contents/ui/main.qml:109
+#, kde-format
+msgid "Recording Devices"
+msgstr "Felvevőeszközök"
+
+#: kcm/package/contents/ui/main.qml:132
+#, kde-format
+msgid "Inactive Cards"
+msgstr "Inaktív kártyák"
+
+#: kcm/package/contents/ui/main.qml:164
+#, kde-format
+msgid "Playback Streams"
+msgstr "Hanglejátszás"
+
+#: kcm/package/contents/ui/main.qml:213
+#, kde-format
+msgid "Recording Streams"
+msgstr "Hangfelvétel"
+
+#: kcm/package/contents/ui/main.qml:248
+#, kde-format
+msgid "Show Inactive Devices"
+msgstr "Inaktív eszközök megjelenítése"
+
+#: kcm/package/contents/ui/main.qml:259
+#, kde-format
+msgid "Configure…"
+msgstr "Beállítások…"
+
+#: kcm/package/contents/ui/main.qml:263
+#, kde-format
+msgid "Requires %1 PulseAudio module"
+msgstr "A(z) %1 PulseAudio modulra van szükség"
+
+#: kcm/package/contents/ui/main.qml:275
+#, kde-format
+msgid ""
+"Add virtual output device for simultaneous output on all local sound cards"
+msgstr ""
+"Virtuális kimeneti eszköz hozzáadása minden helyi hangkártyához szimultán "
+"lejátszáshoz"
+
+#: kcm/package/contents/ui/main.qml:281
+#, kde-format
+msgid ""
+"Automatically switch all running streams when a new output becomes available"
+msgstr "Lejátszások automatikus átirányítása, ha új kimenet válik elérhetővé"
+
+#: kcm/package/contents/ui/main.qml:297
+#, kde-format
+msgctxt ""
+"%1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"Error trying to play a test sound. \n"
+"The system said: \"%1\""
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:332
+#, kde-format
+msgid "Front Left"
+msgstr "Bal első"
+
+#: kcm/package/contents/ui/main.qml:333
+#, kde-format
+msgid "Front Center"
+msgstr "Első középső"
+
+#: kcm/package/contents/ui/main.qml:334
+#, kde-format
+msgid "Front Right"
+msgstr "Jobb első"
+
+#: kcm/package/contents/ui/main.qml:335
+#, kde-format
+msgid "Side Left"
+msgstr "Bal oldalsó"
+
+#: kcm/package/contents/ui/main.qml:336
+#, kde-format
+msgid "Side Right"
+msgstr "Jobb oldalsó"
+
+#: kcm/package/contents/ui/main.qml:337
+#, kde-format
+msgid "Rear Left"
+msgstr "Bal hátsó"
+
+#: kcm/package/contents/ui/main.qml:338
+#, kde-format
+msgid "Subwoofer"
+msgstr "Mélysugárzó"
+
+#: kcm/package/contents/ui/main.qml:339
+#, kde-format
+msgid "Rear Right"
+msgstr "Jobb hátsó"
+
+#: kcm/package/contents/ui/main.qml:340
+#, kde-format
+msgid "Mono"
+msgstr "Mono"
+
+#: kcm/package/contents/ui/main.qml:449
+#, kde-format
+msgid "Click on any speaker to test sound"
+msgstr "Kattintson bármelyik hangszóróra a hang teszteléséhez"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, fuzzy, kde-format
+#| msgctxt "Mute audio stream"
+#| msgid "Mute %1"
+msgctxt "Unmute audio stream"
+msgid "Unmute %1"
+msgstr "A(z) %1 némítása"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Mute audio stream"
+msgid "Mute %1"
+msgstr "A(z) %1 némítása"
+
+#: kcm/package/contents/ui/StreamListItem.qml:57
+#, kde-format
+msgid "Notification Sounds"
+msgstr "Értesítési hangok"
+
+#: kcm/package/contents/ui/StreamListItem.qml:63
+#, kde-format
+msgctxt "label of stream items"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:51
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:71
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/listitemmenu.cpp:342
+#, kde-format
+msgid "Play all audio via this device"
+msgstr "Minden hang lejátszása ezzel az eszközzel"
+
+#: qml/listitemmenu.cpp:347
+#, kde-format
+msgid "Record all audio via this device"
+msgstr "Minden hang felvétele ezzel az eszközzel"
+
+#: qml/listitemmenu.cpp:375
+#, kde-format
+msgctxt ""
+"Heading for a list of ports of a device (for example built-in laptop "
+"speakers or a plug for headphones)"
+msgid "Ports"
+msgstr "Portok"
+
+#: qml/listitemmenu.cpp:445
+#, kde-format
+msgctxt ""
+"Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
+"only, ...)"
+msgid "Profiles"
+msgstr "Profilok"
+
+#: qml/listitemmenu.cpp:479
+#, kde-format
+msgctxt ""
+"Heading for a list of possible output devices (speakers, headphones, ...) to "
+"choose"
+msgid "Play audio using"
+msgstr "Hang lejátszása ezzel:"
+
+#: qml/listitemmenu.cpp:481
+#, kde-format
+msgctxt ""
+"Heading for a list of possible input devices (built-in microphone, "
+"headset, ...) to choose"
+msgid "Record audio using"
+msgstr "Hang felvétele ezzel:"
+
+#: qml/microphoneindicator.cpp:102
+#, kde-format
+msgid "Mute"
+msgstr "Némítás"
+
+#: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone"
+msgstr "Mikrofon"
+
+#: qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone Muted"
+msgstr "Mikrofon némítva"
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "List of apps is using mic"
+msgid "%1 are using the microphone"
+msgstr "Ezek az alkalmazások használják a mikrofont: %1"
+
+#: qml/microphoneindicator.cpp:310
+#, kde-format
+msgctxt "App %1 is using mic with name %2"
+msgid "%1 is using the microphone (%2)"
+msgstr "A(z) %1 használja a mikrofont (%2)"
+
+#: qml/microphoneindicator.cpp:317
+#, kde-format
+msgctxt "App is using mic"
+msgid "%1 is using the microphone"
+msgstr "A(z) %1 használja a mikrofont"
+
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Kiszel Kristóf"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kiszel.kristof@gmail.com"
+
+#~ msgctxt "@title"
+#~ msgid "Audio"
+#~ msgstr "Hang"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Copyright 2015 Harald Sitter"
+#~ msgstr "Copyright Harald Sitter, 2015."
+
+#~ msgctxt "@info:credit"
+#~ msgid "Harald Sitter"
+#~ msgstr "Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Author"
+#~ msgstr "Szerző"
+
+#~ msgid "Configure"
+#~ msgstr "Beállítás"
+
+#~ msgid "Device Profiles"
+#~ msgstr "Eszközprofilok"
+
+#~ msgid "Advanced Output Configuration"
+#~ msgstr "Speciális kimenet-beállítások"
+
+#~ msgid "Speaker Placement and Testing"
+#~ msgstr "Hangszóróelhelyezés és tesztelés"
+
+#~ msgctxt "@label"
+#~ msgid "Output:"
+#~ msgstr "Kimenet:"
+
+#~ msgctxt "Port is unavailable"
+#~ msgid " (unavailable)"
+#~ msgstr "(nem érhető el)"
+
+#~ msgctxt "Port is unplugged"
+#~ msgid " (unplugged)"
+#~ msgstr "(nincs csatlakoztatva)"
+
+#~ msgid "Configure..."
+#~ msgstr "Beállítás…"
+
+#~ msgctxt "@label"
+#~ msgid "No Device Profiles Available"
+#~ msgstr "Nincsenek elérhető eszközprofilok"
+
+#~ msgctxt "@label"
+#~ msgid "No Playback Devices Available"
+#~ msgstr "Nincsenek lejátszóeszközök"
+
+#~ msgctxt "@label"
+#~ msgid "No Recording Devices Available"
+#~ msgstr "Nincsenek felvevőeszközök"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Playing Audio"
+#~ msgstr "Nincs hanglejátszás"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Recording Audio"
+#~ msgstr "Nincs hangfelvétel"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Devices"
+#~ msgstr "Eszközök"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Applications"
+#~ msgstr "Alkalmazások"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Advanced"
+#~ msgstr "Speciális"
+
+#~ msgid "Default Device"
+#~ msgstr "Alapértelmezett eszköz"
+
+#~ msgid "Outputs"
+#~ msgstr "Kimenetek"
+
+#~ msgctxt "@label"
+#~ msgid "No Output Devices Available"
+#~ msgstr "Nincsenek kimeneti eszközök"
+
+#~ msgid "Inputs"
+#~ msgstr "Bemenetek"
+
+#~ msgid "Mute audio"
+#~ msgstr "Hang némítása"
+
+#~ msgid "Capture"
+#~ msgstr "Felvétel"

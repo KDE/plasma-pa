@@ -1,0 +1,267 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-pa package.
+# Sergiu Bivol <sergiu@cip.md>, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-pa\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-07 00:50+0000\n"
+"PO-Revision-Date: 2022-08-14 16:52+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: contents/config/config.qml:12
+#, kde-format
+msgid "General"
+msgstr "Generale"
+
+#: contents/ui/ConfigGeneral.qml:35
+#, kde-format
+msgid "Volume step:"
+msgstr "Pas volum:"
+
+#: contents/ui/ConfigGeneral.qml:57
+#, kde-format
+msgid "Play audio feedback for changes to:"
+msgstr "Reacționează sonor la schimbări pentru:"
+
+#: contents/ui/ConfigGeneral.qml:59 contents/ui/ConfigGeneral.qml:70
+#, kde-format
+msgid "Audio volume"
+msgstr "Volum audio"
+
+#: contents/ui/ConfigGeneral.qml:69
+#, kde-format
+msgid "Show visual feedback for changes to:"
+msgstr "Arată reacții vizuale la schimbări pentru:"
+
+#: contents/ui/ConfigGeneral.qml:75
+#, kde-format
+msgid "Microphone sensitivity"
+msgstr "Sensibilitatea microfonului"
+
+#: contents/ui/ConfigGeneral.qml:80
+#, kde-format
+msgid "Mute state"
+msgstr "Starea muțirii"
+
+#: contents/ui/ConfigGeneral.qml:85
+#, kde-format
+msgid "Default output device"
+msgstr "Dispozitiv implicit de ieșire"
+
+#: contents/ui/ConfigGeneral.qml:94
+#, kde-format
+msgctxt "@title"
+msgid "Display:"
+msgstr "Afișare:"
+
+#: contents/ui/ConfigGeneral.qml:95
+#, kde-format
+msgid "Show virtual devices"
+msgstr "Arată dispozitivele virtuale"
+
+#: contents/ui/DeviceListItem.qml:26
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: contents/ui/DeviceListItem.qml:35
+#, kde-format
+msgid "Device name not found"
+msgstr "Denumirea dispozitivului nu a fost găsită"
+
+#: contents/ui/ListItemBase.qml:70
+#, kde-format
+msgid "Currently not recording"
+msgstr "Nu înregistrează acum"
+
+#: contents/ui/ListItemBase.qml:71
+#, kde-format
+msgid "Currently not playing"
+msgstr "Nu redă acum"
+
+#: contents/ui/ListItemBase.qml:184
+#, kde-format
+msgctxt "@action:button"
+msgid "Additional Options"
+msgstr "Opțiuni suplimentare"
+
+#: contents/ui/ListItemBase.qml:186
+#, kde-format
+msgid "Show additional options for %1"
+msgstr "Arată opțiuni suplimentare pentru %1"
+
+#: contents/ui/ListItemBase.qml:203
+#, kde-format
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "Sonorizează"
+
+#: contents/ui/ListItemBase.qml:203
+#, kde-format
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "Muțește"
+
+#: contents/ui/ListItemBase.qml:205
+#, kde-format
+msgid "Unmute %1"
+msgstr "Sonorizează %1"
+
+#: contents/ui/ListItemBase.qml:205
+#, kde-format
+msgid "Mute %1"
+msgstr "Muțește %1"
+
+#: contents/ui/ListItemBase.qml:232
+#, kde-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "Ajustează volumul pentru %1"
+
+#: contents/ui/ListItemBase.qml:260
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: contents/ui/ListItemBase.qml:280
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: contents/ui/main.qml:28
+#, kde-format
+msgid "Audio Volume"
+msgstr "Volum audio"
+
+#: contents/ui/main.qml:52
+#, kde-format
+msgid "Audio Muted"
+msgstr "Audio muțit"
+
+#: contents/ui/main.qml:54
+#, kde-format
+msgid "Volume at %1%"
+msgstr "Volum la %1%"
+
+#: contents/ui/main.qml:230
+#, kde-format
+msgid "No output device"
+msgstr "Niciun dispozitiv de ieșire"
+
+#: contents/ui/main.qml:362
+#, kde-format
+msgid "Increase Volume"
+msgstr "Mărește volumul"
+
+#: contents/ui/main.qml:368
+#, kde-format
+msgid "Decrease Volume"
+msgstr "Micșorează volumul"
+
+#: contents/ui/main.qml:374
+#, kde-format
+msgid "Mute"
+msgstr "Muțește"
+
+#: contents/ui/main.qml:380
+#, kde-format
+msgid "Increase Microphone Volume"
+msgstr "Mărește volumul microfonului"
+
+#: contents/ui/main.qml:386
+#, kde-format
+msgid "Decrease Microphone Volume"
+msgstr "Micșorează volumul microfonului"
+
+#: contents/ui/main.qml:392
+#, kde-format
+msgid "Mute Microphone"
+msgstr "Muțește microfonul"
+
+#: contents/ui/main.qml:496
+#, kde-format
+msgid "Devices"
+msgstr "Dispozitive"
+
+#: contents/ui/main.qml:503
+#, kde-format
+msgid "Applications"
+msgstr "Aplicații"
+
+#: contents/ui/main.qml:524 contents/ui/main.qml:526 contents/ui/main.qml:765
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "Muțește forțat toate dispozitivele de redare"
+
+#: contents/ui/main.qml:560
+#, kde-format
+msgid "No output or input devices found"
+msgstr "Nu a fost găsit niciun dispozitiv de ieșire sau intrare"
+
+#: contents/ui/main.qml:579
+#, kde-format
+msgid "No applications playing or recording audio"
+msgstr "Nicio aplicație nu redă sau înregistrează sunet"
+
+#: contents/ui/main.qml:745
+#, kde-format
+msgid "Raise maximum volume"
+msgstr "Mărește volumul maxim"
+
+#: contents/ui/main.qml:770
+#, kde-format
+msgid "&Configure Audio Devices…"
+msgstr "&Configurează dispozitive audio…"
+
+#: contents/ui/StreamListItem.qml:24
+#, kde-format
+msgid "Stream name not found"
+msgstr "Denumirea fluxului nu a fost găsită"
+
+#~ msgid "Record all audio via this device"
+#~ msgstr "Înregistrează tot sunetul prin acest dispozitiv"
+
+#~ msgid "Play all audio via this device"
+#~ msgstr "Redă tot sunetul prin acest dispozitiv"
+
+#~ msgctxt ""
+#~ "Heading for a list of ports of a device (for example built-in laptop "
+#~ "speakers or a plug for headphones)"
+#~ msgid "Ports"
+#~ msgstr "Porturi"
+
+#~ msgctxt "Port is unavailable"
+#~ msgid "%1 (unavailable)"
+#~ msgstr "%1 (indisponibil)"
+
+#~ msgctxt "Port is unplugged"
+#~ msgid "%1 (unplugged)"
+#~ msgstr "%1 (detașat)"
+
+#~ msgctxt ""
+#~ "Heading for a list of possible output devices (speakers, headphones, ...) "
+#~ "to choose"
+#~ msgid "Play audio using"
+#~ msgstr "Redă sunet prin"
+
+#~ msgctxt ""
+#~ "Heading for a list of possible input devices (built-in microphone, "
+#~ "headset, ...) to choose"
+#~ msgid "Record audio using"
+#~ msgstr "Înregistrează sunet prin"
+
+#~ msgid "show hidden devices"
+#~ msgstr "arată dispozitivele ascunse"

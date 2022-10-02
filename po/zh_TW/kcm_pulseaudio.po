@@ -1,0 +1,416 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Jeff Huang <s8321414@gmail.com>, 2016, 2017.
+# pan93412 <pan93412@gmail.com>, 2018, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcm_pulseaudio\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-15 00:46+0000\n"
+"PO-Revision-Date: 2019-09-28 15:24+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"Language: Traditional Chinese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.08.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: context.cpp:590
+#, kde-format
+msgctxt "Name shown in debug pulseaudio tools"
+msgid "Plasma PA"
+msgstr ""
+
+#: kcm/package/contents/ui/CardListItem.qml:49
+#: kcm/package/contents/ui/DeviceListItem.qml:124
+#, kde-format
+msgctxt "@label"
+msgid "Profile:"
+msgstr "設定檔："
+
+#: kcm/package/contents/ui/DeviceListItem.qml:44
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:85
+#, kde-format
+msgid "Port:"
+msgstr "連接埠："
+
+#: kcm/package/contents/ui/DeviceListItem.qml:108 qml/listitemmenu.cpp:387
+#, fuzzy, kde-format
+#| msgctxt "Port is unavailable"
+#| msgid " (unavailable)"
+msgctxt "Port is unavailable"
+msgid "%1 (unavailable)"
+msgstr "（無法使用）"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:110 qml/listitemmenu.cpp:389
+#, fuzzy, kde-format
+#| msgctxt "Port is unplugged"
+#| msgid " (unplugged)"
+msgctxt "Port is unplugged"
+msgid "%1 (unplugged)"
+msgstr "（未插入）"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:177
+#, fuzzy, kde-format
+#| msgctxt "volume percentage"
+#| msgid "%1%"
+msgctxt "Placeholder is channel name"
+msgid "%1:"
+msgstr "%1%"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:210
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test"
+msgstr ""
+
+#: kcm/package/contents/ui/DeviceListItem.qml:219
+#, kde-format
+msgctxt "Audio balance (e.g. control left/right volume individually"
+msgid "Balance"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:24
+#, kde-format
+msgid "This module allows configuring the Pulseaudio sound subsystem."
+msgstr "此模組可以設定 Pulseaudio 音效子系統。"
+
+#: kcm/package/contents/ui/main.qml:86
+#, kde-format
+msgid "Playback Devices"
+msgstr "回放裝置"
+
+#: kcm/package/contents/ui/main.qml:109
+#, kde-format
+msgid "Recording Devices"
+msgstr "錄音裝置"
+
+#: kcm/package/contents/ui/main.qml:132
+#, kde-format
+msgid "Inactive Cards"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:164
+#, kde-format
+msgid "Playback Streams"
+msgstr "回放串流"
+
+#: kcm/package/contents/ui/main.qml:213
+#, kde-format
+msgid "Recording Streams"
+msgstr "錄音串流"
+
+#: kcm/package/contents/ui/main.qml:248
+#, kde-format
+msgid "Show Inactive Devices"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:259
+#, kde-format
+msgid "Configure…"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:263
+#, kde-format
+msgid "Requires %1 PulseAudio module"
+msgstr "需要 %1 PulseAudio 模組"
+
+#: kcm/package/contents/ui/main.qml:275
+#, kde-format
+msgid ""
+"Add virtual output device for simultaneous output on all local sound cards"
+msgstr "在所有本機音效卡上加入虛擬輸出裝置以同步輸出"
+
+#: kcm/package/contents/ui/main.qml:281
+#, kde-format
+msgid ""
+"Automatically switch all running streams when a new output becomes available"
+msgstr "當新輸出可用時自動切換所有執行中的串流"
+
+#: kcm/package/contents/ui/main.qml:297
+#, kde-format
+msgctxt ""
+"%1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"Error trying to play a test sound. \n"
+"The system said: \"%1\""
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:332
+#, kde-format
+msgid "Front Left"
+msgstr "左前方"
+
+#: kcm/package/contents/ui/main.qml:333
+#, kde-format
+msgid "Front Center"
+msgstr "前方正中央"
+
+#: kcm/package/contents/ui/main.qml:334
+#, kde-format
+msgid "Front Right"
+msgstr "右前方"
+
+#: kcm/package/contents/ui/main.qml:335
+#, kde-format
+msgid "Side Left"
+msgstr "左側"
+
+#: kcm/package/contents/ui/main.qml:336
+#, kde-format
+msgid "Side Right"
+msgstr "右側"
+
+#: kcm/package/contents/ui/main.qml:337
+#, kde-format
+msgid "Rear Left"
+msgstr "左後方"
+
+#: kcm/package/contents/ui/main.qml:338
+#, kde-format
+msgid "Subwoofer"
+msgstr "低音音響"
+
+#: kcm/package/contents/ui/main.qml:339
+#, kde-format
+msgid "Rear Right"
+msgstr "右後方"
+
+#: kcm/package/contents/ui/main.qml:340
+#, kde-format
+msgid "Mono"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:449
+#, kde-format
+msgid "Click on any speaker to test sound"
+msgstr ""
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, fuzzy, kde-format
+#| msgctxt "Mute audio stream"
+#| msgid "Mute %1"
+msgctxt "Unmute audio stream"
+msgid "Unmute %1"
+msgstr "靜音 %1"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Mute audio stream"
+msgid "Mute %1"
+msgstr "靜音 %1"
+
+#: kcm/package/contents/ui/StreamListItem.qml:57
+#, kde-format
+msgid "Notification Sounds"
+msgstr "通知音效"
+
+#: kcm/package/contents/ui/StreamListItem.qml:63
+#, kde-format
+msgctxt "label of stream items"
+msgid "%1: %2"
+msgstr "%1：%2"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:51
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:71
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/listitemmenu.cpp:342
+#, kde-format
+msgid "Play all audio via this device"
+msgstr ""
+
+#: qml/listitemmenu.cpp:347
+#, kde-format
+msgid "Record all audio via this device"
+msgstr ""
+
+#: qml/listitemmenu.cpp:375
+#, fuzzy, kde-format
+#| msgid "Port:"
+msgctxt ""
+"Heading for a list of ports of a device (for example built-in laptop "
+"speakers or a plug for headphones)"
+msgid "Ports"
+msgstr "連接埠："
+
+#: qml/listitemmenu.cpp:445
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Profile:"
+msgctxt ""
+"Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
+"only, ...)"
+msgid "Profiles"
+msgstr "設定檔："
+
+#: qml/listitemmenu.cpp:479
+#, kde-format
+msgctxt ""
+"Heading for a list of possible output devices (speakers, headphones, ...) to "
+"choose"
+msgid "Play audio using"
+msgstr ""
+
+#: qml/listitemmenu.cpp:481
+#, kde-format
+msgctxt ""
+"Heading for a list of possible input devices (built-in microphone, "
+"headset, ...) to choose"
+msgid "Record audio using"
+msgstr ""
+
+#: qml/microphoneindicator.cpp:102
+#, kde-format
+msgid "Mute"
+msgstr "靜音"
+
+#: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone"
+msgstr "麥克風"
+
+#: qml/microphoneindicator.cpp:134
+#, fuzzy, kde-format
+#| msgid "Microphone"
+msgid "Microphone Muted"
+msgstr "麥克風"
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr "、"
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "List of apps is using mic"
+msgid "%1 are using the microphone"
+msgstr "%1 正在使用麥克風"
+
+#: qml/microphoneindicator.cpp:310
+#, fuzzy, kde-format
+#| msgctxt "App is using mic"
+#| msgid "%1 is using the microphone"
+msgctxt "App %1 is using mic with name %2"
+msgid "%1 is using the microphone (%2)"
+msgstr "%1 正在使用麥克風"
+
+#: qml/microphoneindicator.cpp:317
+#, kde-format
+msgctxt "App is using mic"
+msgid "%1 is using the microphone"
+msgstr "%1 正在使用麥克風"
+
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Franklin Weng, Jeff Huang"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "franklin@goodhorse.idv.tw, s8321414@gmail.com"
+
+#~ msgctxt "@title"
+#~ msgid "Audio"
+#~ msgstr "音訊"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Copyright 2015 Harald Sitter"
+#~ msgstr "Copyright 2015 Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Harald Sitter"
+#~ msgstr "Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Author"
+#~ msgstr "作者"
+
+#~ msgid "Device Profiles"
+#~ msgstr "裝置設定檔"
+
+#~ msgid "Advanced Output Configuration"
+#~ msgstr "進階輸出設定"
+
+#~ msgid "Speaker Placement and Testing"
+#~ msgstr "揚聲器擺放位置與測試"
+
+#~ msgctxt "@label"
+#~ msgid "Output:"
+#~ msgstr "輸出："
+
+#~ msgctxt "Port is unavailable"
+#~ msgid " (unavailable)"
+#~ msgstr "（無法使用）"
+
+#~ msgctxt "Port is unplugged"
+#~ msgid " (unplugged)"
+#~ msgstr "（未插入）"
+
+#~ msgctxt "@label"
+#~ msgid "No Device Profiles Available"
+#~ msgstr "沒有可用的裝置設定檔"
+
+#~ msgctxt "@label"
+#~ msgid "No Playback Devices Available"
+#~ msgstr "沒有可用的回放裝置"
+
+#~ msgctxt "@label"
+#~ msgid "No Recording Devices Available"
+#~ msgstr "沒有可用的錄音裝置"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Playing Audio"
+#~ msgstr "沒有正在播放音效的應用程式"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Recording Audio"
+#~ msgstr "沒有正在錄音的應用程式"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Devices"
+#~ msgstr "裝置"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Applications"
+#~ msgstr "應用程式"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Advanced"
+#~ msgstr "進階"
+
+#~ msgid "Default Device"
+#~ msgstr "預設裝置"
+
+#~ msgid "Outputs"
+#~ msgstr "輸出"
+
+#~ msgctxt "@label"
+#~ msgid "No Output Devices Available"
+#~ msgstr "沒有可用的輸出裝置"
+
+#~ msgid "Inputs"
+#~ msgstr "輸入"
+
+#~ msgid "Mute audio"
+#~ msgstr "靜音"

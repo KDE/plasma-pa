@@ -1,0 +1,426 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-15 00:46+0000\n"
+"PO-Revision-Date: 2022-04-20 12:56+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: context.cpp:590
+#, kde-format
+msgctxt "Name shown in debug pulseaudio tools"
+msgid "Plasma PA"
+msgstr "Plasma PA"
+
+#: kcm/package/contents/ui/CardListItem.qml:49
+#: kcm/package/contents/ui/DeviceListItem.qml:124
+#, kde-format
+msgctxt "@label"
+msgid "Profile:"
+msgstr "Profiel:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:44
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:85
+#, kde-format
+msgid "Port:"
+msgstr "Poort:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:108 qml/listitemmenu.cpp:387
+#, kde-format
+msgctxt "Port is unavailable"
+msgid "%1 (unavailable)"
+msgstr "%1 (niet beschikbaar)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:110 qml/listitemmenu.cpp:389
+#, kde-format
+msgctxt "Port is unplugged"
+msgid "%1 (unplugged)"
+msgstr "%1 (losgekoppeld)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:177
+#, kde-format
+msgctxt "Placeholder is channel name"
+msgid "%1:"
+msgstr "%1:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:210
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test"
+msgstr "Test"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:219
+#, kde-format
+msgctxt "Audio balance (e.g. control left/right volume individually"
+msgid "Balance"
+msgstr "Balans"
+
+#: kcm/package/contents/ui/main.qml:24
+#, kde-format
+msgid "This module allows configuring the Pulseaudio sound subsystem."
+msgstr ""
+"Deze module stelt u in staat het Pulseaudio geluidssubsysteem te "
+"configureren."
+
+#: kcm/package/contents/ui/main.qml:86
+#, kde-format
+msgid "Playback Devices"
+msgstr "Afspeelapparaten"
+
+#: kcm/package/contents/ui/main.qml:109
+#, kde-format
+msgid "Recording Devices"
+msgstr "Apparaten worden opgenomen"
+
+#: kcm/package/contents/ui/main.qml:132
+#, kde-format
+msgid "Inactive Cards"
+msgstr "Inactieve kaarten"
+
+#: kcm/package/contents/ui/main.qml:164
+#, kde-format
+msgid "Playback Streams"
+msgstr "Afspeelstromen"
+
+#: kcm/package/contents/ui/main.qml:213
+#, kde-format
+msgid "Recording Streams"
+msgstr "Streams worden opgenomen"
+
+#: kcm/package/contents/ui/main.qml:248
+#, kde-format
+msgid "Show Inactive Devices"
+msgstr "Inactieve apparaten tonen"
+
+#: kcm/package/contents/ui/main.qml:259
+#, kde-format
+msgid "Configure…"
+msgstr "Configureren…"
+
+#: kcm/package/contents/ui/main.qml:263
+#, kde-format
+msgid "Requires %1 PulseAudio module"
+msgstr "Vereist PulseAudio module %1"
+
+#: kcm/package/contents/ui/main.qml:275
+#, kde-format
+msgid ""
+"Add virtual output device for simultaneous output on all local sound cards"
+msgstr ""
+"Virtueel uitvoerapparaat toevoegen voor gezamenlijke uitvoer op alle lokale "
+"geluidskaarten"
+
+#: kcm/package/contents/ui/main.qml:281
+#, kde-format
+msgid ""
+"Automatically switch all running streams when a new output becomes available"
+msgstr ""
+"Automatisch alle actieve streams omschakelen wanneer een nieuwe uitvoer "
+"beschikbaar komt"
+
+#: kcm/package/contents/ui/main.qml:297
+#, kde-format
+msgctxt ""
+"%1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"Error trying to play a test sound. \n"
+"The system said: \"%1\""
+msgstr ""
+"Fout bij poging een testgeluid af te spelen. \n"
+"Het systeem zei: \"%1\""
+
+#: kcm/package/contents/ui/main.qml:332
+#, kde-format
+msgid "Front Left"
+msgstr "Vooraan links"
+
+#: kcm/package/contents/ui/main.qml:333
+#, kde-format
+msgid "Front Center"
+msgstr "Vooraan midden"
+
+#: kcm/package/contents/ui/main.qml:334
+#, kde-format
+msgid "Front Right"
+msgstr "Vooraan rechts"
+
+#: kcm/package/contents/ui/main.qml:335
+#, kde-format
+msgid "Side Left"
+msgstr "Opzij links"
+
+#: kcm/package/contents/ui/main.qml:336
+#, kde-format
+msgid "Side Right"
+msgstr "Opzij rechts"
+
+#: kcm/package/contents/ui/main.qml:337
+#, kde-format
+msgid "Rear Left"
+msgstr "Achter links"
+
+#: kcm/package/contents/ui/main.qml:338
+#, kde-format
+msgid "Subwoofer"
+msgstr "Subwoofer"
+
+#: kcm/package/contents/ui/main.qml:339
+#, kde-format
+msgid "Rear Right"
+msgstr "Achter rechts"
+
+#: kcm/package/contents/ui/main.qml:340
+#, kde-format
+msgid "Mono"
+msgstr "Mono"
+
+#: kcm/package/contents/ui/main.qml:449
+#, kde-format
+msgid "Click on any speaker to test sound"
+msgstr "Klik op een speaker om geluid te testen"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Unmute audio stream"
+msgid "Unmute %1"
+msgstr "Van %1 dempen opheffen"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Mute audio stream"
+msgid "Mute %1"
+msgstr "%1 dempen"
+
+#: kcm/package/contents/ui/StreamListItem.qml:57
+#, kde-format
+msgid "Notification Sounds"
+msgstr "Meldingsgeluiden"
+
+#: kcm/package/contents/ui/StreamListItem.qml:63
+#, kde-format
+msgctxt "label of stream items"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:51
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:71
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/listitemmenu.cpp:342
+#, kde-format
+msgid "Play all audio via this device"
+msgstr "Alle geluid afspelen via dit apparaat"
+
+#: qml/listitemmenu.cpp:347
+#, kde-format
+msgid "Record all audio via this device"
+msgstr "Alle geluid via dit apparaat opnemen"
+
+#: qml/listitemmenu.cpp:375
+#, kde-format
+msgctxt ""
+"Heading for a list of ports of a device (for example built-in laptop "
+"speakers or a plug for headphones)"
+msgid "Ports"
+msgstr "Poorten"
+
+#: qml/listitemmenu.cpp:445
+#, kde-format
+msgctxt ""
+"Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
+"only, ...)"
+msgid "Profiles"
+msgstr "Profielen"
+
+#: qml/listitemmenu.cpp:479
+#, kde-format
+msgctxt ""
+"Heading for a list of possible output devices (speakers, headphones, ...) to "
+"choose"
+msgid "Play audio using"
+msgstr "Geluid afspelen met"
+
+#: qml/listitemmenu.cpp:481
+#, kde-format
+msgctxt ""
+"Heading for a list of possible input devices (built-in microphone, "
+"headset, ...) to choose"
+msgid "Record audio using"
+msgstr "Geluid opnemen met"
+
+#: qml/microphoneindicator.cpp:102
+#, kde-format
+msgid "Mute"
+msgstr "Dempen"
+
+#: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone"
+msgstr "Microfoon"
+
+#: qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone Muted"
+msgstr "Microfoon is gedempt"
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "List of apps is using mic"
+msgid "%1 are using the microphone"
+msgstr "%1 hebben de microfoon in gebruik"
+
+#: qml/microphoneindicator.cpp:310
+#, kde-format
+msgctxt "App %1 is using mic with name %2"
+msgid "%1 is using the microphone (%2)"
+msgstr "Toepassing %1 gebruikt de microfoon (%2)"
+
+#: qml/microphoneindicator.cpp:317
+#, kde-format
+msgctxt "App is using mic"
+msgid "%1 is using the microphone"
+msgstr "%1 gebruikt de microfoon"
+
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Freek de Kruijf - t/m 2021"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "freekdekruijf@kde.nl"
+
+#~ msgctxt "@title"
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Copyright 2015 Harald Sitter"
+#~ msgstr "Copyright 2015 Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Harald Sitter"
+#~ msgstr "Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Author"
+#~ msgstr "Auteur"
+
+#~ msgid "Configure"
+#~ msgstr "Configureren"
+
+#~ msgid "Device Profiles"
+#~ msgstr "Apparaatprofielen"
+
+#~ msgid "Advanced Output Configuration"
+#~ msgstr "Geavanceerde uitvoerconfiguratie"
+
+#~ msgid "Speaker Placement and Testing"
+#~ msgstr "Luidsprekeropstelling en testen"
+
+#~ msgctxt "@label"
+#~ msgid "Output:"
+#~ msgstr "Uitvoer:"
+
+#~ msgctxt "Port is unavailable"
+#~ msgid " (unavailable)"
+#~ msgstr " (niet beschikbaar)"
+
+#~ msgctxt "Port is unplugged"
+#~ msgid " (unplugged)"
+#~ msgstr " (losgekoppeld)"
+
+#~ msgid "Configure..."
+#~ msgstr "Configureren..."
+
+#~ msgctxt "@label"
+#~ msgid "No Device Profiles Available"
+#~ msgstr "Geen apparaatprofielen beschikbaar"
+
+#~ msgctxt "@label"
+#~ msgid "No Playback Devices Available"
+#~ msgstr "Geen afspeelapparaten beschikbaar"
+
+#~ msgctxt "@label"
+#~ msgid "No Recording Devices Available"
+#~ msgstr "Geen opname-apparaten beschikbaar"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Playing Audio"
+#~ msgstr "Geen toepassingen die geluid afspelen"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Recording Audio"
+#~ msgstr "Geen toepassingen die geluid opnemen"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Devices"
+#~ msgstr "Apparaten"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Applications"
+#~ msgstr "Toepassingen"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Advanced"
+#~ msgstr "Geavanceerd"
+
+#~ msgid "Default Device"
+#~ msgstr "Standaard apparaat"
+
+#~ msgid "Outputs"
+#~ msgstr "Uitvoer"
+
+#~ msgctxt "@label"
+#~ msgid "No Output Devices Available"
+#~ msgstr "Geen uitvoerapparaten beschikbaar"
+
+#~ msgid "Inputs"
+#~ msgstr "Invoer"
+
+#~ msgid "Mute audio"
+#~ msgstr "Geluid dempen"
+
+#~ msgctxt "@title"
+#~ msgid "Configure the Audio Volume"
+#~ msgstr "Het geluidsvolume configureren"
+
+#~ msgid "Capture"
+#~ msgstr "Opnemen"
+
+#~ msgctxt "@label"
+#~ msgid "No Additional Configuration Available"
+#~ msgstr "Geen extra instellingen beschikbaar"

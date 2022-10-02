@@ -1,0 +1,415 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Wantoyo <wantoyek@gmail.com>, 2018, 2019, 2020, 2022.
+# Linerly <linerly@protonmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-15 00:46+0000\n"
+"PO-Revision-Date: 2022-08-26 23:44+0700\n"
+"Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
+"Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: context.cpp:590
+#, kde-format
+msgctxt "Name shown in debug pulseaudio tools"
+msgid "Plasma PA"
+msgstr "Plasma PA"
+
+#: kcm/package/contents/ui/CardListItem.qml:49
+#: kcm/package/contents/ui/DeviceListItem.qml:124
+#, kde-format
+msgctxt "@label"
+msgid "Profile:"
+msgstr "Profil:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:44
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:85
+#, kde-format
+msgid "Port:"
+msgstr "Colokan:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:108 qml/listitemmenu.cpp:387
+#, kde-format
+msgctxt "Port is unavailable"
+msgid "%1 (unavailable)"
+msgstr "%1 (tidak tersedia)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:110 qml/listitemmenu.cpp:389
+#, kde-format
+msgctxt "Port is unplugged"
+msgid "%1 (unplugged)"
+msgstr "%1 (tidak dicolokkan)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:177
+#, kde-format
+msgctxt "Placeholder is channel name"
+msgid "%1:"
+msgstr "%1:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:210
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test"
+msgstr "Tes"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:219
+#, kde-format
+msgctxt "Audio balance (e.g. control left/right volume individually"
+msgid "Balance"
+msgstr "Keseimbangan"
+
+#: kcm/package/contents/ui/main.qml:24
+#, kde-format
+msgid "This module allows configuring the Pulseaudio sound subsystem."
+msgstr "Modul ini membolehkan pengkonfigurasian subsistem suara Pulseaudio."
+
+#: kcm/package/contents/ui/main.qml:86
+#, kde-format
+msgid "Playback Devices"
+msgstr "Peranti Pemutaran"
+
+#: kcm/package/contents/ui/main.qml:109
+#, kde-format
+msgid "Recording Devices"
+msgstr "Peranti Perekaman"
+
+#: kcm/package/contents/ui/main.qml:132
+#, kde-format
+msgid "Inactive Cards"
+msgstr "Kartu Tidak Aktif"
+
+#: kcm/package/contents/ui/main.qml:164
+#, kde-format
+msgid "Playback Streams"
+msgstr "Stream Pemutaran"
+
+#: kcm/package/contents/ui/main.qml:213
+#, kde-format
+msgid "Recording Streams"
+msgstr "Stream Perekaman"
+
+#: kcm/package/contents/ui/main.qml:248
+#, kde-format
+msgid "Show Inactive Devices"
+msgstr "Tampilkan Peranti Tidak Aktif"
+
+#: kcm/package/contents/ui/main.qml:259
+#, kde-format
+msgid "Configure…"
+msgstr "Konfigurasikan..."
+
+#: kcm/package/contents/ui/main.qml:263
+#, kde-format
+msgid "Requires %1 PulseAudio module"
+msgstr "Memerlukan modul PulseAudio %1"
+
+#: kcm/package/contents/ui/main.qml:275
+#, kde-format
+msgid ""
+"Add virtual output device for simultaneous output on all local sound cards"
+msgstr ""
+"Tambahkan peranti output virtual untuk output serentak pada semua sound card "
+"lokal"
+
+#: kcm/package/contents/ui/main.qml:281
+#, kde-format
+msgid ""
+"Automatically switch all running streams when a new output becomes available"
+msgstr ""
+"Alihkan secara otomatis semua stream yang berjalan ketika sebuah output baru "
+"telah tersedia"
+
+#: kcm/package/contents/ui/main.qml:297
+#, kde-format
+msgctxt ""
+"%1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"Error trying to play a test sound. \n"
+"The system said: \"%1\""
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:332
+#, kde-format
+msgid "Front Left"
+msgstr "Kiri Depan"
+
+#: kcm/package/contents/ui/main.qml:333
+#, kde-format
+msgid "Front Center"
+msgstr "Tengah Depan"
+
+#: kcm/package/contents/ui/main.qml:334
+#, kde-format
+msgid "Front Right"
+msgstr "Kanan Depan"
+
+#: kcm/package/contents/ui/main.qml:335
+#, kde-format
+msgid "Side Left"
+msgstr "Sisi Kiri"
+
+#: kcm/package/contents/ui/main.qml:336
+#, kde-format
+msgid "Side Right"
+msgstr "Sisi Kanan"
+
+#: kcm/package/contents/ui/main.qml:337
+#, kde-format
+msgid "Rear Left"
+msgstr "Kiri Belakang"
+
+#: kcm/package/contents/ui/main.qml:338
+#, kde-format
+msgid "Subwoofer"
+msgstr "Subwoofer"
+
+#: kcm/package/contents/ui/main.qml:339
+#, kde-format
+msgid "Rear Right"
+msgstr "Kanan Belakang"
+
+#: kcm/package/contents/ui/main.qml:340
+#, kde-format
+msgid "Mono"
+msgstr "Mono"
+
+#: kcm/package/contents/ui/main.qml:449
+#, kde-format
+msgid "Click on any speaker to test sound"
+msgstr "Klik pada speaker apa pun untuk menguji suara"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, fuzzy, kde-format
+#| msgctxt "Mute audio stream"
+#| msgid "Mute %1"
+msgctxt "Unmute audio stream"
+msgid "Unmute %1"
+msgstr "Bungkam %1"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Mute audio stream"
+msgid "Mute %1"
+msgstr "Bungkam %1"
+
+#: kcm/package/contents/ui/StreamListItem.qml:57
+#, kde-format
+msgid "Notification Sounds"
+msgstr "Suara Notifikasi"
+
+#: kcm/package/contents/ui/StreamListItem.qml:63
+#, kde-format
+msgctxt "label of stream items"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:51
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:71
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/listitemmenu.cpp:342
+#, kde-format
+msgid "Play all audio via this device"
+msgstr "Mainkan semua audio via peranti ini"
+
+#: qml/listitemmenu.cpp:347
+#, kde-format
+msgid "Record all audio via this device"
+msgstr "Rekam semua audio via peranti ini"
+
+#: qml/listitemmenu.cpp:375
+#, kde-format
+msgctxt ""
+"Heading for a list of ports of a device (for example built-in laptop "
+"speakers or a plug for headphones)"
+msgid "Ports"
+msgstr "Colokan"
+
+#: qml/listitemmenu.cpp:445
+#, kde-format
+msgctxt ""
+"Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
+"only, ...)"
+msgid "Profiles"
+msgstr "Profil"
+
+#: qml/listitemmenu.cpp:479
+#, kde-format
+msgctxt ""
+"Heading for a list of possible output devices (speakers, headphones, ...) to "
+"choose"
+msgid "Play audio using"
+msgstr "Mainkan audio menggunakan"
+
+#: qml/listitemmenu.cpp:481
+#, kde-format
+msgctxt ""
+"Heading for a list of possible input devices (built-in microphone, "
+"headset, ...) to choose"
+msgid "Record audio using"
+msgstr "Rekam audio menggunakan"
+
+#: qml/microphoneindicator.cpp:102
+#, kde-format
+msgid "Mute"
+msgstr "Bungkam"
+
+#: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone"
+msgstr "Mikrofon"
+
+#: qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone Muted"
+msgstr "Mikrofon Dibungkam"
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "List of apps is using mic"
+msgid "%1 are using the microphone"
+msgstr "%1 telah menggunakan mikrofon"
+
+#: qml/microphoneindicator.cpp:310
+#, kde-format
+msgctxt "App %1 is using mic with name %2"
+msgid "%1 is using the microphone (%2)"
+msgstr "%1 sedang menggunakan mikrofon (%2)"
+
+#: qml/microphoneindicator.cpp:317
+#, kde-format
+msgctxt "App is using mic"
+msgid "%1 is using the microphone"
+msgstr "%1 telah menggunakan mikrofon"
+
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Wantoyo"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "wantoyek@gmail.com"
+
+#~ msgctxt "@title"
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Copyright 2015 Harald Sitter"
+#~ msgstr "Hak cipta 20115 Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Harald Sitter"
+#~ msgstr "Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Author"
+#~ msgstr "Penulis"
+
+#~ msgid "Device Profiles"
+#~ msgstr "Profil Perangkat"
+
+#~ msgid "Advanced Output Configuration"
+#~ msgstr "Konfigurasi Output Tingkat-lanjut"
+
+#~ msgid "Speaker Placement and Testing"
+#~ msgstr "Penempatan dan Pengujian Speaker"
+
+#~ msgctxt "@label"
+#~ msgid "Output:"
+#~ msgstr "Output:"
+
+#~ msgctxt "Port is unavailable"
+#~ msgid " (unavailable)"
+#~ msgstr " (tak tersedia)"
+
+#~ msgctxt "Port is unplugged"
+#~ msgid " (unplugged)"
+#~ msgstr " (tak tercolok)"
+
+#~ msgctxt "@label"
+#~ msgid "No Device Profiles Available"
+#~ msgstr "Tidak ada Profil Perangkat Tersedia"
+
+#~ msgctxt "@label"
+#~ msgid "No Playback Devices Available"
+#~ msgstr "Tidak Ada Perangkat Pemutaran Yang Tersedia"
+
+#~ msgctxt "@label"
+#~ msgid "No Recording Devices Available"
+#~ msgstr "Tidak Ada Perangkat Perekaman Yang Tersedia"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Playing Audio"
+#~ msgstr "Tidak ada Aplikasi Memutar Audio"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Recording Audio"
+#~ msgstr "Tidak Ada Aplikasi Perekaman Audio"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Devices"
+#~ msgstr "Perangkat"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Applications"
+#~ msgstr "Aplikasi"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Advanced"
+#~ msgstr "Tingkat-lanjut"
+
+#~ msgid "Default Device"
+#~ msgstr "Perangkat Baku"
+
+#~ msgid "Outputs"
+#~ msgstr "Output"
+
+#~ msgctxt "@label"
+#~ msgid "No Output Devices Available"
+#~ msgstr "Tidak ada Perangkat Output Tersedia"
+
+#~ msgid "Inputs"
+#~ msgstr "Input"
+
+#~ msgid "Mute audio"
+#~ msgstr "Bungkam audio"
+
+#~ msgctxt "@title"
+#~ msgid "Configure the Audio Volume"
+#~ msgstr "Konfigurasikan Volume Audio"
+
+#~ msgid "Capture"
+#~ msgstr "Tangkap"

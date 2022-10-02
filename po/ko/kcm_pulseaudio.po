@@ -1,0 +1,420 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Shinjo Park <kde@peremen.name>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-15 00:46+0000\n"
+"PO-Revision-Date: 2022-05-06 00:03+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: context.cpp:590
+#, kde-format
+msgctxt "Name shown in debug pulseaudio tools"
+msgid "Plasma PA"
+msgstr "Plasma PA"
+
+#: kcm/package/contents/ui/CardListItem.qml:49
+#: kcm/package/contents/ui/DeviceListItem.qml:124
+#, kde-format
+msgctxt "@label"
+msgid "Profile:"
+msgstr "프로필:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:44
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1(%2)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:85
+#, kde-format
+msgid "Port:"
+msgstr "포트:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:108 qml/listitemmenu.cpp:387
+#, kde-format
+msgctxt "Port is unavailable"
+msgid "%1 (unavailable)"
+msgstr "%1(사용할 수 없음)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:110 qml/listitemmenu.cpp:389
+#, kde-format
+msgctxt "Port is unplugged"
+msgid "%1 (unplugged)"
+msgstr "%1(연결 해제됨)"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:177
+#, kde-format
+msgctxt "Placeholder is channel name"
+msgid "%1:"
+msgstr "%1:"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:210
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test"
+msgstr "시험"
+
+#: kcm/package/contents/ui/DeviceListItem.qml:219
+#, kde-format
+msgctxt "Audio balance (e.g. control left/right volume individually"
+msgid "Balance"
+msgstr "균형"
+
+#: kcm/package/contents/ui/main.qml:24
+#, kde-format
+msgid "This module allows configuring the Pulseaudio sound subsystem."
+msgstr "이 모듈에서 PulseAudio 소리 서브시스템을 설정할 수 있습니다."
+
+#: kcm/package/contents/ui/main.qml:86
+#, kde-format
+msgid "Playback Devices"
+msgstr "재생 장치"
+
+#: kcm/package/contents/ui/main.qml:109
+#, kde-format
+msgid "Recording Devices"
+msgstr "녹음 장치"
+
+#: kcm/package/contents/ui/main.qml:132
+#, kde-format
+msgid "Inactive Cards"
+msgstr "비활성 카드"
+
+#: kcm/package/contents/ui/main.qml:164
+#, kde-format
+msgid "Playback Streams"
+msgstr "재생 스트림"
+
+#: kcm/package/contents/ui/main.qml:213
+#, kde-format
+msgid "Recording Streams"
+msgstr "녹음 스트림"
+
+#: kcm/package/contents/ui/main.qml:248
+#, kde-format
+msgid "Show Inactive Devices"
+msgstr "비활성 장치 표시"
+
+#: kcm/package/contents/ui/main.qml:259
+#, kde-format
+msgid "Configure…"
+msgstr "설정…"
+
+#: kcm/package/contents/ui/main.qml:263
+#, kde-format
+msgid "Requires %1 PulseAudio module"
+msgstr "%1 PulseAudio 모듈이 필요함"
+
+#: kcm/package/contents/ui/main.qml:275
+#, kde-format
+msgid ""
+"Add virtual output device for simultaneous output on all local sound cards"
+msgstr "모든 로컬 사운드 카드로 동시에 출력하는 가상 출력 장치 추가"
+
+#: kcm/package/contents/ui/main.qml:281
+#, kde-format
+msgid ""
+"Automatically switch all running streams when a new output becomes available"
+msgstr "새로운 출력을 사용할 수 있을 때 자동으로 모든 스트림 전환"
+
+#: kcm/package/contents/ui/main.qml:297
+#, kde-format
+msgctxt ""
+"%1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"Error trying to play a test sound. \n"
+"The system said: \"%1\""
+msgstr ""
+"테스트 소리를 재생하는 중 오류가 발생했습니다. \n"
+"시스템 응답: \"%1\""
+
+#: kcm/package/contents/ui/main.qml:332
+#, kde-format
+msgid "Front Left"
+msgstr "전면 왼쪽"
+
+#: kcm/package/contents/ui/main.qml:333
+#, kde-format
+msgid "Front Center"
+msgstr "전면 가운데"
+
+#: kcm/package/contents/ui/main.qml:334
+#, kde-format
+msgid "Front Right"
+msgstr "전면 오른쪽"
+
+#: kcm/package/contents/ui/main.qml:335
+#, kde-format
+msgid "Side Left"
+msgstr "측면 왼쪽"
+
+#: kcm/package/contents/ui/main.qml:336
+#, kde-format
+msgid "Side Right"
+msgstr "측면 오른쪽"
+
+#: kcm/package/contents/ui/main.qml:337
+#, kde-format
+msgid "Rear Left"
+msgstr "후면 왼쪽"
+
+#: kcm/package/contents/ui/main.qml:338
+#, kde-format
+msgid "Subwoofer"
+msgstr "서브우퍼"
+
+#: kcm/package/contents/ui/main.qml:339
+#, kde-format
+msgid "Rear Right"
+msgstr "후면 오른쪽"
+
+#: kcm/package/contents/ui/main.qml:340
+#, kde-format
+msgid "Mono"
+msgstr "모노"
+
+#: kcm/package/contents/ui/main.qml:449
+#, kde-format
+msgid "Click on any speaker to test sound"
+msgstr "소리를 시험하려면 스피커를 클릭하십시오"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Unmute audio stream"
+msgid "Unmute %1"
+msgstr "%1 음소거 해제"
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Mute audio stream"
+msgid "Mute %1"
+msgstr "%1 음소거"
+
+#: kcm/package/contents/ui/StreamListItem.qml:57
+#, kde-format
+msgid "Notification Sounds"
+msgstr "알림음"
+
+#: kcm/package/contents/ui/StreamListItem.qml:63
+#, kde-format
+msgctxt "label of stream items"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:51
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: kcm/package/contents/ui/VolumeSlider.qml:71
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/listitemmenu.cpp:342
+#, kde-format
+msgid "Play all audio via this device"
+msgstr "이 장치로 모든 오디오 재생"
+
+#: qml/listitemmenu.cpp:347
+#, kde-format
+msgid "Record all audio via this device"
+msgstr "이 장치로 모든 오디오 녹음"
+
+#: qml/listitemmenu.cpp:375
+#, kde-format
+msgctxt ""
+"Heading for a list of ports of a device (for example built-in laptop "
+"speakers or a plug for headphones)"
+msgid "Ports"
+msgstr "포트"
+
+#: qml/listitemmenu.cpp:445
+#, kde-format
+msgctxt ""
+"Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
+"only, ...)"
+msgid "Profiles"
+msgstr "프로필"
+
+#: qml/listitemmenu.cpp:479
+#, kde-format
+msgctxt ""
+"Heading for a list of possible output devices (speakers, headphones, ...) to "
+"choose"
+msgid "Play audio using"
+msgstr "다음으로 오디오 재생"
+
+#: qml/listitemmenu.cpp:481
+#, kde-format
+msgctxt ""
+"Heading for a list of possible input devices (built-in microphone, "
+"headset, ...) to choose"
+msgid "Record audio using"
+msgstr "다음으로 오디오 녹음"
+
+#: qml/microphoneindicator.cpp:102
+#, kde-format
+msgid "Mute"
+msgstr "음소거"
+
+#: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone"
+msgstr "마이크"
+
+#: qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone Muted"
+msgstr "마이크 음소거됨"
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "List of apps is using mic"
+msgid "%1 are using the microphone"
+msgstr "%1에서 마이크 사용 중"
+
+#: qml/microphoneindicator.cpp:310
+#, kde-format
+msgctxt "App %1 is using mic with name %2"
+msgid "%1 is using the microphone (%2)"
+msgstr "%1에서 마이크(%2) 사용 중"
+
+#: qml/microphoneindicator.cpp:317
+#, kde-format
+msgctxt "App is using mic"
+msgid "%1 is using the microphone"
+msgstr "%1에서 마이크 사용 중"
+
+#~ msgid "100%"
+#~ msgstr "100%"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "박신조"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kde@peremen.name"
+
+#~ msgctxt "@title"
+#~ msgid "Audio"
+#~ msgstr "오디오"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Copyright 2015 Harald Sitter"
+#~ msgstr "Copyright 2015 Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Harald Sitter"
+#~ msgstr "Harald Sitter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Author"
+#~ msgstr "작성자"
+
+#~ msgid "Configure"
+#~ msgstr "설정"
+
+#~ msgid "Device Profiles"
+#~ msgstr "장치 프로필"
+
+#~ msgid "Advanced Output Configuration"
+#~ msgstr "고급 출력 설정"
+
+#~ msgid "Speaker Placement and Testing"
+#~ msgstr "스피커 배치 및 시험"
+
+#~ msgctxt "@label"
+#~ msgid "Output:"
+#~ msgstr "출력:"
+
+#~ msgctxt "Port is unavailable"
+#~ msgid " (unavailable)"
+#~ msgstr "(사용할 수 없음)"
+
+#~ msgctxt "Port is unplugged"
+#~ msgid " (unplugged)"
+#~ msgstr "(연결 해제됨)"
+
+#~ msgid "Configure..."
+#~ msgstr "설정..."
+
+#~ msgctxt "@label"
+#~ msgid "No Device Profiles Available"
+#~ msgstr "장치 프로필 없음"
+
+#~ msgctxt "@label"
+#~ msgid "No Playback Devices Available"
+#~ msgstr "재생 장치 없음"
+
+#~ msgctxt "@label"
+#~ msgid "No Recording Devices Available"
+#~ msgstr "녹음 장치 없음"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Playing Audio"
+#~ msgstr "오디오를 재생하는 프로그램 없음"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Recording Audio"
+#~ msgstr "오디오를 녹음하는 프로그램 없음"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Devices"
+#~ msgstr "장치"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Applications"
+#~ msgstr "프로그램"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Advanced"
+#~ msgstr "고급"
+
+#~ msgid "Default Device"
+#~ msgstr "기본 장치"
+
+#~ msgid "Outputs"
+#~ msgstr "출력"
+
+#~ msgctxt "@label"
+#~ msgid "No Output Devices Available"
+#~ msgstr "출력 장치 없음"
+
+#~ msgid "Inputs"
+#~ msgstr "입력"
+
+#~ msgid "Mute audio"
+#~ msgstr "오디오 음소거"
+
+#~ msgctxt "@title"
+#~ msgid "Configure the Audio Volume"
+#~ msgstr "오디오 음량 설정"
+
+#~ msgid "Capture"
+#~ msgstr "캡처"
+
+#~ msgctxt "@label"
+#~ msgid "No Additional Configuration Available"
+#~ msgstr "추가 설정 없음"

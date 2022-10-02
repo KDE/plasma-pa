@@ -1,0 +1,365 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Elkana Bardugo <ttv200@gmail.com>, 2016.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-07 00:50+0000\n"
+"PO-Revision-Date: 2017-05-23 09:05-0400\n"
+"Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
+"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Zanata 3.9.6\n"
+
+#: contents/config/config.qml:12
+#, kde-format
+msgid "General"
+msgstr "כללי"
+
+#: contents/ui/ConfigGeneral.qml:35
+#, kde-format
+msgid "Volume step:"
+msgstr "צעדי עוצמה:"
+
+#: contents/ui/ConfigGeneral.qml:57
+#, kde-format
+msgid "Play audio feedback for changes to:"
+msgstr ""
+
+#: contents/ui/ConfigGeneral.qml:59 contents/ui/ConfigGeneral.qml:70
+#, fuzzy, kde-format
+#| msgid "Audio Volume"
+msgid "Audio volume"
+msgstr "עוצמת שמע"
+
+#: contents/ui/ConfigGeneral.qml:69
+#, kde-format
+msgid "Show visual feedback for changes to:"
+msgstr ""
+
+#: contents/ui/ConfigGeneral.qml:75
+#, kde-format
+msgid "Microphone sensitivity"
+msgstr ""
+
+#: contents/ui/ConfigGeneral.qml:80
+#, kde-format
+msgid "Mute state"
+msgstr ""
+
+#: contents/ui/ConfigGeneral.qml:85
+#, fuzzy, kde-format
+#| msgid "No output or input devices found"
+msgid "Default output device"
+msgstr "לא נמצאו יציאות או כניסות"
+
+#: contents/ui/ConfigGeneral.qml:94
+#, kde-format
+msgctxt "@title"
+msgid "Display:"
+msgstr ""
+
+#: contents/ui/ConfigGeneral.qml:95
+#, fuzzy, kde-format
+#| msgid "No output or input devices found"
+msgid "Show virtual devices"
+msgstr "לא נמצאו יציאות או כניסות"
+
+#: contents/ui/DeviceListItem.qml:26
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: contents/ui/DeviceListItem.qml:35
+#, kde-format
+msgid "Device name not found"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:70
+#, kde-format
+msgid "Currently not recording"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:71
+#, kde-format
+msgid "Currently not playing"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:184
+#, kde-format
+msgctxt "@action:button"
+msgid "Additional Options"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:186
+#, kde-format
+msgid "Show additional options for %1"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:203
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "השתק"
+
+#: contents/ui/ListItemBase.qml:203
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "השתק"
+
+#: contents/ui/ListItemBase.qml:205
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgid "Unmute %1"
+msgstr "השתק"
+
+#: contents/ui/ListItemBase.qml:205
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgid "Mute %1"
+msgstr "השתק"
+
+#: contents/ui/ListItemBase.qml:232
+#, kde-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:260
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: contents/ui/ListItemBase.qml:280
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: contents/ui/main.qml:28
+#, kde-format
+msgid "Audio Volume"
+msgstr "עוצמת שמע"
+
+#: contents/ui/main.qml:52
+#, kde-format
+msgid "Audio Muted"
+msgstr "השמע מושתק"
+
+#: contents/ui/main.qml:54
+#, kde-format
+msgid "Volume at %1%"
+msgstr "עוצמת השמע: %1%"
+
+#: contents/ui/main.qml:230
+#, fuzzy, kde-format
+#| msgid "No output or input devices found"
+msgid "No output device"
+msgstr "לא נמצאו יציאות או כניסות"
+
+#: contents/ui/main.qml:362
+#, kde-format
+msgid "Increase Volume"
+msgstr "הגבר עוצמה"
+
+#: contents/ui/main.qml:368
+#, kde-format
+msgid "Decrease Volume"
+msgstr "הנמך עוצמה"
+
+#: contents/ui/main.qml:374
+#, kde-format
+msgid "Mute"
+msgstr "השתק"
+
+#: contents/ui/main.qml:380
+#, kde-format
+msgid "Increase Microphone Volume"
+msgstr "הגבר עוצמת מיקרופון"
+
+#: contents/ui/main.qml:386
+#, kde-format
+msgid "Decrease Microphone Volume"
+msgstr "הנמך עוצמת מיקרופון"
+
+#: contents/ui/main.qml:392
+#, kde-format
+msgid "Mute Microphone"
+msgstr "השתק מיקרופון"
+
+#: contents/ui/main.qml:496
+#, kde-format
+msgid "Devices"
+msgstr "התקנים"
+
+#: contents/ui/main.qml:503
+#, kde-format
+msgid "Applications"
+msgstr "יישומים"
+
+#: contents/ui/main.qml:524 contents/ui/main.qml:526 contents/ui/main.qml:765
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr ""
+
+#: contents/ui/main.qml:560
+#, kde-format
+msgid "No output or input devices found"
+msgstr "לא נמצאו יציאות או כניסות"
+
+#: contents/ui/main.qml:579
+#, kde-format
+msgid "No applications playing or recording audio"
+msgstr "אין ישומים המשמיעים או מקליטים שמע"
+
+#: contents/ui/main.qml:745
+#, kde-format
+msgid "Raise maximum volume"
+msgstr "העלה עוצמה מירבית"
+
+#: contents/ui/main.qml:770
+#, kde-format
+msgid "&Configure Audio Devices…"
+msgstr ""
+
+#: contents/ui/StreamListItem.qml:24
+#, kde-format
+msgid "Stream name not found"
+msgstr ""
+
+#~ msgctxt ""
+#~ "Heading for a list of ports of a device (for example built-in laptop "
+#~ "speakers or a plug for headphones)"
+#~ msgid "Ports"
+#~ msgstr "יציאות"
+
+#, fuzzy
+#~| msgctxt "Port is unavailable"
+#~| msgid " (unavailable)"
+#~ msgctxt "Port is unavailable"
+#~ msgid "%1 (unavailable)"
+#~ msgstr "(לא זמין)"
+
+#, fuzzy
+#~| msgctxt "Port is unplugged"
+#~| msgid " (unplugged)"
+#~ msgctxt "Port is unplugged"
+#~ msgid "%1 (unplugged)"
+#~ msgstr "(לא מחובר)"
+
+#~ msgid "Maximum volume:"
+#~ msgstr "עוצמה מקסימלית:"
+
+#, fuzzy
+#~| msgctxt "Checkable switch to change the current default output."
+#~| msgid "Default"
+#~ msgid "Default Device"
+#~ msgstr "ברירת מחדל"
+
+#~ msgid "Playback Streams"
+#~ msgstr "הזרמת שמע"
+
+#~ msgid "Playback Devices"
+#~ msgstr "התקני השמעה"
+
+#, fuzzy
+#~| msgctxt "label of device items"
+#~| msgid "%1 (%2)"
+#~ msgctxt "label of stream items"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgctxt "Checkable switch for (un-)muting sound output."
+#~ msgid "Mute"
+#~ msgstr "השתק"
+
+#~ msgctxt "Checkable switch to change the current default output."
+#~ msgid "Default"
+#~ msgstr "ברירת מחדל"
+
+#~ msgid "Capture Streams"
+#~ msgstr "הזרמת לכידה"
+
+#~ msgid "Capture Devices"
+#~ msgstr "התקני לכידה"
+
+#~ msgid "Volume"
+#~ msgstr "עוצמה"
+
+#~ msgid "%"
+#~ msgstr "%"
+
+#~ msgid "Behavior"
+#~ msgstr "התנהגות"
+
+#~ msgid "Volume feedback"
+#~ msgstr "משוב עוצמה"
+
+#, fuzzy
+#~| msgid "Devices"
+#~ msgid "Device Profiles"
+#~ msgstr "התקנים"
+
+#, fuzzy
+#~| msgid "Playback Streams"
+#~ msgid "Playback"
+#~ msgstr "הזרמת שמע"
+
+#, fuzzy
+#~| msgid "No applications playing or recording audio"
+#~ msgctxt "@label"
+#~ msgid "No Applications Playing Audio"
+#~ msgstr "אין ישומים המשמיעים או מקליטים שמע"
+
+#, fuzzy
+#~| msgid "Capture Streams"
+#~ msgid "Capture"
+#~ msgstr "הזרמת לכידה"
+
+#, fuzzy
+#~| msgid "No applications playing or recording audio"
+#~ msgctxt "@label"
+#~ msgid "No Applications Recording Audio"
+#~ msgstr "אין ישומים המשמיעים או מקליטים שמע"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "Heading for a list of ports of a device (for example built-in laptop "
+#~| "speakers or a plug for headphones)"
+#~| msgid "Ports"
+#~ msgid "Port"
+#~ msgstr "יציאות"
+
+#, fuzzy
+#~| msgid "Devices"
+#~ msgctxt "@title:tab"
+#~ msgid "Devices"
+#~ msgstr "התקנים"
+
+#, fuzzy
+#~| msgid "Applications"
+#~ msgctxt "@title:tab"
+#~ msgid "Applications"
+#~ msgstr "יישומים"
+
+#~ msgctxt "label of stream items"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#, fuzzy
+#~| msgctxt "only used for sizing, should be widest possible string"
+#~| msgid "100%"
+#~ msgid "100%"
+#~ msgstr "100%"

@@ -1,0 +1,232 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Vít Pelčák <vit@pelcak.org>, 2015, 2016, 2017, 2018, 2019, 2020.
+# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-07 00:50+0000\n"
+"PO-Revision-Date: 2022-05-19 11:27+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#: contents/config/config.qml:12
+#, kde-format
+msgid "General"
+msgstr "Obecné"
+
+#: contents/ui/ConfigGeneral.qml:35
+#, kde-format
+msgid "Volume step:"
+msgstr "Krok hlasitosti:"
+
+#: contents/ui/ConfigGeneral.qml:57
+#, kde-format
+msgid "Play audio feedback for changes to:"
+msgstr "Přehrát melodii při změnách na:"
+
+#: contents/ui/ConfigGeneral.qml:59 contents/ui/ConfigGeneral.qml:70
+#, kde-format
+msgid "Audio volume"
+msgstr "Hlasitost audia"
+
+#: contents/ui/ConfigGeneral.qml:69
+#, kde-format
+msgid "Show visual feedback for changes to:"
+msgstr "Zobrazit vizuální odezvu pro změny na:"
+
+#: contents/ui/ConfigGeneral.qml:75
+#, kde-format
+msgid "Microphone sensitivity"
+msgstr "Citlivost mikrofonu"
+
+#: contents/ui/ConfigGeneral.qml:80
+#, kde-format
+msgid "Mute state"
+msgstr "Stav ztlumení"
+
+#: contents/ui/ConfigGeneral.qml:85
+#, kde-format
+msgid "Default output device"
+msgstr "Výchozí výstupní zařízení"
+
+#: contents/ui/ConfigGeneral.qml:94
+#, kde-format
+msgctxt "@title"
+msgid "Display:"
+msgstr "Zobrazení:"
+
+#: contents/ui/ConfigGeneral.qml:95
+#, kde-format
+msgid "Show virtual devices"
+msgstr "Zobrazit virtuální zařízení"
+
+#: contents/ui/DeviceListItem.qml:26
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: contents/ui/DeviceListItem.qml:35
+#, kde-format
+msgid "Device name not found"
+msgstr "Název zařízení nenalezen"
+
+#: contents/ui/ListItemBase.qml:70
+#, kde-format
+msgid "Currently not recording"
+msgstr "Právě se nenahrává"
+
+#: contents/ui/ListItemBase.qml:71
+#, kde-format
+msgid "Currently not playing"
+msgstr "Právě se nepřehrává"
+
+#: contents/ui/ListItemBase.qml:184
+#, kde-format
+msgctxt "@action:button"
+msgid "Additional Options"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:186
+#, kde-format
+msgid "Show additional options for %1"
+msgstr "Zobrazit další možnosti pro %1"
+
+#: contents/ui/ListItemBase.qml:203
+#, kde-format
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:203
+#, kde-format
+msgctxt "@action:button"
+msgid "Mute"
+msgstr ""
+
+#: contents/ui/ListItemBase.qml:205
+#, kde-format
+msgid "Unmute %1"
+msgstr "Povolit zvuk %1"
+
+#: contents/ui/ListItemBase.qml:205
+#, kde-format
+msgid "Mute %1"
+msgstr "Ztišit %1"
+
+#: contents/ui/ListItemBase.qml:232
+#, kde-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "Upravit hlasitost pro %1"
+
+#: contents/ui/ListItemBase.qml:260
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: contents/ui/ListItemBase.qml:280
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: contents/ui/main.qml:28
+#, kde-format
+msgid "Audio Volume"
+msgstr "Hlasitost zvuku"
+
+#: contents/ui/main.qml:52
+#, kde-format
+msgid "Audio Muted"
+msgstr "Zvuk ztlumen"
+
+#: contents/ui/main.qml:54
+#, kde-format
+msgid "Volume at %1%"
+msgstr "Hlasitost na %1%"
+
+#: contents/ui/main.qml:230
+#, kde-format
+msgid "No output device"
+msgstr "Žádné výstupní zařízení"
+
+#: contents/ui/main.qml:362
+#, kde-format
+msgid "Increase Volume"
+msgstr "Zvýšit hlasitost"
+
+#: contents/ui/main.qml:368
+#, kde-format
+msgid "Decrease Volume"
+msgstr "Snížit hlasitost"
+
+#: contents/ui/main.qml:374
+#, kde-format
+msgid "Mute"
+msgstr "Ztlumit"
+
+#: contents/ui/main.qml:380
+#, kde-format
+msgid "Increase Microphone Volume"
+msgstr "Zvýšit hlasitost mikrofonu"
+
+#: contents/ui/main.qml:386
+#, kde-format
+msgid "Decrease Microphone Volume"
+msgstr "Snížit hlasitost mikrofonu"
+
+#: contents/ui/main.qml:392
+#, kde-format
+msgid "Mute Microphone"
+msgstr "Ztlumit mikrofon"
+
+#: contents/ui/main.qml:496
+#, kde-format
+msgid "Devices"
+msgstr "Zařízení"
+
+#: contents/ui/main.qml:503
+#, kde-format
+msgid "Applications"
+msgstr "Aplikace"
+
+#: contents/ui/main.qml:524 contents/ui/main.qml:526 contents/ui/main.qml:765
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "Vynutit ztlumení všech přehrávacích zařízení"
+
+#: contents/ui/main.qml:560
+#, kde-format
+msgid "No output or input devices found"
+msgstr "Nenalezena žádná vstupní ani výstupní zařízení"
+
+#: contents/ui/main.qml:579
+#, kde-format
+msgid "No applications playing or recording audio"
+msgstr "Žádné aplikace přehrávající nebo nahrávající audio"
+
+#: contents/ui/main.qml:745
+#, kde-format
+msgid "Raise maximum volume"
+msgstr "Zvýšit maximální hlasitost"
+
+#: contents/ui/main.qml:770
+#, kde-format
+msgid "&Configure Audio Devices…"
+msgstr "Nastavit a&udio zařízení…"
+
+#: contents/ui/StreamListItem.qml:24
+#, kde-format
+msgid "Stream name not found"
+msgstr "Název proudu nenalezen"

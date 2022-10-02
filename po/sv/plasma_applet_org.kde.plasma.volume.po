@@ -1,0 +1,437 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-07 00:50+0000\n"
+"PO-Revision-Date: 2022-08-03 09:37+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.1\n"
+
+#: contents/config/config.qml:12
+#, kde-format
+msgid "General"
+msgstr "Allmänt"
+
+#: contents/ui/ConfigGeneral.qml:35
+#, kde-format
+msgid "Volume step:"
+msgstr "Volymsteg:"
+
+#: contents/ui/ConfigGeneral.qml:57
+#, kde-format
+msgid "Play audio feedback for changes to:"
+msgstr "Spela ljud som återmatning för ändringar av:"
+
+#: contents/ui/ConfigGeneral.qml:59 contents/ui/ConfigGeneral.qml:70
+#, kde-format
+msgid "Audio volume"
+msgstr "Ljudvolym"
+
+#: contents/ui/ConfigGeneral.qml:69
+#, kde-format
+msgid "Show visual feedback for changes to:"
+msgstr "Ge visuell återmatning för ändringar av:"
+
+#: contents/ui/ConfigGeneral.qml:75
+#, kde-format
+msgid "Microphone sensitivity"
+msgstr "Mikrofonkänslighet"
+
+#: contents/ui/ConfigGeneral.qml:80
+#, kde-format
+msgid "Mute state"
+msgstr "Tyst tillstånd"
+
+#: contents/ui/ConfigGeneral.qml:85
+#, kde-format
+msgid "Default output device"
+msgstr "Standardutenhet"
+
+#: contents/ui/ConfigGeneral.qml:94
+#, kde-format
+msgctxt "@title"
+msgid "Display:"
+msgstr "Visa:"
+
+#: contents/ui/ConfigGeneral.qml:95
+#, kde-format
+msgid "Show virtual devices"
+msgstr "Visa virtuella enheter"
+
+#: contents/ui/DeviceListItem.qml:26
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: contents/ui/DeviceListItem.qml:35
+#, kde-format
+msgid "Device name not found"
+msgstr "Enhetsnamn hittades inte"
+
+#: contents/ui/ListItemBase.qml:70
+#, kde-format
+msgid "Currently not recording"
+msgstr "Spelar inte in för närvarande"
+
+#: contents/ui/ListItemBase.qml:71
+#, kde-format
+msgid "Currently not playing"
+msgstr "Spelar inte upp för närvarande"
+
+#: contents/ui/ListItemBase.qml:184
+#, kde-format
+msgctxt "@action:button"
+msgid "Additional Options"
+msgstr "Ytterligare alternativ"
+
+#: contents/ui/ListItemBase.qml:186
+#, kde-format
+msgid "Show additional options for %1"
+msgstr "Visa ytterligare alternativ för %1"
+
+#: contents/ui/ListItemBase.qml:203
+#, kde-format
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "Tysta inte"
+
+#: contents/ui/ListItemBase.qml:203
+#, kde-format
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "Tysta"
+
+#: contents/ui/ListItemBase.qml:205
+#, kde-format
+msgid "Unmute %1"
+msgstr "Tysta inte %1"
+
+#: contents/ui/ListItemBase.qml:205
+#, kde-format
+msgid "Mute %1"
+msgstr "Tysta %1"
+
+#: contents/ui/ListItemBase.qml:232
+#, kde-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "Justera volym för %1"
+
+#: contents/ui/ListItemBase.qml:260
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1 %"
+
+#: contents/ui/ListItemBase.qml:280
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100 %"
+
+#: contents/ui/main.qml:28
+#, kde-format
+msgid "Audio Volume"
+msgstr "Ljudvolym"
+
+#: contents/ui/main.qml:52
+#, kde-format
+msgid "Audio Muted"
+msgstr "Ljud tystat"
+
+#: contents/ui/main.qml:54
+#, kde-format
+msgid "Volume at %1%"
+msgstr "Volym %1 %"
+
+#: contents/ui/main.qml:230
+#, kde-format
+msgid "No output device"
+msgstr "Ingen utenhet"
+
+#: contents/ui/main.qml:362
+#, kde-format
+msgid "Increase Volume"
+msgstr "Öka volym"
+
+#: contents/ui/main.qml:368
+#, kde-format
+msgid "Decrease Volume"
+msgstr "Minska volym"
+
+#: contents/ui/main.qml:374
+#, kde-format
+msgid "Mute"
+msgstr "Tyst"
+
+#: contents/ui/main.qml:380
+#, kde-format
+msgid "Increase Microphone Volume"
+msgstr "Öka mikrofonvolym"
+
+#: contents/ui/main.qml:386
+#, kde-format
+msgid "Decrease Microphone Volume"
+msgstr "Minska mikrofonvolym"
+
+#: contents/ui/main.qml:392
+#, kde-format
+msgid "Mute Microphone"
+msgstr "Tysta mikrofon"
+
+#: contents/ui/main.qml:496
+#, kde-format
+msgid "Devices"
+msgstr "Enheter"
+
+#: contents/ui/main.qml:503
+#, kde-format
+msgid "Applications"
+msgstr "Program"
+
+#: contents/ui/main.qml:524 contents/ui/main.qml:526 contents/ui/main.qml:765
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "Tysta alla uppspelningsenheter"
+
+#: contents/ui/main.qml:560
+#, kde-format
+msgid "No output or input devices found"
+msgstr "Inga ut- eller inenheter hittades"
+
+#: contents/ui/main.qml:579
+#, kde-format
+msgid "No applications playing or recording audio"
+msgstr "Inga program spelar upp eller spelar in ljud"
+
+#: contents/ui/main.qml:745
+#, kde-format
+msgid "Raise maximum volume"
+msgstr "Höj maximal volym"
+
+#: contents/ui/main.qml:770
+#, kde-format
+msgid "&Configure Audio Devices…"
+msgstr "An&passa ljudenheter…"
+
+#: contents/ui/StreamListItem.qml:24
+#, kde-format
+msgid "Stream name not found"
+msgstr "Strömnamn hittades inte"
+
+#~ msgid "Record all audio via this device"
+#~ msgstr "Spela in allt ljud via den här enheten"
+
+#~ msgid "Play all audio via this device"
+#~ msgstr "Spela upp allt ljud via den här enheten"
+
+#~ msgctxt ""
+#~ "Heading for a list of ports of a device (for example built-in laptop "
+#~ "speakers or a plug for headphones)"
+#~ msgid "Ports"
+#~ msgstr "Portar"
+
+#~ msgctxt "Port is unavailable"
+#~ msgid "%1 (unavailable)"
+#~ msgstr "%1 (ej tillgänglig)"
+
+#~ msgctxt "Port is unplugged"
+#~ msgid "%1 (unplugged)"
+#~ msgstr "%1 (urkopplad)"
+
+#~ msgctxt ""
+#~ "Heading for a list of possible output devices (speakers, headphones, ...) "
+#~ "to choose"
+#~ msgid "Play audio using"
+#~ msgstr "Spela upp ljud med"
+
+#~ msgctxt ""
+#~ "Heading for a list of possible input devices (built-in microphone, "
+#~ "headset, ...) to choose"
+#~ msgid "Record audio using"
+#~ msgstr "Spela in ljud med"
+
+#~ msgid "show hidden devices"
+#~ msgstr "visa dolda enheter"
+
+#~ msgid "Feedback:"
+#~ msgstr "Återmatning:"
+
+#~ msgid "Play sound when volume changes"
+#~ msgstr "Spela ljud när volym ändras"
+
+#~ msgid "Display notification when default output device changes"
+#~ msgstr "Visa underrättelse när standardutenhet ändras"
+
+#~ msgid "Maximum volume:"
+#~ msgstr "Maximal volym:"
+
+#~ msgid "Default Device"
+#~ msgstr "Standardenhet"
+
+#~ msgid "Playback Streams"
+#~ msgstr "Spela upp strömmar"
+
+#~ msgid "Recording Streams"
+#~ msgstr "Inspelning av strömmar"
+
+#~ msgid "Playback Devices"
+#~ msgstr "Uppspelningsenheter"
+
+#~ msgid "Recording Devices"
+#~ msgstr "Inspelningsenheter"
+
+#~ msgctxt "label of stream items"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgctxt "Checkable switch for (un-)muting sound output."
+#~ msgid "Mute"
+#~ msgstr "Tyst"
+
+#~ msgctxt "Checkable switch to change the current default output."
+#~ msgid "Default"
+#~ msgstr "Förval"
+
+#~ msgid "Capture Streams"
+#~ msgstr "Spela in strömmar"
+
+#~ msgid "Capture Devices"
+#~ msgstr "Inspelningsenheter"
+
+#~ msgid "Volume"
+#~ msgstr "Volym"
+
+#~ msgid "%"
+#~ msgstr "%"
+
+#~ msgid "Behavior"
+#~ msgstr "Beteende"
+
+#~ msgid "Volume feedback"
+#~ msgstr "Volymåtermatning"
+
+#~ msgid "Device Profiles"
+#~ msgstr "Enhetsprofiler"
+
+#~ msgctxt "@label"
+#~ msgid "No Device Profiles Available"
+#~ msgstr "Inga enhetsprofiler tillgängliga"
+
+#~ msgid "Advanced Output Configuration"
+#~ msgstr "Avancerad utgångsinställning"
+
+#~ msgid ""
+#~ "Add virtual output device for simultaneous output on all local sound cards"
+#~ msgstr ""
+#~ "Lägg till virtuell utenhet för samtidiga utgångar på alla lokala ljudkort"
+
+#~ msgid ""
+#~ "Automatically switch all running streams when a new output becomes "
+#~ "available"
+#~ msgstr "Byt automatiskt pågående strömmar när en ny utgång blir tillgänglig"
+
+#~ msgid "Requires 'module-gconf' PulseAudio module"
+#~ msgstr "Kräver PulseAudio-modulen 'module-gconf'"
+
+#~ msgid "Speaker Placement and Testing"
+#~ msgstr "Högtalarplacering och utprovning"
+
+#~ msgctxt "@label"
+#~ msgid "Output:"
+#~ msgstr "Utgång:"
+
+#~ msgid "Front Left"
+#~ msgstr "Vänster fram"
+
+#~ msgid "Front Center"
+#~ msgstr "Vänster center"
+
+#~ msgid "Front Right"
+#~ msgstr "Höger fram"
+
+#~ msgid "Side Left"
+#~ msgstr "Vänster sida"
+
+#~ msgid "Side Right"
+#~ msgstr "Höger sida"
+
+#~ msgid "Rear Left"
+#~ msgstr "Vänster bak"
+
+#~ msgid "Subwoofer"
+#~ msgstr "Subwoofer"
+
+#~ msgid "Rear Right"
+#~ msgstr "Höger bak"
+
+#~ msgid "Playback"
+#~ msgstr "Uppspelning"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Playing Audio"
+#~ msgstr "Inga program spelar upp ljud"
+
+#~ msgid "Capture"
+#~ msgstr "Spela in"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Recording Audio"
+#~ msgstr "Inga program spelar in ljud"
+
+#~ msgctxt "@label"
+#~ msgid "Profile:"
+#~ msgstr "Profil:"
+
+#~ msgid "Port"
+#~ msgstr "Port"
+
+#~ msgid "Outputs"
+#~ msgstr "Utgångar"
+
+#~ msgctxt "@label"
+#~ msgid "No Output Devices Available"
+#~ msgstr "Inga utenheter tillgängliga"
+
+#~ msgid "Inputs"
+#~ msgstr "Ingångar"
+
+#~ msgctxt "@label"
+#~ msgid "No Input Devices Available"
+#~ msgstr "Inga inenheter tillgängliga"
+
+#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
+#~ msgstr "Den här modulen gör det möjligt att anpassa ljudsystemet Pulseaudio"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Devices"
+#~ msgstr "Enheter"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Applications"
+#~ msgstr "Program"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Advanced"
+#~ msgstr "Avancerat"
+
+#~ msgid "Notification Sounds"
+#~ msgstr "Underrättelseljud"
+
+#~ msgctxt "label of stream items"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgid "100%"
+#~ msgstr "100 %"
