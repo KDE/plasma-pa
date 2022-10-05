@@ -53,7 +53,7 @@ ColumnLayout {
         }
 
         ComboBox {
-            Layout.preferredWidth: Kirigami.Units.gridUnit * 12
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 12
             model: Profiles.filter(function (profile) {
                 return profile.availability === Profile.Available;
             })

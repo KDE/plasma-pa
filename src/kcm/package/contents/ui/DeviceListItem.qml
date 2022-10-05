@@ -94,7 +94,7 @@ ColumnLayout {
 
             readonly property var ports: Ports
 
-            Layout.preferredWidth: Kirigami.Units.gridUnit * 10
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 10
             visible: portBox.count > 1
 
             onModelChanged: currentIndex = ActivePortIndex
@@ -133,7 +133,7 @@ ColumnLayout {
 
             readonly property var card: paCardModel.data(paCardModel.indexOfCardNumber(CardIndex), paCardModel.role("PulseObject"))
 
-            Layout.preferredWidth: Kirigami.Units.gridUnit * 12
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 12
             visible: profileBox.count > 1
             textRole: "description"
 
