@@ -15,6 +15,8 @@ ColumnLayout {
     id: delegate
     width: parent.width
 
+    property bool comboBoxLabelsVisible: false
+
     RowLayout {
         Layout.fillWidth: true
         spacing: Kirigami.Units.largeSpacing
@@ -46,6 +48,7 @@ ColumnLayout {
 
         Label {
             id: profileLabel
+            visible: comboBoxLabelsVisible && profileBox.visible
             text: i18ndc("kcm_pulseaudio", "@label", "Profile:")
         }
 

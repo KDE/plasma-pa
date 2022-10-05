@@ -80,6 +80,21 @@ ScrollViewKCM {
             id: column
             width: flickable.width
 
+            // Only show labels if both port/profile comboboxes are visible
+            readonly property var comboBoxLabelsVisible: {
+                for (var i = 0; i < sinks.count; ++i) {
+                    let delegate = sinks.itemAtIndex(i)
+                    if (delegate != null && delegate.portVisible)
+                        return true
+                }
+                for (var i = 0; i < sources.count; ++i) {
+                    let delegate = sources.itemAtIndex(i)
+                    if (delegate != null && delegate.portVisible)
+                        return true
+                }
+                return false
+            }
+
             Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
                 visible: sinks.visible
@@ -100,6 +115,7 @@ ScrollViewKCM {
                 model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSinkModel : paSinkFilterModel
                 delegate: DeviceListItem {
                     isPlayback: true
+                    comboBoxLabelsVisible: column.comboBoxLabelsVisible
                 }
             }
 
@@ -123,6 +139,7 @@ ScrollViewKCM {
                 model: inactiveDevicesButton.checked || !inactiveDevicesButton.visible ? paSourceModel : paSourceFilterModel
                 delegate: DeviceListItem {
                     isPlayback: false
+                    comboBoxLabelsVisible: column.comboBoxLabelsVisible
                 }
             }
 
@@ -155,7 +172,9 @@ ScrollViewKCM {
                         return profiles[activeProfileIndex].name == "off";
                     }
                 }
-                delegate: CardListItem {}
+                delegate: CardListItem {
+                    comboBoxLabelsVisible: column.comboBoxLabelsVisible
+                }
             }
 
             Kirigami.ListSectionHeader {

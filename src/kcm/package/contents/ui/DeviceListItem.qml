@@ -25,6 +25,9 @@ ColumnLayout {
 
     property var pulseObject: model.PulseObject
 
+    property alias portVisible: portBox.visible
+    property bool comboBoxLabelsVisible: false
+
     RowLayout {
         spacing: Kirigami.Units.smallSpacing
         Layout.fillWidth: true
@@ -81,7 +84,7 @@ ColumnLayout {
 
         Label {
             id: portLabel
-            visible: portBox.visible
+            visible: comboBoxLabelsVisible && portBox.visible
             text: i18nd("kcm_pulseaudio", "Port:")
             Layout.leftMargin: Kirigami.Units.largeSpacing
         }
@@ -120,7 +123,7 @@ ColumnLayout {
 
         Label {
             id: profileLabel
-            visible: profileBox.visible
+            visible: comboBoxLabelsVisible && profileBox.visible
             text: i18ndc("kcm_pulseaudio", "@label", "Profile:")
             Layout.leftMargin: Kirigami.Units.largeSpacing
         }
