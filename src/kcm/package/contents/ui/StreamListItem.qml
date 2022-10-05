@@ -81,7 +81,7 @@ ColumnLayout {
 
                 DeviceComboBox {
                     id: deviceComboBox
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 12
+                    Layout.minimumWidth: Kirigami.Units.gridUnit * 12
                     visible: !isEventStream && count > 1
                 }
             }
