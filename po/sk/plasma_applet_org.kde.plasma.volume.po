@@ -1,21 +1,21 @@
 # translation of plasma_applet_org.kde.plasma.volume.po to Slovak
 # Roman Paholik <wizzardsk@gmail.com>, 2015, 2016, 2017, 2019, 2022.
 # Mthw <jari_45@hotmail.com>, 2018.
-# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2022.
 # Dušan Kazik <prescott66@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-07 00:50+0000\n"
-"PO-Revision-Date: 2022-04-18 17:44+0200\n"
-"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
-"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"PO-Revision-Date: 2022-10-04 17:50+0200\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: contents/config/config.qml:12
@@ -91,11 +91,10 @@ msgid "Currently not playing"
 msgstr "Práve sa neprehráva"
 
 #: contents/ui/ListItemBase.qml:184
-#, fuzzy, kde-format
-#| msgid "Show additional options for %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr "Zobraziť dodatočné voľby pre %1"
+msgstr "Ďalšie možnosti"
 
 #: contents/ui/ListItemBase.qml:186
 #, kde-format
@@ -103,24 +102,21 @@ msgid "Show additional options for %1"
 msgstr "Zobraziť dodatočné voľby pre %1"
 
 #: contents/ui/ListItemBase.qml:203
-#, fuzzy, kde-format
-#| msgid "Mute %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "Stlmiť %1"
+msgstr "Zrušiť stlmenie"
 
 #: contents/ui/ListItemBase.qml:203
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Stlmiť"
 
 #: contents/ui/ListItemBase.qml:205
-#, fuzzy, kde-format
-#| msgid "Mute %1"
+#, kde-format
 msgid "Unmute %1"
-msgstr "Stlmiť %1"
+msgstr "Zrušiť stlmenie %1"
 
 #: contents/ui/ListItemBase.qml:205
 #, kde-format

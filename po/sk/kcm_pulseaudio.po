@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-15 00:46+0000\n"
-"PO-Revision-Date: 2022-04-18 17:44+0200\n"
-"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
-"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"PO-Revision-Date: 2022-10-04 17:50+0200\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: context.cpp:590
@@ -194,12 +194,10 @@ msgid "Click on any speaker to test sound"
 msgstr "Kliknutím na reproduktor otestujete zvuk"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
-#, fuzzy, kde-format
-#| msgctxt "Mute audio stream"
-#| msgid "Mute %1"
+#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
-msgstr "Stlmiť %1"
+msgstr "Zrušiť stlmenie %1"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
 #, kde-format
