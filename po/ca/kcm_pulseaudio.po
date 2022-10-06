@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-15 00:46+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2022-04-20 10:20+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -28,49 +28,49 @@ msgctxt "Name shown in debug pulseaudio tools"
 msgid "Plasma PA"
 msgstr "Plasma PA"
 
-#: kcm/package/contents/ui/CardListItem.qml:49
-#: kcm/package/contents/ui/DeviceListItem.qml:124
+#: kcm/package/contents/ui/CardListItem.qml:52
+#: kcm/package/contents/ui/DeviceListItem.qml:127
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Perfil:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:44
+#: kcm/package/contents/ui/DeviceListItem.qml:47
 #, kde-format
 msgctxt "label of device items"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:85
+#: kcm/package/contents/ui/DeviceListItem.qml:88
 #, kde-format
 msgid "Port:"
 msgstr "Port:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:108 qml/listitemmenu.cpp:387
+#: kcm/package/contents/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (no disponible)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:110 qml/listitemmenu.cpp:389
+#: kcm/package/contents/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (desendollat)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:177
+#: kcm/package/contents/ui/DeviceListItem.qml:180
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:210
+#: kcm/package/contents/ui/DeviceListItem.qml:213
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Prova"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:219
+#: kcm/package/contents/ui/DeviceListItem.qml:222
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
@@ -81,47 +81,47 @@ msgstr "Balanç"
 msgid "This module allows configuring the Pulseaudio sound subsystem."
 msgstr "Aquest mòdul permet configurar el subsistema de so PulseAudio."
 
-#: kcm/package/contents/ui/main.qml:86
+#: kcm/package/contents/ui/main.qml:101
 #, kde-format
 msgid "Playback Devices"
 msgstr "Dispositius de reproducció"
 
-#: kcm/package/contents/ui/main.qml:109
+#: kcm/package/contents/ui/main.qml:125
 #, kde-format
 msgid "Recording Devices"
 msgstr "Dispositius d'enregistrament"
 
-#: kcm/package/contents/ui/main.qml:132
+#: kcm/package/contents/ui/main.qml:149
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Targetes inactives"
 
-#: kcm/package/contents/ui/main.qml:164
+#: kcm/package/contents/ui/main.qml:183
 #, kde-format
 msgid "Playback Streams"
 msgstr "Fluxos de reproducció"
 
-#: kcm/package/contents/ui/main.qml:213
+#: kcm/package/contents/ui/main.qml:232
 #, kde-format
 msgid "Recording Streams"
 msgstr "Fluxos d'enregistrament"
 
-#: kcm/package/contents/ui/main.qml:248
+#: kcm/package/contents/ui/main.qml:267
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Mostra els dispositius inactius"
 
-#: kcm/package/contents/ui/main.qml:259
+#: kcm/package/contents/ui/main.qml:278
 #, kde-format
 msgid "Configure…"
 msgstr "Configura…"
 
-#: kcm/package/contents/ui/main.qml:263
+#: kcm/package/contents/ui/main.qml:282
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Requereix el mòdul %1 del PulseAudio"
 
-#: kcm/package/contents/ui/main.qml:275
+#: kcm/package/contents/ui/main.qml:294
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -129,7 +129,7 @@ msgstr ""
 "Afegeix un dispositiu de sortida virtual per a enviar simultàniament la "
 "sortida a totes les targetes de so locals"
 
-#: kcm/package/contents/ui/main.qml:281
+#: kcm/package/contents/ui/main.qml:300
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -137,7 +137,7 @@ msgstr ""
 "Canvia automàticament tots els fluxos en execució quan hi hagi disponible "
 "una nova sortida"
 
-#: kcm/package/contents/ui/main.qml:297
+#: kcm/package/contents/ui/main.qml:316
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -149,52 +149,52 @@ msgstr ""
 "Error en intentar reproduir un so de prova. \n"
 "El sistema ha indicat: «%1»"
 
-#: kcm/package/contents/ui/main.qml:332
+#: kcm/package/contents/ui/main.qml:351
 #, kde-format
 msgid "Front Left"
 msgstr "Frontal esquerra"
 
-#: kcm/package/contents/ui/main.qml:333
+#: kcm/package/contents/ui/main.qml:352
 #, kde-format
 msgid "Front Center"
 msgstr "Frontal centre"
 
-#: kcm/package/contents/ui/main.qml:334
+#: kcm/package/contents/ui/main.qml:353
 #, kde-format
 msgid "Front Right"
 msgstr "Frontal dreta"
 
-#: kcm/package/contents/ui/main.qml:335
+#: kcm/package/contents/ui/main.qml:354
 #, kde-format
 msgid "Side Left"
 msgstr "Banda esquerra"
 
-#: kcm/package/contents/ui/main.qml:336
+#: kcm/package/contents/ui/main.qml:355
 #, kde-format
 msgid "Side Right"
 msgstr "Banda dreta"
 
-#: kcm/package/contents/ui/main.qml:337
+#: kcm/package/contents/ui/main.qml:356
 #, kde-format
 msgid "Rear Left"
 msgstr "Posterior esquerra"
 
-#: kcm/package/contents/ui/main.qml:338
+#: kcm/package/contents/ui/main.qml:357
 #, kde-format
 msgid "Subwoofer"
 msgstr "Altaveu de greus"
 
-#: kcm/package/contents/ui/main.qml:339
+#: kcm/package/contents/ui/main.qml:358
 #, kde-format
 msgid "Rear Right"
 msgstr "Posterior dreta"
 
-#: kcm/package/contents/ui/main.qml:340
+#: kcm/package/contents/ui/main.qml:359
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:449
+#: kcm/package/contents/ui/main.qml:468
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Feu clic en qualsevol altaveu per provar el so"
