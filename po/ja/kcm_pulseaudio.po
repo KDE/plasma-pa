@@ -318,24 +318,3 @@ msgstr "%1 はマイクを使用しています"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 はマイクを使用しています"
-
-#~ msgid "Device Profiles"
-#~ msgstr "デバイスプロファイル"
-
-#~ msgid "Advanced Output Configuration"
-#~ msgstr "高度な出力設定"
-
-#~ msgid "Speaker Placement and Testing"
-#~ msgstr "スピーカーの配置とテスト"
-
-#~ msgctxt "@label"
-#~ msgid "Output:"
-#~ msgstr "出力:"
-
-#~ msgctxt "Port is unavailable"
-#~ msgid " (unavailable)"
-#~ msgstr "(利用不可)"
-
-#~ msgctxt "Port is unplugged"
-#~ msgid " (unplugged)"
-#~ msgstr "(取り外し済み)"
