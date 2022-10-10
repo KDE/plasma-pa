@@ -149,6 +149,12 @@ static void server_cb(pa_context *context, const pa_server_info *info, void *dat
 {
     Q_ASSERT(context);
     Q_ASSERT(data);
+    if (!info) {
+        // info may be nullptr when e.g. the server doesn't reply in time (e.g. it is stuck)
+        // https://bugs.kde.org/show_bug.cgi?id=454647
+        qCWarning(PLASMAPA) << "server_cb() called without info!";
+        return;
+    }
     ((Context *)data)->serverCallback(info);
 }
 
