@@ -55,19 +55,22 @@ Item {
         }
     }
     Plasmoid.toolTipSubText: {
+        let lines = [];
+
         if (paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink)) {
             var port = paSinkModel.preferredSink.ports[paSinkModel.preferredSink.activePortIndex];
             if (port) {
-                return port.description
+                lines.push(port.description);
+            } else if (paSinkModel.preferredSink.description) {
+                lines.push(paSinkModel.preferredSink.description);
+            } else {
+            lines.push(paSinkModel.preferredSink.name);
             }
-
-            if (paSinkModel.preferredSink.description) {
-                return paSinkModel.preferredSink.description
-            }
-
-            return paSinkModel.preferredSink.name
         }
-        return ""
+
+        lines.push(main.globalMute ? i18n("Middle-click to unmute")
+                                   : i18n("Middle-click to mute all audio"));
+        return lines.join("\n");
     }
 
     function isDummyOutput(output) {
