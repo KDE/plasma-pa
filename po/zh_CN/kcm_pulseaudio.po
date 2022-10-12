@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-06 00:47+0000\n"
+"POT-Creation-Date: 2022-10-12 00:48+0000\n"
 "PO-Revision-Date: 2022-10-02 15:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File: /kf5-trunk/messages/plasma-pa/kcm_pulseaudio.pot\n"
 "X-Crowdin-File-ID: 4134\n"
 
-#: context.cpp:590
+#: context.cpp:596
 #, kde-format
 msgctxt "Name shown in debug pulseaudio tools"
 msgid "Plasma PA"
