@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-10-17 00:48+0000\n"
 "PO-Revision-Date: 2019-07-10 18:11+0900\n"
 "Last-Translator: Tomohiro Hyakutake <tomhioo@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -129,19 +129,19 @@ msgstr "%1をミュート"
 msgid "Mute %1"
 msgstr "%1をミュート"
 
-#: contents/ui/ListItemBase.qml:232
+#: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 の ボリュームを調整"
 
-#: contents/ui/ListItemBase.qml:260
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:280
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -218,7 +218,7 @@ msgstr "デバイス"
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:768
+#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
@@ -233,12 +233,12 @@ msgstr "入力や出力デバイスが見つかりません"
 msgid "No applications playing or recording audio"
 msgstr "再生や録音をしているアプリケーションなし"
 
-#: contents/ui/main.qml:748
+#: contents/ui/main.qml:733
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "最大音量を上げる"
 
-#: contents/ui/main.qml:773
+#: contents/ui/main.qml:760
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-10-17 00:48+0000\n"
 "PO-Revision-Date: 2022-09-19 12:52+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -125,19 +125,19 @@ msgstr "Įjungti garsą %1"
 msgid "Mute %1"
 msgstr "Nutildyti %1"
 
-#: contents/ui/ListItemBase.qml:232
+#: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Reguliuoti %1 garsumą"
 
-#: contents/ui/ListItemBase.qml:260
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:280
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -213,7 +213,7 @@ msgstr "Įrenginiai"
 msgid "Applications"
 msgstr "Programos"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:768
+#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Priverstinai nutildyti visus atkūrimo įrenginius"
@@ -228,12 +228,12 @@ msgstr "Nerasta jokių įvesties ar išvesties įrenginių"
 msgid "No applications playing or recording audio"
 msgstr "Šiuo metu jokios programos neatkuria ir neįrašinėja garso"
 
-#: contents/ui/main.qml:748
+#: contents/ui/main.qml:733
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Padidinti didžiausią garsumą"
 
-#: contents/ui/main.qml:773
+#: contents/ui/main.qml:760
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigūruoti garso įrenginius…"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-10-17 00:48+0000\n"
 "PO-Revision-Date: 2022-10-02 15:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -123,19 +123,19 @@ msgstr "取消静音 %1"
 msgid "Mute %1"
 msgstr "静音 %1"
 
-#: contents/ui/ListItemBase.qml:232
+#: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "调节 %1 的音量"
 
-#: contents/ui/ListItemBase.qml:260
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:280
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -211,7 +211,7 @@ msgstr "设备"
 msgid "Applications"
 msgstr "应用程序"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:768
+#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
@@ -226,12 +226,12 @@ msgstr "未找到输出或输入设备"
 msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
-#: contents/ui/main.qml:748
+#: contents/ui/main.qml:733
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: contents/ui/main.qml:773
+#: contents/ui/main.qml:760
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "配置音频设备(&C)…"

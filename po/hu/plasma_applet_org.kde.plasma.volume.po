@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-10-17 00:48+0000\n"
 "PO-Revision-Date: 2021-09-02 09:07+0200\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -127,19 +127,19 @@ msgstr "A(z) %1 némítása"
 msgid "Mute %1"
 msgstr "A(z) %1 némítása"
 
-#: contents/ui/ListItemBase.qml:232
+#: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "A(z) %1 hangerejének beállítása"
 
-#: contents/ui/ListItemBase.qml:260
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:280
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -215,7 +215,7 @@ msgstr "Eszközök"
 msgid "Applications"
 msgstr "Alkalmazások"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:768
+#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Összes lejátszóeszköz kényszerített némítása"
@@ -230,12 +230,12 @@ msgstr "Nem találhatók kimeneti vagy bemeneti eszközök"
 msgid "No applications playing or recording audio"
 msgstr "Egy alkalmazás sem játszik le vagy vesz fel hangot"
 
-#: contents/ui/main.qml:748
+#: contents/ui/main.qml:733
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximális hangerő növelése"
 
-#: contents/ui/main.qml:773
+#: contents/ui/main.qml:760
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Hangeszközök &beállítása…"

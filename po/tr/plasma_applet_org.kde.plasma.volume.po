@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-10-12 14:23+0300\n"
+"POT-Creation-Date: 2022-10-17 00:48+0000\n"
+"PO-Revision-Date: 2022-10-16 11:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -123,19 +123,19 @@ msgstr "%1 Sesini Aç"
 msgid "Mute %1"
 msgstr "Sessiz %1"
 
-#: contents/ui/ListItemBase.qml:232
+#: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 için sesi ayarla"
 
-#: contents/ui/ListItemBase.qml:260
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%​%1"
 
-#: contents/ui/ListItemBase.qml:280
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -159,12 +159,12 @@ msgstr "Ses düzeyi %​%1"
 #: contents/ui/main.qml:71
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Sesi açmak için orta tıklayın"
 
 #: contents/ui/main.qml:72
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Her şeyi sessize almak için orta tıklayın"
 
 #: contents/ui/main.qml:233
 #, kde-format
@@ -211,7 +211,7 @@ msgstr "Aygıtlar"
 msgid "Applications"
 msgstr "Uygulamalar"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:768
+#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Tüm oynatma aygıtlarının sesini kapatmaya zorla"
@@ -226,12 +226,12 @@ msgstr "Hiçbir giriş veya çıkış aygıtı bulunamadı"
 msgid "No applications playing or recording audio"
 msgstr "Ses çalan veya ses kaydı yapan hiçbir uygulama yok"
 
-#: contents/ui/main.qml:748
+#: contents/ui/main.qml:733
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Sesi en yüksek yap"
 
-#: contents/ui/main.qml:773
+#: contents/ui/main.qml:760
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Ses Aygıtlarını Yapılandır…"

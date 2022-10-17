@@ -197,7 +197,7 @@ msgstr "Mono"
 #: kcm/package/contents/ui/main.qml:468
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr "Feu clic en qualsevol altaveu per provar el so"
+msgstr "Feu clic en qualsevol altaveu per a provar el so"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
 #, kde-format
@@ -314,6 +314,3 @@ msgstr "%1 està utilitzant el micròfon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 està utilitzant el micròfon"
-
-#~ msgid "100%"
-#~ msgstr "100%"

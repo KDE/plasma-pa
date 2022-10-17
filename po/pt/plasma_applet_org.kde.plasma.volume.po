@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-07-31 16:34+0100\n"
+"POT-Creation-Date: 2022-10-17 00:48+0000\n"
+"PO-Revision-Date: 2022-10-16 11:41+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -118,19 +118,19 @@ msgstr "Repor o som do %1"
 msgid "Mute %1"
 msgstr "Silenciar o %1"
 
-#: contents/ui/ListItemBase.qml:232
+#: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Ajustar o volume de %1"
 
-#: contents/ui/ListItemBase.qml:260
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:280
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -154,12 +154,12 @@ msgstr "Volume a %1%"
 #: contents/ui/main.qml:71
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Botão do meio para reactivar o som"
 
 #: contents/ui/main.qml:72
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Botão do meio para desactivar todo o som"
 
 #: contents/ui/main.qml:233
 #, kde-format
@@ -206,7 +206,7 @@ msgstr "Dispositivos"
 msgid "Applications"
 msgstr "Aplicações"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:768
+#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forçar o silenciamento de todos os dispositivos de reprodução"
@@ -221,12 +221,12 @@ msgstr "Não foram encontrados dispositivos de entrada ou saída"
 msgid "No applications playing or recording audio"
 msgstr "Sem aplicações a gravar ou reproduzir áudio"
 
-#: contents/ui/main.qml:748
+#: contents/ui/main.qml:733
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Aumentar o volume máximo"
 
-#: contents/ui/main.qml:773
+#: contents/ui/main.qml:760
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar os Dispositivos de Áudio…"
