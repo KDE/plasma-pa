@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-17 00:48+0000\n"
-"PO-Revision-Date: 2022-07-31 21:07+0530\n"
+"PO-Revision-Date: 2022-10-18 21:47+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.07.80\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: contents/config/config.qml:12
 #, kde-format
@@ -158,12 +158,12 @@ msgstr "ஒலி %1% ஆக உள்ளது"
 #: contents/ui/main.qml:71
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "ஒலியை அனுமதிக்க நடு-கிளிக் செய்யவும்"
 
 #: contents/ui/main.qml:72
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "அனைத்து ஒலிகளையும் அடக்க நடு-கிளிக் செய்யவும்"
 
 #: contents/ui/main.qml:233
 #, kde-format
