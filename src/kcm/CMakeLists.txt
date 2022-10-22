@@ -1,4 +1,4 @@
-kcoreaddons_add_plugin(kcm_pulseaudio SOURCES module.cpp INSTALL_NAMESPACE "plasma/kcms/systemsettings")
+kcoreaddons_add_plugin(kcm_pulseaudio SOURCES module.cpp resources.qrc INSTALL_NAMESPACE "plasma/kcms/systemsettings")
 
 target_link_libraries(kcm_pulseaudio
     Qt::Quick
