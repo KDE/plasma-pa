@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-12 00:48+0000\n"
+"POT-Creation-Date: 2022-10-25 00:48+0000\n"
 "PO-Revision-Date: 2022-03-01 19:45+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -184,7 +184,7 @@ msgstr "பின்புறம் வலது"
 msgid "Mono"
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:468
+#: kcm/package/contents/ui/main.qml:469
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "ஒலியை சோதிக்க ஏதாவதொரு ஒலிபெருக்கியில் கிளிக் செய்யுங்கள்"

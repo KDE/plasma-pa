@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-12 00:48+0000\n"
+"POT-Creation-Date: 2022-10-25 00:48+0000\n"
 "PO-Revision-Date: 2022-04-23 13:25+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -187,7 +187,7 @@ msgstr "Rear Right"
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:468
+#: kcm/package/contents/ui/main.qml:469
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Click on any speaker to test sound"

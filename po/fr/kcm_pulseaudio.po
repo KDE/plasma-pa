@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-12 00:48+0000\n"
+"POT-Creation-Date: 2022-10-25 00:48+0000\n"
 "PO-Revision-Date: 2022-04-20 21:25+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -197,7 +197,7 @@ msgstr "Arrière droit"
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:468
+#: kcm/package/contents/ui/main.qml:469
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Cliquez sur n'importe quel haut-parleur pour tester le son"

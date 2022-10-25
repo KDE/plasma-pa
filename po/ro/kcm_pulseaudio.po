@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-12 00:48+0000\n"
+"POT-Creation-Date: 2022-10-25 00:48+0000\n"
 "PO-Revision-Date: 2022-04-30 12:20+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -188,7 +188,7 @@ msgstr "Spate dreapta"
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:468
+#: kcm/package/contents/ui/main.qml:469
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Apăsați pe oricare difuzor pentru a testa sunetul"

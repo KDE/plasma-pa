@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-12 00:48+0000\n"
+"POT-Creation-Date: 2022-10-25 00:48+0000\n"
 "PO-Revision-Date: 2022-05-03 22:34+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -191,7 +191,7 @@ msgstr "Правый тыловой"
 msgid "Mono"
 msgstr "Моно"
 
-#: kcm/package/contents/ui/main.qml:468
+#: kcm/package/contents/ui/main.qml:469
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Для проверки нажмите на значок динамика"
