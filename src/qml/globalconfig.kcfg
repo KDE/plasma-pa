@@ -38,5 +38,12 @@
             <label>Show OSD when changing default output device.</label>
             <default>true</default>
         </entry>
+        <entry name="GlobalMute" type="Bool">
+            <label>Mute all audio.</label>
+            <default>false</default>
+        </entry>
+        <entry name="GlobalMuteDevices" type="StringList">
+            <label>Devices that were not muted with global mute, and will remain muted afterwards.</label>
+        </entry>
     </group>
 </kcfg>

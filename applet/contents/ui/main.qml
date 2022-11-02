@@ -25,7 +25,7 @@ Item {
     }
 
     property bool volumeFeedback: config.audioFeedback
-    property bool globalMute: Plasmoid.configuration.globalMute
+    property bool globalMute: config.globalMute
     property int currentMaxVolumePercent: config.raiseMaximumVolume ? 150 : 100
     property int currentMaxVolumeValue: currentMaxVolumePercent * PulseAudio.NormalVolume / 100.00
     property int volumePercentStep: config.volumeStep
@@ -196,9 +196,9 @@ Item {
             }
         }
         // If all the devices were muted, will unmute them all with disable GlobalMute.
-        plasmoid.configuration.globalMuteDevices = globalMuteDevices.length < rowCount ? globalMuteDevices : [];
-        plasmoid.configuration.globalMute = true;
-        globalMute = true;
+        config.globalMuteDevices = globalMuteDevices.length < rowCount ? globalMuteDevices : [];
+        config.globalMute = true;
+        config.save();
     }
 
     function disableGlobalMute() {
@@ -206,13 +206,13 @@ Item {
         for (var i = 0; i < paSinkModel.rowCount(); i++) {
             var idx = paSinkModel.index(i, 0);
             var name = paSinkModel.data(idx, paSinkModel.role("Name")) + "." + paSinkModel.data(idx, paSinkModel.role("ActivePortIndex"));
-            if (plasmoid.configuration.globalMuteDevices.indexOf(name) === -1) {
+            if (config.globalMuteDevices.indexOf(name) === -1) {
                 paSinkModel.setData(idx, false, role);
             }
         }
-        plasmoid.configuration.globalMuteDevices = [];
-        plasmoid.configuration.globalMute = false;
-        globalMute = false;
+        config.globalMuteDevices = [];
+        config.globalMute = false;
+        config.save();
     }
 
     // Output devices
@@ -796,6 +796,18 @@ Item {
         }
         if (Plasmoid.configuration.micOsd === false && config.microphoneSensitivityOsd) {
             config.microphoneSensitivityOsd = false;
+            config.save();
+        }
+        if (Plasmoid.configuration.globalMute === true && !config.globalMute) {
+            config.globalMute = true;
+            config.save();
+        }
+        if (Plasmoid.configuration.globalMuteDevices.length !== 0) {
+            for (const device in Plasmoid.configuration.globalMuteDevices) {
+                if (!config.globalMuteDevices.includes(device)) {
+                    config.globalMuteDevices.push(device);
+                }
+            }
             config.save();
         }
         Plasmoid.configuration.migrated = true;

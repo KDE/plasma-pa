@@ -43,9 +43,9 @@ ListItemBase {
 
     onMutedChanged: {
         if (type === "sink" && globalMute && !model.Muted) {
-            plasmoid.configuration.globalMuteDevices = [];
-            plasmoid.configuration.globalMute = false;
-            globalMute = false;
+            config.globalMute = false;
+            config.globalMuteDevices = [];
+            config.save();
         }
     }
 }
