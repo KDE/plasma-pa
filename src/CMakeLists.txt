@@ -43,6 +43,7 @@ set_property(SOURCE qml/dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdService
 qt_add_dbus_interface(dbus_SRCS qml/dbus/osdService.xml osdservice)
 
 add_library(plasma-volume-declarative SHARED ${dbus_SRCS} ${cpp_SRCS} ${qml_SRCS})
+kconfig_add_kcfg_files(plasma-volume-declarative GENERATE_MOC qml/globalconfig.kcfgc)
 target_link_libraries(plasma-volume-declarative
     Qt::Core
     Qt::Gui
@@ -51,11 +52,15 @@ target_link_libraries(plasma-volume-declarative
     KF5::GlobalAccel
     KF5::I18n
     KF5::Notifications
+    KF5::ConfigCore
+    KF5::ConfigGui
+    KF5::CoreAddons
     Canberra::Canberra
     PkgConfig::LIBPULSE
     PkgConfig::LIBPULSE_MAINLOOP
     PkgConfig::GIO
 )
+
 
 set(PRIVATE_QML_INSTALL_DIR ${KDE_INSTALL_QMLDIR}/org/kde/plasma/private/volume)
 install(TARGETS plasma-volume-declarative DESTINATION ${PRIVATE_QML_INSTALL_DIR})

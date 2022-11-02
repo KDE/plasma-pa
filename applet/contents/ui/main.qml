@@ -20,11 +20,15 @@ import "../code/icon.js" as Icon
 Item {
     id: main
 
-    property bool volumeFeedback: Plasmoid.configuration.volumeFeedback
+    GlobalConfig {
+        id: config
+    }
+
+    property bool volumeFeedback: config.audioFeedback
     property bool globalMute: Plasmoid.configuration.globalMute
-    property int currentMaxVolumePercent: plasmoid.configuration.raiseMaximumVolume ? 150 : 100
+    property int currentMaxVolumePercent: config.raiseMaximumVolume ? 150 : 100
     property int currentMaxVolumeValue: currentMaxVolumePercent * PulseAudio.NormalVolume / 100.00
-    property int volumePercentStep: Plasmoid.configuration.volumeStep
+    property int volumePercentStep: config.volumeStep
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
@@ -218,7 +222,7 @@ Item {
         property bool initalDefaultSinkIsSet: false
 
         onDefaultSinkChanged: {
-            if (!defaultSink || !plasmoid.configuration.outputChangeOsd) {
+            if (!defaultSink || !config.defaultOutputDeviceOsd) {
                 return;
             }
 
@@ -402,25 +406,25 @@ Item {
         id: osd
 
         function showVolume(text) {
-            if (!main.Plasmoid.configuration.volumeOsd)
+            if (!config.volumeOsd)
                 return
             show(text, currentMaxVolumePercent)
         }
 
         function showMute(text) {
-            if (!main.Plasmoid.configuration.muteOsd)
+            if (!config.muteOsd)
                 return
             show(text, currentMaxVolumePercent)
         }
 
         function showMic(text) {
-            if (!main.Plasmoid.configuration.micOsd)
+            if (!config.microphoneSensitivityOsd)
                 return
             showMicrophone(text)
         }
 
         function showMicMute(text) {
-            if (!main.Plasmoid.configuration.muteOsd)
+            if (!config.muteOsd)
                 return
             showMicrophone(text)
         }
@@ -725,14 +729,14 @@ Item {
                 anchors.leftMargin: PlasmaCore.Units.smallSpacing
                 anchors.verticalCenter: parent.verticalCenter
 
-                checked: plasmoid.configuration.raiseMaximumVolume
+                checked: config.raiseMaximumVolume
 
                 KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
                 Keys.onUpPressed: KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
 
                 text: i18n("Raise maximum volume")
 
-                onToggled: plasmoid.configuration.raiseMaximumVolume = checked
+                onToggled: { config.raiseMaximumVolume = checked; config.save() }
             }
         }
     }
@@ -745,7 +749,7 @@ Item {
         }
     }
 
-    function action_openKcm() {
+    function action_configure() {
         KQCAddons.KCMShell.openSystemSettings("kcm_pulseaudio");
     }
 
@@ -756,8 +760,44 @@ Item {
         plasmoid.action("forceMute").checkable = true;
         plasmoid.action("forceMute").checked = Qt.binding(() => globalMute);
 
-        // FIXME only while Multi-page KCMs are broken when embedded in plasmoid config
-        plasmoid.setAction("openKcm", i18n("&Configure Audio Devices…"), "audio-volume-high");
-        plasmoid.action("openKcm").visible = (KQCAddons.KCMShell.authorize("kcm_pulseaudio.desktop").length > 0);
+        plasmoid.setAction("showVirtualDevices", i18n("Show virtual devices"), "audio-card");
+        plasmoid.action("showVirtualDevices").checkable = true;
+        plasmoid.action("showVirtualDevices").checked = Qt.binding(() => plasmoid.configuration.showVirtualDevices);
+
+        if (KQCAddons.KCMShell.authorize("kcm_pulseaudio.desktop").length > 0) {
+            plasmoid.removeAction("configure");
+            plasmoid.setAction("configure", i18n("&Configure Audio Devices…"), "configure", "alt+d, s");
+        }
+
+        // migrate settings if they aren't default
+        // this needs to be done per instance of the applet
+        if (Plasmoid.configuration.migrated) {
+            return;
+        }
+        if (Plasmoid.configuration.volumeFeedback === false && config.audioFeedback) {
+            config.audioFeedback = false;
+            config.save();
+        }
+        if (Plasmoid.configuration.volumeStep && Plasmoid.configuration.volumeStep !== 5 && config.volumeStep === 5) {
+            config.volumeStep = Plasmoid.configuration.volumeStep;
+            config.save();
+        }
+        if (Plasmoid.configuration.raiseMaximumVolume === true && !config.raiseMaximumVolume) {
+            config.raiseMaximumVolume = true;
+            config.save();
+        }
+        if (Plasmoid.configuration.volumeOsd === false && config.volumeOsd) {
+            config.volumeOsd = false;
+            config.save();
+        }
+        if (Plasmoid.configuration.muteOsd === false && config.muteOsd) {
+            config.muteOsd = false;
+            config.save();
+        }
+        if (Plasmoid.configuration.micOsd === false && config.microphoneSensitivityOsd) {
+            config.microphoneSensitivityOsd = false;
+            config.save();
+        }
+        Plasmoid.configuration.migrated = true;
     }
 }

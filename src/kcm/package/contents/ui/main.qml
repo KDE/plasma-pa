@@ -272,6 +272,12 @@ ScrollViewKCM {
         }
 
         Button {
+            text: i18n("Configure Volume Controls…")
+            icon.name: "configure"
+            onClicked: kcm.push("VolumeControlsConfig.qml")
+        }
+
+        Button {
             id: configureButton
             visible: moduleManager.settingsSupported
             enabled: moduleManager.configModuleLoaded
