@@ -62,6 +62,11 @@ QString PulseObject::iconName() const
         return name;
     }
 
+    name = m_properties.value(QStringLiteral("pipewire.access.portal.app_id")).toString();
+    if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
+        return name;
+    }
+
     name = property("name").toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
