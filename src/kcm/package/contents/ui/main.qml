@@ -26,6 +26,10 @@ ScrollViewKCM {
     implicitHeight: Kirigami.Units.gridUnit * 28
     implicitWidth: Kirigami.Units.gridUnit * 28
 
+    GlobalConfig {
+        id: config
+    }
+
     SinkModel {
         id: paSinkModel
     }
@@ -274,7 +278,7 @@ ScrollViewKCM {
         Button {
             text: i18n("Configure Volume Controls…")
             icon.name: "configure"
-            onClicked: kcm.push("VolumeControlsConfig.qml")
+            onClicked: kcm.push("VolumeControlsConfig.qml", { "config": config })
         }
 
         Button {

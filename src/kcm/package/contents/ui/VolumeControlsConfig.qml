@@ -14,9 +14,7 @@ Kirigami.Page {
     id: volumeControlsConfigPage
     title: i18n("Volume Controls")
 
-    GlobalConfig {
-        id: config
-    }
+    property var config
 
     VolumeFeedback {
         id: feedback

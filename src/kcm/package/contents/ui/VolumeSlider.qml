@@ -26,7 +26,7 @@ RowLayout {
 
         value: Volume
         from: PulseAudio.MinimalVolume
-        to: PulseAudio.MaximalVolume
+        to: config.raiseMaximumVolume ? PulseAudio.MaximalVolume /* 150 */ : PulseAudio.NormalVolume /* 100 */
         // TODO: implement a way to hide tickmarks (stepSize is also required to scroll)
         // stepSize: to / (PulseAudio.MaximalVolume / PulseAudio.NormalVolume * 100.0)
         visible: HasVolume
