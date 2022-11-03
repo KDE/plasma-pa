@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-17 00:48+0000\n"
+"POT-Creation-Date: 2022-11-03 00:48+0000\n"
 "PO-Revision-Date: 2017-05-23 09:05-0400\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -17,60 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Zanata 3.9.6\n"
-
-#: contents/config/config.qml:12
-#, kde-format
-msgid "General"
-msgstr "כללי"
-
-#: contents/ui/ConfigGeneral.qml:35
-#, kde-format
-msgid "Volume step:"
-msgstr "צעדי עוצמה:"
-
-#: contents/ui/ConfigGeneral.qml:57
-#, kde-format
-msgid "Play audio feedback for changes to:"
-msgstr ""
-
-#: contents/ui/ConfigGeneral.qml:59 contents/ui/ConfigGeneral.qml:70
-#, fuzzy, kde-format
-#| msgid "Audio Volume"
-msgid "Audio volume"
-msgstr "עוצמת שמע"
-
-#: contents/ui/ConfigGeneral.qml:69
-#, kde-format
-msgid "Show visual feedback for changes to:"
-msgstr ""
-
-#: contents/ui/ConfigGeneral.qml:75
-#, kde-format
-msgid "Microphone sensitivity"
-msgstr ""
-
-#: contents/ui/ConfigGeneral.qml:80
-#, kde-format
-msgid "Mute state"
-msgstr ""
-
-#: contents/ui/ConfigGeneral.qml:85
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
-msgid "Default output device"
-msgstr "לא נמצאו יציאות או כניסות"
-
-#: contents/ui/ConfigGeneral.qml:94
-#, kde-format
-msgctxt "@title"
-msgid "Display:"
-msgstr ""
-
-#: contents/ui/ConfigGeneral.qml:95
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
-msgid "Show virtual devices"
-msgstr "לא נמצאו יציאות או כניסות"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -148,98 +94,104 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:28
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
 msgstr "עוצמת שמע"
 
-#: contents/ui/main.qml:52
+#: contents/ui/main.qml:56
 #, kde-format
 msgid "Audio Muted"
 msgstr "השמע מושתק"
 
-#: contents/ui/main.qml:54
+#: contents/ui/main.qml:58
 #, kde-format
 msgid "Volume at %1%"
 msgstr "עוצמת השמע: %1%"
 
-#: contents/ui/main.qml:71
+#: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: contents/ui/main.qml:72
+#: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:233
+#: contents/ui/main.qml:237
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "No output device"
 msgstr "לא נמצאו יציאות או כניסות"
 
-#: contents/ui/main.qml:365
+#: contents/ui/main.qml:369
 #, kde-format
 msgid "Increase Volume"
 msgstr "הגבר עוצמה"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:375
 #, kde-format
 msgid "Decrease Volume"
 msgstr "הנמך עוצמה"
 
-#: contents/ui/main.qml:377
+#: contents/ui/main.qml:381
 #, kde-format
 msgid "Mute"
 msgstr "השתק"
 
-#: contents/ui/main.qml:383
+#: contents/ui/main.qml:387
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "הגבר עוצמת מיקרופון"
 
-#: contents/ui/main.qml:389
+#: contents/ui/main.qml:393
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "הנמך עוצמת מיקרופון"
 
-#: contents/ui/main.qml:395
+#: contents/ui/main.qml:399
 #, kde-format
 msgid "Mute Microphone"
 msgstr "השתק מיקרופון"
 
-#: contents/ui/main.qml:499
+#: contents/ui/main.qml:503
 #, kde-format
 msgid "Devices"
 msgstr "התקנים"
 
-#: contents/ui/main.qml:506
+#: contents/ui/main.qml:510
 #, kde-format
 msgid "Applications"
 msgstr "יישומים"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
+#: contents/ui/main.qml:531 contents/ui/main.qml:533 contents/ui/main.qml:759
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: contents/ui/main.qml:563
+#: contents/ui/main.qml:567
 #, kde-format
 msgid "No output or input devices found"
 msgstr "לא נמצאו יציאות או כניסות"
 
-#: contents/ui/main.qml:582
+#: contents/ui/main.qml:586
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "אין ישומים המשמיעים או מקליטים שמע"
 
-#: contents/ui/main.qml:733
+#: contents/ui/main.qml:737
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "העלה עוצמה מירבית"
 
-#: contents/ui/main.qml:760
+#: contents/ui/main.qml:763
+#, fuzzy, kde-format
+#| msgid "No output or input devices found"
+msgid "Show virtual devices"
+msgstr "לא נמצאו יציאות או כניסות"
+
+#: contents/ui/main.qml:769
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
@@ -248,6 +200,22 @@ msgstr ""
 #, kde-format
 msgid "Stream name not found"
 msgstr ""
+
+#~ msgid "General"
+#~ msgstr "כללי"
+
+#~ msgid "Volume step:"
+#~ msgstr "צעדי עוצמה:"
+
+#, fuzzy
+#~| msgid "Audio Volume"
+#~ msgid "Audio volume"
+#~ msgstr "עוצמת שמע"
+
+#, fuzzy
+#~| msgid "No output or input devices found"
+#~ msgid "Default output device"
+#~ msgstr "לא נמצאו יציאות או כניסות"
 
 #~ msgctxt ""
 #~ "Heading for a list of ports of a device (for example built-in laptop "

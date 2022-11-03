@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-17 00:48+0000\n"
+"POT-Creation-Date: 2022-11-03 00:48+0000\n"
 "PO-Revision-Date: 2020-09-28 13:57+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -17,58 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.08.1\n"
-
-#: contents/config/config.qml:12
-#, kde-format
-msgid "General"
-msgstr "Üldine"
-
-#: contents/ui/ConfigGeneral.qml:35
-#, kde-format
-msgid "Volume step:"
-msgstr "Helitugevuse samm:"
-
-#: contents/ui/ConfigGeneral.qml:57
-#, kde-format
-msgid "Play audio feedback for changes to:"
-msgstr "Helilise tagasiside esitamine järgmiste muutuste korral:"
-
-#: contents/ui/ConfigGeneral.qml:59 contents/ui/ConfigGeneral.qml:70
-#, kde-format
-msgid "Audio volume"
-msgstr "Helitugevus"
-
-#: contents/ui/ConfigGeneral.qml:69
-#, kde-format
-msgid "Show visual feedback for changes to:"
-msgstr "Visuaalse tagasiside näitamine järgmiste muutuste korral:"
-
-#: contents/ui/ConfigGeneral.qml:75
-#, kde-format
-msgid "Microphone sensitivity"
-msgstr "Mikrofoni tundlikkus"
-
-#: contents/ui/ConfigGeneral.qml:80
-#, kde-format
-msgid "Mute state"
-msgstr "Tumm olek"
-
-#: contents/ui/ConfigGeneral.qml:85
-#, kde-format
-msgid "Default output device"
-msgstr "Vaikimisi väljundseade"
-
-#: contents/ui/ConfigGeneral.qml:94
-#, kde-format
-msgctxt "@title"
-msgid "Display:"
-msgstr ""
-
-#: contents/ui/ConfigGeneral.qml:95
-#, fuzzy, kde-format
-#| msgid "Show hidden devices"
-msgid "Show virtual devices"
-msgstr "Peidetud seadmete näitamine"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -146,97 +94,103 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:28
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
 msgstr "Helitugevus"
 
-#: contents/ui/main.qml:52
+#: contents/ui/main.qml:56
 #, kde-format
 msgid "Audio Muted"
 msgstr "Heli summutatud"
 
-#: contents/ui/main.qml:54
+#: contents/ui/main.qml:58
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Helitugevus %1%"
 
-#: contents/ui/main.qml:71
+#: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: contents/ui/main.qml:72
+#: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:233
+#: contents/ui/main.qml:237
 #, kde-format
 msgid "No output device"
 msgstr "Väljundseade puudub"
 
-#: contents/ui/main.qml:365
+#: contents/ui/main.qml:369
 #, kde-format
 msgid "Increase Volume"
 msgstr "Heli juurde"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:375
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Heli maha"
 
-#: contents/ui/main.qml:377
+#: contents/ui/main.qml:381
 #, kde-format
 msgid "Mute"
 msgstr "Tummaks"
 
-#: contents/ui/main.qml:383
+#: contents/ui/main.qml:387
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Mikrofoni heli juurde"
 
-#: contents/ui/main.qml:389
+#: contents/ui/main.qml:393
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Mikrofoni heli maha"
 
-#: contents/ui/main.qml:395
+#: contents/ui/main.qml:399
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Mikrofon tummaks"
 
-#: contents/ui/main.qml:499
+#: contents/ui/main.qml:503
 #, kde-format
 msgid "Devices"
 msgstr "Seadmed"
 
-#: contents/ui/main.qml:506
+#: contents/ui/main.qml:510
 #, kde-format
 msgid "Applications"
 msgstr "Rakendused"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
+#: contents/ui/main.qml:531 contents/ui/main.qml:533 contents/ui/main.qml:759
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Jõuga heli maha kõigis taasesitamisseadmetes"
 
-#: contents/ui/main.qml:563
+#: contents/ui/main.qml:567
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Ühtegi väljund- ega sisendseadet ei leitud"
 
-#: contents/ui/main.qml:582
+#: contents/ui/main.qml:586
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ükski rakendus ei esita ega salvesta heli"
 
-#: contents/ui/main.qml:733
+#: contents/ui/main.qml:737
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Helitugevuse maksimumi suurendamine"
 
-#: contents/ui/main.qml:760
+#: contents/ui/main.qml:763
+#, fuzzy, kde-format
+#| msgid "Show hidden devices"
+msgid "Show virtual devices"
+msgstr "Peidetud seadmete näitamine"
+
+#: contents/ui/main.qml:769
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
@@ -245,6 +199,30 @@ msgstr ""
 #, kde-format
 msgid "Stream name not found"
 msgstr "Voo nime ei leitud"
+
+#~ msgid "General"
+#~ msgstr "Üldine"
+
+#~ msgid "Volume step:"
+#~ msgstr "Helitugevuse samm:"
+
+#~ msgid "Play audio feedback for changes to:"
+#~ msgstr "Helilise tagasiside esitamine järgmiste muutuste korral:"
+
+#~ msgid "Audio volume"
+#~ msgstr "Helitugevus"
+
+#~ msgid "Show visual feedback for changes to:"
+#~ msgstr "Visuaalse tagasiside näitamine järgmiste muutuste korral:"
+
+#~ msgid "Microphone sensitivity"
+#~ msgstr "Mikrofoni tundlikkus"
+
+#~ msgid "Mute state"
+#~ msgstr "Tumm olek"
+
+#~ msgid "Default output device"
+#~ msgstr "Vaikimisi väljundseade"
 
 #~ msgid "Record all audio via this device"
 #~ msgstr "Kogu heli salvestamine selle seadmega"

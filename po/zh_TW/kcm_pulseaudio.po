@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-25 00:48+0000\n"
+"POT-Creation-Date: 2022-11-03 00:48+0000\n"
 "PO-Revision-Date: 2019-09-28 15:24+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -113,29 +113,34 @@ msgstr "錄音串流"
 msgid "Show Inactive Devices"
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:278
+#: kcm/package/contents/ui/main.qml:275
+#, kde-format
+msgid "Configure Volume Controls…"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:284
 #, kde-format
 msgid "Configure…"
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:282
+#: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "需要 %1 PulseAudio 模組"
 
-#: kcm/package/contents/ui/main.qml:294
+#: kcm/package/contents/ui/main.qml:300
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "在所有本機音效卡上加入虛擬輸出裝置以同步輸出"
 
-#: kcm/package/contents/ui/main.qml:300
+#: kcm/package/contents/ui/main.qml:306
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "當新輸出可用時自動切換所有執行中的串流"
 
-#: kcm/package/contents/ui/main.qml:316
+#: kcm/package/contents/ui/main.qml:322
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -145,52 +150,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:351
+#: kcm/package/contents/ui/main.qml:357
 #, kde-format
 msgid "Front Left"
 msgstr "左前方"
 
-#: kcm/package/contents/ui/main.qml:352
+#: kcm/package/contents/ui/main.qml:358
 #, kde-format
 msgid "Front Center"
 msgstr "前方正中央"
 
-#: kcm/package/contents/ui/main.qml:353
+#: kcm/package/contents/ui/main.qml:359
 #, kde-format
 msgid "Front Right"
 msgstr "右前方"
 
-#: kcm/package/contents/ui/main.qml:354
+#: kcm/package/contents/ui/main.qml:360
 #, kde-format
 msgid "Side Left"
 msgstr "左側"
 
-#: kcm/package/contents/ui/main.qml:355
+#: kcm/package/contents/ui/main.qml:361
 #, kde-format
 msgid "Side Right"
 msgstr "右側"
 
-#: kcm/package/contents/ui/main.qml:356
+#: kcm/package/contents/ui/main.qml:362
 #, kde-format
 msgid "Rear Left"
 msgstr "左後方"
 
-#: kcm/package/contents/ui/main.qml:357
+#: kcm/package/contents/ui/main.qml:363
 #, kde-format
 msgid "Subwoofer"
 msgstr "低音音響"
 
-#: kcm/package/contents/ui/main.qml:358
+#: kcm/package/contents/ui/main.qml:364
 #, kde-format
 msgid "Rear Right"
 msgstr "右後方"
 
-#: kcm/package/contents/ui/main.qml:359
+#: kcm/package/contents/ui/main.qml:365
 #, kde-format
 msgid "Mono"
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:469
+#: kcm/package/contents/ui/main.qml:475
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr ""
@@ -219,6 +224,55 @@ msgstr "通知音效"
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1：%2"
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:15
+#, kde-format
+msgid "Volume Controls"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:33
+#, kde-format
+msgid "Raise maximum volume"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:41
+#, kde-format
+msgid "Volume change step:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:65
+#, kde-format
+msgid "Play audio feedback for changes to:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:66
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:75
+#, kde-format
+msgid "Audio volume"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:74
+#, kde-format
+msgid "Show visual feedback for changes to:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:82
+#, fuzzy, kde-format
+#| msgid "Microphone"
+msgid "Microphone sensitivity"
+msgstr "麥克風"
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:89
+#, fuzzy, kde-format
+#| msgid "Mute audio"
+msgid "Mute state"
+msgstr "靜音"
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:96
+#, fuzzy, kde-format
+#| msgid "Default Device"
+msgid "Default output device"
+msgstr "預設裝置"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format
@@ -399,9 +453,6 @@ msgstr "%1 正在使用麥克風"
 #~ msgid "Advanced"
 #~ msgstr "進階"
 
-#~ msgid "Default Device"
-#~ msgstr "預設裝置"
-
 #~ msgid "Outputs"
 #~ msgstr "輸出"
 
@@ -411,6 +462,3 @@ msgstr "%1 正在使用麥克風"
 
 #~ msgid "Inputs"
 #~ msgstr "輸入"
-
-#~ msgid "Mute audio"
-#~ msgstr "靜音"

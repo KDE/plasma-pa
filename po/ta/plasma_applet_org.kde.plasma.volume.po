@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-17 00:48+0000\n"
+"POT-Creation-Date: 2022-11-03 00:48+0000\n"
 "PO-Revision-Date: 2022-10-18 21:47+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -16,57 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.08.2\n"
-
-#: contents/config/config.qml:12
-#, kde-format
-msgid "General"
-msgstr "பொது"
-
-#: contents/ui/ConfigGeneral.qml:35
-#, kde-format
-msgid "Volume step:"
-msgstr "ஒலியின் அளவை மாற்றுவதற்கான படி:"
-
-#: contents/ui/ConfigGeneral.qml:57
-#, kde-format
-msgid "Play audio feedback for changes to:"
-msgstr "இம்மாற்றங்களுக்கு ஒலியாக பின்னூட்டம் தா:"
-
-#: contents/ui/ConfigGeneral.qml:59 contents/ui/ConfigGeneral.qml:70
-#, kde-format
-msgid "Audio volume"
-msgstr "ஒலியின் அளவு"
-
-#: contents/ui/ConfigGeneral.qml:69
-#, kde-format
-msgid "Show visual feedback for changes to:"
-msgstr "இம்மாற்றங்களுக்கு காட்சிமுறையாக பின்னூட்டம் தா:"
-
-#: contents/ui/ConfigGeneral.qml:75
-#, kde-format
-msgid "Microphone sensitivity"
-msgstr "ஒலிவாங்கியின் உணர்வுத்திறன்"
-
-#: contents/ui/ConfigGeneral.qml:80
-#, kde-format
-msgid "Mute state"
-msgstr "ஒலியடக்க நிலை"
-
-#: contents/ui/ConfigGeneral.qml:85
-#, kde-format
-msgid "Default output device"
-msgstr "இயல்பிருப்பு வெளியீடு சாதனம்"
-
-#: contents/ui/ConfigGeneral.qml:94
-#, kde-format
-msgctxt "@title"
-msgid "Display:"
-msgstr "காட்டப்படுபவை:"
-
-#: contents/ui/ConfigGeneral.qml:95
-#, kde-format
-msgid "Show virtual devices"
-msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -140,97 +89,102 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:28
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
 msgstr "ஒலி அளவு"
 
-#: contents/ui/main.qml:52
+#: contents/ui/main.qml:56
 #, kde-format
 msgid "Audio Muted"
 msgstr "ஒலி அடக்கப்பட்டது"
 
-#: contents/ui/main.qml:54
+#: contents/ui/main.qml:58
 #, kde-format
 msgid "Volume at %1%"
 msgstr "ஒலி %1% ஆக உள்ளது"
 
-#: contents/ui/main.qml:71
+#: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "ஒலியை அனுமதிக்க நடு-கிளிக் செய்யவும்"
 
-#: contents/ui/main.qml:72
+#: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "அனைத்து ஒலிகளையும் அடக்க நடு-கிளிக் செய்யவும்"
 
-#: contents/ui/main.qml:233
+#: contents/ui/main.qml:237
 #, kde-format
 msgid "No output device"
 msgstr "வெளியீட்டு சாதனம் இல்லை"
 
-#: contents/ui/main.qml:365
+#: contents/ui/main.qml:369
 #, kde-format
 msgid "Increase Volume"
 msgstr "ஒலியை கூட்டு"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:375
 #, kde-format
 msgid "Decrease Volume"
 msgstr "ஒலியை குறை"
 
-#: contents/ui/main.qml:377
+#: contents/ui/main.qml:381
 #, kde-format
 msgid "Mute"
 msgstr "ஒலியை அடக்கு"
 
-#: contents/ui/main.qml:383
+#: contents/ui/main.qml:387
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "ஒலிவாங்கியின் ஒலியை கூட்டு"
 
-#: contents/ui/main.qml:389
+#: contents/ui/main.qml:393
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "ஒலிவாங்கியின் ஒலியை குறை"
 
-#: contents/ui/main.qml:395
+#: contents/ui/main.qml:399
 #, kde-format
 msgid "Mute Microphone"
 msgstr "ஒலிவாங்கியின் ஒலியை அடக்கு"
 
-#: contents/ui/main.qml:499
+#: contents/ui/main.qml:503
 #, kde-format
 msgid "Devices"
 msgstr "சாதனங்கள்"
 
-#: contents/ui/main.qml:506
+#: contents/ui/main.qml:510
 #, kde-format
 msgid "Applications"
 msgstr "செயலிகள்"
 
-#: contents/ui/main.qml:527 contents/ui/main.qml:529 contents/ui/main.qml:755
+#: contents/ui/main.qml:531 contents/ui/main.qml:533 contents/ui/main.qml:759
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
 
-#: contents/ui/main.qml:563
+#: contents/ui/main.qml:567
 #, kde-format
 msgid "No output or input devices found"
 msgstr "எந்த உள்ளீட்டு அல்லது வெளியீட்டு சாதனங்களும் கண்டுபிடிக்கப்படவில்லை"
 
-#: contents/ui/main.qml:582
+#: contents/ui/main.qml:586
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
-#: contents/ui/main.qml:733
+#: contents/ui/main.qml:737
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: contents/ui/main.qml:760
+#: contents/ui/main.qml:763
+#, kde-format
+msgid "Show virtual devices"
+msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
+
+#: contents/ui/main.qml:769
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"
@@ -239,3 +193,31 @@ msgstr "ஒலி சாதனங்களை &அமை…"
 #, kde-format
 msgid "Stream name not found"
 msgstr ""
+
+#~ msgid "General"
+#~ msgstr "பொது"
+
+#~ msgid "Volume step:"
+#~ msgstr "ஒலியின் அளவை மாற்றுவதற்கான படி:"
+
+#~ msgid "Play audio feedback for changes to:"
+#~ msgstr "இம்மாற்றங்களுக்கு ஒலியாக பின்னூட்டம் தா:"
+
+#~ msgid "Audio volume"
+#~ msgstr "ஒலியின் அளவு"
+
+#~ msgid "Show visual feedback for changes to:"
+#~ msgstr "இம்மாற்றங்களுக்கு காட்சிமுறையாக பின்னூட்டம் தா:"
+
+#~ msgid "Microphone sensitivity"
+#~ msgstr "ஒலிவாங்கியின் உணர்வுத்திறன்"
+
+#~ msgid "Mute state"
+#~ msgstr "ஒலியடக்க நிலை"
+
+#~ msgid "Default output device"
+#~ msgstr "இயல்பிருப்பு வெளியீடு சாதனம்"
+
+#~ msgctxt "@title"
+#~ msgid "Display:"
+#~ msgstr "காட்டப்படுபவை:"

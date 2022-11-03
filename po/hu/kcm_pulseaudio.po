@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-25 00:48+0000\n"
+"POT-Creation-Date: 2022-11-03 00:48+0000\n"
 "PO-Revision-Date: 2021-12-07 09:47+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -108,17 +108,23 @@ msgstr "Hangfelvétel"
 msgid "Show Inactive Devices"
 msgstr "Inaktív eszközök megjelenítése"
 
-#: kcm/package/contents/ui/main.qml:278
+#: kcm/package/contents/ui/main.qml:275
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgid "Configure Volume Controls…"
+msgstr "Beállítások…"
+
+#: kcm/package/contents/ui/main.qml:284
 #, kde-format
 msgid "Configure…"
 msgstr "Beállítások…"
 
-#: kcm/package/contents/ui/main.qml:282
+#: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "A(z) %1 PulseAudio modulra van szükség"
 
-#: kcm/package/contents/ui/main.qml:294
+#: kcm/package/contents/ui/main.qml:300
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -126,13 +132,13 @@ msgstr ""
 "Virtuális kimeneti eszköz hozzáadása minden helyi hangkártyához szimultán "
 "lejátszáshoz"
 
-#: kcm/package/contents/ui/main.qml:300
+#: kcm/package/contents/ui/main.qml:306
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "Lejátszások automatikus átirányítása, ha új kimenet válik elérhetővé"
 
-#: kcm/package/contents/ui/main.qml:316
+#: kcm/package/contents/ui/main.qml:322
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -142,52 +148,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:351
+#: kcm/package/contents/ui/main.qml:357
 #, kde-format
 msgid "Front Left"
 msgstr "Bal első"
 
-#: kcm/package/contents/ui/main.qml:352
+#: kcm/package/contents/ui/main.qml:358
 #, kde-format
 msgid "Front Center"
 msgstr "Első középső"
 
-#: kcm/package/contents/ui/main.qml:353
+#: kcm/package/contents/ui/main.qml:359
 #, kde-format
 msgid "Front Right"
 msgstr "Jobb első"
 
-#: kcm/package/contents/ui/main.qml:354
+#: kcm/package/contents/ui/main.qml:360
 #, kde-format
 msgid "Side Left"
 msgstr "Bal oldalsó"
 
-#: kcm/package/contents/ui/main.qml:355
+#: kcm/package/contents/ui/main.qml:361
 #, kde-format
 msgid "Side Right"
 msgstr "Jobb oldalsó"
 
-#: kcm/package/contents/ui/main.qml:356
+#: kcm/package/contents/ui/main.qml:362
 #, kde-format
 msgid "Rear Left"
 msgstr "Bal hátsó"
 
-#: kcm/package/contents/ui/main.qml:357
+#: kcm/package/contents/ui/main.qml:363
 #, kde-format
 msgid "Subwoofer"
 msgstr "Mélysugárzó"
 
-#: kcm/package/contents/ui/main.qml:358
+#: kcm/package/contents/ui/main.qml:364
 #, kde-format
 msgid "Rear Right"
 msgstr "Jobb hátsó"
 
-#: kcm/package/contents/ui/main.qml:359
+#: kcm/package/contents/ui/main.qml:365
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:469
+#: kcm/package/contents/ui/main.qml:475
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Kattintson bármelyik hangszóróra a hang teszteléséhez"
@@ -216,6 +222,55 @@ msgstr "Értesítési hangok"
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:15
+#, kde-format
+msgid "Volume Controls"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:33
+#, kde-format
+msgid "Raise maximum volume"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:41
+#, kde-format
+msgid "Volume change step:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:65
+#, kde-format
+msgid "Play audio feedback for changes to:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:66
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:75
+#, kde-format
+msgid "Audio volume"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:74
+#, kde-format
+msgid "Show visual feedback for changes to:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:82
+#, fuzzy, kde-format
+#| msgid "Microphone Muted"
+msgid "Microphone sensitivity"
+msgstr "Mikrofon némítva"
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:89
+#, fuzzy, kde-format
+#| msgid "Mute audio"
+msgid "Mute state"
+msgstr "Hang némítása"
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:96
+#, fuzzy, kde-format
+#| msgid "Default Device"
+msgid "Default output device"
+msgstr "Alapértelmezett eszköz"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format
@@ -396,9 +451,6 @@ msgstr "A(z) %1 használja a mikrofont"
 #~ msgid "Advanced"
 #~ msgstr "Speciális"
 
-#~ msgid "Default Device"
-#~ msgstr "Alapértelmezett eszköz"
-
 #~ msgid "Outputs"
 #~ msgstr "Kimenetek"
 
@@ -408,9 +460,6 @@ msgstr "A(z) %1 használja a mikrofont"
 
 #~ msgid "Inputs"
 #~ msgstr "Bemenetek"
-
-#~ msgid "Mute audio"
-#~ msgstr "Hang némítása"
 
 #~ msgid "Capture"
 #~ msgstr "Felvétel"
