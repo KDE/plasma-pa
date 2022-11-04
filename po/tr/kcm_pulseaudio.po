@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-03 00:48+0000\n"
-"PO-Revision-Date: 2022-04-21 10:32+0300\n"
+"POT-Creation-Date: 2022-11-04 00:47+0000\n"
+"PO-Revision-Date: 2022-11-03 12:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: context.cpp:596
 #, kde-format
@@ -77,59 +77,58 @@ msgstr "Denge"
 msgid "This module allows configuring the Pulseaudio sound subsystem."
 msgstr "Bu modül, Pulseaudio ses alt sisteminin yapılandırılmasına izin verir."
 
-#: kcm/package/contents/ui/main.qml:101
+#: kcm/package/contents/ui/main.qml:105
 #, kde-format
 msgid "Playback Devices"
 msgstr "Oynatma Aygıtları"
 
-#: kcm/package/contents/ui/main.qml:125
+#: kcm/package/contents/ui/main.qml:129
 #, kde-format
 msgid "Recording Devices"
 msgstr "Kayıt Aygıtları"
 
-#: kcm/package/contents/ui/main.qml:149
+#: kcm/package/contents/ui/main.qml:153
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Etkin Olmayan Kartlar"
 
-#: kcm/package/contents/ui/main.qml:183
+#: kcm/package/contents/ui/main.qml:187
 #, kde-format
 msgid "Playback Streams"
 msgstr "Oynatma Akışları"
 
-#: kcm/package/contents/ui/main.qml:232
+#: kcm/package/contents/ui/main.qml:236
 #, kde-format
 msgid "Recording Streams"
 msgstr "Akışları Kaydet"
 
-#: kcm/package/contents/ui/main.qml:267
+#: kcm/package/contents/ui/main.qml:271
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Etkin Olmayan Aygıtları Göster"
 
-#: kcm/package/contents/ui/main.qml:275
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#: kcm/package/contents/ui/main.qml:279
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Yapılandır…"
+msgstr "Ses Denetimlerini Yapılandır…"
 
-#: kcm/package/contents/ui/main.qml:284
+#: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Configure…"
 msgstr "Yapılandır…"
 
-#: kcm/package/contents/ui/main.qml:288
+#: kcm/package/contents/ui/main.qml:292
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "%1 PulseAudio modülü gerekli"
 
-#: kcm/package/contents/ui/main.qml:300
+#: kcm/package/contents/ui/main.qml:304
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "Tüm yerel ses kartlarında aynı anda çıkış için sanal çıkış aygıtı ekle"
 
-#: kcm/package/contents/ui/main.qml:306
+#: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -137,7 +136,7 @@ msgstr ""
 "Yeni bir çıkış kullanılabilir olduğunda çalışan tüm akışları otomatik olarak "
 "değiştir"
 
-#: kcm/package/contents/ui/main.qml:322
+#: kcm/package/contents/ui/main.qml:326
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -149,52 +148,52 @@ msgstr ""
 "Bir sınama sesi çalmaya çalışırken hata. \n"
 "Sistem raporu: \"%1\""
 
-#: kcm/package/contents/ui/main.qml:357
+#: kcm/package/contents/ui/main.qml:361
 #, kde-format
 msgid "Front Left"
 msgstr "Ön Sol"
 
-#: kcm/package/contents/ui/main.qml:358
+#: kcm/package/contents/ui/main.qml:362
 #, kde-format
 msgid "Front Center"
 msgstr "Ön Merkez"
 
-#: kcm/package/contents/ui/main.qml:359
+#: kcm/package/contents/ui/main.qml:363
 #, kde-format
 msgid "Front Right"
 msgstr "Ön Sağ"
 
-#: kcm/package/contents/ui/main.qml:360
+#: kcm/package/contents/ui/main.qml:364
 #, kde-format
 msgid "Side Left"
 msgstr "Sol Taraf"
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:365
 #, kde-format
 msgid "Side Right"
 msgstr "Sağ Taraf"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:366
 #, kde-format
 msgid "Rear Left"
 msgstr "Arka Sol"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:367
 #, kde-format
 msgid "Subwoofer"
 msgstr "Derin Bas Hoparlör"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:368
 #, kde-format
 msgid "Rear Right"
 msgstr "Arka Sağ"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:369
 #, kde-format
 msgid "Mono"
 msgstr "Tek kanallı"
 
-#: kcm/package/contents/ui/main.qml:475
+#: kcm/package/contents/ui/main.qml:479
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Sesi sınamak için herhangi bir hoparlöre tıklayın"
@@ -225,51 +224,48 @@ msgstr "%1: %2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Ses Düzeyi Denetimleri"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:33
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Sesi sonuna kadar aç"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:41
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Ses düzeyi değiştirme çentiği:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:65
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Yapılan değişikliklerde sesle geri bildirim ver:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:66
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:75
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:64
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Ses düzeyi"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:74
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Yapılan değişikliklerde görsel geri bildirim ver:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:82
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:80
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Mikrofon Sesi Kapatıldı"
+msgstr "Mikrofon duyarlılığı"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:89
-#, fuzzy, kde-format
-#| msgid "Mute audio"
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:87
+#, kde-format
 msgid "Mute state"
-msgstr "Sesi kapat"
+msgstr "Sesi kapatma durumu"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:96
-#, fuzzy, kde-format
-#| msgid "Default"
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:94
+#, kde-format
 msgid "Default output device"
-msgstr "Öntanımlı"
+msgstr "Öntanımlı çıkış aygıtı"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format
@@ -350,19 +346,19 @@ msgstr ", "
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
-msgstr "%1 mikrofonu kullanıyor"
+msgstr "%1, mikrofonu kullanıyor"
 
 #: qml/microphoneindicator.cpp:310
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
-msgstr "%1 mikrofonu kullanıyor (%2)"
+msgstr "%1, mikrofonu kullanıyor (%2)"
 
 #: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
-msgstr "%1 mikrofonu kullanıyor"
+msgstr "%1, mikrofonu kullanıyor"
 
 #~ msgid "100%"
 #~ msgstr "%​100"

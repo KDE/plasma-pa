@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-03 00:48+0000\n"
-"PO-Revision-Date: 2022-04-20 12:56+0200\n"
+"POT-Creation-Date: 2022-11-04 00:47+0000\n"
+"PO-Revision-Date: 2022-11-03 13:24+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: context.cpp:596
 #, kde-format
@@ -78,53 +78,52 @@ msgstr ""
 "Deze module stelt u in staat het Pulseaudio geluidssubsysteem te "
 "configureren."
 
-#: kcm/package/contents/ui/main.qml:101
+#: kcm/package/contents/ui/main.qml:105
 #, kde-format
 msgid "Playback Devices"
 msgstr "Afspeelapparaten"
 
-#: kcm/package/contents/ui/main.qml:125
+#: kcm/package/contents/ui/main.qml:129
 #, kde-format
 msgid "Recording Devices"
 msgstr "Apparaten worden opgenomen"
 
-#: kcm/package/contents/ui/main.qml:149
+#: kcm/package/contents/ui/main.qml:153
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Inactieve kaarten"
 
-#: kcm/package/contents/ui/main.qml:183
+#: kcm/package/contents/ui/main.qml:187
 #, kde-format
 msgid "Playback Streams"
 msgstr "Afspeelstromen"
 
-#: kcm/package/contents/ui/main.qml:232
+#: kcm/package/contents/ui/main.qml:236
 #, kde-format
 msgid "Recording Streams"
 msgstr "Streams worden opgenomen"
 
-#: kcm/package/contents/ui/main.qml:267
+#: kcm/package/contents/ui/main.qml:271
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Inactieve apparaten tonen"
 
-#: kcm/package/contents/ui/main.qml:275
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#: kcm/package/contents/ui/main.qml:279
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Configureren…"
+msgstr "Volumebesturing configureren…"
 
-#: kcm/package/contents/ui/main.qml:284
+#: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Configure…"
 msgstr "Configureren…"
 
-#: kcm/package/contents/ui/main.qml:288
+#: kcm/package/contents/ui/main.qml:292
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Vereist PulseAudio module %1"
 
-#: kcm/package/contents/ui/main.qml:300
+#: kcm/package/contents/ui/main.qml:304
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -132,7 +131,7 @@ msgstr ""
 "Virtueel uitvoerapparaat toevoegen voor gezamenlijke uitvoer op alle lokale "
 "geluidskaarten"
 
-#: kcm/package/contents/ui/main.qml:306
+#: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -140,7 +139,7 @@ msgstr ""
 "Automatisch alle actieve streams omschakelen wanneer een nieuwe uitvoer "
 "beschikbaar komt"
 
-#: kcm/package/contents/ui/main.qml:322
+#: kcm/package/contents/ui/main.qml:326
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -152,52 +151,52 @@ msgstr ""
 "Fout bij poging een testgeluid af te spelen. \n"
 "Het systeem zei: \"%1\""
 
-#: kcm/package/contents/ui/main.qml:357
+#: kcm/package/contents/ui/main.qml:361
 #, kde-format
 msgid "Front Left"
 msgstr "Vooraan links"
 
-#: kcm/package/contents/ui/main.qml:358
+#: kcm/package/contents/ui/main.qml:362
 #, kde-format
 msgid "Front Center"
 msgstr "Vooraan midden"
 
-#: kcm/package/contents/ui/main.qml:359
+#: kcm/package/contents/ui/main.qml:363
 #, kde-format
 msgid "Front Right"
 msgstr "Vooraan rechts"
 
-#: kcm/package/contents/ui/main.qml:360
+#: kcm/package/contents/ui/main.qml:364
 #, kde-format
 msgid "Side Left"
 msgstr "Opzij links"
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:365
 #, kde-format
 msgid "Side Right"
 msgstr "Opzij rechts"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:366
 #, kde-format
 msgid "Rear Left"
 msgstr "Achter links"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:367
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:368
 #, kde-format
 msgid "Rear Right"
 msgstr "Achter rechts"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:369
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:475
+#: kcm/package/contents/ui/main.qml:479
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Klik op een speaker om geluid te testen"
@@ -228,51 +227,48 @@ msgstr "%1: %2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Volumebesturing"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:33
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Maximum volume vergroten:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:41
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Stap in volumewijziging:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:65
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Audio-terugkoppeling afspelen voor wijzigingen naar:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:66
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:75
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:64
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Audio volume"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:74
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Visuele terugkoppeling tonen voor wijzigingen naar:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:82
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:80
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Microfoon is gedempt"
+msgstr "Microfoongevoeligheid"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:89
-#, fuzzy, kde-format
-#| msgid "Mute audio"
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:87
+#, kde-format
 msgid "Mute state"
-msgstr "Geluid dempen"
+msgstr "Dempstatus"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:96
-#, fuzzy, kde-format
-#| msgid "Default Device"
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:94
+#, kde-format
 msgid "Default output device"
-msgstr "Standaard apparaat"
+msgstr "Standaard uitvoerapparaat"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-03 00:48+0000\n"
+"POT-Creation-Date: 2022-11-04 00:47+0000\n"
 "PO-Revision-Date: 2021-09-04 09:35+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -78,53 +78,53 @@ msgid "This module allows configuring the Pulseaudio sound subsystem."
 msgstr ""
 "Αυτό το άρθρωμα επιτρέπει τη διαμόρφωση του υποσυστήματος ήχου Pulseaudio"
 
-#: kcm/package/contents/ui/main.qml:101
+#: kcm/package/contents/ui/main.qml:105
 #, kde-format
 msgid "Playback Devices"
 msgstr "Συσκευές αναπαραγωγής"
 
-#: kcm/package/contents/ui/main.qml:125
+#: kcm/package/contents/ui/main.qml:129
 #, kde-format
 msgid "Recording Devices"
 msgstr "Συσκευές εγγραφής"
 
-#: kcm/package/contents/ui/main.qml:149
+#: kcm/package/contents/ui/main.qml:153
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Αδρανείς κάρτες"
 
-#: kcm/package/contents/ui/main.qml:183
+#: kcm/package/contents/ui/main.qml:187
 #, kde-format
 msgid "Playback Streams"
 msgstr "Ροές αναπαραγωγής"
 
-#: kcm/package/contents/ui/main.qml:232
+#: kcm/package/contents/ui/main.qml:236
 #, kde-format
 msgid "Recording Streams"
 msgstr "Ροές εγγραφής"
 
-#: kcm/package/contents/ui/main.qml:267
+#: kcm/package/contents/ui/main.qml:271
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Εμφάνιση αδρανών συσκευών"
 
-#: kcm/package/contents/ui/main.qml:275
+#: kcm/package/contents/ui/main.qml:279
 #, fuzzy, kde-format
 #| msgid "Configure…"
 msgid "Configure Volume Controls…"
 msgstr "Διαμόρφωση…"
 
-#: kcm/package/contents/ui/main.qml:284
+#: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Configure…"
 msgstr "Διαμόρφωση…"
 
-#: kcm/package/contents/ui/main.qml:288
+#: kcm/package/contents/ui/main.qml:292
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Απαιτείται το άρθρωμα %1 του PulseAudio"
 
-#: kcm/package/contents/ui/main.qml:300
+#: kcm/package/contents/ui/main.qml:304
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -132,7 +132,7 @@ msgstr ""
 "Προσθήκη εικονικής συσκευής εξόδου για ταυτόχρονη έξοδο σε όλες τις τοπικές "
 "κάρτες ήχου"
 
-#: kcm/package/contents/ui/main.qml:306
+#: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -140,7 +140,7 @@ msgstr ""
 "Αυτόματη εναλλαγή όλων των εκτελούμενων ροών όταν είναι διαθέσιμη μια νέα "
 "έξοδος"
 
-#: kcm/package/contents/ui/main.qml:322
+#: kcm/package/contents/ui/main.qml:326
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -150,52 +150,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:357
+#: kcm/package/contents/ui/main.qml:361
 #, kde-format
 msgid "Front Left"
 msgstr "Μπροστά αριστερά"
 
-#: kcm/package/contents/ui/main.qml:358
+#: kcm/package/contents/ui/main.qml:362
 #, kde-format
 msgid "Front Center"
 msgstr "Μπροστά κέντρο"
 
-#: kcm/package/contents/ui/main.qml:359
+#: kcm/package/contents/ui/main.qml:363
 #, kde-format
 msgid "Front Right"
 msgstr "Μπροστά δεξιά"
 
-#: kcm/package/contents/ui/main.qml:360
+#: kcm/package/contents/ui/main.qml:364
 #, kde-format
 msgid "Side Left"
 msgstr "Πλάι αριστερά"
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:365
 #, kde-format
 msgid "Side Right"
 msgstr "Πλάι δεξιά"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:366
 #, kde-format
 msgid "Rear Left"
 msgstr "Πίσω αριστερά"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:367
 #, kde-format
 msgid "Subwoofer"
 msgstr "Υποβαθύφωνο"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:368
 #, kde-format
 msgid "Rear Right"
 msgstr "Πίσω δεξιά"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:369
 #, kde-format
 msgid "Mono"
 msgstr "Μονοφωνική"
 
-#: kcm/package/contents/ui/main.qml:475
+#: kcm/package/contents/ui/main.qml:479
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr ""
@@ -230,45 +230,45 @@ msgstr "%1: %2"
 msgid "Volume Controls"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:33
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:41
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:65
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:66
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:75
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:64
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:74
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:82
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:80
 #, fuzzy, kde-format
 #| msgid "Microphone Muted"
 msgid "Microphone sensitivity"
 msgstr "Μικρόφωνο σε σίγαση"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:89
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:87
 #, fuzzy, kde-format
 #| msgid "Mute audio"
 msgid "Mute state"
 msgstr "Σίγαση ήχου"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:96
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:94
 #, fuzzy, kde-format
 #| msgid "Default"
 msgid "Default output device"

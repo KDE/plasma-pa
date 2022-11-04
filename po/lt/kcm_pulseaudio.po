@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-03 00:48+0000\n"
+"POT-Creation-Date: 2022-11-04 00:47+0000\n"
 "PO-Revision-Date: 2022-09-19 12:55+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -80,53 +80,53 @@ msgstr "Balansas"
 msgid "This module allows configuring the Pulseaudio sound subsystem."
 msgstr "Šis modulis leidžia konfigūruoti PulseAudio garso posistemį."
 
-#: kcm/package/contents/ui/main.qml:101
+#: kcm/package/contents/ui/main.qml:105
 #, kde-format
 msgid "Playback Devices"
 msgstr "Atkūrimo įrenginiai"
 
-#: kcm/package/contents/ui/main.qml:125
+#: kcm/package/contents/ui/main.qml:129
 #, kde-format
 msgid "Recording Devices"
 msgstr "Įrašymo įrenginiai"
 
-#: kcm/package/contents/ui/main.qml:149
+#: kcm/package/contents/ui/main.qml:153
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Neaktyvios plokštės"
 
-#: kcm/package/contents/ui/main.qml:183
+#: kcm/package/contents/ui/main.qml:187
 #, kde-format
 msgid "Playback Streams"
 msgstr "Atkūrimo srautai"
 
-#: kcm/package/contents/ui/main.qml:232
+#: kcm/package/contents/ui/main.qml:236
 #, kde-format
 msgid "Recording Streams"
 msgstr "Įrašymo srautai"
 
-#: kcm/package/contents/ui/main.qml:267
+#: kcm/package/contents/ui/main.qml:271
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Rodyti neaktyvius įrenginius"
 
-#: kcm/package/contents/ui/main.qml:275
+#: kcm/package/contents/ui/main.qml:279
 #, fuzzy, kde-format
 #| msgid "Configure…"
 msgid "Configure Volume Controls…"
 msgstr "Konfigūruoti…"
 
-#: kcm/package/contents/ui/main.qml:284
+#: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Configure…"
 msgstr "Konfigūruoti…"
 
-#: kcm/package/contents/ui/main.qml:288
+#: kcm/package/contents/ui/main.qml:292
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Reikalauja %1 PulseAudio modulio"
 
-#: kcm/package/contents/ui/main.qml:300
+#: kcm/package/contents/ui/main.qml:304
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -134,7 +134,7 @@ msgstr ""
 "Pridėti virtualų išvedimo įrenginį vienalaikiam išvedimui visose vietinėse "
 "garso plokštėse"
 
-#: kcm/package/contents/ui/main.qml:306
+#: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -142,7 +142,7 @@ msgstr ""
 "Automatiškai perjungti visus esamus srautus, kai atsiranda naujas išvedimo "
 "įrenginys"
 
-#: kcm/package/contents/ui/main.qml:322
+#: kcm/package/contents/ui/main.qml:326
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -154,52 +154,52 @@ msgstr ""
 "Klaida bandant atkurti bandomąjį garsą. \n"
 "Sistema pranešė: „%1“"
 
-#: kcm/package/contents/ui/main.qml:357
+#: kcm/package/contents/ui/main.qml:361
 #, kde-format
 msgid "Front Left"
 msgstr "Priekinis kairysis"
 
-#: kcm/package/contents/ui/main.qml:358
+#: kcm/package/contents/ui/main.qml:362
 #, kde-format
 msgid "Front Center"
 msgstr "Priekinis centrinis"
 
-#: kcm/package/contents/ui/main.qml:359
+#: kcm/package/contents/ui/main.qml:363
 #, kde-format
 msgid "Front Right"
 msgstr "Priekinis dešinysis"
 
-#: kcm/package/contents/ui/main.qml:360
+#: kcm/package/contents/ui/main.qml:364
 #, kde-format
 msgid "Side Left"
 msgstr "Šoninis kairysis"
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:365
 #, kde-format
 msgid "Side Right"
 msgstr "Šoninis dešinysis"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:366
 #, kde-format
 msgid "Rear Left"
 msgstr "Galinis kairysis"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:367
 #, kde-format
 msgid "Subwoofer"
 msgstr "Po-žemadažnis garsiakalbis"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:368
 #, kde-format
 msgid "Rear Right"
 msgstr "Galinis dešinysis"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:369
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:475
+#: kcm/package/contents/ui/main.qml:479
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Spustelėkite ant kurio nors garsiakalbio, kad išbandytumėte garsą"
@@ -232,45 +232,45 @@ msgstr "%1: %2"
 msgid "Volume Controls"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:33
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:41
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:65
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:66
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:75
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:64
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:74
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
 msgstr ""
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:82
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:80
 #, fuzzy, kde-format
 #| msgid "Microphone Muted"
 msgid "Microphone sensitivity"
 msgstr "Mikrofonas nutildytas"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:89
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:87
 #, fuzzy, kde-format
 #| msgid "Mute audio"
 msgid "Mute state"
 msgstr "Nutildyti garsą"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:96
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:94
 #, fuzzy, kde-format
 #| msgid "Default Device"
 msgid "Default output device"
