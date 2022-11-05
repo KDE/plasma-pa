@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-03 00:48+0000\n"
-"PO-Revision-Date: 2022-09-25 09:15+0200\n"
+"PO-Revision-Date: 2022-11-04 07:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -108,12 +108,12 @@ msgstr "ხმა: %1%"
 #: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "შუა-წკაპი დადუმების გასაუქმებლად"
 
 #: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "შუა-წკაპი ყველა ხმის დასადუმებლად"
 
 #: contents/ui/main.qml:237
 #, kde-format

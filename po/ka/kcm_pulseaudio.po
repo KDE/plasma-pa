@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:47+0000\n"
-"PO-Revision-Date: 2022-09-25 09:05+0200\n"
+"PO-Revision-Date: 2022-11-04 07:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: context.cpp:596
 #, kde-format
@@ -108,8 +108,7 @@ msgid "Show Inactive Devices"
 msgstr "არააქტიური მოწყობილობების ჩვენება"
 
 #: kcm/package/contents/ui/main.qml:279
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
 msgstr "მორგება…"
 
@@ -225,49 +224,48 @@ msgstr "%1: %2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "ხმის კონტროლი"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "მაქსიმალური ხმის აწევა"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "მოცულობის შეცვლის ბიჯი:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "ხმოვანი შეტყობინება ცვლილებებისთვის:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:64
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "აუდიოს ხმა"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "ცვლილებისას ვიზუალური ნიშნების მიცემა:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:80
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "მიკროფონი ჩაჩუმებულია"
+msgstr "მიკროფონის მგრძნობიარობა"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:87
 #, kde-format
 msgid "Mute state"
-msgstr ""
+msgstr "დადუმების მდგომარეობა"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:94
 #, kde-format
 msgid "Default output device"
-msgstr ""
+msgstr "ნაგულისხმები გამოსატანი მოწყობილობა"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format

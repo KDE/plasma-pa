@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:47+0000\n"
-"PO-Revision-Date: 2022-04-20 21:25+0200\n"
+"PO-Revision-Date: 2022-11-04 15:29+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -115,10 +115,9 @@ msgid "Show Inactive Devices"
 msgstr "Afficher les périphériques inactifs"
 
 #: kcm/package/contents/ui/main.qml:279
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Configurer…"
+msgstr "Configurer les contrôles de volume..."
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
@@ -234,51 +233,48 @@ msgstr "%1: %2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Contrôles de volume"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Augmenter le volume maximal"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Pas de modification du volume :"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Lire le retour audio pour les modifications de :"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:64
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Volume audio"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Afficher le retour audio pour les modifications de :"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:80
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Microphone coupé"
+msgstr "Sensibilité du microphone"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:87
-#, fuzzy, kde-format
-#| msgid "Mute audio"
+#, kde-format
 msgid "Mute state"
-msgstr "Couper le son"
+msgstr "Statut du mode « Son en pause »"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:94
-#, fuzzy, kde-format
-#| msgid "Default Device"
+#, kde-format
 msgid "Default output device"
-msgstr "Périphérique par défaut"
+msgstr "Périphérique de sortie par défaut"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format
