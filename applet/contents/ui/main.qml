@@ -74,6 +74,7 @@ Item {
 
         lines.push(main.globalMute ? i18n("Middle-click to unmute")
                                    : i18n("Middle-click to mute all audio"));
+        lines.push(i18n("Scroll to adjust volume"));
         return lines.join("\n");
     }
 
