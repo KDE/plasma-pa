@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-03 00:48+0000\n"
-"PO-Revision-Date: 2022-09-19 12:52+0300\n"
+"PO-Revision-Date: 2022-11-17 02:20+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.1\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -110,12 +110,12 @@ msgstr "%1% garsumas"
 #: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Spustelėkite viduriniuoju pelės mygtuku, norėdami įjungti garsą"
 
 #: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Spustelėkite viduriniuoju pelės mygtuku, norėdami nutildyti visą garsą"
 
 #: contents/ui/main.qml:237
 #, kde-format
