@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:47+0000\n"
-"PO-Revision-Date: 2022-11-06 01:06\n"
+"PO-Revision-Date: 2022-11-19 14:48\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -109,7 +109,7 @@ msgstr "显示非活动设备"
 #: kcm/package/contents/ui/main.qml:279
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr ""
+msgstr "配置音量控制…"
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
@@ -221,48 +221,48 @@ msgstr "%1：%2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "音量控制"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "提高最大音量"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "音量调整步长："
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "更改时播放声音反馈："
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:64
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "音频音量"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "更改时显示视觉反馈："
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:80
 #, kde-format
 msgid "Microphone sensitivity"
-msgstr ""
+msgstr "麦克风灵敏度"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:87
 #, kde-format
 msgid "Mute state"
-msgstr ""
+msgstr "静音状态"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:94
 #, kde-format
 msgid "Default output device"
-msgstr ""
+msgstr "默认输出设备"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format

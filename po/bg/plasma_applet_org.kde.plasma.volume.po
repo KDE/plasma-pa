@@ -193,31 +193,3 @@ msgstr "&Конфигуриране на звукови устройства…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Името на потока не е намерено"
-
-#~ msgid "General"
-#~ msgstr "Общи"
-
-#~ msgid "Volume step:"
-#~ msgstr "Скала на сила звука:"
-
-#~ msgid "Play audio feedback for changes to:"
-#~ msgstr "Възпроизвеждане на аудио обратна връзка при промени в:"
-
-#~ msgid "Audio volume"
-#~ msgstr "Сила на звука"
-
-#~ msgid "Show visual feedback for changes to:"
-#~ msgstr "Показване на визуална обратна връзка за промени в:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Чувствителност на микрофона"
-
-#~ msgid "Mute state"
-#~ msgstr "Състояние на звук"
-
-#~ msgid "Default output device"
-#~ msgstr "Изходно устройство по подразбиране"
-
-#~ msgctxt "@title"
-#~ msgid "Display:"
-#~ msgstr "Показване:"
