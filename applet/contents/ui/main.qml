@@ -61,7 +61,7 @@ Item {
     Plasmoid.toolTipSubText: {
         let lines = [];
 
-        if (paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink)) {
+        if (paSinkModel.preferredSink && paSinkFilterModel.count > 1 && !isDummyOutput(paSinkModel.preferredSink)) {
             var port = paSinkModel.preferredSink.ports[paSinkModel.preferredSink.activePortIndex];
             if (port) {
                 lines.push(port.description);
