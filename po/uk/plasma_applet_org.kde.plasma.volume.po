@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-03 00:48+0000\n"
+"POT-Creation-Date: 2022-11-27 00:48+0000\n"
 "PO-Revision-Date: 2022-10-16 08:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -117,77 +117,82 @@ msgstr "Клацання середньою для вмикання звуку"
 msgid "Middle-click to mute all audio"
 msgstr "Клацання середньою для вимикання усього звуку"
 
-#: contents/ui/main.qml:237
+#: contents/ui/main.qml:77
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr ""
+
+#: contents/ui/main.qml:238
 #, kde-format
 msgid "No output device"
 msgstr "Немає пристрою для виведення"
 
-#: contents/ui/main.qml:369
+#: contents/ui/main.qml:370
 #, kde-format
 msgid "Increase Volume"
 msgstr "Збільшити гучність"
 
-#: contents/ui/main.qml:375
+#: contents/ui/main.qml:376
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Зменшити гучність"
 
-#: contents/ui/main.qml:381
+#: contents/ui/main.qml:382
 #, kde-format
 msgid "Mute"
 msgstr "Вимкнути звук"
 
-#: contents/ui/main.qml:387
+#: contents/ui/main.qml:388
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Збільшити гучність для мікрофона"
 
-#: contents/ui/main.qml:393
+#: contents/ui/main.qml:394
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Зменшити гучність для мікрофона"
 
-#: contents/ui/main.qml:399
+#: contents/ui/main.qml:400
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Вимкнути мікрофон"
 
-#: contents/ui/main.qml:503
+#: contents/ui/main.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "Пристрої"
 
-#: contents/ui/main.qml:510
+#: contents/ui/main.qml:511
 #, kde-format
 msgid "Applications"
 msgstr "Програми"
 
-#: contents/ui/main.qml:531 contents/ui/main.qml:533 contents/ui/main.qml:759
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Примусово вимкнути всі пристрої відтворення"
 
-#: contents/ui/main.qml:567
+#: contents/ui/main.qml:568
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Не знайдено пристроїв отримання та виведення даних"
 
-#: contents/ui/main.qml:586
+#: contents/ui/main.qml:587
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Жодна програма не відтворює і не записує звук"
 
-#: contents/ui/main.qml:737
+#: contents/ui/main.qml:738
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Збільшити максимальну гучність"
 
-#: contents/ui/main.qml:763
+#: contents/ui/main.qml:764
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показати віртуальні пристрої"
 
-#: contents/ui/main.qml:769
+#: contents/ui/main.qml:770
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Налаштувати звукові пристрої…"

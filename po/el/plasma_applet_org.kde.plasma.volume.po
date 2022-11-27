@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-03 00:48+0000\n"
+"POT-Creation-Date: 2022-11-27 00:48+0000\n"
 "PO-Revision-Date: 2021-07-07 11:46+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -119,78 +119,83 @@ msgstr ""
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:237
+#: contents/ui/main.qml:77
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr ""
+
+#: contents/ui/main.qml:238
 #, kde-format
 msgid "No output device"
 msgstr "Δε υπάρχουν συσκευές εξόδου"
 
-#: contents/ui/main.qml:369
+#: contents/ui/main.qml:370
 #, kde-format
 msgid "Increase Volume"
 msgstr "Αύξηση έντασης"
 
-#: contents/ui/main.qml:375
+#: contents/ui/main.qml:376
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Μείωση έντασης"
 
-#: contents/ui/main.qml:381
+#: contents/ui/main.qml:382
 #, kde-format
 msgid "Mute"
 msgstr "Σίγαση"
 
-#: contents/ui/main.qml:387
+#: contents/ui/main.qml:388
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Αύξηση έντασης μικροφώνου"
 
-#: contents/ui/main.qml:393
+#: contents/ui/main.qml:394
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Μείωση έντασης μικροφώνου"
 
-#: contents/ui/main.qml:399
+#: contents/ui/main.qml:400
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Σίγαση μικροφώνου"
 
-#: contents/ui/main.qml:503
+#: contents/ui/main.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "Συσκευές"
 
-#: contents/ui/main.qml:510
+#: contents/ui/main.qml:511
 #, kde-format
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: contents/ui/main.qml:531 contents/ui/main.qml:533 contents/ui/main.qml:759
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Εξαναγκασμός σίγασης για όλες τις συσκευές αναπαραγωγής"
 
-#: contents/ui/main.qml:567
+#: contents/ui/main.qml:568
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Δε βρέθηκαν συσκευές εισόδου ή εξόδου"
 
-#: contents/ui/main.qml:586
+#: contents/ui/main.qml:587
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Καμιά εφαρμογή δεν πραγματοποιεί εγγραφή ή αναπαραγωγή ήχου"
 
-#: contents/ui/main.qml:737
+#: contents/ui/main.qml:738
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Αύξηση μέγιστης έντασης"
 
-#: contents/ui/main.qml:763
+#: contents/ui/main.qml:764
 #, fuzzy, kde-format
 #| msgid "Show hidden devices"
 msgid "Show virtual devices"
 msgstr "Εμφάνιση κρυμμένων συσκευών"
 
-#: contents/ui/main.qml:769
+#: contents/ui/main.qml:770
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Διαμόρφωση συσκευών ήχου…"

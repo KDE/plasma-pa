@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-03 00:48+0000\n"
+"POT-Creation-Date: 2022-11-27 00:48+0000\n"
 "PO-Revision-Date: 2022-10-03 15:28+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-i18n-doc@kde.org>\n"
@@ -114,77 +114,82 @@ msgstr ""
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:237
+#: contents/ui/main.qml:77
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr ""
+
+#: contents/ui/main.qml:238
 #, kde-format
 msgid "No output device"
 msgstr "출력 장치를 찾을 수 없음"
 
-#: contents/ui/main.qml:369
+#: contents/ui/main.qml:370
 #, kde-format
 msgid "Increase Volume"
 msgstr "음량 증가"
 
-#: contents/ui/main.qml:375
+#: contents/ui/main.qml:376
 #, kde-format
 msgid "Decrease Volume"
 msgstr "음량 감소"
 
-#: contents/ui/main.qml:381
+#: contents/ui/main.qml:382
 #, kde-format
 msgid "Mute"
 msgstr "음소거"
 
-#: contents/ui/main.qml:387
+#: contents/ui/main.qml:388
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "마이크 음량 증가"
 
-#: contents/ui/main.qml:393
+#: contents/ui/main.qml:394
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "마이크 음량 감소"
 
-#: contents/ui/main.qml:399
+#: contents/ui/main.qml:400
 #, kde-format
 msgid "Mute Microphone"
 msgstr "마이크 음소거"
 
-#: contents/ui/main.qml:503
+#: contents/ui/main.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "장치"
 
-#: contents/ui/main.qml:510
+#: contents/ui/main.qml:511
 #, kde-format
 msgid "Applications"
 msgstr "프로그램"
 
-#: contents/ui/main.qml:531 contents/ui/main.qml:533 contents/ui/main.qml:759
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "강제로 모든 재생 장치 음소거"
 
-#: contents/ui/main.qml:567
+#: contents/ui/main.qml:568
 #, kde-format
 msgid "No output or input devices found"
 msgstr "입력이나 출력 장치를 찾을 수 없음"
 
-#: contents/ui/main.qml:586
+#: contents/ui/main.qml:587
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "오디오를 재생하거나 녹음하는 프로그램 없음"
 
-#: contents/ui/main.qml:737
+#: contents/ui/main.qml:738
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "최대 음량 높이기"
 
-#: contents/ui/main.qml:763
+#: contents/ui/main.qml:764
 #, kde-format
 msgid "Show virtual devices"
 msgstr "가상 장치 표시"
 
-#: contents/ui/main.qml:769
+#: contents/ui/main.qml:770
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "오디오 장치 설정(&C)…"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-03 00:48+0000\n"
+"POT-Creation-Date: 2022-11-27 00:48+0000\n"
 "PO-Revision-Date: 2022-10-16 11:53+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -116,77 +116,82 @@ msgstr "Pulse con el botón central para reanudar el sonido"
 msgid "Middle-click to mute all audio"
 msgstr "Pulse con el botón central para silenciar todos los sonidos"
 
-#: contents/ui/main.qml:237
+#: contents/ui/main.qml:77
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr ""
+
+#: contents/ui/main.qml:238
 #, kde-format
 msgid "No output device"
 msgstr "Sin dispositivo de salida"
 
-#: contents/ui/main.qml:369
+#: contents/ui/main.qml:370
 #, kde-format
 msgid "Increase Volume"
 msgstr "Subir el volumen"
 
-#: contents/ui/main.qml:375
+#: contents/ui/main.qml:376
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Bajar el volumen"
 
-#: contents/ui/main.qml:381
+#: contents/ui/main.qml:382
 #, kde-format
 msgid "Mute"
 msgstr "Silenciar"
 
-#: contents/ui/main.qml:387
+#: contents/ui/main.qml:388
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Subir el volumen del micrófono"
 
-#: contents/ui/main.qml:393
+#: contents/ui/main.qml:394
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Bajar el volumen del micrófono"
 
-#: contents/ui/main.qml:399
+#: contents/ui/main.qml:400
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Silenciar el micrófono"
 
-#: contents/ui/main.qml:503
+#: contents/ui/main.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivos"
 
-#: contents/ui/main.qml:510
+#: contents/ui/main.qml:511
 #, kde-format
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: contents/ui/main.qml:531 contents/ui/main.qml:533 contents/ui/main.qml:759
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forzar el silencio en todos los dispositivos de reproducción"
 
-#: contents/ui/main.qml:567
+#: contents/ui/main.qml:568
 #, kde-format
 msgid "No output or input devices found"
 msgstr "No se han encontrado dispositivos de entrada ni de salida"
 
-#: contents/ui/main.qml:586
+#: contents/ui/main.qml:587
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "No hay aplicaciones reproduciendo ni grabando sonido"
 
-#: contents/ui/main.qml:737
+#: contents/ui/main.qml:738
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Subir el volumen máximo"
 
-#: contents/ui/main.qml:763
+#: contents/ui/main.qml:764
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostrar dispositivos virtuales"
 
-#: contents/ui/main.qml:769
+#: contents/ui/main.qml:770
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar dispositivos de sonido..."
