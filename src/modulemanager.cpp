@@ -57,7 +57,7 @@ void ConfigModule::setEnabled(bool enabled, const QVariant &args)
 ModuleManager::ModuleManager(QObject *parent)
     : QObject(parent)
 {
-    m_combineSinks = new ConfigModule(QStringLiteral("combine"), QStringLiteral("module-combine"), this);
+    m_combineSinks = new ConfigModule(QStringLiteral("combine"), QStringLiteral("module-combine-sink"), this);
     m_switchOnConnect = new ConfigModule(QStringLiteral("switch-on-connect"), QStringLiteral("module-switch-on-connect"), this);
     m_deviceManager = new ConfigModule(QStringLiteral("device-manager"), QStringLiteral("module-device-manager"), this);
 
