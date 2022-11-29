@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-27 00:48+0000\n"
-"PO-Revision-Date: 2022-10-16 11:41+0100\n"
+"PO-Revision-Date: 2022-11-28 18:09+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -113,7 +113,7 @@ msgstr "Botão do meio para desactivar todo o som"
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Deslocar para ajustar o volume"
 
 #: contents/ui/main.qml:238
 #, kde-format
@@ -194,31 +194,3 @@ msgstr "&Configurar os Dispositivos de Áudio…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nome da sequência não encontrado"
-
-#~ msgid "General"
-#~ msgstr "Geral"
-
-#~ msgid "Volume step:"
-#~ msgstr "Passo do volume:"
-
-#~ msgid "Play audio feedback for changes to:"
-#~ msgstr "Reproduzir as reacções em áudio às alterações de:"
-
-#~ msgid "Audio volume"
-#~ msgstr "Volume do áudio"
-
-#~ msgid "Show visual feedback for changes to:"
-#~ msgstr "Mostrar reacções visuais às alterações de:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Sensibilidade do microfone"
-
-#~ msgid "Mute state"
-#~ msgstr "Estado de silêncio"
-
-#~ msgid "Default output device"
-#~ msgstr "Dispositivo de saída predefinido"
-
-#~ msgctxt "@title"
-#~ msgid "Display:"
-#~ msgstr "Visualização:"

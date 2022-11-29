@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-27 00:48+0000\n"
-"PO-Revision-Date: 2022-10-16 10:22+0200\n"
+"PO-Revision-Date: 2022-11-27 10:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -121,7 +121,7 @@ msgstr "Clic del mig per a silenciar tot l'àudio"
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Desplaçament per a ajustar el volum"
 
 #: contents/ui/main.qml:238
 #, kde-format
@@ -202,31 +202,3 @@ msgstr "&Configura els dispositius d'àudio…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "No s'ha trobat el nom del flux"
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Volume step:"
-#~ msgstr "Pas del volum:"
-
-#~ msgid "Play audio feedback for changes to:"
-#~ msgstr "Reproduïx una retroalimentació sonora per als canvis a:"
-
-#~ msgid "Audio volume"
-#~ msgstr "Volum de l'àudio"
-
-#~ msgid "Show visual feedback for changes to:"
-#~ msgstr "Mostra una retroalimentació visual per als canvis a:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Sensibilitat del micròfon"
-
-#~ msgid "Mute state"
-#~ msgstr "Estat de silenci"
-
-#~ msgid "Default output device"
-#~ msgstr "Dispositiu predeterminat d'eixida"
-
-#~ msgctxt "@title"
-#~ msgid "Display:"
-#~ msgstr "Visualització:"
