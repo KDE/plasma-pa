@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-27 00:48+0000\n"
-"PO-Revision-Date: 2022-11-04 07:19+0100\n"
+"PO-Revision-Date: 2022-11-30 06:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -118,7 +118,7 @@ msgstr "შუა-წკაპი ყველა ხმის დასად�
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "ხმის მოსარგებად აქაჩეთ"
 
 #: contents/ui/main.qml:238
 #, kde-format
