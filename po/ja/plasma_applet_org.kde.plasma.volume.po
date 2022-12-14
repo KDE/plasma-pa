@@ -204,19 +204,3 @@ msgstr ""
 #, kde-format
 msgid "Stream name not found"
 msgstr ""
-
-#~ msgid "General"
-#~ msgstr "一般"
-
-#~ msgid "Volume step:"
-#~ msgstr "音量ステップ:"
-
-#, fuzzy
-#~| msgid "Audio Volume"
-#~ msgid "Audio volume"
-#~ msgstr "音量"
-
-#, fuzzy
-#~| msgid "No output or input devices found"
-#~ msgid "Default output device"
-#~ msgstr "入力や出力デバイスが見つかりません"
