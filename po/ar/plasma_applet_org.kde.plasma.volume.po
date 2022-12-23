@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-27 00:48+0000\n"
-"PO-Revision-Date: 2022-10-22 19:11+0400\n"
+"PO-Revision-Date: 2022-12-22 09:28+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -119,7 +119,7 @@ msgstr "انقر بالزر الأوسط لكتم كل الصوت"
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "مرر لتضبط الصوت"
 
 #: contents/ui/main.qml:238
 #, kde-format
