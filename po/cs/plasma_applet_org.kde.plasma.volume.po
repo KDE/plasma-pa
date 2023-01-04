@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2015, 2016, 2017, 2018, 2019, 2020.
-# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022.
 #
 msgid ""
 msgstr ""
@@ -199,31 +199,3 @@ msgstr "Nastavit a&udio zařízení…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Název proudu nenalezen"
-
-#~ msgid "General"
-#~ msgstr "Obecné"
-
-#~ msgid "Volume step:"
-#~ msgstr "Krok hlasitosti:"
-
-#~ msgid "Play audio feedback for changes to:"
-#~ msgstr "Přehrát melodii při změnách na:"
-
-#~ msgid "Audio volume"
-#~ msgstr "Hlasitost audia"
-
-#~ msgid "Show visual feedback for changes to:"
-#~ msgstr "Zobrazit vizuální odezvu pro změny na:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Citlivost mikrofonu"
-
-#~ msgid "Mute state"
-#~ msgstr "Stav ztlumení"
-
-#~ msgid "Default output device"
-#~ msgstr "Výchozí výstupní zařízení"
-
-#~ msgctxt "@title"
-#~ msgid "Display:"
-#~ msgstr "Zobrazení:"

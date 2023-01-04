@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2015, 2016, 2017, 2018, 2019, 2020.
-# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022.
 #
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:47+0000\n"
 "PO-Revision-Date: 2022-05-19 11:27+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -108,10 +108,9 @@ msgid "Show Inactive Devices"
 msgstr "Zobrazit aktivní zařízení"
 
 #: kcm/package/contents/ui/main.qml:279
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Nastavit…"
+msgstr ""
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
@@ -228,7 +227,7 @@ msgstr ""
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Zvýšit maximální hlasitost"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
@@ -238,34 +237,33 @@ msgstr ""
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Přehrát melodii při změnách na:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:64
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Hlasitost audia"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Zobrazit vizuální odezvu pro změny na:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:80
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Mikrofon ztlumen"
+msgstr "Citlivost mikrofonu"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:87
 #, kde-format
 msgid "Mute state"
-msgstr ""
+msgstr "Stav ztlumení"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:94
 #, kde-format
 msgid "Default output device"
-msgstr ""
+msgstr "Výchozí výstupní zařízení"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format
