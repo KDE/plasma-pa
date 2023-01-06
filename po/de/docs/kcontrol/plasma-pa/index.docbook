@@ -1,152 +1,122 @@
 <?xml version="1.0" ?>
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY i18n-plasmapa 'Lautstärke'>
+  <!ENTITY i18n-plasmapa 'Audio Volume'>
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % German "INCLUDE">
+  <!ENTITY % English "INCLUDE">
 ]>
 <article id="plasmapa" lang="&language;">
 
 <articleinfo>
-<title
->&i18n-plasmapa;</title>
+<title>&i18n-plasmapa;</title>
 
 <authorgroup>
-<author
->&Sebastian.Kuegler; &Sebastian.Kuegler.mail; </author>
-<othercredit role="translator"
-><firstname
->Burkhard</firstname
-><surname
->Lück</surname
-><affiliation
-><address
-><email
->lueck@hube-lueck.de</email
-></address
-></affiliation
-><contrib
->Übersetzung</contrib
-></othercredit
-> 
+<author>
+&Sebastian.Kuegler;
+&Sebastian.Kuegler.mail;
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
 <copyright>
-<year
->2015</year>
-<holder
->&Sebastian.Kuegler;</holder>
+<year>2015</year>
+<holder>&Sebastian.Kuegler;</holder>
 </copyright>
-<legalnotice
->&FDLNotice;</legalnotice>
+<legalnotice>&FDLNotice;</legalnotice>
 
-<date
->2015-08-10</date>
-<releaseinfo
->Plasma 5.4</releaseinfo>
+<date>2015-08-10</date>
+<releaseinfo>Plasma 5.4</releaseinfo>
 
 <abstract>
-<para
->Dieses Handbuch beschreibt das Systemeinstellungsmodul für &i18n-plasmapa;. </para>
+<para>
+This documentation describes the &i18n-plasmapa; Systemsettings module.
+</para>
 </abstract>
 
 <keywordset>
-<keyword
->KDE</keyword>
-<keyword
->System</keyword>
-<keyword
->Einstellungen</keyword>
-<keyword
->Einrichtung</keyword>
-<keyword
->Multimedia</keyword>
-<keyword
->Sound</keyword>
-<keyword
->Lautstärke</keyword>
-<keyword
->Lautsprecher</keyword>
-<keyword
->Kopfhörer</keyword>
-<keyword
->Bluetooth</keyword>
-<keyword
->Phonon</keyword>
-<keyword
->PulseAudio</keyword>
+<keyword>KDE</keyword>
+<keyword>System</keyword>
+<keyword>Settings</keyword>
+<keyword>configuration</keyword>
+<keyword>multimedia</keyword>
+<keyword>sound</keyword>
+<keyword>volume</keyword>
+<keyword>speaker</keyword>
+<keyword>headset</keyword>
+<keyword>bluetooth</keyword>
+<keyword>phonon</keyword>
+<keyword>pulseaudio</keyword>
 </keywordset>
 
 </articleinfo>
 
 <sect1 id="introduction">
-<title
->Einleitung</title>
+<title>Introduction</title>
 
-<para
->&i18n-plasmapa; ermöglicht es Ihnen, die Lautstärke von Geräten und Anwendungen mit dem PulseAudio-Soundsystem zu steuern. </para>
+<para>
+&i18n-plasmapa; provides the user with a mechanism to control the volume of devices and applications using the PulseAudio sound system.
+</para>
 
 <sect2 id="kcm">
-<title
->Systemeinstellungen-Modul</title>
+<title>System Settings Module</title>
 
-<para
->&i18n-plasmapa; ermöglicht es Ihnen, die Lautstärke von Geräten und Anwendungen mit dem PulseAudio-Soundsystem zu steuern. </para>
+<para>
+&i18n-plasmapa; provides the user with a mechanism to control the volume of devices and applications using the PulseAudio sound system.
+</para>
 
-<para
->Mit &i18n-plasmapa; können Sie die Lautstärke von Ausgabegeräten, Anwendungskanälen, und von Eingabe- und Aufnahmegeräten steuern. Die Audioeingabe und -ausgabe kann zu bestimmten Geräten umgeleitet  werden. &i18n-plasmapa; besteht aus dem Systemeinstellungsmodul und einem Plasma-Miniprogramm, das normalerweise im Systemabschnitt der Kontrollleiste angezeigt wird. </para>
+<para>
+&i18n-plasmapa; allows the user to control the volume of output devices, application-level channels, input and recording devices. It allows the user to route audio to and from specific devices.
+&i18n-plasmapa; consists of a system settings module and a Plasma widget, which can usually be found in the system tray area.
+</para>
 
-<para
->&i18n-plasmapa; fasst die Einstellungen für Lautstärke und Sound für verschiedene Kanäle oder Geräte in folgenden Gruppen zusammen: <itemizedlist>
-<listitem
-><para
->Anwendungen: Programme mit Audiowiedergabe wie zum Beispiel die Musikwiedergabe oder ein Webbrowser. </para
-></listitem>
-<listitem
-><para
->Aufnahme: Änderung der Lautstärke von Aufnahmegeräten wie zum Beispiel ein angeschlossenes Mikrofon oder Headset. </para
-></listitem>
-<listitem
-><para
->Ausgabegeräte: Hier finden Sie zum Beispiel Kopfhörer, Bass-Woofer oder angeschlossene Bluetooth-Lautsprecher. Diese Geräte werden unter der Soundkarte angezeigt, mit der Sie verbunden sind. </para
-></listitem>
-<listitem
-><para
->Eingabegeräte: Alle an den Rechner angeschlossenen Sound-Eingabegeräte. </para
-></listitem>
-<listitem
-><para
->Einrichtung: Auf dieser Karteikarte können Sie bestimmte Profile wie Analog-Stereo oder Digital Surround 5.1 auswählen. Bei Bluetooth-Geräten können Sie hier zum Profil „High Fidelity AD2P-Bluetooth“ wechseln. </para
-></listitem>
+<para>
+&i18n-plasmapa; groups volume and sound settings for different channels or devices into the following groups:
+<itemizedlist>
+<listitem><para>
+Applications: Applications that play audio, such as your music player or web browser.
+</para></listitem>
+<listitem><para>
+Recording: Change the volume of recording devices, such as a connected microphone or head set.
+</para></listitem>
+<listitem><para>
+Output Devices: Output devices, you can find your headphone jack or bass woofer or connected bluetooth speaker  here, grouped under the sound card they are connected to.
+</para></listitem>
+<listitem><para>
+Input Devices: Sound input devices that maybe be connected to your computer.
+</para></listitem>
+<listitem><para>
+Configuration: This tab allows to set specific profiles to such as Analog Stereo or Digital Surround 5.1. For bluetooth devices, you can switch to the high-fidelity AD2P bluetooth profile here.
+</para></listitem>
 </itemizedlist>
 </para>
 
 </sect2>
 
 <sect2 id="plasmoid">
-<title
->Plasma-Miniprogramm</title>
-<para
->Das Miniprogramm &i18n-plasmapa; wird automatisch im Systembereich der Kontrollleiste angezeigt. Klicken Sie auf das Lautsprechersymbol in der Kontrollleiste, um ein Fenster mit Lautstärkereglern für verschiedene Wiedergabegeräte zu öffnen und dann deren Lautstärke einzeln zu ändern. </para>
+<title>Plasma Widget</title>
+<para>The &i18n-plasmapa; Plasma Widget is automatically loaded in the system tray area. Clicking on the speaker icon in the panel opens a popup with volume control sliders for different playback devices, and allows to change their volume individually.
+</para>
 </sect2>
 
 <sect2 id="credits">
 
-<title
->Mitwirkende und Lizenz</title>
+<title>Credits and License</title>
 
-<para
->&i18n-plasmapa; </para>
-<para
->Copyright des Programms 2014-2015 Harald Sitter </para>
+<para>
+&i18n-plasmapa;
+</para>
+<para>
+Program copyright 2014-2015 Harald Sitter
+</para>
 
-<para
->Copyright der Dokumentation &copy; 2015 &Sebastian.Kuegler; &Sebastian.Kuegler.mail; </para>
+<para>
+Documentation Copyright &copy; 2015 &Sebastian.Kuegler; &Sebastian.Kuegler.mail;
+</para>
 
-<para
->Übersetzung Burkhard Lück <email
->lueck@hube-lueck.de</email
-></para
-> &underFDL; &underGPL; </sect2>
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;
+&underGPL;
+</sect2>
 
 </sect1>
 
