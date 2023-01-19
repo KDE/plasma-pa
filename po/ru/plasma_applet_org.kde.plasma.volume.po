@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-27 00:48+0000\n"
-"PO-Revision-Date: 2023-01-12 11:29+0300\n"
+"PO-Revision-Date: 2023-01-13 17:44+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -115,7 +115,7 @@ msgstr "Включить звук: щелчок средней кнопкой"
 #: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr "Выключить звук: щелчок средней кнопкой"
+msgstr "Отключить звук: щелчок средней кнопкой"
 
 #: contents/ui/main.qml:77
 #, kde-format
