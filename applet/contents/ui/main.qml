@@ -236,6 +236,19 @@ Item {
             var description = defaultSink.description;
             if (isDummyOutput(defaultSink)) {
                 description = i18n("No output device");
+            } else {
+                const cardModelIdx = paCardModel.indexOfCardNumber(defaultSink.cardIndex);
+                if (cardModelIdx.valid) {
+                    const cardProperties = paCardModel.data(cardModelIdx, paCardModel.role("Properties"));
+                    const cardBluetoothBattery = cardProperties["bluetooth.battery"];
+                    // This property is returned as a string with percent sign,
+                    // parse it into an int in case they change it to a number later.
+                    const batteryInt = parseInt(cardBluetoothBattery, 10);
+
+                    if (!isNaN(batteryInt)) {
+                        description = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, batteryInt);
+                    }
+                }
             }
 
             var icon = Icon.formFactorIcon(defaultSink.formFactor);
@@ -310,6 +323,16 @@ Item {
 
     readonly property CardModel paCardModel: CardModel {
         id: paCardModel
+
+        function indexOfCardNumber(cardNumber) {
+            const indexRole = role("Index");
+            for (let idx = 0; idx < count; ++idx) {
+                if (data(index(idx, 0), indexRole) === cardNumber) {
+                    return index(idx, 0);
+                }
+            }
+            return index(-1, 0);
+        }
     }
 
     Plasmoid.compactRepresentation:MouseArea {
