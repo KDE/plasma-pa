@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022.
+# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-27 00:48+0000\n"
-"PO-Revision-Date: 2022-12-01 21:48+0530\n"
+"PO-Revision-Date: 2023-01-19 19:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "ஒலி அளவு"
 #: contents/ui/main.qml:56
 #, kde-format
 msgid "Audio Muted"
-msgstr "ஒலி அடக்கப்பட்டது"
+msgstr "ஒலி அடக்கப்பட்டுள்ளது"
 
 #: contents/ui/main.qml:58
 #, kde-format
