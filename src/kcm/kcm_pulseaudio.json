@@ -30,7 +30,8 @@
                 "Name[tr]": "Harald Sitter",
                 "Name[uk]": "Harald Sitter",
                 "Name[x-test]": "xxHarald Sitterxx",
-                "Name[zh_CN]": "Harald Sitter"
+                "Name[zh_CN]": "Harald Sitter",
+                "Name[zh_TW]": "Harald Sitter"
             }
         ],
         "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_pulseaudio",
@@ -62,6 +63,7 @@
         "Description[uk]": "Налаштування звукових пристроїв та гучності",
         "Description[x-test]": "xxConfigure audio devices and volumexx",
         "Description[zh_CN]": "配置音频设备和音量",
+        "Description[zh_TW]": "設定音效裝置及音量",
         "FormFactors": [
             "handset",
             "tablet",
