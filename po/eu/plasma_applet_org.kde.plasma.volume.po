@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-01-31 01:00+0000\n"
 "PO-Revision-Date: 2022-11-27 08:09+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -127,72 +127,80 @@ msgstr "Kiribildu bolumena doitzeko"
 msgid "No output device"
 msgstr "Irteerako gailurik ez"
 
-#: contents/ui/main.qml:370
+#: contents/ui/main.qml:249
+#, fuzzy, kde-format
+#| msgctxt "label of device items"
+#| msgid "%1 (%2)"
+msgctxt "Device name (Battery percent)"
+msgid "%1 (%2% Battery)"
+msgstr "%1 (%2)"
+
+#: contents/ui/main.qml:393
 #, kde-format
 msgid "Increase Volume"
 msgstr "Igo bolumena"
 
-#: contents/ui/main.qml:376
+#: contents/ui/main.qml:399
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Jaitsi bolumena"
 
-#: contents/ui/main.qml:382
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Mute"
 msgstr "Isilarazi"
 
-#: contents/ui/main.qml:388
+#: contents/ui/main.qml:411
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Igo mikrofonoaren bolumena"
 
-#: contents/ui/main.qml:394
+#: contents/ui/main.qml:417
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Jaitsi mikrofonoaren bolumena"
 
-#: contents/ui/main.qml:400
+#: contents/ui/main.qml:423
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Isilarazi mikrofonoa"
 
-#: contents/ui/main.qml:504
+#: contents/ui/main.qml:527
 #, kde-format
 msgid "Devices"
 msgstr "Gailuak"
 
-#: contents/ui/main.qml:511
+#: contents/ui/main.qml:534
 #, kde-format
 msgid "Applications"
 msgstr "Aplikazioak"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:783
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Indarrez isilarazi atzera-jotzeko gailu guztiak"
 
-#: contents/ui/main.qml:568
+#: contents/ui/main.qml:591
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Ez da aurkitu sarrerako edo irteerako gailurik"
 
-#: contents/ui/main.qml:587
+#: contents/ui/main.qml:610
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ez dago audioa jotzen edo grabatzen ari den aplikaziorik"
 
-#: contents/ui/main.qml:738
+#: contents/ui/main.qml:761
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altxatu bolumen muga"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:787
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Erakutsi alegiazko gailuak"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:793
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfiguratu audio gailuak..."

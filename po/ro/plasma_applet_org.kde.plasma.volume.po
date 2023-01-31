@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-01-31 01:00+0000\n"
 "PO-Revision-Date: 2022-08-14 16:52+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -125,72 +125,80 @@ msgstr ""
 msgid "No output device"
 msgstr "Niciun dispozitiv de ieșire"
 
-#: contents/ui/main.qml:370
+#: contents/ui/main.qml:249
+#, fuzzy, kde-format
+#| msgctxt "label of device items"
+#| msgid "%1 (%2)"
+msgctxt "Device name (Battery percent)"
+msgid "%1 (%2% Battery)"
+msgstr "%1 (%2)"
+
+#: contents/ui/main.qml:393
 #, kde-format
 msgid "Increase Volume"
 msgstr "Mărește volumul"
 
-#: contents/ui/main.qml:376
+#: contents/ui/main.qml:399
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Micșorează volumul"
 
-#: contents/ui/main.qml:382
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Mute"
 msgstr "Muțește"
 
-#: contents/ui/main.qml:388
+#: contents/ui/main.qml:411
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Mărește volumul microfonului"
 
-#: contents/ui/main.qml:394
+#: contents/ui/main.qml:417
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Micșorează volumul microfonului"
 
-#: contents/ui/main.qml:400
+#: contents/ui/main.qml:423
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Muțește microfonul"
 
-#: contents/ui/main.qml:504
+#: contents/ui/main.qml:527
 #, kde-format
 msgid "Devices"
 msgstr "Dispozitive"
 
-#: contents/ui/main.qml:511
+#: contents/ui/main.qml:534
 #, kde-format
 msgid "Applications"
 msgstr "Aplicații"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:783
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Muțește forțat toate dispozitivele de redare"
 
-#: contents/ui/main.qml:568
+#: contents/ui/main.qml:591
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nu a fost găsit niciun dispozitiv de ieșire sau intrare"
 
-#: contents/ui/main.qml:587
+#: contents/ui/main.qml:610
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nicio aplicație nu redă sau înregistrează sunet"
 
-#: contents/ui/main.qml:738
+#: contents/ui/main.qml:761
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Mărește volumul maxim"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:787
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Arată dispozitivele virtuale"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:793
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurează dispozitive audio…"

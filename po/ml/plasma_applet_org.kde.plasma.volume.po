@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-01-31 01:00+0000\n"
 "PO-Revision-Date: 2019-02-18 03:11+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -125,72 +125,78 @@ msgstr ""
 msgid "No output device"
 msgstr ""
 
-#: contents/ui/main.qml:370
+#: contents/ui/main.qml:249
+#, kde-format
+msgctxt "Device name (Battery percent)"
+msgid "%1 (%2% Battery)"
+msgstr ""
+
+#: contents/ui/main.qml:393
 #, kde-format
 msgid "Increase Volume"
 msgstr ""
 
-#: contents/ui/main.qml:376
+#: contents/ui/main.qml:399
 #, kde-format
 msgid "Decrease Volume"
 msgstr ""
 
-#: contents/ui/main.qml:382
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Mute"
 msgstr ""
 
-#: contents/ui/main.qml:388
+#: contents/ui/main.qml:411
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr ""
 
-#: contents/ui/main.qml:394
+#: contents/ui/main.qml:417
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr ""
 
-#: contents/ui/main.qml:400
+#: contents/ui/main.qml:423
 #, kde-format
 msgid "Mute Microphone"
 msgstr ""
 
-#: contents/ui/main.qml:504
+#: contents/ui/main.qml:527
 #, kde-format
 msgid "Devices"
 msgstr ""
 
-#: contents/ui/main.qml:511
+#: contents/ui/main.qml:534
 #, kde-format
 msgid "Applications"
 msgstr ""
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:783
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: contents/ui/main.qml:568
+#: contents/ui/main.qml:591
 #, kde-format
 msgid "No output or input devices found"
 msgstr ""
 
-#: contents/ui/main.qml:587
+#: contents/ui/main.qml:610
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr ""
 
-#: contents/ui/main.qml:738
+#: contents/ui/main.qml:761
 #, kde-format
 msgid "Raise maximum volume"
 msgstr ""
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:787
 #, kde-format
 msgid "Show virtual devices"
 msgstr ""
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:793
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
