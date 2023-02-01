@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:00+0000\n"
-"PO-Revision-Date: 2023-01-19 19:59+0530\n"
+"PO-Revision-Date: 2023-01-31 21:43+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -125,12 +125,10 @@ msgid "No output device"
 msgstr "வெளியீட்டு சாதனம் இல்லை"
 
 #: contents/ui/main.qml:249
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (மின்கலம் %2%)"
 
 #: contents/ui/main.qml:393
 #, kde-format

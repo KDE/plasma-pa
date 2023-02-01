@@ -1,16 +1,16 @@
 # Translation of plasma_applet_org.kde.plasma.volume.po to Catalan
-# Copyright (C) 2015-2022 This_file_is_part_of_KDE
+# Copyright (C) 2015-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2016, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:00+0000\n"
-"PO-Revision-Date: 2022-11-27 10:37+0100\n"
+"PO-Revision-Date: 2023-01-31 10:09+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -129,12 +129,10 @@ msgid "No output device"
 msgstr "Cap dispositiu de sortida"
 
 #: contents/ui/main.qml:249
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (Bateria %2%)"
 
 #: contents/ui/main.qml:393
 #, kde-format
@@ -210,31 +208,3 @@ msgstr "&Configura els dispositius d'àudio…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "No s'ha trobat el nom del flux"
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Volume step:"
-#~ msgstr "Pas del volum:"
-
-#~ msgid "Play audio feedback for changes to:"
-#~ msgstr "Reprodueix una retroalimentació sonora per als canvis a:"
-
-#~ msgid "Audio volume"
-#~ msgstr "Volum de l'àudio"
-
-#~ msgid "Show visual feedback for changes to:"
-#~ msgstr "Mostra una retroalimentació visual per als canvis a:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Sensibilitat del micròfon"
-
-#~ msgid "Mute state"
-#~ msgstr "Estat de silenci"
-
-#~ msgid "Default output device"
-#~ msgstr "Dispositiu predeterminat de sortida"
-
-#~ msgctxt "@title"
-#~ msgid "Display:"
-#~ msgstr "Visualització:"
