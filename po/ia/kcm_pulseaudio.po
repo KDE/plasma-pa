@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2016, 2020, 2021, 2022.
+# Giovanni Sora <g.sora@tiscali.it>, 2016, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:47+0000\n"
-"PO-Revision-Date: 2022-06-06 22:10+0200\n"
+"PO-Revision-Date: 2023-02-01 23:00+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: context.cpp:596
 #, kde-format
@@ -107,10 +107,9 @@ msgid "Show Inactive Devices"
 msgstr "Monstra dispositivos inactive"
 
 #: kcm/package/contents/ui/main.qml:279
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Configura…"
+msgstr "Configura Controlos de Volumine…"
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
@@ -226,50 +225,48 @@ msgstr "%1: %2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Controlos de Volumine"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Altia maxime volumine"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Passo de cambiamento de volumine:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Reproduce feedback audio per modificationes a:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:64
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Volumine de audio"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Monstra feedback audio per modificationes a:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:80
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Microphono silentiate"
+msgstr "Sensibilitate de microphono"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:87
 #, kde-format
 msgid "Mute state"
-msgstr ""
+msgstr "Stato silente"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:94
-#, fuzzy, kde-format
-#| msgid "Default Device"
+#, kde-format
 msgid "Default output device"
-msgstr "Dispositivo predefinite"
+msgstr "Dispositivos de egresso predefinite"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format

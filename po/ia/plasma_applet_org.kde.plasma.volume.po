@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# giovanni <g.sora@tiscali.it>, 2017, 2020, 2021, 2022.
+# giovanni <g.sora@tiscali.it>, 2017, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:00+0000\n"
-"PO-Revision-Date: 2022-06-06 22:10+0200\n"
+"PO-Revision-Date: 2023-02-01 22:59+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -39,11 +39,10 @@ msgid "Currently not playing"
 msgstr "Currentemente non reproducente"
 
 #: contents/ui/ListItemBase.qml:184
-#, fuzzy, kde-format
-#| msgid "Show additional options for %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr "Monstra optiones additional per %1 "
+msgstr "Optiones additional"
 
 #: contents/ui/ListItemBase.qml:186
 #, kde-format
@@ -51,18 +50,16 @@ msgid "Show additional options for %1"
 msgstr "Monstra optiones additional per %1 "
 
 #: contents/ui/ListItemBase.qml:203
-#, fuzzy, kde-format
-#| msgid "Unmute %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "Leva silentiate %1"
+msgstr "Non silente"
 
 #: contents/ui/ListItemBase.qml:203
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
-msgstr "Mute"
+msgstr "Silente"
 
 #: contents/ui/ListItemBase.qml:205
 #, kde-format
@@ -110,17 +107,17 @@ msgstr "Volumine al %1%"
 #: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Click in medio pro levar silentiate"
 
 #: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Click in medio pro poner silente omne audio"
 
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Rola pro adjustar volumine"
 
 #: contents/ui/main.qml:238
 #, kde-format
@@ -128,12 +125,10 @@ msgid "No output device"
 msgstr "Nulle dipositivo de egresso"
 
 #: contents/ui/main.qml:249
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% Batteria)"
 
 #: contents/ui/main.qml:393
 #, kde-format

@@ -6,20 +6,21 @@
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019, 2020.
 # Xavier Besnard <xavier.besnard@neuf.fr>, 2021, 2022.
 #
+# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:00+0000\n"
-"PO-Revision-Date: 2022-12-04 02:29+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2023-01-31 19:06+0100\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.11.90\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -132,12 +133,10 @@ msgid "No output device"
 msgstr "Aucun périphérique de sortie"
 
 #: contents/ui/main.qml:249
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2 % de batterie)"
 
 #: contents/ui/main.qml:393
 #, kde-format
