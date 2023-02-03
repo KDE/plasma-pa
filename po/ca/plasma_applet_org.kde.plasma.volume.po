@@ -202,31 +202,3 @@ msgstr "&Configura els dispositius d'àudio…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "No s'ha trobat el nom del flux"
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Volume step:"
-#~ msgstr "Pas del volum:"
-
-#~ msgid "Play audio feedback for changes to:"
-#~ msgstr "Reprodueix una retroalimentació sonora per als canvis a:"
-
-#~ msgid "Audio volume"
-#~ msgstr "Volum de l'àudio"
-
-#~ msgid "Show visual feedback for changes to:"
-#~ msgstr "Mostra una retroalimentació visual per als canvis a:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Sensibilitat del micròfon"
-
-#~ msgid "Mute state"
-#~ msgstr "Estat de silenci"
-
-#~ msgid "Default output device"
-#~ msgstr "Dispositiu predeterminat de sortida"
-
-#~ msgctxt "@title"
-#~ msgid "Display:"
-#~ msgstr "Visualització:"
