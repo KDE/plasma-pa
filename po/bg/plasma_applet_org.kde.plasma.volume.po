@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:00+0000\n"
-"PO-Revision-Date: 2022-12-01 23:55+0100\n"
+"PO-Revision-Date: 2023-02-03 15:21+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -125,12 +125,10 @@ msgid "No output device"
 msgstr "Няма изходно устройство"
 
 #: contents/ui/main.qml:249
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2%)"
+msgstr "%1 (%2% батерия)"
 
 #: contents/ui/main.qml:393
 #, kde-format

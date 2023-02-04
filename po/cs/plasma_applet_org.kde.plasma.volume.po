@@ -1,22 +1,22 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2015, 2016, 2017, 2018, 2019, 2020.
-# Vit Pelcak <vit@pelcak.org>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:00+0000\n"
-"PO-Revision-Date: 2022-05-19 11:27+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2023-02-01 10:35+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -43,7 +43,7 @@ msgstr "Právě se nepřehrává"
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr ""
+msgstr "Další volby"
 
 #: contents/ui/ListItemBase.qml:186
 #, kde-format
@@ -54,13 +54,13 @@ msgstr "Zobrazit další možnosti pro %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr ""
+msgstr "Povolit zvuk"
 
 #: contents/ui/ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
-msgstr ""
+msgstr "Ztlumit"
 
 #: contents/ui/ListItemBase.qml:205
 #, kde-format
@@ -108,17 +108,17 @@ msgstr "Hlasitost na %1%"
 #: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Kliknutí prostředním tlačítkem myši zrušíte ztlumení všech zvuků"
 
 #: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Kliknutí prostředním tlačítkem myši ztlumíte veškeré zvuky"
 
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Rolujte kolečkem pro upravení hlasitosti"
 
 #: contents/ui/main.qml:238
 #, kde-format
@@ -126,12 +126,10 @@ msgid "No output device"
 msgstr "Žádné výstupní zařízení"
 
 #: contents/ui/main.qml:249
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% Baterie)"
 
 #: contents/ui/main.qml:393
 #, kde-format
