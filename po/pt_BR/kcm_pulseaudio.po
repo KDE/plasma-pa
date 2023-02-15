@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2015, 2016, 2019.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:47+0000\n"
-"PO-Revision-Date: 2022-12-20 10:50-0300\n"
+"PO-Revision-Date: 2023-02-14 09:19-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -109,10 +109,9 @@ msgid "Show Inactive Devices"
 msgstr "Mostrar dispositivos inativos"
 
 #: kcm/package/contents/ui/main.qml:279
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Configurar..."
+msgstr "Configurar os controles de volume..."
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
@@ -228,7 +227,7 @@ msgstr "%1: %2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Controles de volume"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
@@ -238,7 +237,7 @@ msgstr "Aumentar o volume máximo"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Passo da alteração de volume:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
