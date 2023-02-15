@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2015, 2016, 2019, 2020.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-27 00:48+0000\n"
-"PO-Revision-Date: 2022-08-19 15:09-0300\n"
+"PO-Revision-Date: 2023-02-14 09:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -71,7 +71,7 @@ msgstr "Ativar o som %1"
 #: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgid "Mute %1"
-msgstr "Mudo em %1"
+msgstr "Sem áudio em %1"
 
 #: contents/ui/ListItemBase.qml:225
 #, kde-format
@@ -109,17 +109,17 @@ msgstr "Volume em %1%"
 #: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Clique do meio para ativar som"
 
 #: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Clique do meio para silenciar todo o áudio"
 
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Rolar para ajustar volume"
 
 #: contents/ui/main.qml:238
 #, kde-format
