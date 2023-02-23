@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:47+0000\n"
+"POT-Creation-Date: 2023-02-23 01:00+0000\n"
 "PO-Revision-Date: 2023-02-08 12:24+0100\n"
 "Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -76,52 +76,27 @@ msgid "This module allows configuring the Pulseaudio sound subsystem."
 msgstr ""
 "Dieses Modul ermöglicht die Einrichtung des PulseAudio-Sound-Subsystems."
 
-#: kcm/package/contents/ui/main.qml:105
-#, kde-format
-msgid "Playback Devices"
-msgstr "Wiedergabegeräte"
-
-#: kcm/package/contents/ui/main.qml:129
-#, kde-format
-msgid "Recording Devices"
-msgstr "Aufnahmegeräte"
-
-#: kcm/package/contents/ui/main.qml:153
-#, kde-format
-msgid "Inactive Cards"
-msgstr "Inaktive Karten"
-
-#: kcm/package/contents/ui/main.qml:187
-#, kde-format
-msgid "Playback Streams"
-msgstr "Wiedergabestreams"
-
-#: kcm/package/contents/ui/main.qml:236
-#, kde-format
-msgid "Recording Streams"
-msgstr "Streams werden aufgenommen"
-
-#: kcm/package/contents/ui/main.qml:271
+#: kcm/package/contents/ui/main.qml:83
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Inaktive Geräte anzeigen"
 
-#: kcm/package/contents/ui/main.qml:279
+#: kcm/package/contents/ui/main.qml:92
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Lautstärkeregler einrichten ..."
 
-#: kcm/package/contents/ui/main.qml:288
+#: kcm/package/contents/ui/main.qml:99
 #, kde-format
 msgid "Configure…"
 msgstr "Einrichten ..."
 
-#: kcm/package/contents/ui/main.qml:292
+#: kcm/package/contents/ui/main.qml:102
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Benötigt das PulseAudio-Modul „%1“"
 
-#: kcm/package/contents/ui/main.qml:304
+#: kcm/package/contents/ui/main.qml:105
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -129,7 +104,7 @@ msgstr ""
 "Virtuelles Ausgabegerät für gleichzeitige Ausgabe auf allen lokalen "
 "Soundkarten hinzufügen"
 
-#: kcm/package/contents/ui/main.qml:310
+#: kcm/package/contents/ui/main.qml:111
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -137,7 +112,32 @@ msgstr ""
 "Automatisch alle laufenden Streams zur neuen Ausgabe wechseln, wenn sie "
 "verfügbar wird"
 
-#: kcm/package/contents/ui/main.qml:326
+#: kcm/package/contents/ui/main.qml:148
+#, kde-format
+msgid "Playback Devices"
+msgstr "Wiedergabegeräte"
+
+#: kcm/package/contents/ui/main.qml:172
+#, kde-format
+msgid "Recording Devices"
+msgstr "Aufnahmegeräte"
+
+#: kcm/package/contents/ui/main.qml:196
+#, kde-format
+msgid "Inactive Cards"
+msgstr "Inaktive Karten"
+
+#: kcm/package/contents/ui/main.qml:230
+#, kde-format
+msgid "Playback Streams"
+msgstr "Wiedergabestreams"
+
+#: kcm/package/contents/ui/main.qml:279
+#, kde-format
+msgid "Recording Streams"
+msgstr "Streams werden aufgenommen"
+
+#: kcm/package/contents/ui/main.qml:313
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -149,52 +149,52 @@ msgstr ""
 "Fehler beim Versuch einen Test-Ton abzuspielen.\n"
 "Systemmeldung: „%1“"
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:348
 #, kde-format
 msgid "Front Left"
 msgstr "Vorne links"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:349
 #, kde-format
 msgid "Front Center"
 msgstr "Vorne Mitte"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:350
 #, kde-format
 msgid "Front Right"
 msgstr "Vorne rechts"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:351
 #, kde-format
 msgid "Side Left"
 msgstr "Linke Seite"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:352
 #, kde-format
 msgid "Side Right"
 msgstr "Rechte Seite"
 
-#: kcm/package/contents/ui/main.qml:366
+#: kcm/package/contents/ui/main.qml:353
 #, kde-format
 msgid "Rear Left"
 msgstr "Hinten links"
 
-#: kcm/package/contents/ui/main.qml:367
+#: kcm/package/contents/ui/main.qml:354
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/package/contents/ui/main.qml:368
+#: kcm/package/contents/ui/main.qml:355
 #, kde-format
 msgid "Rear Right"
 msgstr "Hinten rechts"
 
-#: kcm/package/contents/ui/main.qml:369
+#: kcm/package/contents/ui/main.qml:356
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:479
+#: kcm/package/contents/ui/main.qml:466
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Klicken Sie auf einen Lautsprecher, um die Klangwiedergabe zu testen"

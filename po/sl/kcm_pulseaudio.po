@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:47+0000\n"
+"POT-Creation-Date: 2023-02-23 01:00+0000\n"
 "PO-Revision-Date: 2022-11-04 08:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -79,52 +79,27 @@ msgstr "Ravnovesje"
 msgid "This module allows configuring the Pulseaudio sound subsystem."
 msgstr "Za modul omogoča nastavljanje zvočnega podsistema Pulseaudio."
 
-#: kcm/package/contents/ui/main.qml:105
-#, kde-format
-msgid "Playback Devices"
-msgstr "Naprave za playback"
-
-#: kcm/package/contents/ui/main.qml:129
-#, kde-format
-msgid "Recording Devices"
-msgstr "Snemalne naprave"
-
-#: kcm/package/contents/ui/main.qml:153
-#, kde-format
-msgid "Inactive Cards"
-msgstr "Neaktivne kartice"
-
-#: kcm/package/contents/ui/main.qml:187
-#, kde-format
-msgid "Playback Streams"
-msgstr "Tokovi za playback"
-
-#: kcm/package/contents/ui/main.qml:236
-#, kde-format
-msgid "Recording Streams"
-msgstr "Tokovi snemanja"
-
-#: kcm/package/contents/ui/main.qml:271
+#: kcm/package/contents/ui/main.qml:83
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Prikaži nedejavne naprave"
 
-#: kcm/package/contents/ui/main.qml:279
+#: kcm/package/contents/ui/main.qml:92
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Konfiguriraj upravljanje glasnosti…"
 
-#: kcm/package/contents/ui/main.qml:288
+#: kcm/package/contents/ui/main.qml:99
 #, kde-format
 msgid "Configure…"
 msgstr "Nastavi…"
 
-#: kcm/package/contents/ui/main.qml:292
+#: kcm/package/contents/ui/main.qml:102
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Zahteva modul  %1 PulseAudio"
 
-#: kcm/package/contents/ui/main.qml:304
+#: kcm/package/contents/ui/main.qml:105
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -132,14 +107,39 @@ msgstr ""
 "Dodaj navidezno izhodno napravo za sočasni izhod na vseh krajevnih zvočnih "
 "karticah"
 
-#: kcm/package/contents/ui/main.qml:310
+#: kcm/package/contents/ui/main.qml:111
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
 "Samodejno preklopi vse tekoče pretoke, ko postane razpoložljiv nov izhod"
 
-#: kcm/package/contents/ui/main.qml:326
+#: kcm/package/contents/ui/main.qml:148
+#, kde-format
+msgid "Playback Devices"
+msgstr "Naprave za playback"
+
+#: kcm/package/contents/ui/main.qml:172
+#, kde-format
+msgid "Recording Devices"
+msgstr "Snemalne naprave"
+
+#: kcm/package/contents/ui/main.qml:196
+#, kde-format
+msgid "Inactive Cards"
+msgstr "Neaktivne kartice"
+
+#: kcm/package/contents/ui/main.qml:230
+#, kde-format
+msgid "Playback Streams"
+msgstr "Tokovi za playback"
+
+#: kcm/package/contents/ui/main.qml:279
+#, kde-format
+msgid "Recording Streams"
+msgstr "Tokovi snemanja"
+
+#: kcm/package/contents/ui/main.qml:313
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -151,52 +151,52 @@ msgstr ""
 "Napaka pri poskusu predvajanja testnega zvoka.\n"
 "Sistem je sporočil: \"%1\""
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:348
 #, kde-format
 msgid "Front Left"
 msgstr "Spredaj levo"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:349
 #, kde-format
 msgid "Front Center"
 msgstr "Spredaj sredina"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:350
 #, kde-format
 msgid "Front Right"
 msgstr "Spredaj desno"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:351
 #, kde-format
 msgid "Side Left"
 msgstr "Ob strani levo"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:352
 #, kde-format
 msgid "Side Right"
 msgstr "Ob strani desno"
 
-#: kcm/package/contents/ui/main.qml:366
+#: kcm/package/contents/ui/main.qml:353
 #, kde-format
 msgid "Rear Left"
 msgstr "Zadaj levo"
 
-#: kcm/package/contents/ui/main.qml:367
+#: kcm/package/contents/ui/main.qml:354
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/package/contents/ui/main.qml:368
+#: kcm/package/contents/ui/main.qml:355
 #, kde-format
 msgid "Rear Right"
 msgstr "Zadaj desno"
 
-#: kcm/package/contents/ui/main.qml:369
+#: kcm/package/contents/ui/main.qml:356
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:479
+#: kcm/package/contents/ui/main.qml:466
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Kliknite na katerikoli zvočnik za preizkus zvoka"
