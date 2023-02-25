@@ -137,7 +137,7 @@
 <para
 >&i18n-plasmapa; </para>
 <para
->Copyright do programa 2015-2014 Harald Sitter </para>
+>Copyright do programa 2015-2015 Harald Sitter </para>
 
 <para
 >Direitos autorais da documentação &copy; 2015 &Sebastian.Kuegler; &Sebastian.Kuegler.mail; </para>
@@ -146,8 +146,7 @@
 >Tradução de André Marcelo Alvarenga <email
 >alvarenga@kde.org</email
 ></para
-> 
-&underFDL; &underGPL; </sect2>
+> &underFDL; &underGPL; </sect2>
 
 </sect1>
 
