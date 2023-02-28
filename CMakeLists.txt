@@ -6,13 +6,13 @@ set(PROJECT_VERSION "5.27.80")
 set(PROJECT_VERSION_MAJOR 5)
 
 set(QT_MIN_VERSION "6.4.0")
-set(KF5_MIN_VERSION "5.240.0")
+set(KF6_MIN_VERSION "5.240.0")
 set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\" -DQT_NO_KEYWORDS)
@@ -37,7 +37,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     DBus
     Quick
 )
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     Declarative
     DocTools
@@ -70,8 +70,8 @@ set_package_properties(SoundThemeFreedesktop PROPERTIES
     TYPE RUNTIME
 )
 
-find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)
-set_package_properties(KF5Kirigami2 PROPERTIES
+find_package(KF6Kirigami2 ${KF6_MIN_VERSION} CONFIG)
+set_package_properties(KF6Kirigami2 PROPERTIES
     DESCRIPTION "A QtQuick based components set"
     PURPOSE "Required at runtime the KCM"
     TYPE RUNTIME

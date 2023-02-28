@@ -49,12 +49,12 @@ target_link_libraries(plasma-volume-declarative
     Qt::Gui
     Qt::DBus
     Qt::Quick
-    KF5::GlobalAccel
-    KF5::I18n
-    KF5::Notifications
-    KF5::ConfigCore
-    KF5::ConfigGui
-    KF5::CoreAddons
+    KF6::GlobalAccel
+    KF6::I18n
+    KF6::Notifications
+    KF6::ConfigCore
+    KF6::ConfigGui
+    KF6::CoreAddons
     Canberra::Canberra
     PkgConfig::LIBPULSE
     PkgConfig::LIBPULSE_MAINLOOP
