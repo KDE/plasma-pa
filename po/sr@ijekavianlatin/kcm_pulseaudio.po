@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-06-04 02:15+0200\n"
+"POT-Creation-Date: 2023-02-23 01:00+0000\n"
 "PO-Revision-Date: 2017-05-07 22:20+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,188 +18,48 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
+#: context.cpp:596
 #, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Časlav Ilić"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "caslav.ilic@gmx.net"
-
-#: kcm/module.cpp:39
-#, kde-format
-msgctxt "@title"
-msgid "Audio"
+msgctxt "Name shown in debug pulseaudio tools"
+msgid "Plasma PA"
 msgstr ""
 
-#: kcm/module.cpp:43
-#, kde-format
-msgctxt "@info:credit"
-msgid "Copyright 2015 Harald Sitter"
-msgstr "© 2015, Harald Siter"
-
-#: kcm/module.cpp:45
-#, kde-format
-msgctxt "@info:credit"
-msgid "Harald Sitter"
-msgstr "Harald Siter"
-
-#: kcm/module.cpp:46
-#, kde-format
-msgctxt "@info:credit"
-msgid "Author"
-msgstr "Autor"
-
-#: kcm/package/contents/ui/Advanced.qml:47
-#, kde-format
-msgid "Device Profiles"
-msgstr "Profili uređaja"
-
-#: kcm/package/contents/ui/Advanced.qml:48
-#, kde-format
-msgctxt "@label"
-msgid "No Device Profiles Available"
-msgstr "Nema dostupnih profila uređaja"
-
-#: kcm/package/contents/ui/Advanced.qml:64
-#, kde-format
-msgid "Advanced Output Configuration"
-msgstr "Napredno podešavanje izlaza"
-
-#: kcm/package/contents/ui/Advanced.qml:77
-#, kde-format
-msgid ""
-"Add virtual output device for simultaneous output on all local sound cards"
-msgstr ""
-"Dodaj virtuelni izlazni uređaj za istovremeni izlaz na sve lokalne zvučne "
-"kartice"
-
-#: kcm/package/contents/ui/Advanced.qml:88
-#, kde-format
-msgid ""
-"Automatically switch all running streams when a new output becomes available"
-msgstr "Automatski prebaci sve tokove u pogonu čim novi izlaz postane dostupan"
-
-#: kcm/package/contents/ui/Advanced.qml:99
-#, fuzzy, kde-format
-#| msgid "Requires 'module-gconf' PulseAudio module"
-msgid "Requires %1 PulseAudio module"
-msgstr "Zahteva modul PulseAudija module-gconf."
-
-#: kcm/package/contents/ui/Advanced.qml:105
-#, kde-format
-msgid "Speaker Placement and Testing"
-msgstr ""
-
-#: kcm/package/contents/ui/Advanced.qml:113
-#, fuzzy, kde-format
-#| msgid "Outputs"
-msgctxt "@label"
-msgid "Output:"
-msgstr "Izlazi"
-
-#: kcm/package/contents/ui/Advanced.qml:156
-#, kde-format
-msgid "Front Left"
-msgstr ""
-
-#: kcm/package/contents/ui/Advanced.qml:167
-#, kde-format
-msgid "Front Center"
-msgstr ""
-
-#: kcm/package/contents/ui/Advanced.qml:178
-#, kde-format
-msgid "Front Right"
-msgstr ""
-
-#: kcm/package/contents/ui/Advanced.qml:189
-#, kde-format
-msgid "Side Left"
-msgstr ""
-
-#: kcm/package/contents/ui/Advanced.qml:215
-#, kde-format
-msgid "Side Right"
-msgstr ""
-
-#: kcm/package/contents/ui/Advanced.qml:225
-#, kde-format
-msgid "Rear Left"
-msgstr ""
-
-#: kcm/package/contents/ui/Advanced.qml:235
-#, kde-format
-msgid "Subwoofer"
-msgstr ""
-
-#: kcm/package/contents/ui/Advanced.qml:245
-#, kde-format
-msgid "Rear Right"
-msgstr ""
-
-#: kcm/package/contents/ui/Applications.qml:47
-#, fuzzy, kde-format
-#| msgid "Playback"
-msgid "Playback Streams"
-msgstr "Puštanje"
-
-#: kcm/package/contents/ui/Applications.qml:48
-#, kde-format
-msgctxt "@label"
-msgid "No Applications Playing Audio"
-msgstr "Nijedan program ne pušta zvuk"
-
-#: kcm/package/contents/ui/Applications.qml:88
-#, kde-format
-msgid "Recording Streams"
-msgstr ""
-
-#: kcm/package/contents/ui/Applications.qml:89
-#, kde-format
-msgctxt "@label"
-msgid "No Applications Recording Audio"
-msgstr "Nijedan program ne snima zvuk"
-
-#: kcm/package/contents/ui/CardListItem.qml:51
+#: kcm/package/contents/ui/CardListItem.qml:52
+#: kcm/package/contents/ui/DeviceListItem.qml:127
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Profil:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:56
+#: kcm/package/contents/ui/DeviceListItem.qml:47
 #, kde-format
 msgctxt "label of device items"
 msgid "%1 (%2)"
 msgstr ""
 
-#: kcm/package/contents/ui/DeviceListItem.qml:76
+#: kcm/package/contents/ui/DeviceListItem.qml:88
 #, fuzzy, kde-format
 #| msgid "Port"
 msgid "Port:"
 msgstr "Port"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:94
-#, kde-format
+#: kcm/package/contents/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
+#, fuzzy, kde-format
+#| msgctxt "Port is unavailable"
+#| msgid " (unavailable)"
 msgctxt "Port is unavailable"
-msgid " (unavailable)"
+msgid "%1 (unavailable)"
 msgstr " (nedostupan)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:96
-#, kde-format
+#: kcm/package/contents/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
+#, fuzzy, kde-format
+#| msgctxt "Port is unplugged"
+#| msgid " (unplugged)"
 msgctxt "Port is unplugged"
-msgid " (unplugged)"
+msgid "%1 (unplugged)"
 msgstr " (izvučen)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:107
-#, kde-format
-msgctxt "Audio balance (e.g. control left/right volume individually"
-msgid "Balance"
-msgstr ""
-
-#: kcm/package/contents/ui/DeviceListItem.qml:175
+#: kcm/package/contents/ui/DeviceListItem.qml:180
 #, fuzzy, kde-format
 #| msgctxt "volume percentage"
 #| msgid "%1%"
@@ -207,115 +67,380 @@ msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1%"
 
-#: kcm/package/contents/ui/Devices.qml:46
-#, fuzzy, kde-format
-#| msgid "Playback"
-msgid "Playback Devices"
-msgstr "Puštanje"
-
-#: kcm/package/contents/ui/Devices.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No Input Devices Available"
-msgctxt "@label"
-msgid "No Playback Devices Available"
-msgstr "Nema ulaznih uređaja"
-
-#: kcm/package/contents/ui/Devices.qml:66
+#: kcm/package/contents/ui/DeviceListItem.qml:213
 #, kde-format
-msgid "Recording Devices"
+msgctxt "Perform an audio test of the device"
+msgid "Test"
 msgstr ""
 
-#: kcm/package/contents/ui/Devices.qml:67
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No Input Devices Available"
-msgctxt "@label"
-msgid "No Recording Devices Available"
-msgstr "Nema ulaznih uređaja"
+#: kcm/package/contents/ui/DeviceListItem.qml:222
+#, kde-format
+msgctxt "Audio balance (e.g. control left/right volume individually"
+msgid "Balance"
+msgstr ""
 
-#: kcm/package/contents/ui/main.qml:36
+#: kcm/package/contents/ui/main.qml:24
 #, fuzzy, kde-format
 #| msgid "This module allows to set up the Pulseaudio sound subsystem."
 msgid "This module allows configuring the Pulseaudio sound subsystem."
 msgstr "Ovaj modul omogućava podešavanje zvučnog podsistema PulseAudio."
 
-#: kcm/package/contents/ui/main.qml:56
+#: kcm/package/contents/ui/main.qml:83
 #, kde-format
-msgctxt "@title:tab"
-msgid "Devices"
-msgstr "Uređaji"
+msgid "Show Inactive Devices"
+msgstr ""
 
-#: kcm/package/contents/ui/main.qml:59
+#: kcm/package/contents/ui/main.qml:92
 #, kde-format
-msgctxt "@title:tab"
-msgid "Applications"
-msgstr "Programi"
+msgid "Configure Volume Controls…"
+msgstr ""
 
-#: kcm/package/contents/ui/main.qml:62
+#: kcm/package/contents/ui/main.qml:99
 #, kde-format
-msgctxt "@title:tab"
-msgid "Advanced"
-msgstr "Napredno"
+msgid "Configure…"
+msgstr ""
 
-#: kcm/package/contents/ui/MuteButton.qml:36
+#: kcm/package/contents/ui/main.qml:102
+#, fuzzy, kde-format
+#| msgid "Requires 'module-gconf' PulseAudio module"
+msgid "Requires %1 PulseAudio module"
+msgstr "Zahteva modul PulseAudija module-gconf."
+
+#: kcm/package/contents/ui/main.qml:105
+#, kde-format
+msgid ""
+"Add virtual output device for simultaneous output on all local sound cards"
+msgstr ""
+"Dodaj virtuelni izlazni uređaj za istovremeni izlaz na sve lokalne zvučne "
+"kartice"
+
+#: kcm/package/contents/ui/main.qml:111
+#, kde-format
+msgid ""
+"Automatically switch all running streams when a new output becomes available"
+msgstr "Automatski prebaci sve tokove u pogonu čim novi izlaz postane dostupan"
+
+#: kcm/package/contents/ui/main.qml:148
+#, fuzzy, kde-format
+#| msgid "Playback"
+msgid "Playback Devices"
+msgstr "Puštanje"
+
+#: kcm/package/contents/ui/main.qml:172
+#, kde-format
+msgid "Recording Devices"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:196
+#, kde-format
+msgid "Inactive Cards"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:230
+#, fuzzy, kde-format
+#| msgid "Playback"
+msgid "Playback Streams"
+msgstr "Puštanje"
+
+#: kcm/package/contents/ui/main.qml:279
+#, kde-format
+msgid "Recording Streams"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:313
+#, kde-format
+msgctxt ""
+"%1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"Error trying to play a test sound. \n"
+"The system said: \"%1\""
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:348
+#, kde-format
+msgid "Front Left"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:349
+#, kde-format
+msgid "Front Center"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:350
+#, kde-format
+msgid "Front Right"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:351
+#, kde-format
+msgid "Side Left"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:352
+#, kde-format
+msgid "Side Right"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:353
+#, kde-format
+msgid "Rear Left"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:354
+#, kde-format
+msgid "Subwoofer"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:355
+#, kde-format
+msgid "Rear Right"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:356
+#, kde-format
+msgid "Mono"
+msgstr ""
+
+#: kcm/package/contents/ui/main.qml:466
+#, kde-format
+msgid "Click on any speaker to test sound"
+msgstr ""
+
+#: kcm/package/contents/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Unmute audio stream"
+msgid "Unmute %1"
+msgstr ""
+
+#: kcm/package/contents/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr ""
 
-#: kcm/package/contents/ui/StreamListItem.qml:59
+#: kcm/package/contents/ui/StreamListItem.qml:57
 #, kde-format
 msgid "Notification Sounds"
 msgstr "Zvukovi obaveštenja"
 
-#: kcm/package/contents/ui/StreamListItem.qml:61
+#: kcm/package/contents/ui/StreamListItem.qml:63
 #, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: kcm/package/contents/ui/VolumeSlider.qml:63
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
-msgid "100%"
-msgstr "100%"
+msgid "Volume Controls"
+msgstr ""
 
-#: kcm/package/contents/ui/VolumeSlider.qml:73
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:31
+#, kde-format
+msgid "Raise maximum volume"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:39
+#, kde-format
+msgid "Volume change step:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:63
+#, kde-format
+msgid "Play audio feedback for changes to:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:64
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:73
+#, kde-format
+msgid "Audio volume"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:72
+#, kde-format
+msgid "Show visual feedback for changes to:"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:80
+#, kde-format
+msgid "Microphone sensitivity"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:87
+#, kde-format
+msgid "Mute state"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeControlsConfig.qml:94
+#, kde-format
+msgid "Default output device"
+msgstr ""
+
+#: kcm/package/contents/ui/VolumeSlider.qml:51
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/package/contents/ui/VolumeSlider.qml:79
+#: kcm/package/contents/ui/VolumeSlider.qml:71
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: qml/microphoneindicator.cpp:113
+#: qml/listitemmenu.cpp:342
+#, kde-format
+msgid "Play all audio via this device"
+msgstr ""
+
+#: qml/listitemmenu.cpp:347
+#, kde-format
+msgid "Record all audio via this device"
+msgstr ""
+
+#: qml/listitemmenu.cpp:375
+#, fuzzy, kde-format
+#| msgid "Port"
+msgctxt ""
+"Heading for a list of ports of a device (for example built-in laptop "
+"speakers or a plug for headphones)"
+msgid "Ports"
+msgstr "Port"
+
+#: qml/listitemmenu.cpp:445
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Profile:"
+msgctxt ""
+"Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
+"only, ...)"
+msgid "Profiles"
+msgstr "Profil:"
+
+#: qml/listitemmenu.cpp:479
+#, kde-format
+msgctxt ""
+"Heading for a list of possible output devices (speakers, headphones, ...) to "
+"choose"
+msgid "Play audio using"
+msgstr ""
+
+#: qml/listitemmenu.cpp:481
+#, kde-format
+msgctxt ""
+"Heading for a list of possible input devices (built-in microphone, "
+"headset, ...) to choose"
+msgid "Record audio using"
+msgstr ""
+
+#: qml/microphoneindicator.cpp:102
 #, kde-format
 msgid "Mute"
 msgstr ""
 
-#: qml/microphoneindicator.cpp:143 qml/microphoneindicator.cpp:151
+#: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
 #, kde-format
 msgid "Microphone"
 msgstr ""
 
-#: qml/microphoneindicator.cpp:146
+#: qml/microphoneindicator.cpp:134
 #, kde-format
-msgctxt "App is using mic"
-msgid "%1 is using the microphone"
+msgid "Microphone Muted"
 msgstr ""
 
-#: qml/microphoneindicator.cpp:148
+#: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ""
 
-#: qml/microphoneindicator.cpp:148
+#: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
 msgstr ""
+
+#: qml/microphoneindicator.cpp:310
+#, kde-format
+msgctxt "App %1 is using mic with name %2"
+msgid "%1 is using the microphone (%2)"
+msgstr ""
+
+#: qml/microphoneindicator.cpp:317
+#, kde-format
+msgctxt "App is using mic"
+msgid "%1 is using the microphone"
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Časlav Ilić"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "caslav.ilic@gmx.net"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Copyright 2015 Harald Sitter"
+#~ msgstr "© 2015, Harald Siter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Harald Sitter"
+#~ msgstr "Harald Siter"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Device Profiles"
+#~ msgstr "Profili uređaja"
+
+#~ msgctxt "@label"
+#~ msgid "No Device Profiles Available"
+#~ msgstr "Nema dostupnih profila uređaja"
+
+#~ msgid "Advanced Output Configuration"
+#~ msgstr "Napredno podešavanje izlaza"
+
+#, fuzzy
+#~| msgid "Outputs"
+#~ msgctxt "@label"
+#~ msgid "Output:"
+#~ msgstr "Izlazi"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Playing Audio"
+#~ msgstr "Nijedan program ne pušta zvuk"
+
+#~ msgctxt "@label"
+#~ msgid "No Applications Recording Audio"
+#~ msgstr "Nijedan program ne snima zvuk"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "No Input Devices Available"
+#~ msgctxt "@label"
+#~ msgid "No Playback Devices Available"
+#~ msgstr "Nema ulaznih uređaja"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "No Input Devices Available"
+#~ msgctxt "@label"
+#~ msgid "No Recording Devices Available"
+#~ msgstr "Nema ulaznih uređaja"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Devices"
+#~ msgstr "Uređaji"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Applications"
+#~ msgstr "Programi"
+
+#~ msgctxt "@title:tab"
+#~ msgid "Advanced"
+#~ msgstr "Napredno"
+
+#~ msgid "100%"
+#~ msgstr "100%"
