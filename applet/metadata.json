@@ -40,6 +40,7 @@
         ],
         "Category": "Multimedia",
         "Description": "Adjust the volume of devices and applications",
+        "Description[ca@valencia]": "Ajusta el volum dels dispositius i les aplicacions",
         "Description[ca]": "Ajusta el volum dels dispositius i les aplicacions",
         "Description[es]": "Ajustar el volumen de dispositivos y aplicaciones",
         "Description[eu]": "Doitu gailuen eta aplikazioen bolumena",
@@ -52,6 +53,7 @@
         "Description[tr]": "Aygıtların ve uygulamaların ses düzeyini ayarlayın",
         "Description[uk]": "Коригування гучності пристроїв і звуків програм",
         "Description[x-test]": "xxAdjust the volume of devices and applicationsxx",
+        "Description[zh_TW]": "調整裝置與應用程式的音量",
         "EnabledByDefault": true,
         "FormFactors": [
             "desktop"
@@ -62,6 +64,7 @@
         "Name": "Audio Volume",
         "Name[ar]": "مستوى الصّوت",
         "Name[az]": "Səs səviyyəsi",
+        "Name[ca@valencia]": "Volum d'àudio",
         "Name[ca]": "Volum d'àudio",
         "Name[da]": "Lydstyrke",
         "Name[de]": "Lautstärke",
