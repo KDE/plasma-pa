@@ -356,20 +356,6 @@ ScrollViewKCM {
             testOverlay.open();
         }
 
-        function channelData(channel) {
-            switch (channel) {
-                case "front-left": return {text: i18nd("kcm_pulseaudio", "Front Left"), row: 0, column: 0, angle: 45};
-                case "front-center": return {text: i18nd("kcm_pulseaudio", "Front Center"), row: 0, column: 1, angle: 90};
-                case "front-right": return {text: i18nd("kcm_pulseaudio", "Front Right"), row: 0, column: 2, angle: 135};
-                case "side-left": return {text: i18nd("kcm_pulseaudio", "Side Left"), row: 1, column: 0, angle: 0};
-                case "side-right": return {text: i18nd("kcm_pulseaudio", "Side Right"), row: 1, column: 2, angle: 180};
-                case "rear-left": return {text: i18nd("kcm_pulseaudio", "Rear Left"), row: 2, column: 0, angle: -45};
-                case "lfe": return {text: i18nd("kcm_pulseaudio", "Subwoofer"), row: 2, column: 1, angle: -90};
-                case "rear-right": return {text: i18nd("kcm_pulseaudio", "Rear Right"), row: 2, column: 2, angle: -135};
-                case "mono" : return {text: i18nd("kcm_pulseaudio", "Mono"), row: 0, column: 1, angle: 90};
-            }
-        }
-
         header: GridLayout {
             columns: 2
             rowSpacing: Kirigami.Units.smallSpacing
@@ -424,15 +410,36 @@ ScrollViewKCM {
                     Layout.row: 1
                     Layout.column: 1
                     Layout.alignment: Qt.AlignCenter
-
                 }
 
                 Repeater {
+                    id: channelRepeater
+
                     model: testOverlay.sinkObject && testOverlay.sinkObject.rawChannels
 
                     delegate: ToolButton {
-                        readonly property var channelData: testOverlay.channelData(modelData)
                         readonly property bool isPlaying: tester.playingChannels.includes(modelData)
+                        readonly property var channelData: {
+                            switch (modelData) {
+                                case "front-left": return {text: i18nd("kcm_pulseaudio", "Front Left"), row: 0, column: 0, angle: 45};
+                                case "front-center": return {text: i18nd("kcm_pulseaudio", "Front Center"), row: 0, column: 1, angle: 90};
+                                case "front-right": return {text: i18nd("kcm_pulseaudio", "Front Right"), row: 0, column: 2, angle: 135};
+                                case "side-left": return {text: i18nd("kcm_pulseaudio", "Side Left"), row: 1, column: 0, angle: 0};
+                                case "side-right": return {text: i18nd("kcm_pulseaudio", "Side Right"), row: 1, column: 2, angle: 180};
+                                case "rear-left": return {text: i18nd("kcm_pulseaudio", "Rear Left"), row: 2, column: 0, angle: -45};
+                                case "lfe": return {text: i18nd("kcm_pulseaudio", "Subwoofer"), row: 2, column: 1, angle: -90};
+                                case "rear-right": return {text: i18nd("kcm_pulseaudio", "Rear Right"), row: 2, column: 2, angle: -135};
+                                case "mono" : return {text: i18nd("kcm_pulseaudio", "Mono"), row: 0, column: 1, angle: 90};
+                            }
+                            // We have a non-standard channel name
+                            return {
+                                text: modelData,
+                                row: 3 + Math.floor(index / 3),
+                                // To keep the avatar centered in case of just 1 or 2 non-standard channels
+                                column: (channelRepeater.count < 3 && index === channelRepeater.count - 1) ? index + 1 : index % 3,
+                                angle: 0
+                            }
+                        }
 
                         Layout.row: channelData.row
                         Layout.column: channelData.column
