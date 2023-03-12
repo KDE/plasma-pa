@@ -73,20 +73,18 @@ ScrollViewKCM {
         id: moduleManager
     }
 
-    actions.main: Kirigami.Action {
-        id: inactiveDevicesSwitch
+    actions: [
+        Kirigami.Action {
+            id: inactiveDevicesSwitch
+            icon.name: "view-visible"
+            visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
 
-        icon.name: "view-visible"
-        visible: (paSourceModel.count != paSourceFilterModel.count) || (paSinkModel.count != paSinkFilterModel.count)
+            displayComponent: Switch {
+                text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
 
-        displayComponent: Switch {
-            text: i18nd("kcm_pulseaudio", "Show Inactive Devices")
-
-            onToggled: inactiveDevicesSwitch.checked = checked
-        }
-    }
-
-    actions.contextualActions: [
+                onToggled: inactiveDevicesSwitch.checked = checked
+            }
+        },
         Kirigami.Action {
             icon.name: "configure"
             text: i18nd("kcm_pulseaudio", "Configure Volume Controls…")
