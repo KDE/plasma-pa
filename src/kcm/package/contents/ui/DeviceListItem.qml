@@ -140,7 +140,7 @@ ColumnLayout {
             model: card ? card.profiles.filter(profile => profile.availability === Profile.Available) : []
             currentIndex: card ? model.indexOf(card.profiles[card.activeProfileIndex]) : -1
 
-            onActivated: card.activeProfileIndex = card.profiles.indexOf(model[index])
+            onActivated: index => card.activeProfileIndex = card.profiles.indexOf(model[index])
         }
     }
 
