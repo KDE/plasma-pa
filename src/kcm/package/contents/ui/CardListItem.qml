@@ -53,6 +53,7 @@ ColumnLayout {
         }
 
         ComboBox {
+            id: profileBox
             Layout.minimumWidth: Kirigami.Units.gridUnit * 12
             model: Profiles.filter(function (profile) {
                 return profile.availability === Profile.Available;
@@ -62,7 +63,7 @@ ColumnLayout {
             // it would eventually become 0 when it shouldn't be.
             onModelChanged: currentIndex = model.indexOf(Profiles[ActiveProfileIndex])
             textRole: "description"
-            onActivated: ActiveProfileIndex = Profiles.indexOf(model[index])
+            onActivated: index => ActiveProfileIndex = Profiles.indexOf(model[index])
         }
     }
 
