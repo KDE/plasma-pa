@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-23 01:00+0000\n"
+"POT-Creation-Date: 2023-03-12 04:10+0000\n"
 "PO-Revision-Date: 2022-11-05 17:32+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -81,22 +81,22 @@ msgstr "Този модул позволява конфигуриране на �
 msgid "Show Inactive Devices"
 msgstr "Показване на неактивни устройства"
 
-#: kcm/package/contents/ui/main.qml:92
+#: kcm/package/contents/ui/main.qml:90
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Конфигуриране на звука…"
 
-#: kcm/package/contents/ui/main.qml:99
+#: kcm/package/contents/ui/main.qml:97
 #, kde-format
 msgid "Configure…"
 msgstr "Конфигуриране…"
 
-#: kcm/package/contents/ui/main.qml:102
+#: kcm/package/contents/ui/main.qml:100
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Изисква %1 модул на PulseAudio"
 
-#: kcm/package/contents/ui/main.qml:105
+#: kcm/package/contents/ui/main.qml:103
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -104,38 +104,38 @@ msgstr ""
 "Добавяне на виртуално изходно устройство за едновременно извеждане на всички "
 "локални звукови карти"
 
-#: kcm/package/contents/ui/main.qml:111
+#: kcm/package/contents/ui/main.qml:109
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "Автоматично превключване на всички текущи потоци при наличен нов изход"
 
-#: kcm/package/contents/ui/main.qml:148
+#: kcm/package/contents/ui/main.qml:146
 #, kde-format
 msgid "Playback Devices"
 msgstr "Устройства за възпроизвеждане"
 
-#: kcm/package/contents/ui/main.qml:172
+#: kcm/package/contents/ui/main.qml:170
 #, kde-format
 msgid "Recording Devices"
 msgstr "Устройства за запис"
 
-#: kcm/package/contents/ui/main.qml:196
+#: kcm/package/contents/ui/main.qml:194
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Неактивни звукови карти"
 
-#: kcm/package/contents/ui/main.qml:230
+#: kcm/package/contents/ui/main.qml:228
 #, kde-format
 msgid "Playback Streams"
 msgstr "Възпроизвеждане на потоци"
 
-#: kcm/package/contents/ui/main.qml:279
+#: kcm/package/contents/ui/main.qml:277
 #, kde-format
 msgid "Recording Streams"
 msgstr "Записване на потоци"
 
-#: kcm/package/contents/ui/main.qml:313
+#: kcm/package/contents/ui/main.qml:311
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -147,52 +147,52 @@ msgstr ""
 "Грешка при опит за тестване на звука. \n"
 "Съобщение: \"%1\""
 
-#: kcm/package/contents/ui/main.qml:348
+#: kcm/package/contents/ui/main.qml:409
 #, kde-format
 msgid "Front Left"
 msgstr "Преден ляв"
 
-#: kcm/package/contents/ui/main.qml:349
+#: kcm/package/contents/ui/main.qml:410
 #, kde-format
 msgid "Front Center"
 msgstr "Преден център"
 
-#: kcm/package/contents/ui/main.qml:350
+#: kcm/package/contents/ui/main.qml:411
 #, kde-format
 msgid "Front Right"
 msgstr "Преден десен"
 
-#: kcm/package/contents/ui/main.qml:351
+#: kcm/package/contents/ui/main.qml:412
 #, kde-format
 msgid "Side Left"
 msgstr "Страничен ляв"
 
-#: kcm/package/contents/ui/main.qml:352
+#: kcm/package/contents/ui/main.qml:413
 #, kde-format
 msgid "Side Right"
 msgstr "Страничен десен"
 
-#: kcm/package/contents/ui/main.qml:353
+#: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Rear Left"
 msgstr "Заден ляв"
 
-#: kcm/package/contents/ui/main.qml:354
+#: kcm/package/contents/ui/main.qml:415
 #, kde-format
 msgid "Subwoofer"
 msgstr "Субуфер"
 
-#: kcm/package/contents/ui/main.qml:355
+#: kcm/package/contents/ui/main.qml:416
 #, kde-format
 msgid "Rear Right"
 msgstr "Заден десен"
 
-#: kcm/package/contents/ui/main.qml:356
+#: kcm/package/contents/ui/main.qml:417
 #, kde-format
 msgid "Mono"
 msgstr "Моно"
 
-#: kcm/package/contents/ui/main.qml:466
+#: kcm/package/contents/ui/main.qml:471
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Кликнете върху високоговорителите, за да тествате звука"

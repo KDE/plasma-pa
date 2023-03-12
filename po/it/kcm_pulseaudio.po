@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-23 01:00+0000\n"
+"POT-Creation-Date: 2023-03-12 04:10+0000\n"
 "PO-Revision-Date: 2022-11-04 00:49+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -82,22 +82,22 @@ msgstr ""
 msgid "Show Inactive Devices"
 msgstr "Mostra i dispositivi inattivi"
 
-#: kcm/package/contents/ui/main.qml:92
+#: kcm/package/contents/ui/main.qml:90
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Configura i controlli del volume..."
 
-#: kcm/package/contents/ui/main.qml:99
+#: kcm/package/contents/ui/main.qml:97
 #, kde-format
 msgid "Configure…"
 msgstr "Configura…"
 
-#: kcm/package/contents/ui/main.qml:102
+#: kcm/package/contents/ui/main.qml:100
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Richiede il modulo PulseAudio %1"
 
-#: kcm/package/contents/ui/main.qml:105
+#: kcm/package/contents/ui/main.qml:103
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -105,7 +105,7 @@ msgstr ""
 "Aggiungi il dispositivo virtuale per l'uscita simultanea su tutte le schede "
 "audio locali"
 
-#: kcm/package/contents/ui/main.qml:111
+#: kcm/package/contents/ui/main.qml:109
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -113,32 +113,32 @@ msgstr ""
 "Commuta automaticamente tutti i flussi in riproduzione quando è disponibile "
 "una nuova uscita"
 
-#: kcm/package/contents/ui/main.qml:148
+#: kcm/package/contents/ui/main.qml:146
 #, kde-format
 msgid "Playback Devices"
 msgstr "Dispositivi di riproduzione"
 
-#: kcm/package/contents/ui/main.qml:172
+#: kcm/package/contents/ui/main.qml:170
 #, kde-format
 msgid "Recording Devices"
 msgstr "Dispositivi di registrazione"
 
-#: kcm/package/contents/ui/main.qml:196
+#: kcm/package/contents/ui/main.qml:194
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Schede inattive"
 
-#: kcm/package/contents/ui/main.qml:230
+#: kcm/package/contents/ui/main.qml:228
 #, kde-format
 msgid "Playback Streams"
 msgstr "Riproduzione flussi"
 
-#: kcm/package/contents/ui/main.qml:279
+#: kcm/package/contents/ui/main.qml:277
 #, kde-format
 msgid "Recording Streams"
 msgstr "Registrazione flussi"
 
-#: kcm/package/contents/ui/main.qml:313
+#: kcm/package/contents/ui/main.qml:311
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -150,52 +150,52 @@ msgstr ""
 "Errore durante il tentativo di riprodurre un suono di prova.\n"
 "Il sistema ha restituito: «%1»"
 
-#: kcm/package/contents/ui/main.qml:348
+#: kcm/package/contents/ui/main.qml:409
 #, kde-format
 msgid "Front Left"
 msgstr "Anteriore sinistro"
 
-#: kcm/package/contents/ui/main.qml:349
+#: kcm/package/contents/ui/main.qml:410
 #, kde-format
 msgid "Front Center"
 msgstr "Anteriore centrale"
 
-#: kcm/package/contents/ui/main.qml:350
+#: kcm/package/contents/ui/main.qml:411
 #, kde-format
 msgid "Front Right"
 msgstr "Anteriore destro"
 
-#: kcm/package/contents/ui/main.qml:351
+#: kcm/package/contents/ui/main.qml:412
 #, kde-format
 msgid "Side Left"
 msgstr "Laterale sinistro"
 
-#: kcm/package/contents/ui/main.qml:352
+#: kcm/package/contents/ui/main.qml:413
 #, kde-format
 msgid "Side Right"
 msgstr "Laterale destro"
 
-#: kcm/package/contents/ui/main.qml:353
+#: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Rear Left"
 msgstr "Posteriore sinistro"
 
-#: kcm/package/contents/ui/main.qml:354
+#: kcm/package/contents/ui/main.qml:415
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/package/contents/ui/main.qml:355
+#: kcm/package/contents/ui/main.qml:416
 #, kde-format
 msgid "Rear Right"
 msgstr "Posteriore destro"
 
-#: kcm/package/contents/ui/main.qml:356
+#: kcm/package/contents/ui/main.qml:417
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:466
+#: kcm/package/contents/ui/main.qml:471
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Fare clic su qualsiasi altoparlante per provare il suono"

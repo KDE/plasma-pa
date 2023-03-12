@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-23 01:00+0000\n"
+"POT-Creation-Date: 2023-03-12 04:10+0000\n"
 "PO-Revision-Date: 2022-04-21 17:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -81,62 +81,62 @@ msgstr "Moduler gör det möjligt att anpassa Pulseaudio ljuddelsystemet."
 msgid "Show Inactive Devices"
 msgstr "Visa inaktiva enheter"
 
-#: kcm/package/contents/ui/main.qml:92
+#: kcm/package/contents/ui/main.qml:90
 #, fuzzy, kde-format
 #| msgid "Configure…"
 msgid "Configure Volume Controls…"
 msgstr "Anpassa…"
 
-#: kcm/package/contents/ui/main.qml:99
+#: kcm/package/contents/ui/main.qml:97
 #, kde-format
 msgid "Configure…"
 msgstr "Anpassa…"
 
-#: kcm/package/contents/ui/main.qml:102
+#: kcm/package/contents/ui/main.qml:100
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Kräver PulseAudio-modul %1"
 
-#: kcm/package/contents/ui/main.qml:105
+#: kcm/package/contents/ui/main.qml:103
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr ""
 "Lägg till virtuell utenhet för samtidig utmatning på alla lokala ljudkort"
 
-#: kcm/package/contents/ui/main.qml:111
+#: kcm/package/contents/ui/main.qml:109
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
 "Byt automatiskt alla pågående strömmar när en ny utgång blir tillgänglig"
 
-#: kcm/package/contents/ui/main.qml:148
+#: kcm/package/contents/ui/main.qml:146
 #, kde-format
 msgid "Playback Devices"
 msgstr "Uppspelningsenheter"
 
-#: kcm/package/contents/ui/main.qml:172
+#: kcm/package/contents/ui/main.qml:170
 #, kde-format
 msgid "Recording Devices"
 msgstr "Inspelningsenheter"
 
-#: kcm/package/contents/ui/main.qml:196
+#: kcm/package/contents/ui/main.qml:194
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Inaktiva kort"
 
-#: kcm/package/contents/ui/main.qml:230
+#: kcm/package/contents/ui/main.qml:228
 #, kde-format
 msgid "Playback Streams"
 msgstr "Uppspelningsströmmar"
 
-#: kcm/package/contents/ui/main.qml:279
+#: kcm/package/contents/ui/main.qml:277
 #, kde-format
 msgid "Recording Streams"
 msgstr "Inspelningsströmmar"
 
-#: kcm/package/contents/ui/main.qml:313
+#: kcm/package/contents/ui/main.qml:311
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -148,52 +148,52 @@ msgstr ""
 "Fel vid försök att spela upp ett testljud.\n"
 "Systemet rapporterade: \"%1\""
 
-#: kcm/package/contents/ui/main.qml:348
+#: kcm/package/contents/ui/main.qml:409
 #, kde-format
 msgid "Front Left"
 msgstr "Vänster fram"
 
-#: kcm/package/contents/ui/main.qml:349
+#: kcm/package/contents/ui/main.qml:410
 #, kde-format
 msgid "Front Center"
 msgstr "Center fram"
 
-#: kcm/package/contents/ui/main.qml:350
+#: kcm/package/contents/ui/main.qml:411
 #, kde-format
 msgid "Front Right"
 msgstr "Höger fram"
 
-#: kcm/package/contents/ui/main.qml:351
+#: kcm/package/contents/ui/main.qml:412
 #, kde-format
 msgid "Side Left"
 msgstr "Vänster sida"
 
-#: kcm/package/contents/ui/main.qml:352
+#: kcm/package/contents/ui/main.qml:413
 #, kde-format
 msgid "Side Right"
 msgstr "Höger sida"
 
-#: kcm/package/contents/ui/main.qml:353
+#: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Rear Left"
 msgstr "Vänster bak"
 
-#: kcm/package/contents/ui/main.qml:354
+#: kcm/package/contents/ui/main.qml:415
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/package/contents/ui/main.qml:355
+#: kcm/package/contents/ui/main.qml:416
 #, kde-format
 msgid "Rear Right"
 msgstr "Höger bak"
 
-#: kcm/package/contents/ui/main.qml:356
+#: kcm/package/contents/ui/main.qml:417
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:466
+#: kcm/package/contents/ui/main.qml:471
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Klicka på en högtalare för att prova ljudet"
