@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:47+0000\n"
+"POT-Creation-Date: 2023-03-12 04:58+0000\n"
 "PO-Revision-Date: 2022-11-11 15:30+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -151,52 +151,52 @@ msgstr ""
 "Не удалось воспроизвести звук для проверки. \n"
 "Сообщение об ошибке: «%1»"
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:424
 #, kde-format
 msgid "Front Left"
 msgstr "Левый фронтальный"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:425
 #, kde-format
 msgid "Front Center"
 msgstr "Центральный фронтальный"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:426
 #, kde-format
 msgid "Front Right"
 msgstr "Правый фронтальный"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:427
 #, kde-format
 msgid "Side Left"
 msgstr "Левый боковой"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:428
 #, kde-format
 msgid "Side Right"
 msgstr "Правый боковой"
 
-#: kcm/package/contents/ui/main.qml:366
+#: kcm/package/contents/ui/main.qml:429
 #, kde-format
 msgid "Rear Left"
 msgstr "Левый тыловой"
 
-#: kcm/package/contents/ui/main.qml:367
+#: kcm/package/contents/ui/main.qml:430
 #, kde-format
 msgid "Subwoofer"
 msgstr "Сабвуфер"
 
-#: kcm/package/contents/ui/main.qml:368
+#: kcm/package/contents/ui/main.qml:431
 #, kde-format
 msgid "Rear Right"
 msgstr "Правый тыловой"
 
-#: kcm/package/contents/ui/main.qml:369
+#: kcm/package/contents/ui/main.qml:432
 #, kde-format
 msgid "Mono"
 msgstr "Моно"
 
-#: kcm/package/contents/ui/main.qml:479
+#: kcm/package/contents/ui/main.qml:486
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Для проверки нажмите на значок динамика"

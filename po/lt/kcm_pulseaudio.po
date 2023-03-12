@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:47+0000\n"
+"POT-Creation-Date: 2023-03-12 04:58+0000\n"
 "PO-Revision-Date: 2022-09-19 12:55+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -154,52 +154,52 @@ msgstr ""
 "Klaida bandant atkurti bandomąjį garsą. \n"
 "Sistema pranešė: „%1“"
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:424
 #, kde-format
 msgid "Front Left"
 msgstr "Priekinis kairysis"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:425
 #, kde-format
 msgid "Front Center"
 msgstr "Priekinis centrinis"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:426
 #, kde-format
 msgid "Front Right"
 msgstr "Priekinis dešinysis"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:427
 #, kde-format
 msgid "Side Left"
 msgstr "Šoninis kairysis"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:428
 #, kde-format
 msgid "Side Right"
 msgstr "Šoninis dešinysis"
 
-#: kcm/package/contents/ui/main.qml:366
+#: kcm/package/contents/ui/main.qml:429
 #, kde-format
 msgid "Rear Left"
 msgstr "Galinis kairysis"
 
-#: kcm/package/contents/ui/main.qml:367
+#: kcm/package/contents/ui/main.qml:430
 #, kde-format
 msgid "Subwoofer"
 msgstr "Po-žemadažnis garsiakalbis"
 
-#: kcm/package/contents/ui/main.qml:368
+#: kcm/package/contents/ui/main.qml:431
 #, kde-format
 msgid "Rear Right"
 msgstr "Galinis dešinysis"
 
-#: kcm/package/contents/ui/main.qml:369
+#: kcm/package/contents/ui/main.qml:432
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:479
+#: kcm/package/contents/ui/main.qml:486
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Spustelėkite ant kurio nors garsiakalbio, kad išbandytumėte garsą"

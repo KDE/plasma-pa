@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:47+0000\n"
+"POT-Creation-Date: 2023-03-12 04:58+0000\n"
 "PO-Revision-Date: 2022-11-04 07:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -148,52 +148,52 @@ msgstr ""
 "შეცდომა სატესტო ხმის დაკვრისას.\n"
 "სისტემამ თქო: \"%1\" -ო"
 
-#: kcm/package/contents/ui/main.qml:361
+#: kcm/package/contents/ui/main.qml:424
 #, kde-format
 msgid "Front Left"
 msgstr "წინა მარცხენა"
 
-#: kcm/package/contents/ui/main.qml:362
+#: kcm/package/contents/ui/main.qml:425
 #, kde-format
 msgid "Front Center"
 msgstr "წინა ცენტრი"
 
-#: kcm/package/contents/ui/main.qml:363
+#: kcm/package/contents/ui/main.qml:426
 #, kde-format
 msgid "Front Right"
 msgstr "წინა მარჯვენა"
 
-#: kcm/package/contents/ui/main.qml:364
+#: kcm/package/contents/ui/main.qml:427
 #, kde-format
 msgid "Side Left"
 msgstr "მარცხენა მხარეს"
 
-#: kcm/package/contents/ui/main.qml:365
+#: kcm/package/contents/ui/main.qml:428
 #, kde-format
 msgid "Side Right"
 msgstr "მარჯვენა მხარეს"
 
-#: kcm/package/contents/ui/main.qml:366
+#: kcm/package/contents/ui/main.qml:429
 #, kde-format
 msgid "Rear Left"
 msgstr "უკანა მარცხენა"
 
-#: kcm/package/contents/ui/main.qml:367
+#: kcm/package/contents/ui/main.qml:430
 #, kde-format
 msgid "Subwoofer"
 msgstr "საბვუფერი"
 
-#: kcm/package/contents/ui/main.qml:368
+#: kcm/package/contents/ui/main.qml:431
 #, kde-format
 msgid "Rear Right"
 msgstr "უკანა მარკვენა"
 
-#: kcm/package/contents/ui/main.qml:369
+#: kcm/package/contents/ui/main.qml:432
 #, kde-format
 msgid "Mono"
 msgstr "მონო"
 
-#: kcm/package/contents/ui/main.qml:479
+#: kcm/package/contents/ui/main.qml:486
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "დააწკაპუნეთ დასატესტ დინამიკზე"
