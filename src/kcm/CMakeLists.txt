@@ -3,8 +3,7 @@ kcoreaddons_add_plugin(kcm_pulseaudio SOURCES module.cpp resources.qrc INSTALL_N
 target_link_libraries(kcm_pulseaudio
     Qt::Quick
     KF6::CoreAddons
-    KF6::Declarative
-    KF6::QuickAddons
+    KF6::KCMUtilsQuick
 )
 
 kcmutils_generate_desktop_file(kcm_pulseaudio)

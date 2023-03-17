@@ -11,7 +11,7 @@
 K_PLUGIN_CLASS_WITH_JSON(KCMPulseAudio, "kcm_pulseaudio.json")
 
 KCMPulseAudio::KCMPulseAudio(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
-    : KQuickAddons::ConfigModule(parent, metaData, args)
+    : KQuickConfigModule(parent, metaData, args)
 {
     setButtons(Help);
 }

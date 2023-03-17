@@ -7,9 +7,9 @@
 #ifndef MODULE_H
 #define MODULE_H
 
-#include <KQuickAddons/ConfigModule>
+#include <KQuickConfigModule>
 
-class KCMPulseAudio : public KQuickAddons::ConfigModule
+class KCMPulseAudio : public KQuickConfigModule
 {
     Q_OBJECT
 public:
