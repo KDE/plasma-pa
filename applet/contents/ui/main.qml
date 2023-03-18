@@ -777,6 +777,10 @@ Item {
         KQCAddons.KCMShell.openSystemSettings("kcm_pulseaudio");
     }
 
+    function action_showVirtualDevices() {
+        Plasmoid.configuration.showVirtualDevices = !Plasmoid.configuration.showVirtualDevices;
+    }
+
     Component.onCompleted: {
         MicrophoneIndicator.init();
 
