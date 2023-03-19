@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-03-19 02:43+0000\n"
 "PO-Revision-Date: 2023-02-23 12:36+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -165,7 +165,7 @@ msgstr "デバイス"
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "すべての再生デバイスを強制的にミュート"
@@ -185,12 +185,12 @@ msgstr "再生や録音をしているアプリケーションなし"
 msgid "Raise maximum volume"
 msgstr "最大音量を上げる"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:768
 #, kde-format
 msgid "Show virtual devices"
 msgstr "仮想デバイスを表示"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "音声デバイスを設定(&C)..."

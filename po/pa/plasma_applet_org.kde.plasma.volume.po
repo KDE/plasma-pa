@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-03-19 02:43+0000\n"
 "PO-Revision-Date: 2021-10-06 18:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -168,7 +168,7 @@ msgstr "ਡਿਵਾਈਸ"
 msgid "Applications"
 msgstr "ਐਪਲੀਕੇਸ਼ਨਾਂ"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ਸਾਰੇ ਪਲੇਅਬੈਕ ਡਿਵਾਈਸਾਂ ਨੂੰ ਧੱਕੇ ਨਾਲ ਮੌਨ ਕਰੋ"
@@ -188,13 +188,13 @@ msgstr "ਕੋਈ ਵੀ ਐਪਲੀਕੇਸ਼ਨ ਆਡੀਓ ਚਲਾ ਜਾ�
 msgid "Raise maximum volume"
 msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:768
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgid "Show virtual devices"
 msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "…ਆਡੀਓ ਡਿਵਾਈਸਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-03-19 02:43+0000\n"
 "PO-Revision-Date: 2021-07-07 11:46+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -169,7 +169,7 @@ msgstr "Συσκευές"
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Εξαναγκασμός σίγασης για όλες τις συσκευές αναπαραγωγής"
@@ -189,13 +189,13 @@ msgstr "Καμιά εφαρμογή δεν πραγματοποιεί εγγρα
 msgid "Raise maximum volume"
 msgstr "Αύξηση μέγιστης έντασης"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:768
 #, fuzzy, kde-format
 #| msgid "Show hidden devices"
 msgid "Show virtual devices"
 msgstr "Εμφάνιση κρυμμένων συσκευών"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Διαμόρφωση συσκευών ήχου…"

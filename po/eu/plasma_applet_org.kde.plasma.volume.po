@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-03-19 02:43+0000\n"
 "PO-Revision-Date: 2022-11-27 08:09+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -167,7 +167,7 @@ msgstr "Gailuak"
 msgid "Applications"
 msgstr "Aplikazioak"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Indarrez isilarazi atzera-jotzeko gailu guztiak"
@@ -187,12 +187,12 @@ msgstr "Ez dago audioa jotzen edo grabatzen ari den aplikaziorik"
 msgid "Raise maximum volume"
 msgstr "Altxatu bolumen muga"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:768
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Erakutsi alegiazko gailuak"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfiguratu audio gailuak..."

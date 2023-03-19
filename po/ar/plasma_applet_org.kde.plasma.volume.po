@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-03-19 02:43+0000\n"
 "PO-Revision-Date: 2022-12-22 09:28+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -166,7 +166,7 @@ msgstr "الأجهزة"
 msgid "Applications"
 msgstr "التّطبيقات"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "افرض كتم صوت جميع أجهزة التشغيل"
@@ -186,12 +186,12 @@ msgstr "لا توجد تطبيقات تشغل أو تسجل الصوت"
 msgid "Raise maximum volume"
 msgstr "ارفع لأقصى مستوى"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:768
 #, kde-format
 msgid "Show virtual devices"
 msgstr "أظهر الأجهزة الافتراضية"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ا&ضبط أجهزة الصوت..."

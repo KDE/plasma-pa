@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-03-19 02:43+0000\n"
 "PO-Revision-Date: 2022-11-27 09:38+0200\n"
 "Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -167,7 +167,7 @@ msgstr "Пристрої"
 msgid "Applications"
 msgstr "Програми"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Примусово вимкнути всі пристрої відтворення"
@@ -187,12 +187,12 @@ msgstr "Жодна програма не відтворює і не запису
 msgid "Raise maximum volume"
 msgstr "Збільшити максимальну гучність"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:768
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показати віртуальні пристрої"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Налаштувати звукові пристрої…"

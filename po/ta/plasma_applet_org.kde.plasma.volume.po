@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-03-19 02:43+0000\n"
 "PO-Revision-Date: 2023-01-19 19:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -164,7 +164,7 @@ msgstr "சாதனங்கள்"
 msgid "Applications"
 msgstr "செயலிகள்"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
@@ -184,12 +184,12 @@ msgstr "எந்த செயலிகளும் ஒலியை இயக்
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:768
 #, kde-format
 msgid "Show virtual devices"
 msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"

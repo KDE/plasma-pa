@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-27 00:48+0000\n"
+"POT-Creation-Date: 2023-03-19 02:43+0000\n"
 "PO-Revision-Date: 2019-01-04 11:37+0200\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -170,7 +170,7 @@ msgstr "Iekārtas"
 msgid "Applications"
 msgstr "Programmas"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:760
+#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
@@ -190,13 +190,13 @@ msgstr "Pašlaik neviena programma neatskaņo vai neieraksta audio"
 msgid "Raise maximum volume"
 msgstr "Palielināt maksimālo skaļumu"
 
-#: contents/ui/main.qml:764
+#: contents/ui/main.qml:768
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nav atrastas ievades vai izvades iekārtas"
 
-#: contents/ui/main.qml:770
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
