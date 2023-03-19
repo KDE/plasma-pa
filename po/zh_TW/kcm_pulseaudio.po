@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-12 04:10+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2023-01-24 19:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -73,69 +73,64 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "平衡"
 
-#: kcm/package/contents/ui/main.qml:24
-#, kde-format
-msgid "This module allows configuring the Pulseaudio sound subsystem."
-msgstr "此模組可以設定 Pulseaudio 音效子系統。"
-
-#: kcm/package/contents/ui/main.qml:83
+#: kcm/package/contents/ui/main.qml:82
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "顯示非作用中的裝置"
 
-#: kcm/package/contents/ui/main.qml:90
+#: kcm/package/contents/ui/main.qml:89
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "設定音量控制…"
 
-#: kcm/package/contents/ui/main.qml:97
+#: kcm/package/contents/ui/main.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "設定…"
 
-#: kcm/package/contents/ui/main.qml:100
+#: kcm/package/contents/ui/main.qml:99
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "需要 %1 PulseAudio 模組"
 
-#: kcm/package/contents/ui/main.qml:103
+#: kcm/package/contents/ui/main.qml:102
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "在所有本機音效卡上加入虛擬輸出裝置以同步輸出"
 
-#: kcm/package/contents/ui/main.qml:109
+#: kcm/package/contents/ui/main.qml:108
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "當新輸出可用時自動切換所有執行中的串流"
 
-#: kcm/package/contents/ui/main.qml:146
+#: kcm/package/contents/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
 msgstr "回放裝置"
 
-#: kcm/package/contents/ui/main.qml:170
+#: kcm/package/contents/ui/main.qml:169
 #, kde-format
 msgid "Recording Devices"
 msgstr "錄音裝置"
 
-#: kcm/package/contents/ui/main.qml:194
+#: kcm/package/contents/ui/main.qml:193
 #, kde-format
 msgid "Inactive Cards"
 msgstr "非作用中音效卡"
 
-#: kcm/package/contents/ui/main.qml:228
+#: kcm/package/contents/ui/main.qml:227
 #, kde-format
 msgid "Playback Streams"
 msgstr "回放串流"
 
-#: kcm/package/contents/ui/main.qml:277
+#: kcm/package/contents/ui/main.qml:276
 #, kde-format
 msgid "Recording Streams"
 msgstr "錄音串流"
 
-#: kcm/package/contents/ui/main.qml:311
+#: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -147,52 +142,52 @@ msgstr ""
 "播放測試音效時發生錯誤。\n"
 "系統回應為：「%1」"
 
-#: kcm/package/contents/ui/main.qml:409
+#: kcm/package/contents/ui/main.qml:408
 #, kde-format
 msgid "Front Left"
 msgstr "左前方"
 
-#: kcm/package/contents/ui/main.qml:410
+#: kcm/package/contents/ui/main.qml:409
 #, kde-format
 msgid "Front Center"
 msgstr "前方正中央"
 
-#: kcm/package/contents/ui/main.qml:411
+#: kcm/package/contents/ui/main.qml:410
 #, kde-format
 msgid "Front Right"
 msgstr "右前方"
 
-#: kcm/package/contents/ui/main.qml:412
+#: kcm/package/contents/ui/main.qml:411
 #, kde-format
 msgid "Side Left"
 msgstr "左側"
 
-#: kcm/package/contents/ui/main.qml:413
+#: kcm/package/contents/ui/main.qml:412
 #, kde-format
 msgid "Side Right"
 msgstr "右側"
 
-#: kcm/package/contents/ui/main.qml:414
+#: kcm/package/contents/ui/main.qml:413
 #, kde-format
 msgid "Rear Left"
 msgstr "左後方"
 
-#: kcm/package/contents/ui/main.qml:415
+#: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Subwoofer"
 msgstr "低音音響"
 
-#: kcm/package/contents/ui/main.qml:416
+#: kcm/package/contents/ui/main.qml:415
 #, kde-format
 msgid "Rear Right"
 msgstr "右後方"
 
-#: kcm/package/contents/ui/main.qml:417
+#: kcm/package/contents/ui/main.qml:416
 #, kde-format
 msgid "Mono"
 msgstr "單聲道"
 
-#: kcm/package/contents/ui/main.qml:471
+#: kcm/package/contents/ui/main.qml:470
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "點擊任何喇叭來測試聲音"
@@ -358,6 +353,9 @@ msgstr "%1 正在使用麥克風（%2）"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 正在使用麥克風"
+
+#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
+#~ msgstr "此模組可以設定 Pulseaudio 音效子系統。"
 
 #~ msgid "100%"
 #~ msgstr "100%"

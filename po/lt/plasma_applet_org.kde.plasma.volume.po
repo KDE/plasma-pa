@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 01:00+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2023-02-04 19:51+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -173,7 +173,7 @@ msgstr "Įrenginiai"
 msgid "Applications"
 msgstr "Programos"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:783
+#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Priverstinai nutildyti visus atkūrimo įrenginius"
@@ -193,12 +193,12 @@ msgstr "Šiuo metu jokios programos neatkuria ir neįrašinėja garso"
 msgid "Raise maximum volume"
 msgstr "Padidinti didžiausią garsumą"
 
-#: contents/ui/main.qml:787
+#: contents/ui/main.qml:791
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rodyti virtualius įrenginius"
 
-#: contents/ui/main.qml:793
+#: contents/ui/main.qml:797
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigūruoti garso įrenginius…"

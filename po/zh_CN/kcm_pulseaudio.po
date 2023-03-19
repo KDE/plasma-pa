@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-12 04:10+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -71,69 +71,64 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "平衡"
 
-#: kcm/package/contents/ui/main.qml:24
-#, kde-format
-msgid "This module allows configuring the Pulseaudio sound subsystem."
-msgstr "此模块用于配置 PulseAudio 音频子系统的功能。"
-
-#: kcm/package/contents/ui/main.qml:83
+#: kcm/package/contents/ui/main.qml:82
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "显示非活动设备"
 
-#: kcm/package/contents/ui/main.qml:90
+#: kcm/package/contents/ui/main.qml:89
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "配置音量控制…"
 
-#: kcm/package/contents/ui/main.qml:97
+#: kcm/package/contents/ui/main.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "配置…"
 
-#: kcm/package/contents/ui/main.qml:100
+#: kcm/package/contents/ui/main.qml:99
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "需要 PulseAudio 的 %1 模块"
 
-#: kcm/package/contents/ui/main.qml:103
+#: kcm/package/contents/ui/main.qml:102
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "一个可以同步输出到所有本地声卡的虚拟输出设备"
 
-#: kcm/package/contents/ui/main.qml:109
+#: kcm/package/contents/ui/main.qml:108
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "自动切换所有当前音频流到新输出设备"
 
-#: kcm/package/contents/ui/main.qml:146
+#: kcm/package/contents/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
 msgstr "播放设备"
 
-#: kcm/package/contents/ui/main.qml:170
+#: kcm/package/contents/ui/main.qml:169
 #, kde-format
 msgid "Recording Devices"
 msgstr "录音设备"
 
-#: kcm/package/contents/ui/main.qml:194
+#: kcm/package/contents/ui/main.qml:193
 #, kde-format
 msgid "Inactive Cards"
 msgstr "已停用声卡"
 
-#: kcm/package/contents/ui/main.qml:228
+#: kcm/package/contents/ui/main.qml:227
 #, kde-format
 msgid "Playback Streams"
 msgstr "播放流"
 
-#: kcm/package/contents/ui/main.qml:277
+#: kcm/package/contents/ui/main.qml:276
 #, kde-format
 msgid "Recording Streams"
 msgstr "录音流"
 
-#: kcm/package/contents/ui/main.qml:311
+#: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -145,52 +140,52 @@ msgstr ""
 "尝试播放测试声音时出错。 \n"
 "系统返回消息：“%1”"
 
-#: kcm/package/contents/ui/main.qml:409
+#: kcm/package/contents/ui/main.qml:408
 #, kde-format
 msgid "Front Left"
 msgstr "左前"
 
-#: kcm/package/contents/ui/main.qml:410
+#: kcm/package/contents/ui/main.qml:409
 #, kde-format
 msgid "Front Center"
 msgstr "正前"
 
-#: kcm/package/contents/ui/main.qml:411
+#: kcm/package/contents/ui/main.qml:410
 #, kde-format
 msgid "Front Right"
 msgstr "右前"
 
-#: kcm/package/contents/ui/main.qml:412
+#: kcm/package/contents/ui/main.qml:411
 #, kde-format
 msgid "Side Left"
 msgstr "左侧"
 
-#: kcm/package/contents/ui/main.qml:413
+#: kcm/package/contents/ui/main.qml:412
 #, kde-format
 msgid "Side Right"
 msgstr "右侧"
 
-#: kcm/package/contents/ui/main.qml:414
+#: kcm/package/contents/ui/main.qml:413
 #, kde-format
 msgid "Rear Left"
 msgstr "左后"
 
-#: kcm/package/contents/ui/main.qml:415
+#: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Subwoofer"
 msgstr "低音炮"
 
-#: kcm/package/contents/ui/main.qml:416
+#: kcm/package/contents/ui/main.qml:415
 #, kde-format
 msgid "Rear Right"
 msgstr "右后"
 
-#: kcm/package/contents/ui/main.qml:417
+#: kcm/package/contents/ui/main.qml:416
 #, kde-format
 msgid "Mono"
 msgstr "单声道"
 
-#: kcm/package/contents/ui/main.qml:471
+#: kcm/package/contents/ui/main.qml:470
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "点击任意扬声器以测试声音"
@@ -356,3 +351,6 @@ msgstr "%1 正在使用麦克风 (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 正在使用麦克风"
+
+#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
+#~ msgstr "此模块用于配置 PulseAudio 音频子系统的功能。"

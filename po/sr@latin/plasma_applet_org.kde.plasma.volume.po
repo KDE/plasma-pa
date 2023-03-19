@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 01:00+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -179,7 +179,7 @@ msgstr "Uređaji"
 msgid "Applications"
 msgstr "Programi"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:783
+#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
@@ -199,13 +199,13 @@ msgstr "Nijedan program ne pušta niti snima zvuk."
 msgid "Raise maximum volume"
 msgstr "Podigni najveću jačinu"
 
-#: contents/ui/main.qml:787
+#: contents/ui/main.qml:791
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: contents/ui/main.qml:793
+#: contents/ui/main.qml:797
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

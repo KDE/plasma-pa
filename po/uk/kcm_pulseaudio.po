@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-12 04:10+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2022-11-03 10:20+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -74,34 +74,27 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Баланс"
 
-#: kcm/package/contents/ui/main.qml:24
-#, kde-format
-msgid "This module allows configuring the Pulseaudio sound subsystem."
-msgstr ""
-"За допомогою цього модуля можна налаштувати роботу звукової підсистеми "
-"Pulseaudio."
-
-#: kcm/package/contents/ui/main.qml:83
+#: kcm/package/contents/ui/main.qml:82
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Показати неактивні пристрої"
 
-#: kcm/package/contents/ui/main.qml:90
+#: kcm/package/contents/ui/main.qml:89
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Налаштувати керування гучністю…"
 
-#: kcm/package/contents/ui/main.qml:97
+#: kcm/package/contents/ui/main.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Налаштувати…"
 
-#: kcm/package/contents/ui/main.qml:100
+#: kcm/package/contents/ui/main.qml:99
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Потрібен модуль PulseAudio %1"
 
-#: kcm/package/contents/ui/main.qml:103
+#: kcm/package/contents/ui/main.qml:102
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -109,7 +102,7 @@ msgstr ""
 "Додати віртуальний пристрій виведення для одночасного виведення на усі "
 "локальні звукові картки"
 
-#: kcm/package/contents/ui/main.qml:109
+#: kcm/package/contents/ui/main.qml:108
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -117,32 +110,32 @@ msgstr ""
 "Автоматично перемикати усі запущені потоки, якщо стає доступним нове "
 "виведення"
 
-#: kcm/package/contents/ui/main.qml:146
+#: kcm/package/contents/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
 msgstr "Пристрої відтворення"
 
-#: kcm/package/contents/ui/main.qml:170
+#: kcm/package/contents/ui/main.qml:169
 #, kde-format
 msgid "Recording Devices"
 msgstr "Пристрої запису"
 
-#: kcm/package/contents/ui/main.qml:194
+#: kcm/package/contents/ui/main.qml:193
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Неактивні картки"
 
-#: kcm/package/contents/ui/main.qml:228
+#: kcm/package/contents/ui/main.qml:227
 #, kde-format
 msgid "Playback Streams"
 msgstr "Потоки відтворення даних"
 
-#: kcm/package/contents/ui/main.qml:277
+#: kcm/package/contents/ui/main.qml:276
 #, kde-format
 msgid "Recording Streams"
 msgstr "Потоки запису"
 
-#: kcm/package/contents/ui/main.qml:311
+#: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -154,52 +147,52 @@ msgstr ""
 "Помилка під час спроби відтворити тестовий звук. \n"
 "Повідомлення системи: «%1»"
 
-#: kcm/package/contents/ui/main.qml:409
+#: kcm/package/contents/ui/main.qml:408
 #, kde-format
 msgid "Front Left"
 msgstr "Передній лівий"
 
-#: kcm/package/contents/ui/main.qml:410
+#: kcm/package/contents/ui/main.qml:409
 #, kde-format
 msgid "Front Center"
 msgstr "Передній центральний"
 
-#: kcm/package/contents/ui/main.qml:411
+#: kcm/package/contents/ui/main.qml:410
 #, kde-format
 msgid "Front Right"
 msgstr "Передній правий"
 
-#: kcm/package/contents/ui/main.qml:412
+#: kcm/package/contents/ui/main.qml:411
 #, kde-format
 msgid "Side Left"
 msgstr "Бічний лівий"
 
-#: kcm/package/contents/ui/main.qml:413
+#: kcm/package/contents/ui/main.qml:412
 #, kde-format
 msgid "Side Right"
 msgstr "Бічний правий"
 
-#: kcm/package/contents/ui/main.qml:414
+#: kcm/package/contents/ui/main.qml:413
 #, kde-format
 msgid "Rear Left"
 msgstr "Задній лівий"
 
-#: kcm/package/contents/ui/main.qml:415
+#: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Subwoofer"
 msgstr "Сабвуфер"
 
-#: kcm/package/contents/ui/main.qml:416
+#: kcm/package/contents/ui/main.qml:415
 #, kde-format
 msgid "Rear Right"
 msgstr "Задній правий"
 
-#: kcm/package/contents/ui/main.qml:417
+#: kcm/package/contents/ui/main.qml:416
 #, kde-format
 msgid "Mono"
 msgstr "Моно"
 
-#: kcm/package/contents/ui/main.qml:471
+#: kcm/package/contents/ui/main.qml:470
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Натисніть на гучномовці для перевірки звуку"
@@ -365,6 +358,11 @@ msgstr "%1 використовує мікрофон (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 використовує мікрофон"
+
+#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
+#~ msgstr ""
+#~ "За допомогою цього модуля можна налаштувати роботу звукової підсистеми "
+#~ "Pulseaudio."
 
 #~ msgid "100%"
 #~ msgstr "100%"

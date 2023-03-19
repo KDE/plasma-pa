@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 01:00+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2023-01-31 12:23+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -170,7 +170,7 @@ msgstr "Apparaten"
 msgid "Applications"
 msgstr "Toepassingen"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:783
+#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Alle afspeelapparaten afdwingen te dempen"
@@ -190,12 +190,12 @@ msgstr "Geen toepassingen die geluid afspelen of opnemen"
 msgid "Raise maximum volume"
 msgstr "Maximum volume vergroten:"
 
-#: contents/ui/main.qml:787
+#: contents/ui/main.qml:791
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuele apparaten tonen"
 
-#: contents/ui/main.qml:793
+#: contents/ui/main.qml:797
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Audio-apparaten &configureren…"

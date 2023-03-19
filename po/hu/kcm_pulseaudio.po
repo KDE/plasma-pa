@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-12 04:10+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2021-12-07 09:47+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -73,33 +73,28 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Balansz"
 
-#: kcm/package/contents/ui/main.qml:24
-#, kde-format
-msgid "This module allows configuring the Pulseaudio sound subsystem."
-msgstr "Ez a modul lehetővé teszi a Pulseaudio alrendszer beállítását."
-
-#: kcm/package/contents/ui/main.qml:83
+#: kcm/package/contents/ui/main.qml:82
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Inaktív eszközök megjelenítése"
 
-#: kcm/package/contents/ui/main.qml:90
+#: kcm/package/contents/ui/main.qml:89
 #, fuzzy, kde-format
 #| msgid "Configure…"
 msgid "Configure Volume Controls…"
 msgstr "Beállítások…"
 
-#: kcm/package/contents/ui/main.qml:97
+#: kcm/package/contents/ui/main.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Beállítások…"
 
-#: kcm/package/contents/ui/main.qml:100
+#: kcm/package/contents/ui/main.qml:99
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "A(z) %1 PulseAudio modulra van szükség"
 
-#: kcm/package/contents/ui/main.qml:103
+#: kcm/package/contents/ui/main.qml:102
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -107,38 +102,38 @@ msgstr ""
 "Virtuális kimeneti eszköz hozzáadása minden helyi hangkártyához szimultán "
 "lejátszáshoz"
 
-#: kcm/package/contents/ui/main.qml:109
+#: kcm/package/contents/ui/main.qml:108
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "Lejátszások automatikus átirányítása, ha új kimenet válik elérhetővé"
 
-#: kcm/package/contents/ui/main.qml:146
+#: kcm/package/contents/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
 msgstr "Lejátszóeszközök"
 
-#: kcm/package/contents/ui/main.qml:170
+#: kcm/package/contents/ui/main.qml:169
 #, kde-format
 msgid "Recording Devices"
 msgstr "Felvevőeszközök"
 
-#: kcm/package/contents/ui/main.qml:194
+#: kcm/package/contents/ui/main.qml:193
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Inaktív kártyák"
 
-#: kcm/package/contents/ui/main.qml:228
+#: kcm/package/contents/ui/main.qml:227
 #, kde-format
 msgid "Playback Streams"
 msgstr "Hanglejátszás"
 
-#: kcm/package/contents/ui/main.qml:277
+#: kcm/package/contents/ui/main.qml:276
 #, kde-format
 msgid "Recording Streams"
 msgstr "Hangfelvétel"
 
-#: kcm/package/contents/ui/main.qml:311
+#: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -148,52 +143,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:409
+#: kcm/package/contents/ui/main.qml:408
 #, kde-format
 msgid "Front Left"
 msgstr "Bal első"
 
-#: kcm/package/contents/ui/main.qml:410
+#: kcm/package/contents/ui/main.qml:409
 #, kde-format
 msgid "Front Center"
 msgstr "Első középső"
 
-#: kcm/package/contents/ui/main.qml:411
+#: kcm/package/contents/ui/main.qml:410
 #, kde-format
 msgid "Front Right"
 msgstr "Jobb első"
 
-#: kcm/package/contents/ui/main.qml:412
+#: kcm/package/contents/ui/main.qml:411
 #, kde-format
 msgid "Side Left"
 msgstr "Bal oldalsó"
 
-#: kcm/package/contents/ui/main.qml:413
+#: kcm/package/contents/ui/main.qml:412
 #, kde-format
 msgid "Side Right"
 msgstr "Jobb oldalsó"
 
-#: kcm/package/contents/ui/main.qml:414
+#: kcm/package/contents/ui/main.qml:413
 #, kde-format
 msgid "Rear Left"
 msgstr "Bal hátsó"
 
-#: kcm/package/contents/ui/main.qml:415
+#: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Subwoofer"
 msgstr "Mélysugárzó"
 
-#: kcm/package/contents/ui/main.qml:416
+#: kcm/package/contents/ui/main.qml:415
 #, kde-format
 msgid "Rear Right"
 msgstr "Jobb hátsó"
 
-#: kcm/package/contents/ui/main.qml:417
+#: kcm/package/contents/ui/main.qml:416
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:471
+#: kcm/package/contents/ui/main.qml:470
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Kattintson bármelyik hangszóróra a hang teszteléséhez"
@@ -364,6 +359,9 @@ msgstr "A(z) %1 használja a mikrofont (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "A(z) %1 használja a mikrofont"
+
+#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
+#~ msgstr "Ez a modul lehetővé teszi a Pulseaudio alrendszer beállítását."
 
 #~ msgid "100%"
 #~ msgstr "100%"

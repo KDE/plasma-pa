@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 01:00+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2023-02-03 15:21+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -170,7 +170,7 @@ msgstr "Устройства"
 msgid "Applications"
 msgstr "Приложения"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:783
+#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Принудително заглушаване на всички устройства за възпроизвеждане"
@@ -190,12 +190,12 @@ msgstr "Няма приложения, които възпроизвеждат �
 msgid "Raise maximum volume"
 msgstr "Повишаване на максималния обем"
 
-#: contents/ui/main.qml:787
+#: contents/ui/main.qml:791
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показване на виртуални устройства"
 
-#: contents/ui/main.qml:793
+#: contents/ui/main.qml:797
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Конфигуриране на звукови устройства…"

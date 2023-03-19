@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 01:00+0000\n"
+"POT-Creation-Date: 2023-03-19 02:06+0000\n"
 "PO-Revision-Date: 2020-09-28 13:57+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -177,7 +177,7 @@ msgstr "Seadmed"
 msgid "Applications"
 msgstr "Rakendused"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:783
+#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Jõuga heli maha kõigis taasesitamisseadmetes"
@@ -197,13 +197,13 @@ msgstr "Ükski rakendus ei esita ega salvesta heli"
 msgid "Raise maximum volume"
 msgstr "Helitugevuse maksimumi suurendamine"
 
-#: contents/ui/main.qml:787
+#: contents/ui/main.qml:791
 #, fuzzy, kde-format
 #| msgid "Show hidden devices"
 msgid "Show virtual devices"
 msgstr "Peidetud seadmete näitamine"
 
-#: contents/ui/main.qml:793
+#: contents/ui/main.qml:797
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
