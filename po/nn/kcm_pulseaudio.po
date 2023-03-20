@@ -355,6 +355,3 @@ msgstr "%1 brukar mikrofonen (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 brukar mikrofonen"
-
-#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
-#~ msgstr "Denne modulen vert brukt til å setja opp lydsystemet PulseAudio."
