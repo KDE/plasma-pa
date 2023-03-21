@@ -94,7 +94,7 @@ ColumnLayout {
 
             readonly property var ports: Ports
 
-            Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 10
             visible: portBox.count > 1
 
             onModelChanged: currentIndex = ActivePortIndex
@@ -119,6 +119,13 @@ ColumnLayout {
                 }
                 model = items;
             }
+
+            // Ensure the popup is sufficiently wide to list *full* device names
+            // and is correctly positioned to not go off the page
+            popup.width: Math.max(implicitWidth, width)
+            popup.leftMargin: delegate.ListView.view.Layout.leftMargin
+            popup.rightMargin: delegate.ListView.view.Layout.rightMargin
+            popup.x: mirrored ? 0 : width - popup.width
         }
 
         Label {
@@ -133,7 +140,7 @@ ColumnLayout {
 
             readonly property var card: paCardModel.data(paCardModel.indexOfCardNumber(CardIndex), paCardModel.role("PulseObject"))
 
-            Layout.minimumWidth: Kirigami.Units.gridUnit * 12
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 12
             visible: profileBox.count > 1
             textRole: "description"
 
@@ -141,6 +148,13 @@ ColumnLayout {
             currentIndex: card ? model.indexOf(card.profiles[card.activeProfileIndex]) : -1
 
             onActivated: index => card.activeProfileIndex = card.profiles.indexOf(model[index])
+
+            // Ensure the popup is sufficiently wide to list *full* device names
+            // and is correctly positioned to not go off the page
+            popup.width: Math.max(implicitWidth, width)
+            popup.leftMargin: delegate.ListView.view.Layout.leftMargin
+            popup.rightMargin: delegate.ListView.view.Layout.rightMargin
+            popup.x: mirrored ? 0 : width - popup.width
         }
     }
 
