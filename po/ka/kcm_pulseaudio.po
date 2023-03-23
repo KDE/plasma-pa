@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-12 04:58+0000\n"
+"POT-Creation-Date: 2023-03-23 03:14+0000\n"
 "PO-Revision-Date: 2022-11-04 07:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -25,7 +25,7 @@ msgid "Plasma PA"
 msgstr "Plasma PA"
 
 #: kcm/package/contents/ui/CardListItem.qml:52
-#: kcm/package/contents/ui/DeviceListItem.qml:127
+#: kcm/package/contents/ui/DeviceListItem.qml:134
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
@@ -54,19 +54,19 @@ msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (გამოერთებულია)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:180
+#: kcm/package/contents/ui/DeviceListItem.qml:194
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:213
+#: kcm/package/contents/ui/DeviceListItem.qml:227
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "შემოწმება"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:222
+#: kcm/package/contents/ui/DeviceListItem.qml:236
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
