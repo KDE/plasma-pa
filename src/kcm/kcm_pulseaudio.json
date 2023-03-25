@@ -82,7 +82,6 @@
             "desktop"
         ],
         "Icon": "kmix",
-        "Id": "kcm_pulseaudio",
         "License": "GPL",
         "Name": "Audio",
         "Name[ar]": "الصوت",
