@@ -404,8 +404,6 @@ ScrollViewKCM {
                     source: kuser.faceIconUrl
                     implicitWidth: Kirigami.Units.gridUnit * 4
                     implicitHeight: implicitWidth
-                    sourceSize.width: implicitWidth
-                    sourceSize.height: implicitWidth
 
                     Layout.row: 1
                     Layout.column: 1
