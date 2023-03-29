@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:45+0000\n"
+"POT-Creation-Date: 2023-03-29 02:13+0000\n"
 "PO-Revision-Date: 2022-11-03 12:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -146,52 +146,52 @@ msgstr ""
 "Ha ocurrido un error al reproducir el sonido de prueba.\n"
 "El sistema ha informado: «%1»"
 
-#: kcm/package/contents/ui/main.qml:408
+#: kcm/package/contents/ui/main.qml:406
 #, kde-format
 msgid "Front Left"
 msgstr "Frontal izquierdo"
 
-#: kcm/package/contents/ui/main.qml:409
+#: kcm/package/contents/ui/main.qml:407
 #, kde-format
 msgid "Front Center"
 msgstr "Frontal central"
 
-#: kcm/package/contents/ui/main.qml:410
+#: kcm/package/contents/ui/main.qml:408
 #, kde-format
 msgid "Front Right"
 msgstr "Frontal derecho"
 
-#: kcm/package/contents/ui/main.qml:411
+#: kcm/package/contents/ui/main.qml:409
 #, kde-format
 msgid "Side Left"
 msgstr "Lateral izquierdo"
 
-#: kcm/package/contents/ui/main.qml:412
+#: kcm/package/contents/ui/main.qml:410
 #, kde-format
 msgid "Side Right"
 msgstr "Lateral derecho"
 
-#: kcm/package/contents/ui/main.qml:413
+#: kcm/package/contents/ui/main.qml:411
 #, kde-format
 msgid "Rear Left"
 msgstr "Trasero izquierdo"
 
-#: kcm/package/contents/ui/main.qml:414
+#: kcm/package/contents/ui/main.qml:412
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/package/contents/ui/main.qml:415
+#: kcm/package/contents/ui/main.qml:413
 #, kde-format
 msgid "Rear Right"
 msgstr "Trasero derecho"
 
-#: kcm/package/contents/ui/main.qml:416
+#: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:470
+#: kcm/package/contents/ui/main.qml:468
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Clic sobre un altavoz para probar el sonido"
