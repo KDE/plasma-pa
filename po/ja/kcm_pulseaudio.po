@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 03:14+0000\n"
+"POT-Creation-Date: 2023-03-29 02:49+0000\n"
 "PO-Revision-Date: 2019-05-11 17:10-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -150,52 +150,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:424
+#: kcm/package/contents/ui/main.qml:422
 #, kde-format
 msgid "Front Left"
 msgstr "正面左"
 
-#: kcm/package/contents/ui/main.qml:425
+#: kcm/package/contents/ui/main.qml:423
 #, kde-format
 msgid "Front Center"
 msgstr "正面中央"
 
-#: kcm/package/contents/ui/main.qml:426
+#: kcm/package/contents/ui/main.qml:424
 #, kde-format
 msgid "Front Right"
 msgstr "正面右"
 
-#: kcm/package/contents/ui/main.qml:427
+#: kcm/package/contents/ui/main.qml:425
 #, kde-format
 msgid "Side Left"
 msgstr "左横"
 
-#: kcm/package/contents/ui/main.qml:428
+#: kcm/package/contents/ui/main.qml:426
 #, kde-format
 msgid "Side Right"
 msgstr "右横"
 
-#: kcm/package/contents/ui/main.qml:429
+#: kcm/package/contents/ui/main.qml:427
 #, kde-format
 msgid "Rear Left"
 msgstr "背面左"
 
-#: kcm/package/contents/ui/main.qml:430
+#: kcm/package/contents/ui/main.qml:428
 #, kde-format
 msgid "Subwoofer"
 msgstr "サブウーファー"
 
-#: kcm/package/contents/ui/main.qml:431
+#: kcm/package/contents/ui/main.qml:429
 #, kde-format
 msgid "Rear Right"
 msgstr "背面右"
 
-#: kcm/package/contents/ui/main.qml:432
+#: kcm/package/contents/ui/main.qml:430
 #, kde-format
 msgid "Mono"
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:486
+#: kcm/package/contents/ui/main.qml:484
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr ""

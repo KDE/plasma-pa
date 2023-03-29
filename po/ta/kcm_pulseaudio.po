@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 03:14+0000\n"
+"POT-Creation-Date: 2023-03-29 02:49+0000\n"
 "PO-Revision-Date: 2022-11-03 21:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -146,52 +146,52 @@ msgstr ""
 "சோதனைக்கான ஒலியை இசைப்பதில் சிக்கல். \n"
 "கணினி கூறியது: \"%1\""
 
-#: kcm/package/contents/ui/main.qml:424
+#: kcm/package/contents/ui/main.qml:422
 #, kde-format
 msgid "Front Left"
 msgstr "முன்புறம் இடது"
 
-#: kcm/package/contents/ui/main.qml:425
+#: kcm/package/contents/ui/main.qml:423
 #, kde-format
 msgid "Front Center"
 msgstr "முன்புறம் நடு"
 
-#: kcm/package/contents/ui/main.qml:426
+#: kcm/package/contents/ui/main.qml:424
 #, kde-format
 msgid "Front Right"
 msgstr "முன்புறம் வலது"
 
-#: kcm/package/contents/ui/main.qml:427
+#: kcm/package/contents/ui/main.qml:425
 #, kde-format
 msgid "Side Left"
 msgstr "இடது ஓரம்"
 
-#: kcm/package/contents/ui/main.qml:428
+#: kcm/package/contents/ui/main.qml:426
 #, kde-format
 msgid "Side Right"
 msgstr "வலது ஓரம்"
 
-#: kcm/package/contents/ui/main.qml:429
+#: kcm/package/contents/ui/main.qml:427
 #, kde-format
 msgid "Rear Left"
 msgstr "பின்புறம் இடது"
 
-#: kcm/package/contents/ui/main.qml:430
+#: kcm/package/contents/ui/main.qml:428
 #, kde-format
 msgid "Subwoofer"
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:431
+#: kcm/package/contents/ui/main.qml:429
 #, kde-format
 msgid "Rear Right"
 msgstr "பின்புறம் வலது"
 
-#: kcm/package/contents/ui/main.qml:432
+#: kcm/package/contents/ui/main.qml:430
 #, kde-format
 msgid "Mono"
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:486
+#: kcm/package/contents/ui/main.qml:484
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "ஒலியை சோதிக்க ஏதாவதொரு ஒலிபெருக்கியில் கிளிக் செய்யுங்கள்"

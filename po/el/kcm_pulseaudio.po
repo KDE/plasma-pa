@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 03:14+0000\n"
+"POT-Creation-Date: 2023-03-29 02:49+0000\n"
 "PO-Revision-Date: 2021-09-04 09:35+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -150,52 +150,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/package/contents/ui/main.qml:424
+#: kcm/package/contents/ui/main.qml:422
 #, kde-format
 msgid "Front Left"
 msgstr "Μπροστά αριστερά"
 
-#: kcm/package/contents/ui/main.qml:425
+#: kcm/package/contents/ui/main.qml:423
 #, kde-format
 msgid "Front Center"
 msgstr "Μπροστά κέντρο"
 
-#: kcm/package/contents/ui/main.qml:426
+#: kcm/package/contents/ui/main.qml:424
 #, kde-format
 msgid "Front Right"
 msgstr "Μπροστά δεξιά"
 
-#: kcm/package/contents/ui/main.qml:427
+#: kcm/package/contents/ui/main.qml:425
 #, kde-format
 msgid "Side Left"
 msgstr "Πλάι αριστερά"
 
-#: kcm/package/contents/ui/main.qml:428
+#: kcm/package/contents/ui/main.qml:426
 #, kde-format
 msgid "Side Right"
 msgstr "Πλάι δεξιά"
 
-#: kcm/package/contents/ui/main.qml:429
+#: kcm/package/contents/ui/main.qml:427
 #, kde-format
 msgid "Rear Left"
 msgstr "Πίσω αριστερά"
 
-#: kcm/package/contents/ui/main.qml:430
+#: kcm/package/contents/ui/main.qml:428
 #, kde-format
 msgid "Subwoofer"
 msgstr "Υποβαθύφωνο"
 
-#: kcm/package/contents/ui/main.qml:431
+#: kcm/package/contents/ui/main.qml:429
 #, kde-format
 msgid "Rear Right"
 msgstr "Πίσω δεξιά"
 
-#: kcm/package/contents/ui/main.qml:432
+#: kcm/package/contents/ui/main.qml:430
 #, kde-format
 msgid "Mono"
 msgstr "Μονοφωνική"
 
-#: kcm/package/contents/ui/main.qml:486
+#: kcm/package/contents/ui/main.qml:484
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr ""

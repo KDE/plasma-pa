@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 03:14+0000\n"
+"POT-Creation-Date: 2023-03-29 02:49+0000\n"
 "PO-Revision-Date: 2023-03-27 12:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -145,52 +145,52 @@ msgstr ""
 "尝试播放测试声音时出错。 \n"
 "系统返回消息：“%1”"
 
-#: kcm/package/contents/ui/main.qml:424
+#: kcm/package/contents/ui/main.qml:422
 #, kde-format
 msgid "Front Left"
 msgstr "左前"
 
-#: kcm/package/contents/ui/main.qml:425
+#: kcm/package/contents/ui/main.qml:423
 #, kde-format
 msgid "Front Center"
 msgstr "正前"
 
-#: kcm/package/contents/ui/main.qml:426
+#: kcm/package/contents/ui/main.qml:424
 #, kde-format
 msgid "Front Right"
 msgstr "右前"
 
-#: kcm/package/contents/ui/main.qml:427
+#: kcm/package/contents/ui/main.qml:425
 #, kde-format
 msgid "Side Left"
 msgstr "左侧"
 
-#: kcm/package/contents/ui/main.qml:428
+#: kcm/package/contents/ui/main.qml:426
 #, kde-format
 msgid "Side Right"
 msgstr "右侧"
 
-#: kcm/package/contents/ui/main.qml:429
+#: kcm/package/contents/ui/main.qml:427
 #, kde-format
 msgid "Rear Left"
 msgstr "左后"
 
-#: kcm/package/contents/ui/main.qml:430
+#: kcm/package/contents/ui/main.qml:428
 #, kde-format
 msgid "Subwoofer"
 msgstr "低音炮"
 
-#: kcm/package/contents/ui/main.qml:431
+#: kcm/package/contents/ui/main.qml:429
 #, kde-format
 msgid "Rear Right"
 msgstr "右后"
 
-#: kcm/package/contents/ui/main.qml:432
+#: kcm/package/contents/ui/main.qml:430
 #, kde-format
 msgid "Mono"
 msgstr "单声道"
 
-#: kcm/package/contents/ui/main.qml:486
+#: kcm/package/contents/ui/main.qml:484
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "点击任意扬声器以测试声音"
