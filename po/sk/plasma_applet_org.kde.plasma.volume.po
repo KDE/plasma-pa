@@ -3,19 +3,20 @@
 # Mthw <jari_45@hotmail.com>, 2018.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2022.
 # Dušan Kazik <prescott66@gmail.com>, 2020.
+# Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-19 02:06+0000\n"
-"PO-Revision-Date: 2022-10-04 17:50+0200\n"
-"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
-"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-03-28 18:26+0200\n"
+"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
+"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: contents/ui/DeviceListItem.qml:26
@@ -108,17 +109,17 @@ msgstr "Hlasitosť na %1%"
 #: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Kliknutím stredného tlačidla myši zrušiť stlmenie zvuku"
 
 #: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Kliknutím stredného tlačidla myši stlmiť všetok zvuk"
 
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Posúvaním upraviť hlasitosť"
 
 #: contents/ui/main.qml:238
 #, kde-format
@@ -126,12 +127,10 @@ msgid "No output device"
 msgstr "Žiadne výstupné zariadenie"
 
 #: contents/ui/main.qml:249
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% batéria)"
 
 #: contents/ui/main.qml:393
 #, kde-format
