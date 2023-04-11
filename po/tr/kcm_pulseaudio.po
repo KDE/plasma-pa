@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2017, 2021, 2022.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-29 02:13+0000\n"
-"PO-Revision-Date: 2022-11-03 12:19+0300\n"
+"PO-Revision-Date: 2023-04-11 01:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #: context.cpp:596
 #, kde-format
@@ -109,7 +109,7 @@ msgstr ""
 #: kcm/package/contents/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
-msgstr "Oynatma Aygıtları"
+msgstr "Çalan Aygıtlar"
 
 #: kcm/package/contents/ui/main.qml:169
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "Etkin Olmayan Kartlar"
 #: kcm/package/contents/ui/main.qml:227
 #, kde-format
 msgid "Playback Streams"
-msgstr "Oynatma Akışları"
+msgstr "Çalan Akışlar"
 
 #: kcm/package/contents/ui/main.qml:276
 #, kde-format
@@ -186,7 +186,7 @@ msgstr "Arka Sağ"
 #: kcm/package/contents/ui/main.qml:414
 #, kde-format
 msgid "Mono"
-msgstr "Tek kanallı"
+msgstr "Tek Kanallı"
 
 #: kcm/package/contents/ui/main.qml:468
 #, kde-format
@@ -197,13 +197,13 @@ msgstr "Sesi sınamak için herhangi bir hoparlöre tıklayın"
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
-msgstr "%1 Sesini Aç"
+msgstr "Sesini Aç: %1"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
-msgstr "%1 kapat"
+msgstr "Sessize Al: %1"
 
 #: kcm/package/contents/ui/StreamListItem.qml:57
 #, kde-format
@@ -290,7 +290,7 @@ msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
 "speakers or a plug for headphones)"
 msgid "Ports"
-msgstr "Bağlantı Noktaları"
+msgstr "Kapılar"
 
 #: qml/listitemmenu.cpp:445
 #, kde-format
@@ -306,7 +306,7 @@ msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
 "choose"
 msgid "Play audio using"
-msgstr "Kullanarak ses çal"
+msgstr "Şunu kullanarak ses çal"
 
 #: qml/listitemmenu.cpp:481
 #, kde-format
@@ -314,12 +314,12 @@ msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "
 "headset, ...) to choose"
 msgid "Record audio using"
-msgstr "Kullanarak ses kaydet"
+msgstr "Şunu kullanarak ses kaydet"
 
 #: qml/microphoneindicator.cpp:102
 #, kde-format
 msgid "Mute"
-msgstr "Sessiz"
+msgstr "Sessize Al"
 
 #: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
 #, kde-format
