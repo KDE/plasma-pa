@@ -80,13 +80,15 @@ PC3.ItemDelegate {
                 acceptedButtons: Qt.LeftButton | Qt.MiddleButton
                 hoverEnabled: true
                 drag.target: clientIcon
-                onClicked: if (mouse.button === Qt.MiddleButton) {
-                    item.model.Muted = !item.model.Muted;
+                onClicked: mouse => {
+                    if (mouse.button === Qt.MiddleButton) {
+                        item.model.Muted = !item.model.Muted;
+                    }
                 }
-                onPressed: if (mouse.button === Qt.LeftButton) {
-                    clientIcon.grabToImage(result => {
-                        clientIcon.Drag.imageSource = result.url;
-                    });
+                onPressed: mouse => {
+                    if (mouse.button === Qt.LeftButton) {
+                        clientIcon.grabToImage(result => clientIcon.Drag.imageSource = result.url);
+                    }
                 }
             }
             Drag.active: dragMouseArea.drag.active
@@ -311,13 +313,13 @@ PC3.ItemDelegate {
         parent: item
         anchors.fill: parent
         acceptedButtons: Qt.MiddleButton | Qt.RightButton
-        onPressed: {
+        onPressed: mouse => {
             if (mouse.button === Qt.RightButton) {
                 contextMenu.visualParent = this;
                 contextMenu.open(mouse.x, mouse.y);
             }
         }
-        onClicked: {
+        onClicked: mouse => {
             if (mouse.button === Qt.MiddleButton) {
                 item.model.Muted = !item.model.Muted;
             }

@@ -342,19 +342,19 @@ Item {
         anchors.fill: parent
         hoverEnabled: true
         acceptedButtons: Qt.LeftButton | Qt.MiddleButton
-        onPressed: {
+        onPressed: mouse => {
             if (mouse.button == Qt.LeftButton) {
                 wasExpanded = plasmoid.expanded;
             } else if (mouse.button == Qt.MiddleButton) {
                 muteVolume();
             }
         }
-        onClicked: {
+        onClicked: mouse => {
             if (mouse.button == Qt.LeftButton) {
                 plasmoid.expanded = !wasExpanded;
             }
         }
-        onWheel: {
+        onWheel: wheel => {
             const delta = (wheel.inverted ? -1 : 1) * (wheel.angleDelta.y || wheel.angleDelta.x);
             wheelDelta += delta;
             // Magic number 120 for common "one click"
