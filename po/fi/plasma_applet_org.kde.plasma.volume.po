@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-19 02:06+0000\n"
+"POT-Creation-Date: 2023-04-28 02:09+0000\n"
 "PO-Revision-Date: 2023-03-04 20:05+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -42,52 +42,52 @@ msgstr "Mitään ei äänitetä"
 msgid "Currently not playing"
 msgstr "Mitään ei toisteta"
 
-#: contents/ui/ListItemBase.qml:184
+#: contents/ui/ListItemBase.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Lisävalinnat"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:188
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Näytä lisäasetukset kohteelle %1"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Poista vaimennus"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Vaimenna"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:207
 #, kde-format
 msgid "Unmute %1"
 msgstr "Poista vaimennus: %1"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:207
 #, kde-format
 msgid "Mute %1"
 msgstr "Vaimenna %1"
 
-#: contents/ui/ListItemBase.qml:225
+#: contents/ui/ListItemBase.qml:227
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Säädä äänenvoimakkuutta kohteelle %1"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:285
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:305
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
