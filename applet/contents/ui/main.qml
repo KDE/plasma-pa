@@ -4,7 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-import QtQuick 2.2
+import QtQuick 2.15
 import QtQuick.Layouts 1.0
 
 import org.kde.plasma.core 2.1 as PlasmaCore
@@ -112,18 +112,18 @@ Item {
         playFeedback();
     }
 
-    function increaseVolume() {
+    function increaseVolume(modifiers = Qt.NoModifier) {
         if (globalMute) {
             disableGlobalMute();
         }
-        changeSpeakerVolume(volumePercentStep);
+        changeSpeakerVolume((modifiers & Qt.ShiftModifier) ? 1 : volumePercentStep);
     }
 
-    function decreaseVolume() {
+    function decreaseVolume(modifiers = Qt.NoModifier) {
         if (globalMute) {
             disableGlobalMute();
         }
-        changeSpeakerVolume(-volumePercentStep);
+        changeSpeakerVolume((modifiers & Qt.ShiftModifier) ? -1 : -volumePercentStep);
     }
 
     function muteVolume() {
@@ -361,11 +361,11 @@ Item {
             // See: https://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
             while (wheelDelta >= 120) {
                 wheelDelta -= 120;
-                increaseVolume();
+                increaseVolume(wheel.modifiers);
             }
             while (wheelDelta <= -120) {
                 wheelDelta += 120;
-                decreaseVolume();
+                decreaseVolume(wheel.modifiers);
             }
         }
         PlasmaCore.IconItem {
@@ -395,10 +395,22 @@ Item {
             onTriggered: increaseVolume()
         }
         GlobalAction {
+            objectName: "increase_volume_small"
+            text: i18nc("@action shortcut", "Increase Volume by 1%")
+            shortcut: Qt.ShiftModifier | Qt.Key_VolumeUp
+            onTriggered: increaseVolume(Qt.ShiftModifier)
+        }
+        GlobalAction {
             objectName: "decrease_volume"
             text: i18n("Decrease Volume")
             shortcut: Qt.Key_VolumeDown
             onTriggered: decreaseVolume()
+        }
+        GlobalAction {
+            objectName: "decrease_volume_small"
+            text: i18nc("@action shortcut", "Decrease Volume by 1%")
+            shortcut: Qt.ShiftModifier | Qt.Key_VolumeDown
+            onTriggered: decreaseVolume(Qt.ShiftModifier)
         }
         GlobalAction {
             objectName: "mute"
