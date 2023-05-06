@@ -1,5 +1,0 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource prefix="/kcm_pulseaudio">
-    <file>icons/audio-speakers-symbolic.svg</file>
-</qresource>
-</RCC>

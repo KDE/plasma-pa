@@ -7,7 +7,7 @@
 
 import QtQuick 2.0
 import QtQuick.Controls 2.5 as QQC2
-import "../code/icon.js" as Icon
+import "icon.js" as Icon
 
 QQC2.ToolButton {
     property bool muted: true

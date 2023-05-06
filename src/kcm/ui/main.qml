@@ -434,7 +434,7 @@ ScrollViewKCM {
                             spacing: 0
 
                             Kirigami.Icon {
-                                source: "qrc:/kcm_pulseaudio/icons/audio-speakers-symbolic.svg"
+                                source: ":/kcm/kcm_pulseaudio/icons/audio-speakers-symbolic.svg"
                                 isMask: true
                                 color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                                 implicitWidth: Kirigami.Units.iconSizes.medium
