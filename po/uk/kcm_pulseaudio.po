@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-29 02:13+0000\n"
+"POT-Creation-Date: 2023-05-07 02:16+0000\n"
 "PO-Revision-Date: 2022-11-03 10:20+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -26,75 +26,74 @@ msgctxt "Name shown in debug pulseaudio tools"
 msgid "Plasma PA"
 msgstr "PA Плазми"
 
-#: kcm/package/contents/ui/CardListItem.qml:52
-#: kcm/package/contents/ui/DeviceListItem.qml:134
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:134
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Профіль:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:47
+#: kcm/ui/DeviceListItem.qml:47
 #, kde-format
 msgctxt "label of device items"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:88
+#: kcm/ui/DeviceListItem.qml:88
 #, kde-format
 msgid "Port:"
 msgstr "Порт:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
+#: kcm/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (недоступний)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
+#: kcm/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (від’єднано)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:194
+#: kcm/ui/DeviceListItem.qml:194
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:227
+#: kcm/ui/DeviceListItem.qml:227
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Тест"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:236
+#: kcm/ui/DeviceListItem.qml:236
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Баланс"
 
-#: kcm/package/contents/ui/main.qml:82
+#: kcm/ui/main.qml:82
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Показати неактивні пристрої"
 
-#: kcm/package/contents/ui/main.qml:89
+#: kcm/ui/main.qml:89
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Налаштувати керування гучністю…"
 
-#: kcm/package/contents/ui/main.qml:96
+#: kcm/ui/main.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Налаштувати…"
 
-#: kcm/package/contents/ui/main.qml:99
+#: kcm/ui/main.qml:99
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Потрібен модуль PulseAudio %1"
 
-#: kcm/package/contents/ui/main.qml:102
+#: kcm/ui/main.qml:102
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -102,7 +101,7 @@ msgstr ""
 "Додати віртуальний пристрій виведення для одночасного виведення на усі "
 "локальні звукові картки"
 
-#: kcm/package/contents/ui/main.qml:108
+#: kcm/ui/main.qml:108
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -110,32 +109,32 @@ msgstr ""
 "Автоматично перемикати усі запущені потоки, якщо стає доступним нове "
 "виведення"
 
-#: kcm/package/contents/ui/main.qml:145
+#: kcm/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
 msgstr "Пристрої відтворення"
 
-#: kcm/package/contents/ui/main.qml:169
+#: kcm/ui/main.qml:169
 #, kde-format
 msgid "Recording Devices"
 msgstr "Пристрої запису"
 
-#: kcm/package/contents/ui/main.qml:193
+#: kcm/ui/main.qml:193
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Неактивні картки"
 
-#: kcm/package/contents/ui/main.qml:227
+#: kcm/ui/main.qml:227
 #, kde-format
 msgid "Playback Streams"
 msgstr "Потоки відтворення даних"
 
-#: kcm/package/contents/ui/main.qml:276
+#: kcm/ui/main.qml:276
 #, kde-format
 msgid "Recording Streams"
 msgstr "Потоки запису"
 
-#: kcm/package/contents/ui/main.qml:310
+#: kcm/ui/main.qml:310
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -147,132 +146,131 @@ msgstr ""
 "Помилка під час спроби відтворити тестовий звук. \n"
 "Повідомлення системи: «%1»"
 
-#: kcm/package/contents/ui/main.qml:406
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Front Left"
 msgstr "Передній лівий"
 
-#: kcm/package/contents/ui/main.qml:407
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Front Center"
 msgstr "Передній центральний"
 
-#: kcm/package/contents/ui/main.qml:408
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Front Right"
 msgstr "Передній правий"
 
-#: kcm/package/contents/ui/main.qml:409
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Side Left"
 msgstr "Бічний лівий"
 
-#: kcm/package/contents/ui/main.qml:410
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Side Right"
 msgstr "Бічний правий"
 
-#: kcm/package/contents/ui/main.qml:411
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Rear Left"
 msgstr "Задній лівий"
 
-#: kcm/package/contents/ui/main.qml:412
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Subwoofer"
 msgstr "Сабвуфер"
 
-#: kcm/package/contents/ui/main.qml:413
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Rear Right"
 msgstr "Задній правий"
 
-#: kcm/package/contents/ui/main.qml:414
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Mono"
 msgstr "Моно"
 
-#: kcm/package/contents/ui/main.qml:468
+#: kcm/ui/main.qml:468
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Натисніть на гучномовці для перевірки звуку"
 
-#: kcm/package/contents/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Увімкнути звук у %1"
 
-#: kcm/package/contents/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr "Вимкнути звук %1"
 
-#: kcm/package/contents/ui/StreamListItem.qml:57
+#: kcm/ui/StreamListItem.qml:57
 #, kde-format
 msgid "Notification Sounds"
 msgstr "Звуки сповіщень"
 
-#: kcm/package/contents/ui/StreamListItem.qml:63
+#: kcm/ui/StreamListItem.qml:63
 #, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:15
+#: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
 msgstr "Керування гучністю"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:31
+#: kcm/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Збільшити максимальну гучність"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:39
+#: kcm/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
 msgstr "Крок зміни гучності:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:63
+#: kcm/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Супроводжувати звуком зміни у:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:64
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:73
+#: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
 msgstr "Гучність звуку"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:72
+#: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
 msgstr "Супроводжувати візуально зміни у:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:80
+#: kcm/ui/VolumeControlsConfig.qml:80
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "Чутливості мікрофона"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:87
+#: kcm/ui/VolumeControlsConfig.qml:87
 #, kde-format
 msgid "Mute state"
 msgstr "Стан вимикання звуку"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:94
+#: kcm/ui/VolumeControlsConfig.qml:94
 #, kde-format
 msgid "Default output device"
 msgstr "Типовому пристрої відтворення"
 
-#: kcm/package/contents/ui/VolumeSlider.qml:51
+#: kcm/ui/VolumeSlider.qml:51
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/package/contents/ui/VolumeSlider.qml:71
+#: kcm/ui/VolumeSlider.qml:71
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

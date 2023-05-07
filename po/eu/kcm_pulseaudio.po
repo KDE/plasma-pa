@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-29 02:13+0000\n"
+"POT-Creation-Date: 2023-05-07 02:16+0000\n"
 "PO-Revision-Date: 2022-11-03 05:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -26,75 +26,74 @@ msgctxt "Name shown in debug pulseaudio tools"
 msgid "Plasma PA"
 msgstr "Plasma PA"
 
-#: kcm/package/contents/ui/CardListItem.qml:52
-#: kcm/package/contents/ui/DeviceListItem.qml:134
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:134
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Profila:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:47
+#: kcm/ui/DeviceListItem.qml:47
 #, kde-format
 msgctxt "label of device items"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:88
+#: kcm/ui/DeviceListItem.qml:88
 #, kde-format
 msgid "Port:"
 msgstr "Ataka:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
+#: kcm/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (eskuraezina)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
+#: kcm/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (entxufatu gabe)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:194
+#: kcm/ui/DeviceListItem.qml:194
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:227
+#: kcm/ui/DeviceListItem.qml:227
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Proba"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:236
+#: kcm/ui/DeviceListItem.qml:236
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Oreka"
 
-#: kcm/package/contents/ui/main.qml:82
+#: kcm/ui/main.qml:82
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Erakutsi aktibo ez dauden gailuak"
 
-#: kcm/package/contents/ui/main.qml:89
+#: kcm/ui/main.qml:89
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Konfiguratu bolumen-aginteak…"
 
-#: kcm/package/contents/ui/main.qml:96
+#: kcm/ui/main.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Konfiguratu…"
 
-#: kcm/package/contents/ui/main.qml:99
+#: kcm/ui/main.qml:99
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "%1 PulseAudio modulua behar du"
 
-#: kcm/package/contents/ui/main.qml:102
+#: kcm/ui/main.qml:102
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -102,7 +101,7 @@ msgstr ""
 "Gehitu alegiazko irteera gailua, irteera aldi berean soinu txartel lokal "
 "guztietara bideratzeko"
 
-#: kcm/package/contents/ui/main.qml:108
+#: kcm/ui/main.qml:108
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -110,32 +109,32 @@ msgstr ""
 "Automatikoki aldatu martxan dauden korronte guztiak irteerako berri bat "
 "erabilgarri jartzen denean"
 
-#: kcm/package/contents/ui/main.qml:145
+#: kcm/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
 msgstr "Atzera-jotzeko gailuak"
 
-#: kcm/package/contents/ui/main.qml:169
+#: kcm/ui/main.qml:169
 #, kde-format
 msgid "Recording Devices"
 msgstr "Grabatzeko gailuak"
 
-#: kcm/package/contents/ui/main.qml:193
+#: kcm/ui/main.qml:193
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Txartel ez aktiboak"
 
-#: kcm/package/contents/ui/main.qml:227
+#: kcm/ui/main.qml:227
 #, kde-format
 msgid "Playback Streams"
 msgstr "Atzera-jotze korronteak"
 
-#: kcm/package/contents/ui/main.qml:276
+#: kcm/ui/main.qml:276
 #, kde-format
 msgid "Recording Streams"
 msgstr "Grabatze korronteak"
 
-#: kcm/package/contents/ui/main.qml:310
+#: kcm/ui/main.qml:310
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -147,132 +146,131 @@ msgstr ""
 "Errorea probako soinu bat jotzeko saiakeran.\n"
 "Sistemak esan du: \"%1\""
 
-#: kcm/package/contents/ui/main.qml:406
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Front Left"
 msgstr "Aurreko ezkerrekoa"
 
-#: kcm/package/contents/ui/main.qml:407
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Front Center"
 msgstr "Aurreko erdikoa"
 
-#: kcm/package/contents/ui/main.qml:408
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Front Right"
 msgstr "Aurreko eskuinekoa"
 
-#: kcm/package/contents/ui/main.qml:409
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Side Left"
 msgstr "Alboko ezkerrekoa"
 
-#: kcm/package/contents/ui/main.qml:410
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Side Right"
 msgstr "Alboko eskuinekoa"
 
-#: kcm/package/contents/ui/main.qml:411
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Rear Left"
 msgstr "Atzeko ezkerrekoa"
 
-#: kcm/package/contents/ui/main.qml:412
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Subwoofer"
 msgstr "Azpibaxuen bozgorailua"
 
-#: kcm/package/contents/ui/main.qml:413
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Rear Right"
 msgstr "Atzeko eskuinekoa"
 
-#: kcm/package/contents/ui/main.qml:414
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:468
+#: kcm/ui/main.qml:468
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Egin klik bozgorailuetako edozeinetan soinua probatzeko"
 
-#: kcm/package/contents/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Ozendu %1"
 
-#: kcm/package/contents/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr "Isilarazi %1"
 
-#: kcm/package/contents/ui/StreamListItem.qml:57
+#: kcm/ui/StreamListItem.qml:57
 #, kde-format
 msgid "Notification Sounds"
 msgstr "Jakinarazpen soinuak"
 
-#: kcm/package/contents/ui/StreamListItem.qml:63
+#: kcm/ui/StreamListItem.qml:63
 #, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:15
+#: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
 msgstr "Bolumen-aginteak"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:31
+#: kcm/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altxatu bolumen muga"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:39
+#: kcm/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
 msgstr "Bolumen aldaketa urratsa:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:63
+#: kcm/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Jo audio-berrelikatzea hau aldatzen denean:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:64
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:73
+#: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
 msgstr "Audioaren bolumena"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:72
+#: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
 msgstr "Erakutsi ikus-berrelikatzea hau aldatzen denean:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:80
+#: kcm/ui/VolumeControlsConfig.qml:80
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "Mikrofonoaren sentikortasuna"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:87
+#: kcm/ui/VolumeControlsConfig.qml:87
 #, kde-format
 msgid "Mute state"
 msgstr "Isilarazte egoera"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:94
+#: kcm/ui/VolumeControlsConfig.qml:94
 #, kde-format
 msgid "Default output device"
 msgstr "Irteerako gailu lehenetsia"
 
-#: kcm/package/contents/ui/VolumeSlider.qml:51
+#: kcm/ui/VolumeSlider.qml:51
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%%1"
 
-#: kcm/package/contents/ui/VolumeSlider.qml:71
+#: kcm/ui/VolumeSlider.qml:71
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

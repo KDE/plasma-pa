@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-29 02:13+0000\n"
+"POT-Creation-Date: 2023-05-07 02:16+0000\n"
 "PO-Revision-Date: 2023-03-28 18:40+0200\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -24,75 +24,74 @@ msgctxt "Name shown in debug pulseaudio tools"
 msgid "Plasma PA"
 msgstr "Plasma PA"
 
-#: kcm/package/contents/ui/CardListItem.qml:52
-#: kcm/package/contents/ui/DeviceListItem.qml:134
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:134
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Profil:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:47
+#: kcm/ui/DeviceListItem.qml:47
 #, kde-format
 msgctxt "label of device items"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:88
+#: kcm/ui/DeviceListItem.qml:88
 #, kde-format
 msgid "Port:"
 msgstr "Port:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
+#: kcm/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (nedostupné)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
+#: kcm/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (nezapojené)"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:194
+#: kcm/ui/DeviceListItem.qml:194
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:227
+#: kcm/ui/DeviceListItem.qml:227
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Vyskúšať"
 
-#: kcm/package/contents/ui/DeviceListItem.qml:236
+#: kcm/ui/DeviceListItem.qml:236
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Vyváženie"
 
-#: kcm/package/contents/ui/main.qml:82
+#: kcm/ui/main.qml:82
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Zobraziť neaktívne zariadenia"
 
-#: kcm/package/contents/ui/main.qml:89
+#: kcm/ui/main.qml:89
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Konfigurovať ovládanie hlasitosti..."
 
-#: kcm/package/contents/ui/main.qml:96
+#: kcm/ui/main.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Nastaviť..."
 
-#: kcm/package/contents/ui/main.qml:99
+#: kcm/ui/main.qml:99
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Vyžaduje PulseAudio modul %1"
 
-#: kcm/package/contents/ui/main.qml:102
+#: kcm/ui/main.qml:102
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -100,39 +99,39 @@ msgstr ""
 "Pridať virtuálne výstupné zariadenie pre súčasný výstup na všetkých "
 "miestnych zvukových kartách"
 
-#: kcm/package/contents/ui/main.qml:108
+#: kcm/ui/main.qml:108
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
 "Automaticky prepnúť všetky bežiace prúdy pri dostupnosti nového výstupu"
 
-#: kcm/package/contents/ui/main.qml:145
+#: kcm/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
 msgstr "Prehrávacie zariadenie"
 
-#: kcm/package/contents/ui/main.qml:169
+#: kcm/ui/main.qml:169
 #, kde-format
 msgid "Recording Devices"
 msgstr "Nahrávacie zariadenia"
 
-#: kcm/package/contents/ui/main.qml:193
+#: kcm/ui/main.qml:193
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Neaktívne karty"
 
-#: kcm/package/contents/ui/main.qml:227
+#: kcm/ui/main.qml:227
 #, kde-format
 msgid "Playback Streams"
 msgstr "Prehrávacie prúdy"
 
-#: kcm/package/contents/ui/main.qml:276
+#: kcm/ui/main.qml:276
 #, kde-format
 msgid "Recording Streams"
 msgstr "Nahrávacie prúdy"
 
-#: kcm/package/contents/ui/main.qml:310
+#: kcm/ui/main.qml:310
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -144,132 +143,131 @@ msgstr ""
 "Chyba pri pokuse o prehranie testovacieho zvuku. \n"
 "Systém odpovedal: \"%1\""
 
-#: kcm/package/contents/ui/main.qml:406
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Front Left"
 msgstr "Ľavý predný"
 
-#: kcm/package/contents/ui/main.qml:407
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Front Center"
 msgstr "Ľavý stredný"
 
-#: kcm/package/contents/ui/main.qml:408
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Front Right"
 msgstr "Pravý predný"
 
-#: kcm/package/contents/ui/main.qml:409
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Side Left"
 msgstr "Ľavý stredný"
 
-#: kcm/package/contents/ui/main.qml:410
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Side Right"
 msgstr "Pravý stredný"
 
-#: kcm/package/contents/ui/main.qml:411
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Rear Left"
 msgstr "Ľavý predný"
 
-#: kcm/package/contents/ui/main.qml:412
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/package/contents/ui/main.qml:413
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Rear Right"
 msgstr "Pravý predný"
 
-#: kcm/package/contents/ui/main.qml:414
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/package/contents/ui/main.qml:468
+#: kcm/ui/main.qml:468
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Kliknutím na reproduktor otestujete zvuk"
 
-#: kcm/package/contents/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Zrušiť stlmenie %1"
 
-#: kcm/package/contents/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr "Stlmiť %1"
 
-#: kcm/package/contents/ui/StreamListItem.qml:57
+#: kcm/ui/StreamListItem.qml:57
 #, kde-format
 msgid "Notification Sounds"
 msgstr "Zvuky notifikácií"
 
-#: kcm/package/contents/ui/StreamListItem.qml:63
+#: kcm/ui/StreamListItem.qml:63
 #, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:15
+#: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
 msgstr "Ovládanie hlasitosti"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:31
+#: kcm/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvýšiť maximálnu hlasitosť"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:39
+#: kcm/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
 msgstr "Krok zmeny hlasitosti:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:63
+#: kcm/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Prehrať zvukovú spätnú väzbu pre zmeny:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:64
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:73
+#: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
 msgstr "Hlasitosť zvuku"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:72
+#: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
 msgstr "Zobraziť vizuálnu spätnú väzbu pre zmeny:"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:80
+#: kcm/ui/VolumeControlsConfig.qml:80
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "Citlivosť mikrofónu"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:87
+#: kcm/ui/VolumeControlsConfig.qml:87
 #, kde-format
 msgid "Mute state"
 msgstr "Stav stlmenia"
 
-#: kcm/package/contents/ui/VolumeControlsConfig.qml:94
+#: kcm/ui/VolumeControlsConfig.qml:94
 #, kde-format
 msgid "Default output device"
 msgstr "Predvolené výstupné zariadenie"
 
-#: kcm/package/contents/ui/VolumeSlider.qml:51
+#: kcm/ui/VolumeSlider.qml:51
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/package/contents/ui/VolumeSlider.qml:71
+#: kcm/ui/VolumeSlider.qml:71
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
