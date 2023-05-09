@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-07 02:16+0000\n"
-"PO-Revision-Date: 2023-05-01 23:40+0200\n"
+"PO-Revision-Date: 2023-05-04 22:35+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -21,30 +21,30 @@ msgstr ""
 #, kde-format
 msgctxt "Name shown in debug pulseaudio tools"
 msgid "Plasma PA"
-msgstr ""
+msgstr "Plasma PA"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:134
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
-msgstr ""
+msgstr "Perfil:"
 
 #: kcm/ui/DeviceListItem.qml:47
 #, kde-format
 msgctxt "label of device items"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kcm/ui/DeviceListItem.qml:88
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Puertu:"
 
 #: kcm/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
-msgstr ""
+msgstr "%1 (nun ta disponible)"
 
 #: kcm/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
 #, kde-format
@@ -56,19 +56,19 @@ msgstr ""
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:227
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
-msgstr ""
+msgstr "Probar"
 
 #: kcm/ui/DeviceListItem.qml:236
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
-msgstr ""
+msgstr "Balance"
 
 #: kcm/ui/main.qml:82
 #, kde-format
@@ -78,12 +78,12 @@ msgstr ""
 #: kcm/ui/main.qml:89
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr ""
+msgstr "Configurar los controles del volume…"
 
 #: kcm/ui/main.qml:96
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "Configurar…"
 
 #: kcm/ui/main.qml:99
 #, kde-format
@@ -105,12 +105,12 @@ msgstr ""
 #: kcm/ui/main.qml:145
 #, kde-format
 msgid "Playback Devices"
-msgstr ""
+msgstr "Preseos de reproducción"
 
 #: kcm/ui/main.qml:169
 #, kde-format
 msgid "Recording Devices"
-msgstr ""
+msgstr "Preseos de grabación"
 
 #: kcm/ui/main.qml:193
 #, kde-format
@@ -185,7 +185,7 @@ msgstr ""
 #: kcm/ui/main.qml:468
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr ""
+msgstr "Calca en cualesquier altavoz pa probar el soníu"
 
 #: kcm/ui/MuteButton.qml:22
 #, kde-format
@@ -233,7 +233,7 @@ msgstr ""
 #: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Volume del audiu"
 
 #: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
@@ -243,7 +243,7 @@ msgstr ""
 #: kcm/ui/VolumeControlsConfig.qml:80
 #, kde-format
 msgid "Microphone sensitivity"
-msgstr ""
+msgstr "Sensibilidá del micrófonu"
 
 #: kcm/ui/VolumeControlsConfig.qml:87
 #, kde-format
@@ -259,13 +259,13 @@ msgstr ""
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: kcm/ui/VolumeSlider.qml:71
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: qml/listitemmenu.cpp:342
 #, kde-format
