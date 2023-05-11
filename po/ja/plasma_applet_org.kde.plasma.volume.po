@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 02:09+0000\n"
+"POT-Creation-Date: 2023-05-11 02:04+0000\n"
 "PO-Revision-Date: 2023-04-07 23:42-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -137,66 +137,80 @@ msgid "Increase Volume"
 msgstr "音量を上げる"
 
 #: contents/ui/main.qml:399
+#, fuzzy, kde-format
+#| msgid "Increase Volume"
+msgctxt "@action shortcut"
+msgid "Increase Volume by 1%"
+msgstr "音量を上げる"
+
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Decrease Volume"
 msgstr "音量を下げる"
 
-#: contents/ui/main.qml:405
+#: contents/ui/main.qml:411
+#, fuzzy, kde-format
+#| msgid "Decrease Volume"
+msgctxt "@action shortcut"
+msgid "Decrease Volume by 1%"
+msgstr "音量を下げる"
+
+#: contents/ui/main.qml:417
 #, kde-format
 msgid "Mute"
 msgstr "ミュート"
 
-#: contents/ui/main.qml:411
+#: contents/ui/main.qml:423
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "マイクの音量を上げる"
 
-#: contents/ui/main.qml:417
+#: contents/ui/main.qml:429
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "マイクの音量を下げる"
 
-#: contents/ui/main.qml:423
+#: contents/ui/main.qml:435
 #, kde-format
 msgid "Mute Microphone"
 msgstr "マイクをミュート"
 
-#: contents/ui/main.qml:527
+#: contents/ui/main.qml:539
 #, kde-format
 msgid "Devices"
 msgstr "デバイス"
 
-#: contents/ui/main.qml:534
+#: contents/ui/main.qml:546
 #, kde-format
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
+#: contents/ui/main.qml:567 contents/ui/main.qml:569 contents/ui/main.qml:799
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "すべての再生デバイスを強制的にミュート"
 
-#: contents/ui/main.qml:591
+#: contents/ui/main.qml:603
 #, kde-format
 msgid "No output or input devices found"
 msgstr "入力や出力デバイスが見つかりません"
 
-#: contents/ui/main.qml:610
+#: contents/ui/main.qml:622
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "再生や録音をしているアプリケーションなし"
 
-#: contents/ui/main.qml:761
+#: contents/ui/main.qml:773
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "最大音量を上げる"
 
-#: contents/ui/main.qml:791
+#: contents/ui/main.qml:803
 #, kde-format
 msgid "Show virtual devices"
 msgstr "仮想デバイスを表示"
 
-#: contents/ui/main.qml:797
+#: contents/ui/main.qml:809
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "音声デバイスを設定(&C)..."

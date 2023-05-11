@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 02:09+0000\n"
+"POT-Creation-Date: 2023-05-11 02:04+0000\n"
 "PO-Revision-Date: 2023-02-01 02:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -137,66 +137,80 @@ msgid "Increase Volume"
 msgstr "ხმის აწევა"
 
 #: contents/ui/main.qml:399
+#, fuzzy, kde-format
+#| msgid "Increase Volume"
+msgctxt "@action shortcut"
+msgid "Increase Volume by 1%"
+msgstr "ხმის აწევა"
+
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Decrease Volume"
 msgstr "ხმის დაწევა"
 
-#: contents/ui/main.qml:405
+#: contents/ui/main.qml:411
+#, fuzzy, kde-format
+#| msgid "Decrease Volume"
+msgctxt "@action shortcut"
+msgid "Decrease Volume by 1%"
+msgstr "ხმის დაწევა"
+
+#: contents/ui/main.qml:417
 #, kde-format
 msgid "Mute"
 msgstr "დადუმება"
 
-#: contents/ui/main.qml:411
+#: contents/ui/main.qml:423
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "მიკროფონის ხმის აწევა"
 
-#: contents/ui/main.qml:417
+#: contents/ui/main.qml:429
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "მიკროფონის ხმის დაწევა"
 
-#: contents/ui/main.qml:423
+#: contents/ui/main.qml:435
 #, kde-format
 msgid "Mute Microphone"
 msgstr "მიკროფონის დადუმება"
 
-#: contents/ui/main.qml:527
+#: contents/ui/main.qml:539
 #, kde-format
 msgid "Devices"
 msgstr "მოწყობილობები"
 
-#: contents/ui/main.qml:534
+#: contents/ui/main.qml:546
 #, kde-format
 msgid "Applications"
 msgstr "პროგრამები"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
+#: contents/ui/main.qml:567 contents/ui/main.qml:569 contents/ui/main.qml:799
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ყველა დამკვრელი მოწყობილბის დადუმება"
 
-#: contents/ui/main.qml:591
+#: contents/ui/main.qml:603
 #, kde-format
 msgid "No output or input devices found"
 msgstr "არც შესატანი, არც გამოსატანი მოწყობილობა ნაპოვნი არაა"
 
-#: contents/ui/main.qml:610
+#: contents/ui/main.qml:622
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ამჟამად აუდიოს არც ერთი აპლიკაცია არ უკრავს და არც იწერს"
 
-#: contents/ui/main.qml:761
+#: contents/ui/main.qml:773
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "მაქსიმალური ხმის აწევა"
 
-#: contents/ui/main.qml:791
+#: contents/ui/main.qml:803
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ვირტუალური მოწყობილობების ჩვენება"
 
-#: contents/ui/main.qml:797
+#: contents/ui/main.qml:809
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "აუდიო მოწყობილობების &მორგება…"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 02:09+0000\n"
+"POT-Creation-Date: 2023-05-11 02:04+0000\n"
 "PO-Revision-Date: 2023-02-08 13:37+0100\n"
 "Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -135,66 +135,80 @@ msgid "Increase Volume"
 msgstr "Lautstärke erhöhen"
 
 #: contents/ui/main.qml:399
+#, fuzzy, kde-format
+#| msgid "Increase Volume"
+msgctxt "@action shortcut"
+msgid "Increase Volume by 1%"
+msgstr "Lautstärke erhöhen"
+
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Lautstärke verringern"
 
-#: contents/ui/main.qml:405
+#: contents/ui/main.qml:411
+#, fuzzy, kde-format
+#| msgid "Decrease Volume"
+msgctxt "@action shortcut"
+msgid "Decrease Volume by 1%"
+msgstr "Lautstärke verringern"
+
+#: contents/ui/main.qml:417
 #, kde-format
 msgid "Mute"
 msgstr "Stummschalten"
 
-#: contents/ui/main.qml:411
+#: contents/ui/main.qml:423
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Mikrofonlautstärke erhöhen"
 
-#: contents/ui/main.qml:417
+#: contents/ui/main.qml:429
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Mikrofonlautstärke verringern"
 
-#: contents/ui/main.qml:423
+#: contents/ui/main.qml:435
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Mikrofon stummschalten"
 
-#: contents/ui/main.qml:527
+#: contents/ui/main.qml:539
 #, kde-format
 msgid "Devices"
 msgstr "Geräte"
 
-#: contents/ui/main.qml:534
+#: contents/ui/main.qml:546
 #, kde-format
 msgid "Applications"
 msgstr "Anwendungen"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
+#: contents/ui/main.qml:567 contents/ui/main.qml:569 contents/ui/main.qml:799
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Stummschalten aller Wiedergabegeräte erzwingen"
 
-#: contents/ui/main.qml:591
+#: contents/ui/main.qml:603
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Keine Eingabe- oder Ausgabegeräte gefunden"
 
-#: contents/ui/main.qml:610
+#: contents/ui/main.qml:622
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Keine Anwendung spielt Audio ab oder nimmt Audio auf"
 
-#: contents/ui/main.qml:761
+#: contents/ui/main.qml:773
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximale Lautstärke erhöhen"
 
-#: contents/ui/main.qml:791
+#: contents/ui/main.qml:803
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuelle Geräte anzeigen"
 
-#: contents/ui/main.qml:797
+#: contents/ui/main.qml:809
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Audio-Geräte einrichten ..."

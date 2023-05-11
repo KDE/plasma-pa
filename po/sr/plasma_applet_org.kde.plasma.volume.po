@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 02:09+0000\n"
+"POT-Creation-Date: 2023-05-11 02:04+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -145,67 +145,81 @@ msgid "Increase Volume"
 msgstr "Повећај јачину"
 
 #: contents/ui/main.qml:399
+#, fuzzy, kde-format
+#| msgid "Increase Volume"
+msgctxt "@action shortcut"
+msgid "Increase Volume by 1%"
+msgstr "Повећај јачину"
+
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Смањи јачину"
 
-#: contents/ui/main.qml:405
+#: contents/ui/main.qml:411
+#, fuzzy, kde-format
+#| msgid "Decrease Volume"
+msgctxt "@action shortcut"
+msgid "Decrease Volume by 1%"
+msgstr "Смањи јачину"
+
+#: contents/ui/main.qml:417
 #, kde-format
 msgid "Mute"
 msgstr "Утишај"
 
-#: contents/ui/main.qml:411
+#: contents/ui/main.qml:423
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Повећај јачину микрофона"
 
-#: contents/ui/main.qml:417
+#: contents/ui/main.qml:429
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Смањи јачину микрофона"
 
-#: contents/ui/main.qml:423
+#: contents/ui/main.qml:435
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Утишај микрофон"
 
-#: contents/ui/main.qml:527
+#: contents/ui/main.qml:539
 #, kde-format
 msgid "Devices"
 msgstr "Уређаји"
 
-#: contents/ui/main.qml:534
+#: contents/ui/main.qml:546
 #, kde-format
 msgid "Applications"
 msgstr "Програми"
 
-#: contents/ui/main.qml:555 contents/ui/main.qml:557 contents/ui/main.qml:787
+#: contents/ui/main.qml:567 contents/ui/main.qml:569 contents/ui/main.qml:799
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: contents/ui/main.qml:591
+#: contents/ui/main.qml:603
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Није нађен ниједан излазни или улазни уређај."
 
-#: contents/ui/main.qml:610
+#: contents/ui/main.qml:622
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ниједан програм не пушта нити снима звук."
 
-#: contents/ui/main.qml:761
+#: contents/ui/main.qml:773
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Подигни највећу јачину"
 
-#: contents/ui/main.qml:791
+#: contents/ui/main.qml:803
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Није нађен ниједан излазни или улазни уређај."
 
-#: contents/ui/main.qml:797
+#: contents/ui/main.qml:809
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
