@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 02:04+0000\n"
-"PO-Revision-Date: 2023-04-11 01:14+0300\n"
+"PO-Revision-Date: 2023-05-11 11:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -137,11 +137,10 @@ msgid "Increase Volume"
 msgstr "Sesi Artır"
 
 #: contents/ui/main.qml:399
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "Sesi Artır"
+msgstr "Sesi %​1 Artır"
 
 #: contents/ui/main.qml:405
 #, kde-format
@@ -149,11 +148,10 @@ msgid "Decrease Volume"
 msgstr "Sesi Azalt"
 
 #: contents/ui/main.qml:411
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "Sesi Azalt"
+msgstr "Sesi %​1 Azalt"
 
 #: contents/ui/main.qml:417
 #, kde-format
