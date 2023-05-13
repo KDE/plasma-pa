@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 02:04+0000\n"
-"PO-Revision-Date: 2023-03-25 15:22+0100\n"
+"PO-Revision-Date: 2023-05-12 21:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -137,11 +137,10 @@ msgid "Increase Volume"
 msgstr "Subir o volume"
 
 #: contents/ui/main.qml:399
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "Subir o volume"
+msgstr "Subir o volume un 1%"
 
 #: contents/ui/main.qml:405
 #, kde-format
@@ -149,11 +148,10 @@ msgid "Decrease Volume"
 msgstr "Baixar o volume"
 
 #: contents/ui/main.qml:411
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "Baixar o volume"
+msgstr "Baixar o volume un 1%"
 
 #: contents/ui/main.qml:417
 #, kde-format

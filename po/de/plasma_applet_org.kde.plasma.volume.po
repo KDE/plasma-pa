@@ -1,20 +1,20 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2016, 2018, 2022.
+# Frederik Schwarzer <schwarzer@kde.org>, 2016, 2018, 2022, 2023.
 # Jannick Kuhr <opensource@kuhr.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 02:04+0000\n"
-"PO-Revision-Date: 2023-02-08 13:37+0100\n"
-"Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
+"PO-Revision-Date: 2023-05-12 19:37+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -135,11 +135,10 @@ msgid "Increase Volume"
 msgstr "Lautstärke erhöhen"
 
 #: contents/ui/main.qml:399
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "Lautstärke erhöhen"
+msgstr "Lautstärke um 1% erhöhen"
 
 #: contents/ui/main.qml:405
 #, kde-format
@@ -147,11 +146,10 @@ msgid "Decrease Volume"
 msgstr "Lautstärke verringern"
 
 #: contents/ui/main.qml:411
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "Lautstärke verringern"
+msgstr "Lautstärke um 1% verringern"
 
 #: contents/ui/main.qml:417
 #, kde-format
