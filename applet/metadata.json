@@ -70,6 +70,7 @@
         "Description[tr]": "Aygıtların ve uygulamaların ses düzeyini ayarlayın",
         "Description[uk]": "Коригування гучності пристроїв і звуків програм",
         "Description[x-test]": "xxAdjust the volume of devices and applicationsxx",
+        "Description[zh_CN]": "调整设备和应用程序的音量",
         "Description[zh_TW]": "調整裝置與應用程式的音量",
         "EnabledByDefault": true,
         "FormFactors": [
@@ -125,6 +126,7 @@
         "Name[tr]": "Ses Düzeyi",
         "Name[uk]": "Гучність",
         "Name[x-test]": "xxAudio Volumexx",
+        "Name[zh_CN]": "音量",
         "Name[zh_TW]": "音效音量",
         "Version": "1.0.0",
         "Website": ""
