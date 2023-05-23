@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 02:04+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-05-22 13:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/plasma-pa/plasma_applet_org.kde.plasma."
+"X-Crowdin-File: /kf6-trunk/messages/plasma-pa/plasma_applet_org.kde.plasma."
 "volume.pot\n"
-"X-Crowdin-File-ID: 4146\n"
+"X-Crowdin-File-ID: 42993\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -76,7 +76,7 @@ msgstr "静音 %1"
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
-msgstr "调节 %1 的音量"
+msgstr "调整 %1 的音量"
 
 #: contents/ui/ListItemBase.qml:285
 #, kde-format
@@ -98,7 +98,7 @@ msgstr "音频音量"
 #: contents/ui/main.qml:56
 #, kde-format
 msgid "Audio Muted"
-msgstr "音频静音"
+msgstr "音频已静音"
 
 #: contents/ui/main.qml:58
 #, kde-format
@@ -137,11 +137,10 @@ msgid "Increase Volume"
 msgstr "提高音量"
 
 #: contents/ui/main.qml:399
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "提高音量"
+msgstr "音量提高 1%"
 
 #: contents/ui/main.qml:405
 #, kde-format
@@ -149,11 +148,10 @@ msgid "Decrease Volume"
 msgstr "降低音量"
 
 #: contents/ui/main.qml:411
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "降低音量"
+msgstr "音量降低 1%"
 
 #: contents/ui/main.qml:417
 #, kde-format

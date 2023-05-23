@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-07 02:16+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-05-22 13:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/plasma-pa/kcm_pulseaudio.pot\n"
-"X-Crowdin-File-ID: 4134\n"
+"X-Crowdin-File: /kf6-trunk/messages/plasma-pa/kcm_pulseaudio.pot\n"
+"X-Crowdin-File-ID: 43649\n"
 
 #: context.cpp:596
 #, kde-format
@@ -230,7 +230,7 @@ msgstr "音量调整步长："
 #: kcm/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr "更改时播放声音反馈："
+msgstr "播放声音反馈，如果更改了："
 
 #: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
 #, kde-format
@@ -240,7 +240,7 @@ msgstr "音频音量"
 #: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr "更改时显示视觉反馈："
+msgstr "显示视觉反馈，如果更改了："
 
 #: kcm/ui/VolumeControlsConfig.qml:80
 #, kde-format
@@ -349,6 +349,3 @@ msgstr "%1 正在使用麦克风 (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 正在使用麦克风"
-
-#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
-#~ msgstr "此模块用于配置 PulseAudio 音频子系统的功能。"
