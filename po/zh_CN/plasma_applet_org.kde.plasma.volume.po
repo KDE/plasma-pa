@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-19 02:43+0000\n"
-"PO-Revision-Date: 2023-04-29 08:36\n"
+"PO-Revision-Date: 2023-05-22 14:03\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -76,7 +76,7 @@ msgstr "静音 %1"
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
-msgstr "调节 %1 的音量"
+msgstr "调整 %1 的音量"
 
 #: contents/ui/ListItemBase.qml:283
 #, kde-format
@@ -98,7 +98,7 @@ msgstr "音频音量"
 #: contents/ui/main.qml:56
 #, kde-format
 msgid "Audio Muted"
-msgstr "音频静音"
+msgstr "音频已静音"
 
 #: contents/ui/main.qml:58
 #, kde-format
