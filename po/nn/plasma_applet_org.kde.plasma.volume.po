@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 02:04+0000\n"
-"PO-Revision-Date: 2023-02-09 21:42+0100\n"
+"PO-Revision-Date: 2023-05-27 14:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.04.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -139,11 +139,10 @@ msgid "Increase Volume"
 msgstr "Høgare lyd"
 
 #: contents/ui/main.qml:399
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "Høgare lyd"
+msgstr "Auk lydstyrken med 1 %"
 
 #: contents/ui/main.qml:405
 #, kde-format
@@ -151,16 +150,15 @@ msgid "Decrease Volume"
 msgstr "Lågare lyd"
 
 #: contents/ui/main.qml:411
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "Lågare lyd"
+msgstr "Senk lydstyrken med 1 %"
 
 #: contents/ui/main.qml:417
 #, kde-format
 msgid "Mute"
-msgstr "Demp lyd"
+msgstr "Demp lyden"
 
 #: contents/ui/main.qml:423
 #, kde-format
