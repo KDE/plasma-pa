@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 02:04+0000\n"
-"PO-Revision-Date: 2023-02-01 10:35+0100\n"
+"PO-Revision-Date: 2023-05-31 09:50+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -137,11 +137,10 @@ msgid "Increase Volume"
 msgstr "Zvýšit hlasitost"
 
 #: contents/ui/main.qml:399
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "Zvýšit hlasitost"
+msgstr "Zvýšit hlasitost o 1%"
 
 #: contents/ui/main.qml:405
 #, kde-format
@@ -149,11 +148,10 @@ msgid "Decrease Volume"
 msgstr "Snížit hlasitost"
 
 #: contents/ui/main.qml:411
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "Snížit hlasitost"
+msgstr "Snížit hlasitost o 1%"
 
 #: contents/ui/main.qml:417
 #, kde-format
