@@ -13,12 +13,12 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
 
 import org.kde.coreaddons 1.0 as KCoreAddons
-import org.kde.kcm 1.3
+import org.kde.kcmutils as KCM
 import org.kde.kirigami 2.13 as Kirigami
 import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.plasma.private.volume 0.1
 
-ScrollViewKCM {
+KCM.ScrollViewKCM {
 
     property int maxVolumeValue: PulseAudio.NormalVolume // the applet supports changing this value. We will just assume 65536 (100%)
 
