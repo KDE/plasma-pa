@@ -11,7 +11,9 @@ import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.plasma.components 3.0 as PC3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
-import org.kde.kquickcontrolsaddons 2.0 as KQCAddons
+
+import org.kde.kcmutils // KCMLauncher
+import org.kde.config // KAuthorized
 
 import org.kde.plasma.private.volume 0.1
 
@@ -785,7 +787,7 @@ PlasmoidItem {
     }
 
     function action_configure() {
-        KQCAddons.KCMShell.openSystemSettings("kcm_pulseaudio");
+        KCMLauncher.openSystemSettings("kcm_pulseaudio");
     }
 
     function action_showVirtualDevices() {
@@ -803,7 +805,7 @@ PlasmoidItem {
         plasmoid.action("showVirtualDevices").checkable = true;
         plasmoid.action("showVirtualDevices").checked = Qt.binding(() => plasmoid.configuration.showVirtualDevices);
 
-        if (KQCAddons.KCMShell.authorize("kcm_pulseaudio.desktop").length > 0) {
+        if (KAuthorized.authorizeControlModule("kcm_pulseaudio")) {
             plasmoid.removeAction("configure");
             plasmoid.setAction("configure", i18n("&Configure Audio Devices…"), "configure", "alt+d, s");
         }
