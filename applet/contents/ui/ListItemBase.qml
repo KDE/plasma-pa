@@ -314,7 +314,7 @@ PC3.ItemDelegate {
         anchors.fill: parent
         acceptedButtons: Qt.MiddleButton | Qt.RightButton
         onPressed: mouse => {
-            if (mouse.button === Qt.RightButton) {
+            if (mouse.button === Qt.RightButton && contextMenu.hasContent) {
                 contextMenu.visualParent = this;
                 contextMenu.open(mouse.x, mouse.y);
             }
@@ -375,7 +375,7 @@ PC3.ItemDelegate {
             if (defaultButton.visible) {
                 defaultButton.clicked();
             }
-        } else if (k === Qt.Key_Menu) {
+        } else if (k === Qt.Key_Menu && contextMenu.hasContent) {
             contextMenu.visualParent = contextMenuButton;
             contextMenu.openRelative();
         } else {
