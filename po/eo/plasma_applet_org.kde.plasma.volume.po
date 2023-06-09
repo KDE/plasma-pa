@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 02:04+0000\n"
+"POT-Creation-Date: 2023-06-09 02:14+0000\n"
 "PO-Revision-Date: 2023-05-11 19:44+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -95,120 +95,120 @@ msgstr "100%"
 msgid "Audio Volume"
 msgstr "Audio Volumo"
 
-#: contents/ui/main.qml:56
+#: contents/ui/main.qml:52
 #, kde-format
 msgid "Audio Muted"
 msgstr "Aŭdio silentigita"
 
-#: contents/ui/main.qml:58
+#: contents/ui/main.qml:54
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volumo je %1%"
 
-#: contents/ui/main.qml:75
+#: contents/ui/main.qml:71
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Mezklaku por malsilentigi"
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:72
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Mezklaku por silentigi la tutan audion"
 
-#: contents/ui/main.qml:77
+#: contents/ui/main.qml:73
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Rulumu por ĝustigi volumon"
 
-#: contents/ui/main.qml:238
+#: contents/ui/main.qml:234
 #, kde-format
 msgid "No output device"
 msgstr "Neniu eliga aparato"
 
-#: contents/ui/main.qml:249
+#: contents/ui/main.qml:245
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% Baterio)"
 
-#: contents/ui/main.qml:393
+#: contents/ui/main.qml:389
 #, kde-format
 msgid "Increase Volume"
 msgstr "Pliigi Volumon"
 
-#: contents/ui/main.qml:399
+#: contents/ui/main.qml:395
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Pliigi Volumon je 1%"
 
-#: contents/ui/main.qml:405
+#: contents/ui/main.qml:401
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Malpliigi laŭtecon"
 
-#: contents/ui/main.qml:411
+#: contents/ui/main.qml:407
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Malpliigi laŭtecon je 1%"
 
-#: contents/ui/main.qml:417
+#: contents/ui/main.qml:413
 #, kde-format
 msgid "Mute"
 msgstr "Mute"
 
-#: contents/ui/main.qml:423
+#: contents/ui/main.qml:419
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Pliigi mikrofonan laŭtecon"
 
-#: contents/ui/main.qml:429
+#: contents/ui/main.qml:425
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Malpliigi mikrofonan laŭteco"
 
-#: contents/ui/main.qml:435
+#: contents/ui/main.qml:431
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Mute Mikrofono"
 
-#: contents/ui/main.qml:539
+#: contents/ui/main.qml:538
 #, kde-format
 msgid "Devices"
 msgstr "Aparatoj"
 
-#: contents/ui/main.qml:546
+#: contents/ui/main.qml:545
 #, kde-format
 msgid "Applications"
 msgstr "Aplikoj"
 
-#: contents/ui/main.qml:567 contents/ui/main.qml:569 contents/ui/main.qml:799
+#: contents/ui/main.qml:566 contents/ui/main.qml:568 contents/ui/main.qml:798
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Devigi silentigi ĉiujn reproduktajn aparatojn"
 
-#: contents/ui/main.qml:603
+#: contents/ui/main.qml:602
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Neniu eligo aŭ eniga aparatoj trovitaj"
 
-#: contents/ui/main.qml:622
+#: contents/ui/main.qml:621
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Neniuj aplikoj ludantaj aŭ registrante audio"
 
-#: contents/ui/main.qml:773
+#: contents/ui/main.qml:772
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altigi maksimuman laŭtecon"
 
-#: contents/ui/main.qml:803
+#: contents/ui/main.qml:802
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Montri virtualajn aparatojn"
 
-#: contents/ui/main.qml:809
+#: contents/ui/main.qml:808
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Agordi Aŭdio-Aparatojn…"
