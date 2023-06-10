@@ -31,7 +31,7 @@ PC3.ItemDelegate {
 
     highlighted: dropArea.containsDrag || activeFocus
     background.visible: highlighted
-    opacity: (plasmoid.rootItem.draggedStream && plasmoid.rootItem.draggedStream.deviceIndex === item.model.Index) ? 0.3 : 1.0
+    opacity: (main.draggedStream && main.draggedStream.deviceIndex === item.model.Index) ? 0.3 : 1.0
 
     ListView.delayRemove: clientIcon.Drag.active
 
@@ -94,11 +94,11 @@ PC3.ItemDelegate {
             Drag.active: dragMouseArea.drag.active
             Drag.dragType: Drag.Automatic
             Drag.onDragStarted: {
-                plasmoid.rootItem.draggedStream = item.model.PulseObject;
+                main.draggedStream = item.model.PulseObject;
                 beginMoveStream(item.type === "sink-input" ? "sink" : "source");
             }
             Drag.onDragFinished: {
-                plasmoid.rootItem.draggedStream = null;
+                main.draggedStream = null;
                 endMoveStream();
             }
         }
@@ -331,16 +331,16 @@ PC3.ItemDelegate {
         z: -1
         parent: item
         anchors.fill: parent
-        enabled: plasmoid.rootItem.draggedStream && plasmoid.rootItem.draggedStream.deviceIndex !== item.model.Index
+        enabled: main.draggedStream && main.draggedStream.deviceIndex !== item.model.Index
         onDropped: {
-            plasmoid.rootItem.draggedStream.deviceIndex = item.model.Index;
+            main.draggedStream.deviceIndex = item.model.Index;
         }
     }
 
     ListItemMenu {
         id: contextMenu
-        pulseObject: model.PulseObject
-        cardModel: plasmoid.rootItem.paCardModel
+        pulseObject: item.model.PulseObject
+        cardModel: main.paCardModel
         itemType: {
             switch (item.type) {
             case "sink":
@@ -354,9 +354,9 @@ PC3.ItemDelegate {
             }
         }
         sourceModel: if (item.type.startsWith("sink")) {
-            return plasmoid.rootItem.paSinkFilterModel
+            return main.paSinkFilterModel
         }  else if (item.type.startsWith("source")) {
-            return plasmoid.rootItem.paSourceFilterModel
+            return main.paSourceFilterModel
         }
     }
 
