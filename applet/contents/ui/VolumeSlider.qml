@@ -11,6 +11,7 @@ import QtQuick.Layouts 1.15
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 3.0 as PC3
 import org.kde.plasma.core 2.1 as PlasmaCore
+import org.kde.ksvg 1.0 as KSvg
 import org.kde.plasma.private.volume 0.1
 
 // Audio volume slider. Value represents desired volume level in
@@ -55,7 +56,7 @@ PC3.Slider {
     // Prevents the groove from showing through the handle
     layer.enabled: opacity < 1
 
-    background: PlasmaCore.FrameSvgItem {
+    background: KSvg.FrameSvgItem {
         imagePath: "widgets/slider"
         prefix: "groove"
         colorGroup: PlasmaCore.ColorScope.colorGroup
@@ -69,7 +70,7 @@ PC3.Slider {
         x: control.leftPadding + (control.horizontal ? 0 : Math.round((control.availableWidth - width) / 2))
         y: control.topPadding + (control.vertical ? 0 : Math.round((control.availableHeight - height) / 2))
 
-        PlasmaCore.FrameSvgItem {
+        KSvg.FrameSvgItem {
             imagePath: "widgets/slider"
             prefix: "groove-highlight"
             colorGroup: PlasmaCore.ColorScope.colorGroup
@@ -82,10 +83,10 @@ PC3.Slider {
             height: control.vertical ? Math.max(fixedMargins.top + fixedMargins.bottom, Math.round(control.position * (control.availableHeight - control.handle.height / 2) + (control.handle.height / 2))) : parent.height
         }
 
-        PlasmaCore.FrameSvgItem {
+        KSvg.FrameSvgItem {
             imagePath: "widgets/slider"
             prefix: "groove-highlight"
-            status: PlasmaCore.FrameSvgItem.Selected
+            status: KSvg.FrameSvgItem.Selected
             visible: meter.available && control.volume > 0
 
             anchors.left: parent.left
