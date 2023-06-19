@@ -46,7 +46,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     Plasma
     KCMUtils
-    KSvg
+    Svg
 )
 
 find_package(Canberra REQUIRED)
