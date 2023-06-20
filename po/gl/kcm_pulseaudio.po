@@ -105,7 +105,7 @@ msgstr "Fluxos de gravación"
 #: kcm/package/contents/ui/main.qml:271
 #, kde-format
 msgid "Show Inactive Devices"
-msgstr "Mostrar os dispositivos inactivos"
+msgstr "Amosar os dispositivos inactivos"
 
 #: kcm/package/contents/ui/main.qml:279
 #, kde-format
@@ -252,7 +252,7 @@ msgstr "Volume de son"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr "Mostrar información visual para cambios de:"
+msgstr "Amosar información visual para cambios de:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:80
 #, kde-format
