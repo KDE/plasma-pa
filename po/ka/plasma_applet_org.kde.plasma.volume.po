@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-20 02:58+0000\n"
 "PO-Revision-Date: 2023-05-12 05:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -90,125 +90,125 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:34
+#: contents/ui/main.qml:35
 #, kde-format
 msgid "Audio Volume"
 msgstr "აუდიოს ხმა"
 
-#: contents/ui/main.qml:54
+#: contents/ui/main.qml:55
 #, kde-format
 msgid "Audio Muted"
 msgstr "აუდიო ჩაჩუმებულია"
 
-#: contents/ui/main.qml:56
+#: contents/ui/main.qml:57
 #, kde-format
 msgid "Volume at %1%"
 msgstr "ხმა: %1%"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "შუა-წკაპი დადუმების გასაუქმებლად"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "შუა-წკაპი ყველა ხმის დასადუმებლად"
 
-#: contents/ui/main.qml:75
+#: contents/ui/main.qml:76
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "ხმის მოსარგებად აქაჩეთ"
 
-#: contents/ui/main.qml:236
+#: contents/ui/main.qml:237
 #, kde-format
 msgid "No output device"
 msgstr "გამოტანის მოწყობილობის გარეშე"
 
-#: contents/ui/main.qml:247
+#: contents/ui/main.qml:248
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% ელემენტი)"
 
-#: contents/ui/main.qml:391
+#: contents/ui/main.qml:392
 #, kde-format
 msgid "Increase Volume"
 msgstr "ხმის აწევა"
 
-#: contents/ui/main.qml:397
+#: contents/ui/main.qml:398
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "ხმის 1%-ით აწევა"
 
-#: contents/ui/main.qml:403
+#: contents/ui/main.qml:404
 #, kde-format
 msgid "Decrease Volume"
 msgstr "ხმის დაწევა"
 
-#: contents/ui/main.qml:409
+#: contents/ui/main.qml:410
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "ხმის 1%-ით დაწევა"
 
-#: contents/ui/main.qml:415
+#: contents/ui/main.qml:416
 #, kde-format
 msgid "Mute"
 msgstr "დადუმება"
 
-#: contents/ui/main.qml:421
+#: contents/ui/main.qml:422
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "მიკროფონის ხმის აწევა"
 
-#: contents/ui/main.qml:427
+#: contents/ui/main.qml:428
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "მიკროფონის ხმის დაწევა"
 
-#: contents/ui/main.qml:433
+#: contents/ui/main.qml:434
 #, kde-format
 msgid "Mute Microphone"
 msgstr "მიკროფონის დადუმება"
 
-#: contents/ui/main.qml:540
+#: contents/ui/main.qml:541
 #, kde-format
 msgid "Devices"
 msgstr "მოწყობილობები"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:548
 #, kde-format
 msgid "Applications"
 msgstr "პროგრამები"
 
-#: contents/ui/main.qml:568 contents/ui/main.qml:570 contents/ui/main.qml:800
+#: contents/ui/main.qml:569 contents/ui/main.qml:571 contents/ui/main.qml:801
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ყველა დამკვრელი მოწყობილბის დადუმება"
 
-#: contents/ui/main.qml:604
+#: contents/ui/main.qml:605
 #, kde-format
 msgid "No output or input devices found"
 msgstr "არც შესატანი, არც გამოსატანი მოწყობილობა ნაპოვნი არაა"
 
-#: contents/ui/main.qml:623
+#: contents/ui/main.qml:624
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ამჟამად აუდიოს არც ერთი აპლიკაცია არ უკრავს და არც იწერს"
 
-#: contents/ui/main.qml:774
+#: contents/ui/main.qml:775
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "მაქსიმალური ხმის აწევა"
 
-#: contents/ui/main.qml:804
+#: contents/ui/main.qml:805
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ვირტუალური მოწყობილობების ჩვენება"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:811
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "აუდიო მოწყობილობების &მორგება…"

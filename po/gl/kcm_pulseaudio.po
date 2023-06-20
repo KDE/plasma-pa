@@ -74,7 +74,7 @@ msgstr "Equilibrio"
 #: kcm/ui/main.qml:82
 #, kde-format
 msgid "Show Inactive Devices"
-msgstr "Mostrar os dispositivos inactivos"
+msgstr "Amosar os dispositivos inactivos"
 
 #: kcm/ui/main.qml:89
 #, kde-format
@@ -245,7 +245,7 @@ msgstr "Volume de son"
 #: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr "Mostrar información visual para cambios de:"
+msgstr "Amosar información visual para cambios de:"
 
 #: kcm/ui/VolumeControlsConfig.qml:80
 #, kde-format

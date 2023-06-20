@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-20 02:58+0000\n"
 "PO-Revision-Date: 2023-05-15 18:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -91,125 +91,125 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100٪"
 
-#: contents/ui/main.qml:34
+#: contents/ui/main.qml:35
 #, kde-format
 msgid "Audio Volume"
 msgstr "مستوى الصّوت"
 
-#: contents/ui/main.qml:54
+#: contents/ui/main.qml:55
 #, kde-format
 msgid "Audio Muted"
 msgstr "الصوت مكتوم"
 
-#: contents/ui/main.qml:56
+#: contents/ui/main.qml:57
 #, kde-format
 msgid "Volume at %1%"
 msgstr "المستوى عند %1%"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "انقر بالزر الأوسط لإلغاء الكتم"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "انقر بالزر الأوسط لكتم كل الصوت"
 
-#: contents/ui/main.qml:75
+#: contents/ui/main.qml:76
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "مرر لتضبط الصوت"
 
-#: contents/ui/main.qml:236
+#: contents/ui/main.qml:237
 #, kde-format
 msgid "No output device"
 msgstr "لا يوجد جهاز إخراج"
 
-#: contents/ui/main.qml:247
+#: contents/ui/main.qml:248
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2٪ البطارية)"
 
-#: contents/ui/main.qml:391
+#: contents/ui/main.qml:392
 #, kde-format
 msgid "Increase Volume"
 msgstr "زِد المستوى"
 
-#: contents/ui/main.qml:397
+#: contents/ui/main.qml:398
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "زِد المستوى بـ1%"
 
-#: contents/ui/main.qml:403
+#: contents/ui/main.qml:404
 #, kde-format
 msgid "Decrease Volume"
 msgstr "أنقص المستوى"
 
-#: contents/ui/main.qml:409
+#: contents/ui/main.qml:410
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "أنقص المستوى بـ1%"
 
-#: contents/ui/main.qml:415
+#: contents/ui/main.qml:416
 #, kde-format
 msgid "Mute"
 msgstr "اكتم"
 
-#: contents/ui/main.qml:421
+#: contents/ui/main.qml:422
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "زِد مستوى المكرفون"
 
-#: contents/ui/main.qml:427
+#: contents/ui/main.qml:428
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "أنقص مستوى المكرفون"
 
-#: contents/ui/main.qml:433
+#: contents/ui/main.qml:434
 #, kde-format
 msgid "Mute Microphone"
 msgstr "اكتم المكرفون"
 
-#: contents/ui/main.qml:540
+#: contents/ui/main.qml:541
 #, kde-format
 msgid "Devices"
 msgstr "الأجهزة"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:548
 #, kde-format
 msgid "Applications"
 msgstr "التّطبيقات"
 
-#: contents/ui/main.qml:568 contents/ui/main.qml:570 contents/ui/main.qml:800
+#: contents/ui/main.qml:569 contents/ui/main.qml:571 contents/ui/main.qml:801
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "افرض كتم صوت جميع أجهزة التشغيل"
 
-#: contents/ui/main.qml:604
+#: contents/ui/main.qml:605
 #, kde-format
 msgid "No output or input devices found"
 msgstr "لم يتم العثور على أجهزة الإخراج أو الإدخال"
 
-#: contents/ui/main.qml:623
+#: contents/ui/main.qml:624
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "لا توجد تطبيقات تشغل أو تسجل الصوت"
 
-#: contents/ui/main.qml:774
+#: contents/ui/main.qml:775
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ارفع لأقصى مستوى"
 
-#: contents/ui/main.qml:804
+#: contents/ui/main.qml:805
 #, kde-format
 msgid "Show virtual devices"
 msgstr "أظهر الأجهزة الافتراضية"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:811
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ا&ضبط أجهزة الصوت..."

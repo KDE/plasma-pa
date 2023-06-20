@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-20 02:58+0000\n"
 "PO-Revision-Date: 2023-05-16 23:19+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -89,125 +89,125 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:34
+#: contents/ui/main.qml:35
 #, kde-format
 msgid "Audio Volume"
 msgstr "Сила на звука"
 
-#: contents/ui/main.qml:54
+#: contents/ui/main.qml:55
 #, kde-format
 msgid "Audio Muted"
 msgstr "Аудио заглушено"
 
-#: contents/ui/main.qml:56
+#: contents/ui/main.qml:57
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Сила на звука %1%"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Кликване със среден бутон на мишката за включване на звука"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Кликване със среден бутон на мишката за изключване на звука"
 
-#: contents/ui/main.qml:75
+#: contents/ui/main.qml:76
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Скролирайте за регулиране силата на звука"
 
-#: contents/ui/main.qml:236
+#: contents/ui/main.qml:237
 #, kde-format
 msgid "No output device"
 msgstr "Няма изходно устройство"
 
-#: contents/ui/main.qml:247
+#: contents/ui/main.qml:248
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% батерия)"
 
-#: contents/ui/main.qml:391
+#: contents/ui/main.qml:392
 #, kde-format
 msgid "Increase Volume"
 msgstr "Увеличаване на звука"
 
-#: contents/ui/main.qml:397
+#: contents/ui/main.qml:398
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Увеличаване на звука с 1%"
 
-#: contents/ui/main.qml:403
+#: contents/ui/main.qml:404
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Намаляване на звука"
 
-#: contents/ui/main.qml:409
+#: contents/ui/main.qml:410
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Намаляване на звука с 1%"
 
-#: contents/ui/main.qml:415
+#: contents/ui/main.qml:416
 #, kde-format
 msgid "Mute"
 msgstr "Изключване на звука"
 
-#: contents/ui/main.qml:421
+#: contents/ui/main.qml:422
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Увеличаване силата на микрофона"
 
-#: contents/ui/main.qml:427
+#: contents/ui/main.qml:428
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Намаляване силата на микрофона"
 
-#: contents/ui/main.qml:433
+#: contents/ui/main.qml:434
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Изключване на микрофон"
 
-#: contents/ui/main.qml:540
+#: contents/ui/main.qml:541
 #, kde-format
 msgid "Devices"
 msgstr "Устройства"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:548
 #, kde-format
 msgid "Applications"
 msgstr "Приложения"
 
-#: contents/ui/main.qml:568 contents/ui/main.qml:570 contents/ui/main.qml:800
+#: contents/ui/main.qml:569 contents/ui/main.qml:571 contents/ui/main.qml:801
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Принудително заглушаване на всички устройства за възпроизвеждане"
 
-#: contents/ui/main.qml:604
+#: contents/ui/main.qml:605
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Не са намерени изходни или входни устройства"
 
-#: contents/ui/main.qml:623
+#: contents/ui/main.qml:624
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Няма приложения, които възпроизвеждат или записват звук"
 
-#: contents/ui/main.qml:774
+#: contents/ui/main.qml:775
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Повишаване на максималния обем"
 
-#: contents/ui/main.qml:804
+#: contents/ui/main.qml:805
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показване на виртуални устройства"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:811
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Конфигуриране на звукови устройства…"
