@@ -8,7 +8,6 @@ import QtQuick 2.0
 
 import org.kde.plasma.private.volume 0.1
 
-import "../code/icon.js" as Icon
 
 ListItemBase {
     readonly property var currentPort: model.Ports[model.ActivePortIndex]
