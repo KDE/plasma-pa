@@ -10,8 +10,8 @@ import QtQuick.Layouts 1.15
 
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 3.0 as PC3
-import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.ksvg 1.0 as KSvg
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
 // Audio volume slider. Value represents desired volume level in
@@ -39,7 +39,7 @@ PC3.Slider {
     Behavior on volume {
         NumberAnimation  {
             id: animate
-            duration: PlasmaCore.Units.shortDuration
+            duration: Kirigami.Units.shortDuration
             easing.type: Easing.OutQuad
         }
     }
@@ -47,7 +47,7 @@ PC3.Slider {
     // When a maximum volume limit is raised/lower, animate the change.
     Behavior on to {
         NumberAnimation {
-            duration: PlasmaCore.Units.shortDuration
+            duration: Kirigami.Units.shortDuration
             easing.type: Easing.InOutQuad
         }
     }
@@ -59,10 +59,10 @@ PC3.Slider {
     background: KSvg.FrameSvgItem {
         imagePath: "widgets/slider"
         prefix: "groove"
-        colorGroup: PlasmaCore.ColorScope.colorGroup
+        colorGroup: Kirigami.Theme.colorSet
 
-        implicitWidth: control.horizontal ? PlasmaCore.Units.gridUnit * 12 : fixedMargins.left + fixedMargins.right
-        implicitHeight: control.vertical ? PlasmaCore.Units.gridUnit * 12 : fixedMargins.top + fixedMargins.bottom
+        implicitWidth: control.horizontal ? Kirigami.Units.gridUnit * 12 : fixedMargins.left + fixedMargins.right
+        implicitHeight: control.vertical ? Kirigami.Units.gridUnit * 12 : fixedMargins.top + fixedMargins.bottom
 
         width: control.horizontal ? Math.max(fixedMargins.left + fixedMargins.right, control.availableWidth) : implicitWidth
         height: control.vertical ? Math.max(fixedMargins.top + fixedMargins.bottom, control.availableHeight) : implicitHeight
@@ -73,7 +73,7 @@ PC3.Slider {
         KSvg.FrameSvgItem {
             imagePath: "widgets/slider"
             prefix: "groove-highlight"
-            colorGroup: PlasmaCore.ColorScope.colorGroup
+            colorGroup: Kirigami.Theme.colorSet
 
             anchors.left: parent.left
             anchors.bottom: parent.bottom

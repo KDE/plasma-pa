@@ -12,6 +12,7 @@ import QtQuick.Layouts 1.15
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 3.0 as PC3
 import org.kde.plasma.core 2.1 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.private.volume 0.1
 
@@ -44,7 +45,7 @@ PC3.ItemDelegate {
         PlasmaCore.IconItem {
             id: clientIcon
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-            implicitHeight: PlasmaCore.Units.iconSizes.medium
+            implicitHeight: Kirigami.Units.iconSizes.medium
             implicitWidth: implicitHeight
             source: "unknown"
             visible: item.type === "sink-input" || item.type === "source-output"
@@ -60,7 +61,7 @@ PC3.ItemDelegate {
                     right: parent.right
                     bottom: parent.bottom
                 }
-                implicitHeight: PlasmaCore.Units.iconSizes.small
+                implicitHeight: Kirigami.Units.iconSizes.small
                 implicitWidth: implicitHeight
                 source: item.type === "sink-input" || item.type === "source-output" ? "emblem-pause" : ""
                 visible: valid && item.model.Corked
@@ -114,10 +115,10 @@ PC3.ItemDelegate {
                     id: defaultButton
                     // Maximum width of the button need to match the text. Empty area must not change the default device.
                     Layout.maximumWidth: controlsRow.width - Layout.leftMargin - Layout.rightMargin
-                                            - (contextMenuButton.visible ? contextMenuButton.implicitWidth + PlasmaCore.Units.smallSpacing * 2 : 0)
+                                            - (contextMenuButton.visible ? contextMenuButton.implicitWidth + Kirigami.Units.smallSpacing * 2 : 0)
                     Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                     Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
-                    spacing: PlasmaCore.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
+                    spacing: Kirigami.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                     checked: item.model.PulseObject.hasOwnProperty("default") ? item.model.PulseObject.default : false
                     visible: (item.type === "sink" || item.type === "source") && item.ListView.view.count > 1
                     onClicked: item.model.PulseObject.default = true;
@@ -157,7 +158,7 @@ PC3.ItemDelegate {
                         opacity: labelHoverHandler.containsMouse ? 1 : 0
                         Behavior on opacity {
                             NumberAnimation {
-                                duration: PlasmaCore.Units.shortDuration
+                                duration: Kirigami.Units.shortDuration
                                 easing.type: Easing.InOutQuad
                             }
                         }
@@ -267,7 +268,7 @@ PC3.ItemDelegate {
                             id: toAnimation
                             target: slider
                             property: "to"
-                            duration: PlasmaCore.Units.shortDuration
+                            duration: Kirigami.Units.shortDuration
                             easing.type: Easing.InOutQuad
                         }
                         ScriptAction {

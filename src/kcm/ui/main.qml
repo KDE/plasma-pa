@@ -14,8 +14,8 @@ import QtQuick.Controls 2.0
 
 import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.kcmutils as KCM
-import org.kde.kirigami 2.13 as Kirigami
 import org.kde.plasma.core 2.1 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
 KCM.ScrollViewKCM {

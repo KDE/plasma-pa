@@ -6,12 +6,12 @@
 
 import QtQuick 2.0
 import QtQuick.Layouts 1.0
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 PlasmaComponents3.ToolButton {
     id: smallToolButton
-    readonly property int size: Math.ceil(PlasmaCore.Units.iconSizes.small + PlasmaCore.Units.smallSpacing * 2)
+    readonly property int size: Math.ceil(Kirigami.Units.iconSizes.small + Kirigami.Units.smallSpacing * 2)
     implicitWidth: size
     implicitHeight: size
 

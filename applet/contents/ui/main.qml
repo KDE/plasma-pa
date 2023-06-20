@@ -9,6 +9,7 @@ import QtQuick.Layouts 1.0
 
 import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.ksvg 1.0 as KSvg
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.components 3.0 as PC3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
@@ -371,7 +372,7 @@ PlasmoidItem {
             anchors.fill: parent
             source: plasmoid.icon
             active: parent.containsMouse
-            colorGroup: PlasmaCore.ColorScope.colorGroup
+            colorGroup: Kirigami.Theme.colorSet
         }
     }
 
@@ -477,10 +478,10 @@ PlasmoidItem {
     fullRepresentation: PlasmaExtras.Representation {
         id: fullRep
 
-        Layout.minimumHeight: PlasmaCore.Units.gridUnit * 8
-        Layout.minimumWidth: PlasmaCore.Units.gridUnit * 14
-        Layout.preferredHeight: PlasmaCore.Units.gridUnit * 21
-        Layout.preferredWidth: PlasmaCore.Units.gridUnit * 24
+        Layout.minimumHeight: Kirigami.Units.gridUnit * 8
+        Layout.minimumWidth: Kirigami.Units.gridUnit * 14
+        Layout.preferredHeight: Kirigami.Units.gridUnit * 21
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 24
 
         collapseMarginsHint: true
 
@@ -502,7 +503,7 @@ PlasmoidItem {
 
         header: PlasmaExtras.PlasmoidHeading {
             // Make this toolbar's buttons align vertically with the ones above
-            rightPadding: -PlasmaCore.Units.devicePixelRatio
+            rightPadding: -1
             // Allow tabbar to touch the header's bottom border
             bottomPadding: -bottomInset
 
@@ -664,7 +665,7 @@ PlasmoidItem {
             Loader {
                 parent: scrollView
                 anchors.centerIn: parent
-                width: parent.width -  PlasmaCore.Units.gridUnit * 4
+                width: parent.width -  Kirigami.Units.gridUnit * 4
                 active: visible
                 visible: scrollView.placeholderText.length > 0 && !upperSection.visible && !lowerSection.visible
                 sourceComponent: PlasmaExtras.PlaceholderMessage {
@@ -717,9 +718,9 @@ PlasmoidItem {
                     KSvg.SvgItem {
                         elementId: "horizontal-line"
                         Layout.fillWidth: true
-                        Layout.leftMargin: PlasmaCore.Units.smallSpacing * 2
+                        Layout.leftMargin: Kirigami.Units.smallSpacing * 2
                         Layout.rightMargin: Layout.leftMargin
-                        Layout.topMargin: PlasmaCore.Units.smallSpacing
+                        Layout.topMargin: Kirigami.Units.smallSpacing
                         svg: lineSvg
                         visible: upperSection.visible && lowerSection.visible
                     }
@@ -764,7 +765,7 @@ PlasmoidItem {
             PC3.CheckBox {
                 id: raiseMaximumVolumeCheckbox
                 anchors.left: parent.left
-                anchors.leftMargin: PlasmaCore.Units.smallSpacing
+                anchors.leftMargin: Kirigami.Units.smallSpacing
                 anchors.verticalCenter: parent.verticalCenter
 
                 checked: config.raiseMaximumVolume
