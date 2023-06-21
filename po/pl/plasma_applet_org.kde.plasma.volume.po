@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 02:58+0000\n"
+"POT-Creation-Date: 2023-06-21 02:02+0000\n"
 "PO-Revision-Date: 2023-05-13 08:01+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -29,186 +29,186 @@ msgstr "%1 (%2)"
 msgid "Device name not found"
 msgstr "Nie znaleziono nazwy urządzenia"
 
-#: contents/ui/ListItemBase.qml:70
+#: contents/ui/ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
 msgstr "Obecnie nic nie jest nagrywane"
 
-#: contents/ui/ListItemBase.qml:71
+#: contents/ui/ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
 msgstr "Obecnie nic nie jest odtwarzane"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Dodatkowe ustawienia"
 
-#: contents/ui/ListItemBase.qml:188
+#: contents/ui/ListItemBase.qml:189
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Pokaż dodatkowe ustawienia dla %1"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Wyłącz wyciszenie"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Wycisz"
 
-#: contents/ui/ListItemBase.qml:207
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Unmute %1"
 msgstr "Usuń wyciszenie %1"
 
-#: contents/ui/ListItemBase.qml:207
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Mute %1"
 msgstr "Wycisz %1"
 
-#: contents/ui/ListItemBase.qml:227
+#: contents/ui/ListItemBase.qml:228
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Dostosuj głośność dla %1"
 
-#: contents/ui/ListItemBase.qml:285
+#: contents/ui/ListItemBase.qml:286
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:305
+#: contents/ui/ListItemBase.qml:306
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:35
+#: contents/ui/main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "Głośność dźwięku"
 
-#: contents/ui/main.qml:55
+#: contents/ui/main.qml:56
 #, kde-format
 msgid "Audio Muted"
 msgstr "Dźwięk wyciszony"
 
-#: contents/ui/main.qml:57
+#: contents/ui/main.qml:58
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Głośność na %1%"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:75
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Środkowy przywraca głośność"
 
-#: contents/ui/main.qml:75
+#: contents/ui/main.qml:76
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Środkowy wycisza dźwięk zupełnie"
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:77
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Przewiń, aby dostosować głośność"
 
-#: contents/ui/main.qml:237
+#: contents/ui/main.qml:238
 #, kde-format
 msgid "No output device"
 msgstr "Nie ma żadnego urządzenia wyjściowego"
 
-#: contents/ui/main.qml:248
+#: contents/ui/main.qml:249
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% Bateria)"
 
-#: contents/ui/main.qml:392
+#: contents/ui/main.qml:393
 #, kde-format
 msgid "Increase Volume"
 msgstr "Zwiększ głośność"
 
-#: contents/ui/main.qml:398
+#: contents/ui/main.qml:399
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Zwiększ głośność o 1%"
 
-#: contents/ui/main.qml:404
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Zmniejsz głośność"
 
-#: contents/ui/main.qml:410
+#: contents/ui/main.qml:411
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Zmniejsz głośność o %1"
 
-#: contents/ui/main.qml:416
+#: contents/ui/main.qml:417
 #, kde-format
 msgid "Mute"
 msgstr "Wycisz"
 
-#: contents/ui/main.qml:422
+#: contents/ui/main.qml:423
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Zwiększ głośność mikrofonu"
 
-#: contents/ui/main.qml:428
+#: contents/ui/main.qml:429
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Zmniejsz głośność mikrofonu"
 
-#: contents/ui/main.qml:434
+#: contents/ui/main.qml:435
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Wycisz mikrofon"
 
-#: contents/ui/main.qml:541
+#: contents/ui/main.qml:542
 #, kde-format
 msgid "Devices"
 msgstr "Urządzenia"
 
-#: contents/ui/main.qml:548
+#: contents/ui/main.qml:549
 #, kde-format
 msgid "Applications"
 msgstr "Programy"
 
-#: contents/ui/main.qml:569 contents/ui/main.qml:571 contents/ui/main.qml:801
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:802
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Wycisz wszystkie urządzenia odtwarzające"
 
-#: contents/ui/main.qml:605
+#: contents/ui/main.qml:606
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nie znaleziono żadnych urządzeń wejściowych, ani wyjściowych"
 
-#: contents/ui/main.qml:624
+#: contents/ui/main.qml:625
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Żadna aplikacja nie odtwarza, ani nie nagrywa teraz dźwięku"
 
-#: contents/ui/main.qml:775
+#: contents/ui/main.qml:776
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zwiększ graniczną głośność"
 
-#: contents/ui/main.qml:805
+#: contents/ui/main.qml:806
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Pokaż urządzenia wirtualne"
 
-#: contents/ui/main.qml:811
+#: contents/ui/main.qml:812
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Ustawienia urządzeń dźwiękowych..."
