@@ -19,6 +19,8 @@ RowLayout {
 
     property alias value: slider.value
 
+    property int channel: -1
+
     QQC2.Slider {
         id: slider
 
@@ -35,7 +37,19 @@ RowLayout {
         onMoved: {
             // Since it is not possible to use stepSize without tickmarks being displayed, force 1% steps
             // Unfortunately without stepSize, it cannot snap visually whilst scrolling by changing value instead of Volume as it breaks the binding
-            Volume = Math.round(value * 100 / PulseAudio.NormalVolume) * PulseAudio.NormalVolume / 100
+            let volume = Math.round(value * 100 / PulseAudio.NormalVolume) * PulseAudio.NormalVolume / 100
+            if (channel == -1) {
+                Volume = volume
+                Muted = volume === 0;
+            } else {
+                delegate.pulseObject.setChannelVolume(channel, volume);
+
+                // volumes are updated async, so we'll just assume it worked here
+                let newChannelVolumes = ChannelVolumes;
+                newChannelVolumes[index] = value;
+                Muted = newChannelVolumes.every(volume => volume === 0);
+            }
+
             sliderRow.moved()
         }
 
