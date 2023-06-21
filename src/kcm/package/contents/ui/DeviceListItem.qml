@@ -178,12 +178,6 @@ ColumnLayout {
                 Layout.columnSpan: 2
                 Layout.alignment: Qt.AlignVCenter
                 visible: !balanceButton.checked
-
-                value: Volume
-                onMoved: {
-                    Volume = value;
-                    Muted = (value === 0);
-                }
             }
 
             Repeater {
@@ -203,16 +197,8 @@ ColumnLayout {
                     Layout.fillWidth: true
 
                     value: ChannelVolumes[index]
-                    onMoved: {
-                        delegate.pulseObject.setChannelVolume(index, value);
 
-                        // volumes are updated async, so we'll just assume it worked here
-                        let newChannelVolumes = ChannelVolumes;
-                        newChannelVolumes[index] = value;
-                        Muted = newChannelVolumes.every((volume) => {
-                            return volume === 0;
-                        });
-                    }
+                    channel: index
                 }
             }
         }
