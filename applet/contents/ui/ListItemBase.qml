@@ -289,9 +289,9 @@ PC3.ItemDelegate {
                     // Keep this in sync with the copies in VolumeSlider.qml
                     // and plasma-workspace:OSDItem.qml
                     color: {
-                        if (displayValue <= 100) {
+                        if (displayValue <= Icon.highUpperBound) {
                             return PlasmaCore.Theme.textColor
-                        } else if (displayValue > 100 && displayValue <= 125) {
+                        } else if (displayValue > Icon.highUpperBound && displayValue <= Icon.veryHighUpperBound) {
                             return PlasmaCore.Theme.neutralTextColor
                         } else {
                             return PlasmaCore.Theme.negativeTextColor

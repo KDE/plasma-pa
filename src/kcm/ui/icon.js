@@ -16,8 +16,12 @@ function name(volume, muted, prefix) {
         icon = prefix + "-low";
     } else if (percent <= 0.75) {
         icon = prefix + "-medium";
-    } else {
+    } else if (percent <= 1) {
         icon = prefix + "-high";
+    } else if (percent <= 1.25) {
+        icon = `${prefix}-high-warning`;
+    } else {
+        icon = `${prefix}-high-danger`;
     }
     return icon;
 }

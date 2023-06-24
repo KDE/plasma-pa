@@ -4,20 +4,27 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
+const highUpperBound = 100;
+const veryHighUpperBound = 125;
+
 function name(volume, muted, prefix) {
     if (!prefix) {
         prefix = "audio-volume";
     }
     var icon = null;
-    var percent = volume / currentMaxVolumeValue;
-    if (percent <= 0.0 || muted) {
+    const percent = main.volumePercent(volume);
+    if (percent <= 0 || muted) {
         icon = prefix + "-muted";
-    } else if (percent <= 0.25) {
+    } else if (percent <= 25) {
         icon = prefix + "-low";
-    } else if (percent <= 0.75) {
+    } else if (percent <= 75) {
         icon = prefix + "-medium";
-    } else {
+    } else if (percent <= highUpperBound) {
         icon = prefix + "-high";
+    } else if (percent <= veryHighUpperBound) {
+        icon = `${prefix}-high-warning`;
+    } else {
+        icon = `${prefix}-high-danger`;
     }
     return icon;
 }
