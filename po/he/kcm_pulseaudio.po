@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-07 02:16+0000\n"
+"POT-Creation-Date: 2023-06-26 02:13+0000\n"
 "PO-Revision-Date: 2017-05-23 10:19-0400\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -58,7 +58,7 @@ msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "(לא מחובר)"
 
-#: kcm/ui/DeviceListItem.qml:194
+#: kcm/ui/DeviceListItem.qml:188
 #, fuzzy, kde-format
 #| msgctxt "volume percentage"
 #| msgid "%1%"
@@ -66,13 +66,13 @@ msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1%"
 
-#: kcm/ui/DeviceListItem.qml:227
+#: kcm/ui/DeviceListItem.qml:213
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr ""
 
-#: kcm/ui/DeviceListItem.qml:236
+#: kcm/ui/DeviceListItem.qml:222
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
@@ -268,13 +268,13 @@ msgstr "השתק שמע"
 msgid "Default output device"
 msgstr "ברירת מחדל"
 
-#: kcm/ui/VolumeSlider.qml:51
+#: kcm/ui/VolumeSlider.qml:65
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/VolumeSlider.qml:71
+#: kcm/ui/VolumeSlider.qml:85
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

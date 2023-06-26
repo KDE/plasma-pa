@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-07 02:16+0000\n"
+"POT-Creation-Date: 2023-06-26 02:13+0000\n"
 "PO-Revision-Date: 2022-11-03 05:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -55,19 +55,19 @@ msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (entxufatu gabe)"
 
-#: kcm/ui/DeviceListItem.qml:194
+#: kcm/ui/DeviceListItem.qml:188
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/ui/DeviceListItem.qml:227
+#: kcm/ui/DeviceListItem.qml:213
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Proba"
 
-#: kcm/ui/DeviceListItem.qml:236
+#: kcm/ui/DeviceListItem.qml:222
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
@@ -264,13 +264,13 @@ msgstr "Isilarazte egoera"
 msgid "Default output device"
 msgstr "Irteerako gailu lehenetsia"
 
-#: kcm/ui/VolumeSlider.qml:51
+#: kcm/ui/VolumeSlider.qml:65
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%%1"
 
-#: kcm/ui/VolumeSlider.qml:71
+#: kcm/ui/VolumeSlider.qml:85
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
