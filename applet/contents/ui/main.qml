@@ -780,14 +780,6 @@ PlasmoidItem {
         }
     }
 
-    function action_forceMute() {
-        if (!globalMute) {
-            enableGlobalMute();
-        } else {
-            disableGlobalMute();
-        }
-    }
-
     function action_configure() {
         KCMLauncher.openSystemSettings("kcm_pulseaudio");
     }
@@ -796,21 +788,38 @@ PlasmoidItem {
         Plasmoid.configuration.showVirtualDevices = !Plasmoid.configuration.showVirtualDevices;
     }
 
+    Plasmoid.contextualActions: [
+        PlasmaCore.Action {
+            text: i18n("Force mute all playback devices")
+            icon.name: "audio-volume-muted"
+            checkable: true
+            checked: globalMute
+            onTriggered: {
+                if (!globalMute) {
+                    enableGlobalMute();
+                } else {
+                    disableGlobalMute();
+                }
+            }
+        },
+        PlasmaCore.Action {
+            text: i18n("Show virtual devices")
+            icon.name: "audio-card"
+            checkable: true
+            checked: plasmoid.configuration.showVirtualDevices
+            onTriggered: Plasmoid.configuration.showVirtualDevices = !Plasmoid.configuration.showVirtualDevices
+        },
+        PlasmaCore.Action {
+            text: i18n("&Configure Audio Devices…")
+            icon.name: "configure"
+            shortcut: "alt+d, s"
+            visible: KAuthorized.authorizeControlModule("kcm_pulseaudio")
+            onTriggered: KCMLauncher.openSystemSettings("kcm_pulseaudio")
+        }
+    ]
     Component.onCompleted: {
         MicrophoneIndicator.init();
-
-        plasmoid.setAction("forceMute", i18n("Force mute all playback devices"), "audio-volume-muted");
-        plasmoid.action("forceMute").checkable = true;
-        plasmoid.action("forceMute").checked = Qt.binding(() => globalMute);
-
-        plasmoid.setAction("showVirtualDevices", i18n("Show virtual devices"), "audio-card");
-        plasmoid.action("showVirtualDevices").checkable = true;
-        plasmoid.action("showVirtualDevices").checked = Qt.binding(() => plasmoid.configuration.showVirtualDevices);
-
-        if (KAuthorized.authorizeControlModule("kcm_pulseaudio")) {
-            plasmoid.removeAction("configure");
-            plasmoid.setAction("configure", i18n("&Configure Audio Devices…"), "configure", "alt+d, s");
-        }
+        Plasmoid.removeInternalAction("configure");
 
         // migrate settings if they aren't default
         // this needs to be done per instance of the applet
