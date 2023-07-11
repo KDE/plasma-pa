@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-22 02:08+0000\n"
+"POT-Creation-Date: 2023-07-11 02:03+0000\n"
 "PO-Revision-Date: 2023-01-29 08:01+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -187,7 +187,7 @@ msgstr "Peranti"
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:802
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Paksa senyap semua pemutaran peranti"
@@ -212,7 +212,7 @@ msgstr "Tingkatkan volume maksimum"
 msgid "Show virtual devices"
 msgstr "Tampilkan peranti virtual"
 
-#: contents/ui/main.qml:812
+#: contents/ui/main.qml:813
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurasikan Peranti Audio..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-22 02:08+0000\n"
+"POT-Creation-Date: 2023-07-11 02:03+0000\n"
 "PO-Revision-Date: 2023-05-12 21:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -183,7 +183,7 @@ msgstr "Dispositivos"
 msgid "Applications"
 msgstr "Aplicacións"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:802
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Silenciar forzosamente todos os dispositivos de reprodución"
@@ -208,7 +208,7 @@ msgstr "Aumentar o volume máximo"
 msgid "Show virtual devices"
 msgstr "Amosar os dispositivos virtuais"
 
-#: contents/ui/main.qml:812
+#: contents/ui/main.qml:813
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar os dispositivos de son…"
