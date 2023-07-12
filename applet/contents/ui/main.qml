@@ -577,11 +577,11 @@ PlasmoidItem {
                     visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
 
                     icon.name: "configure"
-                    onClicked: plasmoid.action("configure").trigger()
+                    onClicked: plasmoid.internalAction("configure").trigger()
 
-                    Accessible.name: plasmoid.action("configure").text
+                    Accessible.name: plasmoid.internalAction("configure").text
                     PC3.ToolTip {
-                        text: plasmoid.action("configure").text
+                        text: plasmoid.internalAction("configure").text
                     }
                 }
             }
