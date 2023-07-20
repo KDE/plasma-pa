@@ -79,7 +79,7 @@ set_package_properties(KF6Kirigami2 PROPERTIES
 )
 
 ecm_set_disabled_deprecation_versions(QT 5.15.2
-    KF 5.101
+    KF 5.240.0
 )
 
 add_subdirectory(applet)
