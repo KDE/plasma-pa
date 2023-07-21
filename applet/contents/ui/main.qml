@@ -762,7 +762,7 @@ PlasmoidItem {
 
         footer: PlasmaExtras.PlasmoidHeading {
             height: parent.header.height
-            PC3.CheckBox {
+            PC3.Switch {
                 id: raiseMaximumVolumeCheckbox
                 anchors.left: parent.left
                 anchors.leftMargin: Kirigami.Units.smallSpacing
