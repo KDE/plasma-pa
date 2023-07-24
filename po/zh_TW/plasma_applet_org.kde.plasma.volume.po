@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-11 02:03+0000\n"
+"POT-Creation-Date: 2023-07-24 09:33+0000\n"
 "PO-Revision-Date: 2023-02-09 01:10+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -186,7 +186,7 @@ msgstr "裝置"
 msgid "Applications"
 msgstr "應用程式"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:785
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "強制靜音所有播放裝置"
@@ -206,12 +206,12 @@ msgstr "沒有正在播放或錄音的應用程式"
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:798
 #, kde-format
 msgid "Show virtual devices"
 msgstr "顯示虛擬裝置"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:808
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "設定音效裝置(&C)…"

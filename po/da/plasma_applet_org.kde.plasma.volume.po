@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-11 02:03+0000\n"
+"POT-Creation-Date: 2023-07-24 09:33+0000\n"
 "PO-Revision-Date: 2022-08-08 17:40+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -189,7 +189,7 @@ msgstr "Enheder"
 msgid "Applications"
 msgstr "Programmer"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:785
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Gennemtving lydløs for alle afspilningsenheder"
@@ -209,12 +209,12 @@ msgstr "Ingen programmer afspiller eller optager lyd"
 msgid "Raise maximum volume"
 msgstr "Hæv maksimal lydstyrke"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:798
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Vis virtuelle enheder"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:808
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Indstil lydenheder..."

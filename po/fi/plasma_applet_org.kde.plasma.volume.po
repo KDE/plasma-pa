@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-11 02:03+0000\n"
+"POT-Creation-Date: 2023-07-24 09:33+0000\n"
 "PO-Revision-Date: 2023-05-28 16:58+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -186,7 +186,7 @@ msgstr "Laitteet"
 msgid "Applications"
 msgstr "Sovellukset"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:785
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Pakota vaimennus kaikissa toistolaitteissa"
@@ -206,12 +206,12 @@ msgstr "Mikään sovellus ei toista tai tallenna ääntä"
 msgid "Raise maximum volume"
 msgstr "Nosta enimmäisvoimakkuutta"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:798
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Näytä virtuaalilaitteet"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:808
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Äänilaitteiden asetukset…"

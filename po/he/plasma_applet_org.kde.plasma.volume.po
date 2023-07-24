@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-11 02:03+0000\n"
+"POT-Creation-Date: 2023-07-24 09:33+0000\n"
 "PO-Revision-Date: 2017-05-23 09:05-0400\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -192,7 +192,7 @@ msgstr "התקנים"
 msgid "Applications"
 msgstr "יישומים"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:785
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
@@ -212,13 +212,13 @@ msgstr "אין ישומים המשמיעים או מקליטים שמע"
 msgid "Raise maximum volume"
 msgstr "העלה עוצמה מירבית"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:798
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "לא נמצאו יציאות או כניסות"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:808
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

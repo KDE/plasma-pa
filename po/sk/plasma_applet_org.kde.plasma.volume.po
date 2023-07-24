@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-11 02:03+0000\n"
+"POT-Creation-Date: 2023-07-24 09:33+0000\n"
 "PO-Revision-Date: 2023-03-28 18:26+0200\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -186,7 +186,7 @@ msgstr "Zariadenia"
 msgid "Applications"
 msgstr "Aplikácie"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:785
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
@@ -206,12 +206,12 @@ msgstr "Žiadne aplikácie neprehrávajú ani nenahrávajú zvuk"
 msgid "Raise maximum volume"
 msgstr "Zvýšiť maximálnu hlasitosť"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:798
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Zobraziť virtuálne zariadenia"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:808
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Nastaviť zvukové zariadenia..."

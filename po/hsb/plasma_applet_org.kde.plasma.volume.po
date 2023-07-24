@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-11 02:03+0000\n"
+"POT-Creation-Date: 2023-07-24 09:33+0000\n"
 "PO-Revision-Date: 2021-10-28 12:36+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -190,7 +190,7 @@ msgstr "Graty"
 msgid "Applications"
 msgstr "Aplikacije"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:785
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Wšitke wothrawace graty doněmić"
@@ -210,13 +210,13 @@ msgstr "Žane aplikacije za nahrawanje abo wothrawanje"
 msgid "Raise maximum volume"
 msgstr "Maksimalnu wótrosć powyšić"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:798
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgid "Show virtual devices"
 msgstr "Žadyn outputowy grat"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:808
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Awdijo-&graty připrawić..."

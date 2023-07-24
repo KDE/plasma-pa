@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-11 02:03+0000\n"
+"POT-Creation-Date: 2023-07-24 09:33+0000\n"
 "PO-Revision-Date: 2023-03-01 00:11+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -182,9 +182,9 @@ msgstr "장치"
 #: contents/ui/main.qml:549
 #, kde-format
 msgid "Applications"
-msgstr "프로그램"
+msgstr "앱"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:793
+#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:785
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "강제로 모든 재생 장치 음소거"
@@ -197,19 +197,19 @@ msgstr "입력이나 출력 장치를 찾을 수 없음"
 #: contents/ui/main.qml:625
 #, kde-format
 msgid "No applications playing or recording audio"
-msgstr "오디오를 재생하거나 녹음하는 프로그램 없음"
+msgstr "오디오를 재생하거나 녹음하는 앱 없음"
 
 #: contents/ui/main.qml:776
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "최대 음량 높이기"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:798
 #, kde-format
 msgid "Show virtual devices"
 msgstr "가상 장치 표시"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:808
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "오디오 장치 설정(&C)…"
