@@ -290,11 +290,11 @@ PC3.ItemDelegate {
                     // and plasma-workspace:OSDItem.qml
                     color: {
                         if (displayValue <= Icon.highUpperBound) {
-                            return PlasmaCore.Theme.textColor
+                            return Kirigami.Theme.textColor
                         } else if (displayValue > Icon.highUpperBound && displayValue <= Icon.veryHighUpperBound) {
-                            return PlasmaCore.Theme.neutralTextColor
+                            return Kirigami.Theme.neutralTextColor
                         } else {
-                            return PlasmaCore.Theme.negativeTextColor
+                            return Kirigami.Theme.negativeTextColor
                         }
                     }
                 }
