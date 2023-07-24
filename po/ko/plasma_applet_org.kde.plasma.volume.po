@@ -162,7 +162,7 @@ msgstr "장치"
 #: contents/ui/main.qml:511
 #, kde-format
 msgid "Applications"
-msgstr "프로그램"
+msgstr "앱"
 
 #: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
 #, kde-format
@@ -177,7 +177,7 @@ msgstr "입력이나 출력 장치를 찾을 수 없음"
 #: contents/ui/main.qml:587
 #, kde-format
 msgid "No applications playing or recording audio"
-msgstr "오디오를 재생하거나 녹음하는 프로그램 없음"
+msgstr "오디오를 재생하거나 녹음하는 앱 없음"
 
 #: contents/ui/main.qml:738
 #, kde-format
