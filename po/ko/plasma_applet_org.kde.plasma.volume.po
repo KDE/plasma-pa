@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-24 09:33+0000\n"
-"PO-Revision-Date: 2023-03-01 00:11+0100\n"
+"PO-Revision-Date: 2023-07-25 01:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/DeviceListItem.qml:25
 #, kde-format
@@ -136,11 +136,10 @@ msgid "Increase Volume"
 msgstr "음량 증가"
 
 #: contents/ui/main.qml:399
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "음량 증가"
+msgstr "음량 1% 증가"
 
 #: contents/ui/main.qml:405
 #, kde-format
@@ -148,11 +147,10 @@ msgid "Decrease Volume"
 msgstr "음량 감소"
 
 #: contents/ui/main.qml:411
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "음량 감소"
+msgstr "음량 1% 감소"
 
 #: contents/ui/main.qml:417
 #, kde-format
