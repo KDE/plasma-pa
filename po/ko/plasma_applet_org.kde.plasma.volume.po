@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-24 09:33+0000\n"
+"POT-Creation-Date: 2023-07-28 02:08+0000\n"
 "PO-Revision-Date: 2023-07-25 01:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,62 +28,62 @@ msgstr "%1(%2)"
 msgid "Device name not found"
 msgstr "장치 이름을 찾을 수 없음"
 
-#: contents/ui/ListItemBase.qml:70
+#: contents/ui/ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
 msgstr "현재 녹음 중이 아님"
 
-#: contents/ui/ListItemBase.qml:71
+#: contents/ui/ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
 msgstr "현재 재생 중이 아님"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "추가 옵션"
 
-#: contents/ui/ListItemBase.qml:188
+#: contents/ui/ListItemBase.qml:189
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1의 추가 설정 표시"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "음소거 해제"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "음소거"
 
-#: contents/ui/ListItemBase.qml:207
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1 음소거 해제"
 
-#: contents/ui/ListItemBase.qml:207
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 음소거"
 
-#: contents/ui/ListItemBase.qml:227
+#: contents/ui/ListItemBase.qml:228
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 음량 조정"
 
-#: contents/ui/ListItemBase.qml:285
+#: contents/ui/ListItemBase.qml:286
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:305
+#: contents/ui/ListItemBase.qml:306
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

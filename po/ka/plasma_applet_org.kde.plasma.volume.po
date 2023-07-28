@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-24 09:33+0000\n"
+"POT-Creation-Date: 2023-07-28 02:08+0000\n"
 "PO-Revision-Date: 2023-05-12 05:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -29,62 +29,62 @@ msgstr "%1 (%2)"
 msgid "Device name not found"
 msgstr "მოწყობილობა ნაპოვნი არაა"
 
-#: contents/ui/ListItemBase.qml:70
+#: contents/ui/ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
 msgstr "ამჟამად ჩაწერა არ მიმდინარეობს"
 
-#: contents/ui/ListItemBase.qml:71
+#: contents/ui/ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
 msgstr "ამჟამად დაკვრა არ მიმდინარეობს"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "დამატებითი პარამეტრები"
 
-#: contents/ui/ListItemBase.qml:188
+#: contents/ui/ListItemBase.qml:189
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1-სთვის დამატებითი პარამეტრების ჩვენება"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "დადუმების გამორთვა"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "დადუმება"
 
-#: contents/ui/ListItemBase.qml:207
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Unmute %1"
 msgstr "დადუმების გამორთვა: %1"
 
-#: contents/ui/ListItemBase.qml:207
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Mute %1"
 msgstr "დადუმება: %1"
 
-#: contents/ui/ListItemBase.qml:227
+#: contents/ui/ListItemBase.qml:228
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1-ის ხმის მორგება"
 
-#: contents/ui/ListItemBase.qml:285
+#: contents/ui/ListItemBase.qml:286
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:305
+#: contents/ui/ListItemBase.qml:306
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
