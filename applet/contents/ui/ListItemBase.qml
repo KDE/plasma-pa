@@ -7,7 +7,6 @@
 */
 
 import QtQuick 2.15
-import QtQuick.Controls as QQC2
 import QtQuick.Layouts 1.15
 
 import org.kde.kquickcontrolsaddons 2.0
@@ -129,7 +128,7 @@ PC3.ItemDelegate {
                     visible: !defaultButton.visible
 
                     // User-friendly name
-                    QQC2.Label {
+                    PC3.Label {
                         Layout.fillWidth: !longDescription.visible
                         text: defaultButton.text
                         elide: Text.ElideRight
@@ -150,7 +149,7 @@ PC3.ItemDelegate {
                         }
                     }
                     // Possibly not user-friendly description; only show on hover
-                    QQC2.Label {
+                    PC3.Label {
                         id: longDescription
 
                         Layout.fillWidth: true
@@ -276,7 +275,7 @@ PC3.ItemDelegate {
                         }
                     }
                 }
-                QQC2.Label {
+                PC3.Label {
                     id: percentText
                     readonly property real value: item.model.PulseObject.volume > slider.to ? item.model.PulseObject.volume : slider.value
                     readonly property real displayValue: Math.round(value / PulseAudio.NormalVolume * 100.0)
