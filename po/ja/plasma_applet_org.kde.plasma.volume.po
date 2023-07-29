@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 02:08+0000\n"
+"POT-Creation-Date: 2023-07-29 01:59+0000\n"
 "PO-Revision-Date: 2023-04-07 23:42-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -29,62 +29,62 @@ msgstr "%1 (%2)"
 msgid "Device name not found"
 msgstr "デバイスの名前が見つかりません"
 
-#: contents/ui/ListItemBase.qml:71
+#: contents/ui/ListItemBase.qml:70
 #, kde-format
 msgid "Currently not recording"
 msgstr "現在録音していません"
 
-#: contents/ui/ListItemBase.qml:72
+#: contents/ui/ListItemBase.qml:71
 #, kde-format
 msgid "Currently not playing"
 msgstr "現在再生していません"
 
-#: contents/ui/ListItemBase.qml:187
+#: contents/ui/ListItemBase.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "追加オプション"
 
-#: contents/ui/ListItemBase.qml:189
+#: contents/ui/ListItemBase.qml:188
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1の追加オプションを表示"
 
-#: contents/ui/ListItemBase.qml:206
+#: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ミュート解除"
 
-#: contents/ui/ListItemBase.qml:206
+#: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "ミュート"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:207
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1 をミュート解除"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:207
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 をミュート"
 
-#: contents/ui/ListItemBase.qml:228
+#: contents/ui/ListItemBase.qml:227
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 の音量を調整"
 
-#: contents/ui/ListItemBase.qml:286
+#: contents/ui/ListItemBase.qml:285
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:306
+#: contents/ui/ListItemBase.qml:305
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
