@@ -54,5 +54,4 @@ ListItemBase {
 
         return "audio-volume-high"
     }
-    iconUsesPlasmaTheme: false
 }

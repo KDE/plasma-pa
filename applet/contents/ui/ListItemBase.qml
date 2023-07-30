@@ -11,7 +11,6 @@ import QtQuick.Layouts 1.15
 
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 3.0 as PC3
-import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.private.volume 0.1
 
@@ -24,7 +23,6 @@ PC3.ItemDelegate {
     property alias label: defaultButton.text
     property alias draggable: dragMouseArea.enabled
     property alias iconSource: clientIcon.source
-    property alias iconUsesPlasmaTheme: clientIcon.usesPlasmaTheme
     // TODO: convert to a proper enum?
     property string /* "sink" | "sink-input" | "source" | "source-output" */ type
     property string fullNameToShowOnHover: ""
@@ -41,7 +39,7 @@ PC3.ItemDelegate {
         id: controlsRow
         spacing: item.spacing
 
-        PlasmaCore.IconItem {
+        Kirigami.Icon {
             id: clientIcon
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             implicitHeight: Kirigami.Units.iconSizes.medium
@@ -55,7 +53,7 @@ PC3.ItemDelegate {
                 }
             }
 
-            PlasmaCore.IconItem {
+            Kirigami.Icon {
                 anchors {
                     right: parent.right
                     bottom: parent.bottom

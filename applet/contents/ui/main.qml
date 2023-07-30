@@ -368,11 +368,10 @@ PlasmoidItem {
                 decreaseVolume(wheel.modifiers);
             }
         }
-        PlasmaCore.IconItem {
+        Kirigami.Icon {
             anchors.fill: parent
             source: plasmoid.icon
             active: parent.containsMouse
-            colorGroup: Kirigami.Theme.colorSet
         }
     }
 
