@@ -335,6 +335,10 @@ PlasmoidItem {
         }
     }
 
+    // Only exists because the default CompactRepresentation doesn't expose:
+    // - scroll actions
+    // - a middle-click action
+    // TODO remove once it gains those features.
     compactRepresentation:MouseArea {
         property int wheelDelta: 0
         property bool wasExpanded: false
