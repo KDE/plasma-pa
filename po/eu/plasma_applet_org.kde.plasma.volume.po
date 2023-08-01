@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-29 01:59+0000\n"
+"POT-Creation-Date: 2023-08-01 02:16+0000\n"
 "PO-Revision-Date: 2023-06-02 21:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -31,62 +31,62 @@ msgstr "%1 (%2)"
 msgid "Device name not found"
 msgstr "Gailu izena ez da aurkitu"
 
-#: contents/ui/ListItemBase.qml:70
+#: contents/ui/ListItemBase.qml:68
 #, kde-format
 msgid "Currently not recording"
 msgstr "Une honetan ez da grabatzen ari"
 
-#: contents/ui/ListItemBase.qml:71
+#: contents/ui/ListItemBase.qml:69
 #, kde-format
 msgid "Currently not playing"
 msgstr "Une honetan ez da jotzen ari"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Aukera osagarriak"
 
-#: contents/ui/ListItemBase.qml:188
+#: contents/ui/ListItemBase.qml:186
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Erakutsi honen aukera osagarriak: %1"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Ozendu"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Isilarazi"
 
-#: contents/ui/ListItemBase.qml:207
+#: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgid "Unmute %1"
 msgstr "Ozendu %1"
 
-#: contents/ui/ListItemBase.qml:207
+#: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgid "Mute %1"
 msgstr "Isilarazi %1"
 
-#: contents/ui/ListItemBase.qml:227
+#: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Doitu honen bolumena: %1"
 
-#: contents/ui/ListItemBase.qml:285
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "% %1"
 
-#: contents/ui/ListItemBase.qml:305
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -133,84 +133,84 @@ msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (Bateria %%2)"
 
-#: contents/ui/main.qml:393
+#: contents/ui/main.qml:396
 #, kde-format
 msgid "Increase Volume"
 msgstr "Igo bolumena"
 
-#: contents/ui/main.qml:399
+#: contents/ui/main.qml:402
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Igo bolumena % 1"
 
-#: contents/ui/main.qml:405
+#: contents/ui/main.qml:408
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Jaitsi bolumena"
 
-#: contents/ui/main.qml:411
+#: contents/ui/main.qml:414
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Jaitsi bolumena % 1"
 
-#: contents/ui/main.qml:417
+#: contents/ui/main.qml:420
 #, kde-format
 msgid "Mute"
 msgstr "Isilarazi"
 
-#: contents/ui/main.qml:423
+#: contents/ui/main.qml:426
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Igo mikrofonoaren bolumena"
 
-#: contents/ui/main.qml:429
+#: contents/ui/main.qml:432
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Jaitsi mikrofonoaren bolumena"
 
-#: contents/ui/main.qml:435
+#: contents/ui/main.qml:438
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Isilarazi mikrofonoa"
 
-#: contents/ui/main.qml:542
+#: contents/ui/main.qml:545
 #, kde-format
 msgid "Devices"
 msgstr "Gailuak"
 
-#: contents/ui/main.qml:549
+#: contents/ui/main.qml:552
 #, kde-format
 msgid "Applications"
 msgstr "Aplikazioak"
 
-#: contents/ui/main.qml:570 contents/ui/main.qml:572 contents/ui/main.qml:785
+#: contents/ui/main.qml:573 contents/ui/main.qml:575 contents/ui/main.qml:788
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Indarrez isilarazi atzera-jotzeko gailu guztiak"
 
-#: contents/ui/main.qml:606
+#: contents/ui/main.qml:609
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Ez da aurkitu sarrerako edo irteerako gailurik"
 
-#: contents/ui/main.qml:625
+#: contents/ui/main.qml:628
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ez dago audioa jotzen edo grabatzen ari den aplikaziorik"
 
-#: contents/ui/main.qml:776
+#: contents/ui/main.qml:779
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altxatu bolumen muga"
 
-#: contents/ui/main.qml:798
+#: contents/ui/main.qml:801
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Erakutsi alegiazko gailuak"
 
-#: contents/ui/main.qml:808
+#: contents/ui/main.qml:811
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfiguratu audio gailuak..."
