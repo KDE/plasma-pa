@@ -473,11 +473,6 @@ PlasmoidItem {
         id: feedback
     }
 
-    KSvg.Svg {
-        id: lineSvg
-        imagePath: "widgets/line"
-    }
-
     fullRepresentation: PlasmaExtras.Representation {
         id: fullRep
 
@@ -719,12 +714,12 @@ PlasmoidItem {
                         }
                     }
                     KSvg.SvgItem {
+                        imagePath: "widgets/line"
                         elementId: "horizontal-line"
                         Layout.fillWidth: true
                         Layout.leftMargin: Kirigami.Units.smallSpacing * 2
                         Layout.rightMargin: Layout.leftMargin
                         Layout.topMargin: Kirigami.Units.smallSpacing
-                        svg: lineSvg
                         visible: upperSection.visible && lowerSection.visible
                     }
                     ListView {
