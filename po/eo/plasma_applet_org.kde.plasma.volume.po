@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:16+0000\n"
+"POT-Creation-Date: 2023-08-02 02:09+0000\n"
 "PO-Revision-Date: 2023-05-11 19:44+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -173,42 +173,42 @@ msgstr "Malpliigi mikrofonan laŭteco"
 msgid "Mute Microphone"
 msgstr "Mute Mikrofono"
 
-#: contents/ui/main.qml:545
+#: contents/ui/main.qml:540
 #, kde-format
 msgid "Devices"
 msgstr "Aparatoj"
 
-#: contents/ui/main.qml:552
+#: contents/ui/main.qml:547
 #, kde-format
 msgid "Applications"
 msgstr "Aplikoj"
 
-#: contents/ui/main.qml:573 contents/ui/main.qml:575 contents/ui/main.qml:788
+#: contents/ui/main.qml:568 contents/ui/main.qml:570 contents/ui/main.qml:783
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Devigi silentigi ĉiujn reproduktajn aparatojn"
 
-#: contents/ui/main.qml:609
+#: contents/ui/main.qml:604
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Neniu eligo aŭ eniga aparatoj trovitaj"
 
-#: contents/ui/main.qml:628
+#: contents/ui/main.qml:623
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Neniuj aplikoj ludantaj aŭ registrante audio"
 
-#: contents/ui/main.qml:779
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altigi maksimuman laŭtecon"
 
-#: contents/ui/main.qml:801
+#: contents/ui/main.qml:796
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Montri virtualajn aparatojn"
 
-#: contents/ui/main.qml:811
+#: contents/ui/main.qml:806
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Agordi Aŭdio-Aparatojn…"

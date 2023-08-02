@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:16+0000\n"
+"POT-Creation-Date: 2023-08-02 02:09+0000\n"
 "PO-Revision-Date: 2023-05-30 23:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -173,42 +173,42 @@ msgstr "Mikrofon Sesini Azalt"
 msgid "Mute Microphone"
 msgstr "Mikrofonu Kapat"
 
-#: contents/ui/main.qml:545
+#: contents/ui/main.qml:540
 #, kde-format
 msgid "Devices"
 msgstr "Aygıtlar"
 
-#: contents/ui/main.qml:552
+#: contents/ui/main.qml:547
 #, kde-format
 msgid "Applications"
 msgstr "Uygulamalar"
 
-#: contents/ui/main.qml:573 contents/ui/main.qml:575 contents/ui/main.qml:788
+#: contents/ui/main.qml:568 contents/ui/main.qml:570 contents/ui/main.qml:783
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Tümünün Sesini Kapat"
 
-#: contents/ui/main.qml:609
+#: contents/ui/main.qml:604
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Hiçbir giriş veya çıkış aygıtı bulunamadı"
 
-#: contents/ui/main.qml:628
+#: contents/ui/main.qml:623
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ses çalan veya ses kaydı yapan hiçbir uygulama yok"
 
-#: contents/ui/main.qml:779
+#: contents/ui/main.qml:774
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Sesi sonuna kadar aç"
 
-#: contents/ui/main.qml:801
+#: contents/ui/main.qml:796
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Sanal Aygıtları Göster"
 
-#: contents/ui/main.qml:811
+#: contents/ui/main.qml:806
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Ses Aygıtlarını Yapılandır…"
