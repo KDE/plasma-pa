@@ -148,7 +148,7 @@ msgid "Decrease Volume"
 msgstr "Zmniejsz głośność"
 
 #: contents/ui/main.qml:414
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Zmniejsz głośność o %1"
