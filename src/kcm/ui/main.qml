@@ -16,6 +16,7 @@ import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.kcmutils as KCM
 import org.kde.plasma.core 2.1 as PlasmaCore
 import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 import org.kde.plasma.private.volume 0.1
 
 KCM.ScrollViewKCM {
@@ -381,7 +382,7 @@ KCM.ScrollViewKCM {
 
                 LayoutMirroring.enabled: false  // To preserve spacial layout on RTL
 
-                Kirigami.Avatar {
+                KirigamiComponents.Avatar {
                     KCoreAddons.KUser {
                         id: kuser
                     }

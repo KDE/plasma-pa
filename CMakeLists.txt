@@ -78,6 +78,13 @@ set_package_properties(KF6Kirigami2 PROPERTIES
     TYPE RUNTIME
 )
 
+find_package(KirigamiAddons CONFIG)
+set_package_properties(KirigamiAddons PROPERTIES
+    DESCRIPTION "Extra controls for Kirigami applications"
+    PURPOSE "Required at runtime for the KCM"
+    TYPE RUNTIME
+)
+
 ecm_set_disabled_deprecation_versions(QT 5.15.2
     KF 5.240.0
 )
