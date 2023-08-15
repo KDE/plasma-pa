@@ -387,6 +387,7 @@ KCM.ScrollViewKCM {
                         id: kuser
                     }
                     source: kuser.faceIconUrl
+                    name: kuser.fullName
                     implicitWidth: Kirigami.Units.gridUnit * 4
                     implicitHeight: implicitWidth
 
