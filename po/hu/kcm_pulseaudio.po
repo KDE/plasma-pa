@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-26 02:13+0000\n"
+"POT-Creation-Date: 2023-08-16 01:59+0000\n"
 "PO-Revision-Date: 2021-12-07 09:47+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -72,28 +72,28 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Balansz"
 
-#: kcm/ui/main.qml:82
+#: kcm/ui/main.qml:83
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Inaktív eszközök megjelenítése"
 
-#: kcm/ui/main.qml:89
+#: kcm/ui/main.qml:90
 #, fuzzy, kde-format
 #| msgid "Configure…"
 msgid "Configure Volume Controls…"
 msgstr "Beállítások…"
 
-#: kcm/ui/main.qml:96
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Configure…"
 msgstr "Beállítások…"
 
-#: kcm/ui/main.qml:99
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "A(z) %1 PulseAudio modulra van szükség"
 
-#: kcm/ui/main.qml:102
+#: kcm/ui/main.qml:103
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -101,38 +101,38 @@ msgstr ""
 "Virtuális kimeneti eszköz hozzáadása minden helyi hangkártyához szimultán "
 "lejátszáshoz"
 
-#: kcm/ui/main.qml:108
+#: kcm/ui/main.qml:109
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "Lejátszások automatikus átirányítása, ha új kimenet válik elérhetővé"
 
-#: kcm/ui/main.qml:145
+#: kcm/ui/main.qml:146
 #, kde-format
 msgid "Playback Devices"
 msgstr "Lejátszóeszközök"
 
-#: kcm/ui/main.qml:169
+#: kcm/ui/main.qml:170
 #, kde-format
 msgid "Recording Devices"
 msgstr "Felvevőeszközök"
 
-#: kcm/ui/main.qml:193
+#: kcm/ui/main.qml:194
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Inaktív kártyák"
 
-#: kcm/ui/main.qml:227
+#: kcm/ui/main.qml:228
 #, kde-format
 msgid "Playback Streams"
 msgstr "Hanglejátszás"
 
-#: kcm/ui/main.qml:276
+#: kcm/ui/main.qml:277
 #, kde-format
 msgid "Recording Streams"
 msgstr "Hangfelvétel"
 
-#: kcm/ui/main.qml:310
+#: kcm/ui/main.qml:311
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -142,52 +142,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Front Left"
 msgstr "Bal első"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Front Center"
 msgstr "Első középső"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Front Right"
 msgstr "Jobb első"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Side Left"
 msgstr "Bal oldalsó"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Side Right"
 msgstr "Jobb oldalsó"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Rear Left"
 msgstr "Bal hátsó"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Subwoofer"
 msgstr "Mélysugárzó"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:415
 #, kde-format
 msgid "Rear Right"
 msgstr "Jobb hátsó"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:468
+#: kcm/ui/main.qml:470
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Kattintson bármelyik hangszóróra a hang teszteléséhez"
