@@ -51,7 +51,7 @@ target_link_libraries(plasma-volume-declarative
     Qt::Quick
     KF6::GlobalAccel
     KF6::I18n
-    KF6::Notifications
+    KF6::StatusNotifierItem
     KF6::ConfigCore
     KF6::ConfigGui
     KF6::CoreAddons

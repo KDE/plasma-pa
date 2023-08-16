@@ -42,7 +42,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     Declarative
     DocTools
     GlobalAccel
-    Notifications
+    StatusNotifierItem
     I18n
     Plasma
     KCMUtils
