@@ -290,7 +290,7 @@ PlasmoidItem {
     // active output devices
     readonly property PulseObjectFilterModel paSinkFilterModel: PulseObjectFilterModel {
         id: paSinkFilterModel
-        sortRole: "SortByDefault"
+        sortRoleName: "SortByDefault"
         sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
         filterVirtualDevices: !main.showVirtualDevices
@@ -300,7 +300,7 @@ PlasmoidItem {
     // active input devices
     readonly property PulseObjectFilterModel paSourceFilterModel: PulseObjectFilterModel {
         id: paSourceFilterModel
-        sortRole: "SortByDefault"
+        sortRoleName: "SortByDefault"
         sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
         filterVirtualDevices: !main.showVirtualDevices

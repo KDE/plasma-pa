@@ -1,8 +1,8 @@
-import org.kde.plasma.core 2.1 as PlasmaCore
+import org.kde.kitemmodels 1.0 as KItemModels
 
 import org.kde.plasma.private.volume 0.1
 
-PlasmaCore.SortFilterModel {
+KItemModels.KSortFilterProxyModel {
     property var filters: []
     property bool filterOutInactiveDevices: false
     property bool filterVirtualDevices: false
@@ -15,7 +15,7 @@ PlasmaCore.SortFilterModel {
         return sourceModel.role(name);
     }
 
-    filterCallback: function(source_row, value) {
+    filterRowCallback: function(source_row, source_parent) {
         var idx = sourceModel.index(source_row, 0);
 
         // Don't ever show the dummy output, that's silly

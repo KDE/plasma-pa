@@ -14,7 +14,7 @@ import QtQuick.Controls 2.0
 
 import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.kcmutils as KCM
-import org.kde.plasma.core 2.1 as PlasmaCore
+import org.kde.kitemmodels 1.0 as KItemModels
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 import org.kde.plasma.private.volume 0.1
@@ -54,7 +54,7 @@ KCM.ScrollViewKCM {
     PulseObjectFilterModel {
         id: paSinkFilterModel
 
-        sortRole: "SortByDefault"
+        sortRoleName: "SortByDefault"
         sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
         sourceModel: paSinkModel
@@ -63,7 +63,7 @@ KCM.ScrollViewKCM {
     PulseObjectFilterModel {
         id: paSourceFilterModel
 
-        sortRole: "SortByDefault"
+        sortRoleName: "SortByDefault"
         sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
         sourceModel: paSourceModel
@@ -205,12 +205,9 @@ KCM.ScrollViewKCM {
                 Layout.preferredHeight: contentHeight
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
-                model: PlasmaCore.SortFilterModel {
+                model: KItemModels.KSortFilterProxyModel {
                     sourceModel: paCardModel
-                    function role(name) {
-                        return sourceModel.role(name);
-                    }
-                    filterCallback: function(source_row, value) {
+                    filterRowCallback: function(source_row, source_parent) {
                         let idx = sourceModel.index(source_row, 0);
                         let profiles = sourceModel.data(idx, sourceModel.role("Profiles"))
                         let activeProfileIndex = sourceModel.data(idx, sourceModel.role("ActiveProfileIndex"))

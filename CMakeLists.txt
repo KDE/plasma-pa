@@ -85,6 +85,13 @@ set_package_properties(KirigamiAddons PROPERTIES
     TYPE RUNTIME
 )
 
+find_package(KItemModels CONFIG)
+set_package_properties(KItemModels PROPERTIES
+    DESCRIPTION "Set of item models extending the Qt model-view framework"
+    PURPOSE "Required at runtime for the KCM and applet"
+    TYPE RUNTIME
+)
+
 ecm_set_disabled_deprecation_versions(QT 5.15.2
     KF 5.240.0
 )
