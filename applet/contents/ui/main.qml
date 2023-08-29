@@ -40,6 +40,7 @@ PlasmoidItem {
 
     // DEFAULT_SINK_NAME in module-always-sink.c
     readonly property string dummyOutputName: "auto_null"
+    readonly property string noDevicePlaceholderMessage: i18n("No output or input devices found")
 
     switchHeight: Layout.minimumHeight
     switchWidth: Layout.minimumWidth
@@ -72,9 +73,13 @@ PlasmoidItem {
             }
         }
 
-        lines.push(main.globalMute ? i18n("Middle-click to unmute")
-                                   : i18n("Middle-click to mute all audio"));
-        lines.push(i18n("Scroll to adjust volume"));
+        if (paSinkFilterModel.count > 0) {
+            lines.push(main.globalMute ? i18n("Middle-click to unmute")
+                                    : i18n("Middle-click to mute all audio"));
+            lines.push(i18n("Scroll to adjust volume"));
+        } else {
+            lines.push(main.noDevicePlaceholderMessage);
+        }
         return lines.join("\n");
     }
 
@@ -601,7 +606,7 @@ PlasmoidItem {
                 lowerModel: paSourceFilterModel
                 lowerType: "source"
                 iconName: "audio-volume-muted"
-                placeholderText: i18n("No output or input devices found")
+                placeholderText: main.noDevicePlaceholderMessage
                 upperDelegate: DeviceListItem {
                     width: ListView.view.width
                     type: devicesView.upperType
