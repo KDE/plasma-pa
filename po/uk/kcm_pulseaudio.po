@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 01:59+0000\n"
+"POT-Creation-Date: 2023-08-30 01:58+0000\n"
 "PO-Revision-Date: 2022-11-03 10:20+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -124,17 +124,17 @@ msgstr "Пристрої запису"
 msgid "Inactive Cards"
 msgstr "Неактивні картки"
 
-#: kcm/ui/main.qml:228
+#: kcm/ui/main.qml:225
 #, kde-format
 msgid "Playback Streams"
 msgstr "Потоки відтворення даних"
 
-#: kcm/ui/main.qml:277
+#: kcm/ui/main.qml:274
 #, kde-format
 msgid "Recording Streams"
 msgstr "Потоки запису"
 
-#: kcm/ui/main.qml:311
+#: kcm/ui/main.qml:308
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -146,52 +146,52 @@ msgstr ""
 "Помилка під час спроби відтворити тестовий звук. \n"
 "Повідомлення системи: «%1»"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Front Left"
 msgstr "Передній лівий"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Front Center"
 msgstr "Передній центральний"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Front Right"
 msgstr "Передній правий"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Side Left"
 msgstr "Бічний лівий"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Side Right"
 msgstr "Бічний правий"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Rear Left"
 msgstr "Задній лівий"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Subwoofer"
 msgstr "Сабвуфер"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Rear Right"
 msgstr "Задній правий"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Mono"
 msgstr "Моно"
 
-#: kcm/ui/main.qml:470
+#: kcm/ui/main.qml:467
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Натисніть на гучномовці для перевірки звуку"

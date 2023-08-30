@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 01:59+0000\n"
+"POT-Creation-Date: 2023-08-30 01:58+0000\n"
 "PO-Revision-Date: 2022-11-03 12:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -123,17 +123,17 @@ msgstr "Dispositivos de grabación"
 msgid "Inactive Cards"
 msgstr "Tarjetas no activas"
 
-#: kcm/ui/main.qml:228
+#: kcm/ui/main.qml:225
 #, kde-format
 msgid "Playback Streams"
 msgstr "Canales en reproducción"
 
-#: kcm/ui/main.qml:277
+#: kcm/ui/main.qml:274
 #, kde-format
 msgid "Recording Streams"
 msgstr "Canales en grabación"
 
-#: kcm/ui/main.qml:311
+#: kcm/ui/main.qml:308
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -145,52 +145,52 @@ msgstr ""
 "Ha ocurrido un error al reproducir el sonido de prueba.\n"
 "El sistema ha informado: «%1»"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Front Left"
 msgstr "Frontal izquierdo"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Front Center"
 msgstr "Frontal central"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Front Right"
 msgstr "Frontal derecho"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Side Left"
 msgstr "Lateral izquierdo"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Side Right"
 msgstr "Lateral derecho"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Rear Left"
 msgstr "Trasero izquierdo"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Rear Right"
 msgstr "Trasero derecho"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:470
+#: kcm/ui/main.qml:467
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Clic sobre un altavoz para probar el sonido"

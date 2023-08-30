@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 02:09+0000\n"
+"POT-Creation-Date: 2023-08-30 01:58+0000\n"
 "PO-Revision-Date: 2023-01-29 08:01+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -95,37 +95,42 @@ msgstr "100%"
 msgid "Audio Volume"
 msgstr "Volume Audio"
 
-#: contents/ui/main.qml:56
+#: contents/ui/main.qml:43
+#, kde-format
+msgid "No output or input devices found"
+msgstr "Tidak ada peranti input atau output yang ditemukan"
+
+#: contents/ui/main.qml:57
 #, kde-format
 msgid "Audio Muted"
 msgstr "Audio Disenyapkan"
 
-#: contents/ui/main.qml:58
+#: contents/ui/main.qml:59
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volume pada %1%"
 
-#: contents/ui/main.qml:75
+#: contents/ui/main.qml:77
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Klik tengah untuk membunyikan"
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Klik tengah untuk menyenyapkan semua audio"
 
-#: contents/ui/main.qml:77
+#: contents/ui/main.qml:79
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Gulir untuk menyetel volume"
 
-#: contents/ui/main.qml:238
+#: contents/ui/main.qml:243
 #, kde-format
 msgid "No output device"
 msgstr "Tidak ada peranti output"
 
-#: contents/ui/main.qml:249
+#: contents/ui/main.qml:254
 #, fuzzy, kde-format
 #| msgctxt "label of device items"
 #| msgid "%1 (%2)"
@@ -133,86 +138,81 @@ msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2)"
 
-#: contents/ui/main.qml:396
+#: contents/ui/main.qml:401
 #, kde-format
 msgid "Increase Volume"
 msgstr "Tambahi Volume"
 
-#: contents/ui/main.qml:402
+#: contents/ui/main.qml:407
 #, fuzzy, kde-format
 #| msgid "Increase Volume"
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Tambahi Volume"
 
-#: contents/ui/main.qml:408
+#: contents/ui/main.qml:413
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Kurangi Volume"
 
-#: contents/ui/main.qml:414
+#: contents/ui/main.qml:419
 #, fuzzy, kde-format
 #| msgid "Decrease Volume"
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Kurangi Volume"
 
-#: contents/ui/main.qml:420
+#: contents/ui/main.qml:425
 #, kde-format
 msgid "Mute"
 msgstr "Senyap"
 
-#: contents/ui/main.qml:426
+#: contents/ui/main.qml:431
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Tambahi Volume Mikrofon"
 
-#: contents/ui/main.qml:432
+#: contents/ui/main.qml:437
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Kurangi Volume Mikrofon"
 
-#: contents/ui/main.qml:438
+#: contents/ui/main.qml:443
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Senyapkan Mikrofon"
 
-#: contents/ui/main.qml:540
+#: contents/ui/main.qml:545
 #, kde-format
 msgid "Devices"
 msgstr "Peranti"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:552
 #, kde-format
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: contents/ui/main.qml:568 contents/ui/main.qml:570 contents/ui/main.qml:783
+#: contents/ui/main.qml:573 contents/ui/main.qml:575 contents/ui/main.qml:788
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Paksa senyap semua pemutaran peranti"
 
-#: contents/ui/main.qml:604
-#, kde-format
-msgid "No output or input devices found"
-msgstr "Tidak ada peranti input atau output yang ditemukan"
-
-#: contents/ui/main.qml:623
+#: contents/ui/main.qml:628
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Tidak ada aplikasi yang memutar atau merekam audio"
 
-#: contents/ui/main.qml:774
+#: contents/ui/main.qml:779
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Tingkatkan volume maksimum"
 
-#: contents/ui/main.qml:796
+#: contents/ui/main.qml:801
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Tampilkan peranti virtual"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:811
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurasikan Peranti Audio..."
