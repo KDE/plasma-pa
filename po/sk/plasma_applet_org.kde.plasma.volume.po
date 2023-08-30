@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-19 02:43+0000\n"
+"POT-Creation-Date: 2023-08-30 02:26+0000\n"
 "PO-Revision-Date: 2023-03-08 17:36+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -95,102 +95,102 @@ msgstr "100%"
 msgid "Audio Volume"
 msgstr "Hlasitosti zvuku"
 
-#: contents/ui/main.qml:56
-#, kde-format
-msgid "Audio Muted"
-msgstr "Zvuk je stlmený"
-
-#: contents/ui/main.qml:58
-#, kde-format
-msgid "Volume at %1%"
-msgstr "Hlasitosť na %1%"
-
-#: contents/ui/main.qml:75
-#, kde-format
-msgid "Middle-click to unmute"
-msgstr "Stredným tlačidlom sa zruší stlmenie"
-
-#: contents/ui/main.qml:76
-#, kde-format
-msgid "Middle-click to mute all audio"
-msgstr "Stredným tlačidlom sa stlmí všetok zvuk"
-
-#: contents/ui/main.qml:77
-#, kde-format
-msgid "Scroll to adjust volume"
-msgstr "Kolieskom myši nastavíte hlasitosť"
-
-#: contents/ui/main.qml:238
-#, kde-format
-msgid "No output device"
-msgstr "Žiadne výstupné zariadenie"
-
-#: contents/ui/main.qml:370
-#, kde-format
-msgid "Increase Volume"
-msgstr "Zvýšiť hlasitosť"
-
-#: contents/ui/main.qml:376
-#, kde-format
-msgid "Decrease Volume"
-msgstr "Znížiť hlasitosť"
-
-#: contents/ui/main.qml:382
-#, kde-format
-msgid "Mute"
-msgstr "Stlmiť"
-
-#: contents/ui/main.qml:388
-#, kde-format
-msgid "Increase Microphone Volume"
-msgstr "Zvýšiť hlasitosť mikrofónu"
-
-#: contents/ui/main.qml:394
-#, kde-format
-msgid "Decrease Microphone Volume"
-msgstr "Znížiť hlasitosť mikrofónu"
-
-#: contents/ui/main.qml:400
-#, kde-format
-msgid "Mute Microphone"
-msgstr "Stlmiť mikrofón"
-
-#: contents/ui/main.qml:504
-#, kde-format
-msgid "Devices"
-msgstr "Zariadenia"
-
-#: contents/ui/main.qml:511
-#, kde-format
-msgid "Applications"
-msgstr "Aplikácie"
-
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
-#, kde-format
-msgid "Force mute all playback devices"
-msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
-
-#: contents/ui/main.qml:568
+#: contents/ui/main.qml:39
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nenašli sa žiadne výstupné alebo vstupné zariadenia"
 
-#: contents/ui/main.qml:587
+#: contents/ui/main.qml:57
+#, kde-format
+msgid "Audio Muted"
+msgstr "Zvuk je stlmený"
+
+#: contents/ui/main.qml:59
+#, kde-format
+msgid "Volume at %1%"
+msgstr "Hlasitosť na %1%"
+
+#: contents/ui/main.qml:77
+#, kde-format
+msgid "Middle-click to unmute"
+msgstr "Stredným tlačidlom sa zruší stlmenie"
+
+#: contents/ui/main.qml:78
+#, kde-format
+msgid "Middle-click to mute all audio"
+msgstr "Stredným tlačidlom sa stlmí všetok zvuk"
+
+#: contents/ui/main.qml:79
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr "Kolieskom myši nastavíte hlasitosť"
+
+#: contents/ui/main.qml:243
+#, kde-format
+msgid "No output device"
+msgstr "Žiadne výstupné zariadenie"
+
+#: contents/ui/main.qml:375
+#, kde-format
+msgid "Increase Volume"
+msgstr "Zvýšiť hlasitosť"
+
+#: contents/ui/main.qml:381
+#, kde-format
+msgid "Decrease Volume"
+msgstr "Znížiť hlasitosť"
+
+#: contents/ui/main.qml:387
+#, kde-format
+msgid "Mute"
+msgstr "Stlmiť"
+
+#: contents/ui/main.qml:393
+#, kde-format
+msgid "Increase Microphone Volume"
+msgstr "Zvýšiť hlasitosť mikrofónu"
+
+#: contents/ui/main.qml:399
+#, kde-format
+msgid "Decrease Microphone Volume"
+msgstr "Znížiť hlasitosť mikrofónu"
+
+#: contents/ui/main.qml:405
+#, kde-format
+msgid "Mute Microphone"
+msgstr "Stlmiť mikrofón"
+
+#: contents/ui/main.qml:509
+#, kde-format
+msgid "Devices"
+msgstr "Zariadenia"
+
+#: contents/ui/main.qml:516
+#, kde-format
+msgid "Applications"
+msgstr "Aplikácie"
+
+#: contents/ui/main.qml:537 contents/ui/main.qml:539 contents/ui/main.qml:769
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
+
+#: contents/ui/main.qml:592
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Žiadne aplikácie neprehrávajú ani nenahrávajú zvuk"
 
-#: contents/ui/main.qml:738
+#: contents/ui/main.qml:743
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvýšiť maximálnu hlasitosť"
 
-#: contents/ui/main.qml:768
+#: contents/ui/main.qml:773
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Zobraziť virtuálne zariadenia"
 
-#: contents/ui/main.qml:774
+#: contents/ui/main.qml:779
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Nastaviť zvukové zariadenia..."

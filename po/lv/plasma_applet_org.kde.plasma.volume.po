@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-19 02:43+0000\n"
+"POT-Creation-Date: 2023-08-30 02:26+0000\n"
 "PO-Revision-Date: 2019-01-04 11:37+0200\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -99,104 +99,104 @@ msgstr "100%"
 msgid "Audio Volume"
 msgstr "Audio skaļums"
 
-#: contents/ui/main.qml:56
+#: contents/ui/main.qml:39
+#, kde-format
+msgid "No output or input devices found"
+msgstr "Nav atrastas ievades vai izvades iekārtas"
+
+#: contents/ui/main.qml:57
 #, kde-format
 msgid "Audio Muted"
 msgstr "Audio ir apklusināts"
 
-#: contents/ui/main.qml:58
+#: contents/ui/main.qml:59
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Skaļums ir %1%"
 
-#: contents/ui/main.qml:75
+#: contents/ui/main.qml:77
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:77
+#: contents/ui/main.qml:79
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr ""
 
-#: contents/ui/main.qml:238
+#: contents/ui/main.qml:243
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "No output device"
 msgstr "Nav atrastas ievades vai izvades iekārtas"
 
-#: contents/ui/main.qml:370
+#: contents/ui/main.qml:375
 #, kde-format
 msgid "Increase Volume"
 msgstr "Palielināt skaļumu"
 
-#: contents/ui/main.qml:376
+#: contents/ui/main.qml:381
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Samazināt skaļumu"
 
-#: contents/ui/main.qml:382
+#: contents/ui/main.qml:387
 #, kde-format
 msgid "Mute"
 msgstr "Apklusināt"
 
-#: contents/ui/main.qml:388
+#: contents/ui/main.qml:393
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Palielināt mikrofona skaļumu"
 
-#: contents/ui/main.qml:394
+#: contents/ui/main.qml:399
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Samazināt mikrofona skaļumu"
 
-#: contents/ui/main.qml:400
+#: contents/ui/main.qml:405
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Apklusināt mikrofonu"
 
-#: contents/ui/main.qml:504
+#: contents/ui/main.qml:509
 #, kde-format
 msgid "Devices"
 msgstr "Iekārtas"
 
-#: contents/ui/main.qml:511
+#: contents/ui/main.qml:516
 #, kde-format
 msgid "Applications"
 msgstr "Programmas"
 
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
+#: contents/ui/main.qml:537 contents/ui/main.qml:539 contents/ui/main.qml:769
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: contents/ui/main.qml:568
-#, kde-format
-msgid "No output or input devices found"
-msgstr "Nav atrastas ievades vai izvades iekārtas"
-
-#: contents/ui/main.qml:587
+#: contents/ui/main.qml:592
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Pašlaik neviena programma neatskaņo vai neieraksta audio"
 
-#: contents/ui/main.qml:738
+#: contents/ui/main.qml:743
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Palielināt maksimālo skaļumu"
 
-#: contents/ui/main.qml:768
+#: contents/ui/main.qml:773
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nav atrastas ievades vai izvades iekārtas"
 
-#: contents/ui/main.qml:774
+#: contents/ui/main.qml:779
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

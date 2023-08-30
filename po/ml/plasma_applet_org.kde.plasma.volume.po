@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-19 02:43+0000\n"
+"POT-Creation-Date: 2023-08-30 02:26+0000\n"
 "PO-Revision-Date: 2019-02-18 03:11+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -95,102 +95,102 @@ msgstr ""
 msgid "Audio Volume"
 msgstr ""
 
-#: contents/ui/main.qml:56
-#, kde-format
-msgid "Audio Muted"
-msgstr ""
-
-#: contents/ui/main.qml:58
-#, kde-format
-msgid "Volume at %1%"
-msgstr ""
-
-#: contents/ui/main.qml:75
-#, kde-format
-msgid "Middle-click to unmute"
-msgstr ""
-
-#: contents/ui/main.qml:76
-#, kde-format
-msgid "Middle-click to mute all audio"
-msgstr ""
-
-#: contents/ui/main.qml:77
-#, kde-format
-msgid "Scroll to adjust volume"
-msgstr ""
-
-#: contents/ui/main.qml:238
-#, kde-format
-msgid "No output device"
-msgstr ""
-
-#: contents/ui/main.qml:370
-#, kde-format
-msgid "Increase Volume"
-msgstr ""
-
-#: contents/ui/main.qml:376
-#, kde-format
-msgid "Decrease Volume"
-msgstr ""
-
-#: contents/ui/main.qml:382
-#, kde-format
-msgid "Mute"
-msgstr ""
-
-#: contents/ui/main.qml:388
-#, kde-format
-msgid "Increase Microphone Volume"
-msgstr ""
-
-#: contents/ui/main.qml:394
-#, kde-format
-msgid "Decrease Microphone Volume"
-msgstr ""
-
-#: contents/ui/main.qml:400
-#, kde-format
-msgid "Mute Microphone"
-msgstr ""
-
-#: contents/ui/main.qml:504
-#, kde-format
-msgid "Devices"
-msgstr ""
-
-#: contents/ui/main.qml:511
-#, kde-format
-msgid "Applications"
-msgstr ""
-
-#: contents/ui/main.qml:532 contents/ui/main.qml:534 contents/ui/main.qml:764
-#, kde-format
-msgid "Force mute all playback devices"
-msgstr ""
-
-#: contents/ui/main.qml:568
+#: contents/ui/main.qml:39
 #, kde-format
 msgid "No output or input devices found"
 msgstr ""
 
-#: contents/ui/main.qml:587
+#: contents/ui/main.qml:57
+#, kde-format
+msgid "Audio Muted"
+msgstr ""
+
+#: contents/ui/main.qml:59
+#, kde-format
+msgid "Volume at %1%"
+msgstr ""
+
+#: contents/ui/main.qml:77
+#, kde-format
+msgid "Middle-click to unmute"
+msgstr ""
+
+#: contents/ui/main.qml:78
+#, kde-format
+msgid "Middle-click to mute all audio"
+msgstr ""
+
+#: contents/ui/main.qml:79
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr ""
+
+#: contents/ui/main.qml:243
+#, kde-format
+msgid "No output device"
+msgstr ""
+
+#: contents/ui/main.qml:375
+#, kde-format
+msgid "Increase Volume"
+msgstr ""
+
+#: contents/ui/main.qml:381
+#, kde-format
+msgid "Decrease Volume"
+msgstr ""
+
+#: contents/ui/main.qml:387
+#, kde-format
+msgid "Mute"
+msgstr ""
+
+#: contents/ui/main.qml:393
+#, kde-format
+msgid "Increase Microphone Volume"
+msgstr ""
+
+#: contents/ui/main.qml:399
+#, kde-format
+msgid "Decrease Microphone Volume"
+msgstr ""
+
+#: contents/ui/main.qml:405
+#, kde-format
+msgid "Mute Microphone"
+msgstr ""
+
+#: contents/ui/main.qml:509
+#, kde-format
+msgid "Devices"
+msgstr ""
+
+#: contents/ui/main.qml:516
+#, kde-format
+msgid "Applications"
+msgstr ""
+
+#: contents/ui/main.qml:537 contents/ui/main.qml:539 contents/ui/main.qml:769
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr ""
+
+#: contents/ui/main.qml:592
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr ""
 
-#: contents/ui/main.qml:738
+#: contents/ui/main.qml:743
 #, kde-format
 msgid "Raise maximum volume"
 msgstr ""
 
-#: contents/ui/main.qml:768
+#: contents/ui/main.qml:773
 #, kde-format
 msgid "Show virtual devices"
 msgstr ""
 
-#: contents/ui/main.qml:774
+#: contents/ui/main.qml:779
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
