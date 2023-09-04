@@ -26,6 +26,7 @@ set(cpp_SRCS
     canberracontext.cpp
     speakertest.cpp
     gsettingsitem.cpp
+    soundthemeconfig.cpp
     qml/globalactioncollection.cpp
     qml/listitemmenu.cpp
     qml/plugin.cpp

@@ -11,6 +11,8 @@
 
 #include <canberra.h>
 
+class SoundThemeConfig;
+
 class VolumeFeedback : public QObject
 {
     Q_OBJECT
@@ -24,6 +26,12 @@ public:
 
 public Q_SLOTS:
     void play(quint32 sinkIndex);
+
+private Q_SLOTS:
+    void updateCachedSound();
+
+private:
+    SoundThemeConfig *m_config = nullptr;
 };
 
 #endif // VOLUMEFEEDBACK_H

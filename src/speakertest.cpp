@@ -8,6 +8,7 @@
 #include "speakertest.h"
 
 #include "canberracontext.h"
+#include "soundthemeconfig.h"
 
 namespace
 {
@@ -31,6 +32,12 @@ void finish_callback(ca_context *c, unsigned int id, int error_code, void *userd
 
     delete (cb_data);
 };
+}
+
+SpeakerTest::SpeakerTest(QObject *parent)
+    : QObject(parent)
+    , m_config(new SoundThemeConfig(this))
+{
 }
 
 QPulseAudio::Sink *SpeakerTest::sink() const
@@ -71,6 +78,7 @@ void SpeakerTest::testChannel(const QString &name)
     ca_proplist_sets(proplist, CA_PROP_MEDIA_NAME, name.toLatin1().constData());
     ca_proplist_sets(proplist, CA_PROP_CANBERRA_FORCE_CHANNEL, name.toLatin1().data());
     ca_proplist_sets(proplist, CA_PROP_CANBERRA_ENABLE, "1");
+    ca_proplist_sets(proplist, CA_PROP_CANBERRA_XDG_THEME_NAME, m_config->soundTheme().toLatin1().constData());
 
     // there is no subwoofer sound in the freedesktop theme https://gitlab.freedesktop.org/xdg/xdg-sound-theme/-/issues/7
     const QString sound_name = (name == QLatin1String("lfe")) ? QStringLiteral("audio-channel-rear-center") : QStringLiteral("audio-channel-%1").arg(name);

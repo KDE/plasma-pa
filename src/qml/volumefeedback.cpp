@@ -7,14 +7,19 @@
 
 #include "volumefeedback.h"
 #include "canberracontext.h"
+#include "soundthemeconfig.h"
 
 VolumeFeedback::VolumeFeedback(QObject *parent)
     : QObject(parent)
+    , m_config(new SoundThemeConfig(this))
 {
     QPulseAudio::CanberraContext::instance()->ref();
     if (ca_context_set_driver(QPulseAudio::CanberraContext::instance()->canberra(), "pulse") != CA_SUCCESS) {
         return;
     }
+
+    connect(m_config, &SoundThemeConfig::soundThemeChanged, this, &VolumeFeedback::updateCachedSound);
+    updateCachedSound();
 }
 
 VolumeFeedback::~VolumeFeedback()
@@ -51,17 +56,29 @@ void VolumeFeedback::play(quint32 sinkIndex)
     ca_context_change_device(context, dev);
 
     // Ideally we'd use something like ca_gtk_play_for_widget()...
-    ca_context_play(context,
-                    cindex,
-                    CA_PROP_EVENT_DESCRIPTION,
-                    "Volume Control Feedback Sound",
-                    CA_PROP_EVENT_ID,
-                    "audio-volume-change",
-                    CA_PROP_CANBERRA_CACHE_CONTROL,
-                    "permanent",
-                    CA_PROP_CANBERRA_ENABLE,
-                    "1",
+    /* clang-format off */
+    ca_context_play(context, cindex,
+                    CA_PROP_EVENT_ID, "audio-volume-change",
+                    CA_PROP_CANBERRA_CACHE_CONTROL, "permanent", // For better performance
                     nullptr);
+    /* clang-format on */
 
     ca_context_change_device(context, nullptr);
+}
+
+void VolumeFeedback::updateCachedSound()
+{
+    auto context = QPulseAudio::CanberraContext::instance()->canberra();
+    if (!context) {
+        return;
+    }
+
+    /* clang-format off */
+    ca_context_cache(context,
+                     CA_PROP_EVENT_DESCRIPTION, "Volume Control Feedback Sound",
+                     CA_PROP_EVENT_ID, "audio-volume-change",
+                     CA_PROP_CANBERRA_ENABLE, "1",
+                     CA_PROP_CANBERRA_XDG_THEME_NAME, m_config->soundTheme().toLatin1().constData(),
+                     nullptr);
+    /* clang-format on */
 }
