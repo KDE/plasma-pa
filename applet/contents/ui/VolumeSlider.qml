@@ -59,7 +59,6 @@ PC3.Slider {
     background: KSvg.FrameSvgItem {
         imagePath: "widgets/slider"
         prefix: "groove"
-        colorGroup: Kirigami.Theme.colorSet
 
         implicitWidth: control.horizontal ? Kirigami.Units.gridUnit * 12 : fixedMargins.left + fixedMargins.right
         implicitHeight: control.vertical ? Kirigami.Units.gridUnit * 12 : fixedMargins.top + fixedMargins.bottom
@@ -73,7 +72,6 @@ PC3.Slider {
         KSvg.FrameSvgItem {
             imagePath: "widgets/slider"
             prefix: "groove-highlight"
-            colorGroup: Kirigami.Theme.colorSet
 
             anchors.left: parent.left
             anchors.bottom: parent.bottom
