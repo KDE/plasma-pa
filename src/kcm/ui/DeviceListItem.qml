@@ -10,6 +10,7 @@ import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
 
 import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kitemmodels as KItemModels
 import org.kde.plasma.private.volume 0.1
 
 ColumnLayout {
@@ -138,7 +139,7 @@ ColumnLayout {
         ComboBox {
             id: profileBox
 
-            readonly property var card: paCardModel.data(paCardModel.indexOfCardNumber(CardIndex), paCardModel.role("PulseObject"))
+            readonly property var card: paCardModel.data(paCardModel.indexOfCardNumber(CardIndex), paCardModel.KItemModels.KRoleNames.role("PulseObject"))
 
             Layout.preferredWidth: Kirigami.Units.gridUnit * 12
             visible: profileBox.count > 1

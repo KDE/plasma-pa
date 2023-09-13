@@ -35,7 +35,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     bool setData(const QModelIndex &index, const QVariant &value, int role) final;
 
-    Q_INVOKABLE int role(const QByteArray &roleName) const;
+    int role(const QByteArray &roleName) const;
 
 Q_SIGNALS:
     void countChanged();

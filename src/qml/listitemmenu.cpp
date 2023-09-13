@@ -285,30 +285,6 @@ void ListItemMenu::openRelative()
     setVisible(true);
 }
 
-static int getModelRole(QObject *model, const QByteArray &name)
-{
-    // Can either be an AbstractModel, then it's easy
-    if (auto *abstractModel = qobject_cast<AbstractModel *>(model)) {
-        return abstractModel->role(name);
-    }
-
-    // or that PulseObjectFilterModel from QML where everything is a QVariant...
-    QVariant roleVariant;
-    bool ok = QMetaObject::invokeMethod(model, "role", Q_RETURN_ARG(QVariant, roleVariant), Q_ARG(QVariant, QVariant(name)));
-    if (!ok) {
-        qCCritical(PLASMAPA) << "Failed to invoke 'role' on" << model;
-        return -1;
-    }
-
-    int role = roleVariant.toInt(&ok);
-    if (!ok) {
-        qCCritical(PLASMAPA) << "Return value from 'role' is bogus" << roleVariant;
-        return -1;
-    }
-
-    return role;
-}
-
 QMenu *ListItemMenu::createMenu()
 {
     if (m_visible) {
@@ -481,10 +457,10 @@ QMenu *ListItemMenu::createMenu()
                 menu->addSection(i18nc("Heading for a list of possible input devices (built-in microphone, headset, ...) to choose", "Record audio using"));
             }
 
-            const int indexRole = getModelRole(m_sourceModel, "Index");
-            Q_ASSERT(indexRole > -1);
-            const int descriptionRole = getModelRole(m_sourceModel, "Description");
-            Q_ASSERT(descriptionRole > -1);
+            const int indexRole = m_sourceModel->roleNames().key("Index", -1);
+            Q_ASSERT(indexRole != -1);
+            const int descriptionRole = m_sourceModel->roleNames().key("Description", -1);
+            Q_ASSERT(descriptionRole != -1);
 
             auto *deviceGroup = new QActionGroup(menu);
 

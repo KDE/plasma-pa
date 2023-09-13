@@ -10,6 +10,7 @@ import QtQuick.Layouts 1.0
 import org.kde.plasma.core as PlasmaCore
 import org.kde.ksvg 1.0 as KSvg
 import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kitemmodels as KItemModels
 import org.kde.plasma.components 3.0 as PC3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
@@ -187,18 +188,18 @@ PlasmoidItem {
 
 
     function enableGlobalMute() {
-        var role = paSinkModel.role("Muted");
+        var role = paSinkModel.KItemModels.KRoleNames.role("Muted");
         var rowCount = paSinkModel.rowCount();
         // List for devices that are already muted. Will use to keep muted after disable GlobalMute.
         var globalMuteDevices = [];
 
         for (var i = 0; i < rowCount; i++) {
             var idx = paSinkModel.index(i, 0);
-            var name = paSinkModel.data(idx, paSinkModel.role("Name"));
+            var name = paSinkModel.data(idx, paSinkModel.KItemModels.KRoleNames.role("Name"));
             if (paSinkModel.data(idx, role) === false) {
                 paSinkModel.setData(idx, true, role);
             } else {
-                globalMuteDevices.push(name + "." + paSinkModel.data(idx, paSinkModel.role("ActivePortIndex")));
+                globalMuteDevices.push(name + "." + paSinkModel.data(idx, paSinkModel.KItemModels.KRoleNames.role("ActivePortIndex")));
             }
         }
         // If all the devices were muted, will unmute them all with disable GlobalMute.
@@ -208,10 +209,10 @@ PlasmoidItem {
     }
 
     function disableGlobalMute() {
-        var role = paSinkModel.role("Muted");
+        var role = paSinkModel.KItemModels.KRoleNames.role("Muted");
         for (var i = 0; i < paSinkModel.rowCount(); i++) {
             var idx = paSinkModel.index(i, 0);
-            var name = paSinkModel.data(idx, paSinkModel.role("Name")) + "." + paSinkModel.data(idx, paSinkModel.role("ActivePortIndex"));
+            var name = paSinkModel.data(idx, paSinkModel.KItemModels.KRoleNames.role("Name")) + "." + paSinkModel.data(idx, paSinkModel.KItemModels.KRoleNames.role("ActivePortIndex"));
             if (config.globalMuteDevices.indexOf(name) === -1) {
                 paSinkModel.setData(idx, false, role);
             }
@@ -244,7 +245,7 @@ PlasmoidItem {
             } else {
                 const cardModelIdx = paCardModel.indexOfCardNumber(defaultSink.cardIndex);
                 if (cardModelIdx.valid) {
-                    const cardProperties = paCardModel.data(cardModelIdx, paCardModel.role("Properties"));
+                    const cardProperties = paCardModel.data(cardModelIdx, paCardModel.KItemModels.KRoleNames.role("Properties"));
                     const cardBluetoothBattery = cardProperties["bluetooth.battery"];
                     // This property is returned as a string with percent sign,
                     // parse it into an int in case they change it to a number later.
@@ -272,7 +273,7 @@ PlasmoidItem {
 
         onRowsInserted: {
             if (globalMute) {
-                var role = paSinkModel.role("Muted");
+                var role = paSinkModel.KItemModels.KRoleNames.role("Muted");
                 for (var i = 0; i < paSinkModel.rowCount(); i++) {
                     var idx = paSinkModel.index(i, 0);
                     if (paSinkModel.data(idx, role) === false) {
@@ -330,7 +331,7 @@ PlasmoidItem {
         id: paCardModel
 
         function indexOfCardNumber(cardNumber) {
-            const indexRole = role("Index");
+            const indexRole = KItemModels.KRoleNames.role("Index");
             for (let idx = 0; idx < count; ++idx) {
                 if (data(index(idx, 0), indexRole) === cardNumber) {
                     return index(idx, 0);
@@ -344,7 +345,7 @@ PlasmoidItem {
     // - scroll actions
     // - a middle-click action
     // TODO remove once it gains those features.
-    compactRepresentation:MouseArea {
+    compactRepresentation: MouseArea {
         property int wheelDelta: 0
         property bool wasExpanded: false
 

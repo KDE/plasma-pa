@@ -6,12 +6,13 @@
 
 import QtQuick 2.0
 
+import org.kde.kitemmodels as KItemModels
 import org.kde.plasma.private.volume 0.1
 
 ListItemBase {
     id: item
 
-    property QtObject devicesModel
+    property PulseObjectFilterModel devicesModel
 
     draggable: devicesModel && devicesModel.count > 1
     label: {
@@ -25,8 +26,8 @@ ListItemBase {
     }
     fullNameToShowOnHover: {
         if (devicesModel.count > 1) {
-            const indexRole = devicesModel.role("Index");
-            const descriptionRole = devicesModel.role("Description");
+            const indexRole = devicesModel.KItemModels.KRoleNames.role("Index");
+            const descriptionRole = devicesModel.KItemModels.KRoleNames.role("Description");
 
             for (let i = 0; i < devicesModel.count; ++i) {
                 const idx = devicesModel.index(i, 0);

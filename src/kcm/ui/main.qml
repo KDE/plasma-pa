@@ -14,7 +14,7 @@ import QtQuick.Controls 2.0
 
 import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.kcmutils as KCM
-import org.kde.kitemmodels 1.0 as KItemModels
+import org.kde.kitemmodels as KItemModels
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 import org.kde.plasma.private.volume 0.1
@@ -43,7 +43,7 @@ KCM.ScrollViewKCM {
 
         function indexOfCardNumber(cardNumber) {
             for (var idx = 0; idx < count; idx++) {
-                if (data(index(idx, 0), role("Index")) == cardNumber) {
+                if (data(index(idx, 0), KItemModels.KRoleNames.role("Index")) == cardNumber) {
                     return index(idx, 0);
                 }
             }
@@ -209,8 +209,8 @@ KCM.ScrollViewKCM {
                     sourceModel: paCardModel
                     filterRowCallback: function(source_row, source_parent) {
                         let idx = sourceModel.index(source_row, 0);
-                        let profiles = sourceModel.data(idx, sourceModel.role("Profiles"))
-                        let activeProfileIndex = sourceModel.data(idx, sourceModel.role("ActiveProfileIndex"))
+                        let profiles = sourceModel.data(idx, sourceModel.KItemModels.KRoleNames.role("Profiles"))
+                        let activeProfileIndex = sourceModel.data(idx, sourceModel.KItemModels.KRoleNames.role("ActiveProfileIndex"))
                         return profiles[activeProfileIndex].name == "off";
                     }
                 }
@@ -321,18 +321,18 @@ KCM.ScrollViewKCM {
 
         function testSink(index) {
             let modelIndex = sinks.model.index(Math.max(index, 0), 0);
-            sinkObject = sinks.model.data(modelIndex, sinks.model.role("PulseObject"));
-            description = sinks.model.data(modelIndex, sinks.model.role("Description"));
-            iconName = sinks.model.data(modelIndex, sinks.model.role("IconName")) || "audio-card";
+            sinkObject = sinks.model.data(modelIndex, sinks.model.KItemModels.KRoleNames.role("PulseObject"));
+            description = sinks.model.data(modelIndex, sinks.model.KItemModels.KRoleNames.role("Description"));
+            iconName = sinks.model.data(modelIndex, sinks.model.KItemModels.KRoleNames.role("IconName")) || "audio-card";
 
-            let ports = sinks.model.data(modelIndex, sinks.model.role("Ports"));
-            port = ports.length > 1 ? ports[sinks.model.data(modelIndex, sinks.model.role("ActivePortIndex"))].description : "";
+            let ports = sinks.model.data(modelIndex, sinks.model.KItemModels.KRoleNames.role("Ports"));
+            port = ports.length > 1 ? ports[sinks.model.data(modelIndex, sinks.model.KItemModels.KRoleNames.role("ActivePortIndex"))].description : "";
 
             profile = "";
-            let cardIndex = paCardModel.indexOfCardNumber(sinks.model.data(modelIndex, sinks.model.role("CardIndex")));
+            let cardIndex = paCardModel.indexOfCardNumber(sinks.model.data(modelIndex, sinks.model.KItemModels.KRoleNames.role("CardIndex")));
             if (cardIndex.valid) {
-                let profiles = paCardModel.data(cardIndex, paCardModel.role("Profiles")) || [];
-                profile = profiles.length > 1 ? profiles[paCardModel.data(cardIndex, paCardModel.role("ActiveProfileIndex"))].description : "";
+                let profiles = paCardModel.data(cardIndex, paCardModel.KItemModels.KRoleNames.role("Profiles")) || [];
+                profile = profiles.length > 1 ? profiles[paCardModel.data(cardIndex, paCardModel.KItemModels.KRoleNames.role("ActiveProfileIndex"))].description : "";
             }
 
             testOverlay.open();
