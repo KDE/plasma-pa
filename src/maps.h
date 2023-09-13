@@ -14,6 +14,8 @@
 #include <pulse/ext-stream-restore.h>
 #include <pulse/pulseaudio.h>
 
+#include <iterator>
+
 namespace QPulseAudio
 {
 // Used for typedefs.
@@ -85,7 +87,7 @@ public:
 
     QObject *objectAt(int index) const override
     {
-        return (m_data.constBegin() + index).value();
+        return std::next(m_data.constBegin(), index).value();
     }
 
     void reset()
