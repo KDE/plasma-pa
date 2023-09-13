@@ -129,7 +129,7 @@ void AbstractModel::initRoleNames(const QMetaObject &qobjectMetaObject)
         const int roleLength = 4;
         QByteArray key(enumerator.key(i));
         // Enum values must end in Role or the enum is crap
-        Q_ASSERT(key.right(roleLength) == QByteArrayLiteral("Role"));
+        Q_ASSERT(key.endsWith(QByteArrayLiteral("Role")));
         key.chop(roleLength);
         m_roles[enumerator.value(i)] = key;
     }
