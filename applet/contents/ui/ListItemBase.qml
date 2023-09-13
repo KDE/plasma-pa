@@ -330,7 +330,7 @@ PC3.ItemDelegate {
         parent: item
         anchors.fill: parent
         enabled: main.draggedStream && main.draggedStream.deviceIndex !== item.model.Index
-        onDropped: {
+        onDropped: drop => {
             main.draggedStream.deviceIndex = item.model.Index;
         }
     }
@@ -362,7 +362,7 @@ PC3.ItemDelegate {
         item.model.PulseObject.volume = Math.round(PulseAudio.NormalVolume * (targetPercent/100));
     }
 
-    Keys.onPressed: {
+    Keys.onPressed: event => {
         const k = event.key;
 
         if (k === Qt.Key_M) {
