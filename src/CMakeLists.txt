@@ -50,6 +50,7 @@ target_link_libraries(plasma-volume-declarative
     Qt::Gui
     Qt::DBus
     Qt::Quick
+    Qt::Widgets
     KF6::GlobalAccel
     KF6::I18n
     KF6::StatusNotifierItem
