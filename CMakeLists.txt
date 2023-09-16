@@ -38,6 +38,7 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Quick
 )
 find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
+    Config
     CoreAddons
     Declarative
     DocTools
