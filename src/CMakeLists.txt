@@ -1,6 +1,8 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
 
-set(cpp_SRCS
+ecm_add_qml_module(plasma-volume-declarative URI org.kde.plasma.private.volume)
+
+target_sources(plasma-volume-declarative PRIVATE
     card.cpp
     client.cpp
     context.cpp
@@ -35,17 +37,18 @@ set(cpp_SRCS
     qml/volumefeedback.cpp
 )
 
-set(qml_SRCS
-    qml/qmldir
+ecm_target_qml_sources(plasma-volume-declarative VERSION 0.1 SOURCES
     qml/PulseObjectFilterModel.qml
 )
 
 set_property(SOURCE qml/dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdServiceInterface)
 qt_add_dbus_interface(dbus_SRCS qml/dbus/osdService.xml osdservice)
 
-add_library(plasma-volume-declarative SHARED ${dbus_SRCS} ${cpp_SRCS} ${qml_SRCS})
+target_sources(plasma-volume-declarative PRIVATE ${dbus_SRCS})
+
 kconfig_add_kcfg_files(plasma-volume-declarative GENERATE_MOC qml/globalconfig.kcfgc)
-target_link_libraries(plasma-volume-declarative
+
+target_link_libraries(plasma-volume-declarative PRIVATE
     Qt::Core
     Qt::Gui
     Qt::DBus
@@ -63,9 +66,6 @@ target_link_libraries(plasma-volume-declarative
     PkgConfig::GIO
 )
 
-
-set(PRIVATE_QML_INSTALL_DIR ${KDE_INSTALL_QMLDIR}/org/kde/plasma/private/volume)
-install(TARGETS plasma-volume-declarative DESTINATION ${PRIVATE_QML_INSTALL_DIR})
-install(FILES ${qml_SRCS} DESTINATION ${PRIVATE_QML_INSTALL_DIR})
+ecm_finalize_qml_module(plasma-volume-declarative)
 
 add_subdirectory(kcm)

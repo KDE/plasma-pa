@@ -26,6 +26,7 @@ include(ECMSetupVersion)
 include(ECMOptionalAddSubdirectory)
 include(FindPkgConfig)
 include(ECMDeprecationSettings)
+include(ECMQmlModule)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX PLASMAPA
