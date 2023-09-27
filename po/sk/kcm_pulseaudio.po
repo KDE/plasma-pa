@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 01:58+0000\n"
+"POT-Creation-Date: 2023-09-27 01:42+0000\n"
 "PO-Revision-Date: 2023-03-28 18:40+0200\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -24,48 +24,48 @@ msgctxt "Name shown in debug pulseaudio tools"
 msgid "Plasma PA"
 msgstr "Plasma PA"
 
-#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:134
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Profil:"
 
-#: kcm/ui/DeviceListItem.qml:47
+#: kcm/ui/DeviceListItem.qml:48
 #, kde-format
 msgctxt "label of device items"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kcm/ui/DeviceListItem.qml:88
+#: kcm/ui/DeviceListItem.qml:89
 #, kde-format
 msgid "Port:"
 msgstr "Port:"
 
-#: kcm/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
+#: kcm/ui/DeviceListItem.qml:112 qml/listitemmenu.cpp:363
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (nedostupné)"
 
-#: kcm/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
+#: kcm/ui/DeviceListItem.qml:114 qml/listitemmenu.cpp:365
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (nezapojené)"
 
-#: kcm/ui/DeviceListItem.qml:188
+#: kcm/ui/DeviceListItem.qml:189
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/ui/DeviceListItem.qml:213
+#: kcm/ui/DeviceListItem.qml:214
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Vyskúšať"
 
-#: kcm/ui/DeviceListItem.qml:222
+#: kcm/ui/DeviceListItem.qml:223
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
@@ -273,17 +273,17 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: qml/listitemmenu.cpp:342
+#: qml/listitemmenu.cpp:318
 #, kde-format
 msgid "Play all audio via this device"
 msgstr "Prehrávať všetok zvuk cez toto zariadenie"
 
-#: qml/listitemmenu.cpp:347
+#: qml/listitemmenu.cpp:323
 #, kde-format
 msgid "Record all audio via this device"
 msgstr "Nahrávať všetok zvuk cez toto zariadenie"
 
-#: qml/listitemmenu.cpp:375
+#: qml/listitemmenu.cpp:351
 #, kde-format
 msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
@@ -291,7 +291,7 @@ msgctxt ""
 msgid "Ports"
 msgstr "Porty"
 
-#: qml/listitemmenu.cpp:445
+#: qml/listitemmenu.cpp:421
 #, kde-format
 msgctxt ""
 "Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
@@ -299,7 +299,7 @@ msgctxt ""
 msgid "Profiles"
 msgstr "Profily"
 
-#: qml/listitemmenu.cpp:479
+#: qml/listitemmenu.cpp:455
 #, kde-format
 msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
@@ -307,7 +307,7 @@ msgctxt ""
 msgid "Play audio using"
 msgstr "Prehrávať zvuk pomocou"
 
-#: qml/listitemmenu.cpp:481
+#: qml/listitemmenu.cpp:457
 #, kde-format
 msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "

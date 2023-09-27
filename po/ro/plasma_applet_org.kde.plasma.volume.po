@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 01:58+0000\n"
+"POT-Creation-Date: 2023-09-27 01:42+0000\n"
 "PO-Revision-Date: 2022-08-14 16:52+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -90,47 +90,47 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:37
 #, kde-format
 msgid "Audio Volume"
 msgstr "Volum audio"
 
-#: contents/ui/main.qml:43
+#: contents/ui/main.qml:44
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nu a fost găsit niciun dispozitiv de ieșire sau intrare"
 
-#: contents/ui/main.qml:57
+#: contents/ui/main.qml:58
 #, kde-format
 msgid "Audio Muted"
 msgstr "Audio muțit"
 
-#: contents/ui/main.qml:59
+#: contents/ui/main.qml:60
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volum la %1%"
 
-#: contents/ui/main.qml:77
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:79
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:79
+#: contents/ui/main.qml:80
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr ""
 
-#: contents/ui/main.qml:243
+#: contents/ui/main.qml:244
 #, kde-format
 msgid "No output device"
 msgstr "Niciun dispozitiv de ieșire"
 
-#: contents/ui/main.qml:254
+#: contents/ui/main.qml:255
 #, fuzzy, kde-format
 #| msgctxt "label of device items"
 #| msgid "%1 (%2)"
@@ -138,86 +138,86 @@ msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2)"
 
-#: contents/ui/main.qml:401
+#: contents/ui/main.qml:402
 #, kde-format
 msgid "Increase Volume"
 msgstr "Mărește volumul"
 
-#: contents/ui/main.qml:407
+#: contents/ui/main.qml:408
 #, fuzzy, kde-format
 #| msgid "Increase Volume"
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Mărește volumul"
 
-#: contents/ui/main.qml:413
+#: contents/ui/main.qml:414
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Micșorează volumul"
 
-#: contents/ui/main.qml:419
+#: contents/ui/main.qml:420
 #, fuzzy, kde-format
 #| msgid "Decrease Volume"
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Micșorează volumul"
 
-#: contents/ui/main.qml:425
+#: contents/ui/main.qml:426
 #, kde-format
 msgid "Mute"
 msgstr "Muțește"
 
-#: contents/ui/main.qml:431
+#: contents/ui/main.qml:432
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Mărește volumul microfonului"
 
-#: contents/ui/main.qml:437
+#: contents/ui/main.qml:438
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Micșorează volumul microfonului"
 
-#: contents/ui/main.qml:443
+#: contents/ui/main.qml:444
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Muțește microfonul"
 
-#: contents/ui/main.qml:545
+#: contents/ui/main.qml:546
 #, kde-format
 msgid "Devices"
 msgstr "Dispozitive"
 
-#: contents/ui/main.qml:552
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "Applications"
 msgstr "Aplicații"
 
-#: contents/ui/main.qml:573 contents/ui/main.qml:575 contents/ui/main.qml:788
+#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:789
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Muțește forțat toate dispozitivele de redare"
 
-#: contents/ui/main.qml:628
+#: contents/ui/main.qml:629
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nicio aplicație nu redă sau înregistrează sunet"
 
-#: contents/ui/main.qml:779
+#: contents/ui/main.qml:780
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Mărește volumul maxim"
 
-#: contents/ui/main.qml:801
+#: contents/ui/main.qml:802
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Arată dispozitivele virtuale"
 
-#: contents/ui/main.qml:811
+#: contents/ui/main.qml:812
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurează dispozitive audio…"
 
-#: contents/ui/StreamListItem.qml:24
+#: contents/ui/StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
 msgstr "Denumirea fluxului nu a fost găsită"

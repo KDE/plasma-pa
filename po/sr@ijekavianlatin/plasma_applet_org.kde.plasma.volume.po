@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 01:58+0000\n"
+"POT-Creation-Date: 2023-09-27 01:42+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -95,48 +95,48 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:37
 #, kde-format
 msgid "Audio Volume"
 msgstr "Jačina zvuka"
 
-#: contents/ui/main.qml:43
+#: contents/ui/main.qml:44
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: contents/ui/main.qml:57
+#: contents/ui/main.qml:58
 #, kde-format
 msgid "Audio Muted"
 msgstr "Zvuk utišan"
 
-#: contents/ui/main.qml:59
+#: contents/ui/main.qml:60
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Jačina %1%"
 
-#: contents/ui/main.qml:77
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:79
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:79
+#: contents/ui/main.qml:80
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr ""
 
-#: contents/ui/main.qml:243
+#: contents/ui/main.qml:244
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "No output device"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: contents/ui/main.qml:254
+#: contents/ui/main.qml:255
 #, fuzzy, kde-format
 #| msgctxt "label of device items"
 #| msgid "%1 (%2)"
@@ -144,87 +144,87 @@ msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2)"
 
-#: contents/ui/main.qml:401
+#: contents/ui/main.qml:402
 #, kde-format
 msgid "Increase Volume"
 msgstr "Povećaj jačinu"
 
-#: contents/ui/main.qml:407
+#: contents/ui/main.qml:408
 #, fuzzy, kde-format
 #| msgid "Increase Volume"
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Povećaj jačinu"
 
-#: contents/ui/main.qml:413
+#: contents/ui/main.qml:414
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Smanji jačinu"
 
-#: contents/ui/main.qml:419
+#: contents/ui/main.qml:420
 #, fuzzy, kde-format
 #| msgid "Decrease Volume"
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Smanji jačinu"
 
-#: contents/ui/main.qml:425
+#: contents/ui/main.qml:426
 #, kde-format
 msgid "Mute"
 msgstr "Utišaj"
 
-#: contents/ui/main.qml:431
+#: contents/ui/main.qml:432
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Povećaj jačinu mikrofona"
 
-#: contents/ui/main.qml:437
+#: contents/ui/main.qml:438
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Smanji jačinu mikrofona"
 
-#: contents/ui/main.qml:443
+#: contents/ui/main.qml:444
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Utišaj mikrofon"
 
-#: contents/ui/main.qml:545
+#: contents/ui/main.qml:546
 #, kde-format
 msgid "Devices"
 msgstr "Uređaji"
 
-#: contents/ui/main.qml:552
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "Applications"
 msgstr "Programi"
 
-#: contents/ui/main.qml:573 contents/ui/main.qml:575 contents/ui/main.qml:788
+#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:789
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: contents/ui/main.qml:628
+#: contents/ui/main.qml:629
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nijedan program ne pušta niti snima zvuk."
 
-#: contents/ui/main.qml:779
+#: contents/ui/main.qml:780
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Podigni najveću jačinu"
 
-#: contents/ui/main.qml:801
+#: contents/ui/main.qml:802
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: contents/ui/main.qml:811
+#: contents/ui/main.qml:812
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
 
-#: contents/ui/StreamListItem.qml:24
+#: contents/ui/StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
 msgstr ""

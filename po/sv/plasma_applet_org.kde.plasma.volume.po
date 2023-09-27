@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 01:58+0000\n"
+"POT-Creation-Date: 2023-09-27 01:42+0000\n"
 "PO-Revision-Date: 2022-08-03 09:37+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -89,47 +89,47 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100 %"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:37
 #, kde-format
 msgid "Audio Volume"
 msgstr "Ljudvolym"
 
-#: contents/ui/main.qml:43
+#: contents/ui/main.qml:44
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Inga ut- eller inenheter hittades"
 
-#: contents/ui/main.qml:57
+#: contents/ui/main.qml:58
 #, kde-format
 msgid "Audio Muted"
 msgstr "Ljud tystat"
 
-#: contents/ui/main.qml:59
+#: contents/ui/main.qml:60
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volym %1 %"
 
-#: contents/ui/main.qml:77
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:79
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:79
+#: contents/ui/main.qml:80
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr ""
 
-#: contents/ui/main.qml:243
+#: contents/ui/main.qml:244
 #, kde-format
 msgid "No output device"
 msgstr "Ingen utenhet"
 
-#: contents/ui/main.qml:254
+#: contents/ui/main.qml:255
 #, fuzzy, kde-format
 #| msgctxt "label of device items"
 #| msgid "%1 (%2)"
@@ -137,86 +137,86 @@ msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2)"
 
-#: contents/ui/main.qml:401
+#: contents/ui/main.qml:402
 #, kde-format
 msgid "Increase Volume"
 msgstr "Öka volym"
 
-#: contents/ui/main.qml:407
+#: contents/ui/main.qml:408
 #, fuzzy, kde-format
 #| msgid "Increase Volume"
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Öka volym"
 
-#: contents/ui/main.qml:413
+#: contents/ui/main.qml:414
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Minska volym"
 
-#: contents/ui/main.qml:419
+#: contents/ui/main.qml:420
 #, fuzzy, kde-format
 #| msgid "Decrease Volume"
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Minska volym"
 
-#: contents/ui/main.qml:425
+#: contents/ui/main.qml:426
 #, kde-format
 msgid "Mute"
 msgstr "Tyst"
 
-#: contents/ui/main.qml:431
+#: contents/ui/main.qml:432
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Öka mikrofonvolym"
 
-#: contents/ui/main.qml:437
+#: contents/ui/main.qml:438
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Minska mikrofonvolym"
 
-#: contents/ui/main.qml:443
+#: contents/ui/main.qml:444
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Tysta mikrofon"
 
-#: contents/ui/main.qml:545
+#: contents/ui/main.qml:546
 #, kde-format
 msgid "Devices"
 msgstr "Enheter"
 
-#: contents/ui/main.qml:552
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "Applications"
 msgstr "Program"
 
-#: contents/ui/main.qml:573 contents/ui/main.qml:575 contents/ui/main.qml:788
+#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:789
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Tysta alla uppspelningsenheter"
 
-#: contents/ui/main.qml:628
+#: contents/ui/main.qml:629
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Inga program spelar upp eller spelar in ljud"
 
-#: contents/ui/main.qml:779
+#: contents/ui/main.qml:780
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Höj maximal volym"
 
-#: contents/ui/main.qml:801
+#: contents/ui/main.qml:802
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Visa virtuella enheter"
 
-#: contents/ui/main.qml:811
+#: contents/ui/main.qml:812
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "An&passa ljudenheter…"
 
-#: contents/ui/StreamListItem.qml:24
+#: contents/ui/StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
 msgstr "Strömnamn hittades inte"
