@@ -29,7 +29,7 @@ private:
     void setupWatcher()
     {
         m_configWatcher = KConfigWatcher::create(sharedConfig());
-        connect(m_configWatcher.data(), &KConfigWatcher::configChanged, [this]() {
+        connect(m_configWatcher.data(), &KConfigWatcher::configChanged, this, [this]() {
             load();
         });
     }
