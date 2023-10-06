@@ -4,6 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
+import org.kde.plasma.plasmoid 2.0
 import QtQuick 2.15
 import QtQuick.Layouts 1.0
 
@@ -380,7 +381,7 @@ PlasmoidItem {
         }
         Kirigami.Icon {
             anchors.fill: parent
-            source: plasmoid.icon
+            source: Plasmoid.icon
             active: parent.containsMouse
         }
     }
@@ -520,7 +521,7 @@ PlasmoidItem {
                     Layout.fillHeight: true
 
                     currentIndex: {
-                        switch (plasmoid.configuration.currentTab) {
+                        switch (Plasmoid.configuration.currentTab) {
                         case "devices":
                             return devicesTab.PC3.TabBar.index;
                         case "streams":
@@ -533,10 +534,10 @@ PlasmoidItem {
                     onCurrentIndexChanged: {
                         switch (currentIndex) {
                         case devicesTab.PC3.TabBar.index:
-                            plasmoid.configuration.currentTab = "devices";
+                            Plasmoid.configuration.currentTab = "devices";
                             break;
                         case streamsTab.PC3.TabBar.index:
-                            plasmoid.configuration.currentTab = "streams";
+                            Plasmoid.configuration.currentTab = "streams";
                             break;
                         }
                     }
@@ -559,7 +560,7 @@ PlasmoidItem {
                 PC3.ToolButton {
                     id: globalMuteCheckbox
 
-                    visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+                    visible: !(Plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
 
                     icon.name: "audio-volume-muted"
                     onClicked: {
@@ -578,14 +579,14 @@ PlasmoidItem {
                 }
 
                 PC3.ToolButton {
-                    visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+                    visible: !(Plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
 
                     icon.name: "configure"
-                    onClicked: plasmoid.internalAction("configure").trigger()
+                    onClicked: Plasmoid.internalAction("configure").trigger()
 
-                    Accessible.name: plasmoid.internalAction("configure").text
+                    Accessible.name: Plasmoid.internalAction("configure").text
                     PC3.ToolTip {
-                        text: plasmoid.internalAction("configure").text
+                        text: Plasmoid.internalAction("configure").text
                     }
                 }
             }
@@ -598,7 +599,7 @@ PlasmoidItem {
         contentItem: HorizontalStackView {
             id: contentView
             property var hiddenTypes: []
-            initialItem: plasmoid.configuration.currentTab === "streams" ? streamsView : devicesView
+            initialItem: Plasmoid.configuration.currentTab === "streams" ? streamsView : devicesView
             movementTransitionsEnabled: currentItem !== null
             TwoPartView {
                 id: devicesView
@@ -802,7 +803,7 @@ PlasmoidItem {
             text: i18n("Show virtual devices")
             icon.name: "audio-card"
             checkable: true
-            checked: plasmoid.configuration.showVirtualDevices
+            checked: Plasmoid.configuration.showVirtualDevices
             onTriggered: Plasmoid.configuration.showVirtualDevices = !Plasmoid.configuration.showVirtualDevices
         }
     ]
