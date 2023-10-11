@@ -89,6 +89,7 @@
         "Name[bg]": "Звук",
         "Name[ca@valencia]": "So",
         "Name[ca]": "So",
+        "Name[cs]": "Zvuk",
         "Name[da]": "Lyd",
         "Name[el]": "Ήχος",
         "Name[en_GB]": "Sound",
@@ -123,6 +124,7 @@
         "Name[tr]": "Ses",
         "Name[uk]": "Звук",
         "Name[x-test]": "xxSoundxx",
+        "Name[zh_CN]": "声音",
         "Name[zh_TW]": "音效"
     },
     "X-DocPath": "kcontrol/plasma-pa/index.html",
