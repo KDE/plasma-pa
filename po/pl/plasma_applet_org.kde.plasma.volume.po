@@ -113,12 +113,12 @@ msgstr "Głośność na %1%"
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr "Naciśnij środkowym, aby przywrócić głośność"
+msgstr "Kliknij środkowym, aby przywrócić głośność"
 
 #: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr "Naciśnij środkowym, aby wyciszyć dźwięk"
+msgstr "Kliknij środkowym, aby wyciszyć dźwięk"
 
 #: contents/ui/main.qml:79
 #, kde-format
