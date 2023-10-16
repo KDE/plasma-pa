@@ -129,12 +129,7 @@
         "Name[uk]": "Гучність",
         "Name[x-test]": "xxAudio Volumexx",
         "Name[zh_CN]": "音量",
-        "Name[zh_TW]": "音效音量",
-        "Version": "1.0.0",
-        "Website": ""
+        "Name[zh_TW]": "音效音量"
     },
-    "X-Plasma-API": "declarativeappletscript",
-    "X-Plasma-MainScript": "ui/main.qml",
-    "X-Plasma-NotificationArea": "true",
     "X-Plasma-NotificationAreaCategory": "Hardware"
 }
