@@ -187,7 +187,7 @@ void MicrophoneIndicator::setMuted(bool muted)
     }
 
     // Otherwise unmute the devices we muted
-    for (auto &idx : qAsConst(m_mutedIndices)) {
+    for (auto &idx : std::as_const(m_mutedIndices)) {
         if (!idx.isValid()) {
             continue;
         }
