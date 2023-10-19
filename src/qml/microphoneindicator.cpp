@@ -241,9 +241,9 @@ void MicrophoneIndicator::showOsd()
     m_osd->showMicrophone(volumePercent(preferredSource));
 }
 
-QVector<QModelIndex> MicrophoneIndicator::recordingApplications() const
+QList<QModelIndex> MicrophoneIndicator::recordingApplications() const
 {
-    QVector<QModelIndex> indices;
+    QList<QModelIndex> indices;
 
     // If there are no microphones present, there's nothing to record
     if (m_sourceModel->rowCount() == 0) {
@@ -268,7 +268,7 @@ QVector<QModelIndex> MicrophoneIndicator::recordingApplications() const
     return indices;
 }
 
-QString MicrophoneIndicator::toolTipForApps(const QVector<QModelIndex> &apps) const
+QString MicrophoneIndicator::toolTipForApps(const QList<QModelIndex> &apps) const
 {
     Q_ASSERT(!apps.isEmpty());
 

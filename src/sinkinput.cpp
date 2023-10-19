@@ -46,7 +46,7 @@ void SinkInput::setChannelVolume(int channel, qint64 volume)
     context()->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_input_volume);
 }
 
-void SinkInput::setChannelVolumes(const QVector<qint64> &channelVolumes)
+void SinkInput::setChannelVolumes(const QList<qint64> &channelVolumes)
 {
     context()->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_input_volume);
 }

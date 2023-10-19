@@ -141,7 +141,7 @@ public:
     }
 
     template<typename PAFunction>
-    void setGenericVolumes(quint32 index, QVector<qint64> channelVolumes, pa_cvolume cVolume, PAFunction pa_set_volume)
+    void setGenericVolumes(quint32 index, QList<qint64> channelVolumes, pa_cvolume cVolume, PAFunction pa_set_volume)
     {
         if (!m_context) {
             return;

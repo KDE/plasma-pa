@@ -130,7 +130,7 @@ void ListItemMenu::setCardModel(QPulseAudio::CardModel *cardModel)
         const int profilesRole = m_cardModel->role("Profiles");
         Q_ASSERT(profilesRole > -1);
 
-        connect(m_cardModel, &CardModel::dataChanged, this, [this, profilesRole](const QModelIndex &, const QModelIndex &, const QVector<int> &roles) {
+        connect(m_cardModel, &CardModel::dataChanged, this, [this, profilesRole](const QModelIndex &, const QModelIndex &, const QList<int> &roles) {
             if (roles.isEmpty() || roles.contains(profilesRole)) {
                 update();
             }

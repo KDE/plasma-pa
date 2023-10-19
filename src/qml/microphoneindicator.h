@@ -8,10 +8,10 @@
 
 #pragma once
 
+#include <QList>
 #include <QObject>
 #include <QPersistentModelIndex>
 #include <QPointer>
-#include <QVector>
 
 class QAction;
 class QTimer;
@@ -53,8 +53,8 @@ private:
     static int volumePercent(QPulseAudio::Source *source);
     void showOsd();
 
-    QVector<QModelIndex> recordingApplications() const;
-    QString toolTipForApps(const QVector<QModelIndex> &apps) const;
+    QList<QModelIndex> recordingApplications() const;
+    QString toolTipForApps(const QList<QModelIndex> &apps) const;
     QString sourceOutputDisplayName(const QModelIndex &idx) const;
 
     QPulseAudio::SourceModel *const m_sourceModel = nullptr; // microphone devices
@@ -64,7 +64,7 @@ private:
     QPointer<QAction> m_muteAction;
     QPointer<QAction> m_dontAgainAction;
 
-    QVector<QPersistentModelIndex> m_mutedIndices;
+    QList<QPersistentModelIndex> m_mutedIndices;
 
     VolumeOSD *m_osd = nullptr;
     bool m_showOsdOnUpdate = false;
