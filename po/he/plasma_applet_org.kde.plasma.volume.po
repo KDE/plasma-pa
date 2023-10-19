@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-27 01:42+0000\n"
-"PO-Revision-Date: 2017-05-23 09:05-0400\n"
+"PO-Revision-Date: 2023-10-19 01:47+0300\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: contents/ui/DeviceListItem.qml:25
 #, kde-format
@@ -27,60 +27,56 @@ msgstr "%1 (%2)"
 #: contents/ui/DeviceListItem.qml:34
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "שם ההתקן לא נמצא"
 
 #: contents/ui/ListItemBase.qml:68
 #, kde-format
 msgid "Currently not recording"
-msgstr ""
+msgstr "לא מקליט כרגע"
 
 #: contents/ui/ListItemBase.qml:69
 #, kde-format
 msgid "Currently not playing"
-msgstr ""
+msgstr "לא מנגן כרגע"
 
 #: contents/ui/ListItemBase.qml:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr ""
+msgstr "אפשרויות נוספות"
 
 #: contents/ui/ListItemBase.qml:186
 #, kde-format
 msgid "Show additional options for %1"
-msgstr ""
+msgstr "הצגת אפשרויות נוספות עבור %1"
 
 #: contents/ui/ListItemBase.qml:203
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "השתק"
+msgstr "ביטול השתקה"
 
 #: contents/ui/ListItemBase.qml:203
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
-msgstr "השתק"
+msgstr "השתקה"
 
 #: contents/ui/ListItemBase.qml:205
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgid "Unmute %1"
-msgstr "השתק"
+msgstr "ביטול השתקת %1"
 
 #: contents/ui/ListItemBase.qml:205
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgid "Mute %1"
-msgstr "השתק"
+msgstr "השתקת %1"
 
 #: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
-msgstr ""
+msgstr "כיוון עוצמת השמע עבור %1"
 
 #: contents/ui/ListItemBase.qml:283
 #, kde-format
@@ -102,7 +98,7 @@ msgstr "עוצמת שמע"
 #: contents/ui/main.qml:44
 #, kde-format
 msgid "No output or input devices found"
-msgstr "לא נמצאו יציאות או כניסות"
+msgstr "לא נמצאו התקני פלט או קלט"
 
 #: contents/ui/main.qml:58
 #, kde-format
@@ -112,80 +108,75 @@ msgstr "השמע מושתק"
 #: contents/ui/main.qml:60
 #, kde-format
 msgid "Volume at %1%"
-msgstr "עוצמת השמע: %1%"
+msgstr "עוצמת השמע ב־%1%"
 
 #: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "לחיצה אמצעית משתיקה"
 
 #: contents/ui/main.qml:79
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "לחיצה אמצעית משתיקה את כל השמע"
 
 #: contents/ui/main.qml:80
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "גלילה משנה את עוצמת השמע"
 
 #: contents/ui/main.qml:244
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
+#, kde-format
 msgid "No output device"
-msgstr "לא נמצאו יציאות או כניסות"
+msgstr "אין התקן פלט"
 
 #: contents/ui/main.qml:255
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% סוללה)"
 
 #: contents/ui/main.qml:402
 #, kde-format
 msgid "Increase Volume"
-msgstr "הגבר עוצמה"
+msgstr "הגברת עוצמה"
 
 #: contents/ui/main.qml:408
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "הגבר עוצמה"
+msgstr "הגברת עוצמה ב־1%"
 
 #: contents/ui/main.qml:414
 #, kde-format
 msgid "Decrease Volume"
-msgstr "הנמך עוצמה"
+msgstr "הנמכת עוצמה"
 
 #: contents/ui/main.qml:420
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "הנמך עוצמה"
+msgstr "הנמכת עוצמה ב־1%"
 
 #: contents/ui/main.qml:426
 #, kde-format
 msgid "Mute"
-msgstr "השתק"
+msgstr "השתקה"
 
 #: contents/ui/main.qml:432
 #, kde-format
 msgid "Increase Microphone Volume"
-msgstr "הגבר עוצמת מיקרופון"
+msgstr "הגברת עוצמת מיקרופון"
 
 #: contents/ui/main.qml:438
 #, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "הנמך עוצמת מיקרופון"
+msgstr "הנמכת עוצמת מיקרופון"
 
 #: contents/ui/main.qml:444
 #, kde-format
 msgid "Mute Microphone"
-msgstr "השתק מיקרופון"
+msgstr "השתקת מיקרופון"
 
 #: contents/ui/main.qml:546
 #, kde-format
@@ -200,7 +191,7 @@ msgstr "יישומים"
 #: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:789
 #, kde-format
 msgid "Force mute all playback devices"
-msgstr ""
+msgstr "אילוץ השתקת כל התקני הנגינה"
 
 #: contents/ui/main.qml:629
 #, kde-format
@@ -210,23 +201,22 @@ msgstr "אין ישומים המשמיעים או מקליטים שמע"
 #: contents/ui/main.qml:780
 #, kde-format
 msgid "Raise maximum volume"
-msgstr "העלה עוצמה מירבית"
+msgstr "הגברת עוצמה מרבית"
 
 #: contents/ui/main.qml:802
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
+#, kde-format
 msgid "Show virtual devices"
-msgstr "לא נמצאו יציאות או כניסות"
+msgstr "הצגת התקנים וירטואליים"
 
 #: contents/ui/main.qml:812
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr ""
+msgstr "ה&גדרת התקני שמע…"
 
 #: contents/ui/StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
-msgstr ""
+msgstr "שם התזרים לא נמצא"
 
 #~ msgid "General"
 #~ msgstr "כללי"
