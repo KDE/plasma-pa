@@ -16,5 +16,12 @@ Dependencies:
     'frameworks/kcmutils': '@latest-kf6'
     'frameworks/ksvg': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
+
+RuntimeDependencies:
+- 'on': ['Linux']
+  'require':
+    'plasma/plasma-workspace': '@same'
+    'sdk/selenium-webdriver-at-spi': '@latest-kf6'
+
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']

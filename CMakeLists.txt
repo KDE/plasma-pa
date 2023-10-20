@@ -103,6 +103,7 @@ add_subdirectory(applet)
 add_subdirectory(src)
 add_subdirectory(data)
 add_subdirectory(doc)
+add_subdirectory(appiumtests)
 
 # add clang-format target for all our real source files
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
