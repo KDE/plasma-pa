@@ -131,8 +131,8 @@ msgstr "Requerix el mòdul %1 de PulseAudio"
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr ""
-"Afig un dispositiu d'eixida virtual per a enviar simultàniament l'eixida a "
-"totes les targetes de so locals"
+"Afig un dispositiu d'eixida virtual per a enviar simultàniament l'eixida cap "
+"a totes les targetes de so locals"
 
 #: kcm/package/contents/ui/main.qml:310
 #, kde-format
