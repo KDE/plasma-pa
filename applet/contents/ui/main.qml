@@ -118,14 +118,14 @@ PlasmoidItem {
         playFeedback();
     }
 
-    function increaseVolume(modifiers = Qt.NoModifier) {
+    function increaseVolume(modifiers) {
         if (globalMute) {
             disableGlobalMute();
         }
         changeSpeakerVolume((modifiers & Qt.ShiftModifier) ? 1 : volumePercentStep);
     }
 
-    function decreaseVolume(modifiers = Qt.NoModifier) {
+    function decreaseVolume(modifiers) {
         if (globalMute) {
             disableGlobalMute();
         }
@@ -401,7 +401,7 @@ PlasmoidItem {
             objectName: "increase_volume"
             text: i18n("Increase Volume")
             shortcut: Qt.Key_VolumeUp
-            onTriggered: increaseVolume()
+            onTriggered: increaseVolume(Qt.NoModifier)
         }
         GlobalAction {
             objectName: "increase_volume_small"
@@ -413,7 +413,7 @@ PlasmoidItem {
             objectName: "decrease_volume"
             text: i18n("Decrease Volume")
             shortcut: Qt.Key_VolumeDown
-            onTriggered: decreaseVolume()
+            onTriggered: decreaseVolume(Qt.NoModifier)
         }
         GlobalAction {
             objectName: "decrease_volume_small"
