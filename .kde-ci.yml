@@ -12,7 +12,7 @@ Dependencies:
     'frameworks/ki18n': '@latest'
     'frameworks/knotifications': '@latest'
     'frameworks/kpackage': '@latest'
-    'frameworks/plasma-framework': '@latest'
     'frameworks/kcmutils': '@latest'
+    'plasma/plasma-framework': 'kf5'
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']
