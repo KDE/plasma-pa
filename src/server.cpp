@@ -84,7 +84,7 @@ static Type *findByName(const Map &map, const QString &name)
             return out;
         }
     }
-    qCWarning(PLASMAPA) << "No object for name" << name;
+    qCDebug(PLASMAPA) << "No object for name" << name;
     return out;
 }
 

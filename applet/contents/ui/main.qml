@@ -774,6 +774,7 @@ PlasmoidItem {
 
                 checked: config.raiseMaximumVolume
 
+                Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
                 KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
                 Keys.onUpPressed: KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
 
