@@ -47,10 +47,11 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     GlobalAccel
     StatusNotifierItem
     I18n
-    Plasma
     KCMUtils
     Svg
 )
+
+find_package(KF6Plasma ${PROJECT_VERSION} REQUIRED)
 
 find_package(Canberra REQUIRED)
 
