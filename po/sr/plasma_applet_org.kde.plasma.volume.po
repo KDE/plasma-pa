@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:42+0000\n"
+"POT-Creation-Date: 2023-11-07 02:44+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -83,13 +83,13 @@ msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Подеси јачину за %1"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:284
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:304
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -198,7 +198,7 @@ msgstr "Уређаји"
 msgid "Applications"
 msgstr "Програми"
 
-#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:789
+#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:790
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
@@ -208,18 +208,18 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Ниједан програм не пушта нити снима звук."
 
-#: contents/ui/main.qml:780
+#: contents/ui/main.qml:781
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Подигни највећу јачину"
 
-#: contents/ui/main.qml:802
+#: contents/ui/main.qml:803
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Није нађен ниједан излазни или улазни уређај."
 
-#: contents/ui/main.qml:812
+#: contents/ui/main.qml:813
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

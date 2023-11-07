@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:42+0000\n"
+"POT-Creation-Date: 2023-11-07 02:44+0000\n"
 "PO-Revision-Date: 2023-05-11 09:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -80,13 +80,13 @@ msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Prilagodi glasnost za %1"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:284
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:304
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -190,7 +190,7 @@ msgstr "Naprave"
 msgid "Applications"
 msgstr "Programi"
 
-#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:789
+#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:790
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Prisilno utišaj vse naprave za playback"
@@ -200,17 +200,17 @@ msgstr "Prisilno utišaj vse naprave za playback"
 msgid "No applications playing or recording audio"
 msgstr "Noben program ne predvaja ali snema zvoka"
 
-#: contents/ui/main.qml:780
+#: contents/ui/main.qml:781
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvišaj največjo glasnost"
 
-#: contents/ui/main.qml:802
+#: contents/ui/main.qml:803
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Prikaži navidezne naprave"
 
-#: contents/ui/main.qml:812
+#: contents/ui/main.qml:813
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Nastavi zvočne naprave…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:42+0000\n"
+"POT-Creation-Date: 2023-11-07 02:44+0000\n"
 "PO-Revision-Date: 2023-05-14 15:17+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -77,13 +77,13 @@ msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1-க்கு ஒலியின் அளவை மாற்று"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:284
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:304
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -187,7 +187,7 @@ msgstr "சாதனங்கள்"
 msgid "Applications"
 msgstr "செயலிகள்"
 
-#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:789
+#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:790
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
@@ -197,17 +197,17 @@ msgstr "அனைத்து வெளியீட்டு சாதனங்�
 msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
-#: contents/ui/main.qml:780
+#: contents/ui/main.qml:781
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: contents/ui/main.qml:802
+#: contents/ui/main.qml:803
 #, kde-format
 msgid "Show virtual devices"
 msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
-#: contents/ui/main.qml:812
+#: contents/ui/main.qml:813
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"

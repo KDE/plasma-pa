@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:42+0000\n"
+"POT-Creation-Date: 2023-11-07 02:44+0000\n"
 "PO-Revision-Date: 2020-09-28 13:57+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -82,13 +82,13 @@ msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 helitugevuse kohandamine"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:284
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:304
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -196,7 +196,7 @@ msgstr "Seadmed"
 msgid "Applications"
 msgstr "Rakendused"
 
-#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:789
+#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:790
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Jõuga heli maha kõigis taasesitamisseadmetes"
@@ -206,18 +206,18 @@ msgstr "Jõuga heli maha kõigis taasesitamisseadmetes"
 msgid "No applications playing or recording audio"
 msgstr "Ükski rakendus ei esita ega salvesta heli"
 
-#: contents/ui/main.qml:780
+#: contents/ui/main.qml:781
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Helitugevuse maksimumi suurendamine"
 
-#: contents/ui/main.qml:802
+#: contents/ui/main.qml:803
 #, fuzzy, kde-format
 #| msgid "Show hidden devices"
 msgid "Show virtual devices"
 msgstr "Peidetud seadmete näitamine"
 
-#: contents/ui/main.qml:812
+#: contents/ui/main.qml:813
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
