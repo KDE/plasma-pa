@@ -126,7 +126,7 @@
 <title
 >Plasma Araç Takımı</title>
 <para
->&i18n-plasmapa; Plasma Araç Takımı, otomatik olarak sistem tepsisi alanına yüklenir. Paneldeki hoparlör simgesine tıklandığında, farklı kayıttan çalma/oynatma aygıtları için ses denetim kaydırıcıları içeren bir açılır pencere açılır ve bunların ses düzeylerinin ayrı ayrı değiştirilmesine izin verilir. </para>
+>&i18n-plasmapa; Plasma Araç Takımı, kendiliğinden sistem tepsisi alanına yüklenir. Paneldeki hoparlör simgesine tıklandığında, farklı kayıttan çalma/oynatma aygıtları için ses denetim kaydırıcıları içeren bir açılır pencere açılır ve bunların ses düzeylerinin ayrı ayrı değiştirilmesine izin verilir. </para>
 </sect2>
 
 <sect2 id="credits">
