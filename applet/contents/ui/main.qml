@@ -37,6 +37,13 @@ PlasmoidItem {
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
+    Connections {
+        target: paSinkModel.preferredSink
+        function onVolumeChanged() {
+            osd.showVolume(volumePercent(paSinkModel.preferredSink.volume))
+        }
+    }
+
     property bool showVirtualDevices: Plasmoid.configuration.showVirtualDevices
 
     // DEFAULT_SINK_NAME in module-always-sink.c
