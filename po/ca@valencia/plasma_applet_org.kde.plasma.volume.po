@@ -111,7 +111,7 @@ msgstr "Àudio silenciat"
 #: contents/ui/main.qml:60
 #, kde-format
 msgid "Volume at %1%"
-msgstr "Volum a %1%"
+msgstr "Volum al %1%"
 
 #: contents/ui/main.qml:78
 #, kde-format
