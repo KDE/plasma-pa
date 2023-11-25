@@ -15,7 +15,7 @@ Dependencies:
     'frameworks/kcmutils': '@latest-kf6'
     'frameworks/ksvg': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
-    'plasma/plasma-framework': '@same'
+    'plasma/libplasma': '@same'
 
 RuntimeDependencies:
 - 'on': ['Linux']
