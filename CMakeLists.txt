@@ -102,7 +102,6 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2
 
 add_subdirectory(applet)
 add_subdirectory(src)
-add_subdirectory(data)
 add_subdirectory(doc)
 add_subdirectory(appiumtests)
 
