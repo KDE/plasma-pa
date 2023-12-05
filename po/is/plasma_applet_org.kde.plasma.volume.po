@@ -1,0 +1,218 @@
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the plasma-pa package.
+#
+# SPDX-FileCopyrightText: 2023 Guðmundur Erlingsson <gudmundure@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-pa\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-07 02:44+0000\n"
+"PO-Revision-Date: 2023-12-02 21:30+0000\n"
+"Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.3\n"
+
+#: contents/ui/DeviceListItem.qml:25
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: contents/ui/DeviceListItem.qml:34
+#, kde-format
+msgid "Device name not found"
+msgstr "Nafn tækis fannst ekki"
+
+#: contents/ui/ListItemBase.qml:68
+#, kde-format
+msgid "Currently not recording"
+msgstr "Ekki að taka upp sem stendur"
+
+#: contents/ui/ListItemBase.qml:69
+#, kde-format
+msgid "Currently not playing"
+msgstr "Ekki að spila sem stendur"
+
+#: contents/ui/ListItemBase.qml:184
+#, kde-format
+msgctxt "@action:button"
+msgid "Additional Options"
+msgstr "Viðbótarvalkostir"
+
+#: contents/ui/ListItemBase.qml:186
+#, kde-format
+msgid "Show additional options for %1"
+msgstr "Sýna viðbótarvalkosti fyrir %1"
+
+#: contents/ui/ListItemBase.qml:203
+#, kde-format
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "Afþagga"
+
+#: contents/ui/ListItemBase.qml:203
+#, kde-format
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "Þagga"
+
+#: contents/ui/ListItemBase.qml:205
+#, kde-format
+msgid "Unmute %1"
+msgstr "Afþagga %1"
+
+#: contents/ui/ListItemBase.qml:205
+#, kde-format
+msgid "Mute %1"
+msgstr "Þagga %1"
+
+#: contents/ui/ListItemBase.qml:225
+#, kde-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "Stilla hljóðstyrk fyrir %1"
+
+#: contents/ui/ListItemBase.qml:284
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: contents/ui/ListItemBase.qml:304
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: contents/ui/main.qml:37
+#, kde-format
+msgid "Audio Volume"
+msgstr "Hljóðstyrkur"
+
+#: contents/ui/main.qml:44
+#, kde-format
+msgid "No output or input devices found"
+msgstr "Ekkert úttaks- eða inntakstæki fannst"
+
+#: contents/ui/main.qml:58
+#, kde-format
+msgid "Audio Muted"
+msgstr "Hljóð þaggað"
+
+#: contents/ui/main.qml:60
+#, kde-format
+msgid "Volume at %1%"
+msgstr "Hljóðstyrkur á %1%"
+
+#: contents/ui/main.qml:78
+#, kde-format
+msgid "Middle-click to unmute"
+msgstr "Miðjusmella til að afþagga"
+
+#: contents/ui/main.qml:79
+#, kde-format
+msgid "Middle-click to mute all audio"
+msgstr "Miðjusmella til að þagga allt hljóð"
+
+#: contents/ui/main.qml:80
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr "Skrunaðu til að stilla hljóðstyrkinn"
+
+#: contents/ui/main.qml:244
+#, kde-format
+msgid "No output device"
+msgstr "Ekkert úttakstæki"
+
+#: contents/ui/main.qml:255
+#, kde-format
+msgctxt "Device name (Battery percent)"
+msgid "%1 (%2% Battery)"
+msgstr "%1 (%2% rafhlaða)"
+
+#: contents/ui/main.qml:402
+#, kde-format
+msgid "Increase Volume"
+msgstr "Hækka"
+
+#: contents/ui/main.qml:408
+#, kde-format
+msgctxt "@action shortcut"
+msgid "Increase Volume by 1%"
+msgstr "Hækka um 1%"
+
+#: contents/ui/main.qml:414
+#, kde-format
+msgid "Decrease Volume"
+msgstr "Lækka"
+
+#: contents/ui/main.qml:420
+#, kde-format
+msgctxt "@action shortcut"
+msgid "Decrease Volume by 1%"
+msgstr "Lækka um 1%"
+
+#: contents/ui/main.qml:426
+#, kde-format
+msgid "Mute"
+msgstr "Þagga"
+
+#: contents/ui/main.qml:432
+#, kde-format
+msgid "Increase Microphone Volume"
+msgstr "Hækka í hljóðnema"
+
+#: contents/ui/main.qml:438
+#, kde-format
+msgid "Decrease Microphone Volume"
+msgstr "Lækka í hljóðnema"
+
+#: contents/ui/main.qml:444
+#, kde-format
+msgid "Mute Microphone"
+msgstr "Þagga hljóðnema"
+
+#: contents/ui/main.qml:546
+#, kde-format
+msgid "Devices"
+msgstr "Tæki"
+
+#: contents/ui/main.qml:553
+#, kde-format
+msgid "Applications"
+msgstr "Forrit"
+
+#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:790
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "Þagga niður í öllum afspilunartækjum"
+
+#: contents/ui/main.qml:629
+#, kde-format
+msgid "No applications playing or recording audio"
+msgstr "Engin forrit spila eða taka upp hljóð"
+
+#: contents/ui/main.qml:781
+#, kde-format
+msgid "Raise maximum volume"
+msgstr "Hækka hámarkshljóðstyrk"
+
+#: contents/ui/main.qml:803
+#, kde-format
+msgid "Show virtual devices"
+msgstr "Sýna sýndartæki"
+
+#: contents/ui/main.qml:813
+#, kde-format
+msgid "&Configure Audio Devices…"
+msgstr "&Grunnstilla hljóðtæki…"
+
+#: contents/ui/StreamListItem.qml:25
+#, kde-format
+msgid "Stream name not found"
+msgstr "Nafn straums fannst ekki"

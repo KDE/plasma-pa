@@ -1,0 +1,354 @@
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the plasma-pa package.
+#
+# SPDX-FileCopyrightText: 2023 Guðmundur Erlingsson <gudmundure@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-pa\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-09-27 01:42+0000\n"
+"PO-Revision-Date: 2023-12-02 21:28+0000\n"
+"Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.3\n"
+
+#: context.cpp:596
+#, kde-format
+msgctxt "Name shown in debug pulseaudio tools"
+msgid "Plasma PA"
+msgstr "Plasma PA"
+
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
+#, kde-format
+msgctxt "@label"
+msgid "Profile:"
+msgstr "Prófíll:"
+
+#: kcm/ui/DeviceListItem.qml:48
+#, kde-format
+msgctxt "label of device items"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kcm/ui/DeviceListItem.qml:89
+#, kde-format
+msgid "Port:"
+msgstr "Tengi:"
+
+#: kcm/ui/DeviceListItem.qml:112 qml/listitemmenu.cpp:363
+#, kde-format
+msgctxt "Port is unavailable"
+msgid "%1 (unavailable)"
+msgstr "%1 (ekki tiltækt)"
+
+#: kcm/ui/DeviceListItem.qml:114 qml/listitemmenu.cpp:365
+#, kde-format
+msgctxt "Port is unplugged"
+msgid "%1 (unplugged)"
+msgstr "%1 (ótengt)"
+
+#: kcm/ui/DeviceListItem.qml:189
+#, kde-format
+msgctxt "Placeholder is channel name"
+msgid "%1:"
+msgstr "%1:"
+
+#: kcm/ui/DeviceListItem.qml:214
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test"
+msgstr "Prófa"
+
+#: kcm/ui/DeviceListItem.qml:223
+#, kde-format
+msgctxt "Audio balance (e.g. control left/right volume individually"
+msgid "Balance"
+msgstr "Jafnvægi"
+
+#: kcm/ui/main.qml:83
+#, kde-format
+msgid "Show Inactive Devices"
+msgstr "Sýna óvirk tæki"
+
+#: kcm/ui/main.qml:90
+#, kde-format
+msgid "Configure Volume Controls…"
+msgstr "Grunnstilla hljóðstyrksstýringar"
+
+#: kcm/ui/main.qml:97
+#, kde-format
+msgid "Configure…"
+msgstr "Grunnstilla…"
+
+#: kcm/ui/main.qml:100
+#, kde-format
+msgid "Requires %1 PulseAudio module"
+msgstr "Krefst %1 PulseAudio-einingar"
+
+#: kcm/ui/main.qml:103
+#, kde-format
+msgid ""
+"Add virtual output device for simultaneous output on all local sound cards"
+msgstr ""
+"Bæta við sýndarúttakstæki fyrir samhliða úttak á öllum staðbundnum "
+"hljóðkortum"
+
+#: kcm/ui/main.qml:109
+#, kde-format
+msgid ""
+"Automatically switch all running streams when a new output becomes available"
+msgstr ""
+"Skipta sjálfkrafa öllum straumum í keyrslu þegar nýtt úttak verður tiltækt"
+
+#: kcm/ui/main.qml:146
+#, kde-format
+msgid "Playback Devices"
+msgstr "Afspilunartæki"
+
+#: kcm/ui/main.qml:170
+#, kde-format
+msgid "Recording Devices"
+msgstr "Upptökutæki"
+
+#: kcm/ui/main.qml:194
+#, kde-format
+msgid "Inactive Cards"
+msgstr "Óvirk kort"
+
+#: kcm/ui/main.qml:225
+#, kde-format
+msgid "Playback Streams"
+msgstr "Afspilunarstraumar"
+
+#: kcm/ui/main.qml:274
+#, kde-format
+msgid "Recording Streams"
+msgstr "Upptökustraumar"
+
+#: kcm/ui/main.qml:308
+#, kde-format
+msgctxt ""
+"%1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"Error trying to play a test sound. \n"
+"The system said: \"%1\""
+msgstr ""
+"Villa þegar reynt var að spila prufuhljóð. \n"
+"Tölvan sagði: \"%1\""
+
+#: kcm/ui/main.qml:405
+#, kde-format
+msgid "Front Left"
+msgstr "Að framan til vinstri"
+
+#: kcm/ui/main.qml:406
+#, kde-format
+msgid "Front Center"
+msgstr "Að framan í miðju"
+
+#: kcm/ui/main.qml:407
+#, kde-format
+msgid "Front Right"
+msgstr "Að framan til hægri"
+
+#: kcm/ui/main.qml:408
+#, kde-format
+msgid "Side Left"
+msgstr "Til hliðar til vinstri"
+
+#: kcm/ui/main.qml:409
+#, kde-format
+msgid "Side Right"
+msgstr "Til hliðar til hægri"
+
+#: kcm/ui/main.qml:410
+#, kde-format
+msgid "Rear Left"
+msgstr "Að aftan til vinstri"
+
+#: kcm/ui/main.qml:411
+#, kde-format
+msgid "Subwoofer"
+msgstr "Bassabox"
+
+#: kcm/ui/main.qml:412
+#, kde-format
+msgid "Rear Right"
+msgstr "Að aftan til hægri"
+
+#: kcm/ui/main.qml:413
+#, kde-format
+msgid "Mono"
+msgstr "Mónó"
+
+#: kcm/ui/main.qml:467
+#, kde-format
+msgid "Click on any speaker to test sound"
+msgstr "Smelltu á hátalara til að prófa hljóð"
+
+#: kcm/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Unmute audio stream"
+msgid "Unmute %1"
+msgstr "Afþagga %1"
+
+#: kcm/ui/MuteButton.qml:22
+#, kde-format
+msgctxt "Mute audio stream"
+msgid "Mute %1"
+msgstr "Þagga %1"
+
+#: kcm/ui/StreamListItem.qml:57
+#, kde-format
+msgid "Notification Sounds"
+msgstr "Tilkynningahljóð"
+
+#: kcm/ui/StreamListItem.qml:63
+#, kde-format
+msgctxt "label of stream items"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: kcm/ui/VolumeControlsConfig.qml:15
+#, kde-format
+msgid "Volume Controls"
+msgstr "Hljóðstyrksstýringar"
+
+#: kcm/ui/VolumeControlsConfig.qml:31
+#, kde-format
+msgid "Raise maximum volume"
+msgstr "Hækka hámarkshljóðstyrk"
+
+#: kcm/ui/VolumeControlsConfig.qml:39
+#, kde-format
+msgid "Volume change step:"
+msgstr "Hljóðstyrksþrep:"
+
+#: kcm/ui/VolumeControlsConfig.qml:63
+#, kde-format
+msgid "Play audio feedback for changes to:"
+msgstr "Gefa hljóðmerki við breytingar á:"
+
+#: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
+#, kde-format
+msgid "Audio volume"
+msgstr "Hljóðstyrk"
+
+#: kcm/ui/VolumeControlsConfig.qml:72
+#, kde-format
+msgid "Show visual feedback for changes to:"
+msgstr "Gefa sýnilegt merki við breytingar á:"
+
+#: kcm/ui/VolumeControlsConfig.qml:80
+#, kde-format
+msgid "Microphone sensitivity"
+msgstr "Næmi hljóðnema"
+
+#: kcm/ui/VolumeControlsConfig.qml:87
+#, kde-format
+msgid "Mute state"
+msgstr "Þöggunarstöðu"
+
+#: kcm/ui/VolumeControlsConfig.qml:94
+#, kde-format
+msgid "Default output device"
+msgstr "Sjálfgefnu úttakstæki"
+
+#: kcm/ui/VolumeSlider.qml:65
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: kcm/ui/VolumeSlider.qml:85
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/listitemmenu.cpp:318
+#, kde-format
+msgid "Play all audio via this device"
+msgstr "Spila allt hljóð í gegnum þetta tæki"
+
+#: qml/listitemmenu.cpp:323
+#, kde-format
+msgid "Record all audio via this device"
+msgstr "Taka upp allt hljóð í gegnum þetta tæki"
+
+#: qml/listitemmenu.cpp:351
+#, kde-format
+msgctxt ""
+"Heading for a list of ports of a device (for example built-in laptop "
+"speakers or a plug for headphones)"
+msgid "Ports"
+msgstr "Tengi"
+
+#: qml/listitemmenu.cpp:421
+#, kde-format
+msgctxt ""
+"Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
+"only, ...)"
+msgid "Profiles"
+msgstr "Prófílar"
+
+#: qml/listitemmenu.cpp:455
+#, kde-format
+msgctxt ""
+"Heading for a list of possible output devices (speakers, headphones, ...) to "
+"choose"
+msgid "Play audio using"
+msgstr "Spila hljóð með"
+
+#: qml/listitemmenu.cpp:457
+#, kde-format
+msgctxt ""
+"Heading for a list of possible input devices (built-in microphone, "
+"headset, ...) to choose"
+msgid "Record audio using"
+msgstr "Taka upp hljóð með"
+
+#: qml/microphoneindicator.cpp:102
+#, kde-format
+msgid "Mute"
+msgstr "Þagga"
+
+#: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone"
+msgstr "Hljóðnemi"
+
+#: qml/microphoneindicator.cpp:134
+#, kde-format
+msgid "Microphone Muted"
+msgstr "Hljóðnemi þaggaður"
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "list separator"
+msgid ", "
+msgstr ", "
+
+#: qml/microphoneindicator.cpp:284
+#, kde-format
+msgctxt "List of apps is using mic"
+msgid "%1 are using the microphone"
+msgstr "%1 eru að nota hljóðnemann"
+
+#: qml/microphoneindicator.cpp:310
+#, kde-format
+msgctxt "App %1 is using mic with name %2"
+msgid "%1 is using the microphone (%2)"
+msgstr "%1 er að nota hljóðnemann (%2)"
+
+#: qml/microphoneindicator.cpp:317
+#, kde-format
+msgctxt "App is using mic"
+msgid "%1 is using the microphone"
+msgstr "%1 er að nota hljóðnemann"
