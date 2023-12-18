@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:44+0000\n"
+"POT-Creation-Date: 2023-12-18 01:59+0000\n"
 "PO-Revision-Date: 2023-09-24 20:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -98,120 +98,120 @@ msgstr "100%"
 msgid "Audio Volume"
 msgstr "Volum de l'àudio"
 
-#: contents/ui/main.qml:44
+#: contents/ui/main.qml:51
 #, kde-format
 msgid "No output or input devices found"
 msgstr "No s'ha trobat cap dispositiu d'eixida o entrada"
 
-#: contents/ui/main.qml:58
+#: contents/ui/main.qml:65
 #, kde-format
 msgid "Audio Muted"
 msgstr "Àudio silenciat"
 
-#: contents/ui/main.qml:60
+#: contents/ui/main.qml:67
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volum al %1%"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:85
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Clic del mig per a activar el so"
 
-#: contents/ui/main.qml:79
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Clic del mig per a silenciar tot l'àudio"
 
-#: contents/ui/main.qml:80
+#: contents/ui/main.qml:87
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Desplaçament per a ajustar el volum"
 
-#: contents/ui/main.qml:244
+#: contents/ui/main.qml:251
 #, kde-format
 msgid "No output device"
 msgstr "Cap dispositiu d'eixida"
 
-#: contents/ui/main.qml:255
+#: contents/ui/main.qml:262
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (Bateria %2%)"
 
-#: contents/ui/main.qml:402
+#: contents/ui/main.qml:409
 #, kde-format
 msgid "Increase Volume"
 msgstr "Apuja el volum"
 
-#: contents/ui/main.qml:408
+#: contents/ui/main.qml:415
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Apuja el volum un 1%"
 
-#: contents/ui/main.qml:414
+#: contents/ui/main.qml:421
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Abaixa el volum"
 
-#: contents/ui/main.qml:420
+#: contents/ui/main.qml:427
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Abaixa el volum un 1%"
 
-#: contents/ui/main.qml:426
+#: contents/ui/main.qml:433
 #, kde-format
 msgid "Mute"
 msgstr "Silencia"
 
-#: contents/ui/main.qml:432
+#: contents/ui/main.qml:439
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Apuja el volum del micròfon"
 
-#: contents/ui/main.qml:438
+#: contents/ui/main.qml:445
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Abaixa el volum del micròfon"
 
-#: contents/ui/main.qml:444
+#: contents/ui/main.qml:451
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Silencia el micròfon"
 
-#: contents/ui/main.qml:546
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "Devices"
 msgstr "Dispositius"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:560
 #, kde-format
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:790
+#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Força el silenci de tots els dispositius de reproducció"
 
-#: contents/ui/main.qml:629
+#: contents/ui/main.qml:636
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "No hi ha cap aplicació reproduint o gravant àudio"
 
-#: contents/ui/main.qml:781
+#: contents/ui/main.qml:788
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Eleva el volum màxim"
 
-#: contents/ui/main.qml:803
+#: contents/ui/main.qml:810
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostra els dispositius virtuals"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:820
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configura els dispositius d'àudio…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:44+0000\n"
+"POT-Creation-Date: 2023-12-18 01:59+0000\n"
 "PO-Revision-Date: 2021-10-06 18:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -98,42 +98,42 @@ msgstr "100%"
 msgid "Audio Volume"
 msgstr "ਆਡੀਓ ਵਾਲੀਅਮ"
 
-#: contents/ui/main.qml:44
+#: contents/ui/main.qml:51
 #, kde-format
 msgid "No output or input devices found"
 msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਜਾਂ ਇਨਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: contents/ui/main.qml:58
+#: contents/ui/main.qml:65
 #, kde-format
 msgid "Audio Muted"
 msgstr "ਆਡੀਓ ਚੁੱਪ ਹੈ"
 
-#: contents/ui/main.qml:60
+#: contents/ui/main.qml:67
 #, kde-format
 msgid "Volume at %1%"
 msgstr "%1%% ਉੱਤੇ ਵਾਲੀਅਮ"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:85
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: contents/ui/main.qml:79
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:80
+#: contents/ui/main.qml:87
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr ""
 
-#: contents/ui/main.qml:244
+#: contents/ui/main.qml:251
 #, kde-format
 msgid "No output device"
 msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ"
 
-#: contents/ui/main.qml:255
+#: contents/ui/main.qml:262
 #, fuzzy, kde-format
 #| msgctxt "label of device items"
 #| msgid "%1 (%2)"
@@ -141,82 +141,82 @@ msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2)"
 
-#: contents/ui/main.qml:402
+#: contents/ui/main.qml:409
 #, kde-format
 msgid "Increase Volume"
 msgstr "ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: contents/ui/main.qml:408
+#: contents/ui/main.qml:415
 #, fuzzy, kde-format
 #| msgid "Increase Volume"
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: contents/ui/main.qml:414
+#: contents/ui/main.qml:421
 #, kde-format
 msgid "Decrease Volume"
 msgstr "ਵਾਲੀਅਮ ਘਟਾਓ"
 
-#: contents/ui/main.qml:420
+#: contents/ui/main.qml:427
 #, fuzzy, kde-format
 #| msgid "Decrease Volume"
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "ਵਾਲੀਅਮ ਘਟਾਓ"
 
-#: contents/ui/main.qml:426
+#: contents/ui/main.qml:433
 #, kde-format
 msgid "Mute"
 msgstr "ਮੌਨ"
 
-#: contents/ui/main.qml:432
+#: contents/ui/main.qml:439
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "ਮਾਈਕਰੋਫੋਨ ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: contents/ui/main.qml:438
+#: contents/ui/main.qml:445
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "ਮਾਈਕਰੋਫ਼ੋਨ ਵਾਲੀਅਮ ਘਟਾਓ"
 
-#: contents/ui/main.qml:444
+#: contents/ui/main.qml:451
 #, kde-format
 msgid "Mute Microphone"
 msgstr "ਮਾਈਕਰੋਫ਼ੋਨ ਮੌਨ ਕਰੋ"
 
-#: contents/ui/main.qml:546
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "Devices"
 msgstr "ਡਿਵਾਈਸ"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:560
 #, kde-format
 msgid "Applications"
 msgstr "ਐਪਲੀਕੇਸ਼ਨਾਂ"
 
-#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:790
+#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ਸਾਰੇ ਪਲੇਅਬੈਕ ਡਿਵਾਈਸਾਂ ਨੂੰ ਧੱਕੇ ਨਾਲ ਮੌਨ ਕਰੋ"
 
-#: contents/ui/main.qml:629
+#: contents/ui/main.qml:636
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ਕੋਈ ਵੀ ਐਪਲੀਕੇਸ਼ਨ ਆਡੀਓ ਚਲਾ ਜਾਂ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰ ਰਹੀ ਹੈ"
 
-#: contents/ui/main.qml:781
+#: contents/ui/main.qml:788
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: contents/ui/main.qml:803
+#: contents/ui/main.qml:810
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgid "Show virtual devices"
 msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:820
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "…ਆਡੀਓ ਡਿਵਾਈਸਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"

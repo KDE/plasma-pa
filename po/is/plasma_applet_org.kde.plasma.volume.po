@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:44+0000\n"
+"POT-Creation-Date: 2023-12-18 01:59+0000\n"
 "PO-Revision-Date: 2023-12-02 21:30+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -94,120 +94,120 @@ msgstr "100%"
 msgid "Audio Volume"
 msgstr "Hljóðstyrkur"
 
-#: contents/ui/main.qml:44
+#: contents/ui/main.qml:51
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Ekkert úttaks- eða inntakstæki fannst"
 
-#: contents/ui/main.qml:58
+#: contents/ui/main.qml:65
 #, kde-format
 msgid "Audio Muted"
 msgstr "Hljóð þaggað"
 
-#: contents/ui/main.qml:60
+#: contents/ui/main.qml:67
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Hljóðstyrkur á %1%"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:85
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Miðjusmella til að afþagga"
 
-#: contents/ui/main.qml:79
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Miðjusmella til að þagga allt hljóð"
 
-#: contents/ui/main.qml:80
+#: contents/ui/main.qml:87
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Skrunaðu til að stilla hljóðstyrkinn"
 
-#: contents/ui/main.qml:244
+#: contents/ui/main.qml:251
 #, kde-format
 msgid "No output device"
 msgstr "Ekkert úttakstæki"
 
-#: contents/ui/main.qml:255
+#: contents/ui/main.qml:262
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% rafhlaða)"
 
-#: contents/ui/main.qml:402
+#: contents/ui/main.qml:409
 #, kde-format
 msgid "Increase Volume"
 msgstr "Hækka"
 
-#: contents/ui/main.qml:408
+#: contents/ui/main.qml:415
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Hækka um 1%"
 
-#: contents/ui/main.qml:414
+#: contents/ui/main.qml:421
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Lækka"
 
-#: contents/ui/main.qml:420
+#: contents/ui/main.qml:427
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Lækka um 1%"
 
-#: contents/ui/main.qml:426
+#: contents/ui/main.qml:433
 #, kde-format
 msgid "Mute"
 msgstr "Þagga"
 
-#: contents/ui/main.qml:432
+#: contents/ui/main.qml:439
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Hækka í hljóðnema"
 
-#: contents/ui/main.qml:438
+#: contents/ui/main.qml:445
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Lækka í hljóðnema"
 
-#: contents/ui/main.qml:444
+#: contents/ui/main.qml:451
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Þagga hljóðnema"
 
-#: contents/ui/main.qml:546
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "Devices"
 msgstr "Tæki"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:560
 #, kde-format
 msgid "Applications"
 msgstr "Forrit"
 
-#: contents/ui/main.qml:574 contents/ui/main.qml:576 contents/ui/main.qml:790
+#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Þagga niður í öllum afspilunartækjum"
 
-#: contents/ui/main.qml:629
+#: contents/ui/main.qml:636
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Engin forrit spila eða taka upp hljóð"
 
-#: contents/ui/main.qml:781
+#: contents/ui/main.qml:788
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Hækka hámarkshljóðstyrk"
 
-#: contents/ui/main.qml:803
+#: contents/ui/main.qml:810
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Sýna sýndartæki"
 
-#: contents/ui/main.qml:813
+#: contents/ui/main.qml:820
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Grunnstilla hljóðtæki…"
