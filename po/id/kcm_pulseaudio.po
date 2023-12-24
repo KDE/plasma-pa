@@ -1,22 +1,22 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Wantoyo <wantoyek@gmail.com>, 2018, 2019, 2020, 2022.
-# Linerly <linerly@protonmail.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2023 Linerly <linerly@protonmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-27 01:42+0000\n"
-"PO-Revision-Date: 2022-08-26 23:44+0700\n"
-"Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
-"Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
+"PO-Revision-Date: 2023-11-12 09:22+0700\n"
+"Last-Translator: Linerly <linerly@linerly.xyz>\n"
+"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: context.cpp:596
 #, kde-format
@@ -77,10 +77,9 @@ msgid "Show Inactive Devices"
 msgstr "Tampilkan Peranti Tidak Aktif"
 
 #: kcm/ui/main.qml:90
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Konfigurasikan..."
+msgstr "Konfigurasikan Kontrol Volume..."
 
 #: kcm/ui/main.qml:97
 #, kde-format
@@ -97,16 +96,16 @@ msgstr "Memerlukan modul PulseAudio %1"
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr ""
-"Tambahkan peranti output virtual untuk output serentak pada semua sound card "
-"lokal"
+"Tambahkan peranti keluaran virtual untuk keluaran serentak pada semua kartu "
+"suara lokal"
 
 #: kcm/ui/main.qml:109
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
-"Alihkan secara otomatis semua stream yang berjalan ketika sebuah output baru "
-"telah tersedia"
+"Alihkan secara otomatis semua saluran yang berjalan ketika sebuah keluaran "
+"baru telah tersedia"
 
 #: kcm/ui/main.qml:146
 #, kde-format
@@ -142,6 +141,8 @@ msgid ""
 "Error trying to play a test sound. \n"
 "The system said: \"%1\""
 msgstr ""
+"Terjadi kesalahan memainkan suara uji coba. \n"
+"Sistem mengatakan: \"%1\""
 
 #: kcm/ui/main.qml:405
 #, kde-format
@@ -191,15 +192,13 @@ msgstr "Mono"
 #: kcm/ui/main.qml:467
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr "Klik pada speaker apa pun untuk menguji suara"
+msgstr "Klik pada speaker mana pun untuk menguji suara"
 
 #: kcm/ui/MuteButton.qml:22
-#, fuzzy, kde-format
-#| msgctxt "Mute audio stream"
-#| msgid "Mute %1"
+#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
-msgstr "Bungkam %1"
+msgstr "Suarakan %1"
 
 #: kcm/ui/MuteButton.qml:22
 #, kde-format
@@ -221,50 +220,47 @@ msgstr "%1: %2"
 #: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Kontrol Volume"
 
 #: kcm/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Naikkan volume maksimum"
 
 #: kcm/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Langkah perubahan volume:"
 
 #: kcm/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Mainkan umpan balik suara pada perubahan:"
 
 #: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Volume audio"
 
 #: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Tampilkan umpan balik visual pada perubahan:"
 
 #: kcm/ui/VolumeControlsConfig.qml:80
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Mikrofon Dibungkam"
+msgstr "Sensitivitas Mikrofon"
 
 #: kcm/ui/VolumeControlsConfig.qml:87
-#, fuzzy, kde-format
-#| msgid "Mute audio"
+#, kde-format
 msgid "Mute state"
-msgstr "Bungkam audio"
+msgstr "Keadaan senyap"
 
 #: kcm/ui/VolumeControlsConfig.qml:94
-#, fuzzy, kde-format
-#| msgid "Default Device"
+#, kde-format
 msgid "Default output device"
-msgstr "Perangkat Baku"
+msgstr "Perangkat keluaran bawaan"
 
 #: kcm/ui/VolumeSlider.qml:65
 #, kde-format
