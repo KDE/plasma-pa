@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-18 01:59+0000\n"
-"PO-Revision-Date: 2023-02-05 19:29+0300\n"
+"PO-Revision-Date: 2023-12-27 09:57+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -144,11 +144,10 @@ msgid "Increase Volume"
 msgstr "Увеличить громкость"
 
 #: contents/ui/main.qml:415
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "Увеличить громкость"
+msgstr "Увеличить громкость на 1%"
 
 #: contents/ui/main.qml:421
 #, kde-format
@@ -156,11 +155,10 @@ msgid "Decrease Volume"
 msgstr "Уменьшить громкость"
 
 #: contents/ui/main.qml:427
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "Уменьшить громкость"
+msgstr "Уменьшить громкость на 1%"
 
 #: contents/ui/main.qml:433
 #, kde-format
