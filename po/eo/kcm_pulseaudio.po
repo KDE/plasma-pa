@@ -332,7 +332,7 @@ msgstr "Mikrofono silentigita"
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: qml/microphoneindicator.cpp:284
 #, kde-format

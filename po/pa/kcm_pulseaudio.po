@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2016, 2019, 2020, 2021, 2023 A S Alam <aalam@users.sf.net>
+# SPDX-FileCopyrightText: 2016, 2019, 2020, 2021, 2023, 2024 A S Alam <aalam@users.sf.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-27 01:42+0000\n"
-"PO-Revision-Date: 2023-12-26 09:14-0600\n"
+"PO-Revision-Date: 2024-01-03 14:00-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
@@ -27,7 +27,7 @@ msgstr "ਪਲਾਜ਼ਮਾ ਪੀਏ"
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
-msgstr "ਪਰੋਫਾਈਲ:"
+msgstr "ਪਰੋਫਾਇਲ:"
 
 #: kcm/ui/DeviceListItem.qml:48
 #, kde-format
@@ -292,7 +292,7 @@ msgctxt ""
 "Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
 "only, ...)"
 msgid "Profiles"
-msgstr "ਪਰੋਫਾਈਲ"
+msgstr "ਪਰੋਫਾਇਲ"
 
 #: qml/listitemmenu.cpp:455
 #, kde-format
