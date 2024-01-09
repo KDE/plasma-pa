@@ -15,8 +15,8 @@ import org.kde.plasma.components as PC3
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.plasmoid
 
-import org.kde.kcmutils // KCMLauncher
-import org.kde.config // KAuthorized
+import org.kde.kcmutils as KCMUtils
+import org.kde.config as KConfig
 
 import org.kde.plasma.private.volume
 
@@ -820,8 +820,8 @@ PlasmoidItem {
         text: i18n("&Configure Audio Devices…")
         icon.name: "configure"
         shortcut: "alt+d, s"
-        visible: KAuthorized.authorizeControlModule("kcm_pulseaudio")
-        onTriggered: KCMLauncher.openSystemSettings("kcm_pulseaudio")
+        visible: KConfig.KAuthorized.authorizeControlModule("kcm_pulseaudio")
+        onTriggered: KCMUtils.KCMLauncher.openSystemSettings("kcm_pulseaudio")
     }
 
     Component.onCompleted: {
