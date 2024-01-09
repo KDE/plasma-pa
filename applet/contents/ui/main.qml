@@ -691,6 +691,7 @@ PlasmoidItem {
             }
             contentItem: Flickable {
                 contentHeight: layout.implicitHeight
+                clip: true
 
                 property ListView upperListView: upperSection.visible ? upperSection : lowerSection
                 property ListView lowerListView: lowerSection.visible ? lowerSection : upperSection
