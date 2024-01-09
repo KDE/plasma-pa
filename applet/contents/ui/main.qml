@@ -708,7 +708,7 @@ PlasmoidItem {
                         delegate: scrollView.upperDelegate
                         focus: visible
 
-                        Keys.onDownPressed: {
+                        Keys.onDownPressed: event => {
                             if (currentIndex < count - 1) {
                                 incrementCurrentIndex();
                                 currentItem.forceActiveFocus();
@@ -720,7 +720,7 @@ PlasmoidItem {
                             }
                             event.accepted = true;
                         }
-                        Keys.onUpPressed: {
+                        Keys.onUpPressed: event => {
                             if (currentIndex > 0) {
                                 decrementCurrentIndex();
                                 currentItem.forceActiveFocus();
@@ -749,7 +749,7 @@ PlasmoidItem {
                         delegate: scrollView.lowerDelegate
                         focus: visible && !upperSection.visible
 
-                        Keys.onDownPressed: {
+                        Keys.onDownPressed: event => {
                             if (currentIndex < count - 1) {
                                 incrementCurrentIndex();
                                 currentItem.forceActiveFocus();
@@ -758,7 +758,7 @@ PlasmoidItem {
                             }
                             event.accepted = true;
                         }
-                        Keys.onUpPressed: {
+                        Keys.onUpPressed: event => {
                             if (currentIndex > 0) {
                                 decrementCurrentIndex();
                                 currentItem.forceActiveFocus();
@@ -787,7 +787,9 @@ PlasmoidItem {
 
                 Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
                 KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
-                Keys.onUpPressed: KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
+                Keys.onUpPressed: event => {
+                    KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
+                }
 
                 text: i18n("Raise maximum volume")
 
