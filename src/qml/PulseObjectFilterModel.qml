@@ -1,6 +1,6 @@
 import org.kde.kitemmodels as KItemModels
 
-import org.kde.plasma.private.volume 0.1
+import org.kde.plasma.private.volume
 
 KItemModels.KSortFilterProxyModel {
     property var filters: []

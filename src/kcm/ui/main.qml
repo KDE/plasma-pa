@@ -8,16 +8,16 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-import QtQuick 2.7
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
 
-import org.kde.coreaddons 1.0 as KCoreAddons
+import org.kde.coreaddons as KCoreAddons
 import org.kde.kcmutils as KCM
 import org.kde.kitemmodels as KItemModels
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
-import org.kde.plasma.private.volume 0.1
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as KirigamiComponents
+import org.kde.plasma.private.volume
 
 KCM.ScrollViewKCM {
 

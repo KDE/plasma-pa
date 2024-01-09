@@ -4,11 +4,11 @@
     SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-import QtQuick 2.7
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.plasma.private.volume 0.1
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.private.volume
 
 Kirigami.Page {
     id: volumeControlsConfigPage

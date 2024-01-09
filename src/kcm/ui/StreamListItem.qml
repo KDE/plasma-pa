@@ -5,12 +5,12 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-import QtQuick 2.0
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.0
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.12 as Kirigami
-import org.kde.plasma.private.volume 0.1
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.private.volume
 
 ColumnLayout {
     id: delegate

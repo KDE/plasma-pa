@@ -6,13 +6,13 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 
-import org.kde.kquickcontrolsaddons 2.0
-import org.kde.plasma.components 3.0 as PC3
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.plasma.private.volume 0.1
+import org.kde.kquickcontrolsaddons
+import org.kde.plasma.components as PC3
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.private.volume
 
 import "../code/icon.js" as Icon
 

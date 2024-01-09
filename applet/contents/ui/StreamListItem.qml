@@ -4,10 +4,10 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-import QtQuick 2.0
+import QtQuick
 
 import org.kde.kitemmodels as KItemModels
-import org.kde.plasma.private.volume 0.1
+import org.kde.plasma.private.volume
 
 ListItemBase {
     id: item
