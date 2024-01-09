@@ -776,7 +776,7 @@ PlasmoidItem {
         }
 
         footer: PlasmaExtras.PlasmoidHeading {
-            height: parent.header.height
+            height: fullRep.header.height
             PC3.Switch {
                 id: raiseMaximumVolumeCheckbox
                 anchors.left: parent.left
@@ -791,7 +791,10 @@ PlasmoidItem {
 
                 text: i18n("Raise maximum volume")
 
-                onToggled: { config.raiseMaximumVolume = checked; config.save() }
+                onToggled: {
+                    config.raiseMaximumVolume = checked;
+                    config.save();
+                }
             }
         }
     }
