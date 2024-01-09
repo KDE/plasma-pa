@@ -524,6 +524,7 @@ PlasmoidItem {
 
             RowLayout {
                 anchors.fill: parent
+                spacing: Kirigami.Units.smallSpacing
 
                 PC3.TabBar {
                     id: tabBar

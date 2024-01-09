@@ -106,6 +106,7 @@ PC3.ItemDelegate {
 
             RowLayout {
                 Layout.minimumHeight: contextMenuButton.implicitHeight
+                spacing: Kirigami.Units.smallSpacing
 
                 PC3.RadioButton {
                     id: defaultButton
@@ -123,6 +124,7 @@ PC3.ItemDelegate {
                 RowLayout {
                     Layout.fillWidth: true
                     visible: !defaultButton.visible
+                    spacing: Kirigami.Units.smallSpacing
 
                     // User-friendly name
                     PC3.Label {
@@ -192,6 +194,8 @@ PC3.ItemDelegate {
             }
 
             RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 SmallToolButton {
                     id: muteButton
                     readonly property bool isPlayback: item.type.startsWith("sink")
