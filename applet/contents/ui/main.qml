@@ -498,17 +498,19 @@ PlasmoidItem {
 
         KeyNavigation.down: tabBar.currentItem
 
-        function beginMoveStream(type, stream) {
+        property list<string> hiddenTypes: []
+
+        function beginMoveStream(type: /* "sink" | "source" */ string) {
             if (type === "sink") {
-                contentView.hiddenTypes = "source"
+                hiddenTypes = ["source"]
             } else if (type === "source") {
-                contentView.hiddenTypes = "sink"
+                hiddenTypes = ["sink"]
             }
             tabBar.setCurrentIndex(devicesTab.PC3.TabBar.index)
         }
 
         function endMoveStream() {
-            contentView.hiddenTypes = []
+            hiddenTypes = []
             tabBar.setCurrentIndex(streamsTab.PC3.TabBar.index)
         }
 
@@ -604,7 +606,6 @@ PlasmoidItem {
         // We also don't need to be able to swipe between views.
         contentItem: HorizontalStackView {
             id: contentView
-            property var hiddenTypes: []
             initialItem: plasmoid.configuration.currentTab === "streams" ? streamsView : devicesView
             movementTransitionsEnabled: currentItem !== null
             TwoPartView {
@@ -696,7 +697,7 @@ PlasmoidItem {
                     spacing: 0
                     ListView {
                         id: upperSection
-                        visible: count && !contentView.hiddenTypes.includes(scrollView.upperType)
+                        visible: count && !fullRep.hiddenTypes.includes(scrollView.upperType)
                         interactive: false
                         Layout.fillWidth: true
                         implicitHeight: contentHeight
@@ -737,7 +738,7 @@ PlasmoidItem {
                     }
                     ListView {
                         id: lowerSection
-                        visible: count && !contentView.hiddenTypes.includes(scrollView.lowerType)
+                        visible: count && !fullRep.hiddenTypes.includes(scrollView.lowerType)
                         interactive: false
                         Layout.fillWidth: true
                         implicitHeight: contentHeight
