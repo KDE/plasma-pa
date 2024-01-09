@@ -458,26 +458,30 @@ PlasmoidItem {
         id: osd
 
         function showVolume(text) {
-            if (!config.volumeOsd)
+            if (!config.volumeOsd) {
                 return
+            }
             show(text, currentMaxVolumePercent)
         }
 
         function showMute(text) {
-            if (!config.muteOsd)
+            if (!config.muteOsd) {
                 return
+            }
             show(text, currentMaxVolumePercent)
         }
 
         function showMic(text) {
-            if (!config.microphoneSensitivityOsd)
+            if (!config.microphoneSensitivityOsd) {
                 return
+            }
             showMicrophone(text)
         }
 
         function showMicMute(text) {
-            if (!config.muteOsd)
+            if (!config.muteOsd) {
                 return
+            }
             showMicrophone(text)
         }
     }
