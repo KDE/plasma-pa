@@ -73,7 +73,7 @@ void Sink::setDefault(bool enable)
 
 void Sink::switchStreams()
 {
-    auto data = context()->sinkInputs().data();
+    const auto data = context()->sinkInputs().data();
     std::for_each(data.begin(), data.end(), [this](SinkInput *paObj) {
         paObj->setDeviceIndex(m_index);
     });
