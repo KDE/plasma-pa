@@ -72,7 +72,6 @@ PC3.ItemDelegate {
 
             MouseArea {
                 id: dragMouseArea
-                enabled: contextMenu.status === 3 //Closed
                 anchors.fill: parent
                 cursorShape: enabled ? (pressed && pressedButtons === Qt.LeftButton ? Qt.ClosedHandCursor : Qt.OpenHandCursor) : undefined
                 acceptedButtons: Qt.LeftButton | Qt.MiddleButton
