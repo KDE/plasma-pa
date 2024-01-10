@@ -50,7 +50,7 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterType<QPulseAudio::SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
     qmlRegisterType<QPulseAudio::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
     qmlRegisterType<QPulseAudio::ModuleModel>(uri, 0, 1, "ModuleModel");
-    qmlRegisterType<QPulseAudio::VolumeMonitor>(uri, 0, 01, "VolumeMonitor");
+    qmlRegisterType<QPulseAudio::VolumeMonitor>(uri, 0, 1, "VolumeMonitor");
     qmlRegisterUncreatableType<QPulseAudio::VolumeObject>(uri, 0, 1, "VolumeObject", QString());
     qmlRegisterUncreatableType<QPulseAudio::PulseObject>(uri, 0, 1, "PulseObject", QString());
     qmlRegisterUncreatableType<QPulseAudio::Profile>(uri, 0, 1, "Profile", QString());
