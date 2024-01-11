@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 01:59+0000\n"
+"POT-Creation-Date: 2024-01-11 00:38+0000\n"
 "PO-Revision-Date: 2023-12-24 09:30-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -38,52 +38,52 @@ msgstr "ਇਸ ਵੇਲੇ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰ ਰਿਹਾ"
 msgid "Currently not playing"
 msgstr "ਇਸ ਵੇਲੇ ਚੱਲ ਨਹੀਂ ਰਿਹਾ ਹੈ"
 
-#: contents/ui/ListItemBase.qml:184
+#: contents/ui/ListItemBase.qml:183
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "ਵਧੀਕ ਚੋਣਾਂ"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 ਲਈ ਹੋਰ ਚੋਣਵਾਂ ਵੇਖਾਓ"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:202
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ਨਾ-ਚੁੱਪ"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:202
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "ਚੁੱਪ"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1 ਨਾ-ਚੁੱਪ"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 ਚੁੱਪ"
 
-#: contents/ui/ListItemBase.qml:225
+#: contents/ui/ListItemBase.qml:224
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 ਲਈ ਵਾਲੀਅਮ ਅਡਜੱਸਟ ਕਰੋ"
 
-#: contents/ui/ListItemBase.qml:284
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:304
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

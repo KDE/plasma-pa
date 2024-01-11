@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 01:59+0000\n"
+"POT-Creation-Date: 2024-01-11 00:38+0000\n"
 "PO-Revision-Date: 2021-10-28 12:36+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -38,56 +38,56 @@ msgstr "Tuchwilu so njenahrawa"
 msgid "Currently not playing"
 msgstr "Tuchwilu so njewothrawa"
 
-#: contents/ui/ListItemBase.qml:184
+#: contents/ui/ListItemBase.qml:183
 #, fuzzy, kde-format
 #| msgid "Show additional options for %1"
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Dodatne opcije za %1 pokazać"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Dodatne opcije za %1 pokazać"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:202
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "%1 doněmić"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:202
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Woně&mić"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:204
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgid "Unmute %1"
 msgstr "%1 doněmić"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 doněmić"
 
-#: contents/ui/ListItemBase.qml:225
+#: contents/ui/ListItemBase.qml:224
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Wótrosć za %1 připrawić"
 
-#: contents/ui/ListItemBase.qml:284
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:304
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 01:59+0000\n"
+"POT-Creation-Date: 2024-01-11 00:38+0000\n"
 "PO-Revision-Date: 2023-02-04 19:51+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -41,52 +41,52 @@ msgstr "Šiuo metu neįrašoma"
 msgid "Currently not playing"
 msgstr "Šiuo metu neatkuriama"
 
-#: contents/ui/ListItemBase.qml:184
+#: contents/ui/ListItemBase.qml:183
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Papildomos parinktys"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Rodyti papildomas %1 parinktis"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:202
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Įjungti garsą"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:202
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Nutildyti"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgid "Unmute %1"
 msgstr "Įjungti garsą %1"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgid "Mute %1"
 msgstr "Nutildyti %1"
 
-#: contents/ui/ListItemBase.qml:225
+#: contents/ui/ListItemBase.qml:224
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Reguliuoti %1 garsumą"
 
-#: contents/ui/ListItemBase.qml:284
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:304
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 01:59+0000\n"
+"POT-Creation-Date: 2024-01-11 00:38+0000\n"
 "PO-Revision-Date: 2023-05-14 15:17+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -38,52 +38,52 @@ msgstr "இப்போது பதிவு செய்யவில்லை"
 msgid "Currently not playing"
 msgstr "இப்போது இயங்கவில்லை"
 
-#: contents/ui/ListItemBase.qml:184
+#: contents/ui/ListItemBase.qml:183
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "மேம்பட்ட அமைப்புகள்"
 
-#: contents/ui/ListItemBase.qml:186
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 என்பதற்கு கூடுதல் விருப்பங்களை காட்டு"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:202
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ஒலிமுடக்கத்தை நீக்கு"
 
-#: contents/ui/ListItemBase.qml:203
+#: contents/ui/ListItemBase.qml:202
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "ஒலியை அடக்கு"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1-இன் ஒலியை அனுமதி"
 
-#: contents/ui/ListItemBase.qml:205
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgid "Mute %1"
 msgstr "%1-இன் ஒலியை அடக்கு"
 
-#: contents/ui/ListItemBase.qml:225
+#: contents/ui/ListItemBase.qml:224
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1-க்கு ஒலியின் அளவை மாற்று"
 
-#: contents/ui/ListItemBase.qml:284
+#: contents/ui/ListItemBase.qml:283
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:304
+#: contents/ui/ListItemBase.qml:303
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
