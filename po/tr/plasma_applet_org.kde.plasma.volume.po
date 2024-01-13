@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 00:38+0000\n"
+"POT-Creation-Date: 2024-01-13 00:39+0000\n"
 "PO-Revision-Date: 2023-12-02 00:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -39,52 +39,52 @@ msgstr "Şu anda kayıt yapmıyor"
 msgid "Currently not playing"
 msgstr "Şu anda çalmıyor/oynatmıyor"
 
-#: contents/ui/ListItemBase.qml:183
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Ek Seçenekler"
 
-#: contents/ui/ListItemBase.qml:185
+#: contents/ui/ListItemBase.qml:187
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 için ek seçenekleri göster"
 
-#: contents/ui/ListItemBase.qml:202
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Sesi Aç"
 
-#: contents/ui/ListItemBase.qml:202
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Sessize Al"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Unmute %1"
 msgstr "Sesini Aç: %1"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Mute %1"
 msgstr "Sessize Al: %1"
 
-#: contents/ui/ListItemBase.qml:224
+#: contents/ui/ListItemBase.qml:228
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 ses düzeyini ayarla"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:287
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%​%1"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:307
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -178,37 +178,37 @@ msgstr "Mikrofon Sesini Azalt"
 msgid "Mute Microphone"
 msgstr "Mikrofonu Kapat"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:558
 #, kde-format
 msgid "Devices"
 msgstr "Aygıtlar"
 
-#: contents/ui/main.qml:560
+#: contents/ui/main.qml:565
 #, kde-format
 msgid "Applications"
 msgstr "Uygulamalar"
 
-#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
+#: contents/ui/main.qml:586 contents/ui/main.qml:588 contents/ui/main.qml:808
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Tümünün Sesini Kapat"
 
-#: contents/ui/main.qml:636
+#: contents/ui/main.qml:641
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ses çalan veya ses kaydı yapan hiçbir uygulama yok"
 
-#: contents/ui/main.qml:788
+#: contents/ui/main.qml:796
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Sesi sonuna kadar aç"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:821
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Sanal Aygıtları Göster"
 
-#: contents/ui/main.qml:820
+#: contents/ui/main.qml:831
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Ses Aygıtlarını Yapılandır…"

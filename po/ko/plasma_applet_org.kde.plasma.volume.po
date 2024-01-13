@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 00:38+0000\n"
+"POT-Creation-Date: 2024-01-13 00:39+0000\n"
 "PO-Revision-Date: 2023-07-25 01:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -38,52 +38,52 @@ msgstr "현재 녹음 중이 아님"
 msgid "Currently not playing"
 msgstr "현재 재생 중이 아님"
 
-#: contents/ui/ListItemBase.qml:183
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "추가 옵션"
 
-#: contents/ui/ListItemBase.qml:185
+#: contents/ui/ListItemBase.qml:187
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1의 추가 설정 표시"
 
-#: contents/ui/ListItemBase.qml:202
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "음소거 해제"
 
-#: contents/ui/ListItemBase.qml:202
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "음소거"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1 음소거 해제"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 음소거"
 
-#: contents/ui/ListItemBase.qml:224
+#: contents/ui/ListItemBase.qml:228
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 음량 조정"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:287
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:307
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -177,37 +177,37 @@ msgstr "마이크 음량 감소"
 msgid "Mute Microphone"
 msgstr "마이크 음소거"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:558
 #, kde-format
 msgid "Devices"
 msgstr "장치"
 
-#: contents/ui/main.qml:560
+#: contents/ui/main.qml:565
 #, kde-format
 msgid "Applications"
 msgstr "앱"
 
-#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
+#: contents/ui/main.qml:586 contents/ui/main.qml:588 contents/ui/main.qml:808
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "강제로 모든 재생 장치 음소거"
 
-#: contents/ui/main.qml:636
+#: contents/ui/main.qml:641
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "오디오를 재생하거나 녹음하는 앱 없음"
 
-#: contents/ui/main.qml:788
+#: contents/ui/main.qml:796
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "최대 음량 높이기"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:821
 #, kde-format
 msgid "Show virtual devices"
 msgstr "가상 장치 표시"
 
-#: contents/ui/main.qml:820
+#: contents/ui/main.qml:831
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "오디오 장치 설정(&C)…"

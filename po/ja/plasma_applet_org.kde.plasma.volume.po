@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 00:38+0000\n"
+"POT-Creation-Date: 2024-01-13 00:39+0000\n"
 "PO-Revision-Date: 2023-04-07 23:42-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -39,52 +39,52 @@ msgstr "現在録音していません"
 msgid "Currently not playing"
 msgstr "現在再生していません"
 
-#: contents/ui/ListItemBase.qml:183
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "追加オプション"
 
-#: contents/ui/ListItemBase.qml:185
+#: contents/ui/ListItemBase.qml:187
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1の追加オプションを表示"
 
-#: contents/ui/ListItemBase.qml:202
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ミュート解除"
 
-#: contents/ui/ListItemBase.qml:202
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "ミュート"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1 をミュート解除"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 をミュート"
 
-#: contents/ui/ListItemBase.qml:224
+#: contents/ui/ListItemBase.qml:228
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 の音量を調整"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:287
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:307
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -180,37 +180,37 @@ msgstr "マイクの音量を下げる"
 msgid "Mute Microphone"
 msgstr "マイクをミュート"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:558
 #, kde-format
 msgid "Devices"
 msgstr "デバイス"
 
-#: contents/ui/main.qml:560
+#: contents/ui/main.qml:565
 #, kde-format
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
+#: contents/ui/main.qml:586 contents/ui/main.qml:588 contents/ui/main.qml:808
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "すべての再生デバイスを強制的にミュート"
 
-#: contents/ui/main.qml:636
+#: contents/ui/main.qml:641
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "再生や録音をしているアプリケーションなし"
 
-#: contents/ui/main.qml:788
+#: contents/ui/main.qml:796
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "最大音量を上げる"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:821
 #, kde-format
 msgid "Show virtual devices"
 msgstr "仮想デバイスを表示"
 
-#: contents/ui/main.qml:820
+#: contents/ui/main.qml:831
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "音声デバイスを設定(&C)..."

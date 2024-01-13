@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 00:38+0000\n"
+"POT-Creation-Date: 2024-01-13 00:39+0000\n"
 "PO-Revision-Date: 2023-05-12 19:34+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -40,52 +40,52 @@ msgstr "No grabando actualmente"
 msgid "Currently not playing"
 msgstr "No reproduciendo actualmente"
 
-#: contents/ui/ListItemBase.qml:183
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Opciones adicionales"
 
-#: contents/ui/ListItemBase.qml:185
+#: contents/ui/ListItemBase.qml:187
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Mostrar opciones adicionales para %1"
 
-#: contents/ui/ListItemBase.qml:202
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Reanudar el sonido"
 
-#: contents/ui/ListItemBase.qml:202
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Silenciar"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Unmute %1"
 msgstr "Reanudar el sonido %1"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgid "Mute %1"
 msgstr "Silenciar %1"
 
-#: contents/ui/ListItemBase.qml:224
+#: contents/ui/ListItemBase.qml:228
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Ajustar el volumen para %1"
 
-#: contents/ui/ListItemBase.qml:283
+#: contents/ui/ListItemBase.qml:287
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:303
+#: contents/ui/ListItemBase.qml:307
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -179,37 +179,37 @@ msgstr "Bajar el volumen del micrófono"
 msgid "Mute Microphone"
 msgstr "Silenciar el micrófono"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:558
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivos"
 
-#: contents/ui/main.qml:560
+#: contents/ui/main.qml:565
 #, kde-format
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
+#: contents/ui/main.qml:586 contents/ui/main.qml:588 contents/ui/main.qml:808
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forzar el silencio en todos los dispositivos de reproducción"
 
-#: contents/ui/main.qml:636
+#: contents/ui/main.qml:641
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "No hay aplicaciones reproduciendo ni grabando sonido"
 
-#: contents/ui/main.qml:788
+#: contents/ui/main.qml:796
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Subir el volumen máximo"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:821
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostrar dispositivos virtuales"
 
-#: contents/ui/main.qml:820
+#: contents/ui/main.qml:831
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar dispositivos de sonido..."
