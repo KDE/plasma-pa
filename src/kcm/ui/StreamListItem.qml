@@ -97,12 +97,6 @@ ColumnLayout {
                 VolumeSlider {
                     id: volumeSlider
                     Layout.alignment: Qt.AlignVCenter
-
-                    value: Volume
-                    onMoved: {
-                        Volume = value;
-                        Muted = (value === 0);
-                    }
                 }
             }
         }
