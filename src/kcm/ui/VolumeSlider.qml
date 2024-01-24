@@ -29,8 +29,12 @@ RowLayout {
         value: Volume
         from: PulseAudio.MinimalVolume
         to: config.raiseMaximumVolume ? PulseAudio.MaximalVolume /* 150 */ : PulseAudio.NormalVolume /* 100 */
-        // TODO: implement a way to hide tickmarks (stepSize is also required to scroll)
-        // stepSize: to / (PulseAudio.MaximalVolume / PulseAudio.NormalVolume * 100.0)
+        property real myStepSize: PulseAudio.NormalVolume / 100.0 * config.volumeStep
+        // qqc2-desktop-stlye implements scrolling via inscrease()/decrease() functions
+        // they default to steps of 0.1 when stepSize is not set
+        // override them to get scrolling working
+        function increase () { value = value + myStepSize }
+        function decrease () { value = value - myStepSize }
         visible: HasVolume
         enabled: VolumeWritable
         opacity: Muted ? 0.5 : 1
