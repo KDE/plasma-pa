@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:42+0000\n"
+"POT-Creation-Date: 2024-01-25 02:23+0000\n"
 "PO-Revision-Date: 2023-09-24 20:26+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -266,13 +266,13 @@ msgstr "Estat de silenci"
 msgid "Default output device"
 msgstr "Dispositiu predeterminat d'eixida"
 
-#: kcm/ui/VolumeSlider.qml:65
+#: kcm/ui/VolumeSlider.qml:69
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/VolumeSlider.qml:85
+#: kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

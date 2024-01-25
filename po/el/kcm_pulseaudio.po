@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:42+0000\n"
+"POT-Creation-Date: 2024-01-25 02:23+0000\n"
 "PO-Revision-Date: 2021-09-04 09:35+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -266,13 +266,13 @@ msgstr "Σίγαση ήχου"
 msgid "Default output device"
 msgstr "Προκαθορισμένο"
 
-#: kcm/ui/VolumeSlider.qml:65
+#: kcm/ui/VolumeSlider.qml:69
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/VolumeSlider.qml:85
+#: kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:42+0000\n"
+"POT-Creation-Date: 2024-01-25 02:23+0000\n"
 "PO-Revision-Date: 2022-11-03 09:33+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -257,13 +257,13 @@ msgstr "Estado de silêncio"
 msgid "Default output device"
 msgstr "Dispositivo de saída predefinido"
 
-#: kcm/ui/VolumeSlider.qml:65
+#: kcm/ui/VolumeSlider.qml:69
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/VolumeSlider.qml:85
+#: kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
