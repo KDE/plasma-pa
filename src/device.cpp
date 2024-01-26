@@ -46,6 +46,11 @@ bool QPulseAudio::Device::isVirtualDevice() const
     return m_virtualDevice;
 }
 
+QVariantMap QPulseAudio::Device::pulseProperties() const
+{
+    return m_pulseProperties;
+}
+
 QPulseAudio::Device::Device(QObject *parent)
     : VolumeObject(parent)
 {

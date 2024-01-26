@@ -8,6 +8,7 @@
 #define DEVICE_H
 
 #include <QString>
+#include <QVariantMap>
 
 #include <pulse/volume.h>
 
@@ -29,6 +30,7 @@ class Device : public VolumeObject
     Q_PROPERTY(quint32 activePortIndex READ activePortIndex WRITE setActivePortIndex NOTIFY activePortIndexChanged)
     Q_PROPERTY(bool default READ isDefault WRITE setDefault NOTIFY defaultChanged)
     Q_PROPERTY(bool virtualDevice READ isVirtualDevice NOTIFY virtualDeviceChanged)
+    Q_PROPERTY(QVariantMap pulseProperties READ pulseProperties NOTIFY pulsePropertiesChanged)
 public:
     enum State {
         InvalidState = 0,
@@ -40,6 +42,21 @@ public:
     Q_ENUMS(State)
 
     ~Device() override = default;
+
+    template<typename PAInfo>
+    void updatePulseProperties(const PAInfo *info)
+    {
+        QVariantMap pulseProperties;
+        void *state = nullptr;
+        while (auto key = pa_proplist_iterate(info->proplist, &state)) {
+            const auto value = pa_proplist_gets(info->proplist, key);
+            pulseProperties.insert(key, QString::fromUtf8(value));
+        }
+        if (pulseProperties != m_pulseProperties) {
+            m_pulseProperties = pulseProperties;
+            Q_EMIT pulsePropertiesChanged();
+        }
+    }
 
     template<typename PAInfo>
     void updateDevice(const PAInfo *info)
@@ -62,6 +79,8 @@ public:
                 Q_EMIT formFactorChanged();
             }
         }
+
+        updatePulseProperties(info);
 
         if (m_cardIndex != info->card) {
             m_cardIndex = info->card;
@@ -123,6 +142,7 @@ public:
     virtual bool isDefault() const = 0;
     virtual void setDefault(bool enable) = 0;
     bool isVirtualDevice() const;
+    [[nodiscard]] QVariantMap pulseProperties() const;
 
     virtual Q_INVOKABLE void switchStreams() = 0;
 
@@ -136,6 +156,7 @@ Q_SIGNALS:
     void activePortIndexChanged();
     void defaultChanged();
     void virtualDeviceChanged();
+    void pulsePropertiesChanged();
 
 protected:
     explicit Device(QObject *parent);
@@ -151,6 +172,7 @@ private:
     quint32 m_activePortIndex = -1;
     State m_state = UnknownState;
     bool m_virtualDevice = false;
+    QVariantMap m_pulseProperties;
 };
 
 } // QPulseAudio
