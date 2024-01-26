@@ -101,7 +101,7 @@ class AppletTest(unittest.TestCase):
         self.pulseaudio = subprocess.Popen(["pipewire-pulse"], stdout=sys.stderr, stderr=sys.stderr)
         time.sleep(1)
         description: Final = "Virtual_Dummy_Output"
-        subprocess.check_call(["pactl", "load-module", "module-null-sink", "sink_name=DummyOutput", f"sink_properties=device.description={description}"])
+        subprocess.check_call(["pactl", "load-module", "module-null-sink", "sink_name=DummyOutput", f"sink_properties=node.nick={description}"])
         self.driver.find_element(AppiumBy.NAME, description)
 
         # Raise the maximum volume

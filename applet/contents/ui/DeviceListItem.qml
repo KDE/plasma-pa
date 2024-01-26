@@ -16,22 +16,36 @@ ListItemBase {
 
     fullNameToShowOnHover: ListView.view.count === 1 ? model.Description : ""
 
+    function nodeName() {
+        const nodeNick = model.PulseProperties["node.nick"]
+        if (nodeNick) {
+            return nodeNick
+        }
+
+        if (model.Description) {
+            return model.Description
+        }
+
+        if (model.Name) {
+            return model.Name
+        }
+
+        return i18n("Device name not found");
+    }
+
     draggable: false
     label: {
-        if (currentPort && currentPort.description) {
-            if (ListView.view.count === 1 || !model.Description) {
-                return currentPort.description;
-            } else {
-                return i18nc("label of device items", "%1 (%2)", currentPort.description, model.Description);
-            }
+        // >1 entry -> use unique-ish names (e.g. 'Konqi Headset 5')
+        if (ListView.view.count > 1) {
+            return nodeName()
         }
-        if (model.Description) {
-            return model.Description;
+
+        // 1 entry -> use the ambiguous port name (e.g. 'Microphone')
+        if (currentPort?.description) {
+            return currentPort.description
         }
-        if (model.Name) {
-            return model.Name;
-        }
-        return i18n("Device name not found");
+
+        return nodeName()
     }
 
     onActivePortIndexChanged: {
