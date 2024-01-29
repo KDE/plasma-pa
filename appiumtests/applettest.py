@@ -22,28 +22,7 @@ from appium.webdriver.webelement import WebElement
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gdk
 
-EVDEV_OFFSET: Final = 8
 WIDGET_ID: Final = "org.kde.plasma.volume"
-
-
-def keyval_to_keycode(key_val: int) -> int:
-    """
-    @param key_val see https://www.cl.cam.ac.uk/~mgk25/ucs/keysymdef.h
-    """
-    match key_val:
-        case 0xffe1:  # XK_Shift_L
-            return 42 + EVDEV_OFFSET
-        case 0xffe9:  #XK_Alt_L
-            return 56 + EVDEV_OFFSET
-        case 0xffe3:  # XK_Control_L
-            return 29 + EVDEV_OFFSET
-
-    keymap = Gdk.Keymap.get_default()
-    ret, keys = keymap.get_entries_for_keyval(key_val)
-    if not ret:
-        raise RuntimeError("Failed to map key!")
-    return keys[0].keycode
-
 
 class SetValueCommand(ExtensionBase):
 
