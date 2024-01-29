@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-25 00:38+0000\n"
-"PO-Revision-Date: 2024-01-03 14:00-0600\n"
+"PO-Revision-Date: 2024-01-28 18:13-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
@@ -137,6 +137,8 @@ msgid ""
 "Error trying to play a test sound. \n"
 "The system said: \"%1\""
 msgstr ""
+"ਟੈਸਟ ਆਵਾਜ਼ ਚਲਾਉਣ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।\n"
+"ਸਿਸਟਮ ਨੇ ਕਿਹਾ: \"%1\""
 
 #: kcm/ui/main.qml:405
 #, kde-format
@@ -239,7 +241,7 @@ msgstr "ਆਡੀਓ ਵਾਲੀਅਮ"
 #: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "ਇਸ ਲਈ ਤਬਦੀਲੀਆਂ ਵਾਸਤੇ ਦਿੱਖ ਫੀਡਬੈਕ ਵੇਖਾਓ:"
 
 #: kcm/ui/VolumeControlsConfig.qml:80
 #, kde-format
