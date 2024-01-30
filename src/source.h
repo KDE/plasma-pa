@@ -9,7 +9,7 @@
 
 #include "device.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Source : public Device
 {
@@ -30,6 +30,6 @@ public:
     void switchStreams() override;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // SOURCE_H

@@ -10,7 +10,7 @@
 #include "sink.h"
 #include "source.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 Server::Server(Context *context)
     : QObject(context)
@@ -111,4 +111,4 @@ bool Server::isPipeWire() const
     return m_isPipeWire;
 }
 
-} // QPulseAudio
+} // PulseAudioQt

@@ -11,7 +11,7 @@
 
 #include <pulse/ext-stream-restore.h>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class StreamRestore : public PulseObject
 {
@@ -80,6 +80,6 @@ private:
     } m_cache;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // STREAMRESTORE_H

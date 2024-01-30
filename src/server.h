@@ -10,7 +10,7 @@
 #include <QObject>
 #include <pulse/introspect.h>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Sink;
 class Source;
@@ -49,6 +49,6 @@ private:
     bool m_isPipeWire = false;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // CONTEXT_H

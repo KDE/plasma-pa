@@ -10,7 +10,7 @@
 
 #include <QIcon>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 PulseObject::PulseObject(QObject *parent)
     : QObject(parent)
@@ -80,4 +80,4 @@ QVariantMap PulseObject::properties() const
     return m_properties;
 }
 
-} // QPulseAudio
+} // PulseAudioQt

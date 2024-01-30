@@ -16,7 +16,7 @@
 
 using namespace std::chrono_literals;
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class ConfigModule : public GSettingsItem
 {

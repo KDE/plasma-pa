@@ -23,7 +23,7 @@
 
 #include "volumeosd.h"
 
-using namespace QPulseAudio;
+using namespace PulseAudioQt;
 
 MicrophoneIndicator::MicrophoneIndicator(QObject *parent)
     : QObject(parent)

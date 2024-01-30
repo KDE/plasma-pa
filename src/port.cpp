@@ -6,7 +6,7 @@
 
 #include "port.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 Port::Port(QObject *parent)
     : Profile(parent)
@@ -15,4 +15,4 @@ Port::Port(QObject *parent)
 
 Port::~Port() = default;
 
-} // QPulseAudio
+} // PulseAudioQt

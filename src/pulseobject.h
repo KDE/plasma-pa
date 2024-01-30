@@ -13,7 +13,7 @@
 
 #include <pulse/introspect.h>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Context;
 
@@ -68,6 +68,6 @@ private:
     PulseObject();
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // PULSEOBJECT_H

@@ -10,7 +10,7 @@
 #include "server.h"
 #include "sinkinput.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 Sink::Sink(QObject *parent)
     : Device(parent)
@@ -84,4 +84,4 @@ quint32 Sink::monitorIndex() const
     return m_monitorIndex;
 }
 
-} // QPulseAudio
+} // PulseAudioQt

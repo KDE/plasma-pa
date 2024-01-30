@@ -40,12 +40,12 @@ SpeakerTest::SpeakerTest(QObject *parent)
 {
 }
 
-QPulseAudio::Sink *SpeakerTest::sink() const
+PulseAudioQt::Sink *SpeakerTest::sink() const
 {
     return m_sink;
 }
 
-void SpeakerTest::setSink(QPulseAudio::Sink *sink)
+void SpeakerTest::setSink(PulseAudioQt::Sink *sink)
 {
     if (m_sink != sink) {
         m_sink = sink;
@@ -55,7 +55,7 @@ void SpeakerTest::setSink(QPulseAudio::Sink *sink)
 
 void SpeakerTest::testChannel(const QString &name)
 {
-    auto context = QPulseAudio::CanberraContext::instance()->canberra();
+    auto context = PulseAudioQt::CanberraContext::instance()->canberra();
     if (!context) {
         return;
     }

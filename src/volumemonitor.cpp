@@ -18,7 +18,7 @@
 
 #include <QtGlobal>
 
-using namespace QPulseAudio;
+using namespace PulseAudioQt;
 
 VolumeMonitor::VolumeMonitor(QObject *parent)
     : QObject(parent)
@@ -48,12 +48,12 @@ void VolumeMonitor::updateVolume(qreal volume)
     Q_EMIT volumeChanged();
 }
 
-QPulseAudio::VolumeObject *QPulseAudio::VolumeMonitor::target() const
+PulseAudioQt::VolumeObject *PulseAudioQt::VolumeMonitor::target() const
 {
     return m_target;
 }
 
-void QPulseAudio::VolumeMonitor::setTarget(QPulseAudio::VolumeObject *target)
+void PulseAudioQt::VolumeMonitor::setTarget(PulseAudioQt::VolumeObject *target)
 {
     if (target == m_target) {
         return;

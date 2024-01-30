@@ -16,13 +16,13 @@ class SoundThemeConfig;
 class SpeakerTest : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QPulseAudio::Sink *sink READ sink WRITE setSink NOTIFY sinkChanged)
+    Q_PROPERTY(PulseAudioQt::Sink *sink READ sink WRITE setSink NOTIFY sinkChanged)
     Q_PROPERTY(QStringList playingChannels READ playingChannels NOTIFY playingChannelsChanged)
 public:
     explicit SpeakerTest(QObject *parent = nullptr);
 
-    QPulseAudio::Sink *sink() const;
-    void setSink(QPulseAudio::Sink *sink);
+    PulseAudioQt::Sink *sink() const;
+    void setSink(PulseAudioQt::Sink *sink);
     Q_SIGNAL void sinkChanged();
 
     QStringList playingChannels() const;
@@ -33,7 +33,7 @@ public:
     Q_SIGNAL void showErrorMessage(const QString &message);
 
 private:
-    QPulseAudio::Sink *m_sink;
+    PulseAudioQt::Sink *m_sink;
     QStringList m_playingChannels;
     SoundThemeConfig *m_config = nullptr;
 };

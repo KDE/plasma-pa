@@ -8,7 +8,7 @@
 
 #include "context.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 SourceOutput::SourceOutput(QObject *parent)
     : Stream(parent)
@@ -49,4 +49,4 @@ void SourceOutput::setChannelVolumes(const QList<qint64> &channelVolumes)
     context()->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_source_output_volume);
 }
 
-} // QPulseAudio
+} // PulseAudioQt

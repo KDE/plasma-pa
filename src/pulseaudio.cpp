@@ -17,7 +17,7 @@
 
 #include <QMetaEnum>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     : QAbstractListModel(parent)
@@ -367,4 +367,4 @@ ModuleModel::ModuleModel(QObject *parent)
     initRoleNames(Module::staticMetaObject);
 }
 
-} // QPulseAudio
+} // PulseAudioQt
