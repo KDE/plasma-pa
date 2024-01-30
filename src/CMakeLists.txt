@@ -41,6 +41,12 @@ ecm_target_qml_sources(plasma-volume-declarative VERSION 0.1 SOURCES
     qml/PulseObjectFilterModel.qml
 )
 
+ecm_generate_export_header(plasma-volume-declarative
+    BASE_NAME PulseAudioQt
+    GROUP_BASE_NAME KF
+    VERSION ${PROJECT_VERSION}
+)
+
 set_property(SOURCE qml/dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdServiceInterface)
 qt_add_dbus_interface(dbus_SRCS qml/dbus/osdService.xml osdservice)
 
