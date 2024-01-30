@@ -61,6 +61,12 @@ ecm_target_qml_sources(plasma-volume-declarative VERSION 0.1 SOURCES
 set_property(SOURCE dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdServiceInterface)
 qt_add_dbus_interface(dbus_SRCS dbus/osdService.xml osdservice)
 
+ecm_generate_export_header(plasma-volume-declarative
+    BASE_NAME PulseAudioQt
+    GROUP_BASE_NAME KF
+    VERSION ${PROJECT_VERSION}
+)
+
 target_sources(plasma-volume-declarative PRIVATE ${dbus_SRCS})
 target_sources(plasma-volume PRIVATE ${dbus_SRCS})
 
