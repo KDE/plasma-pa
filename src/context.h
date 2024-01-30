@@ -7,220 +7,234 @@
 #ifndef CONTEXT_H
 #define CONTEXT_H
 
-#include <QMutex>
+#include "pulseaudioqt_export.h"
 #include <QObject>
-#include <QSet>
 
-#include <pulse/ext-stream-restore.h>
-#include <pulse/glib-mainloop.h>
-#include <pulse/mainloop.h>
-#include <pulse/pulseaudio.h>
+struct pa_context;
 
-#include "maps.h"
-#include "operation.h"
-
-namespace QPulseAudio
+/**
+ * The primary namespace of PulseAudioQt.
+ */
+namespace PulseAudioQt
 {
+class Card;
+class Client;
+class Sink;
+class SinkInput;
+class Source;
+class SourceOutput;
+class StreamRestore;
+class Module;
 class Server;
 
-class Context : public QObject
+/**
+ * The normal volume (100%, 0 dB). Equivalent to PA_VOLUME_NORM.
+ */
+PULSEAUDIOQT_EXPORT qint64 normalVolume();
+/**
+ * The minimum volume (0%). Equivalent to PA_VOLUME_MUTED.
+ */
+PULSEAUDIOQT_EXPORT qint64 minimumVolume();
+/**
+ * The maximum volume PulseAudio can store. Equivalent to PA_VOLUME_MAX.
+ * \warning For UI elements like volume sliders use maximumUIVolume instead.
+ */
+PULSEAUDIOQT_EXPORT qint64 maximumVolume();
+
+/**
+ * The maximum volume suitable to display in a UI. Equivalent to PA_VOLUME_UI_MAX.
+ */
+PULSEAUDIOQT_EXPORT qint64 maximumUIVolume();
+
+class PULSEAUDIOQT_EXPORT Context : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit Context(QObject *parent = nullptr);
     ~Context() override;
 
     static Context *instance();
 
-    static const qint64 NormalVolume;
-    static const qint64 MinimalVolume;
-    static const qint64 MaximalVolume;
+    /**
+     * Set the application id that is reported to PulseAudio.
+     * This needs to be called before accessing the context singleton the first time.
+     * If not set QGuiApplication::desktopFileName() is used.
+     */
+    static void setApplicationId(const QString &applicationId);
 
-    void ref();
-    void unref();
+    bool isValid();
 
-    bool isValid()
-    {
-        return m_context && m_mainloop;
-    }
+    /**
+     * Returns a list of all sinks.
+     *
+     * @return list of sinks
+     */
+    QVector<Sink *> sinks() const;
 
-    pa_context *context() const
-    {
-        return m_context;
-    }
+    /**
+     * Returns a list of all sink inputs.
+     *
+     * @return list of sink inputs
+     */
+    QVector<SinkInput *> sinkInputs() const;
 
-    const SinkMap &sinks() const
-    {
-        return m_sinks;
-    }
-    const SinkInputMap &sinkInputs() const
-    {
-        return m_sinkInputs;
-    }
-    const SourceMap &sources() const
-    {
-        return m_sources;
-    }
-    const SourceOutputMap &sourceOutputs() const
-    {
-        return m_sourceOutputs;
-    }
-    const ClientMap &clients() const
-    {
-        return m_clients;
-    }
-    const CardMap &cards() const
-    {
-        return m_cards;
-    }
-    const ModuleMap &modules() const
-    {
-        return m_modules;
-    }
-    const StreamRestoreMap &streamRestores() const
-    {
-        return m_streamRestores;
-    }
-    Server *server() const
-    {
-        return m_server;
-    }
-    QString newDefaultSink() const
-    {
-        return m_newDefaultSink;
-    }
-    QString newDefaultSource() const
-    {
-        return m_newDefaultSource;
-    }
+    /**
+     * Returns a list of all sources.
+     *
+     * @return list of sources
+     */
+    QVector<Source *> sources() const;
 
-    void subscribeCallback(pa_context *context, pa_subscription_event_type_t type, uint32_t index);
-    void contextStateCallback(pa_context *context);
+    /**
+     * Returns a list of all source outputs.
+     *
+     * @return list of source outputs
+     */
+    QVector<SourceOutput *> sourceOutputs() const;
 
-    void sinkCallback(const pa_sink_info *info);
-    void sinkInputCallback(const pa_sink_input_info *info);
-    void sourceCallback(const pa_source_info *info);
-    void sourceOutputCallback(const pa_source_output_info *info);
-    void clientCallback(const pa_client_info *info);
-    void cardCallback(const pa_card_info *info);
-    void moduleCallback(const pa_module_info *info);
-    void streamRestoreCallback(const pa_ext_stream_restore_info *info);
-    void serverCallback(const pa_server_info *info);
+    /**
+     * Returns a list of all clients.
+     *
+     * @return list of clients
+     */
+    QVector<Client *> clients() const;
+
+    /**
+     * Returns a list of all cards.
+     *
+     * @return list of cards
+     */
+    QVector<Card *> cards() const;
+
+    /**
+     * Returns a list of all modules.
+     *
+     * @return list of modules
+     */
+    QVector<Module *> modules() const;
+
+    /**
+     * Returns a list of all stream restores.
+     *
+     * @return list of stream restores
+     */
+    QVector<StreamRestore *> streamRestores() const;
+
+    Server *server() const;
+
+    /**
+     *  Returns a pointer to the raw PulseAudio context.
+     */
+    pa_context *context() const;
 
     void setCardProfile(quint32 index, const QString &profile);
     void setDefaultSink(const QString &name);
     void setDefaultSource(const QString &name);
-    void streamRestoreWrite(const pa_ext_stream_restore_info *info);
 
-    static void setApplicationId(const QString &applicationId);
+Q_SIGNALS:
+    /**
+     * Indicates that sink was added.
+     */
+    void sinkAdded(PulseAudioQt::Sink *sink);
 
-    template<typename PAFunction>
-    void setGenericVolume(quint32 index, int channel, qint64 newVolume, pa_cvolume cVolume, PAFunction pa_set_volume)
-    {
-        if (!m_context) {
-            return;
-        }
-        newVolume = qBound<qint64>(0, newVolume, PA_VOLUME_MAX);
-        pa_cvolume newCVolume = cVolume;
-        if (channel == -1) { // -1 all channels
-            const qint64 orig = pa_cvolume_max(&cVolume);
-            const qint64 diff = newVolume - orig;
-            for (int i = 0; i < newCVolume.channels; ++i) {
-                const qint64 channel = newCVolume.values[i];
-                const qint64 channelDiff = orig == 0 ? diff : diff * channel / orig;
-                newCVolume.values[i] = qBound<qint64>(0, newCVolume.values[i] + channelDiff, PA_VOLUME_MAX);
-            }
-        } else {
-            Q_ASSERT(newCVolume.channels > channel);
-            newCVolume.values[channel] = newVolume;
-        }
-        if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, nullptr, nullptr))) {
-            qCWarning(PLASMAPA) << "pa_set_volume failed";
-            return;
-        }
-    }
+    /**
+     * Indicates that sink was removed.
+     */
+    void sinkRemoved(PulseAudioQt::Sink *sink);
 
-    template<typename PAFunction>
-    void setGenericVolumes(quint32 index, QList<qint64> channelVolumes, pa_cvolume cVolume, PAFunction pa_set_volume)
-    {
-        if (!m_context) {
-            return;
-        }
-        Q_ASSERT(channelVolumes.count() == cVolume.channels);
+    /**
+     * Indicates that sink input was added.
+     */
+    void sinkInputAdded(PulseAudioQt::SinkInput *sinkInput);
 
-        pa_cvolume newCVolume = cVolume;
-        for (int i = 0; i < channelVolumes.count(); ++i) {
-            newCVolume.values[i] = qBound<qint64>(0, channelVolumes.at(i), PA_VOLUME_MAX);
-        }
+    /**
+     * Indicates that sink input was removed.
+     */
+    void sinkInputRemoved(PulseAudioQt::SinkInput *sinkInput);
 
-        if (!PAOperation(pa_set_volume(m_context, index, &newCVolume, nullptr, nullptr))) {
-            qCWarning(PLASMAPA) << "pa_set_volume failed";
-            return;
-        }
-    }
+    /**
+     * Indicates that source was added.
+     */
+    void sourceAdded(PulseAudioQt::Source *source);
 
-    template<typename PAFunction>
-    void setGenericMute(quint32 index, bool mute, PAFunction pa_set_mute)
-    {
-        if (!m_context) {
-            return;
-        }
-        if (!PAOperation(pa_set_mute(m_context, index, mute, nullptr, nullptr))) {
-            qCWarning(PLASMAPA) << "pa_set_mute failed";
-            return;
-        }
-    }
+    /**
+     * Indicates that source was removed.
+     */
+    void sourceRemoved(PulseAudioQt::Source *source);
 
-    template<typename PAFunction>
-    void setGenericPort(quint32 index, const QString &portName, PAFunction pa_set_port)
-    {
-        if (!m_context) {
-            return;
-        }
-        if (!PAOperation(pa_set_port(m_context, index, portName.toUtf8().constData(), nullptr, nullptr))) {
-            qCWarning(PLASMAPA) << "pa_set_port failed";
-            return;
-        }
-    }
+    /**
+     * Indicates that source output was added.
+     */
+    void sourceOutputAdded(PulseAudioQt::SourceOutput *sourceOutput);
 
-    template<typename PAFunction>
-    void setGenericDeviceForStream(quint32 streamIndex, quint32 deviceIndex, PAFunction pa_move_stream_to_device)
-    {
-        if (!m_context) {
-            return;
-        }
-        if (!PAOperation(pa_move_stream_to_device(m_context, streamIndex, deviceIndex, nullptr, nullptr))) {
-            qCWarning(PLASMAPA) << "pa_move_stream_to_device failed";
-            return;
-        }
-    }
+    /**
+     * Indicates that source output was removed.
+     */
+    void sourceOutputRemoved(PulseAudioQt::SourceOutput *sourceOutput);
+
+    /**
+     * Indicates that client was added.
+     */
+    void clientAdded(PulseAudioQt::Client *client);
+
+    /**
+     * Indicates that client was removed.
+     */
+    void clientRemoved(PulseAudioQt::Client *client);
+
+    /**
+     * Indicates that card was added.
+     */
+    void cardAdded(PulseAudioQt::Card *card);
+
+    /**
+     * Indicates that card was removed.
+     */
+    void cardRemoved(PulseAudioQt::Card *card);
+
+    /**
+     * Indicates that module was added.
+     */
+    void moduleAdded(PulseAudioQt::Module *module);
+
+    /**
+     * Indicates that module was removed.
+     */
+    void moduleRemoved(PulseAudioQt::Module *module);
+
+    /**
+     * Indicates that stream restore was added.
+     */
+    void streamRestoreAdded(PulseAudioQt::StreamRestore *streamRestore);
+
+    /**
+     * Indicates that streamRestore was removed.
+     */
+    void streamRestoreRemoved(PulseAudioQt::StreamRestore *streamRestore);
 
 private:
-    void connectToDaemon();
-    void reset();
+    explicit Context(QObject *parent = nullptr);
 
-    // Don't forget to add things to reset().
-    SinkMap m_sinks;
-    SinkInputMap m_sinkInputs;
-    SourceMap m_sources;
-    SourceOutputMap m_sourceOutputs;
-    ClientMap m_clients;
-    CardMap m_cards;
-    ModuleMap m_modules;
-    StreamRestoreMap m_streamRestores;
-    Server *m_server;
+    class ContextPrivate *const d;
 
-    pa_context *m_context;
-    pa_glib_mainloop *m_mainloop;
-
-    QString m_newDefaultSink;
-    QString m_newDefaultSource;
-
-    int m_references;
-    static Context *s_context;
-    static QString s_applicationId;
+    friend class Sink;
+    friend class SinkInput;
+    friend class Source;
+    friend class SourceOutput;
+    friend class Stream;
+    friend class StreamRestore;
+    friend class StreamRestorePrivate;
+    friend class Server;
+    friend class SinkModel;
+    friend class SinkInputModel;
+    friend class SourceModel;
+    friend class SourceOutputModel;
+    friend class StreamRestoreModel;
+    friend class CardModel;
+    friend class ModuleModel;
+    friend class VolumeMonitor;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // CONTEXT_H

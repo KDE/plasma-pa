@@ -32,9 +32,9 @@ static QJSValue pulseaudio_singleton(QQmlEngine *engine, QJSEngine *scriptEngine
     Q_UNUSED(engine)
 
     QJSValue object = scriptEngine->newObject();
-    object.setProperty(QStringLiteral("NormalVolume"), (double)PulseAudioQt::Context::NormalVolume);
-    object.setProperty(QStringLiteral("MinimalVolume"), (double)PulseAudioQt::Context::MinimalVolume);
-    object.setProperty(QStringLiteral("MaximalVolume"), (double)PulseAudioQt::Context::MaximalVolume);
+    object.setProperty(QStringLiteral("NormalVolume"), (double)PulseAudioQt::normalVolume());
+    object.setProperty(QStringLiteral("MinimalVolume"), (double)PulseAudioQt::minimumVolume());
+    object.setProperty(QStringLiteral("MaximalVolume"), (double)PulseAudioQt::maximumUIVolume());
     return object;
 }
 

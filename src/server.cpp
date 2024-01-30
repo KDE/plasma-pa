@@ -6,6 +6,7 @@
 
 #include "server.h"
 #include "context.h"
+#include "context_p.h"
 #include "debug.h"
 #include "sink.h"
 #include "source.h"
@@ -17,10 +18,10 @@ Server::Server(Context *context)
 {
     Q_ASSERT(context);
 
-    connect(&context->sinks(), &MapBaseQObject::added, this, &Server::updateDefaultDevices);
-    connect(&context->sinks(), &MapBaseQObject::removed, this, &Server::updateDefaultDevices);
-    connect(&context->sources(), &MapBaseQObject::added, this, &Server::updateDefaultDevices);
-    connect(&context->sources(), &MapBaseQObject::removed, this, &Server::updateDefaultDevices);
+    connect(&context->d->m_sinks, &MapBaseQObject::added, this, &Server::updateDefaultDevices);
+    connect(&context->d->m_sinks, &MapBaseQObject::removed, this, &Server::updateDefaultDevices);
+    connect(&context->d->m_sources, &MapBaseQObject::added, this, &Server::updateDefaultDevices);
+    connect(&context->d->m_sources, &MapBaseQObject::removed, this, &Server::updateDefaultDevices);
 }
 
 Sink *Server::defaultSink() const
@@ -90,8 +91,8 @@ static Type *findByName(const Map &map, const QString &name)
 
 void Server::updateDefaultDevices()
 {
-    Sink *sink = findByName<Sink>(Context::instance()->sinks().data(), m_defaultSinkName);
-    auto *source = findByName<Source>(Context::instance()->sources().data(), m_defaultSourceName);
+    Sink *sink = findByName<Sink>(Context::instance()->d->m_sinks.data(), m_defaultSinkName);
+    auto *source = findByName<Source>(Context::instance()->d->m_sources.data(), m_defaultSourceName);
 
     if (m_defaultSink != sink) {
         qCDebug(PLASMAPA) << "Default sink changed" << sink;
