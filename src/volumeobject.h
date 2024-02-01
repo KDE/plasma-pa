@@ -7,96 +7,71 @@
 #ifndef VOLUMEOBJECT_H
 #define VOLUMEOBJECT_H
 
-#include <pulse/volume.h>
-
 #include "indexedpulseobject.h"
-#include "indexedpulseobject_p.h"
 
 namespace PulseAudioQt
 {
-class VolumeObject : public IndexedPulseObject
+/**
+ * An PulseObject that has a volume. Can be a Device or a Stream.
+ */
+class PULSEAUDIOQT_EXPORT VolumeObject : public IndexedPulseObject
 {
     Q_OBJECT
     Q_PROPERTY(qint64 volume READ volume WRITE setVolume NOTIFY volumeChanged)
     Q_PROPERTY(bool muted READ isMuted WRITE setMuted NOTIFY mutedChanged)
-    Q_PROPERTY(bool hasVolume READ hasVolume NOTIFY hasVolumeChanged)
     Q_PROPERTY(bool volumeWritable READ isVolumeWritable NOTIFY isVolumeWritableChanged)
-    Q_PROPERTY(QStringList channels READ channels NOTIFY channelsChanged)
+    Q_PROPERTY(QVector<QString> channels READ channels NOTIFY channelsChanged)
+    Q_PROPERTY(QVector<qint64> channelVolumes READ channelVolumes WRITE setChannelVolumes NOTIFY channelVolumesChanged)
     Q_PROPERTY(QStringList rawChannels READ rawChannels NOTIFY rawChannelsChanged)
-    Q_PROPERTY(QList<qint64> channelVolumes READ channelVolumes WRITE setChannelVolumes NOTIFY channelVolumesChanged)
+
 public:
-    explicit VolumeObject(QObject *parent);
-    ~VolumeObject() override;
+    ~VolumeObject();
 
-    template<typename PAInfo>
-    void updateVolumeObject(PAInfo *info)
-    {
-        IndexedPulseObject::d->updatePulseObject(info);
-        PulseObject::d->updateProperties(info);
-        if (m_muted != info->mute) {
-            m_muted = info->mute;
-            Q_EMIT mutedChanged();
-        }
-        if (!pa_cvolume_equal(&m_volume, &info->volume)) {
-            m_volume = info->volume;
-            Q_EMIT volumeChanged();
-            Q_EMIT channelVolumesChanged();
-        }
-        QStringList infoChannels;
-        infoChannels.reserve(info->channel_map.channels);
-        for (int i = 0; i < info->channel_map.channels; ++i) {
-            infoChannels << QString::fromUtf8(pa_channel_position_to_pretty_string(info->channel_map.map[i]));
-        }
-        if (m_channels != infoChannels) {
-            m_channels = infoChannels;
-            Q_EMIT channelsChanged();
-        }
-
-        QStringList infoRawChannels;
-        infoRawChannels.reserve(info->channel_map.channels);
-        for (int i = 0; i < info->channel_map.channels; ++i) {
-            infoRawChannels << QString::fromUtf8(pa_channel_position_to_string(info->channel_map.map[i]));
-        }
-        if (m_rawChannels != infoRawChannels) {
-            m_rawChannels = infoRawChannels;
-            Q_EMIT rawChannelsChanged();
-        }
-    }
-
+    /**
+     * This object's volume
+     */
     qint64 volume() const;
+
+    /**
+     * Set the volume for this object.
+     * This affects all channels.
+     * The volume must be between PulseAudioQt::minimumVolume() and PulseAudioQt::maximumVolume().
+     */
     virtual void setVolume(qint64 volume) = 0;
 
+    /**
+     * Whether this object is muted.
+     */
     bool isMuted() const;
+
+    /**
+     * Set whether this object is muted.
+     */
     virtual void setMuted(bool muted) = 0;
 
-    bool hasVolume() const;
     bool isVolumeWritable() const;
 
-    QStringList channels() const;
+    QVector<QString> channels() const;
     QStringList rawChannels() const;
-
-    QList<qint64> channelVolumes() const;
-    virtual void setChannelVolumes(const QList<qint64> &channelVolumes) = 0;
+    QVector<qint64> channelVolumes() const;
+    virtual void setChannelVolumes(const QVector<qint64> &channelVolumes) = 0;
     Q_INVOKABLE virtual void setChannelVolume(int channel, qint64 volume) = 0;
 
 Q_SIGNALS:
     void volumeChanged();
     void mutedChanged();
-    void hasVolumeChanged();
     void isVolumeWritableChanged();
     void channelsChanged();
     void rawChannelsChanged();
     void channelVolumesChanged();
 
 protected:
-    pa_cvolume cvolume() const;
-
-    pa_cvolume m_volume;
-    bool m_muted = true;
-    bool m_hasVolume = true;
-    bool m_volumeWritable = true;
-    QStringList m_channels;
-    QStringList m_rawChannels;
+    /** @private */
+    explicit VolumeObject(QObject *parent);
+    /** @private */
+    class VolumeObjectPrivate *const d;
+    friend class DevicePrivate;
+    friend class StreamPrivate;
 };
 
 } // PulseAudioQt

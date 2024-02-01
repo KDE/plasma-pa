@@ -8,6 +8,7 @@
 
 #include "context.h"
 #include "context_p.h"
+#include "volumeobject_p.h"
 
 namespace PulseAudioQt
 {
@@ -32,7 +33,7 @@ void SourceOutput::setDeviceIndex(quint32 deviceIndex)
 
 void SourceOutput::setVolume(qint64 volume)
 {
-    Context::instance()->d->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_source_output_volume);
+    Context::instance()->d->setGenericVolume(index(), -1, volume, VolumeObject::d->cvolume(), &pa_context_set_source_output_volume);
 }
 
 void SourceOutput::setMuted(bool muted)
@@ -42,12 +43,12 @@ void SourceOutput::setMuted(bool muted)
 
 void SourceOutput::setChannelVolume(int channel, qint64 volume)
 {
-    Context::instance()->d->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_source_output_volume);
+    Context::instance()->d->setGenericVolume(index(), channel, volume, VolumeObject::d->cvolume(), &pa_context_set_source_output_volume);
 }
 
 void SourceOutput::setChannelVolumes(const QList<qint64> &channelVolumes)
 {
-    Context::instance()->d->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_source_output_volume);
+    Context::instance()->d->setGenericVolumes(index(), channelVolumes, VolumeObject::d->cvolume(), &pa_context_set_source_output_volume);
 }
 
 } // PulseAudioQt

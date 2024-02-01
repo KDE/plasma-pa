@@ -34,7 +34,7 @@ void SinkInput::setDeviceIndex(quint32 deviceIndex)
 
 void SinkInput::setVolume(qint64 volume)
 {
-    Context::instance()->d->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_sink_input_volume);
+    Context::instance()->d->setGenericVolume(index(), -1, volume, VolumeObject::d->cvolume(), &pa_context_set_sink_input_volume);
 }
 
 void SinkInput::setMuted(bool muted)
@@ -44,12 +44,12 @@ void SinkInput::setMuted(bool muted)
 
 void SinkInput::setChannelVolume(int channel, qint64 volume)
 {
-    Context::instance()->d->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_input_volume);
+    Context::instance()->d->setGenericVolume(index(), channel, volume, VolumeObject::d->cvolume(), &pa_context_set_sink_input_volume);
 }
 
 void SinkInput::setChannelVolumes(const QList<qint64> &channelVolumes)
 {
-    Context::instance()->d->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_input_volume);
+    Context::instance()->d->setGenericVolumes(index(), channelVolumes, VolumeObject::d->cvolume(), &pa_context_set_sink_input_volume);
 }
 
 } // PulseAudioQt
