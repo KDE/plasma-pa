@@ -7,30 +7,24 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include <pulse/introspect.h>
-
-#include <QMap>
-
 #include "indexedpulseobject.h"
+#include "pulseaudioqt_export.h"
+
+struct pa_client_info;
 
 namespace PulseAudioQt
 {
-class Client : public IndexedPulseObject
+class PULSEAUDIOQT_EXPORT Client : public IndexedPulseObject
 {
     Q_OBJECT
 public:
-    explicit Client(QObject *parent);
-    ~Client() override;
-
-    void update(const pa_client_info *info);
-
-    QString name() const;
-
-Q_SIGNALS:
-    void nameChanged();
+    ~Client();
 
 private:
-    QString m_name;
+    explicit Client(QObject *parent);
+
+    class ClientPrivate *const d;
+    friend class MapBase<Client, pa_client_info>;
 };
 
 } // PulseAudioQt

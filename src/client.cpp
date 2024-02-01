@@ -5,6 +5,7 @@
 */
 
 #include "client.h"
+#include "client_p.h"
 
 #include "debug.h"
 #include "indexedpulseobject_p.h"
@@ -13,26 +14,24 @@ namespace PulseAudioQt
 {
 Client::Client(QObject *parent)
     : IndexedPulseObject(parent)
+    , d(new ClientPrivate(this))
 {
 }
 
-Client::~Client() = default;
-
-void Client::update(const pa_client_info *info)
+ClientPrivate::ClientPrivate(Client *q)
+    : q(q)
 {
-    IndexedPulseObject::d->updatePulseObject(info);
-    PulseObject::d->updateProperties(info);
-
-    const QString infoName = QString::fromUtf8(info->name);
-    if (m_name != infoName) {
-        m_name = infoName;
-        Q_EMIT nameChanged();
-    }
 }
 
-QString Client::name() const
+Client::~Client()
 {
-    return m_name;
+    delete d;
+}
+
+void ClientPrivate::update(const pa_client_info *info)
+{
+    q->IndexedPulseObject::d->updatePulseObject(info);
+    q->PulseObject::d->updateProperties(info);
 }
 
 } // PulseAudioQt
