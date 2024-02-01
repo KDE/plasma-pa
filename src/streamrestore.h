@@ -7,13 +7,13 @@
 #ifndef STREAMRESTORE_H
 #define STREAMRESTORE_H
 
-#include "indexedpulseobject.h"
+#include "pulseobject.h"
 
-#include <pulse/ext-stream-restore.h>
+struct pa_ext_stream_restore_info;
 
 namespace PulseAudioQt
 {
-class StreamRestore : public IndexedPulseObject
+class PULSEAUDIOQT_EXPORT StreamRestore : public PulseObject
 {
     Q_OBJECT
     Q_PROPERTY(QString device READ device WRITE setDevice NOTIFY deviceChanged)
@@ -21,15 +21,14 @@ class StreamRestore : public IndexedPulseObject
     Q_PROPERTY(bool muted READ isMuted WRITE setMuted NOTIFY mutedChanged)
     Q_PROPERTY(bool hasVolume READ hasVolume CONSTANT)
     Q_PROPERTY(bool volumeWritable READ isVolumeWritable CONSTANT)
-    Q_PROPERTY(QStringList channels READ channels NOTIFY channelsChanged)
-    Q_PROPERTY(QList<qreal> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
+    Q_PROPERTY(QVector<QString> channels READ channels NOTIFY channelsChanged)
+    Q_PROPERTY(QVector<qreal> channelVolumes READ channelVolumes NOTIFY channelVolumesChanged)
     Q_PROPERTY(quint32 deviceIndex READ deviceIndex WRITE setDeviceIndex NOTIFY deviceIndexChanged)
+    // Not a IndexedPulseObject since pa_ext_stream_restore_info does not have an index member
+    Q_PROPERTY(quint32 index READ index CONSTANT)
+
 public:
-    StreamRestore(quint32 index, const QVariantMap &properties, QObject *parent);
-
-    void update(const pa_ext_stream_restore_info *info);
-
-    QString name() const;
+    ~StreamRestore();
 
     QString device() const;
     void setDevice(const QString &device);
@@ -43,17 +42,18 @@ public:
     bool hasVolume() const;
     bool isVolumeWritable() const;
 
-    QStringList channels() const;
+    QVector<QString> channels() const;
 
-    QList<qreal> channelVolumes() const;
+    QVector<qreal> channelVolumes() const;
+
+    quint32 index() const;
 
     quint32 deviceIndex() const;
     void setDeviceIndex(quint32 deviceIndex);
 
-    Q_INVOKABLE void setChannelVolume(int channel, qint64 volume);
+    void setChannelVolume(int channel, qint64 volume);
 
 Q_SIGNALS:
-    void nameChanged();
     void deviceChanged();
     void volumeChanged();
     void mutedChanged();
@@ -62,21 +62,11 @@ Q_SIGNALS:
     void deviceIndexChanged();
 
 private:
-    void writeChanges(const pa_cvolume &volume, bool muted, const QString &device);
+    explicit StreamRestore(quint32 index, const QVariantMap &properties, QObject *parent);
 
-    QString m_name;
-    QString m_device;
-    pa_cvolume m_volume;
-    pa_channel_map m_channelMap;
-    QStringList m_channels;
-    bool m_muted = false;
-
-    struct {
-        bool valid = false;
-        pa_cvolume volume;
-        bool muted;
-        QString device;
-    } m_cache;
+    class StreamRestorePrivate *const d;
+    friend class MapBase<StreamRestore, pa_ext_stream_restore_info>;
+    friend class ContextPrivate;
 };
 
 } // PulseAudioQt
