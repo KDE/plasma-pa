@@ -10,6 +10,7 @@
 #include "context_p.h"
 
 #include "sink.h"
+#include "stream_p.h"
 
 namespace PulseAudioQt
 {
@@ -20,9 +21,9 @@ SinkInput::SinkInput(QObject *parent)
 
 void SinkInput::update(const pa_sink_input_info *info)
 {
-    updateStream(info);
-    if (m_deviceIndex != info->sink) {
-        m_deviceIndex = info->sink;
+    Stream::d->updateStream(info);
+    if (Stream::d->m_deviceIndex != info->sink) {
+        Stream::d->m_deviceIndex = info->sink;
         Q_EMIT deviceIndexChanged();
     }
 }

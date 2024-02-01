@@ -9,22 +9,18 @@
 
 #include <QString>
 
-#include <pulse/volume.h>
-
-#include "pulseobject.h"
 #include "volumeobject.h"
-#include "volumeobject_p.h"
 
-#include "context.h"
 // Properties need fully qualified classes even with pointers.
 #include "client.h"
 
 namespace PulseAudioQt
 {
-class Stream : public VolumeObject
+class StreamPrivate;
+
+class PULSEAUDIOQT_EXPORT Stream : public VolumeObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(PulseAudioQt::Client *client READ client NOTIFY clientChanged)
     Q_PROPERTY(bool virtualStream READ isVirtualStream NOTIFY virtualStreamChanged)
     Q_PROPERTY(quint32 deviceIndex READ deviceIndex WRITE setDeviceIndex NOTIFY deviceIndexChanged)
@@ -32,38 +28,8 @@ class Stream : public VolumeObject
     Q_PROPERTY(bool hasVolume READ hasVolume NOTIFY hasVolumeChanged)
 
 public:
-    template<typename PAInfo>
-    void updateStream(const PAInfo *info)
-    {
-        VolumeObject::d->updateVolumeObject(info);
+    ~Stream();
 
-        if (m_name != QString::fromUtf8(info->name)) {
-            m_name = QString::fromUtf8(info->name);
-            Q_EMIT nameChanged();
-        }
-        if (m_hasVolume != info->has_volume) {
-            m_hasVolume = info->has_volume;
-            Q_EMIT hasVolumeChanged();
-        }
-        if (VolumeObject::d->m_volumeWritable != info->volume_writable) {
-            VolumeObject::d->m_volumeWritable = info->volume_writable;
-            Q_EMIT isVolumeWritableChanged();
-        }
-        if (m_clientIndex != info->client) {
-            m_clientIndex = info->client;
-            Q_EMIT clientChanged();
-        }
-        if (m_virtualStream != (info->client == PA_INVALID_INDEX)) {
-            m_virtualStream = info->client == PA_INVALID_INDEX;
-            Q_EMIT virtualStreamChanged();
-        }
-        if (m_corked != info->corked) {
-            m_corked = info->corked;
-            Q_EMIT corkedChanged();
-        }
-    }
-
-    QString name() const;
     Client *client() const;
     bool isVirtualStream() const;
     quint32 deviceIndex() const;
@@ -73,7 +39,6 @@ public:
     virtual void setDeviceIndex(quint32 deviceIndex) = 0;
 
 Q_SIGNALS:
-    void nameChanged();
     void clientChanged();
     void virtualStreamChanged();
     void deviceIndexChanged();
@@ -81,17 +46,13 @@ Q_SIGNALS:
     void hasVolumeChanged();
 
 protected:
+    /** @private */
     explicit Stream(QObject *parent);
-    ~Stream() override;
+    /** @private */
+    class StreamPrivate *const d;
 
-    quint32 m_deviceIndex;
-
-private:
-    QString m_name;
-    quint32 m_clientIndex;
-    bool m_virtualStream = false;
-    bool m_corked = false;
-    bool m_hasVolume = false;
+    friend class SinkInputPrivate;
+    friend class SourceOutputPrivate;
 };
 
 } // PulseAudioQt
