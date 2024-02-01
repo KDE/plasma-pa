@@ -97,9 +97,12 @@ void VolumeMonitor::createStream()
     uint32_t streamIdx = PA_INVALID_INDEX;
 
     if (auto *sinkInput = qobject_cast<SinkInput *>(m_target)) {
-        Sink *sink = Context::instance()->d->m_sinks.data().value(sinkInput->deviceIndex());
-        if (sink) {
-            sourceIdx = sink->monitorIndex();
+        const auto sinks = Context::instance()->sinks();
+        for (const auto &sink : sinks) {
+            if (sink->index() == sinkInput->deviceIndex()) {
+                sourceIdx = sink->monitorIndex();
+                break;
+            }
         }
         streamIdx = sinkInput->index();
     } else if (auto *sourceOutput = qobject_cast<SourceOutput *>(m_target)) {
