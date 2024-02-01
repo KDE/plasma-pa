@@ -9,21 +9,31 @@
 
 #include "stream.h"
 
+struct pa_sink_input_info;
+
 namespace PulseAudioQt
 {
-class SinkInput : public Stream
+/**
+ * A SinkInput stream.
+ */
+class PULSEAUDIOQT_EXPORT SinkInput : public Stream
 {
     Q_OBJECT
-public:
-    explicit SinkInput(QObject *parent);
 
-    void update(const pa_sink_input_info *info);
+public:
+    ~SinkInput();
 
     void setVolume(qint64 volume) override;
     void setMuted(bool muted) override;
     void setChannelVolume(int channel, qint64 volume) override;
-    void setChannelVolumes(const QList<qint64> &channelVolumes) override;
     void setDeviceIndex(quint32 deviceIndex) override;
+    void setChannelVolumes(const QVector<qint64> &channelVolumes) override;
+
+private:
+    SinkInput(QObject *parent);
+
+    class SinkInputPrivate *const d;
+    friend class MapBase<SinkInput, pa_sink_input_info>;
 };
 
 } // PulseAudioQt

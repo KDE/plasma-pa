@@ -17,6 +17,7 @@
 #include <iterator>
 
 #include "sourceoutput_p.h"
+#include "sinkinput_p.h"
 
 namespace PulseAudioQt
 {
