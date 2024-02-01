@@ -51,7 +51,7 @@ class PULSEAUDIOQT_EXPORT Context : public QObject
     Q_OBJECT
 
 public:
-    ~Context() override;
+    ~Context();
 
     static Context *instance();
 
@@ -222,7 +222,6 @@ private:
     friend class Source;
     friend class SourceOutput;
     friend class Stream;
-    friend class StreamRestore;
     friend class StreamRestorePrivate;
     friend class Server;
     friend class SinkModel;
@@ -232,7 +231,6 @@ private:
     friend class StreamRestoreModel;
     friend class CardModel;
     friend class ModuleModel;
-    friend class VolumeMonitor;
 };
 
 } // PulseAudioQt

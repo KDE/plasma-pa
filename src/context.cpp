@@ -716,42 +716,42 @@ bool Context::isValid()
 
 QVector<Sink *> Context::sinks() const
 {
-    return d->m_sinks.data().values();
+    return d->m_sinks.data();
 }
 
 QVector<SinkInput *> Context::sinkInputs() const
 {
-    return d->m_sinkInputs.data().values();
+    return d->m_sinkInputs.data();
 }
 
 QVector<Source *> Context::sources() const
 {
-    return d->m_sources.data().values();
+    return d->m_sources.data();
 }
 
 QVector<SourceOutput *> Context::sourceOutputs() const
 {
-    return d->m_sourceOutputs.data().values();
+    return d->m_sourceOutputs.data();
 }
 
 QVector<Client *> Context::clients() const
 {
-    return d->m_clients.data().values();
+    return d->m_clients.data();
 }
 
 QVector<Card *> Context::cards() const
 {
-    return d->m_cards.data().values();
+    return d->m_cards.data();
 }
 
 QVector<Module *> Context::modules() const
 {
-    return d->m_modules.data().values();
+    return d->m_modules.data();
 }
 
 QVector<StreamRestore *> Context::streamRestores() const
 {
-    return d->m_streamRestores.data().values();
+    return d->m_streamRestores.data();
 }
 
 Server *Context::server() const
