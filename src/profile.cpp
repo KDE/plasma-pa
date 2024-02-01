@@ -5,38 +5,53 @@
 */
 
 #include "profile.h"
+#include "profile_p.h"
 
 namespace PulseAudioQt
 {
 Profile::Profile(QObject *parent)
-    : QObject(parent)
-    , m_name()
-    , m_description()
-    , m_priority(0)
-    , m_availability(Unknown)
+    : PulseObject(parent)
+    , d(new ProfilePrivate(this))
 {
 }
 
-Profile::~Profile() = default;
-
-QString Profile::name() const
+Profile::~Profile()
 {
-    return m_name;
+    delete d;
+}
+
+ProfilePrivate::ProfilePrivate(Profile *q)
+    : q(q)
+{
+}
+
+ProfilePrivate::~ProfilePrivate()
+{
 }
 
 QString Profile::description() const
 {
-    return m_description;
+    return d->m_description;
 }
 
 quint32 Profile::priority() const
 {
-    return m_priority;
+    return d->m_priority;
 }
 
 Profile::Availability Profile::availability() const
 {
-    return m_availability;
+    return d->m_availability;
+}
+
+quint32 Profile::sinkCount() const
+{
+    return d->m_sinkCount;
+}
+
+quint32 Profile::sourceCount() const
+{
+    return d->m_sourceCount;
 }
 
 } // PulseAudioQt

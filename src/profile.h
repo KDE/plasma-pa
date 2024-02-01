@@ -7,88 +7,91 @@
 #ifndef PROFILE_H
 #define PROFILE_H
 
+#include "pulseaudioqt_export.h"
+#include "pulseobject.h"
 #include <QObject>
 #include <QString>
 
 namespace PulseAudioQt
 {
-class Profile : public QObject
+/**
+ * A PulseAudio profile.
+ */
+class PULSEAUDIOQT_EXPORT Profile : public PulseObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
     Q_PROPERTY(quint32 priority READ priority NOTIFY priorityChanged)
     Q_PROPERTY(Availability availability READ availability NOTIFY availabilityChanged)
+    Q_PROPERTY(quint32 sinkCount READ sinkCount NOTIFY sinkCountChanged)
+    Q_PROPERTY(quint32 sourceCount READ sourceCount NOTIFY sourceCountChanged)
+
 public:
-    enum Availability {
-        Unknown,
-        Available,
-        Unavailable,
-    };
+    enum Availability { Unknown, Available, Unavailable };
     Q_ENUM(Availability)
 
-    explicit Profile(QObject *parent);
-    ~Profile() override;
+    ~Profile();
 
-    template<typename PAInfo>
-    bool setInfo(const PAInfo *info)
-    {
-        return setCommonInfo(info, info->available ? Available : Unavailable);
-    }
-
-    QString name() const;
+    /**
+     * A human readable description.
+     */
     QString description() const;
+
+    /**
+     * This object's priority. A higher number means higher priority.
+     */
     quint32 priority() const;
+
+    /**
+     * Whether this object is available.
+     */
     Availability availability() const;
 
+    /**
+     * Number of sinks this profile would create.
+     */
+    quint32 sinkCount() const;
+
+    /**
+     * Number of sources this profile would create.
+     */
+    quint32 sourceCount() const;
+
 Q_SIGNALS:
-    void nameChanged();
+    /**
+     * Emitted when the description changed.
+     */
     void descriptionChanged();
+
+    /**
+     * Emitted when the priority changed.
+     */
     void priorityChanged();
+
+    /**
+     * Emitted when the availability changed.
+     */
     void availabilityChanged();
 
+    /**
+     * Emitted when sink count is changed.
+     */
+    void sinkCountChanged();
+
+    /**
+     * Emitted when source count is changed.
+     */
+    void sourceCountChanged();
+
 protected:
-    template<typename PAInfo>
-    bool setCommonInfo(const PAInfo *info, Availability newAvailability)
-    {
-        bool changed = false;
+    /** @private */
+    explicit Profile(QObject *parent);
+    /** @private */
+    class ProfilePrivate *const d;
 
-        // Description is optional. Name not so much as we need some ID.
-        Q_ASSERT(info->name);
-        QString infoName = QString::fromUtf8(info->name);
-        if (m_name != infoName) {
-            m_name = infoName;
-            Q_EMIT nameChanged();
-            changed = true;
-        }
-        if (info->description) {
-            QString infoDescription = QString::fromUtf8(info->description);
-            if (m_description != infoDescription) {
-                m_description = infoDescription;
-                Q_EMIT descriptionChanged();
-                changed = true;
-            }
-        }
-        if (m_priority != info->priority) {
-            m_priority = info->priority;
-            Q_EMIT priorityChanged();
-            changed = true;
-        }
-
-        if (m_availability != newAvailability) {
-            m_availability = newAvailability;
-            Q_EMIT availabilityChanged();
-            changed = true;
-        }
-
-        return changed;
-    }
-
-private:
-    QString m_name;
-    QString m_description;
-    quint32 m_priority;
-    Availability m_availability;
+    friend class Device;
+    friend class CardPrivate;
+    friend class PortPrivate;
 };
 
 } // PulseAudioQt
