@@ -8,17 +8,18 @@
 #include "context.h"
 #include "context_p.h"
 #include "debug.h"
+#include "indexedpulseobject_p.h"
 
 namespace PulseAudioQt
 {
 StreamRestore::StreamRestore(quint32 index, const QVariantMap &properties, QObject *parent)
-    : PulseObject(parent)
+    : IndexedPulseObject(parent)
 {
     memset(&m_volume, 0, sizeof(m_volume));
     memset(&m_channelMap, 0, sizeof(m_channelMap));
 
-    m_index = index;
-    m_properties = properties;
+    IndexedPulseObject::d->m_index = index;
+    PulseObject::d->m_properties = properties;
 }
 
 void StreamRestore::update(const pa_ext_stream_restore_info *info)

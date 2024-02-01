@@ -9,11 +9,12 @@
 
 #include <pulse/volume.h>
 
-#include "pulseobject.h"
+#include "indexedpulseobject.h"
+#include "indexedpulseobject_p.h"
 
 namespace PulseAudioQt
 {
-class VolumeObject : public PulseObject
+class VolumeObject : public IndexedPulseObject
 {
     Q_OBJECT
     Q_PROPERTY(qint64 volume READ volume WRITE setVolume NOTIFY volumeChanged)
@@ -30,7 +31,8 @@ public:
     template<typename PAInfo>
     void updateVolumeObject(PAInfo *info)
     {
-        updatePulseObject(info);
+        IndexedPulseObject::d->updatePulseObject(info);
+        PulseObject::d->updateProperties(info);
         if (m_muted != info->mute) {
             m_muted = info->mute;
             Q_EMIT mutedChanged();

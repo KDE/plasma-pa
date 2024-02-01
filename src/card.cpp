@@ -6,20 +6,22 @@
 
 #include "card.h"
 
-#include "debug.h"
-
 #include "context.h"
+#include "debug.h"
+#include "indexedpulseobject_p.h"
+#include "pulseobject_p.h"
 
 namespace PulseAudioQt
 {
 Card::Card(QObject *parent)
-    : PulseObject(parent)
+    : IndexedPulseObject(parent)
 {
 }
 
 void Card::update(const pa_card_info *info)
 {
-    updatePulseObject(info);
+    IndexedPulseObject::d->updatePulseObject(info);
+    PulseObject::d->updateProperties(info);
 
     QString infoName = QString::fromUtf8(info->name);
     if (m_name != infoName) {
@@ -101,7 +103,7 @@ quint32 Card::activeProfileIndex() const
 void Card::setActiveProfileIndex(quint32 profileIndex)
 {
     const Profile *profile = qobject_cast<Profile *>(profiles().at(profileIndex));
-    context()->setCardProfile(index(), profile->name());
+    Context::instance()->setCardProfile(index(), profile->name());
 }
 
 QList<QObject *> Card::ports() const

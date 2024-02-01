@@ -31,6 +31,7 @@ set(plasma-volume_SRCS
     speakertest.cpp
     gsettingsitem.cpp
     soundthemeconfig.cpp
+    indexedpulseobject.cpp
     volumefeedback.cpp
     audioicon.cpp
 )
@@ -43,8 +44,6 @@ set_target_properties(plasma-volume PROPERTIES
                       VERSION ${PROJECT_VERSION}
                       SOVERSION ${PROJECT_VERSION_MAJOR}
                       EXPORT_NAME LibPlasmaVolume)
-
-
 
 target_sources(plasma-volume-declarative PRIVATE
     ${plasma-volume_SRCS}
