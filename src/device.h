@@ -16,6 +16,7 @@
 #include "port.h"
 #include "pulseobject.h"
 #include "volumeobject.h"
+#include "volumeobject_p.h"
 
 namespace PulseAudioQt
 {
@@ -61,12 +62,8 @@ public:
     template<typename PAInfo>
     void updateDevice(const PAInfo *info)
     {
-        updateVolumeObject(info);
+        VolumeObject::d->updateVolumeObject(info);
 
-        if (m_name != info->name) {
-            m_name = info->name;
-            Q_EMIT nameChanged();
-        }
         if (m_description != info->description) {
             m_description = info->description;
             Q_EMIT descriptionChanged();

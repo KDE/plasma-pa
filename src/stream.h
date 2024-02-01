@@ -13,6 +13,7 @@
 
 #include "pulseobject.h"
 #include "volumeobject.h"
+#include "volumeobject_p.h"
 
 #include "context.h"
 // Properties need fully qualified classes even with pointers.
@@ -28,11 +29,13 @@ class Stream : public VolumeObject
     Q_PROPERTY(bool virtualStream READ isVirtualStream NOTIFY virtualStreamChanged)
     Q_PROPERTY(quint32 deviceIndex READ deviceIndex WRITE setDeviceIndex NOTIFY deviceIndexChanged)
     Q_PROPERTY(bool corked READ isCorked NOTIFY corkedChanged)
+    Q_PROPERTY(bool hasVolume READ hasVolume NOTIFY hasVolumeChanged)
+
 public:
     template<typename PAInfo>
     void updateStream(const PAInfo *info)
     {
-        updateVolumeObject(info);
+        VolumeObject::d->updateVolumeObject(info);
 
         if (m_name != QString::fromUtf8(info->name)) {
             m_name = QString::fromUtf8(info->name);
@@ -42,8 +45,8 @@ public:
             m_hasVolume = info->has_volume;
             Q_EMIT hasVolumeChanged();
         }
-        if (m_volumeWritable != info->volume_writable) {
-            m_volumeWritable = info->volume_writable;
+        if (VolumeObject::d->m_volumeWritable != info->volume_writable) {
+            VolumeObject::d->m_volumeWritable = info->volume_writable;
             Q_EMIT isVolumeWritableChanged();
         }
         if (m_clientIndex != info->client) {
@@ -65,6 +68,7 @@ public:
     bool isVirtualStream() const;
     quint32 deviceIndex() const;
     bool isCorked() const;
+    bool hasVolume() const;
 
     virtual void setDeviceIndex(quint32 deviceIndex) = 0;
 
@@ -74,6 +78,7 @@ Q_SIGNALS:
     void virtualStreamChanged();
     void deviceIndexChanged();
     void corkedChanged();
+    void hasVolumeChanged();
 
 protected:
     explicit Stream(QObject *parent);
@@ -86,6 +91,7 @@ private:
     quint32 m_clientIndex;
     bool m_virtualStream = false;
     bool m_corked = false;
+    bool m_hasVolume = false;
 };
 
 } // PulseAudioQt
