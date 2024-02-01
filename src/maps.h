@@ -16,6 +16,8 @@
 
 #include <iterator>
 
+#include "sourceoutput_p.h"
+
 namespace PulseAudioQt
 {
 // Used for typedefs.
