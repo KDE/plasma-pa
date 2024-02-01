@@ -8,35 +8,61 @@
 #define PORT_H
 
 #include "profile.h"
-
-#include <pulse/def.h>
+#include "pulseaudioqt_export.h"
 
 namespace PulseAudioQt
 {
-class Port : public Profile
+/**
+ * A PulseAudio port.
+ */
+class PULSEAUDIOQT_EXPORT Port : public Profile
 {
     Q_OBJECT
+    Q_PROPERTY(Type type READ type NOTIFY typeChanged)
 
 public:
-    explicit Port(QObject *parent);
-    ~Port() override;
+    ~Port();
 
-    template<typename PAInfo>
-    bool setInfo(const PAInfo *info)
-    {
-        Availability newAvailability;
-        switch (info->available) {
-        case PA_PORT_AVAILABLE_NO:
-            newAvailability = Unavailable;
-            break;
-        case PA_PORT_AVAILABLE_YES:
-            newAvailability = Available;
-            break;
-        default:
-            newAvailability = Unknown;
-        }
-        return setCommonInfo(info, newAvailability);
-    }
+    enum Type {
+        Unknown,
+        AUX,
+        Speaker,
+        Headphones,
+        Line,
+        Mic,
+        Headset,
+        Handset,
+        Earpiece,
+        SPDIF,
+        HDMI,
+        TV,
+        Radio,
+        Video,
+        USB,
+        Bluetooth,
+        Portable,
+        Handsfree,
+        Car,
+        HiFi,
+        Phone,
+        Network,
+        Analog,
+    };
+    Q_ENUM(Type)
+
+    Type type() const;
+
+Q_SIGNALS:
+    void typeChanged();
+
+protected:
+    /** @private */
+    explicit Port(QObject *parent);
+    /** @private */
+    class PortPrivate *const d;
+
+    friend class DevicePrivate;
+    friend class CardPrivate;
 };
 
 } // PulseAudioQt

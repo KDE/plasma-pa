@@ -18,6 +18,8 @@
 
 #include "sourceoutput_p.h"
 #include "sinkinput_p.h"
+#include "card_p.h"
+#include "port_p.h"
 
 namespace PulseAudioQt
 {

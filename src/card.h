@@ -7,98 +7,50 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include <pulse/introspect.h>
-
-#include <QMap>
-#include <QVariant>
-
-#include "debug.h"
+#include "cardport.h"
 #include "indexedpulseobject.h"
-#include "port.h"
 #include "profile.h"
+#include "sink.h"
+#include "source.h"
+
+struct pa_card_info;
 
 namespace PulseAudioQt
 {
-class CardPort : public Port
+class CardPort;
+class Profile;
+
+class PULSEAUDIOQT_EXPORT Card : public IndexedPulseObject
 {
     Q_OBJECT
-    Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
-public:
-    explicit CardPort(QObject *parent = nullptr)
-        : Port(parent)
-    {
-    }
-    ~CardPort() override = default;
-
-    //    int direction;                      /**< A #pa_direction enum, indicating the direction of this port. */
-    //    uint32_t n_profiles;                /**< Number of entries in profile array */
-    //    pa_card_profile_info** profiles;    /**< \deprecated Superseded by profiles2 */
-    //    int64_t latency_offset;             /**< Latency offset of the port that gets added to the sink/source latency when the port is active. \since 3.0 */
-    //    pa_card_profile_info2** profiles2;  /**< Array of pointers to available profiles, or NULL. Array is terminated by an entry set to NULL. \since 5.0 */
-
-    void update(const pa_card_port_info *info)
-    {
-        setInfo(info);
-
-        QVariantMap properties;
-        void *it = nullptr;
-        while (const char *key = pa_proplist_iterate(info->proplist, &it)) {
-            Q_ASSERT(key);
-            const char *value = pa_proplist_gets(info->proplist, key);
-            if (!value) {
-                qCDebug(PLASMAPA) << "property" << key << "not a string";
-                continue;
-            }
-            Q_ASSERT(value);
-            properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
-        }
-
-        if (m_properties != properties) {
-            m_properties = properties;
-            Q_EMIT propertiesChanged();
-        }
-    }
-
-    QVariantMap properties() const
-    {
-        return m_properties;
-    }
-
-Q_SIGNALS:
-    void propertiesChanged();
-
-private:
-    QVariantMap m_properties;
-};
-
-class Card : public IndexedPulseObject
-{
-    Q_OBJECT
-    Q_PROPERTY(QList<QObject *> profiles READ profiles NOTIFY profilesChanged)
+    Q_PROPERTY(QList<Profile *> profiles READ profiles NOTIFY profilesChanged)
     Q_PROPERTY(quint32 activeProfileIndex READ activeProfileIndex WRITE setActiveProfileIndex NOTIFY activeProfileIndexChanged)
-    Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)
+    Q_PROPERTY(QList<CardPort *> ports READ ports NOTIFY portsChanged)
+    Q_PROPERTY(QList<Sink *> sinks READ sinks NOTIFY sinksChanged)
+    Q_PROPERTY(QList<Source *> sources READ sources NOTIFY sourcesChanged)
+
 public:
-    explicit Card(QObject *parent);
+    ~Card();
 
-    void update(const pa_card_info *info);
-
-    QString name() const;
-    QList<QObject *> profiles() const;
+    QList<Profile *> profiles() const;
     quint32 activeProfileIndex() const;
     void setActiveProfileIndex(quint32 profileIndex);
-    QList<QObject *> ports() const;
+    QList<CardPort *> ports() const;
+    QList<Sink *> sinks() const;
+    QList<Source *> sources() const;
 
 Q_SIGNALS:
-    void nameChanged();
     void profilesChanged();
     void activeProfileIndexChanged();
     void portsChanged();
+    void sinksChanged();
+    void sourcesChanged();
 
 private:
-    QString m_name;
-    QList<QObject *> m_profiles;
-    quint32 m_activeProfileIndex = -1;
-    QList<QObject *> m_ports;
+    explicit Card(QObject *parent);
+
+    class CardPrivate *const d;
+    friend class MapBase<Card, pa_card_info>;
 };
 
 } // PulseAudioQt

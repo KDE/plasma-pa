@@ -33,6 +33,7 @@ set(plasma-volume_SRCS
     soundthemeconfig.cpp
     indexedpulseobject.cpp
     volumefeedback.cpp
+    cardport.cpp
     audioicon.cpp
 )
 
