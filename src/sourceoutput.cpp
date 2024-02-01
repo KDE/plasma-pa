@@ -9,6 +9,7 @@
 #include "context.h"
 #include "context_p.h"
 #include "volumeobject_p.h"
+#include "stream_p.h"
 
 namespace PulseAudioQt
 {
@@ -19,9 +20,9 @@ SourceOutput::SourceOutput(QObject *parent)
 
 void SourceOutput::update(const pa_source_output_info *info)
 {
-    updateStream(info);
-    if (m_deviceIndex != info->source) {
-        m_deviceIndex = info->source;
+    Stream::d->updateStream(info);
+    if (Stream::d->m_deviceIndex != info->source) {
+        Stream::d->m_deviceIndex = info->source;
         Q_EMIT deviceIndexChanged();
     }
 }
