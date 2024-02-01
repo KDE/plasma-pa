@@ -30,6 +30,7 @@ target_sources(plasma-volume-declarative PRIVATE
     gsettingsitem.cpp
     soundthemeconfig.cpp
     indexedpulseobject.cpp
+    cardport.cpp
     qml/globalactioncollection.cpp
     qml/listitemmenu.cpp
     qml/plugin.cpp
