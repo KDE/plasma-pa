@@ -5,6 +5,8 @@
 */
 
 #include "server.h"
+#include "server_p.h"
+
 #include "context.h"
 #include "context_p.h"
 #include "debug.h"
@@ -15,6 +17,7 @@ namespace PulseAudioQt
 {
 Server::Server(Context *context)
     : QObject(context)
+    , d(new ServerPrivate(this))
 {
     Q_ASSERT(context);
 
@@ -24,9 +27,25 @@ Server::Server(Context *context)
     connect(&context->d->m_sources, &MapBaseQObject::removed, this, &Server::updateDefaultDevices);
 }
 
+Server::~Server()
+{
+    delete d;
+}
+
+ServerPrivate::ServerPrivate(Server *q)
+    : q(q)
+    , m_defaultSink(nullptr)
+    , m_defaultSource(nullptr)
+{
+}
+
+ServerPrivate::~ServerPrivate()
+{
+}
+
 Sink *Server::defaultSink() const
 {
-    return m_defaultSink;
+    return d->m_defaultSink;
 }
 
 void Server::setDefaultSink(Sink *sink)
@@ -37,7 +56,7 @@ void Server::setDefaultSink(Sink *sink)
 
 Source *Server::defaultSource() const
 {
-    return m_defaultSource;
+    return d->m_defaultSource;
 }
 
 void Server::setDefaultSource(Source *source)
@@ -48,68 +67,73 @@ void Server::setDefaultSource(Source *source)
 
 void Server::reset()
 {
-    if (m_defaultSink) {
-        m_defaultSink = nullptr;
-        Q_EMIT defaultSinkChanged(m_defaultSink);
+    if (d->m_defaultSink) {
+        d->m_defaultSink = nullptr;
+        Q_EMIT defaultSinkChanged(d->m_defaultSink);
     }
 
-    if (m_defaultSource) {
-        m_defaultSource = nullptr;
-        Q_EMIT defaultSourceChanged(m_defaultSource);
+    if (d->m_defaultSource) {
+        d->m_defaultSource = nullptr;
+        Q_EMIT defaultSourceChanged(d->m_defaultSource);
     }
 }
 
-void Server::update(const pa_server_info *info)
+void ServerPrivate::update(const pa_server_info *info)
 {
     m_defaultSinkName = QString::fromUtf8(info->default_sink_name);
     m_defaultSourceName = QString::fromUtf8(info->default_source_name);
-    m_isPipeWire = QString::fromUtf8(info->server_name).contains("PipeWire");
 
-    updateDefaultDevices();
+    const bool isPw = QString::fromUtf8(info->server_name).contains("PipeWire");
 
-    Q_EMIT updated();
+    if (isPw != m_isPipeWire) {
+        m_isPipeWire = isPw;
+        Q_EMIT q->isPipeWireChanged();
+    }
+
+    q->updateDefaultDevices();
+
+    Q_EMIT q->updated();
 }
 
-template<typename Type, typename Map>
-static Type *findByName(const Map &map, const QString &name)
+/** @private */
+template<typename Type, typename Vector>
+static Type *findByName(const Vector &vector, const QString &name)
 {
     Type *out = nullptr;
     if (name.isEmpty()) {
         return out;
     }
-    QMapIterator<quint32, Type *> it(map);
-    while (it.hasNext()) {
-        it.next();
-        out = it.value();
+    for (Type *t : vector) {
+        out = t;
         if (out->name() == name) {
             return out;
         }
     }
-    qCDebug(PLASMAPA) << "No object for name" << name;
+    qCWarning(PULSEAUDIOQT) << "No object for name" << name;
     return out;
 }
 
 void Server::updateDefaultDevices()
 {
-    Sink *sink = findByName<Sink>(Context::instance()->d->m_sinks.data(), m_defaultSinkName);
-    auto *source = findByName<Source>(Context::instance()->d->m_sources.data(), m_defaultSourceName);
+    Sink *sink = findByName<Sink>(Context::instance()->d->m_sinks.data(), d->m_defaultSinkName);
+    Source *source = findByName<Source>(Context::instance()->d->m_sources.data(), d->m_defaultSourceName);
 
-    if (m_defaultSink != sink) {
-        qCDebug(PLASMAPA) << "Default sink changed" << sink;
-        m_defaultSink = sink;
-        Q_EMIT defaultSinkChanged(m_defaultSink);
+    if (d->m_defaultSink != sink) {
+        qCDebug(PULSEAUDIOQT) << "Default sink changed" << sink;
+        d->m_defaultSink = sink;
+        Q_EMIT defaultSinkChanged(d->m_defaultSink);
     }
 
-    if (m_defaultSource != source) {
-        qCDebug(PLASMAPA) << "Default source changed" << source;
-        m_defaultSource = source;
-        Q_EMIT defaultSourceChanged(m_defaultSource);
+    if (d->m_defaultSource != source) {
+        qCDebug(PULSEAUDIOQT) << "Default source changed" << source;
+        d->m_defaultSource = source;
+        Q_EMIT defaultSourceChanged(d->m_defaultSource);
     }
 }
 
 bool Server::isPipeWire() const
 {
-    return m_isPipeWire;
+    return d->m_isPipeWire;
 }
 
 } // PulseAudioQt
