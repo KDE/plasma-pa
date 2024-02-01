@@ -278,7 +278,7 @@ Sink *SinkModel::findPreferredSink() const
         QMapIterator<quint32, Sink *> it(context()->d->m_sinks.data());
         while (it.hasNext()) {
             it.next();
-            if ((it.value()->isVirtualDevice() && !it.value()->isDefault()) || it.value()->state() != state) {
+            if (it.value()->state() != state) {
                 continue;
             }
             if (!ret) {

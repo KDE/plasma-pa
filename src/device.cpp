@@ -5,69 +5,85 @@
 */
 
 #include "device.h"
+#include "device_p.h"
 
-PulseAudioQt::Device::State PulseAudioQt::Device::state() const
+namespace PulseAudioQt
 {
-    return m_state;
+Device::State Device::state() const
+{
+    return d->m_state;
 }
 
-QString PulseAudioQt::Device::name() const
+QString Device::description() const
 {
-    return m_name;
+    return d->m_description;
 }
 
-QString PulseAudioQt::Device::description() const
+QString Device::formFactor() const
 {
-    return m_description;
+    return d->m_formFactor;
 }
 
-QString PulseAudioQt::Device::formFactor() const
+quint32 Device::cardIndex() const
 {
-    return m_formFactor;
+    return d->m_cardIndex;
 }
 
-quint32 PulseAudioQt::Device::cardIndex() const
+QList<Port *> Device::ports() const
 {
-    return m_cardIndex;
+    return d->m_ports;
 }
 
-QList<QObject *> PulseAudioQt::Device::ports() const
+quint32 Device::activePortIndex() const
 {
-    return m_ports;
+    return d->m_activePortIndex;
 }
 
-quint32 PulseAudioQt::Device::activePortIndex() const
+qint64 Device::baseVolume() const
 {
-    return m_activePortIndex;
+    return d->m_baseVolume;
 }
 
-bool PulseAudioQt::Device::isVirtualDevice() const
+QVariantMap Device::pulseProperties() const
 {
-    return m_virtualDevice;
+    return d->m_pulseProperties;
 }
 
-QVariantMap PulseAudioQt::Device::pulseProperties() const
+bool Device::isVirtualDevice() const
 {
-    return m_pulseProperties;
+    return d->m_virtualDevice;
 }
 
-PulseAudioQt::Device::Device(QObject *parent)
+Device::Device(QObject *parent)
     : VolumeObject(parent)
+    , d(new DevicePrivate(this))
 {
 }
 
-PulseAudioQt::Device::State PulseAudioQt::Device::stateFromPaState(int value) const
+DevicePrivate::DevicePrivate(Device *q)
+    : q(q)
+{
+}
+
+Device::State DevicePrivate::stateFromPaState(int value) const
 {
     switch (value) {
     case -1: // PA_X_INVALID_STATE
-        return InvalidState;
+        return Device::InvalidState;
     case 0: // PA_X_RUNNING
-        return RunningState;
+        return Device::RunningState;
     case 1: // PA_X_IDLE
-        return IdleState;
+        return Device::IdleState;
     case 2: // PA_X_SUSPENDED
-        return SuspendedState;
+        return Device::SuspendedState;
     default:
-        return UnknownState;
+        return Device::UnknownState;
     }
 }
+
+Device::~Device()
+{
+    delete d;
+}
+
+} // namespace PulseAudioQt
