@@ -14,6 +14,11 @@
 #include "osdservice.h"
 #include "volumefeedback.h"
 
+namespace PulseAudioQt
+{
+class Device;
+} // namespace PulseAudioQt
+
 using namespace Qt::Literals::StringLiterals;
 
 // DEFAULT_SINK_NAME in module-always-sink.c

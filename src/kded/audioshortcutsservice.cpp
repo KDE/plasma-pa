@@ -14,6 +14,11 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 
+#include "device.h"
+#include "server.h"
+#include "sink.h"
+#include "source.h"
+
 K_PLUGIN_CLASS_WITH_JSON(AudioShortcutsService, "audioshortcutsservice.json")
 
 constexpr QLatin1String OSD_DBUS_SERVICE = "org.kde.plasmashell"_L1;
@@ -28,7 +33,7 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     , m_feedback(new VolumeFeedback(this))
     , m_globalConfig(new GlobalConfig(this))
 {
-    connect(m_sinkModel, &PulseAudioQt::SinkModel::defaultSinkChanged, this, &AudioShortcutsService::handleDefaultSinkChange);
+    connect(PulseAudioQt::Context::instance()->server(), &PulseAudioQt::Server::defaultSinkChanged, this, &AudioShortcutsService::handleDefaultSinkChange);
     connect(m_sinkModel, &PulseAudioQt::SinkModel::preferredSinkChanged, this, [this]() {
         if (!m_sinkModel->preferredSink()) {
             return;
@@ -106,10 +111,11 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     volumeUpMicAction->setText(i18n("Increase Microphone Volume"));
     volumeUpMicAction->setShortcut(Qt::Key_MicVolumeUp);
     connect(volumeUpMicAction, &QAction::triggered, this, [this]() {
-        if (!m_sourceModel->defaultSource()) {
+        auto defaultSource = PulseAudioQt::Context::instance()->server()->defaultSource();
+        if (!defaultSource) {
             return;
         }
-        int percent = changeVolumePercent(m_sourceModel->defaultSource(), m_globalConfig->volumeStep());
+        int percent = changeVolumePercent(defaultSource, m_globalConfig->volumeStep());
         showMicVolume(percent);
     });
 
@@ -119,10 +125,11 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     volumeDownMicAction->setText(i18n("Decrease Microphone Volume"));
     volumeDownMicAction->setShortcut(Qt::Key_MicVolumeDown);
     connect(volumeDownMicAction, &QAction::triggered, this, [this]() {
-        if (!m_sourceModel->defaultSource()) {
+        auto defaultSource = PulseAudioQt::Context::instance()->server()->defaultSource();
+        if (!defaultSource) {
             return;
         }
-        int percent = changeVolumePercent(m_sourceModel->defaultSource(), -m_globalConfig->volumeStep());
+        int percent = changeVolumePercent(defaultSource, -m_globalConfig->volumeStep());
         showMicVolume(percent);
     });
 
@@ -145,12 +152,13 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     muteMicAction->setText(i18n("Mute Microphone"));
     muteMicAction->setShortcuts({Qt::Key_MicMute, Qt::MetaModifier | Qt::Key_VolumeMute});
     connect(muteMicAction, &QAction::triggered, this, [this]() {
-        if (!m_sourceModel->defaultSource()) {
+        auto defaultSource = PulseAudioQt::Context::instance()->server()->defaultSource();
+        if (!defaultSource) {
             return;
         }
-        const bool toMute = !m_sourceModel->defaultSource()->isMuted();
-        m_sourceModel->defaultSource()->setMuted(toMute);
-        showMicMute(toMute ? 0 : volumePercent(m_sourceModel->defaultSource()->volume()));
+        const bool toMute = !defaultSource->isMuted();
+        defaultSource->setMuted(toMute);
+        showMicMute(toMute ? 0 : volumePercent(defaultSource->volume()));
     });
 
     for (const auto action : actions) {
@@ -207,7 +215,7 @@ int AudioShortcutsService::changeVolumePercent(PulseAudioQt::Device *device, int
 
 void AudioShortcutsService::handleDefaultSinkChange()
 {
-    const PulseAudioQt::Sink *defaultSink = m_sinkModel->defaultSink();
+    const PulseAudioQt::Sink *defaultSink = PulseAudioQt::Context::instance()->server()->defaultSink();
     // we don't want to show the OSD on startup
     if (!m_initialDefaultSinkSet) {
         m_initialDefaultSinkSet = true;

@@ -19,6 +19,7 @@
 #include "client.h"
 #include "context.h"
 #include "models.h"
+#include "server.h"
 #include "source.h"
 
 using namespace PulseAudioQt;
@@ -116,7 +117,7 @@ void MicrophoneIndicator::update()
     if (allMuted) {
         iconName = QStringLiteral("microphone-sensitivity-muted");
     } else {
-        if (Source *defaultSource = m_sourceModel->defaultSource()) {
+        if (Source *defaultSource = PulseAudioQt::Context::instance()->server()->defaultSource()) {
             const int percent = volumePercent(defaultSource);
             iconName = QStringLiteral("microphone-sensitivity");
             // it deliberately never shows the "muted" icon unless *all* microphones are muted
@@ -208,7 +209,7 @@ void MicrophoneIndicator::toggleMuted()
 
 void MicrophoneIndicator::adjustVolume(int direction)
 {
-    Source *source = m_sourceModel->defaultSource();
+    Source *source = PulseAudioQt::Context::instance()->server()->defaultSource();
     if (!source) {
         return;
     }
@@ -232,7 +233,7 @@ int MicrophoneIndicator::volumePercent(Source *source)
 
 void MicrophoneIndicator::showOsd()
 {
-    auto *preferredSource = m_sourceModel->defaultSource();
+    auto *preferredSource = PulseAudioQt::Context::instance()->server()->defaultSource();
     if (!preferredSource) {
         return;
     }
