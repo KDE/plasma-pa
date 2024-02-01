@@ -5,6 +5,7 @@
 */
 
 #include "pulseobject.h"
+#include "pulseobject_p.h"
 
 #include "context.h"
 
@@ -14,55 +15,62 @@ namespace PulseAudioQt
 {
 PulseObject::PulseObject(QObject *parent)
     : QObject(parent)
-    , m_index(0)
+    , d(new PulseObjectPrivate(this))
 {
 }
 
-PulseObject::~PulseObject() = default;
-
-Context *PulseObject::context() const
+PulseObject::~PulseObject()
 {
-    return Context::instance();
+    delete d;
 }
 
-uint32_t PulseObject::index() const
+PulseObjectPrivate::PulseObjectPrivate(PulseObject *q)
+    : q(q)
 {
-    return m_index;
+}
+
+PulseObjectPrivate::~PulseObjectPrivate()
+{
+}
+
+QString PulseObject::name() const
+{
+    return d->m_name;
 }
 
 QString PulseObject::iconName() const
 {
-    QString name = m_properties.value(QStringLiteral("device.icon_name")).toString();
+    QString name = d->m_properties.value(QStringLiteral("device.icon_name")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
     }
 
-    name = m_properties.value(QStringLiteral("media.icon_name")).toString();
+    name = d->m_properties.value(QStringLiteral("media.icon_name")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
     }
 
-    name = m_properties.value(QStringLiteral("window.icon_name")).toString();
+    name = d->m_properties.value(QStringLiteral("window.icon_name")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
     }
 
-    name = m_properties.value(QStringLiteral("application.icon_name")).toString();
+    name = d->m_properties.value(QStringLiteral("application.icon_name")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
     }
 
-    name = m_properties.value(QStringLiteral("application.process.binary")).toString();
+    name = d->m_properties.value(QStringLiteral("application.process.binary")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
     }
 
-    name = m_properties.value(QStringLiteral("application.name")).toString();
+    name = d->m_properties.value(QStringLiteral("application.name")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
     }
 
-    name = m_properties.value(QStringLiteral("pipewire.access.portal.app_id")).toString();
+    name = d->m_properties.value(QStringLiteral("pipewire.access.portal.app_id")).toString();
     if (!name.isEmpty() && QIcon::hasThemeIcon(name)) {
         return name;
     }
@@ -72,12 +80,12 @@ QString PulseObject::iconName() const
         return name;
     }
 
-    return {};
+    return QString();
 }
 
 QVariantMap PulseObject::properties() const
 {
-    return m_properties;
+    return d->m_properties;
 }
 
 } // PulseAudioQt

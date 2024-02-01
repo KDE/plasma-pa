@@ -29,6 +29,7 @@ target_sources(plasma-volume-declarative PRIVATE
     speakertest.cpp
     gsettingsitem.cpp
     soundthemeconfig.cpp
+    indexedpulseobject.cpp
     qml/globalactioncollection.cpp
     qml/listitemmenu.cpp
     qml/plugin.cpp

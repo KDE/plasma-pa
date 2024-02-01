@@ -12,14 +12,13 @@
 #include <QMap>
 #include <QVariant>
 
-#include "pulseobject.h"
+#include "indexedpulseobject.h"
 
 namespace PulseAudioQt
 {
-class Module : public PulseObject
+class Module : public IndexedPulseObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString argument READ argument NOTIFY argumentChanged)
 
 public:

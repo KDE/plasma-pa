@@ -17,7 +17,7 @@ namespace PulseAudioQt
 Sink::Sink(QObject *parent)
     : Device(parent)
 {
-    connect(context()->server(), &Server::defaultSinkChanged, this, &Sink::defaultChanged);
+    connect(Context::instance()->server(), &Server::defaultSinkChanged, this, &Sink::defaultChanged);
 }
 
 Sink::~Sink() = default;
@@ -33,12 +33,12 @@ void Sink::update(const pa_sink_info *info)
 
 void Sink::setVolume(qint64 volume)
 {
-    context()->d->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_sink_volume_by_index);
+    Context::instance()->d->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Sink::setMuted(bool muted)
 {
-    context()->d->setGenericMute(m_index, muted, &pa_context_set_sink_mute_by_index);
+    Context::instance()->d->setGenericMute(d->m_index, muted, &pa_context_set_sink_mute_by_index);
 }
 
 void Sink::setActivePortIndex(quint32 port_index)
@@ -48,36 +48,36 @@ void Sink::setActivePortIndex(quint32 port_index)
         qCWarning(PLASMAPA) << "invalid port set request" << port_index;
         return;
     }
-    context()->d->setGenericPort(index(), port->name(), &pa_context_set_sink_port_by_index);
+    Context::instance()->d->setGenericPort(index(), port->name(), &pa_context_set_sink_port_by_index);
 }
 
 void Sink::setChannelVolume(int channel, qint64 volume)
 {
-    context()->d->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_volume_by_index);
+    Context::instance()->d->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Sink::setChannelVolumes(const QList<qint64> &channelVolumes)
 {
-    context()->d->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_volume_by_index);
+    Context::instance()->d->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 bool Sink::isDefault() const
 {
-    return context()->server()->defaultSink() == this;
+    return Context::instance()->server()->defaultSink() == this;
 }
 
 void Sink::setDefault(bool enable)
 {
     if (!isDefault() && enable) {
-        context()->server()->setDefaultSink(this);
+        Context::instance()->server()->setDefaultSink(this);
     }
 }
 
 void Sink::switchStreams()
 {
-    const auto data = context()->sinkInputs();
+    const auto data = Context::instance()->sinkInputs();
     std::for_each(data.begin(), data.end(), [this](SinkInput *paObj) {
-        paObj->setDeviceIndex(m_index);
+        paObj->setDeviceIndex(d->m_index);
     });
 }
 

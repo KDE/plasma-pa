@@ -9,7 +9,7 @@
 namespace PulseAudioQt
 {
 VolumeObject::VolumeObject(QObject *parent)
-    : PulseObject(parent)
+    : IndexedPulseObject(parent)
 {
     pa_cvolume_init(&m_volume);
 }
