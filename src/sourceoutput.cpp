@@ -5,25 +5,36 @@
 */
 
 #include "sourceoutput.h"
+#include "sourceoutput_p.h"
 
 #include "context.h"
 #include "context_p.h"
-#include "volumeobject_p.h"
 #include "stream_p.h"
 
 namespace PulseAudioQt
 {
 SourceOutput::SourceOutput(QObject *parent)
     : Stream(parent)
+    , d(new SourceOutputPrivate(this))
 {
 }
 
-void SourceOutput::update(const pa_source_output_info *info)
+SourceOutput::~SourceOutput()
 {
-    Stream::d->updateStream(info);
-    if (Stream::d->m_deviceIndex != info->source) {
-        Stream::d->m_deviceIndex = info->source;
-        Q_EMIT deviceIndexChanged();
+    delete d;
+}
+
+SourceOutputPrivate::SourceOutputPrivate(SourceOutput *q)
+    : q(q)
+{
+}
+
+void SourceOutputPrivate::update(const pa_source_output_info *info)
+{
+    q->Stream::d->updateStream(info);
+    if (q->Stream::d->m_deviceIndex != info->source) {
+        q->Stream::d->m_deviceIndex = info->source;
+        Q_EMIT q->deviceIndexChanged();
     }
 }
 
@@ -47,9 +58,9 @@ void SourceOutput::setChannelVolume(int channel, qint64 volume)
     Context::instance()->d->setGenericVolume(index(), channel, volume, VolumeObject::d->cvolume(), &pa_context_set_source_output_volume);
 }
 
-void SourceOutput::setChannelVolumes(const QList<qint64> &channelVolumes)
+void SourceOutput::setChannelVolumes(const QVector<qint64> &channelVolumes)
 {
-    Context::instance()->d->setGenericVolumes(index(), channelVolumes, VolumeObject::d->cvolume(), &pa_context_set_source_output_volume);
+    Context::instance()->d->setGenericVolumes(index(), channelVolumes, VolumeObject::d->m_volume, &pa_context_set_source_output_volume);
 }
 
 } // PulseAudioQt
