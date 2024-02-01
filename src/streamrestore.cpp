@@ -7,42 +7,56 @@
 #include "streamrestore.h"
 #include "context.h"
 #include "context_p.h"
+#include "streamrestore_p.h"
+
 #include "debug.h"
-#include "indexedpulseobject_p.h"
+#include "pulseobject_p.h"
 
 namespace PulseAudioQt
 {
 StreamRestore::StreamRestore(quint32 index, const QVariantMap &properties, QObject *parent)
-    : IndexedPulseObject(parent)
+    : PulseObject(parent)
+    , d(new StreamRestorePrivate(this))
 {
-    memset(&m_volume, 0, sizeof(m_volume));
-    memset(&m_channelMap, 0, sizeof(m_channelMap));
+    memset(&d->m_volume, 0, sizeof(d->m_volume));
+    memset(&d->m_channelMap, 0, sizeof(d->m_channelMap));
 
-    IndexedPulseObject::d->m_index = index;
+    d->m_index = index;
     PulseObject::d->m_properties = properties;
 }
 
-void StreamRestore::update(const pa_ext_stream_restore_info *info)
+StreamRestore::~StreamRestore()
 {
+    delete d;
+}
+
+StreamRestorePrivate::StreamRestorePrivate(StreamRestore *q)
+    : q(q)
+{
+}
+
+StreamRestorePrivate::~StreamRestorePrivate()
+{
+}
+
+void StreamRestorePrivate::update(const pa_ext_stream_restore_info *info)
+{
+    q->PulseObject::d->updatePulseObject(info);
     m_cache.valid = false;
-    const QString infoName = QString::fromUtf8(info->name);
-    if (m_name != infoName) {
-        m_name = infoName;
-        Q_EMIT nameChanged();
-    }
+
     const QString infoDevice = QString::fromUtf8(info->device);
     if (m_device != infoDevice) {
         m_device = infoDevice;
-        Q_EMIT deviceChanged();
+        Q_EMIT q->deviceChanged();
     }
     if (m_muted != info->mute) {
         m_muted = info->mute;
-        Q_EMIT mutedChanged();
+        Q_EMIT q->mutedChanged();
     }
     if (!pa_cvolume_equal(&m_volume, &info->volume)) {
         m_volume = info->volume;
-        Q_EMIT volumeChanged();
-        Q_EMIT channelVolumesChanged();
+        Q_EMIT q->volumeChanged();
+        Q_EMIT q->channelVolumesChanged();
     }
     if (!pa_channel_map_equal(&m_channelMap, &info->channel_map)) {
         m_channels.clear();
@@ -51,29 +65,24 @@ void StreamRestore::update(const pa_ext_stream_restore_info *info)
             m_channels << QString::fromUtf8(pa_channel_position_to_pretty_string(info->channel_map.map[i]));
         }
         m_channelMap = info->channel_map;
-        Q_EMIT channelsChanged();
+        Q_EMIT q->channelsChanged();
     }
-}
-
-QString StreamRestore::name() const
-{
-    return m_name;
 }
 
 QString StreamRestore::device() const
 {
-    return m_device;
+    return d->m_device;
 }
 
 void StreamRestore::setDevice(const QString &device)
 {
-    if (m_cache.valid) {
-        if (m_cache.device != device) {
-            writeChanges(m_cache.volume, m_cache.muted, device);
+    if (d->m_cache.valid) {
+        if (d->m_cache.device != device) {
+            d->writeChanges(d->m_cache.volume, d->m_cache.muted, device);
         }
     } else {
-        if (m_device != device) {
-            writeChanges(m_volume, m_muted, device);
+        if (d->m_device != device) {
+            d->writeChanges(d->m_volume, d->m_muted, device);
         }
     }
 }
@@ -83,16 +92,16 @@ qint64 StreamRestore::volume() const
     // FIXME: workaround for pipewire not supporting stream restore subscription
     // revert when fix is released
     // https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/3805
-    if (m_cache.valid) {
-        return m_cache.volume.values[0];
+    if (d->m_cache.valid) {
+        return d->m_cache.volume.values[0];
     } else {
-        return m_volume.values[0];
+        return d->m_volume.values[0];
     }
 }
 
 void StreamRestore::setVolume(qint64 volume)
 {
-    pa_cvolume vol = m_cache.valid ? m_cache.volume : m_volume;
+    pa_cvolume vol = d->m_cache.valid ? d->m_cache.volume : d->m_volume;
 
     // If no channel exists force one. We need one to be able to control the volume
     // See https://bugs.kde.org/show_bug.cgi?id=407397
@@ -104,10 +113,10 @@ void StreamRestore::setVolume(qint64 volume)
         vol.values[i] = volume;
     }
 
-    if (m_cache.valid) {
-        writeChanges(vol, m_cache.muted, m_cache.device);
+    if (d->m_cache.valid) {
+        d->writeChanges(vol, d->m_cache.muted, d->m_cache.device);
     } else {
-        writeChanges(vol, m_muted, m_device);
+        d->writeChanges(vol, d->m_muted, d->m_device);
     }
 }
 
@@ -116,22 +125,22 @@ bool StreamRestore::isMuted() const
     // FIXME: workaround for pipewire not supporting stream restore subscription
     // revert when fix is released
     // https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/3805
-    if (m_cache.valid) {
-        return m_cache.muted;
+    if (d->m_cache.valid) {
+        return d->m_cache.muted;
     } else {
-        return m_muted;
+        return d->m_muted;
     }
 }
 
 void StreamRestore::setMuted(bool muted)
 {
-    if (m_cache.valid) {
-        if (m_cache.muted != muted) {
-            writeChanges(m_cache.volume, muted, m_cache.device);
+    if (d->m_cache.valid) {
+        if (d->m_cache.muted != muted) {
+            d->writeChanges(d->m_cache.volume, muted, d->m_cache.device);
         }
     } else {
-        if (m_muted != muted) {
-            writeChanges(m_volume, muted, m_device);
+        if (d->m_muted != muted) {
+            d->writeChanges(d->m_volume, muted, d->m_device);
         }
     }
 }
@@ -146,31 +155,31 @@ bool StreamRestore::isVolumeWritable() const
     return true;
 }
 
-QStringList StreamRestore::channels() const
+QVector<QString> StreamRestore::channels() const
 {
-    return m_channels;
+    return d->m_channels;
 }
 
-QList<qreal> StreamRestore::channelVolumes() const
+QVector<qreal> StreamRestore::channelVolumes() const
 {
-    QList<qreal> ret;
-    ret.reserve(m_volume.channels);
-    for (int i = 0; i < m_volume.channels; ++i) {
-        ret << m_volume.values[i];
+    QVector<qreal> ret;
+    ret.reserve(d->m_volume.channels);
+    for (int i = 0; i < d->m_volume.channels; ++i) {
+        ret << d->m_volume.values[i];
     }
     return ret;
 }
 
 void StreamRestore::setChannelVolume(int channel, qint64 volume)
 {
-    Q_ASSERT(channel >= 0 && channel < m_volume.channels);
-    pa_cvolume vol = m_cache.valid ? m_cache.volume : m_volume;
+    Q_ASSERT(channel >= 0 && channel < d->m_volume.channels);
+    pa_cvolume vol = d->m_cache.valid ? d->m_cache.volume : d->m_volume;
     vol.values[channel] = volume;
 
-    if (m_cache.valid) {
-        writeChanges(vol, m_cache.muted, m_cache.device);
+    if (d->m_cache.valid) {
+        d->writeChanges(vol, d->m_cache.muted, d->m_cache.device);
     } else {
-        writeChanges(vol, m_muted, m_device);
+        d->writeChanges(vol, d->m_muted, d->m_device);
     }
 }
 
@@ -182,12 +191,12 @@ quint32 StreamRestore::deviceIndex() const
 void StreamRestore::setDeviceIndex(quint32 deviceIndex)
 {
     Q_UNUSED(deviceIndex);
-    qCWarning(PLASMAPA) << "Not implemented";
+    qCWarning(PULSEAUDIOQT) << "Not implemented";
 }
 
-void StreamRestore::writeChanges(const pa_cvolume &volume, bool muted, const QString &device)
+void StreamRestorePrivate::writeChanges(const pa_cvolume &volume, bool muted, const QString &device)
 {
-    const QByteArray nameData = m_name.toUtf8();
+    const QByteArray nameData = q->name().toUtf8();
     const QByteArray deviceData = device.toUtf8();
 
     pa_ext_stream_restore_info info;
@@ -210,6 +219,11 @@ void StreamRestore::writeChanges(const pa_cvolume &volume, bool muted, const QSt
     m_cache.device = device;
 
     Context::instance()->d->streamRestoreWrite(&info);
+}
+
+quint32 StreamRestore::index() const
+{
+    return d->m_index;
 }
 
 } // PulseAudioQt

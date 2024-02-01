@@ -27,6 +27,7 @@
 #include "streamrestore.h"
 
 #include "context_p.h"
+#include "streamrestore_p.h"
 
 namespace PulseAudioQt
 {
@@ -574,10 +575,10 @@ void ContextPrivate::streamRestoreCallback(const pa_ext_stream_restore_info *inf
         QVariantMap props;
         props.insert(QStringLiteral("application.icon_name"), QStringLiteral("preferences-desktop-notification"));
         obj = new StreamRestore(eventRoleIndex, props, q);
-        obj->update(info);
+        obj->d->update(info);
         m_streamRestores.insert(obj);
     } else {
-        obj->update(info);
+        obj->d->update(info);
     }
 }
 
