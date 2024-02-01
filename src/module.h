@@ -7,35 +7,31 @@
 #ifndef MODULE_H
 #define MODULE_H
 
-#include <pulse/introspect.h>
-
-#include <QMap>
-#include <QVariant>
-
 #include "indexedpulseobject.h"
+#include "pulseaudioqt_export.h"
+
+struct pa_module_info;
 
 namespace PulseAudioQt
 {
-class Module : public IndexedPulseObject
+class PULSEAUDIOQT_EXPORT Module : public IndexedPulseObject
 {
     Q_OBJECT
     Q_PROPERTY(QString argument READ argument NOTIFY argumentChanged)
 
 public:
-    explicit Module(QObject *parent);
+    ~Module();
 
-    void update(const pa_module_info *info);
-
-    QString name() const;
     QString argument() const;
 
 Q_SIGNALS:
-    void nameChanged();
     void argumentChanged();
 
 private:
-    QString m_name;
-    QString m_argument;
+    explicit Module(QObject *parent);
+
+    class ModulePrivate *const d;
+    friend class MapBase<Module, pa_module_info>;
 };
 
 } // PulseAudioQt
