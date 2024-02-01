@@ -9,21 +9,31 @@
 
 #include "stream.h"
 
+struct pa_source_output_info;
+
 namespace PulseAudioQt
 {
-class SourceOutput : public Stream
+/**
+ * A SourceOutput Stream.
+ */
+class PULSEAUDIOQT_EXPORT SourceOutput : public Stream
 {
     Q_OBJECT
-public:
-    explicit SourceOutput(QObject *parent);
 
-    void update(const pa_source_output_info *info);
+public:
+    ~SourceOutput();
 
     void setVolume(qint64 volume) override;
     void setMuted(bool muted) override;
     void setChannelVolume(int channel, qint64 volume) override;
-    void setChannelVolumes(const QList<qint64> &channelVolumes) override;
     void setDeviceIndex(quint32 deviceIndex) override;
+    void setChannelVolumes(const QVector<qint64> &channelVolumes) override;
+
+private:
+    explicit SourceOutput(QObject *parent);
+
+    class SourceOutputPrivate *const d;
+    friend class MapBase<SourceOutput, pa_source_output_info>;
 };
 
 } // PulseAudioQt
