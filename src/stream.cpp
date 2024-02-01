@@ -14,8 +14,7 @@ Stream::Stream(QObject *parent)
     , m_deviceIndex(PA_INVALID_INDEX)
     , m_clientIndex(PA_INVALID_INDEX)
 {
-    m_volumeWritable = false;
-    m_hasVolume = false;
+    VolumeObject::d->m_volumeWritable = false;
 }
 
 Stream::~Stream() = default;
@@ -43,6 +42,11 @@ quint32 Stream::deviceIndex() const
 bool Stream::isCorked() const
 {
     return m_corked;
+}
+
+bool Stream::hasVolume() const
+{
+    return m_hasVolume;
 }
 
 } // PulseAudioQt

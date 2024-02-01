@@ -35,7 +35,6 @@ RowLayout {
         // override them to get scrolling working
         function increase () { value = value + myStepSize }
         function decrease () { value = value - myStepSize }
-        visible: HasVolume
         enabled: VolumeWritable
         opacity: Muted ? 0.5 : 1
         onMoved: {

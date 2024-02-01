@@ -33,12 +33,12 @@ void Sink::update(const pa_sink_info *info)
 
 void Sink::setVolume(qint64 volume)
 {
-    Context::instance()->d->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_sink_volume_by_index);
+    Context::instance()->d->setGenericVolume(index(), -1, volume, VolumeObject::d->cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Sink::setMuted(bool muted)
 {
-    Context::instance()->d->setGenericMute(d->m_index, muted, &pa_context_set_sink_mute_by_index);
+    Context::instance()->d->setGenericMute(index(), muted, &pa_context_set_sink_mute_by_index);
 }
 
 void Sink::setActivePortIndex(quint32 port_index)
@@ -53,12 +53,12 @@ void Sink::setActivePortIndex(quint32 port_index)
 
 void Sink::setChannelVolume(int channel, qint64 volume)
 {
-    Context::instance()->d->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_volume_by_index);
+    Context::instance()->d->setGenericVolume(index(), channel, volume, VolumeObject::d->cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Sink::setChannelVolumes(const QList<qint64> &channelVolumes)
 {
-    Context::instance()->d->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_volume_by_index);
+    Context::instance()->d->setGenericVolumes(index(), channelVolumes, VolumeObject::d->cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 bool Sink::isDefault() const
@@ -77,7 +77,7 @@ void Sink::switchStreams()
 {
     const auto data = Context::instance()->sinkInputs();
     std::for_each(data.begin(), data.end(), [this](SinkInput *paObj) {
-        paObj->setDeviceIndex(d->m_index);
+        paObj->setDeviceIndex(index());
     });
 }
 

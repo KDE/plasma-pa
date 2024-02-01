@@ -97,6 +97,7 @@ ColumnLayout {
                 VolumeSlider {
                     id: volumeSlider
                     Layout.alignment: Qt.AlignVCenter
+                    visible:  HasVolume
                 }
             }
         }
