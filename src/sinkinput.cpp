@@ -5,26 +5,36 @@
 */
 
 #include "sinkinput.h"
+#include "sinkinput_p.h"
 
 #include "context.h"
 #include "context_p.h"
-
-#include "sink.h"
 #include "stream_p.h"
 
 namespace PulseAudioQt
 {
 SinkInput::SinkInput(QObject *parent)
     : Stream(parent)
+    , d(new SinkInputPrivate(this))
 {
 }
 
-void SinkInput::update(const pa_sink_input_info *info)
+SinkInputPrivate::SinkInputPrivate(SinkInput *q)
+    : q(q)
 {
-    Stream::d->updateStream(info);
-    if (Stream::d->m_deviceIndex != info->sink) {
-        Stream::d->m_deviceIndex = info->sink;
-        Q_EMIT deviceIndexChanged();
+}
+
+SinkInput::~SinkInput()
+{
+    delete d;
+}
+
+void SinkInputPrivate::update(const pa_sink_input_info *info)
+{
+    q->Stream::d->updateStream(info);
+    if (q->Stream::d->m_deviceIndex != info->sink) {
+        q->Stream::d->m_deviceIndex = info->sink;
+        Q_EMIT q->deviceIndexChanged();
     }
 }
 
@@ -48,9 +58,9 @@ void SinkInput::setChannelVolume(int channel, qint64 volume)
     Context::instance()->d->setGenericVolume(index(), channel, volume, VolumeObject::d->cvolume(), &pa_context_set_sink_input_volume);
 }
 
-void SinkInput::setChannelVolumes(const QList<qint64> &channelVolumes)
+void SinkInput::setChannelVolumes(const QVector<qint64> &channelVolumes)
 {
-    Context::instance()->d->setGenericVolumes(index(), channelVolumes, VolumeObject::d->cvolume(), &pa_context_set_sink_input_volume);
+    Context::instance()->d->setGenericVolumes(index(), channelVolumes, VolumeObject::d->m_volume, &pa_context_set_sink_input_volume);
 }
 
 } // PulseAudioQt
