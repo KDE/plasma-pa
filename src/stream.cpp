@@ -6,47 +6,55 @@
 
 #include "stream.h"
 #include "context_p.h"
+#include "stream_p.h"
+#include "volumeobject_p.h"
 
 namespace PulseAudioQt
 {
 Stream::Stream(QObject *parent)
     : VolumeObject(parent)
-    , m_deviceIndex(PA_INVALID_INDEX)
-    , m_clientIndex(PA_INVALID_INDEX)
+    , d(new StreamPrivate(this))
 {
     VolumeObject::d->m_volumeWritable = false;
 }
 
-Stream::~Stream() = default;
-
-QString Stream::name() const
+Stream::~Stream()
 {
-    return m_name;
+    delete d;
+}
+
+StreamPrivate::StreamPrivate(Stream *q)
+    : q(q)
+{
+}
+
+StreamPrivate::~StreamPrivate()
+{
 }
 
 Client *Stream::client() const
 {
-    return Context::instance()->d->m_clients.data().value(m_clientIndex, nullptr);
+    return Context::instance()->d->m_clients.data().value(d->m_clientIndex, nullptr);
 }
 
 bool Stream::isVirtualStream() const
 {
-    return m_virtualStream;
+    return d->m_virtualStream;
 }
 
 quint32 Stream::deviceIndex() const
 {
-    return m_deviceIndex;
+    return d->m_deviceIndex;
 }
 
 bool Stream::isCorked() const
 {
-    return m_corked;
+    return d->m_corked;
 }
 
 bool Stream::hasVolume() const
 {
-    return m_hasVolume;
+    return d->m_hasVolume;
 }
 
 } // PulseAudioQt
