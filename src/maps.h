@@ -23,6 +23,7 @@
 #include "client_p.h"
 #include "source_p.h"
 #include "sink_p.h"
+#include "module_p.h"
 
 namespace PulseAudioQt
 {

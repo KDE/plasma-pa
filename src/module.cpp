@@ -5,38 +5,49 @@
 */
 
 #include "module.h"
+#include "debug.h"
+#include "module_p.h"
 
 #include "context.h"
-#include "debug.h"
 #include "indexedpulseobject_p.h"
 
 namespace PulseAudioQt
 {
 Module::Module(QObject *parent)
     : IndexedPulseObject(parent)
+    , d(new ModulePrivate(this))
 {
 }
 
-void Module::update(const pa_module_info *info)
+ModulePrivate::ModulePrivate(Module *q)
+    : q(q)
 {
-    IndexedPulseObject::d->updatePulseObject(info);
-    PulseObject::d->updateProperties(info);
+}
+
+ModulePrivate::~ModulePrivate()
+{
+}
+
+void ModulePrivate::update(const pa_module_info *info)
+{
+    q->IndexedPulseObject::d->updatePulseObject(info);
+    q->PulseObject::d->updateProperties(info);
 
     const QString infoArgument = QString::fromUtf8(info->argument);
     if (m_argument != infoArgument) {
         m_argument = infoArgument;
-        Q_EMIT argumentChanged();
+        Q_EMIT q->argumentChanged();
     }
 }
 
-QString Module::name() const
+Module::~Module()
 {
-    return m_name;
+    delete d;
 }
 
 QString Module::argument() const
 {
-    return m_argument;
+    return d->m_argument;
 }
 
 } // PulseAudioQt
