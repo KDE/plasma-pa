@@ -8,36 +8,50 @@
 #define SINK_H
 
 #include "device.h"
-#include <pulse/channelmap.h>
+
+struct pa_sink_info;
 
 namespace PulseAudioQt
 {
-class Sink : public Device
+/**
+ * A PulseAudio sink. This class is based on https://freedesktop.org/software/pulseaudio/doxygen/structpa__sink__info.html.
+ */
+class PULSEAUDIOQT_EXPORT Sink : public Device
 {
     Q_OBJECT
-public:
-    explicit Sink(QObject *parent);
-    virtual ~Sink();
 
-    void update(const pa_sink_info *info);
+public:
+    ~Sink();
+
     void setVolume(qint64 volume) override;
+
     void setMuted(bool muted) override;
+
     void setActivePortIndex(quint32 port_index) override;
+
     void setChannelVolume(int channel, qint64 volume) override;
-    void setChannelVolumes(const QList<qint64> &channelVolumes) override;
 
     bool isDefault() const override;
+
     void setDefault(bool enable) override;
 
-    void switchStreams() override;
+    void setChannelVolumes(const QVector<qint64> &channelVolumes) override;
 
+    void switchStreams() override;
+    
+    /**
+     * Index of the monitor source for this sink.
+     */
     quint32 monitorIndex() const;
 
 Q_SIGNALS:
     void monitorIndexChanged();
 
 private:
-    quint32 m_monitorIndex = -1;
+    explicit Sink(QObject *parent);
+
+    class SinkPrivate *const d;
+    friend class MapBase<Sink, pa_sink_info>;
 };
 
 } // PulseAudioQt
