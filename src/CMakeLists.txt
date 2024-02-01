@@ -13,7 +13,7 @@ set(plasma-volume_SRCS
     operation.cpp
     port.cpp
     profile.cpp
-    pulseaudio.cpp
+    models.cpp
     pulseobject.cpp
     sink.cpp
     sinkinput.cpp
