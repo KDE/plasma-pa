@@ -20,6 +20,7 @@
 #include "sinkinput_p.h"
 #include "card_p.h"
 #include "port_p.h"
+#include "client_p.h"
 
 namespace PulseAudioQt
 {
