@@ -11,14 +11,13 @@
 
 #include <QMap>
 
-#include "pulseobject.h"
+#include "indexedpulseobject.h"
 
 namespace PulseAudioQt
 {
-class Client : public PulseObject
+class Client : public IndexedPulseObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
 public:
     explicit Client(QObject *parent);
     ~Client() override;

@@ -27,27 +27,27 @@ void SourceOutput::update(const pa_source_output_info *info)
 
 void SourceOutput::setDeviceIndex(quint32 deviceIndex)
 {
-    context()->d->setGenericDeviceForStream(index(), deviceIndex, &pa_context_move_source_output_by_index);
+    Context::instance()->d->setGenericDeviceForStream(index(), deviceIndex, &pa_context_move_source_output_by_index);
 }
 
 void SourceOutput::setVolume(qint64 volume)
 {
-    context()->d->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_source_output_volume);
+    Context::instance()->d->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_source_output_volume);
 }
 
 void SourceOutput::setMuted(bool muted)
 {
-    context()->d->setGenericMute(index(), muted, &pa_context_set_source_output_mute);
+    Context::instance()->d->setGenericMute(index(), muted, &pa_context_set_source_output_mute);
 }
 
 void SourceOutput::setChannelVolume(int channel, qint64 volume)
 {
-    context()->d->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_source_output_volume);
+    Context::instance()->d->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_source_output_volume);
 }
 
 void SourceOutput::setChannelVolumes(const QList<qint64> &channelVolumes)
 {
-    context()->d->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_source_output_volume);
+    Context::instance()->d->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_source_output_volume);
 }
 
 } // PulseAudioQt

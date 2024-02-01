@@ -7,16 +7,15 @@
 #ifndef STREAMRESTORE_H
 #define STREAMRESTORE_H
 
-#include "pulseobject.h"
+#include "indexedpulseobject.h"
 
 #include <pulse/ext-stream-restore.h>
 
 namespace PulseAudioQt
 {
-class StreamRestore : public PulseObject
+class StreamRestore : public IndexedPulseObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString device READ device WRITE setDevice NOTIFY deviceChanged)
     Q_PROPERTY(qint64 volume READ volume WRITE setVolume NOTIFY volumeChanged)
     Q_PROPERTY(bool muted READ isMuted WRITE setMuted NOTIFY mutedChanged)

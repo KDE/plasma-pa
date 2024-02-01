@@ -7,11 +7,12 @@
 #include "client.h"
 
 #include "debug.h"
+#include "indexedpulseobject_p.h"
 
 namespace PulseAudioQt
 {
 Client::Client(QObject *parent)
-    : PulseObject(parent)
+    : IndexedPulseObject(parent)
 {
 }
 
@@ -19,7 +20,8 @@ Client::~Client() = default;
 
 void Client::update(const pa_client_info *info)
 {
-    updatePulseObject(info);
+    IndexedPulseObject::d->updatePulseObject(info);
+    PulseObject::d->updateProperties(info);
 
     const QString infoName = QString::fromUtf8(info->name);
     if (m_name != infoName) {

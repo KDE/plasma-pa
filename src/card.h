@@ -12,9 +12,10 @@
 #include <QMap>
 #include <QVariant>
 
+#include "debug.h"
+#include "indexedpulseobject.h"
 #include "port.h"
 #include "profile.h"
-#include "pulseobject.h"
 
 namespace PulseAudioQt
 {
@@ -70,10 +71,9 @@ private:
     QVariantMap m_properties;
 };
 
-class Card : public PulseObject
+class Card : public IndexedPulseObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QList<QObject *> profiles READ profiles NOTIFY profilesChanged)
     Q_PROPERTY(quint32 activeProfileIndex READ activeProfileIndex WRITE setActiveProfileIndex NOTIFY activeProfileIndexChanged)
     Q_PROPERTY(QList<QObject *> ports READ ports NOTIFY portsChanged)

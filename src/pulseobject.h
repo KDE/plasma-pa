@@ -7,65 +7,68 @@
 #ifndef PULSEOBJECT_H
 #define PULSEOBJECT_H
 
-#include "debug.h"
 #include <QObject>
-#include <QVariant>
 
-#include <pulse/introspect.h>
+#include "pulseaudioqt_export.h"
 
 namespace PulseAudioQt
 {
 class Context;
 
-class PulseObject : public QObject
+template<typename Type, typename PAInfo>
+class MapBase;
+
+/**
+ * Base class for most PulseAudio objects.
+ */
+class PULSEAUDIOQT_EXPORT PulseObject : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(quint32 index READ index CONSTANT)
+    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString iconName READ iconName CONSTANT)
     Q_PROPERTY(QVariantMap properties READ properties NOTIFY propertiesChanged)
+
 public:
-    template<typename PAInfo>
-    void updatePulseObject(PAInfo *info)
-    {
-        m_index = info->index;
+    ~PulseObject();
 
-        QVariantMap properties;
-        void *it = nullptr;
-        while (const char *key = pa_proplist_iterate(info->proplist, &it)) {
-            Q_ASSERT(key);
-            const char *value = pa_proplist_gets(info->proplist, key);
-            if (!value) {
-                qCDebug(PLASMAPA) << "property" << key << "not a string";
-                continue;
-            }
-            Q_ASSERT(value);
-            properties.insert(QString::fromUtf8(key), QString::fromUtf8(value));
-        }
+    QString name() const;
 
-        if (m_properties != properties) {
-            m_properties = properties;
-            Q_EMIT propertiesChanged();
-        }
-    }
-
-    quint32 index() const;
+    /**
+     * A freedesktop.org icon name that fits this object.
+     */
     QString iconName() const;
+
+    /**
+     * A map of properties associated with this object.
+     * The set of available properties depends on the type of object.
+     */
     QVariantMap properties() const;
 
 Q_SIGNALS:
+    /**
+     * Emitted when any of the \ref properties changed.
+     */
     void propertiesChanged();
 
-protected:
-    explicit PulseObject(QObject *parent);
-    ~PulseObject() override;
+    void nameChanged();
 
-    Context *context() const;
-    quint32 m_index;
-    QVariantMap m_properties;
+protected:
+    /** @private */
+    explicit PulseObject(QObject *parent);
+
+    /** @private */
+    class PulseObjectPrivate *const d;
 
 private:
     // Ensure that we get properly parented.
     PulseObject();
+    friend class IndexedPulseObjectPrivate;
+    friend class ClientPrivate;
+    friend class CardPrivate;
+    friend class ModulePrivate;
+    friend class VolumeObjectPrivate;
+    friend class ProfilePrivate;
+    friend class StreamRestorePrivate;
 };
 
 } // PulseAudioQt
