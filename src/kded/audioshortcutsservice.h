@@ -10,8 +10,8 @@
 
 #include "context.h"
 #include "globalconfig.h"
+#include "models.h"
 #include "osdservice.h"
-#include "pulseaudio.h"
 #include "volumefeedback.h"
 
 using namespace Qt::Literals::StringLiterals;
