@@ -11,7 +11,7 @@ target_sources(plasma-volume-declarative PRIVATE
     operation.cpp
     port.cpp
     profile.cpp
-    pulseaudio.cpp
+    models.cpp
     pulseobject.cpp
     sink.cpp
     sinkinput.cpp

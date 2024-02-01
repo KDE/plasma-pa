@@ -18,8 +18,8 @@
 #include "card.h"
 #include "debug.h"
 #include "device.h"
+#include "models.h"
 #include "port.h"
-#include "pulseaudio.h"
 #include "pulseobject.h"
 #include "stream.h"
 
