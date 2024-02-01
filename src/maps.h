@@ -28,6 +28,17 @@ class SourceOutput;
 class StreamRestore;
 class Module;
 
+template<typename T>
+concept IsPrivateUpdatable = requires(T t) {
+    {
+        t.d
+    } -> std::convertible_to<void *>;
+    t.d->update(nullptr);
+};
+
+template<typename T>
+concept IsPublicUpdatable = requires(T t) { t.update(nullptr); };
+
 /**
  * @see MapBase
  * This class is nothing more than the QObject base since moc cannot handle
@@ -116,6 +127,18 @@ public:
         Q_EMIT added(modelIndex, object);
     }
 
+    template <typename ... Args>
+    void updatePublicOrPrivate(Type *obj, Args && ... args) requires IsPrivateUpdatable<Type>
+    {
+        obj->d->update(args...);
+    }
+
+    template <typename ... Args>
+    void updatePublicOrPrivate(Type *obj, Args && ... args) requires IsPublicUpdatable<Type>
+    {
+        obj->update(args...);
+    }
+
     // Context is passed in as parent because context needs to include the maps
     // so we'd cause a circular dep if we were to try to use the instance here.
     // Plus that's weird separation anyway.
@@ -132,7 +155,7 @@ public:
         if (!obj) {
             obj = new Type(parent);
         }
-        obj->update(info);
+        updatePublicOrPrivate(obj, info);
 
         if (!m_data.contains(info->index)) {
             insert(obj);
