@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:39+0000\n"
+"POT-Creation-Date: 2024-02-03 00:39+0000\n"
 "PO-Revision-Date: 2023-07-25 01:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,13 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: contents/ui/DeviceListItem.qml:25
-#, kde-format
-msgctxt "label of device items"
-msgid "%1 (%2)"
-msgstr "%1(%2)"
-
-#: contents/ui/DeviceListItem.qml:34
+#: contents/ui/DeviceListItem.qml:33
 #, kde-format
 msgid "Device name not found"
 msgstr "장치 이름을 찾을 수 없음"
@@ -216,6 +210,10 @@ msgstr "오디오 장치 설정(&C)…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "스트림 이름을 찾을 수 없음"
+
+#~ msgctxt "label of device items"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1(%2)"
 
 #~ msgid "General"
 #~ msgstr "일반"

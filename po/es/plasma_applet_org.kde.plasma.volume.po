@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:39+0000\n"
+"POT-Creation-Date: 2024-02-03 00:39+0000\n"
 "PO-Revision-Date: 2023-05-12 19:34+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,13 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.0\n"
 
-#: contents/ui/DeviceListItem.qml:25
-#, kde-format
-msgctxt "label of device items"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: contents/ui/DeviceListItem.qml:34
+#: contents/ui/DeviceListItem.qml:33
 #, kde-format
 msgid "Device name not found"
 msgstr "Dispositivo no encontrado"
@@ -218,6 +212,10 @@ msgstr "&Configurar dispositivos de sonido..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nombre de transmisión no encontrado"
+
+#~ msgctxt "label of device items"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
 
 #~ msgid "General"
 #~ msgstr "General"

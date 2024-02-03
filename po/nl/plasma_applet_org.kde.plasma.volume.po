@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:39+0000\n"
+"POT-Creation-Date: 2024-02-03 00:39+0000\n"
 "PO-Revision-Date: 2023-05-11 09:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,13 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.0\n"
 
-#: contents/ui/DeviceListItem.qml:25
-#, kde-format
-msgctxt "label of device items"
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: contents/ui/DeviceListItem.qml:34
+#: contents/ui/DeviceListItem.qml:33
 #, kde-format
 msgid "Device name not found"
 msgstr "Apparaatnaam niet gevonden"
@@ -216,6 +210,10 @@ msgstr "Audio-apparaten &configureren…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Streamnaam niet gevonden"
+
+#~ msgctxt "label of device items"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
 
 #~ msgid "General"
 #~ msgstr "Algemeen"
