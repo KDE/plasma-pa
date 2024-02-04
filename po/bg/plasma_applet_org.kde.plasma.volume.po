@@ -210,7 +210,3 @@ msgstr "&Конфигуриране на звукови устройства…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Името на потока не е намерено"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2%)"
