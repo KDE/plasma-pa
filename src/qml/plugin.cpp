@@ -23,6 +23,7 @@
 #include "globalconfig.h"
 #include "listitemmenu.h"
 #include "microphoneindicator.h"
+#include "preferreddevice.h"
 #include "speakertest.h"
 #include "volumefeedback.h"
 #include "volumeosd.h"
@@ -67,6 +68,12 @@ void Plugin::registerTypes(const char *uri)
         Q_UNUSED(engine);
         Q_UNUSED(jsEngine);
         return new MicrophoneIndicator();
+    });
+    qmlRegisterSingletonType<PreferredDevice>(uri, 0, 1, "PreferredDevice", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
+        Q_UNUSED(engine);
+        Q_UNUSED(jsEngine);
+        // Create on-call to not create a Context instance too early.
+        return new PreferredDevice;
     });
     qmlRegisterAnonymousType<PulseAudioQt::Client>(uri, 1);
     qmlRegisterAnonymousType<PulseAudioQt::Sink>(uri, 1);

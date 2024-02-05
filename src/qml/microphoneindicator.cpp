@@ -113,7 +113,7 @@ void MicrophoneIndicator::update()
     if (allMuted) {
         iconName = QStringLiteral("microphone-sensitivity-muted");
     } else {
-        if (Source *defaultSource = m_sourceModel->defaultSource()) {
+        if (Source *defaultSource = m_preferredDevice.source()) {
             const int percent = volumePercent(defaultSource);
             iconName = QStringLiteral("microphone-sensitivity");
             // it deliberately never shows the "muted" icon unless *all* microphones are muted
@@ -205,7 +205,7 @@ void MicrophoneIndicator::toggleMuted()
 
 void MicrophoneIndicator::adjustVolume(int direction)
 {
-    Source *source = m_sourceModel->defaultSource();
+    Source *source = m_preferredDevice.source();
     if (!source) {
         return;
     }
@@ -233,7 +233,7 @@ void MicrophoneIndicator::showOsd()
         m_osd = new VolumeOSD(this);
     }
 
-    auto *preferredSource = m_sourceModel->defaultSource();
+    auto *preferredSource = m_preferredDevice.source();
     if (!preferredSource) {
         return;
     }
