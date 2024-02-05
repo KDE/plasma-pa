@@ -90,7 +90,7 @@ class AppletTest(unittest.TestCase):
         """
         Tests the widget can be opened
         """
-        self.driver.find_element(AppiumBy.NAME, "No output or input devices found")
+        self.driver.find_element(AppiumBy.NAME, "Connection to the Sound Service Lost")
 
     def test_1_sink_1_list_device(self) -> None:
         """

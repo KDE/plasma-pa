@@ -484,4 +484,6 @@ KCM.ScrollViewKCM {
             }
         }
     }
+
+    ContextBrokenOverlay {}
 }
