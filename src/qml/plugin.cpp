@@ -55,6 +55,12 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterType<PulseAudioQt::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
     qmlRegisterType<PulseAudioQt::ModuleModel>(uri, 0, 1, "ModuleModel");
     qmlRegisterType<PulseAudioQt::VolumeMonitor>(uri, 0, 1, "VolumeMonitor");
+    qmlRegisterSingletonType<PulseAudioQt::Context>(uri, 0, 1, "Context", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        // Created on-call rather than on-registration to not start the Context "too early".
+        auto context = PulseAudioQt::Context::instance();
+        QQmlEngine::setObjectOwnership(context, QQmlEngine::CppOwnership);
+        return context;
+    });
     qmlRegisterUncreatableType<PulseAudioQt::VolumeObject>(uri, 0, 1, "VolumeObject", QString());
     qmlRegisterUncreatableType<PulseAudioQt::PulseObject>(uri, 0, 1, "PulseObject", QString());
     qmlRegisterUncreatableType<PulseAudioQt::Profile>(uri, 0, 1, "Profile", QString());

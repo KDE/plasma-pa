@@ -36,7 +36,22 @@ PlasmoidItem {
 
     // DEFAULT_SINK_NAME in module-always-sink.c
     readonly property string dummyOutputName: "auto_null"
-    readonly property string noDevicePlaceholderMessage: i18n("No output or input devices found")
+    readonly property bool contextIsReady: Context.state === Context.State.Ready
+    readonly property string noDevicePlaceholderMessage: {
+        if (!contextIsReady) {
+            if (!Context.autoConnecting) {
+                return i18nc("@label", "Connection to the Sound Service Lost")
+            }
+            return i18nc("@label", "Connection to the Sound Service Lost")
+        }
+        return i18n("No output or input devices found")
+    }
+    readonly property string noDeviceExplanation: {
+        if (!contextIsReady && Context.autoConnecting) {
+            return i18nc("@info reconnecting to pulseaudio", "Trying to reconnect…")
+        }
+        return ""
+    }
 
     switchHeight: Layout.minimumHeight
     switchWidth: Layout.minimumWidth
@@ -346,6 +361,14 @@ PlasmoidItem {
                 lowerType: "source"
                 iconName: "audio-volume-muted"
                 placeholderText: main.noDevicePlaceholderMessage
+                explanationText: main.noDeviceExplanation
+                helpfulAction: Kirigami.Action {
+                    text: i18nc("@action retry connecting to pulseaudio", "Retry")
+                    icon.name: "view-refresh-symbolic"
+                    onTriggered: Context.reconnectDaemon()
+                    // Fun fact: visibility of the helpfulAction inside PlaceholderMessage is linked to enabled, not visible
+                    enabled: !Context.autoConnecting && !main.contextIsReady
+                }
                 upperDelegate: DeviceListItem {
                     width: ListView.view.width
                     type: devicesView.upperType
@@ -400,6 +423,8 @@ PlasmoidItem {
             required property Component lowerDelegate
             property string iconName: ""
             property string placeholderText: ""
+            property string explanationText: ""
+            property Kirigami.Action helpfulAction: null
 
              // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
             PC3.ScrollBar.horizontal.policy: PC3.ScrollBar.AlwaysOff
@@ -413,6 +438,8 @@ PlasmoidItem {
                 sourceComponent: PlasmaExtras.PlaceholderMessage {
                     iconName: scrollView.iconName
                     text: scrollView.placeholderText
+                    explanation: scrollView.explanationText
+                    helpfulAction: scrollView.helpfulAction
                 }
             }
             contentItem: Flickable {
