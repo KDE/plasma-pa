@@ -256,7 +256,7 @@ PlasmoidItem {
                 return;
             }
 
-            var description = defaultSink.description;
+            var description = nodeName(defaultSink);
             if (isDummyOutput(defaultSink)) {
                 description = i18n("No output device");
             } else {
