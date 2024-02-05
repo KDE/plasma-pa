@@ -213,7 +213,3 @@ msgstr "音声デバイスを設定(&C)..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "ストリームの名前が見つかりません"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
