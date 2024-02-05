@@ -36,7 +36,16 @@ PlasmoidItem {
 
     // DEFAULT_SINK_NAME in module-always-sink.c
     readonly property string dummyOutputName: "auto_null"
-    readonly property string noDevicePlaceholderMessage: i18n("No output or input devices found")
+    readonly property bool contextIsReady: Context.state === Context.State.Ready
+    readonly property string noDevicePlaceholderMessage: {
+        if (!contextIsReady) {
+            if (!Context.autoConnecting) {
+                return i18nc("@label", "The sound system haz a boo-boo owie. Have you tried turning it off and on again?")
+            }
+            return i18nc("@label", "The sound system haz a boo-boo owie. We are trying to remedy the situation…")
+        }
+        return i18n("No output or input devices found")
+    }
 
     switchHeight: Layout.minimumHeight
     switchWidth: Layout.minimumWidth
@@ -346,6 +355,13 @@ PlasmoidItem {
                 lowerType: "source"
                 iconName: "audio-volume-muted"
                 placeholderText: main.noDevicePlaceholderMessage
+                helpfulAction: Kirigami.Action {
+                    icon.name: "weather-overcast-wind-symbolic"
+                    text: "Blow on the Ouchie"
+                    onTriggered: Context.reconnectDaemon()
+                    // Fun fact: visibility of the helpfulAction inside PlaceholderMessage is linked to enabled, not visible
+                    enabled: !Context.autoConnecting && !main.contextIsReady
+                }
                 upperDelegate: DeviceListItem {
                     width: ListView.view.width
                     type: devicesView.upperType
@@ -400,6 +416,7 @@ PlasmoidItem {
             required property Component lowerDelegate
             property string iconName: ""
             property string placeholderText: ""
+            property Kirigami.Action helpfulAction: null
 
              // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
             PC3.ScrollBar.horizontal.policy: PC3.ScrollBar.AlwaysOff
@@ -413,6 +430,7 @@ PlasmoidItem {
                 sourceComponent: PlasmaExtras.PlaceholderMessage {
                     iconName: scrollView.iconName
                     text: scrollView.placeholderText
+                    helpfulAction: scrollView.helpfulAction
                 }
             }
             contentItem: Flickable {
