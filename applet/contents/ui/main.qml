@@ -71,14 +71,7 @@ PlasmoidItem {
         let lines = [];
 
         if (paSinkModel.preferredSink && paSinkFilterModel.count > 1 && !isDummyOutput(paSinkModel.preferredSink)) {
-            var port = paSinkModel.preferredSink.ports[paSinkModel.preferredSink.activePortIndex];
-            if (port) {
-                lines.push(port.description);
-            } else if (paSinkModel.preferredSink.description) {
-                lines.push(paSinkModel.preferredSink.description);
-            } else {
-            lines.push(paSinkModel.preferredSink.name);
-            }
+            lines.push(nodeName(paSinkModel.preferredSink))
         }
 
         if (paSinkFilterModel.count > 0) {
@@ -89,6 +82,23 @@ PlasmoidItem {
             lines.push(main.noDevicePlaceholderMessage);
         }
         return lines.join("\n");
+    }
+
+    function nodeName(pulseObject) {
+        const nodeNick = pulseObject.pulseProperties["node.nick"]
+        if (nodeNick) {
+            return nodeNick
+        }
+
+        if (pulseObject.description) {
+            return pulseObject.description
+        }
+
+        if (pulseObject.name) {
+            return pulseObject.name
+        }
+
+        return i18n("Device name not found")
     }
 
     function isDummyOutput(output) {
