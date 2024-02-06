@@ -217,7 +217,8 @@ PC3.ItemDelegate {
                     Layout.fillWidth: true
                     from: PulseAudio.MinimalVolume
                     to: forceRaiseMaxVolume || item.model.Volume >= PulseAudio.NormalVolume * 1.01 ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
-                    stepSize: PulseAudio.NormalVolume / 100.0 * config.volumeStep
+                    stepSize: PulseAudio.NormalVolume / 100.0
+                    property real myStepSize: PulseAudio.NormalVolume / 100.0 * config.volumeStep
                     visible: item.model.HasVolume
                     enabled: item.model.VolumeWritable
                     muted: item.model.Muted
@@ -226,6 +227,8 @@ PC3.ItemDelegate {
                     Accessible.onPressAction: moved()
 
                     value: to, item.model.Volume
+                    function increase() { value = value + myStepSize }
+                    function decrease() { value = value - myStepSize }
                     onMoved: {
                         item.model.Volume = value;
                         item.model.Muted = value === 0;
