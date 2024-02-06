@@ -56,6 +56,39 @@ PC3.Slider {
     // Prevents the groove from showing through the handle
     layer.enabled: opacity < 1
 
+    wheelEnabled: false
+    // `wheelEnabled: true` doesn't work we can't both respect stepsize
+    // on scroll and allow fine-tuning on drag.
+    // So we have to implement the scroll handling ourselves. See
+    // https://bugreports.qt.io/browse/QTBUG-93081
+    WheelHandler {
+        orientation: Qt.Vertical | Qt.Horizontal
+        property int wheelDelta: 0
+        acceptedButtons: Qt.NoButton
+        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+        onWheel: wheel => {
+            const lastValue = control.value
+            // We want a positive delta to increase the slider for up/right scrolling,
+            // independently of the scrolling inversion setting
+            // The x-axis is also inverted (scrolling right produce negative values)
+            const delta = (wheel.angleDelta.y || -wheel.angleDelta.x) * (wheel.inverted ? -1 : 1)
+            wheelDelta += delta;
+            // magic number 120 for common "one click"
+            // See: https://doc.qt.io/qt-6/qml-qtquick-wheelevent.html#angleDelta-prop
+            while (wheelDelta >= 120) {
+                wheelDelta -= 120;
+                control.increase();
+            }
+            while (wheelDelta <= -120) {
+                wheelDelta += 120;
+                control.decrease();
+            }
+            if (lastValue !== control.value) {
+                control.moved();
+            }
+        }     
+    }
+
     background: KSvg.FrameSvgItem {
         imagePath: "widgets/slider"
         prefix: "groove"
