@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-03 00:39+0000\n"
+"POT-Creation-Date: 2024-02-06 00:39+0000\n"
 "PO-Revision-Date: 2023-08-07 22:27+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -18,11 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: contents/ui/DeviceListItem.qml:33
-#, kde-format
-msgid "Device name not found"
-msgstr "找不到裝置名稱"
 
 #: contents/ui/ListItemBase.qml:68
 #, kde-format
@@ -105,105 +100,110 @@ msgstr "音效靜音"
 msgid "Volume at %1%"
 msgstr "音量在 %1%"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "按中鍵取消靜音"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:79
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "按中鍵將所有音效靜音"
 
-#: contents/ui/main.qml:87
+#: contents/ui/main.qml:80
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "捲動調整音量"
 
-#: contents/ui/main.qml:251
+#: contents/ui/main.qml:101
+#, kde-format
+msgid "Device name not found"
+msgstr "找不到裝置名稱"
+
+#: contents/ui/main.qml:261
 #, kde-format
 msgid "No output device"
 msgstr "沒有輸出裝置"
 
-#: contents/ui/main.qml:262
+#: contents/ui/main.qml:272
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% 電量)"
 
-#: contents/ui/main.qml:409
+#: contents/ui/main.qml:419
 #, kde-format
 msgid "Increase Volume"
 msgstr "增加音量"
 
-#: contents/ui/main.qml:415
+#: contents/ui/main.qml:425
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "增加音量 1%"
 
-#: contents/ui/main.qml:421
+#: contents/ui/main.qml:431
 #, kde-format
 msgid "Decrease Volume"
 msgstr "降低音量"
 
-#: contents/ui/main.qml:427
+#: contents/ui/main.qml:437
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "降低音量"
 
-#: contents/ui/main.qml:433
+#: contents/ui/main.qml:443
 #, kde-format
 msgid "Mute"
 msgstr "靜音"
 
-#: contents/ui/main.qml:439
+#: contents/ui/main.qml:449
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "增加麥克風音量"
 
-#: contents/ui/main.qml:445
+#: contents/ui/main.qml:455
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "降低麥克風音量"
 
-#: contents/ui/main.qml:451
+#: contents/ui/main.qml:461
 #, kde-format
 msgid "Mute Microphone"
 msgstr "麥克風靜音"
 
-#: contents/ui/main.qml:558
+#: contents/ui/main.qml:568
 #, kde-format
 msgid "Devices"
 msgstr "裝置"
 
-#: contents/ui/main.qml:565
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "Applications"
 msgstr "應用程式"
 
-#: contents/ui/main.qml:586 contents/ui/main.qml:588 contents/ui/main.qml:808
+#: contents/ui/main.qml:596 contents/ui/main.qml:598 contents/ui/main.qml:818
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "強制靜音所有播放裝置"
 
-#: contents/ui/main.qml:641
+#: contents/ui/main.qml:651
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "沒有正在播放或錄音的應用程式"
 
-#: contents/ui/main.qml:796
+#: contents/ui/main.qml:806
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: contents/ui/main.qml:821
+#: contents/ui/main.qml:831
 #, kde-format
 msgid "Show virtual devices"
 msgstr "顯示虛擬裝置"
 
-#: contents/ui/main.qml:831
+#: contents/ui/main.qml:841
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "設定音效裝置(&C)…"

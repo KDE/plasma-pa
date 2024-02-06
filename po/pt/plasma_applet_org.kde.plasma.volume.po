@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-03 00:39+0000\n"
+"POT-Creation-Date: 2024-02-06 00:39+0000\n"
 "PO-Revision-Date: 2023-02-15 15:24+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -12,11 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POFile-SpellExtra: Sitter Harald PulseAudio gconf Subwoofer\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#: contents/ui/DeviceListItem.qml:33
-#, kde-format
-msgid "Device name not found"
-msgstr "Nome do dispositivo não encontrado"
 
 #: contents/ui/ListItemBase.qml:68
 #, kde-format
@@ -99,107 +94,112 @@ msgstr "Áudio Silenciado"
 msgid "Volume at %1%"
 msgstr "Volume a %1%"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Botão do meio para reactivar o som"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:79
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Botão do meio para desactivar todo o som"
 
-#: contents/ui/main.qml:87
+#: contents/ui/main.qml:80
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Deslocar para ajustar o volume"
 
-#: contents/ui/main.qml:251
+#: contents/ui/main.qml:101
+#, kde-format
+msgid "Device name not found"
+msgstr "Nome do dispositivo não encontrado"
+
+#: contents/ui/main.qml:261
 #, kde-format
 msgid "No output device"
 msgstr "Sem dispositivo de saída"
 
-#: contents/ui/main.qml:262
+#: contents/ui/main.qml:272
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% de Bateria)"
 
-#: contents/ui/main.qml:409
+#: contents/ui/main.qml:419
 #, kde-format
 msgid "Increase Volume"
 msgstr "Aumentar o Volume"
 
-#: contents/ui/main.qml:415
+#: contents/ui/main.qml:425
 #, fuzzy, kde-format
 #| msgid "Increase Volume"
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Aumentar o Volume"
 
-#: contents/ui/main.qml:421
+#: contents/ui/main.qml:431
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Diminuir o Volume"
 
-#: contents/ui/main.qml:427
+#: contents/ui/main.qml:437
 #, fuzzy, kde-format
 #| msgid "Decrease Volume"
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Diminuir o Volume"
 
-#: contents/ui/main.qml:433
+#: contents/ui/main.qml:443
 #, kde-format
 msgid "Mute"
 msgstr "Silenciar"
 
-#: contents/ui/main.qml:439
+#: contents/ui/main.qml:449
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Aumentar o Volume do Microfone"
 
-#: contents/ui/main.qml:445
+#: contents/ui/main.qml:455
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Diminuir o Volume do Microfone"
 
-#: contents/ui/main.qml:451
+#: contents/ui/main.qml:461
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Silenciar o Microfone"
 
-#: contents/ui/main.qml:558
+#: contents/ui/main.qml:568
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivos"
 
-#: contents/ui/main.qml:565
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "Applications"
 msgstr "Aplicações"
 
-#: contents/ui/main.qml:586 contents/ui/main.qml:588 contents/ui/main.qml:808
+#: contents/ui/main.qml:596 contents/ui/main.qml:598 contents/ui/main.qml:818
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forçar o silenciamento de todos os dispositivos de reprodução"
 
-#: contents/ui/main.qml:641
+#: contents/ui/main.qml:651
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Sem aplicações a gravar ou reproduzir áudio"
 
-#: contents/ui/main.qml:796
+#: contents/ui/main.qml:806
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Aumentar o volume máximo"
 
-#: contents/ui/main.qml:821
+#: contents/ui/main.qml:831
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostrar os dispositivos virtuais"
 
-#: contents/ui/main.qml:831
+#: contents/ui/main.qml:841
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar os Dispositivos de Áudio…"

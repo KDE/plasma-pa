@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-03 00:39+0000\n"
+"POT-Creation-Date: 2024-02-06 00:39+0000\n"
 "PO-Revision-Date: 2023-05-11 09:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -16,11 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.0\n"
-
-#: contents/ui/DeviceListItem.qml:33
-#, kde-format
-msgid "Device name not found"
-msgstr "Apparaatnaam niet gevonden"
 
 #: contents/ui/ListItemBase.qml:68
 #, kde-format
@@ -103,105 +98,110 @@ msgstr "Geluid gedempt"
 msgid "Volume at %1%"
 msgstr "Volume op %1%"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Midden-klik om dempen op te heffen"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:79
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Midden-klik om alle audio te dempen"
 
-#: contents/ui/main.qml:87
+#: contents/ui/main.qml:80
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Scrollen om geluidsvolume aan te passen"
 
-#: contents/ui/main.qml:251
+#: contents/ui/main.qml:101
+#, kde-format
+msgid "Device name not found"
+msgstr "Apparaatnaam niet gevonden"
+
+#: contents/ui/main.qml:261
 #, kde-format
 msgid "No output device"
 msgstr "Geen uitvoerapparaat"
 
-#: contents/ui/main.qml:262
+#: contents/ui/main.qml:272
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% batterij)"
 
-#: contents/ui/main.qml:409
+#: contents/ui/main.qml:419
 #, kde-format
 msgid "Increase Volume"
 msgstr "Volume verhogen"
 
-#: contents/ui/main.qml:415
+#: contents/ui/main.qml:425
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
 msgstr "Volume met 1% verhogen"
 
-#: contents/ui/main.qml:421
+#: contents/ui/main.qml:431
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Volume verlagen"
 
-#: contents/ui/main.qml:427
+#: contents/ui/main.qml:437
 #, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
 msgstr "Volume met 1% verlagen"
 
-#: contents/ui/main.qml:433
+#: contents/ui/main.qml:443
 #, kde-format
 msgid "Mute"
 msgstr "Dempen"
 
-#: contents/ui/main.qml:439
+#: contents/ui/main.qml:449
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Microfoonvolume verhogen"
 
-#: contents/ui/main.qml:445
+#: contents/ui/main.qml:455
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Microfoonvolume verlagen"
 
-#: contents/ui/main.qml:451
+#: contents/ui/main.qml:461
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Microfoon dempen"
 
-#: contents/ui/main.qml:558
+#: contents/ui/main.qml:568
 #, kde-format
 msgid "Devices"
 msgstr "Apparaten"
 
-#: contents/ui/main.qml:565
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "Applications"
 msgstr "Toepassingen"
 
-#: contents/ui/main.qml:586 contents/ui/main.qml:588 contents/ui/main.qml:808
+#: contents/ui/main.qml:596 contents/ui/main.qml:598 contents/ui/main.qml:818
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Alle afspeelapparaten afdwingen te dempen"
 
-#: contents/ui/main.qml:641
+#: contents/ui/main.qml:651
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Geen toepassingen die geluid afspelen of opnemen"
 
-#: contents/ui/main.qml:796
+#: contents/ui/main.qml:806
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximum volume vergroten:"
 
-#: contents/ui/main.qml:821
+#: contents/ui/main.qml:831
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuele apparaten tonen"
 
-#: contents/ui/main.qml:831
+#: contents/ui/main.qml:841
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Audio-apparaten &configureren…"
