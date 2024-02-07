@@ -213,7 +213,3 @@ msgstr "&Set opp lydeiningar …"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Fann ikkje straumnamn"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
