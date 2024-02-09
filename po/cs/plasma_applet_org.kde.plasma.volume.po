@@ -211,7 +211,3 @@ msgstr "Nastavit a&udio zařízení…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Název proudu nenalezen"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
