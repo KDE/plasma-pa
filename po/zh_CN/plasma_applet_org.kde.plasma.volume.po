@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-06 00:39+0000\n"
+"POT-Creation-Date: 2024-02-14 00:39+0000\n"
 "PO-Revision-Date: 2024-02-05 11:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -61,19 +61,19 @@ msgstr "取消静音 %1"
 msgid "Mute %1"
 msgstr "静音 %1"
 
-#: contents/ui/ListItemBase.qml:228
+#: contents/ui/ListItemBase.qml:229
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "调整 %1 的音量"
 
-#: contents/ui/ListItemBase.qml:287
+#: contents/ui/ListItemBase.qml:290
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:307
+#: contents/ui/ListItemBase.qml:310
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

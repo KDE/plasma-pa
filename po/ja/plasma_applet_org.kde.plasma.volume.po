@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-06 00:39+0000\n"
+"POT-Creation-Date: 2024-02-14 00:39+0000\n"
 "PO-Revision-Date: 2023-04-07 23:42-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -61,19 +61,19 @@ msgstr "%1 をミュート解除"
 msgid "Mute %1"
 msgstr "%1 をミュート"
 
-#: contents/ui/ListItemBase.qml:228
+#: contents/ui/ListItemBase.qml:229
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 の音量を調整"
 
-#: contents/ui/ListItemBase.qml:287
+#: contents/ui/ListItemBase.qml:290
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:307
+#: contents/ui/ListItemBase.qml:310
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-06 00:39+0000\n"
+"POT-Creation-Date: 2024-02-14 00:39+0000\n"
 "PO-Revision-Date: 2023-05-15 18:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -62,19 +62,19 @@ msgstr "ألغ كتم %1"
 msgid "Mute %1"
 msgstr "اكتم %1"
 
-#: contents/ui/ListItemBase.qml:228
+#: contents/ui/ListItemBase.qml:229
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "اضبط المستوى إلى %1"
 
-#: contents/ui/ListItemBase.qml:287
+#: contents/ui/ListItemBase.qml:290
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1٪"
 
-#: contents/ui/ListItemBase.qml:307
+#: contents/ui/ListItemBase.qml:310
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
