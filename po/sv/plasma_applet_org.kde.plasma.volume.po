@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 00:39+0000\n"
+"POT-Creation-Date: 2024-02-17 00:39+0000\n"
 "PO-Revision-Date: 2022-08-03 09:37+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -175,37 +175,37 @@ msgstr "Minska mikrofonvolym"
 msgid "Mute Microphone"
 msgstr "Tysta mikrofon"
 
-#: contents/ui/main.qml:568
+#: contents/ui/main.qml:570
 #, kde-format
 msgid "Devices"
 msgstr "Enheter"
 
-#: contents/ui/main.qml:575
+#: contents/ui/main.qml:577
 #, kde-format
 msgid "Applications"
 msgstr "Program"
 
-#: contents/ui/main.qml:596 contents/ui/main.qml:598 contents/ui/main.qml:818
+#: contents/ui/main.qml:598 contents/ui/main.qml:600 contents/ui/main.qml:819
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Tysta alla uppspelningsenheter"
 
-#: contents/ui/main.qml:651
+#: contents/ui/main.qml:652
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Inga program spelar upp eller spelar in ljud"
 
-#: contents/ui/main.qml:806
+#: contents/ui/main.qml:807
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Höj maximal volym"
 
-#: contents/ui/main.qml:831
+#: contents/ui/main.qml:832
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Visa virtuella enheter"
 
-#: contents/ui/main.qml:841
+#: contents/ui/main.qml:842
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "An&passa ljudenheter…"
