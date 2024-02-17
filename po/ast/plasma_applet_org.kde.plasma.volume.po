@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 02:28+0000\n"
+"POT-Creation-Date: 2024-02-17 02:28+0000\n"
 "PO-Revision-Date: 2023-11-01 10:49+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -177,37 +177,37 @@ msgstr ""
 msgid "Mute Microphone"
 msgstr ""
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:555
 #, kde-format
 msgid "Devices"
 msgstr "Preseos"
 
-#: contents/ui/main.qml:560
+#: contents/ui/main.qml:562
 #, kde-format
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
+#: contents/ui/main.qml:583 contents/ui/main.qml:585 contents/ui/main.qml:798
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: contents/ui/main.qml:636
+#: contents/ui/main.qml:637
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr ""
 
-#: contents/ui/main.qml:788
+#: contents/ui/main.qml:789
 #, kde-format
 msgid "Raise maximum volume"
 msgstr ""
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:811
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Amosar los preseos virtuales"
 
-#: contents/ui/main.qml:820
+#: contents/ui/main.qml:821
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

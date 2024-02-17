@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 02:28+0000\n"
+"POT-Creation-Date: 2024-02-17 02:28+0000\n"
 "PO-Revision-Date: 2023-05-11 15:49+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -177,37 +177,37 @@ msgstr "Riduci volume del microfono"
 msgid "Mute Microphone"
 msgstr "Silenzia microfono"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:555
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivi"
 
-#: contents/ui/main.qml:560
+#: contents/ui/main.qml:562
 #, kde-format
 msgid "Applications"
 msgstr "Applicazioni"
 
-#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
+#: contents/ui/main.qml:583 contents/ui/main.qml:585 contents/ui/main.qml:798
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forza il silenziamento di tutti i dispositivi"
 
-#: contents/ui/main.qml:636
+#: contents/ui/main.qml:637
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nessuna applicazione che riproduca o registri audio"
 
-#: contents/ui/main.qml:788
+#: contents/ui/main.qml:789
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Alza il volume al massimo"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:811
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostra i dispositivi virtuali"
 
-#: contents/ui/main.qml:820
+#: contents/ui/main.qml:821
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configura i dispositivi audio..."

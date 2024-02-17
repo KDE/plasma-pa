@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 02:28+0000\n"
+"POT-Creation-Date: 2024-02-17 02:28+0000\n"
 "PO-Revision-Date: 2022-07-31 23:28+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -181,37 +181,37 @@ msgstr "Mikrofonun səsini azaltmaq"
 msgid "Mute Microphone"
 msgstr "Mikrofonu söndürmək"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:555
 #, kde-format
 msgid "Devices"
 msgstr "Cihazlar"
 
-#: contents/ui/main.qml:560
+#: contents/ui/main.qml:562
 #, kde-format
 msgid "Applications"
 msgstr "Tətbiqlər"
 
-#: contents/ui/main.qml:581 contents/ui/main.qml:583 contents/ui/main.qml:797
+#: contents/ui/main.qml:583 contents/ui/main.qml:585 contents/ui/main.qml:798
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Bütün oxudan cihazları məcburi susdurmaq"
 
-#: contents/ui/main.qml:636
+#: contents/ui/main.qml:637
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "heç bir tətbiq səsi yazmır və oxutmur"
 
-#: contents/ui/main.qml:788
+#: contents/ui/main.qml:789
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Səsi ən uca səviyyəyə qaldırmaq"
 
-#: contents/ui/main.qml:810
+#: contents/ui/main.qml:811
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtual cihazları göstərmək"
 
-#: contents/ui/main.qml:820
+#: contents/ui/main.qml:821
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Səs &Cihazlarını Tənzimləyin..."
