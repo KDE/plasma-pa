@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
-# Sergiu Bivol <sergiu@cip.md>, 2020, 2021, 2022.
+# Sergiu Bivol <sergiu@cip.md>, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-17 02:28+0000\n"
-"PO-Revision-Date: 2022-08-14 16:52+0100\n"
+"PO-Revision-Date: 2023-06-18 19:07+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -113,17 +113,17 @@ msgstr "Volum la %1%"
 #: contents/ui/main.qml:85
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Clic mijlociu pentru sonorizare"
 
 #: contents/ui/main.qml:86
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Clic mijlociu pentru muțirea tuturor sunetelor"
 
 #: contents/ui/main.qml:87
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Derulează pentru ajustarea volumului"
 
 #: contents/ui/main.qml:251
 #, kde-format
@@ -131,12 +131,10 @@ msgid "No output device"
 msgstr "Niciun dispozitiv de ieșire"
 
 #: contents/ui/main.qml:262
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% acumulator)"
 
 #: contents/ui/main.qml:409
 #, kde-format
@@ -144,11 +142,10 @@ msgid "Increase Volume"
 msgstr "Mărește volumul"
 
 #: contents/ui/main.qml:415
-#, fuzzy, kde-format
-#| msgid "Increase Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Increase Volume by 1%"
-msgstr "Mărește volumul"
+msgstr "Mărește volumul cu 1%"
 
 #: contents/ui/main.qml:421
 #, kde-format
@@ -156,11 +153,10 @@ msgid "Decrease Volume"
 msgstr "Micșorează volumul"
 
 #: contents/ui/main.qml:427
-#, fuzzy, kde-format
-#| msgid "Decrease Volume"
+#, kde-format
 msgctxt "@action shortcut"
 msgid "Decrease Volume by 1%"
-msgstr "Micșorează volumul"
+msgstr "Micșorează volumul cu 1%"
 
 #: contents/ui/main.qml:433
 #, kde-format
