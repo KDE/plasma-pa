@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2017, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-17 02:28+0000\n"
-"PO-Revision-Date: 2023-12-02 00:06+0300\n"
+"PO-Revision-Date: 2024-02-29 17:33+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: contents/ui/DeviceListItem.qml:25
 #, kde-format
@@ -113,12 +113,12 @@ msgstr "Ses Düzeyi %​%1"
 #: contents/ui/main.qml:85
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr "Sesi açmak için orta tıkla"
+msgstr "Sesi açmak için orta tıklayın"
 
 #: contents/ui/main.qml:86
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr "Tümünü sessize almak için orta tıkla"
+msgstr "Tümünü sessize almak için orta tıklayın"
 
 #: contents/ui/main.qml:87
 #, kde-format
