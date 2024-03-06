@@ -211,7 +211,7 @@ KCM.ScrollViewKCM {
                         let idx = sourceModel.index(source_row, 0);
                         let profiles = sourceModel.data(idx, sourceModel.KItemModels.KRoleNames.role("Profiles"))
                         let activeProfileIndex = sourceModel.data(idx, sourceModel.KItemModels.KRoleNames.role("ActiveProfileIndex"))
-                        return profiles[activeProfileIndex].name == "off";
+                        return !profiles[activeProfileIndex].sinkCount && !profiles[activeProfileIndex].sourceCount;
                     }
                 }
                 delegate: CardListItem {

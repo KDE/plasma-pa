@@ -26,8 +26,6 @@
 
 using namespace PulseAudioQt;
 
-static const auto s_offProfile = QLatin1String("off");
-
 ListItemMenu::ListItemMenu(QObject *parent)
     : QObject(parent)
 {
@@ -225,7 +223,7 @@ bool ListItemMenu::checkHasContent()
                             continue;
                         }
 
-                        if (profile->name() == s_offProfile) {
+                        if (!profile->sinkCount() && !profile->sourceCount()) {
                             continue;
                         }
 
@@ -409,7 +407,7 @@ QMenu *ListItemMenu::createMenu()
 
                     // Don't let user easily remove a device with no obvious way to get it back
                     // Only let that be done from the KCM where one can just flip the ComboBox back.
-                    if (profile->name() == s_offProfile) {
+                    if (!profile->sinkCount() && !profile->sourceCount()) {
                         continue;
                     }
 
