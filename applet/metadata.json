@@ -143,7 +143,8 @@
         "Name[uk]": "Гучність",
         "Name[x-test]": "xxAudio Volumexx",
         "Name[zh_CN]": "音量",
-        "Name[zh_TW]": "音效音量"
+        "Name[zh_TW]": "音效音量",
+        "Website": "https://kde.org/plasma-desktop"
     },
     "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-NotificationAreaCategory": "Hardware"
