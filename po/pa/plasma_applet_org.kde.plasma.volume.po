@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2015, 2018, 2020, 2021, 2023 A S Alam <aalam@fedoraproject.org>
+# SPDX-FileCopyrightText: 2015, 2018, 2020, 2021, 2023, 2024 A S Alam <aalam@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-17 00:39+0000\n"
-"PO-Revision-Date: 2023-12-24 09:30-0600\n"
+"PO-Revision-Date: 2024-03-07 17:18-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: contents/ui/ListItemBase.qml:68
 #, kde-format
@@ -96,7 +96,7 @@ msgstr "ਆਡੀਓ ਚੁੱਪ ਹੈ"
 #: contents/ui/main.qml:67
 #, kde-format
 msgid "Volume at %1%"
-msgstr "%1%% ਉੱਤੇ ਵਾਲੀਅਮ"
+msgstr "ਵਾਲੀਅਮ %1%"
 
 #: contents/ui/main.qml:78
 #, kde-format
