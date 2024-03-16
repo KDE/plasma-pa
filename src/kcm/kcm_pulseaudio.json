@@ -48,7 +48,7 @@
         "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_pulseaudio",
         "Description": "Configure audio devices and volume",
         "Description[ar]": "اضبط أجهزة الصّوت ومستوى الصوت",
-        "Description[ast]": "Configura los preseos d'audiu ya'l so volume",
+        "Description[ast]": "Configura los preseos d'audiu y el so volume",
         "Description[bg]": "Конфигуриране на звукови устройства и сила на звука",
         "Description[ca@valencia]": "Configura els dispositius d'àudio i el volum",
         "Description[ca]": "Configura els dispositius d'àudio i el volum",
