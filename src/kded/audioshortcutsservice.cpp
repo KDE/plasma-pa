@@ -162,12 +162,12 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
 
 qint64 AudioShortcutsService::boundVolume(qint64 volume, int maxVolume)
 {
-    return qMax(PulseAudioQt::Context::MinimalVolume, qMin(volume, maxVolume));
+    return qMax(PulseAudioQt::minimumVolume(), qMin(volume, maxVolume));
 }
 
 int AudioShortcutsService::volumePercent(qint64 volume)
 {
-    return std::round((double)volume / PulseAudioQt::Context::NormalVolume * 100.0);
+    return std::round((double)volume / PulseAudioQt::normalVolume() * 100.0);
 }
 
 QString AudioShortcutsService::nameForDevice(const PulseAudioQt::Device *device)
@@ -197,8 +197,8 @@ int AudioShortcutsService::changeVolumePercent(PulseAudioQt::Device *device, int
     const qint64 oldVolume = device->volume();
     const int oldPercent = volumePercent(oldVolume);
     const int targetPercent = oldPercent + deltaPercent;
-    const int maxVolume = PulseAudioQt::Context::NormalVolume * (m_globalConfig->raiseMaximumVolume() ? 150 : 100) / 100.0;
-    const qint64 newVolume = boundVolume(std::round(PulseAudioQt::Context::NormalVolume * (targetPercent / 100.f)), maxVolume);
+    const int maxVolume = PulseAudioQt::normalVolume() * (m_globalConfig->raiseMaximumVolume() ? 150 : 100) / 100.0;
+    const qint64 newVolume = boundVolume(std::round(PulseAudioQt::normalVolume() * (targetPercent / 100.f)), maxVolume);
     const int newPercent = volumePercent(newVolume);
     device->setMuted(newPercent == 0);
     device->setVolume(newVolume);

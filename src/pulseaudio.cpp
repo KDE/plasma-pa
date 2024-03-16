@@ -8,6 +8,7 @@
 #include "pulseaudio.h"
 
 #include "card.h"
+#include "context_p.h"
 #include "debug.h"
 #include "module.h"
 #include "server.h"
@@ -23,8 +24,6 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
     : QAbstractListModel(parent)
     , m_map(map)
 {
-    Context::instance()->ref();
-
     connect(m_map, &MapBaseQObject::aboutToBeAdded, this, [this](int index) {
         beginInsertRows(QModelIndex(), index, index);
     });
@@ -45,9 +44,6 @@ AbstractModel::AbstractModel(const MapBaseQObject *map, QObject *parent)
 
 AbstractModel::~AbstractModel()
 {
-    // deref context after we've deleted this object
-    // see https://bugs.kde.org/show_bug.cgi?id=371215
-    Context::instance()->unref();
 }
 
 QHash<int, QByteArray> AbstractModel::roleNames() const
@@ -202,7 +198,7 @@ QMetaMethod AbstractModel::propertyChangedMetaMethod() const
 }
 
 SinkModel::SinkModel(QObject *parent)
-    : AbstractModel(&context()->sinks(), parent)
+    : AbstractModel(&context()->d->m_sinks, parent)
     , m_preferredSink(nullptr)
 {
     initRoleNames(Sink::staticMetaObject);
@@ -211,8 +207,8 @@ SinkModel::SinkModel(QObject *parent)
         sinkAdded(i);
     }
 
-    connect(&context()->sinks(), &MapBaseQObject::added, this, &SinkModel::sinkAdded);
-    connect(&context()->sinks(), &MapBaseQObject::removed, this, &SinkModel::sinkRemoved);
+    connect(&context()->d->m_sinks, &MapBaseQObject::added, this, &SinkModel::sinkAdded);
+    connect(&context()->d->m_sinks, &MapBaseQObject::removed, this, &SinkModel::sinkRemoved);
 
     connect(context()->server(), &Server::defaultSinkChanged, this, [this]() {
         updatePreferredSink();
@@ -243,8 +239,8 @@ QVariant SinkModel::data(const QModelIndex &index, int role) const
 
 void SinkModel::sinkAdded(int index)
 {
-    Q_ASSERT(qobject_cast<Sink *>(context()->sinks().objectAt(index)));
-    Sink *sink = static_cast<Sink *>(context()->sinks().objectAt(index));
+    Q_ASSERT(qobject_cast<Sink *>(context()->d->m_sinks.objectAt(index)));
+    Sink *sink = static_cast<Sink *>(context()->d->m_sinks.objectAt(index));
     connect(sink, &Sink::stateChanged, this, &SinkModel::updatePreferredSink);
 
     updatePreferredSink();
@@ -270,7 +266,7 @@ void SinkModel::updatePreferredSink()
 
 Sink *SinkModel::findPreferredSink() const
 {
-    const auto &sinks = context()->sinks();
+    const auto &sinks = context()->d->m_sinks;
 
     // Only one sink is the preferred one
     if (sinks.count() == 1) {
@@ -279,7 +275,7 @@ Sink *SinkModel::findPreferredSink() const
 
     auto lookForState = [this](Device::State state) {
         Sink *ret = nullptr;
-        QMapIterator<quint32, Sink *> it(context()->sinks().data());
+        QMapIterator<quint32, Sink *> it(context()->d->m_sinks.data());
         while (it.hasNext()) {
             it.next();
             if ((it.value()->isVirtualDevice() && !it.value()->isDefault()) || it.value()->state() != state) {
@@ -314,7 +310,7 @@ Sink *SinkModel::findPreferredSink() const
 }
 
 SourceModel::SourceModel(QObject *parent)
-    : AbstractModel(&context()->sources(), parent)
+    : AbstractModel(&context()->d->m_sources, parent)
 {
     initRoleNames(Source::staticMetaObject);
 
@@ -338,31 +334,31 @@ QVariant SourceModel::data(const QModelIndex &index, int role) const
 }
 
 SinkInputModel::SinkInputModel(QObject *parent)
-    : AbstractModel(&context()->sinkInputs(), parent)
+    : AbstractModel(&context()->d->m_sinkInputs, parent)
 {
     initRoleNames(SinkInput::staticMetaObject);
 }
 
 SourceOutputModel::SourceOutputModel(QObject *parent)
-    : AbstractModel(&context()->sourceOutputs(), parent)
+    : AbstractModel(&context()->d->m_sourceOutputs, parent)
 {
     initRoleNames(SourceOutput::staticMetaObject);
 }
 
 CardModel::CardModel(QObject *parent)
-    : AbstractModel(&context()->cards(), parent)
+    : AbstractModel(&context()->d->m_cards, parent)
 {
     initRoleNames(Card::staticMetaObject);
 }
 
 StreamRestoreModel::StreamRestoreModel(QObject *parent)
-    : AbstractModel(&context()->streamRestores(), parent)
+    : AbstractModel(&context()->d->m_streamRestores, parent)
 {
     initRoleNames(StreamRestore::staticMetaObject);
 }
 
 ModuleModel::ModuleModel(QObject *parent)
-    : AbstractModel(&context()->modules(), parent)
+    : AbstractModel(&context()->d->m_modules, parent)
 {
     initRoleNames(Module::staticMetaObject);
 }

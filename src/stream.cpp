@@ -5,6 +5,7 @@
 */
 
 #include "stream.h"
+#include "context_p.h"
 
 namespace PulseAudioQt
 {
@@ -26,7 +27,7 @@ QString Stream::name() const
 
 Client *Stream::client() const
 {
-    return context()->clients().data().value(m_clientIndex, nullptr);
+    return Context::instance()->d->m_clients.data().value(m_clientIndex, nullptr);
 }
 
 bool Stream::isVirtualStream() const
