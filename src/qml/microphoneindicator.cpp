@@ -213,21 +213,21 @@ void MicrophoneIndicator::adjustVolume(int direction)
         return;
     }
 
-    const int step = qRound(5 * Context::NormalVolume / 100.0);
+    const int step = qRound(5 * normalVolume() / 100.0);
 
-    const auto newVolume = qBound(Context::MinimalVolume, //
+    const auto newVolume = qBound(minimumVolume(), //
                                   source->volume() + direction * step, //
-                                  Context::NormalVolume);
+                                  normalVolume());
 
     source->setVolume(newVolume);
-    source->setMuted(newVolume == Context::MinimalVolume);
+    source->setMuted(newVolume == minimumVolume());
 
     m_showOsdOnUpdate = true;
 }
 
 int MicrophoneIndicator::volumePercent(Source *source)
 {
-    return source->isMuted() ? 0 : qRound(source->volume() / static_cast<qreal>(Context::NormalVolume) * 100);
+    return source->isMuted() ? 0 : qRound(source->volume() / static_cast<qreal>(normalVolume()) * 100);
 }
 
 void MicrophoneIndicator::showOsd()

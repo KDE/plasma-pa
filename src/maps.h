@@ -44,9 +44,9 @@ public:
 
 Q_SIGNALS:
     void aboutToBeAdded(int index);
-    void added(int index);
+    void added(int index, QObject *object);
     void aboutToBeRemoved(int index);
-    void removed(int index);
+    void removed(int index, QObject *object);
 };
 
 /**
@@ -113,7 +113,7 @@ public:
         Q_EMIT aboutToBeAdded(modelIndex);
         m_data.insert(object->index(), object);
         Q_ASSERT(modelIndex == m_data.keys().indexOf(object->index()));
-        Q_EMIT added(modelIndex);
+        Q_EMIT added(modelIndex, object);
     }
 
     // Context is passed in as parent because context needs to include the maps
@@ -146,8 +146,9 @@ public:
         } else {
             const int modelIndex = m_data.keys().indexOf(index);
             Q_EMIT aboutToBeRemoved(modelIndex);
-            delete m_data.take(index);
-            Q_EMIT removed(modelIndex);
+            auto object = m_data.take(index);
+            Q_EMIT removed(modelIndex, object);
+            object->deleteLater();
         }
     }
 

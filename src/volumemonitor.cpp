@@ -9,6 +9,7 @@
 #include <pulse/pulseaudio.h>
 
 #include "context.h"
+#include "context_p.h"
 #include "debug.h"
 #include "sink.h"
 #include "sinkinput.h"
@@ -23,13 +24,11 @@ using namespace PulseAudioQt;
 VolumeMonitor::VolumeMonitor(QObject *parent)
     : QObject(parent)
 {
-    Context::instance()->ref();
 }
 
 VolumeMonitor::~VolumeMonitor()
 {
     setTarget(nullptr);
-    Context::instance()->unref();
 }
 
 bool VolumeMonitor::isAvailable() const
@@ -98,7 +97,7 @@ void VolumeMonitor::createStream()
     uint32_t streamIdx = PA_INVALID_INDEX;
 
     if (auto *sinkInput = qobject_cast<SinkInput *>(m_target)) {
-        Sink *sink = Context::instance()->sinks().data().value(sinkInput->deviceIndex());
+        Sink *sink = Context::instance()->d->m_sinks.data().value(sinkInput->deviceIndex());
         if (sink) {
             sourceIdx = sink->monitorIndex();
         }

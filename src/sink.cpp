@@ -10,6 +10,8 @@
 #include "server.h"
 #include "sinkinput.h"
 
+#include "context_p.h"
+
 namespace PulseAudioQt
 {
 Sink::Sink(QObject *parent)
@@ -31,12 +33,12 @@ void Sink::update(const pa_sink_info *info)
 
 void Sink::setVolume(qint64 volume)
 {
-    context()->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_sink_volume_by_index);
+    context()->d->setGenericVolume(index(), -1, volume, cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Sink::setMuted(bool muted)
 {
-    context()->setGenericMute(m_index, muted, &pa_context_set_sink_mute_by_index);
+    context()->d->setGenericMute(m_index, muted, &pa_context_set_sink_mute_by_index);
 }
 
 void Sink::setActivePortIndex(quint32 port_index)
@@ -46,17 +48,17 @@ void Sink::setActivePortIndex(quint32 port_index)
         qCWarning(PLASMAPA) << "invalid port set request" << port_index;
         return;
     }
-    context()->setGenericPort(index(), port->name(), &pa_context_set_sink_port_by_index);
+    context()->d->setGenericPort(index(), port->name(), &pa_context_set_sink_port_by_index);
 }
 
 void Sink::setChannelVolume(int channel, qint64 volume)
 {
-    context()->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_volume_by_index);
+    context()->d->setGenericVolume(index(), channel, volume, cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 void Sink::setChannelVolumes(const QList<qint64> &channelVolumes)
 {
-    context()->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_volume_by_index);
+    context()->d->setGenericVolumes(index(), channelVolumes, cvolume(), &pa_context_set_sink_volume_by_index);
 }
 
 bool Sink::isDefault() const
@@ -73,7 +75,7 @@ void Sink::setDefault(bool enable)
 
 void Sink::switchStreams()
 {
-    const auto data = context()->sinkInputs().data();
+    const auto data = context()->sinkInputs();
     std::for_each(data.begin(), data.end(), [this](SinkInput *paObj) {
         paObj->setDeviceIndex(m_index);
     });
