@@ -15,6 +15,7 @@
 #include <KPluginFactory>
 
 #include "device.h"
+#include "preferreddevice.h"
 #include "server.h"
 #include "sink.h"
 #include "source.h"
@@ -34,15 +35,17 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     , m_globalConfig(new GlobalConfig(this))
 {
     connect(PulseAudioQt::Context::instance()->server(), &PulseAudioQt::Server::defaultSinkChanged, this, &AudioShortcutsService::handleDefaultSinkChange);
-    connect(m_sinkModel, &PulseAudioQt::SinkModel::preferredSinkChanged, this, [this]() {
-        if (!m_sinkModel->preferredSink()) {
+    connect(&m_preferredDevice, &PreferredDevice::sinkChanged, this, [this]() {
+        auto sink = m_preferredDevice.sink();
+        if (!sink) {
             return;
         }
-        connect(m_sinkModel->preferredSink(), &PulseAudioQt::Sink::volumeChanged, this, [this]() {
-            if (!m_sinkModel->preferredSink()) {
+        connect(sink, &PulseAudioQt::Sink::volumeChanged, this, [this]() {
+            auto sink = m_preferredDevice.sink();
+            if (!sink) {
                 return;
             }
-            showVolume(volumePercent(m_sinkModel->preferredSink()->volume()));
+            showVolume(volumePercent(sink->volume()));
         });
     });
     connect(m_sinkModel, &PulseAudioQt::SinkModel::rowsInserted, this, &AudioShortcutsService::handleNewSink);
@@ -55,10 +58,11 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     volumeUpAction->setText(i18n("Increase Volume"));
     volumeUpAction->setShortcut(Qt::Key_VolumeUp);
     connect(volumeUpAction, &QAction::triggered, this, [this]() {
-        if (!m_sinkModel->preferredSink()) {
+        auto sink = m_preferredDevice.sink();
+        if (!sink) {
             return;
         }
-        int percent = changeVolumePercent(m_sinkModel->preferredSink(), m_globalConfig->volumeStep());
+        int percent = changeVolumePercent(sink, m_globalConfig->volumeStep());
         showVolume(percent);
         playFeedback(-1);
     });
@@ -69,10 +73,11 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     volumeDownAction->setText(i18n("Decrease Volume"));
     volumeDownAction->setShortcut(Qt::Key_VolumeDown);
     connect(volumeDownAction, &QAction::triggered, this, [this]() {
-        if (!m_sinkModel->preferredSink()) {
+        auto sink = m_preferredDevice.sink();
+        if (!sink) {
             return;
         }
-        int percent = changeVolumePercent(m_sinkModel->preferredSink(), -m_globalConfig->volumeStep());
+        int percent = changeVolumePercent(sink, -m_globalConfig->volumeStep());
         showVolume(percent);
         playFeedback(-1);
     });
@@ -83,10 +88,11 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     volumeUpSmallAction->setText(i18n("Increase Volume by 1%"));
     volumeUpSmallAction->setShortcut(Qt::ShiftModifier | Qt::Key_VolumeUp);
     connect(volumeUpSmallAction, &QAction::triggered, this, [this]() {
-        if (!m_sinkModel->preferredSink()) {
+        auto sink = m_preferredDevice.sink();
+        if (!sink) {
             return;
         }
-        int percent = changeVolumePercent(m_sinkModel->preferredSink(), 1);
+        int percent = changeVolumePercent(sink, 1);
         showVolume(percent);
         playFeedback(-1);
     });
@@ -97,10 +103,11 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     volumeDownSmallAction->setText(i18n("Decrease Volume by 1%"));
     volumeDownSmallAction->setShortcut(Qt::ShiftModifier | Qt::Key_VolumeDown);
     connect(volumeDownSmallAction, &QAction::triggered, this, [this]() {
-        if (!m_sinkModel->preferredSink()) {
+        auto sink = m_preferredDevice.sink();
+        if (!sink) {
             return;
         }
-        int percent = changeVolumePercent(m_sinkModel->preferredSink(), -1);
+        int percent = changeVolumePercent(sink, -1);
         showVolume(percent);
         playFeedback(-1);
     });
@@ -269,18 +276,19 @@ void AudioShortcutsService::handleNewSink()
 
 void AudioShortcutsService::muteVolume()
 {
-    if (!m_sinkModel->preferredSink() || m_sinkModel->preferredSink()->name() == DUMMY_OUTPUT_NAME) {
+    auto sink = m_preferredDevice.sink();
+    if (!sink || sink->name() == DUMMY_OUTPUT_NAME) {
         return;
     }
-    if (!m_sinkModel->preferredSink()->isMuted()) {
+    if (!sink->isMuted()) {
         enableGlobalMute();
         showMute(0);
     } else {
         if (m_globalConfig->globalMute()) {
             disableGlobalMute();
         }
-        m_sinkModel->preferredSink()->setMuted(false);
-        showMute(m_sinkModel->preferredSink()->volume());
+        sink->setMuted(false);
+        showMute(sink->volume());
         playFeedback(-1);
     }
 }
@@ -323,8 +331,9 @@ void AudioShortcutsService::disableGlobalMute()
     m_globalConfig->setGlobalMute(false);
     m_globalConfig->setGlobalMuteDevices({});
     m_globalConfig->save();
-    if (m_sinkModel->preferredSink()) {
-        showMute(volumePercent(m_sinkModel->preferredSink()->volume()));
+    auto sink = m_preferredDevice.sink();
+    if (sink) {
+        showMute(volumePercent(sink->volume()));
         playFeedback(-1);
     }
 }
@@ -334,8 +343,9 @@ void AudioShortcutsService::playFeedback(int sinkIdx)
     if (!m_globalConfig->audioFeedback()) {
         return;
     }
-    if (sinkIdx == -1 && m_sinkModel->preferredSink()) {
-        sinkIdx = m_sinkModel->preferredSink()->index();
+    auto sink = m_preferredDevice.sink();
+    if (sinkIdx == -1 && sink) {
+        sinkIdx = sink->index();
     }
     m_feedback->play(sinkIdx);
 }

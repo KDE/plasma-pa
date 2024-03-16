@@ -12,6 +12,7 @@
 #include "globalconfig.h"
 #include "models.h"
 #include "osdservice.h"
+#include "preferreddevice.h"
 #include "volumefeedback.h"
 
 namespace PulseAudioQt
@@ -53,4 +54,5 @@ private:
     OsdServiceInterface *m_osdDBusInterface;
     VolumeFeedback *m_feedback;
     bool m_initialDefaultSinkSet = false;
+    PreferredDevice m_preferredDevice;
 };
