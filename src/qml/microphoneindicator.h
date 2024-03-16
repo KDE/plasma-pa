@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "osdservice.h"
+
 #include <QList>
 #include <QObject>
 #include <QPersistentModelIndex>
@@ -17,8 +19,6 @@ class QAction;
 class QTimer;
 
 class KStatusNotifierItem;
-
-class VolumeOSD;
 
 namespace QPulseAudio
 {
@@ -66,7 +66,7 @@ private:
 
     QList<QPersistentModelIndex> m_mutedIndices;
 
-    VolumeOSD *m_osd = nullptr;
+    OsdServiceInterface *m_osdDBusInterface = nullptr;
     bool m_showOsdOnUpdate = false;
 
     int m_wheelDelta = 0;

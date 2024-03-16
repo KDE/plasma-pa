@@ -21,14 +21,17 @@
 #include "pulseaudio.h"
 #include "source.h"
 
-#include "volumeosd.h"
-
 using namespace QPulseAudio;
+using namespace Qt::Literals::StringLiterals;
+
+constexpr QLatin1String OSD_DBUS_SERVICE = "org.kde.plasmashell"_L1;
+constexpr QLatin1String OSD_DBUS_PATH = "/org/kde/osdService"_L1;
 
 MicrophoneIndicator::MicrophoneIndicator(QObject *parent)
     : QObject(parent)
     , m_sourceModel(new SourceModel(this))
     , m_sourceOutputModel(new SourceOutputModel(this))
+    , m_osdDBusInterface(new OsdServiceInterface(OSD_DBUS_SERVICE, OSD_DBUS_PATH, QDBusConnection::sessionBus(), this))
     , m_updateTimer(new QTimer(this))
 {
     connect(m_sourceModel, &QAbstractItemModel::rowsInserted, this, &MicrophoneIndicator::scheduleUpdate);
@@ -229,16 +232,12 @@ int MicrophoneIndicator::volumePercent(Source *source)
 
 void MicrophoneIndicator::showOsd()
 {
-    if (!m_osd) {
-        m_osd = new VolumeOSD(this);
-    }
-
     auto *preferredSource = m_sourceModel->defaultSource();
     if (!preferredSource) {
         return;
     }
 
-    m_osd->showMicrophone(volumePercent(preferredSource));
+    m_osdDBusInterface->microphoneVolumeChanged(volumePercent(preferredSource));
 }
 
 QList<QModelIndex> MicrophoneIndicator::recordingApplications() const

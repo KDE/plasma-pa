@@ -9,6 +9,7 @@
 
 #include <QQmlEngine>
 
+#include "audioicon.h"
 #include "client.h"
 #include "context.h"
 #include "modulemanager.h"
@@ -19,13 +20,12 @@
 #include "source.h"
 #include "volumemonitor.h"
 
-#include "globalactioncollection.h"
 #include "globalconfig.h"
+#include "globalservice.h"
 #include "listitemmenu.h"
 #include "microphoneindicator.h"
 #include "speakertest.h"
 #include "volumefeedback.h"
-#include "volumeosd.h"
 
 static QJSValue pulseaudio_singleton(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
@@ -55,10 +55,7 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterUncreatableType<QPulseAudio::PulseObject>(uri, 0, 1, "PulseObject", QString());
     qmlRegisterUncreatableType<QPulseAudio::Profile>(uri, 0, 1, "Profile", QString());
     qmlRegisterUncreatableType<QPulseAudio::Port>(uri, 0, 1, "Port", QString());
-    qmlRegisterType<GlobalAction>(uri, 0, 1, "GlobalAction");
-    qmlRegisterType<GlobalActionCollection>(uri, 0, 1, "GlobalActionCollection");
     qmlRegisterType<ListItemMenu>(uri, 0, 1, "ListItemMenu");
-    qmlRegisterType<VolumeOSD>(uri, 0, 1, "VolumeOSD");
     qmlRegisterType<VolumeFeedback>(uri, 0, 1, "VolumeFeedback");
     qmlRegisterType<SpeakerTest>(uri, 0, 1, "SpeakerTest");
     qmlRegisterType<GlobalConfig>(uri, 0, 1, "GlobalConfig");
@@ -67,6 +64,16 @@ void Plugin::registerTypes(const char *uri)
         Q_UNUSED(engine);
         Q_UNUSED(jsEngine);
         return new MicrophoneIndicator();
+    });
+    qmlRegisterSingletonType<AudioIcon>(uri, 0, 1, "AudioIcon", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
+        Q_UNUSED(engine);
+        Q_UNUSED(jsEngine);
+        return new AudioIcon();
+    });
+    qmlRegisterSingletonType<GlobalService>(uri, 0, 1, "GlobalService", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
+        Q_UNUSED(engine);
+        Q_UNUSED(jsEngine);
+        return new GlobalService();
     });
     qmlRegisterAnonymousType<QPulseAudio::Client>(uri, 1);
     qmlRegisterAnonymousType<QPulseAudio::Sink>(uri, 1);

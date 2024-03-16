@@ -14,8 +14,6 @@ import org.kde.plasma.components as PC3
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.private.volume
 
-import "../code/icon.js" as Icon
-
 PC3.ItemDelegate {
     id: item
 
@@ -199,7 +197,7 @@ PC3.ItemDelegate {
                 SmallToolButton {
                     id: muteButton
                     readonly property bool isPlayback: item.type.startsWith("sink")
-                    icon.name: Icon.name(item.model.Volume, item.model.Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
+                    icon.name: AudioIcon.forVolume(volumePercent(item.model.Volume), item.model.Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                     onClicked: item.model.Muted = !item.model.Muted
                     checked: item.model.Muted
 
@@ -294,9 +292,9 @@ PC3.ItemDelegate {
                     // Keep this in sync with the copies in VolumeSlider.qml
                     // and plasma-workspace:OSDItem.qml
                     color: {
-                        if (displayValue <= Icon.highUpperBound) {
+                        if (displayValue <= AudioIcon.HIGH_UPPER_BOUND) {
                             return Kirigami.Theme.textColor
-                        } else if (displayValue > Icon.highUpperBound && displayValue <= Icon.veryHighUpperBound) {
+                        } else if (displayValue > AudioIcon.HIGH_UPPER_BOUND && displayValue <= AudioIcon.VERY_HIGH_UPPER_BOUND) {
                             return Kirigami.Theme.neutralTextColor
                         } else {
                             return Kirigami.Theme.negativeTextColor

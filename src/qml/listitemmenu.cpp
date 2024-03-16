@@ -7,6 +7,7 @@
 #include "listitemmenu.h"
 
 #include <QAbstractItemModel>
+#include <QAction>
 #include <QActionGroup>
 #include <QMenu>
 #include <QQuickItem>

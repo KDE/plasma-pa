@@ -20,8 +20,6 @@ import org.kde.config as KConfig
 
 import org.kde.plasma.private.volume
 
-import "../code/icon.js" as Icon
-
 PlasmoidItem {
     id: main
 
@@ -31,18 +29,8 @@ PlasmoidItem {
 
     property bool volumeFeedback: config.audioFeedback
     property bool globalMute: config.globalMute
-    property int currentMaxVolumePercent: config.raiseMaximumVolume ? 150 : 100
-    property int currentMaxVolumeValue: currentMaxVolumePercent * PulseAudio.NormalVolume / 100.00
-    property int volumePercentStep: config.volumeStep
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
-
-    Connections {
-        target: paSinkModel.preferredSink
-        function onVolumeChanged() {
-            osd.showVolume(volumePercent(paSinkModel.preferredSink.volume))
-        }
-    }
 
     property bool showVirtualDevices: Plasmoid.configuration.showVirtualDevices
 
@@ -53,8 +41,8 @@ PlasmoidItem {
     switchHeight: Layout.minimumHeight
     switchWidth: Layout.minimumWidth
 
-    Plasmoid.icon: paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink) ? Icon.name(paSinkModel.preferredSink.volume, paSinkModel.preferredSink.muted)
-                                                                                          : Icon.name(0, true)
+    Plasmoid.icon: paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink) ? AudioIcon.forVolume(volumePercent(paSinkModel.preferredSink.volume), paSinkModel.preferredSink.muted, "")
+                                                                                          : AudioIcon.forVolume(0, true, "")
     toolTipMainText: {
         var sink = paSinkModel.preferredSink;
         if (!sink || isDummyOutput(sink)) {
@@ -105,92 +93,8 @@ PlasmoidItem {
         return output && output.name === dummyOutputName;
     }
 
-    function boundVolume(volume) {
-        return Math.max(PulseAudio.MinimalVolume, Math.min(volume, currentMaxVolumeValue));
-    }
-
     function volumePercent(volume) {
         return Math.round(volume / PulseAudio.NormalVolume * 100.0);
-    }
-
-    // Increment a VolumeObject (Sink or Source) by %volume.
-    function changeVolumeByPercent(volumeObject, deltaPercent) {
-        const oldVolume = volumeObject.volume;
-        const oldPercent = volumePercent(oldVolume);
-        const targetPercent = oldPercent + deltaPercent;
-        const newVolume = boundVolume(Math.round(PulseAudio.NormalVolume * (targetPercent/100)));
-        const newPercent = volumePercent(newVolume);
-        volumeObject.muted = newPercent == 0;
-        volumeObject.volume = newVolume;
-        return newPercent;
-    }
-
-    // Increment the preferredSink by %volume.
-    function changeSpeakerVolume(deltaPercent) {
-        if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
-            return;
-        }
-        const newPercent = changeVolumeByPercent(paSinkModel.preferredSink, deltaPercent);
-        osd.showVolume(newPercent);
-        playFeedback();
-    }
-
-    function increaseVolume(modifiers) {
-        if (globalMute) {
-            disableGlobalMute();
-        }
-        changeSpeakerVolume((modifiers & Qt.ShiftModifier) ? 1 : volumePercentStep);
-    }
-
-    function decreaseVolume(modifiers) {
-        if (globalMute) {
-            disableGlobalMute();
-        }
-        changeSpeakerVolume((modifiers & Qt.ShiftModifier) ? -1 : -volumePercentStep);
-    }
-
-    function muteVolume() {
-        if (!paSinkModel.preferredSink || isDummyOutput(paSinkModel.preferredSink)) {
-            return;
-        }
-        var toMute = !paSinkModel.preferredSink.muted;
-        if (toMute) {
-            enableGlobalMute();
-            osd.showMute(0);
-        } else {
-            if (globalMute) {
-                disableGlobalMute();
-            }
-            paSinkModel.preferredSink.muted = toMute;
-            osd.showMute(volumePercent(paSinkModel.preferredSink.volume));
-            playFeedback();
-        }
-    }
-
-    // Increment the defaultSource by %volume.
-    function changeMicrophoneVolume(deltaPercent) {
-        if (!paSourceModel.defaultSource) {
-            return;
-        }
-        const newPercent = changeVolumeByPercent(paSourceModel.defaultSource, deltaPercent);
-        osd.showMic(newPercent);
-    }
-
-    function increaseMicrophoneVolume() {
-        changeMicrophoneVolume(volumePercentStep);
-    }
-
-    function decreaseMicrophoneVolume() {
-        changeMicrophoneVolume(-volumePercentStep);
-    }
-
-    function muteMicrophone() {
-        if (!paSourceModel.defaultSource) {
-            return;
-        }
-        var toMute = !paSourceModel.defaultSource.muted;
-        paSourceModel.defaultSource.muted = toMute;
-        osd.showMicMute(toMute? 0 : volumePercent(paSourceModel.defaultSource.volume));
     }
 
     function playFeedback(sinkIndex) {
@@ -203,103 +107,8 @@ PlasmoidItem {
         feedback.play(sinkIndex);
     }
 
-
-    function enableGlobalMute() {
-        var role = paSinkModel.KItemModels.KRoleNames.role("Muted");
-        var rowCount = paSinkModel.rowCount();
-        // List for devices that are already muted. Will use to keep muted after disable GlobalMute.
-        var globalMuteDevices = [];
-
-        for (var i = 0; i < rowCount; i++) {
-            var idx = paSinkModel.index(i, 0);
-            var name = paSinkModel.data(idx, paSinkModel.KItemModels.KRoleNames.role("Name"));
-            if (paSinkModel.data(idx, role) === false) {
-                paSinkModel.setData(idx, true, role);
-            } else {
-                globalMuteDevices.push(name + "." + paSinkModel.data(idx, paSinkModel.KItemModels.KRoleNames.role("ActivePortIndex")));
-            }
-        }
-        // If all the devices were muted, will unmute them all with disable GlobalMute.
-        config.globalMuteDevices = globalMuteDevices.length < rowCount ? globalMuteDevices : [];
-        config.globalMute = true;
-        config.save();
-    }
-
-    function disableGlobalMute() {
-        var role = paSinkModel.KItemModels.KRoleNames.role("Muted");
-        for (var i = 0; i < paSinkModel.rowCount(); i++) {
-            var idx = paSinkModel.index(i, 0);
-            var name = paSinkModel.data(idx, paSinkModel.KItemModels.KRoleNames.role("Name")) + "." + paSinkModel.data(idx, paSinkModel.KItemModels.KRoleNames.role("ActivePortIndex"));
-            if (config.globalMuteDevices.indexOf(name) === -1) {
-                paSinkModel.setData(idx, false, role);
-            }
-        }
-        config.globalMuteDevices = [];
-        config.globalMute = false;
-        config.save();
-    }
-
     // Output devices
-    readonly property SinkModel paSinkModel: SinkModel {
-        id: paSinkModel
-
-        property bool initalDefaultSinkIsSet: false
-
-        onDefaultSinkChanged: {
-            if (!defaultSink || !config.defaultOutputDeviceOsd) {
-                return;
-            }
-
-            // avoid showing a OSD on startup
-            if (!initalDefaultSinkIsSet) {
-                initalDefaultSinkIsSet = true;
-                return;
-            }
-
-            var description = nodeName(defaultSink);
-            if (isDummyOutput(defaultSink)) {
-                description = i18n("No output device");
-            } else {
-                const cardModelIdx = paCardModel.indexOfCardNumber(defaultSink.cardIndex);
-                if (cardModelIdx.valid) {
-                    const cardProperties = paCardModel.data(cardModelIdx, paCardModel.KItemModels.KRoleNames.role("Properties"));
-                    const cardBluetoothBattery = cardProperties["bluetooth.battery"];
-                    // This property is returned as a string with percent sign,
-                    // parse it into an int in case they change it to a number later.
-                    const batteryInt = parseInt(cardBluetoothBattery, 10);
-
-                    if (!isNaN(batteryInt)) {
-                        description = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, batteryInt);
-                    }
-                }
-            }
-
-            var icon = Icon.formFactorIcon(defaultSink.formFactor);
-            if (!icon) {
-                // Show "muted" icon for Dummy output
-                if (isDummyOutput(defaultSink)) {
-                    icon = "audio-volume-muted";
-                }
-            }
-
-            if (!icon) {
-                icon = Icon.name(defaultSink.volume, defaultSink.muted);
-            }
-            osd.showText(icon, description);
-        }
-
-        onRowsInserted: {
-            if (globalMute) {
-                var role = paSinkModel.KItemModels.KRoleNames.role("Muted");
-                for (var i = 0; i < paSinkModel.rowCount(); i++) {
-                    var idx = paSinkModel.index(i, 0);
-                    if (paSinkModel.data(idx, role) === false) {
-                        paSinkModel.setData(idx, true, role);
-                    }
-                }
-            }
-        }
-    }
+    readonly property SinkModel paSinkModel: SinkModel { id: paSinkModel }
 
     // Input devices
     readonly property SourceModel paSourceModel: SourceModel { id: paSourceModel }
@@ -373,7 +182,7 @@ PlasmoidItem {
             if (mouse.button == Qt.LeftButton) {
                 wasExpanded = main.expanded;
             } else if (mouse.button == Qt.MiddleButton) {
-                muteVolume();
+                GlobalService.globalMute();
             }
         }
         onClicked: mouse => {
@@ -388,111 +197,25 @@ PlasmoidItem {
             // See: https://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
             while (wheelDelta >= 120) {
                 wheelDelta -= 120;
-                increaseVolume(wheel.modifiers);
+                if (wheel.modifiers & Qt.ShiftModifier) {
+                    GlobalService.volumeUpSmall();
+                } else {
+                    GlobalService.volumeUp();
+                }
             }
             while (wheelDelta <= -120) {
                 wheelDelta += 120;
-                decreaseVolume(wheel.modifiers);
+                if (wheel.modifiers & Qt.ShiftModifier) {
+                    GlobalService.volumeDownSmall();
+                } else {
+                    GlobalService.volumeDown();
+                }
             }
         }
         Kirigami.Icon {
             anchors.fill: parent
             source: plasmoid.icon
             active: parent.containsMouse
-        }
-    }
-
-    GlobalActionCollection {
-        // KGlobalAccel cannot transition from kmix to something else, so if
-        // the user had a custom shortcut set for kmix those would get lost.
-        // To avoid this we hijack kmix name and actions. Entirely mental but
-        // best we can do to not cause annoyance for the user.
-        // The display name actually is updated to whatever registered last
-        // though, so as far as user visible strings go we should be fine.
-        // As of 2015-07-21:
-        //   componentName: kmix
-        //   actions: increase_volume, decrease_volume, mute
-        name: "kmix"
-        displayName: main.displayName
-        GlobalAction {
-            objectName: "increase_volume"
-            text: i18n("Increase Volume")
-            shortcut: Qt.Key_VolumeUp
-            onTriggered: increaseVolume(Qt.NoModifier)
-        }
-        GlobalAction {
-            objectName: "increase_volume_small"
-            text: i18nc("@action shortcut", "Increase Volume by 1%")
-            shortcut: Qt.ShiftModifier | Qt.Key_VolumeUp
-            onTriggered: increaseVolume(Qt.ShiftModifier)
-        }
-        GlobalAction {
-            objectName: "decrease_volume"
-            text: i18n("Decrease Volume")
-            shortcut: Qt.Key_VolumeDown
-            onTriggered: decreaseVolume(Qt.NoModifier)
-        }
-        GlobalAction {
-            objectName: "decrease_volume_small"
-            text: i18nc("@action shortcut", "Decrease Volume by 1%")
-            shortcut: Qt.ShiftModifier | Qt.Key_VolumeDown
-            onTriggered: decreaseVolume(Qt.ShiftModifier)
-        }
-        GlobalAction {
-            objectName: "mute"
-            text: i18n("Mute")
-            shortcut: Qt.Key_VolumeMute
-            onTriggered: muteVolume()
-        }
-        GlobalAction {
-            objectName: "increase_microphone_volume"
-            text: i18n("Increase Microphone Volume")
-            shortcut: Qt.Key_MicVolumeUp
-            onTriggered: increaseMicrophoneVolume()
-        }
-        GlobalAction {
-            objectName: "decrease_microphone_volume"
-            text: i18n("Decrease Microphone Volume")
-            shortcut: Qt.Key_MicVolumeDown
-            onTriggered: decreaseMicrophoneVolume()
-        }
-        GlobalAction {
-            objectName: "mic_mute"
-            text: i18n("Mute Microphone")
-            shortcuts: [Qt.Key_MicMute, Qt.MetaModifier | Qt.Key_VolumeMute]
-            onTriggered: muteMicrophone()
-        }
-    }
-
-    VolumeOSD {
-        id: osd
-
-        function showVolume(text) {
-            if (!config.volumeOsd) {
-                return
-            }
-            show(text, currentMaxVolumePercent)
-        }
-
-        function showMute(text) {
-            if (!config.muteOsd) {
-                return
-            }
-            show(text, currentMaxVolumePercent)
-        }
-
-        function showMic(text) {
-            if (!config.microphoneSensitivityOsd) {
-                return
-            }
-            showMicrophone(text)
-        }
-
-        function showMicMute(text) {
-            if (!config.muteOsd) {
-                return
-            }
-            showMicrophone(text)
         }
     }
 
@@ -587,11 +310,7 @@ PlasmoidItem {
 
                     icon.name: "audio-volume-muted"
                     onClicked: {
-                        if (!globalMute) {
-                            enableGlobalMute();
-                        } else {
-                            disableGlobalMute();
-                        }
+                        GlobalService.globalMute()
                     }
                     checked: globalMute
 
@@ -821,11 +540,7 @@ PlasmoidItem {
             checkable: true
             checked: globalMute
             onTriggered: {
-                if (!globalMute) {
-                    enableGlobalMute();
-                } else {
-                    disableGlobalMute();
-                }
+                GlobalService.globalMute();
             }
         },
         PlasmaCore.Action {
