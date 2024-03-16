@@ -15,6 +15,8 @@
 #include <QPersistentModelIndex>
 #include <QPointer>
 
+#include "preferreddevice.h"
+
 class QAction;
 class QTimer;
 
@@ -57,6 +59,7 @@ private:
     QString toolTipForApps(const QList<QModelIndex> &apps) const;
     QString sourceOutputDisplayName(const QModelIndex &idx) const;
 
+    PreferredDevice m_preferredDevice;
     PulseAudioQt::SourceModel *const m_sourceModel = nullptr; // microphone devices
     PulseAudioQt::SourceOutputModel *const m_sourceOutputModel = nullptr; // recording streams
 

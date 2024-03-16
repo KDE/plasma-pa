@@ -117,7 +117,7 @@ void MicrophoneIndicator::update()
     if (allMuted) {
         iconName = QStringLiteral("microphone-sensitivity-muted");
     } else {
-        if (Source *defaultSource = PulseAudioQt::Context::instance()->server()->defaultSource()) {
+        if (Source *defaultSource = m_preferredDevice.source()) {
             const int percent = volumePercent(defaultSource);
             iconName = QStringLiteral("microphone-sensitivity");
             // it deliberately never shows the "muted" icon unless *all* microphones are muted
@@ -209,7 +209,7 @@ void MicrophoneIndicator::toggleMuted()
 
 void MicrophoneIndicator::adjustVolume(int direction)
 {
-    Source *source = PulseAudioQt::Context::instance()->server()->defaultSource();
+    Source *source = m_preferredDevice.source();
     if (!source) {
         return;
     }
@@ -233,7 +233,7 @@ int MicrophoneIndicator::volumePercent(Source *source)
 
 void MicrophoneIndicator::showOsd()
 {
-    auto *preferredSource = PulseAudioQt::Context::instance()->server()->defaultSource();
+    auto *preferredSource = m_preferredDevice.source();
     if (!preferredSource) {
         return;
     }
