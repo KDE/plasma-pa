@@ -6,7 +6,7 @@
 
 #include "canberracontext.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 CanberraContext *CanberraContext::s_context = nullptr;
 

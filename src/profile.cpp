@@ -6,7 +6,7 @@
 
 #include "profile.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 Profile::Profile(QObject *parent)
     : QObject(parent)
@@ -39,4 +39,4 @@ Profile::Availability Profile::availability() const
     return m_availability;
 }
 
-} // QPulseAudio
+} // PulseAudioQt

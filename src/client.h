@@ -13,7 +13,7 @@
 
 #include "pulseobject.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Client : public PulseObject
 {
@@ -34,6 +34,6 @@ private:
     QString m_name;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // CLIENT_H

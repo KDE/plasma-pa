@@ -6,7 +6,7 @@
 
 #include "operation.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 PAOperation::PAOperation(pa_operation *operation)
     : m_operation(operation)
@@ -41,4 +41,4 @@ PAOperation::operator bool()
     return m_operation;
 }
 
-} // QPulseAudio
+} // PulseAudioQt

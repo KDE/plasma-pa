@@ -14,7 +14,7 @@
 #include "sink.h"
 #include "source.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Context;
 
@@ -74,8 +74,8 @@ public:
 class SinkModel : public AbstractModel
 {
     Q_OBJECT
-    Q_PROPERTY(QPulseAudio::Sink *defaultSink READ defaultSink NOTIFY defaultSinkChanged)
-    Q_PROPERTY(QPulseAudio::Sink *preferredSink READ preferredSink NOTIFY preferredSinkChanged)
+    Q_PROPERTY(PulseAudioQt::Sink *defaultSink READ defaultSink NOTIFY defaultSinkChanged)
+    Q_PROPERTY(PulseAudioQt::Sink *preferredSink READ preferredSink NOTIFY preferredSinkChanged)
 public:
     enum ItemRole {
         SortByDefaultRole = PulseObjectRole + 1,
@@ -110,7 +110,7 @@ public:
 class SourceModel : public AbstractModel
 {
     Q_OBJECT
-    Q_PROPERTY(QPulseAudio::Source *defaultSource READ defaultSource NOTIFY defaultSourceChanged)
+    Q_PROPERTY(PulseAudioQt::Source *defaultSource READ defaultSource NOTIFY defaultSourceChanged)
 public:
     enum ItemRole {
         SortByDefaultRole = PulseObjectRole + 1,
@@ -146,6 +146,6 @@ public:
     explicit ModuleModel(QObject *parent = nullptr);
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // PULSEAUDIO_H

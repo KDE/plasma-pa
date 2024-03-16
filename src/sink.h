@@ -10,7 +10,7 @@
 #include "device.h"
 #include <pulse/channelmap.h>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Sink : public Device
 {
@@ -40,6 +40,6 @@ private:
     quint32 m_monitorIndex = -1;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // SINK_H

@@ -8,7 +8,7 @@
 #include "context.h"
 #include "debug.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 StreamRestore::StreamRestore(quint32 index, const QVariantMap &properties, QObject *parent)
     : PulseObject(parent)
@@ -210,4 +210,4 @@ void StreamRestore::writeChanges(const pa_cvolume &volume, bool muted, const QSt
     context()->streamRestoreWrite(&info);
 }
 
-} // QPulseAudio
+} // PulseAudioQt

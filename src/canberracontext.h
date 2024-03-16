@@ -8,7 +8,7 @@
 #include <QObject>
 #include <canberra.h>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class CanberraContext : public QObject
 {

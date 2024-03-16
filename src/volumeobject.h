@@ -11,7 +11,7 @@
 
 #include "pulseobject.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class VolumeObject : public PulseObject
 {
@@ -97,6 +97,6 @@ protected:
     QStringList m_rawChannels;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // VOLUMEOBJECT_H

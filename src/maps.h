@@ -16,7 +16,7 @@
 
 #include <iterator>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 // Used for typedefs.
 class Card;
@@ -165,6 +165,6 @@ using CardMap = MapBase<Card, pa_card_info>;
 using ModuleMap = MapBase<Module, pa_module_info>;
 using StreamRestoreMap = MapBase<StreamRestore, pa_ext_stream_restore_info>;
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // MAPS_H

@@ -10,7 +10,7 @@
 #include <QObject>
 #include <QString>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Profile : public QObject
 {
@@ -91,6 +91,6 @@ private:
     Availability m_availability;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // PROFILE_H

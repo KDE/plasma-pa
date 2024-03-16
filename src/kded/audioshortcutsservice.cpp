@@ -21,26 +21,26 @@ constexpr QLatin1String OSD_DBUS_PATH = "/org/kde/osdService"_L1;
 
 AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVariant> &)
     : KDEDModule(parent)
-    , m_sinkModel(new QPulseAudio::SinkModel(this))
-    , m_sourceModel(new QPulseAudio::SourceModel(this))
-    , m_cardModel(new QPulseAudio::CardModel(this))
+    , m_sinkModel(new PulseAudioQt::SinkModel(this))
+    , m_sourceModel(new PulseAudioQt::SourceModel(this))
+    , m_cardModel(new PulseAudioQt::CardModel(this))
     , m_osdDBusInterface(new OsdServiceInterface(OSD_DBUS_SERVICE, OSD_DBUS_PATH, QDBusConnection::sessionBus(), this))
     , m_feedback(new VolumeFeedback(this))
     , m_globalConfig(new GlobalConfig(this))
 {
-    connect(m_sinkModel, &QPulseAudio::SinkModel::defaultSinkChanged, this, &AudioShortcutsService::handleDefaultSinkChange);
-    connect(m_sinkModel, &QPulseAudio::SinkModel::preferredSinkChanged, this, [this]() {
+    connect(m_sinkModel, &PulseAudioQt::SinkModel::defaultSinkChanged, this, &AudioShortcutsService::handleDefaultSinkChange);
+    connect(m_sinkModel, &PulseAudioQt::SinkModel::preferredSinkChanged, this, [this]() {
         if (!m_sinkModel->preferredSink()) {
             return;
         }
-        connect(m_sinkModel->preferredSink(), &QPulseAudio::Sink::volumeChanged, this, [this]() {
+        connect(m_sinkModel->preferredSink(), &PulseAudioQt::Sink::volumeChanged, this, [this]() {
             if (!m_sinkModel->preferredSink()) {
                 return;
             }
             showVolume(volumePercent(m_sinkModel->preferredSink()->volume()));
         });
     });
-    connect(m_sinkModel, &QPulseAudio::SinkModel::rowsInserted, this, &AudioShortcutsService::handleNewSink);
+    connect(m_sinkModel, &PulseAudioQt::SinkModel::rowsInserted, this, &AudioShortcutsService::handleNewSink);
 
     QList<QAction *> actions;
 
@@ -162,15 +162,15 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
 
 qint64 AudioShortcutsService::boundVolume(qint64 volume, int maxVolume)
 {
-    return qMax(QPulseAudio::Context::MinimalVolume, qMin(volume, maxVolume));
+    return qMax(PulseAudioQt::Context::MinimalVolume, qMin(volume, maxVolume));
 }
 
 int AudioShortcutsService::volumePercent(qint64 volume)
 {
-    return std::round((double)volume / QPulseAudio::Context::NormalVolume * 100.0);
+    return std::round((double)volume / PulseAudioQt::Context::NormalVolume * 100.0);
 }
 
-QString AudioShortcutsService::nameForDevice(const QPulseAudio::Device *device)
+QString AudioShortcutsService::nameForDevice(const PulseAudioQt::Device *device)
 {
     if (!device) {
         return i18n("No such device");
@@ -192,13 +192,13 @@ QString AudioShortcutsService::nameForDevice(const QPulseAudio::Device *device)
     return i18n("Device name not found");
 }
 
-int AudioShortcutsService::changeVolumePercent(QPulseAudio::Device *device, int deltaPercent)
+int AudioShortcutsService::changeVolumePercent(PulseAudioQt::Device *device, int deltaPercent)
 {
     const qint64 oldVolume = device->volume();
     const int oldPercent = volumePercent(oldVolume);
     const int targetPercent = oldPercent + deltaPercent;
-    const int maxVolume = QPulseAudio::Context::NormalVolume * (m_globalConfig->raiseMaximumVolume() ? 150 : 100) / 100.0;
-    const qint64 newVolume = boundVolume(std::round(QPulseAudio::Context::NormalVolume * (targetPercent / 100.f)), maxVolume);
+    const int maxVolume = PulseAudioQt::Context::NormalVolume * (m_globalConfig->raiseMaximumVolume() ? 150 : 100) / 100.0;
+    const qint64 newVolume = boundVolume(std::round(PulseAudioQt::Context::NormalVolume * (targetPercent / 100.f)), maxVolume);
     const int newPercent = volumePercent(newVolume);
     device->setMuted(newPercent == 0);
     device->setVolume(newVolume);
@@ -207,7 +207,7 @@ int AudioShortcutsService::changeVolumePercent(QPulseAudio::Device *device, int 
 
 void AudioShortcutsService::handleDefaultSinkChange()
 {
-    const QPulseAudio::Sink *defaultSink = m_sinkModel->defaultSink();
+    const PulseAudioQt::Sink *defaultSink = m_sinkModel->defaultSink();
     // we don't want to show the OSD on startup
     if (!m_initialDefaultSinkSet) {
         m_initialDefaultSinkSet = true;

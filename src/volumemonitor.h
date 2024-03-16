@@ -12,7 +12,7 @@
 
 struct pa_stream;
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class VolumeObject;
 
@@ -27,7 +27,7 @@ class VolumeMonitor : public QObject
      * This is the "PulseObject" role of any SinkInput, Sink or Output model
      * Setting to null will stop streaming
      */
-    Q_PROPERTY(QPulseAudio::VolumeObject *target READ target WRITE setTarget NOTIFY targetChanged)
+    Q_PROPERTY(PulseAudioQt::VolumeObject *target READ target WRITE setTarget NOTIFY targetChanged)
     /**
      * The peak output for the volume at any given moment
      * Value is normalised between 0 and 1

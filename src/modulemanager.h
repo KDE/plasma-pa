@@ -15,7 +15,7 @@
 // Properties need fully qualified classes even with pointers.
 #include "client.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class ConfigModule;
 
@@ -56,6 +56,6 @@ private:
     QStringList m_loadedModules;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // STREAM_H

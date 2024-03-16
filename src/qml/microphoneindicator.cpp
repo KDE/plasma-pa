@@ -21,7 +21,7 @@
 #include "pulseaudio.h"
 #include "source.h"
 
-using namespace QPulseAudio;
+using namespace PulseAudioQt;
 using namespace Qt::Literals::StringLiterals;
 
 constexpr QLatin1String OSD_DBUS_SERVICE = "org.kde.plasmashell"_L1;
