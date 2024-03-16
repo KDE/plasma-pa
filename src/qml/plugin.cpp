@@ -32,29 +32,29 @@ static QJSValue pulseaudio_singleton(QQmlEngine *engine, QJSEngine *scriptEngine
     Q_UNUSED(engine)
 
     QJSValue object = scriptEngine->newObject();
-    object.setProperty(QStringLiteral("NormalVolume"), (double)QPulseAudio::Context::NormalVolume);
-    object.setProperty(QStringLiteral("MinimalVolume"), (double)QPulseAudio::Context::MinimalVolume);
-    object.setProperty(QStringLiteral("MaximalVolume"), (double)QPulseAudio::Context::MaximalVolume);
+    object.setProperty(QStringLiteral("NormalVolume"), (double)PulseAudioQt::Context::NormalVolume);
+    object.setProperty(QStringLiteral("MinimalVolume"), (double)PulseAudioQt::Context::MinimalVolume);
+    object.setProperty(QStringLiteral("MaximalVolume"), (double)PulseAudioQt::Context::MaximalVolume);
     return object;
 }
 
 void Plugin::registerTypes(const char *uri)
 {
-    QPulseAudio::Context::setApplicationId(QStringLiteral("org.kde.plasma-pa"));
+    PulseAudioQt::Context::setApplicationId(QStringLiteral("org.kde.plasma-pa"));
 
-    qmlRegisterType<QPulseAudio::CardModel>(uri, 0, 1, "CardModel");
-    qmlRegisterType<QPulseAudio::SinkModel>(uri, 0, 1, "SinkModel");
-    qmlRegisterType<QPulseAudio::SinkInputModel>(uri, 0, 1, "SinkInputModel");
-    qmlRegisterType<QPulseAudio::SourceModel>(uri, 0, 1, "SourceModel");
-    qmlRegisterType<QPulseAudio::ModuleManager>(uri, 0, 1, "ModuleManager");
-    qmlRegisterType<QPulseAudio::SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
-    qmlRegisterType<QPulseAudio::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
-    qmlRegisterType<QPulseAudio::ModuleModel>(uri, 0, 1, "ModuleModel");
-    qmlRegisterType<QPulseAudio::VolumeMonitor>(uri, 0, 1, "VolumeMonitor");
-    qmlRegisterUncreatableType<QPulseAudio::VolumeObject>(uri, 0, 1, "VolumeObject", QString());
-    qmlRegisterUncreatableType<QPulseAudio::PulseObject>(uri, 0, 1, "PulseObject", QString());
-    qmlRegisterUncreatableType<QPulseAudio::Profile>(uri, 0, 1, "Profile", QString());
-    qmlRegisterUncreatableType<QPulseAudio::Port>(uri, 0, 1, "Port", QString());
+    qmlRegisterType<PulseAudioQt::CardModel>(uri, 0, 1, "CardModel");
+    qmlRegisterType<PulseAudioQt::SinkModel>(uri, 0, 1, "SinkModel");
+    qmlRegisterType<PulseAudioQt::SinkInputModel>(uri, 0, 1, "SinkInputModel");
+    qmlRegisterType<PulseAudioQt::SourceModel>(uri, 0, 1, "SourceModel");
+    qmlRegisterType<PulseAudioQt::ModuleManager>(uri, 0, 1, "ModuleManager");
+    qmlRegisterType<PulseAudioQt::SourceOutputModel>(uri, 0, 1, "SourceOutputModel");
+    qmlRegisterType<PulseAudioQt::StreamRestoreModel>(uri, 0, 1, "StreamRestoreModel");
+    qmlRegisterType<PulseAudioQt::ModuleModel>(uri, 0, 1, "ModuleModel");
+    qmlRegisterType<PulseAudioQt::VolumeMonitor>(uri, 0, 1, "VolumeMonitor");
+    qmlRegisterUncreatableType<PulseAudioQt::VolumeObject>(uri, 0, 1, "VolumeObject", QString());
+    qmlRegisterUncreatableType<PulseAudioQt::PulseObject>(uri, 0, 1, "PulseObject", QString());
+    qmlRegisterUncreatableType<PulseAudioQt::Profile>(uri, 0, 1, "Profile", QString());
+    qmlRegisterUncreatableType<PulseAudioQt::Port>(uri, 0, 1, "Port", QString());
     qmlRegisterType<ListItemMenu>(uri, 0, 1, "ListItemMenu");
     qmlRegisterType<VolumeFeedback>(uri, 0, 1, "VolumeFeedback");
     qmlRegisterType<SpeakerTest>(uri, 0, 1, "SpeakerTest");
@@ -75,7 +75,7 @@ void Plugin::registerTypes(const char *uri)
         Q_UNUSED(jsEngine);
         return new GlobalService();
     });
-    qmlRegisterAnonymousType<QPulseAudio::Client>(uri, 1);
-    qmlRegisterAnonymousType<QPulseAudio::Sink>(uri, 1);
-    qmlRegisterAnonymousType<QPulseAudio::Source>(uri, 1);
+    qmlRegisterAnonymousType<PulseAudioQt::Client>(uri, 1);
+    qmlRegisterAnonymousType<PulseAudioQt::Sink>(uri, 1);
+    qmlRegisterAnonymousType<PulseAudioQt::Source>(uri, 1);
 }

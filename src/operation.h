@@ -9,7 +9,7 @@
 
 #include <pulse/operation.h>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 /**
  * @brief The PAOperation class
@@ -51,6 +51,6 @@ private:
     pa_operation *m_operation;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // OPERATION_H

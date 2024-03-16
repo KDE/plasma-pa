@@ -19,7 +19,7 @@
 #include "maps.h"
 #include "operation.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Server;
 
@@ -221,6 +221,6 @@ private:
     static QString s_applicationId;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // CONTEXT_H

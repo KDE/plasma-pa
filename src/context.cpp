@@ -26,7 +26,7 @@
 
 #include <KLocalizedString>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 Context *Context::s_context = nullptr;
 QString Context::s_applicationId;
@@ -632,4 +632,4 @@ void Context::setApplicationId(const QString &applicationId)
     s_applicationId = applicationId;
 }
 
-} // QPulseAudio
+} // PulseAudioQt

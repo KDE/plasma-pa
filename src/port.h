@@ -11,7 +11,7 @@
 
 #include <pulse/def.h>
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Port : public Profile
 {
@@ -39,6 +39,6 @@ public:
     }
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // PORT_H

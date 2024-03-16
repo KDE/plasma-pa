@@ -9,7 +9,7 @@
 
 #include "stream.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class SourceOutput : public Stream
 {
@@ -26,6 +26,6 @@ public:
     void setDeviceIndex(quint32 deviceIndex) override;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // SOURCEOUTPUT_H

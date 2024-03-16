@@ -6,57 +6,57 @@
 
 #include "device.h"
 
-QPulseAudio::Device::State QPulseAudio::Device::state() const
+PulseAudioQt::Device::State PulseAudioQt::Device::state() const
 {
     return m_state;
 }
 
-QString QPulseAudio::Device::name() const
+QString PulseAudioQt::Device::name() const
 {
     return m_name;
 }
 
-QString QPulseAudio::Device::description() const
+QString PulseAudioQt::Device::description() const
 {
     return m_description;
 }
 
-QString QPulseAudio::Device::formFactor() const
+QString PulseAudioQt::Device::formFactor() const
 {
     return m_formFactor;
 }
 
-quint32 QPulseAudio::Device::cardIndex() const
+quint32 PulseAudioQt::Device::cardIndex() const
 {
     return m_cardIndex;
 }
 
-QList<QObject *> QPulseAudio::Device::ports() const
+QList<QObject *> PulseAudioQt::Device::ports() const
 {
     return m_ports;
 }
 
-quint32 QPulseAudio::Device::activePortIndex() const
+quint32 PulseAudioQt::Device::activePortIndex() const
 {
     return m_activePortIndex;
 }
 
-bool QPulseAudio::Device::isVirtualDevice() const
+bool PulseAudioQt::Device::isVirtualDevice() const
 {
     return m_virtualDevice;
 }
 
-QVariantMap QPulseAudio::Device::pulseProperties() const
+QVariantMap PulseAudioQt::Device::pulseProperties() const
 {
     return m_pulseProperties;
 }
 
-QPulseAudio::Device::Device(QObject *parent)
+PulseAudioQt::Device::Device(QObject *parent)
     : VolumeObject(parent)
 {
 }
 
-QPulseAudio::Device::State QPulseAudio::Device::stateFromPaState(int value) const
+PulseAudioQt::Device::State PulseAudioQt::Device::stateFromPaState(int value) const
 {
     switch (value) {
     case -1: // PA_X_INVALID_STATE

@@ -28,8 +28,8 @@ public:
 private:
     static qint64 boundVolume(qint64 volume, int maxVolume);
     static int volumePercent(qint64 volume);
-    static QString nameForDevice(const QPulseAudio::Device *device);
-    int changeVolumePercent(QPulseAudio::Device *device, int deltaPercent);
+    static QString nameForDevice(const PulseAudioQt::Device *device);
+    int changeVolumePercent(PulseAudioQt::Device *device, int deltaPercent);
     void handleDefaultSinkChange();
     void handleNewSink();
     void muteVolume();
@@ -41,9 +41,9 @@ private:
     void showMicMute(int percent);
     void showMicVolume(int percent);
 
-    QPulseAudio::SinkModel *m_sinkModel = nullptr;
-    QPulseAudio::SourceModel *m_sourceModel = nullptr;
-    QPulseAudio::CardModel *m_cardModel = nullptr;
+    PulseAudioQt::SinkModel *m_sinkModel = nullptr;
+    PulseAudioQt::SourceModel *m_sourceModel = nullptr;
+    PulseAudioQt::CardModel *m_cardModel = nullptr;
     GlobalConfig *m_globalConfig;
     OsdServiceInterface *m_osdDBusInterface;
     VolumeFeedback *m_feedback;

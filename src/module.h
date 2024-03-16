@@ -14,7 +14,7 @@
 
 #include "pulseobject.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 class Module : public PulseObject
 {
@@ -39,6 +39,6 @@ private:
     QString m_argument;
 };
 
-} // QPulseAudio
+} // PulseAudioQt
 
 #endif // MODULE_H

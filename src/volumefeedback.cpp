@@ -13,8 +13,8 @@ VolumeFeedback::VolumeFeedback(QObject *parent)
     : QObject(parent)
     , m_config(new SoundThemeConfig(this))
 {
-    QPulseAudio::CanberraContext::instance()->ref();
-    if (ca_context_set_driver(QPulseAudio::CanberraContext::instance()->canberra(), "pulse") != CA_SUCCESS) {
+    PulseAudioQt::CanberraContext::instance()->ref();
+    if (ca_context_set_driver(PulseAudioQt::CanberraContext::instance()->canberra(), "pulse") != CA_SUCCESS) {
         return;
     }
 
@@ -24,17 +24,17 @@ VolumeFeedback::VolumeFeedback(QObject *parent)
 
 VolumeFeedback::~VolumeFeedback()
 {
-    QPulseAudio::CanberraContext::instance()->unref();
+    PulseAudioQt::CanberraContext::instance()->unref();
 }
 
 bool VolumeFeedback::isValid() const
 {
-    return QPulseAudio::CanberraContext::instance()->canberra();
+    return PulseAudioQt::CanberraContext::instance()->canberra();
 }
 
 void VolumeFeedback::play(quint32 sinkIndex)
 {
-    auto context = QPulseAudio::CanberraContext::instance()->canberra();
+    auto context = PulseAudioQt::CanberraContext::instance()->canberra();
 
     if (!context) {
         return;
@@ -68,7 +68,7 @@ void VolumeFeedback::play(quint32 sinkIndex)
 
 void VolumeFeedback::updateCachedSound()
 {
-    auto context = QPulseAudio::CanberraContext::instance()->canberra();
+    auto context = PulseAudioQt::CanberraContext::instance()->canberra();
     if (!context) {
         return;
     }

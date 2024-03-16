@@ -10,7 +10,7 @@
 #include "server.h"
 #include "sourceoutput.h"
 
-namespace QPulseAudio
+namespace PulseAudioQt
 {
 Source::Source(QObject *parent)
     : Device(parent)
@@ -73,4 +73,4 @@ void Source::switchStreams()
     });
 }
 
-} // QPulseAudio
+} // PulseAudioQt
