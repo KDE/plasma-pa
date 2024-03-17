@@ -220,7 +220,7 @@ PC3.ItemDelegate {
                     to: forceRaiseMaxVolume || item.model.Volume >= PulseAudio.NormalVolume * 1.01 ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
                     stepSize: PulseAudio.NormalVolume / 100.0
                     property real myStepSize: PulseAudio.NormalVolume / 100.0 * config.volumeStep
-                    visible: item.model.HasVolume ? true : false
+                    visible: item.model.HasVolume !== false // Devices always have volume but Streams don't necessarily
                     enabled: item.model.VolumeWritable
                     muted: item.model.Muted
                     volumeObject: item.model.PulseObject
