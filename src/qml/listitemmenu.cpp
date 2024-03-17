@@ -16,13 +16,14 @@
 
 #include <KLocalizedString>
 
-#include "card.h"
+#include <PulseAudioQt/Card>
+#include <PulseAudioQt/Device>
+#include <PulseAudioQt/Models>
+#include <PulseAudioQt/Port>
+#include <PulseAudioQt/PulseObject>
+#include <PulseAudioQt/Stream>
+
 #include "debug.h"
-#include "device.h"
-#include "models.h"
-#include "port.h"
-#include "pulseobject.h"
-#include "stream.h"
 
 using namespace PulseAudioQt;
 

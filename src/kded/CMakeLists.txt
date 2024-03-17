@@ -18,5 +18,6 @@ target_link_libraries(audioshortcutsservice
                         KF6::ConfigCore
                         KF6::ConfigGui
                         KF6::DBusAddons
+                        KF6::PulseAudioQt
                         PkgConfig::LIBPULSE
                         PkgConfig::LIBPULSE_MAINLOOP)

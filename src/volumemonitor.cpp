@@ -8,14 +8,14 @@
 
 #include <pulse/pulseaudio.h>
 
-#include "context.h"
-#include "context_p.h"
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Sink>
+#include <PulseAudioQt/SinkInput>
+#include <PulseAudioQt/Source>
+#include <PulseAudioQt/SourceOutput>
+#include <PulseAudioQt/VolumeObject>
+
 #include "debug.h"
-#include "sink.h"
-#include "sinkinput.h"
-#include "source.h"
-#include "sourceoutput.h"
-#include "volumeobject.h"
 
 #include <QtGlobal>
 

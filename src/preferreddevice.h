@@ -6,12 +6,8 @@
 
 #include <QObject>
 
-namespace PulseAudioQt
-{
-class Source;
-class Sink;
-class Device;
-} // namespace PulseAudioQt
+#include <PulseAudioQt/Sink>
+#include <PulseAudioQt/Source>
 
 class PreferredDevice : public QObject
 {

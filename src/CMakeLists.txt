@@ -5,35 +5,14 @@ ecm_add_qml_module(plasma-volume-declarative URI org.kde.plasma.private.volume)
 set(CMAKE_CXX_VISIBILITY_PRESET default)
 
 set(plasma-volume_SRCS
-    card.cpp
-    client.cpp
-    context.cpp
-    device.cpp
-    maps.cpp
-    operation.cpp
-    port.cpp
-    profile.cpp
-    models.cpp
-    pulseobject.cpp
-    sink.cpp
-    sinkinput.cpp
     modulemanager.cpp
-    source.cpp
-    sourceoutput.cpp
-    stream.cpp
     volumemonitor.cpp
-    volumeobject.cpp
     debug.cpp
-    server.cpp
-    streamrestore.cpp
-    module.cpp
     canberracontext.cpp
     speakertest.cpp
     gsettingsitem.cpp
     soundthemeconfig.cpp
-    indexedpulseobject.cpp
     volumefeedback.cpp
-    cardport.cpp
     audioicon.cpp
     preferreddevice.cpp
 )
@@ -86,6 +65,7 @@ target_link_libraries(plasma-volume-declarative PRIVATE
     KF6::ConfigCore
     KF6::ConfigGui
     KF6::CoreAddons
+    KF6::PulseAudioQt
     Canberra::Canberra
     PkgConfig::LIBPULSE
     PkgConfig::LIBPULSE_MAINLOOP
@@ -104,6 +84,7 @@ target_link_libraries(plasma-volume PRIVATE
     KF6::ConfigCore
     KF6::ConfigGui
     KF6::CoreAddons
+    KF6::PulseAudioQt
     Canberra::Canberra
     PkgConfig::LIBPULSE
     PkgConfig::LIBPULSE_MAINLOOP

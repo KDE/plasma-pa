@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "sink.h"
+#include <PulseAudioQt/Sink>
 
 #include <QObject>
 

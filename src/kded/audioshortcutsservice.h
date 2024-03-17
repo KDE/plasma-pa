@@ -8,9 +8,10 @@
 #include <KConfigWatcher>
 #include <kdedmodule.h>
 
-#include "context.h"
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Models>
+
 #include "globalconfig.h"
-#include "models.h"
 #include "osdservice.h"
 #include "preferreddevice.h"
 #include "volumefeedback.h"

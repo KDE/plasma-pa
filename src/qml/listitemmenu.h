@@ -11,14 +11,11 @@
 #include <QQmlParserStatus>
 #include <QQuickItem>
 
+#include <PulseAudioQt/Models>
+#include <PulseAudioQt/PulseObject>
+
 class QAbstractItemModel;
 class QMenu;
-
-namespace PulseAudioQt
-{
-class CardModel;
-class PulseObject;
-}
 
 class ListItemMenu : public QObject, public QQmlParserStatus
 {
