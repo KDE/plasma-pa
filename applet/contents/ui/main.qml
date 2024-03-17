@@ -41,10 +41,10 @@ PlasmoidItem {
     switchHeight: Layout.minimumHeight
     switchWidth: Layout.minimumWidth
 
-    Plasmoid.icon: paSinkModel.preferredSink && !isDummyOutput(paSinkModel.preferredSink) ? AudioIcon.forVolume(volumePercent(paSinkModel.preferredSink.volume), paSinkModel.preferredSink.muted, "")
+    Plasmoid.icon: PreferredDevice.sink && !isDummyOutput(PreferredDevice.sink) ? AudioIcon.forVolume(volumePercent(PreferredDevice.sink.volume), PreferredDevice.sink.muted, "")
                                                                                           : AudioIcon.forVolume(0, true, "")
     toolTipMainText: {
-        var sink = paSinkModel.preferredSink;
+        var sink = PreferredDevice.sink
         if (!sink || isDummyOutput(sink)) {
             return displayName;
         }
@@ -58,8 +58,8 @@ PlasmoidItem {
     toolTipSubText: {
         let lines = [];
 
-        if (paSinkModel.preferredSink && paSinkFilterModel.count > 1 && !isDummyOutput(paSinkModel.preferredSink)) {
-            lines.push(nodeName(paSinkModel.preferredSink))
+        if (PreferredDevice.sink && paSinkFilterModel.count > 1 && !isDummyOutput(PreferredDevice.sink)) {
+            lines.push(nodeName(PreferredDevice.sink))
         }
 
         if (paSinkFilterModel.count > 0) {
@@ -102,7 +102,7 @@ PlasmoidItem {
             return;
         }
         if (sinkIndex == undefined) {
-            sinkIndex = paSinkModel.preferredSink.index;
+            sinkIndex = PreferredDevice.sink.index;
         }
         feedback.play(sinkIndex);
     }

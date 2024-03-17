@@ -15,6 +15,7 @@
 #include "models.h"
 #include "modulemanager.h"
 #include "port.h"
+#include "preferreddevice.h"
 #include "profile.h"
 #include "sink.h"
 #include "source.h"
@@ -74,6 +75,11 @@ void Plugin::registerTypes(const char *uri)
         Q_UNUSED(engine);
         Q_UNUSED(jsEngine);
         return new GlobalService();
+    });
+    qmlRegisterSingletonType<PreferredDevice>(uri, 0, 1, "PreferredDevice", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
+        Q_UNUSED(engine);
+        Q_UNUSED(jsEngine);
+        return new PreferredDevice();
     });
     qmlRegisterAnonymousType<PulseAudioQt::Client>(uri, 1);
     qmlRegisterAnonymousType<PulseAudioQt::Sink>(uri, 1);
