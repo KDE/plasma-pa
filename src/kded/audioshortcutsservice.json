@@ -1,7 +1,7 @@
 {
     "KPlugin": {
-        "Name": "Audio Shortcuts",
-        "Description": "Provides shortcuts for audio device and volume control"
+        "Description": "Provides shortcuts for audio device and volume control",
+        "Name": "Audio Shortcuts"
     },
     "X-KDE-Kded-autoload": true
 }
