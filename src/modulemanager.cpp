@@ -5,9 +5,9 @@
 */
 
 #include "modulemanager.h"
-#include "context_p.h"
-#include "module.h"
-#include "server.h"
+
+#include <PulseAudioQt/Module>
+#include <PulseAudioQt/Server>
 
 #include "gsettingsitem.h"
 #define PA_SETTINGS_PATH_MODULES "/org/freedesktop/pulseaudio/module-groups"

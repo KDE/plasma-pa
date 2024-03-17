@@ -4,11 +4,12 @@
 
 #include "preferreddevice.h"
 
-#include "context.h"
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Server>
+#include <PulseAudioQt/Sink>
+#include <PulseAudioQt/Source>
+
 #include "debug.h"
-#include "server.h"
-#include "sink.h"
-#include "source.h"
 
 template<typename D>
 [[nodiscard]] auto findPreferredDevice(QList<D *> devices, D *defaultDevice)

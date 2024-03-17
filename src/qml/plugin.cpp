@@ -9,16 +9,17 @@
 
 #include <QQmlEngine>
 
+#include <PulseAudioQt/Client>
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Models>
+#include <PulseAudioQt/Port>
+#include <PulseAudioQt/Profile>
+#include <PulseAudioQt/Sink>
+#include <PulseAudioQt/Source>
+
 #include "audioicon.h"
-#include "client.h"
-#include "context.h"
-#include "models.h"
 #include "modulemanager.h"
-#include "port.h"
 #include "preferreddevice.h"
-#include "profile.h"
-#include "sink.h"
-#include "source.h"
 #include "volumemonitor.h"
 
 #include "globalconfig.h"

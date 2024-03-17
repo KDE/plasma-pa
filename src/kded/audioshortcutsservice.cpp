@@ -14,11 +14,12 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 
-#include "device.h"
+#include <PulseAudioQt/Device>
+#include <PulseAudioQt/Server>
+#include <PulseAudioQt/Sink>
+#include <PulseAudioQt/Source>
+
 #include "preferreddevice.h"
-#include "server.h"
-#include "sink.h"
-#include "source.h"
 
 K_PLUGIN_CLASS_WITH_JSON(AudioShortcutsService, "audioshortcutsservice.json")
 

@@ -16,11 +16,11 @@
 #include <KLocalizedString>
 #include <KStatusNotifierItem>
 
-#include "client.h"
-#include "context.h"
-#include "models.h"
-#include "server.h"
-#include "source.h"
+#include <PulseAudioQt/Client>
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Models>
+#include <PulseAudioQt/Server>
+#include <PulseAudioQt/Source>
 
 using namespace PulseAudioQt;
 using namespace Qt::Literals::StringLiterals;
