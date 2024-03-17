@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-17 00:39+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-10-19 01:47+0300\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -19,191 +19,138 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: contents/ui/ListItemBase.qml:68
+#: contents/ui/ListItemBase.qml:66
 #, kde-format
 msgid "Currently not recording"
 msgstr "לא מקליט כרגע"
 
-#: contents/ui/ListItemBase.qml:69
+#: contents/ui/ListItemBase.qml:67
 #, kde-format
 msgid "Currently not playing"
 msgstr "לא מנגן כרגע"
 
-#: contents/ui/ListItemBase.qml:185
+#: contents/ui/ListItemBase.qml:183
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "אפשרויות נוספות"
 
-#: contents/ui/ListItemBase.qml:187
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "הצגת אפשרויות נוספות עבור %1"
 
-#: contents/ui/ListItemBase.qml:206
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ביטול השתקה"
 
-#: contents/ui/ListItemBase.qml:206
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "השתקה"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgid "Unmute %1"
 msgstr "ביטול השתקת %1"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgid "Mute %1"
 msgstr "השתקת %1"
 
-#: contents/ui/ListItemBase.qml:229
+#: contents/ui/ListItemBase.qml:227
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "כיוון עוצמת השמע עבור %1"
 
-#: contents/ui/ListItemBase.qml:290
+#: contents/ui/ListItemBase.qml:288
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:310
+#: contents/ui/ListItemBase.qml:308
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:37
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
 msgstr "עוצמת שמע"
 
-#: contents/ui/main.qml:51
+#: contents/ui/main.qml:39
 #, kde-format
 msgid "No output or input devices found"
 msgstr "לא נמצאו התקני פלט או קלט"
 
-#: contents/ui/main.qml:65
+#: contents/ui/main.qml:53
 #, kde-format
 msgid "Audio Muted"
 msgstr "השמע מושתק"
 
-#: contents/ui/main.qml:67
+#: contents/ui/main.qml:55
 #, kde-format
 msgid "Volume at %1%"
 msgstr "עוצמת השמע ב־%1%"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:66
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "לחיצה אמצעית משתיקה"
 
-#: contents/ui/main.qml:79
+#: contents/ui/main.qml:67
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "לחיצה אמצעית משתיקה את כל השמע"
 
-#: contents/ui/main.qml:80
+#: contents/ui/main.qml:68
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "גלילה משנה את עוצמת השמע"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:89
 #, kde-format
 msgid "Device name not found"
 msgstr "שם ההתקן לא נמצא"
 
-#: contents/ui/main.qml:261
-#, kde-format
-msgid "No output device"
-msgstr "אין התקן פלט"
-
-#: contents/ui/main.qml:272
-#, kde-format
-msgctxt "Device name (Battery percent)"
-msgid "%1 (%2% Battery)"
-msgstr "%1 (%2% סוללה)"
-
-#: contents/ui/main.qml:419
-#, kde-format
-msgid "Increase Volume"
-msgstr "הגברת עוצמה"
-
-#: contents/ui/main.qml:425
-#, kde-format
-msgctxt "@action shortcut"
-msgid "Increase Volume by 1%"
-msgstr "הגברת עוצמה ב־1%"
-
-#: contents/ui/main.qml:431
-#, kde-format
-msgid "Decrease Volume"
-msgstr "הנמכת עוצמה"
-
-#: contents/ui/main.qml:437
-#, kde-format
-msgctxt "@action shortcut"
-msgid "Decrease Volume by 1%"
-msgstr "הנמכת עוצמה ב־1%"
-
-#: contents/ui/main.qml:443
-#, kde-format
-msgid "Mute"
-msgstr "השתקה"
-
-#: contents/ui/main.qml:449
-#, kde-format
-msgid "Increase Microphone Volume"
-msgstr "הגברת עוצמת מיקרופון"
-
-#: contents/ui/main.qml:455
-#, kde-format
-msgid "Decrease Microphone Volume"
-msgstr "הנמכת עוצמת מיקרופון"
-
-#: contents/ui/main.qml:461
-#, kde-format
-msgid "Mute Microphone"
-msgstr "השתקת מיקרופון"
-
-#: contents/ui/main.qml:570
+#: contents/ui/main.qml:293
 #, kde-format
 msgid "Devices"
 msgstr "התקנים"
 
-#: contents/ui/main.qml:577
+#: contents/ui/main.qml:300
 #, kde-format
 msgid "Applications"
 msgstr "יישומים"
 
-#: contents/ui/main.qml:598 contents/ui/main.qml:600 contents/ui/main.qml:819
+#: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "אילוץ השתקת כל התקני הנגינה"
 
-#: contents/ui/main.qml:652
+#: contents/ui/main.qml:371
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "אין ישומים המשמיעים או מקליטים שמע"
 
-#: contents/ui/main.qml:807
+#: contents/ui/main.qml:526
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "הגברת עוצמה מרבית"
 
-#: contents/ui/main.qml:832
+#: contents/ui/main.qml:547
 #, kde-format
 msgid "Show virtual devices"
 msgstr "הצגת התקנים וירטואליים"
 
-#: contents/ui/main.qml:842
+#: contents/ui/main.qml:557
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ה&גדרת התקני שמע…"
@@ -212,6 +159,39 @@ msgstr "ה&גדרת התקני שמע…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "שם התזרים לא נמצא"
+
+#~ msgid "No output device"
+#~ msgstr "אין התקן פלט"
+
+#~ msgctxt "Device name (Battery percent)"
+#~ msgid "%1 (%2% Battery)"
+#~ msgstr "%1 (%2% סוללה)"
+
+#~ msgid "Increase Volume"
+#~ msgstr "הגברת עוצמה"
+
+#~ msgctxt "@action shortcut"
+#~ msgid "Increase Volume by 1%"
+#~ msgstr "הגברת עוצמה ב־1%"
+
+#~ msgid "Decrease Volume"
+#~ msgstr "הנמכת עוצמה"
+
+#~ msgctxt "@action shortcut"
+#~ msgid "Decrease Volume by 1%"
+#~ msgstr "הנמכת עוצמה ב־1%"
+
+#~ msgid "Mute"
+#~ msgstr "השתקה"
+
+#~ msgid "Increase Microphone Volume"
+#~ msgstr "הגברת עוצמת מיקרופון"
+
+#~ msgid "Decrease Microphone Volume"
+#~ msgstr "הנמכת עוצמת מיקרופון"
+
+#~ msgid "Mute Microphone"
+#~ msgstr "השתקת מיקרופון"
 
 #~ msgctxt "label of device items"
 #~ msgid "%1 (%2)"

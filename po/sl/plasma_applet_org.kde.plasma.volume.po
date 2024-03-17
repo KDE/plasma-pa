@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-17 00:39+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-05-11 09:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -20,191 +20,138 @@ msgstr ""
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: contents/ui/ListItemBase.qml:68
+#: contents/ui/ListItemBase.qml:66
 #, kde-format
 msgid "Currently not recording"
 msgstr "Trenutno ne snema"
 
-#: contents/ui/ListItemBase.qml:69
+#: contents/ui/ListItemBase.qml:67
 #, kde-format
 msgid "Currently not playing"
 msgstr "Trenutno ne predvaja"
 
-#: contents/ui/ListItemBase.qml:185
+#: contents/ui/ListItemBase.qml:183
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Pokaži dodatne možnosti"
 
-#: contents/ui/ListItemBase.qml:187
+#: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Pokaži dodatne možnosti za %1"
 
-#: contents/ui/ListItemBase.qml:206
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Odutišaj"
 
-#: contents/ui/ListItemBase.qml:206
+#: contents/ui/ListItemBase.qml:204
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Utišaj"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgid "Unmute %1"
 msgstr "Odutišaj %1"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgid "Mute %1"
 msgstr "Utišaj %1"
 
-#: contents/ui/ListItemBase.qml:229
+#: contents/ui/ListItemBase.qml:227
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Prilagodi glasnost za %1"
 
-#: contents/ui/ListItemBase.qml:290
+#: contents/ui/ListItemBase.qml:288
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:310
+#: contents/ui/ListItemBase.qml:308
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:37
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
 msgstr "Glasnost zvoka"
 
-#: contents/ui/main.qml:51
+#: contents/ui/main.qml:39
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Ni najdenih izhodnih ali vhodnih naprav"
 
-#: contents/ui/main.qml:65
+#: contents/ui/main.qml:53
 #, kde-format
 msgid "Audio Muted"
 msgstr "Zvok utišan"
 
-#: contents/ui/main.qml:67
+#: contents/ui/main.qml:55
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Glasnost na %1%"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:66
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "S srednjim klikom odutišaj"
 
-#: contents/ui/main.qml:79
+#: contents/ui/main.qml:67
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "S srednjim klikom utišaj vse zvočne naprave"
 
-#: contents/ui/main.qml:80
+#: contents/ui/main.qml:68
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Pomaknite za prilagajanje glasnosti"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:89
 #, kde-format
 msgid "Device name not found"
 msgstr "Imena naprave ni mogoče najti"
 
-#: contents/ui/main.qml:261
-#, kde-format
-msgid "No output device"
-msgstr "Ni izhodnih naprav"
-
-#: contents/ui/main.qml:272
-#, kde-format
-msgctxt "Device name (Battery percent)"
-msgid "%1 (%2% Battery)"
-msgstr "%1 (%2 Baterija)"
-
-#: contents/ui/main.qml:419
-#, kde-format
-msgid "Increase Volume"
-msgstr "Povečaj glasnost"
-
-#: contents/ui/main.qml:425
-#, kde-format
-msgctxt "@action shortcut"
-msgid "Increase Volume by 1%"
-msgstr "Povečuj glasnost po 1%"
-
-#: contents/ui/main.qml:431
-#, kde-format
-msgid "Decrease Volume"
-msgstr "Zmanjšaj glasnost"
-
-#: contents/ui/main.qml:437
-#, kde-format
-msgctxt "@action shortcut"
-msgid "Decrease Volume by 1%"
-msgstr "Zmanjšuj glasnost po 1%"
-
-#: contents/ui/main.qml:443
-#, kde-format
-msgid "Mute"
-msgstr "Utišaj"
-
-#: contents/ui/main.qml:449
-#, kde-format
-msgid "Increase Microphone Volume"
-msgstr "Povečaj glasnost mikrofona"
-
-#: contents/ui/main.qml:455
-#, kde-format
-msgid "Decrease Microphone Volume"
-msgstr "Zmanjšaj glasnost mikrofona"
-
-#: contents/ui/main.qml:461
-#, kde-format
-msgid "Mute Microphone"
-msgstr "Utišaj mikrofon"
-
-#: contents/ui/main.qml:570
+#: contents/ui/main.qml:293
 #, kde-format
 msgid "Devices"
 msgstr "Naprave"
 
-#: contents/ui/main.qml:577
+#: contents/ui/main.qml:300
 #, kde-format
 msgid "Applications"
 msgstr "Programi"
 
-#: contents/ui/main.qml:598 contents/ui/main.qml:600 contents/ui/main.qml:819
+#: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Prisilno utišaj vse naprave za playback"
 
-#: contents/ui/main.qml:652
+#: contents/ui/main.qml:371
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Noben program ne predvaja ali snema zvoka"
 
-#: contents/ui/main.qml:807
+#: contents/ui/main.qml:526
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvišaj največjo glasnost"
 
-#: contents/ui/main.qml:832
+#: contents/ui/main.qml:547
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Prikaži navidezne naprave"
 
-#: contents/ui/main.qml:842
+#: contents/ui/main.qml:557
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Nastavi zvočne naprave…"
@@ -213,6 +160,39 @@ msgstr "Nastavi zvočne naprave…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Imena toka ni mogoče najti"
+
+#~ msgid "No output device"
+#~ msgstr "Ni izhodnih naprav"
+
+#~ msgctxt "Device name (Battery percent)"
+#~ msgid "%1 (%2% Battery)"
+#~ msgstr "%1 (%2 Baterija)"
+
+#~ msgid "Increase Volume"
+#~ msgstr "Povečaj glasnost"
+
+#~ msgctxt "@action shortcut"
+#~ msgid "Increase Volume by 1%"
+#~ msgstr "Povečuj glasnost po 1%"
+
+#~ msgid "Decrease Volume"
+#~ msgstr "Zmanjšaj glasnost"
+
+#~ msgctxt "@action shortcut"
+#~ msgid "Decrease Volume by 1%"
+#~ msgstr "Zmanjšuj glasnost po 1%"
+
+#~ msgid "Mute"
+#~ msgstr "Utišaj"
+
+#~ msgid "Increase Microphone Volume"
+#~ msgstr "Povečaj glasnost mikrofona"
+
+#~ msgid "Decrease Microphone Volume"
+#~ msgstr "Zmanjšaj glasnost mikrofona"
+
+#~ msgid "Mute Microphone"
+#~ msgstr "Utišaj mikrofon"
 
 #~ msgctxt "label of device items"
 #~ msgid "%1 (%2)"
