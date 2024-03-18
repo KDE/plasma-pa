@@ -160,36 +160,3 @@ msgstr "&Set opp lydeiningar …"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Fann ikkje straumnamn"
-
-#~ msgid "No output device"
-#~ msgstr "Manglar uteining"
-
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (%2 % batteri)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Høgare lyd"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "Auk lydstyrken med 1 %"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Lågare lyd"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "Senk lydstyrken med 1 %"
-
-#~ msgid "Mute"
-#~ msgstr "Demp lyden"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "Høgare mikrofonlyd"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "Lågare mikrofonlyd"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "Slå av mikrofonen"

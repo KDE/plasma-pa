@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022.
+# SPDX-FileCopyrightText: 2021, 2022, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2022-11-03 21:31+0530\n"
+"POT-Creation-Date: 2024-03-18 00:39+0000\n"
+"PO-Revision-Date: 2024-03-17 18:05+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,13 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.2\n"
-
-#: context.cpp:596
-#, kde-format
-msgctxt "Name shown in debug pulseaudio tools"
-msgid "Plasma PA"
-msgstr "பிளாஸ்மா PA"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
 #, kde-format
@@ -258,90 +252,83 @@ msgstr "ஒலியடக்க நிலை"
 msgid "Default output device"
 msgstr "இயல்பிருப்பு வெளியீடு சாதனம்"
 
-#: kcm/ui/VolumeSlider.qml:69
+#: kcm/ui/VolumeSlider.qml:68
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/VolumeSlider.qml:89
+#: kcm/ui/VolumeSlider.qml:88
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:50
+#: kded/audioshortcutsservice.cpp:58
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "ஒலியைக் கூட்டு"
 
-#: kded/audioshortcutsservice.cpp:64
+#: kded/audioshortcutsservice.cpp:73
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "ஒலியைக் குறை"
 
-#: kded/audioshortcutsservice.cpp:78
+#: kded/audioshortcutsservice.cpp:88
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "ஒலியை 1% கூட்டு"
 
-#: kded/audioshortcutsservice.cpp:92
+#: kded/audioshortcutsservice.cpp:103
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "ஒலியை 1% குறை"
 
-#: kded/audioshortcutsservice.cpp:106
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#: kded/audioshortcutsservice.cpp:118
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "ஒலிவாங்கி அடக்கப்பட்டது"
+msgstr "ஒலிவாங்கியின் ஒலியை கூட்டு"
 
-#: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#: kded/audioshortcutsservice.cpp:132
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "ஒலிவாங்கி அடக்கப்பட்டது"
+msgstr "ஒலிவாங்கியின் ஒலியை குறை"
 
-#: kded/audioshortcutsservice.cpp:132 qml/microphoneindicator.cpp:105
+#: kded/audioshortcutsservice.cpp:146 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "ஒலியை அடக்கு"
 
-#: kded/audioshortcutsservice.cpp:145
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#: kded/audioshortcutsservice.cpp:159
+#, kde-format
 msgid "Mute Microphone"
-msgstr "ஒலிவாங்கி"
+msgstr "ஒலிவாங்கியின் ஒலியை அடக்கு"
 
-#: kded/audioshortcutsservice.cpp:158
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#: kded/audioshortcutsservice.cpp:173
+#, kde-format
 msgid "Audio Volume"
 msgstr "ஒலியின் அளவு"
 
-#: kded/audioshortcutsservice.cpp:176
+#: kded/audioshortcutsservice.cpp:191
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "அப்படிப்பட்ட சாதனம் இல்லை"
 
-#: kded/audioshortcutsservice.cpp:192
+#: kded/audioshortcutsservice.cpp:207
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "சாதனத்தின் பெயர் தெரியாது"
 
-#: kded/audioshortcutsservice.cpp:224
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#: kded/audioshortcutsservice.cpp:239
+#, kde-format
 msgid "No output device"
-msgstr "இயல்பிருப்பு வெளியீடு சாதனம்"
+msgstr "வெளியீட்டு சாதனம் இல்லை"
 
-#: kded/audioshortcutsservice.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#: kded/audioshortcutsservice.cpp:253
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (மின்கலம் %2%)"
 
 #: qml/listitemmenu.cpp:319
 #, kde-format
@@ -385,39 +372,43 @@ msgctxt ""
 msgid "Record audio using"
 msgstr "இதனை கொண்டு ஒலிப்பதிவு செய்"
 
-#: qml/microphoneindicator.cpp:135 qml/microphoneindicator.cpp:137
+#: qml/microphoneindicator.cpp:136 qml/microphoneindicator.cpp:138
 #, kde-format
 msgid "Microphone"
 msgstr "ஒலிவாங்கி"
 
-#: qml/microphoneindicator.cpp:137
+#: qml/microphoneindicator.cpp:138
 #, kde-format
 msgid "Microphone Muted"
 msgstr "ஒலிவாங்கி அடக்கப்பட்டது"
 
-#: qml/microphoneindicator.cpp:283
+#: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: qml/microphoneindicator.cpp:283
+#: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
 msgstr "%1 ஒலிவாங்கியை பயன்படுத்துகின்றன"
 
-#: qml/microphoneindicator.cpp:309
+#: qml/microphoneindicator.cpp:310
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
 msgstr "%1 ஒலிவாங்கியை பயன்படுத்துகிறது (%2)"
 
-#: qml/microphoneindicator.cpp:316
+#: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 ஒலிவாங்கியை பயன்படுத்துகிறது"
+
+#~ msgctxt "Name shown in debug pulseaudio tools"
+#~ msgid "Plasma PA"
+#~ msgstr "பிளாஸ்மா PA"
 
 #~ msgid "This module allows configuring the Pulseaudio sound subsystem."
 #~ msgstr "Pulseaudio ஒலி அமைப்பை அமைக்க இந்தக் கூறு உதவும்."

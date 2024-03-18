@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2024-03-16 20:45\n"
+"POT-Creation-Date: 2024-03-18 00:39+0000\n"
+"PO-Revision-Date: 2024-03-17 20:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -16,12 +16,6 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /kf6-trunk/messages/plasma-pa/kcm_pulseaudio.pot\n"
 "X-Crowdin-File-ID: 43649\n"
-
-#: context.cpp:596
-#, kde-format
-msgctxt "Name shown in debug pulseaudio tools"
-msgid "Plasma PA"
-msgstr "Plasma PA"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
 #, kde-format
@@ -257,90 +251,83 @@ msgstr "静音状态"
 msgid "Default output device"
 msgstr "默认输出设备"
 
-#: kcm/ui/VolumeSlider.qml:69
+#: kcm/ui/VolumeSlider.qml:68
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/VolumeSlider.qml:89
+#: kcm/ui/VolumeSlider.qml:88
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:50
+#: kded/audioshortcutsservice.cpp:58
 #, kde-format
 msgid "Increase Volume"
 msgstr ""
 
-#: kded/audioshortcutsservice.cpp:64
+#: kded/audioshortcutsservice.cpp:73
 #, kde-format
 msgid "Decrease Volume"
 msgstr ""
 
-#: kded/audioshortcutsservice.cpp:78
+#: kded/audioshortcutsservice.cpp:88
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr ""
 
-#: kded/audioshortcutsservice.cpp:92
+#: kded/audioshortcutsservice.cpp:103
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr ""
 
-#: kded/audioshortcutsservice.cpp:106
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#: kded/audioshortcutsservice.cpp:118
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "麦克风已静音"
+msgstr ""
 
-#: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#: kded/audioshortcutsservice.cpp:132
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "麦克风已静音"
+msgstr ""
 
-#: kded/audioshortcutsservice.cpp:132 qml/microphoneindicator.cpp:105
+#: kded/audioshortcutsservice.cpp:146 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "静音"
 
-#: kded/audioshortcutsservice.cpp:145
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#: kded/audioshortcutsservice.cpp:159
+#, kde-format
 msgid "Mute Microphone"
-msgstr "麦克风"
+msgstr ""
 
-#: kded/audioshortcutsservice.cpp:158
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#: kded/audioshortcutsservice.cpp:173
+#, kde-format
 msgid "Audio Volume"
-msgstr "音频音量"
+msgstr ""
 
-#: kded/audioshortcutsservice.cpp:176
+#: kded/audioshortcutsservice.cpp:191
 #, kde-format
 msgid "No such device"
 msgstr ""
 
-#: kded/audioshortcutsservice.cpp:192
+#: kded/audioshortcutsservice.cpp:207
 #, kde-format
 msgid "Device name not found"
 msgstr ""
 
-#: kded/audioshortcutsservice.cpp:224
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#: kded/audioshortcutsservice.cpp:239
+#, kde-format
 msgid "No output device"
-msgstr "默认输出设备"
+msgstr ""
 
-#: kded/audioshortcutsservice.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#: kded/audioshortcutsservice.cpp:253
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: qml/listitemmenu.cpp:319
 #, kde-format
@@ -384,36 +371,40 @@ msgctxt ""
 msgid "Record audio using"
 msgstr "录音设备"
 
-#: qml/microphoneindicator.cpp:135 qml/microphoneindicator.cpp:137
+#: qml/microphoneindicator.cpp:136 qml/microphoneindicator.cpp:138
 #, kde-format
 msgid "Microphone"
 msgstr "麦克风"
 
-#: qml/microphoneindicator.cpp:137
+#: qml/microphoneindicator.cpp:138
 #, kde-format
 msgid "Microphone Muted"
 msgstr "麦克风已静音"
 
-#: qml/microphoneindicator.cpp:283
+#: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr "，"
 
-#: qml/microphoneindicator.cpp:283
+#: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
 msgstr "%1 正在使用麦克风"
 
-#: qml/microphoneindicator.cpp:309
+#: qml/microphoneindicator.cpp:310
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
 msgstr "%1 正在使用麦克风 (%2)"
 
-#: qml/microphoneindicator.cpp:316
+#: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 正在使用麦克风"
+
+#~ msgctxt "Name shown in debug pulseaudio tools"
+#~ msgid "Plasma PA"
+#~ msgstr "Plasma PA"

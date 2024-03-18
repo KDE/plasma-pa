@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2022-11-03 10:20+0200\n"
+"POT-Creation-Date: 2024-03-18 00:39+0000\n"
+"PO-Revision-Date: 2024-03-17 08:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,13 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.0\n"
-
-#: context.cpp:596
-#, kde-format
-msgctxt "Name shown in debug pulseaudio tools"
-msgid "Plasma PA"
-msgstr "PA Плазми"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
 #, kde-format
@@ -264,90 +258,83 @@ msgstr "Стан вимикання звуку"
 msgid "Default output device"
 msgstr "Типовому пристрої відтворення"
 
-#: kcm/ui/VolumeSlider.qml:69
+#: kcm/ui/VolumeSlider.qml:68
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/VolumeSlider.qml:89
+#: kcm/ui/VolumeSlider.qml:88
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:50
+#: kded/audioshortcutsservice.cpp:58
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Збільшити гучність"
 
-#: kded/audioshortcutsservice.cpp:64
+#: kded/audioshortcutsservice.cpp:73
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Зменшити гучність"
 
-#: kded/audioshortcutsservice.cpp:78
+#: kded/audioshortcutsservice.cpp:88
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Підвищити гучність на 1%"
 
-#: kded/audioshortcutsservice.cpp:92
+#: kded/audioshortcutsservice.cpp:103
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Зменшити гучність на 1%"
 
-#: kded/audioshortcutsservice.cpp:106
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#: kded/audioshortcutsservice.cpp:118
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Мікрофон вимкнено"
+msgstr "Збільшити гучність для мікрофона"
 
-#: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#: kded/audioshortcutsservice.cpp:132
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Мікрофон вимкнено"
+msgstr "Зменшити гучність для мікрофона"
 
-#: kded/audioshortcutsservice.cpp:132 qml/microphoneindicator.cpp:105
+#: kded/audioshortcutsservice.cpp:146 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "Вимкнути звук"
 
-#: kded/audioshortcutsservice.cpp:145
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#: kded/audioshortcutsservice.cpp:159
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Мікрофон"
+msgstr "Вимкнути мікрофон"
 
-#: kded/audioshortcutsservice.cpp:158
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#: kded/audioshortcutsservice.cpp:173
+#, kde-format
 msgid "Audio Volume"
-msgstr "Гучність звуку"
+msgstr "Гучність"
 
-#: kded/audioshortcutsservice.cpp:176
+#: kded/audioshortcutsservice.cpp:191
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Пристрою не знайдено"
 
-#: kded/audioshortcutsservice.cpp:192
+#: kded/audioshortcutsservice.cpp:207
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Не знайдено пристрою з такою назвою"
 
-#: kded/audioshortcutsservice.cpp:224
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#: kded/audioshortcutsservice.cpp:239
+#, kde-format
 msgid "No output device"
-msgstr "Типовому пристрої відтворення"
+msgstr "Не виявлено пристрою виведення"
 
-#: kded/audioshortcutsservice.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#: kded/audioshortcutsservice.cpp:253
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% заряду)"
 
 #: qml/listitemmenu.cpp:319
 #, kde-format
@@ -391,39 +378,43 @@ msgctxt ""
 msgid "Record audio using"
 msgstr "Запис звуку за допомогою"
 
-#: qml/microphoneindicator.cpp:135 qml/microphoneindicator.cpp:137
+#: qml/microphoneindicator.cpp:136 qml/microphoneindicator.cpp:138
 #, kde-format
 msgid "Microphone"
 msgstr "Мікрофон"
 
-#: qml/microphoneindicator.cpp:137
+#: qml/microphoneindicator.cpp:138
 #, kde-format
 msgid "Microphone Muted"
 msgstr "Мікрофон вимкнено"
 
-#: qml/microphoneindicator.cpp:283
+#: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: qml/microphoneindicator.cpp:283
+#: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
 msgstr "%1 використовують мікрофон"
 
-#: qml/microphoneindicator.cpp:309
+#: qml/microphoneindicator.cpp:310
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
 msgstr "%1 використовує мікрофон (%2)"
 
-#: qml/microphoneindicator.cpp:316
+#: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 використовує мікрофон"
+
+#~ msgctxt "Name shown in debug pulseaudio tools"
+#~ msgid "Plasma PA"
+#~ msgstr "PA Плазми"
 
 #~ msgid "This module allows configuring the Pulseaudio sound subsystem."
 #~ msgstr ""

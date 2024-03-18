@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2024-03-16 20:45\n"
+"PO-Revision-Date: 2024-03-17 20:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -158,36 +158,3 @@ msgstr "配置音频设备(&C)…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "找不到流名称"
-
-#~ msgid "No output device"
-#~ msgstr "没有输出设备"
-
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (%2% 电量)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "提高音量"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "音量提高 1%"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "降低音量"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "音量降低 1%"
-
-#~ msgid "Mute"
-#~ msgstr "静音"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "提高麦克风音量"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "降低麦克风音量"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "麦克风静音"
