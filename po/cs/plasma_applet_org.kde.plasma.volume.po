@@ -158,36 +158,3 @@ msgstr "Nastavit a&udio zařízení…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Název proudu nenalezen"
-
-#~ msgid "No output device"
-#~ msgstr "Žádné výstupní zařízení"
-
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (%2% Baterie)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Zvýšit hlasitost"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "Zvýšit hlasitost o 1%"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Snížit hlasitost"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "Snížit hlasitost o 1%"
-
-#~ msgid "Mute"
-#~ msgstr "Ztlumit"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "Zvýšit hlasitost mikrofonu"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "Snížit hlasitost mikrofonu"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "Ztlumit mikrofon"

@@ -287,16 +287,14 @@ msgid "Decrease Volume by 1%"
 msgstr ""
 
 #: kded/audioshortcutsservice.cpp:118
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Mikrofon ztlumen"
+msgstr ""
 
 #: kded/audioshortcutsservice.cpp:132
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Mikrofon ztlumen"
+msgstr ""
 
 #: kded/audioshortcutsservice.cpp:146 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -304,16 +302,14 @@ msgid "Mute"
 msgstr "Ztlumit"
 
 #: kded/audioshortcutsservice.cpp:159
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Mikrofon"
+msgstr ""
 
 #: kded/audioshortcutsservice.cpp:173
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
-msgstr "Hlasitost audia"
+msgstr ""
 
 #: kded/audioshortcutsservice.cpp:191
 #, kde-format
@@ -326,18 +322,15 @@ msgid "Device name not found"
 msgstr ""
 
 #: kded/audioshortcutsservice.cpp:239
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "Výchozí výstupní zařízení"
+msgstr ""
 
 #: kded/audioshortcutsservice.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: qml/listitemmenu.cpp:319
 #, kde-format
@@ -414,7 +407,3 @@ msgstr "%1 používá mikrofon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 používá mikrofon"
-
-#~ msgctxt "Name shown in debug pulseaudio tools"
-#~ msgid "Plasma PA"
-#~ msgstr "Plasma PA"
