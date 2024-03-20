@@ -3,13 +3,13 @@
 #
 # Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2019, 2020, 2021.
-# Kristof Kiszel <ulysses@fsf.hu>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-26 02:43+0000\n"
-"PO-Revision-Date: 2021-12-07 09:47+0100\n"
+"PO-Revision-Date: 2024-03-19 10:40+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.11.90\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: context.cpp:596
 #, kde-format
@@ -109,10 +109,9 @@ msgid "Show Inactive Devices"
 msgstr "Inaktív eszközök megjelenítése"
 
 #: kcm/package/contents/ui/main.qml:279
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Beállítások…"
+msgstr "Hangvezérlők beállítása…"
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
@@ -147,6 +146,8 @@ msgid ""
 "Error trying to play a test sound. \n"
 "The system said: \"%1\""
 msgstr ""
+"Hiba történt a teszthang lejátszásakor.\n"
+"A rendszer válasza: „%1”"
 
 #: kcm/package/contents/ui/main.qml:422
 #, kde-format
@@ -199,12 +200,10 @@ msgid "Click on any speaker to test sound"
 msgstr "Kattintson bármelyik hangszóróra a hang teszteléséhez"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
-#, fuzzy, kde-format
-#| msgctxt "Mute audio stream"
-#| msgid "Mute %1"
+#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
-msgstr "A(z) %1 némítása"
+msgstr "%1 visszahangosítása"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
 #, kde-format
@@ -226,51 +225,48 @@ msgstr "%1: %2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Hangvezérlők"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Maximális hangerő növelése"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Hangerőváltoztatási lépés:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Hangvisszajelzés lejátszása a következő változásokhoz:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:64
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Hangerő"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Vizuális visszajelzés a következő változásokhoz:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:80
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Mikrofon némítva"
+msgstr "Mikrofon érzékenysége"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:87
-#, fuzzy, kde-format
-#| msgid "Mute audio"
+#, kde-format
 msgid "Mute state"
-msgstr "Hang némítása"
+msgstr "Némítás állapota"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:94
-#, fuzzy, kde-format
-#| msgid "Default Device"
+#, kde-format
 msgid "Default output device"
-msgstr "Alapértelmezett eszköz"
+msgstr "Alapértelmezett kimeneti eszköz"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:65
 #, kde-format
