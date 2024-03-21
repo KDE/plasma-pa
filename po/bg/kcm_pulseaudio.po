@@ -1,20 +1,20 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-18 00:39+0000\n"
-"PO-Revision-Date: 2022-11-05 17:32+0100\n"
+"PO-Revision-Date: 2024-03-20 13:43+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 24.02.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
@@ -268,34 +268,32 @@ msgstr "100%"
 #: kded/audioshortcutsservice.cpp:58
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Увеличаване силата на звука"
 
 #: kded/audioshortcutsservice.cpp:73
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Намаляване силата на звука"
 
 #: kded/audioshortcutsservice.cpp:88
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Увеличаване силата на звука с 1%"
 
 #: kded/audioshortcutsservice.cpp:103
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Намаляване силата на звука с 1%"
 
 #: kded/audioshortcutsservice.cpp:118
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Микрофонът е изключен"
+msgstr "Увеличаване силата на микрофона"
 
 #: kded/audioshortcutsservice.cpp:132
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Микрофонът е изключен"
+msgstr "Намаляване силата на микрофона"
 
 #: kded/audioshortcutsservice.cpp:146 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -303,40 +301,35 @@ msgid "Mute"
 msgstr "Изключване на звука"
 
 #: kded/audioshortcutsservice.cpp:159
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Микрофон"
+msgstr "Изключване на микрофона"
 
 #: kded/audioshortcutsservice.cpp:173
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
 msgstr "Сила на звука"
 
 #: kded/audioshortcutsservice.cpp:191
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Няма такова устройство"
 
 #: kded/audioshortcutsservice.cpp:207
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Името на устройството не е намерено"
 
 #: kded/audioshortcutsservice.cpp:239
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "Изходно устройство по подразбиране"
+msgstr "Няма изходно устройство"
 
 #: kded/audioshortcutsservice.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2%)"
+msgstr "%1 (%2% батерия)"
 
 #: qml/listitemmenu.cpp:319
 #, kde-format
