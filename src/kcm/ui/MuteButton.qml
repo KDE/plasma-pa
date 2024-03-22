@@ -13,7 +13,10 @@ QQC2.ToolButton {
     property bool muted: true
     property var toolTipText
 
-    icon.name: AudioIcon.forVolume(Volume, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
+    readonly property double maxVolumeValue: PulseAudio.NormalVolume // the applet supports changing this value. We will just assume 65536 (100%)
+    readonly property int volumePercent: (Volume / maxVolumeValue) * 100
+
+    icon.name: AudioIcon.forVolume(volumePercent, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
     checkable: true
     checked: muted
     onMutedChanged: checked = muted
