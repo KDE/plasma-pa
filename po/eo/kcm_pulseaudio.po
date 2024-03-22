@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-18 00:39+0000\n"
-"PO-Revision-Date: 2024-03-17 05:34+0100\n"
+"PO-Revision-Date: 2024-03-21 09:47+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -268,22 +268,22 @@ msgstr "100%"
 #: kded/audioshortcutsservice.cpp:58
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Pliigi Laŭtecon"
 
 #: kded/audioshortcutsservice.cpp:73
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Malpliigi Laŭtecon"
 
 #: kded/audioshortcutsservice.cpp:88
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Pliigi Laŭtecon je 1%"
 
 #: kded/audioshortcutsservice.cpp:103
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Malpliigi Laŭtecon je 1%"
 
 #: kded/audioshortcutsservice.cpp:118
 #, kde-format
@@ -406,7 +406,3 @@ msgstr "%1 uzas la mikrofonon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 uzas la mikrofonon"
-
-#~ msgctxt "Name shown in debug pulseaudio tools"
-#~ msgid "Plasma PA"
-#~ msgstr "Plasma PA"
