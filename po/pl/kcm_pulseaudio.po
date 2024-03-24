@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-18 00:39+0000\n"
+"POT-Creation-Date: 2024-03-24 00:39+0000\n"
 "PO-Revision-Date: 2024-03-17 11:37+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -65,27 +65,27 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Podział głośności"
 
-#: kcm/ui/main.qml:83
+#: kcm/ui/main.qml:80
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Pokaż niedostępne urządzenia"
 
-#: kcm/ui/main.qml:90
+#: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Ustawienia suwaków głośności…"
 
-#: kcm/ui/main.qml:97
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
 msgstr "Ustawienia…"
 
-#: kcm/ui/main.qml:100
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Wymaga modułu PulseAudio %1"
 
-#: kcm/ui/main.qml:103
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -93,7 +93,7 @@ msgstr ""
 "Dodaj wirtualne urządzenie wyjścia dla jednoczesnego wyjścia na wszystkich "
 "lokalnych kartach dźwiękowych"
 
-#: kcm/ui/main.qml:109
+#: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -101,32 +101,32 @@ msgstr ""
 "Samoczynnie przełącz wszystkie działające strumienie, gdy nowe wyjście "
 "stanie się dostępne"
 
-#: kcm/ui/main.qml:146
+#: kcm/ui/main.qml:143
 #, kde-format
 msgid "Playback Devices"
 msgstr "Urządzenia odtwarzające"
 
-#: kcm/ui/main.qml:170
+#: kcm/ui/main.qml:167
 #, kde-format
 msgid "Recording Devices"
 msgstr "Urządzenia nagrywające"
 
-#: kcm/ui/main.qml:194
+#: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Nieaktywna karta"
 
-#: kcm/ui/main.qml:225
+#: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
 msgstr "Odtwarzane strumienie"
 
-#: kcm/ui/main.qml:274
+#: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
 msgstr "Nagrywane strumienie"
 
-#: kcm/ui/main.qml:308
+#: kcm/ui/main.qml:305
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -138,63 +138,63 @@ msgstr ""
 "Nie udało się odtworzyć dźwięku próbnego.\n"
 "System odpowiedział: \"%1\""
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:402
 #, kde-format
 msgid "Front Left"
 msgstr "Przedni lewy"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Center"
 msgstr "Przedni środkowy"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Right"
 msgstr "Przedni prawy"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Side Left"
 msgstr "Boczny lewy"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Right"
 msgstr "Boczny prawy"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Rear Left"
 msgstr "Tylny lewy"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Subwoofer"
 msgstr "Głośnik niskotonowy"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Rear Right"
 msgstr "Tylny prawy"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:467
+#: kcm/ui/main.qml:464
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Naciśnij na dowolnym głośniku, aby wypróbować jego dźwięk"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Usuń wyciszenie %1"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"

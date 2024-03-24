@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-18 00:39+0000\n"
+"POT-Creation-Date: 2024-03-24 00:39+0000\n"
 "PO-Revision-Date: 2023-12-02 21:28+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -64,27 +64,27 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Jafnvægi"
 
-#: kcm/ui/main.qml:83
+#: kcm/ui/main.qml:80
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Sýna óvirk tæki"
 
-#: kcm/ui/main.qml:90
+#: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Grunnstilla hljóðstyrksstýringar"
 
-#: kcm/ui/main.qml:97
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
 msgstr "Grunnstilla…"
 
-#: kcm/ui/main.qml:100
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Krefst %1 PulseAudio-einingar"
 
-#: kcm/ui/main.qml:103
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -92,39 +92,39 @@ msgstr ""
 "Bæta við sýndarúttakstæki fyrir samhliða úttak á öllum staðbundnum "
 "hljóðkortum"
 
-#: kcm/ui/main.qml:109
+#: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
 "Skipta sjálfkrafa öllum straumum í keyrslu þegar nýtt úttak verður tiltækt"
 
-#: kcm/ui/main.qml:146
+#: kcm/ui/main.qml:143
 #, kde-format
 msgid "Playback Devices"
 msgstr "Afspilunartæki"
 
-#: kcm/ui/main.qml:170
+#: kcm/ui/main.qml:167
 #, kde-format
 msgid "Recording Devices"
 msgstr "Upptökutæki"
 
-#: kcm/ui/main.qml:194
+#: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Óvirk kort"
 
-#: kcm/ui/main.qml:225
+#: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
 msgstr "Afspilunarstraumar"
 
-#: kcm/ui/main.qml:274
+#: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
 msgstr "Upptökustraumar"
 
-#: kcm/ui/main.qml:308
+#: kcm/ui/main.qml:305
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -136,63 +136,63 @@ msgstr ""
 "Villa þegar reynt var að spila prufuhljóð. \n"
 "Tölvan sagði: \"%1\""
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:402
 #, kde-format
 msgid "Front Left"
 msgstr "Að framan til vinstri"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Center"
 msgstr "Að framan í miðju"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Right"
 msgstr "Að framan til hægri"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Side Left"
 msgstr "Til hliðar til vinstri"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Right"
 msgstr "Til hliðar til hægri"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Rear Left"
 msgstr "Að aftan til vinstri"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Subwoofer"
 msgstr "Bassabox"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Rear Right"
 msgstr "Að aftan til hægri"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Mono"
 msgstr "Mónó"
 
-#: kcm/ui/main.qml:467
+#: kcm/ui/main.qml:464
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Smelltu á hátalara til að prófa hljóð"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Afþagga %1"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"

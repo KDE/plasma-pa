@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-18 00:39+0000\n"
+"POT-Creation-Date: 2024-03-24 00:39+0000\n"
 "PO-Revision-Date: 2023-03-04 20:05+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -67,27 +67,27 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Balanssi"
 
-#: kcm/ui/main.qml:83
+#: kcm/ui/main.qml:80
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Näytä passiiviset laitteet"
 
-#: kcm/ui/main.qml:90
+#: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Äänenvoimakkuuden asetukset…"
 
-#: kcm/ui/main.qml:97
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
 msgstr "Asetukset…"
 
-#: kcm/ui/main.qml:100
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Vaatii PulseAudio-moduulin %1"
 
-#: kcm/ui/main.qml:103
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -95,7 +95,7 @@ msgstr ""
 "Lisää virtuaalilaite kaikkien paikallisten äänikorttien samanaikaiseen "
 "ulostuloon"
 
-#: kcm/ui/main.qml:109
+#: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -103,32 +103,32 @@ msgstr ""
 "Vaihda kaikki käynnissä olevat virrat automaattisesti uuden ulostulon "
 "tullessa saataville"
 
-#: kcm/ui/main.qml:146
+#: kcm/ui/main.qml:143
 #, kde-format
 msgid "Playback Devices"
 msgstr "Toistolaitteet"
 
-#: kcm/ui/main.qml:170
+#: kcm/ui/main.qml:167
 #, kde-format
 msgid "Recording Devices"
 msgstr "Äänityslaitteet"
 
-#: kcm/ui/main.qml:194
+#: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Passiiviset kortit"
 
-#: kcm/ui/main.qml:225
+#: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
 msgstr "Toistovirrat"
 
-#: kcm/ui/main.qml:274
+#: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
 msgstr "Äänitysvirrat"
 
-#: kcm/ui/main.qml:308
+#: kcm/ui/main.qml:305
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -140,63 +140,63 @@ msgstr ""
 "Virhe yritettäessä soittaa ääntä.\n"
 "Järjestelmä vastasi: ”%1”"
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:402
 #, kde-format
 msgid "Front Left"
 msgstr "Etuvasen"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Center"
 msgstr "Etukeski"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Right"
 msgstr "Etuoikea"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Side Left"
 msgstr "Sivuvasen"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Right"
 msgstr "Sivuoikea"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Rear Left"
 msgstr "Takavasen"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwooferi"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Rear Right"
 msgstr "Takaoikea"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:467
+#: kcm/ui/main.qml:464
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Kokeile ääntä napsauttamalla jotakin kaiuttimista"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Poista vaimennus: %1"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"

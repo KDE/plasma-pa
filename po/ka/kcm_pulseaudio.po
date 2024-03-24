@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-18 00:39+0000\n"
+"POT-Creation-Date: 2024-03-24 00:39+0000\n"
 "PO-Revision-Date: 2024-03-17 03:15+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -65,27 +65,27 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "ბალანსი"
 
-#: kcm/ui/main.qml:83
+#: kcm/ui/main.qml:80
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "არააქტიური მოწყობილობების ჩვენება"
 
-#: kcm/ui/main.qml:90
+#: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "მორგება…"
 
-#: kcm/ui/main.qml:97
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: kcm/ui/main.qml:100
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "მოითხოვს %1 PulseAudio-ის მოდულს"
 
-#: kcm/ui/main.qml:103
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -93,38 +93,38 @@ msgstr ""
 "ყველა ლოკალური ხმოვანი ბარათიდან ერთდროული გამოტანისთვის დაამატეთ გამოტანის "
 "ვირტუალური მოწყობილობა"
 
-#: kcm/ui/main.qml:109
+#: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "ახალი გამოტანის გაჩენისას ყველა გაშვებული ნაკადის ავტომატური გადართვა"
 
-#: kcm/ui/main.qml:146
+#: kcm/ui/main.qml:143
 #, kde-format
 msgid "Playback Devices"
 msgstr "დამკვრელი მოწყობილობები"
 
-#: kcm/ui/main.qml:170
+#: kcm/ui/main.qml:167
 #, kde-format
 msgid "Recording Devices"
 msgstr "ჩამწერი მოწყობილობები"
 
-#: kcm/ui/main.qml:194
+#: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
 msgstr "არააქტიური ბარათები"
 
-#: kcm/ui/main.qml:225
+#: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
 msgstr "დასაკრავი ნაკადები"
 
-#: kcm/ui/main.qml:274
+#: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
 msgstr "ჩამწერი ნააკდები"
 
-#: kcm/ui/main.qml:308
+#: kcm/ui/main.qml:305
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -136,63 +136,63 @@ msgstr ""
 "შეცდომა სატესტო ხმის დაკვრისას.\n"
 "სისტემამ თქო: \"%1\" -ო"
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:402
 #, kde-format
 msgid "Front Left"
 msgstr "წინა მარცხენა"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Center"
 msgstr "წინა ცენტრი"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Right"
 msgstr "წინა მარჯვენა"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Side Left"
 msgstr "მარცხენა მხარეს"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Right"
 msgstr "მარჯვენა მხარეს"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Rear Left"
 msgstr "უკანა მარცხენა"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Subwoofer"
 msgstr "საბვუფერი"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Rear Right"
 msgstr "უკანა მარკვენა"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Mono"
 msgstr "მონო"
 
-#: kcm/ui/main.qml:467
+#: kcm/ui/main.qml:464
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "დააწკაპუნეთ დასატესტ დინამიკზე"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "დადუმების გამორთვა: %1"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-18 00:39+0000\n"
+"POT-Creation-Date: 2024-03-24 00:39+0000\n"
 "PO-Revision-Date: 2024-03-17 20:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -64,64 +64,64 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "平衡"
 
-#: kcm/ui/main.qml:83
+#: kcm/ui/main.qml:80
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "显示非活动设备"
 
-#: kcm/ui/main.qml:90
+#: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "配置音量控制…"
 
-#: kcm/ui/main.qml:97
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
 msgstr "配置…"
 
-#: kcm/ui/main.qml:100
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "需要 PulseAudio 的 %1 模块"
 
-#: kcm/ui/main.qml:103
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "一个可以同步输出到所有本地声卡的虚拟输出设备"
 
-#: kcm/ui/main.qml:109
+#: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "自动切换所有当前音频流到新输出设备"
 
-#: kcm/ui/main.qml:146
+#: kcm/ui/main.qml:143
 #, kde-format
 msgid "Playback Devices"
 msgstr "播放设备"
 
-#: kcm/ui/main.qml:170
+#: kcm/ui/main.qml:167
 #, kde-format
 msgid "Recording Devices"
 msgstr "录音设备"
 
-#: kcm/ui/main.qml:194
+#: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
 msgstr "已停用声卡"
 
-#: kcm/ui/main.qml:225
+#: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
 msgstr "播放流"
 
-#: kcm/ui/main.qml:274
+#: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
 msgstr "录音流"
 
-#: kcm/ui/main.qml:308
+#: kcm/ui/main.qml:305
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -133,63 +133,63 @@ msgstr ""
 "尝试播放测试声音时出错。 \n"
 "系统返回消息：“%1”"
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:402
 #, kde-format
 msgid "Front Left"
 msgstr "左前"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Center"
 msgstr "正前"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Right"
 msgstr "右前"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Side Left"
 msgstr "左侧"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Right"
 msgstr "右侧"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Rear Left"
 msgstr "左后"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Subwoofer"
 msgstr "低音炮"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Rear Right"
 msgstr "右后"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Mono"
 msgstr "单声道"
 
-#: kcm/ui/main.qml:467
+#: kcm/ui/main.qml:464
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "点击任意扬声器以测试声音"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "取消静音 %1"
 
-#: kcm/ui/MuteButton.qml:22
+#: kcm/ui/MuteButton.qml:25
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
