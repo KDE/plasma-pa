@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY i18n-plasmapa 'Audio Volume'>
+  <!ENTITY i18n-plasmapa 'Ses'>
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % Turkish "INCLUDE">
 ]>
