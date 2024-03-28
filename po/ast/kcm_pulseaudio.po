@@ -1,21 +1,21 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
-# Enol P. <enolp@softastur.org>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-24 00:39+0000\n"
-"PO-Revision-Date: 2023-05-23 23:12+0200\n"
+"PO-Revision-Date: 2024-03-25 22:39+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
-"Language-Team: \n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
 "Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
 #, kde-format
@@ -67,7 +67,7 @@ msgstr "Balance"
 #: kcm/ui/main.qml:80
 #, kde-format
 msgid "Show Inactive Devices"
-msgstr ""
+msgstr "Amosar los preseos inactivos"
 
 #: kcm/ui/main.qml:87
 #, kde-format
@@ -109,12 +109,12 @@ msgstr "Preseos de grabación"
 #: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
-msgstr ""
+msgstr "Tarxetes inactives"
 
 #: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
-msgstr ""
+msgstr "Fluxos de reproducción"
 
 #: kcm/ui/main.qml:271
 #, kde-format
@@ -297,14 +297,12 @@ msgid "Mute"
 msgstr ""
 
 #: kded/audioshortcutsservice.cpp:159
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Micrófonu"
+msgstr ""
 
 #: kded/audioshortcutsservice.cpp:173
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
 msgstr "Volume del audiu"
 
@@ -324,12 +322,10 @@ msgid "No output device"
 msgstr ""
 
 #: kded/audioshortcutsservice.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: qml/listitemmenu.cpp:319
 #, kde-format
