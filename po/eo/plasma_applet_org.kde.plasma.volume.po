@@ -1,22 +1,22 @@
+# translation of plasma_applet_org.kde.plasma.volume.pot to Esperanto
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the plasma-pa package.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2024.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-30 02:26+0000\n"
-"PO-Revision-Date: 2024-03-28 19:24\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-28 09:21+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-stable/messages/plasma-pa/plasma_applet_org.kde.plasma."
-"volume.pot\n"
-"X-Crowdin-File-ID: 2342\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -27,56 +27,56 @@ msgstr "%1 (%2)"
 #: contents/ui/DeviceListItem.qml:35
 #, kde-format
 msgid "Device name not found"
-msgstr "找不到设备名称"
+msgstr "Aparatonomo ne trovita"
 
 #: contents/ui/ListItemBase.qml:70
 #, kde-format
 msgid "Currently not recording"
-msgstr "当前不在录音"
+msgstr "Nuntempe ne registras"
 
 #: contents/ui/ListItemBase.qml:71
 #, kde-format
 msgid "Currently not playing"
-msgstr "当前不在播放"
+msgstr "Nuntempe ne ludas"
 
 #: contents/ui/ListItemBase.qml:184
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr "更多选项"
+msgstr "Pliaj Opcioj"
 
 #: contents/ui/ListItemBase.qml:186
 #, kde-format
 msgid "Show additional options for %1"
-msgstr "显示用于 %1 的附加选项"
+msgstr "Montri pliajn opciojn por %1"
 
 #: contents/ui/ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "取消静音"
+msgstr "Malsilentigi"
 
 #: contents/ui/ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
-msgstr "静音"
+msgstr "Silentigi"
 
 #: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgid "Unmute %1"
-msgstr "取消静音 %1"
+msgstr "Malŝalti %1"
 
 #: contents/ui/ListItemBase.qml:205
 #, kde-format
 msgid "Mute %1"
-msgstr "静音 %1"
+msgstr "Silentigi %1"
 
 #: contents/ui/ListItemBase.qml:225
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
-msgstr "调整 %1 的音量"
+msgstr "Alĝustigi laŭtecon por %1"
 
 #: contents/ui/ListItemBase.qml:283
 #, kde-format
@@ -93,109 +93,109 @@ msgstr "100%"
 #: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
-msgstr "音频音量"
+msgstr "Aŭdio-Laŭteco"
 
 #: contents/ui/main.qml:39
 #, kde-format
 msgid "No output or input devices found"
-msgstr "没有找到输出或者输入设备"
+msgstr "Neniu eligo aŭ eniga aparatoj trovitaj"
 
 #: contents/ui/main.qml:57
 #, kde-format
 msgid "Audio Muted"
-msgstr "音频已静音"
+msgstr "Aŭdio silentigita"
 
 #: contents/ui/main.qml:59
 #, kde-format
 msgid "Volume at %1%"
-msgstr "音量为 %1%"
+msgstr "Volumo je %1%"
 
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr "中键单击以取消静音"
+msgstr "Mezklaku por malsilentigi"
 
 #: contents/ui/main.qml:78
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr "中键单击以静音全部音频"
+msgstr "Mezklaku por silentigi la tutan audion"
 
 #: contents/ui/main.qml:79
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr "滚动鼠标滚轮以调节音量"
+msgstr "Rulumu por ĝustigi laŭtecon"
 
 #: contents/ui/main.qml:243
 #, kde-format
 msgid "No output device"
-msgstr "没有输出设备"
+msgstr "Neniu eliga aparato"
 
 #: contents/ui/main.qml:375
 #, kde-format
 msgid "Increase Volume"
-msgstr "提高音量"
+msgstr "Pliigi la laŭtecon"
 
 #: contents/ui/main.qml:381
 #, kde-format
 msgid "Decrease Volume"
-msgstr "降低音量"
+msgstr "Malpliigi la laŭtecon"
 
 #: contents/ui/main.qml:387
 #, kde-format
 msgid "Mute"
-msgstr "静音"
+msgstr "Silentigi"
 
 #: contents/ui/main.qml:393
 #, kde-format
 msgid "Increase Microphone Volume"
-msgstr "提高麦克风音量"
+msgstr "Pliigi mikrofonan laŭtecon"
 
 #: contents/ui/main.qml:399
 #, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "降低麦克风音量"
+msgstr "Malpliigi mikrofonan laŭteco"
 
 #: contents/ui/main.qml:405
 #, kde-format
 msgid "Mute Microphone"
-msgstr "麦克风静音"
+msgstr "Mute Mikrofono"
 
 #: contents/ui/main.qml:509
 #, kde-format
 msgid "Devices"
-msgstr "设备"
+msgstr "Aparatoj"
 
 #: contents/ui/main.qml:516
 #, kde-format
 msgid "Applications"
-msgstr "应用程序"
+msgstr "Aplikaĵoj"
 
 #: contents/ui/main.qml:537 contents/ui/main.qml:539 contents/ui/main.qml:769
 #, kde-format
 msgid "Force mute all playback devices"
-msgstr "强制静音所有播放设备"
+msgstr "Devigi silentigi ĉiujn reproduktajn aparatojn"
 
 #: contents/ui/main.qml:592
 #, kde-format
 msgid "No applications playing or recording audio"
-msgstr "没有正在播放或者录制音频的应用程序"
+msgstr "Neniuj aplikoj ludantaj aŭ registrante audio"
 
 #: contents/ui/main.qml:743
 #, kde-format
 msgid "Raise maximum volume"
-msgstr "提高最大音量"
+msgstr "Altigi maksimuman laŭtecon"
 
 #: contents/ui/main.qml:773
 #, kde-format
 msgid "Show virtual devices"
-msgstr "显示虚拟设备"
+msgstr "Montri virtualajn aparatojn"
 
 #: contents/ui/main.qml:779
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr "配置音频设备(&C)…"
+msgstr "&Agordi Aŭdio-Aparatojn…"
 
 #: contents/ui/StreamListItem.qml:24
 #, kde-format
 msgid "Stream name not found"
-msgstr "找不到流名称"
+msgstr "Fluonomo ne trovita"
