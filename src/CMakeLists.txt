@@ -60,7 +60,9 @@ target_link_libraries(plasma-volume-declarative PRIVATE
     KF6::ConfigCore
     KF6::ConfigGui
     KF6::CoreAddons
+    KF6::IconThemes
     Canberra::Canberra
+    Plasma::Plasma
     PkgConfig::LIBPULSE
     PkgConfig::LIBPULSE_MAINLOOP
     PkgConfig::GIO

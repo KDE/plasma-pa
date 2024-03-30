@@ -48,6 +48,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     GlobalAccel
     StatusNotifierItem
     I18n
+    IconThemes
     KCMUtils
     Svg
 )

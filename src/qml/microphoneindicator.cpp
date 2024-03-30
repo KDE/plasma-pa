@@ -13,6 +13,8 @@
 #include <QMenu>
 #include <QTimer>
 
+#include <KIconColors>
+#include <KIconEngine>
 #include <KLocalizedString>
 #include <KStatusNotifierItem>
 
@@ -24,6 +26,10 @@
 #include "volumeosd.h"
 
 using namespace QPulseAudio;
+
+#include <Plasma/Theme>
+
+Q_GLOBAL_STATIC(Plasma::Theme, s_theme)
 
 MicrophoneIndicator::MicrophoneIndicator(QObject *parent)
     : QObject(parent)
@@ -130,7 +136,7 @@ void MicrophoneIndicator::update()
     }
 
     m_sni->setTitle(i18n("Microphone"));
-    m_sni->setIconByName(iconName);
+    m_sni->setIconByPixmap(QIcon(new KIconEngine(iconName, KIconColors(Plasma::Theme::globalPalette()), KIconLoader::global())));
     m_sni->setToolTip(QIcon::fromTheme(iconName), allMuted ? i18n("Microphone Muted") : i18n("Microphone"), toolTipForApps(apps));
 
     if (m_muteAction) {
