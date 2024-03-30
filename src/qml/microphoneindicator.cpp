@@ -103,6 +103,10 @@ void MicrophoneIndicator::update()
             }
         });
 
+        connect(s_theme, &Plasma::Theme::themeChanged, m_sni, [this] () {
+            update();
+        });
+
         QMenu *menu = m_sni->contextMenu();
 
         m_muteAction = menu->addAction(QIcon::fromTheme(QStringLiteral("microphone-sensitivity-muted")), i18n("Mute"));
