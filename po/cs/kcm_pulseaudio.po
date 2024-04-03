@@ -269,12 +269,12 @@ msgstr "100%"
 #: kded/audioshortcutsservice.cpp:58
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Zvýšit hlasitost"
 
 #: kded/audioshortcutsservice.cpp:73
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Snížit hlasitost"
 
 #: kded/audioshortcutsservice.cpp:88
 #, kde-format
@@ -289,12 +289,12 @@ msgstr ""
 #: kded/audioshortcutsservice.cpp:118
 #, kde-format
 msgid "Increase Microphone Volume"
-msgstr ""
+msgstr "Zvýšit hlasitost mikrofonu"
 
 #: kded/audioshortcutsservice.cpp:132
 #, kde-format
 msgid "Decrease Microphone Volume"
-msgstr ""
+msgstr "Snížit hlasitost mikrofonu"
 
 #: kded/audioshortcutsservice.cpp:146 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -304,12 +304,12 @@ msgstr "Ztlumit"
 #: kded/audioshortcutsservice.cpp:159
 #, kde-format
 msgid "Mute Microphone"
-msgstr ""
+msgstr "Ztlumit mikrofon"
 
 #: kded/audioshortcutsservice.cpp:173
 #, kde-format
 msgid "Audio Volume"
-msgstr ""
+msgstr "Hlasitost zvuku"
 
 #: kded/audioshortcutsservice.cpp:191
 #, kde-format
@@ -319,18 +319,18 @@ msgstr ""
 #: kded/audioshortcutsservice.cpp:207
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Název zařízení nenalezen"
 
 #: kded/audioshortcutsservice.cpp:239
 #, kde-format
 msgid "No output device"
-msgstr ""
+msgstr "Žádné výstupní zařízení"
 
 #: kded/audioshortcutsservice.cpp:253
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr ""
+msgstr "%1 (%2% Baterie)"
 
 #: qml/listitemmenu.cpp:319
 #, kde-format
