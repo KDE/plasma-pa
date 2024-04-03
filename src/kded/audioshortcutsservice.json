@@ -22,6 +22,7 @@
         "Description[tr]": "Ses aygıtları ve ses düzeyi için kısayollar sağlar",
         "Description[uk]": "Клавіатурні скорочення для звукового пристрою та керування гучністю",
         "Description[x-test]": "xxProvides shortcuts for audio device and volume controlxx",
+        "Description[zh_CN]": "提供音频设备和音量控制的快捷方式",
         "Name": "Audio Shortcuts",
         "Name[bg]": "Клавишни комбинации за контрол на звука",
         "Name[ca@valencia]": "Dreceres d'àudio",
@@ -43,7 +44,8 @@
         "Name[ta]": "ஒலி சுருக்குவழிகள்",
         "Name[tr]": "Ses Kısayolları",
         "Name[uk]": "Звукові клавіатурні скорочення",
-        "Name[x-test]": "xxAudio Shortcutsxx"
+        "Name[x-test]": "xxAudio Shortcutsxx",
+        "Name[zh_CN]": "音频快捷键"
     },
     "X-KDE-Kded-autoload": true
 }
