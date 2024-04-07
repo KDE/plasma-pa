@@ -1,14 +1,15 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
 # Maris Nartiss <maris.kde@gmail.com>, 2019.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2019-01-04 11:37+0200\n"
-"Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
+"PO-Revision-Date: 2024-04-03 12:49+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -16,60 +17,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 18.12.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: contents/ui/ListItemBase.qml:66
 #, kde-format
 msgid "Currently not recording"
-msgstr ""
+msgstr "Šobrīd neieraksta"
 
 #: contents/ui/ListItemBase.qml:67
 #, kde-format
 msgid "Currently not playing"
-msgstr ""
+msgstr "Šobrīd neatskaņo"
 
 #: contents/ui/ListItemBase.qml:183
-#, fuzzy, kde-format
-#| msgid "Show additional options for %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr "Rādīt papildus opcijas priekš %1"
+msgstr "Papildu opcijas"
 
 #: contents/ui/ListItemBase.qml:185
 #, kde-format
 msgid "Show additional options for %1"
-msgstr "Rādīt papildus opcijas priekš %1"
+msgstr "Rādīt „%1“ papildu opcijas"
 
 #: contents/ui/ListItemBase.qml:204
-#, fuzzy, kde-format
-#| msgid "Mute %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "Apklusināt %1"
+msgstr "Atjaunot skaņu"
 
 #: contents/ui/ListItemBase.qml:204
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Apklusināt"
 
 #: contents/ui/ListItemBase.qml:206
-#, fuzzy, kde-format
-#| msgid "Mute %1"
+#, kde-format
 msgid "Unmute %1"
-msgstr "Apklusināt %1"
+msgstr "Atjaunot skaņu „%1“"
 
 #: contents/ui/ListItemBase.qml:206
 #, kde-format
 msgid "Mute %1"
-msgstr "Apklusināt %1"
+msgstr "Apklusināt „%1“"
 
 #: contents/ui/ListItemBase.qml:227
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
-msgstr "Regulēt skaļumu priekš %1"
+msgstr "Regulēt „%1“ skaļumu"
 
 #: contents/ui/ListItemBase.qml:288
 #, kde-format
@@ -86,17 +83,17 @@ msgstr "100%"
 #: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
-msgstr "Audio skaļums"
+msgstr "Skaļums"
 
 #: contents/ui/main.qml:39
 #, kde-format
 msgid "No output or input devices found"
-msgstr "Nav atrastas ievades vai izvades iekārtas"
+msgstr "Nav atrastas ievades vai izvades ierīces"
 
 #: contents/ui/main.qml:53
 #, kde-format
 msgid "Audio Muted"
-msgstr "Audio ir apklusināts"
+msgstr "Skaņa ir apklusināta"
 
 #: contents/ui/main.qml:55
 #, kde-format
@@ -106,27 +103,27 @@ msgstr "Skaļums ir %1%"
 #: contents/ui/main.qml:66
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Atjaunojiet skaņu ar vidējo klikšķi"
 
 #: contents/ui/main.qml:67
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Apklusiniet visu ar vidējo klikšķi"
 
 #: contents/ui/main.qml:68
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Ritiniet, lai mainītu skaļumu"
 
 #: contents/ui/main.qml:89
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Ierīces nosaukums nav atrasts"
 
 #: contents/ui/main.qml:293
 #, kde-format
 msgid "Devices"
-msgstr "Iekārtas"
+msgstr "Ierīces"
 
 #: contents/ui/main.qml:300
 #, kde-format
@@ -136,7 +133,7 @@ msgstr "Programmas"
 #: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
 #, kde-format
 msgid "Force mute all playback devices"
-msgstr ""
+msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
 
 #: contents/ui/main.qml:371
 #, kde-format
@@ -149,20 +146,19 @@ msgid "Raise maximum volume"
 msgstr "Palielināt maksimālo skaļumu"
 
 #: contents/ui/main.qml:547
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
+#, kde-format
 msgid "Show virtual devices"
-msgstr "Nav atrastas ievades vai izvades iekārtas"
+msgstr "Rādīt virtuālās ierīces"
 
 #: contents/ui/main.qml:557
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr ""
+msgstr "&Konfigurēt skaņas ierīces..."
 
 #: contents/ui/StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
-msgstr ""
+msgstr "Straumes nosaukums nav atrasts"
 
 #, fuzzy
 #~| msgid "No output or input devices found"
