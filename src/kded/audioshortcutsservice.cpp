@@ -31,9 +31,9 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     , m_sinkModel(new PulseAudioQt::SinkModel(this))
     , m_sourceModel(new PulseAudioQt::SourceModel(this))
     , m_cardModel(new PulseAudioQt::CardModel(this))
+    , m_globalConfig(new GlobalConfig(this))
     , m_osdDBusInterface(new OsdServiceInterface(OSD_DBUS_SERVICE, OSD_DBUS_PATH, QDBusConnection::sessionBus(), this))
     , m_feedback(new VolumeFeedback(this))
-    , m_globalConfig(new GlobalConfig(this))
 {
     connect(PulseAudioQt::Context::instance()->server(), &PulseAudioQt::Server::defaultSinkChanged, this, &AudioShortcutsService::handleDefaultSinkChange);
     connect(&m_preferredDevice, &PreferredDevice::sinkChanged, this, [this]() {
