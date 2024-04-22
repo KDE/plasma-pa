@@ -57,7 +57,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
 find_package(Plasma ${PROJECT_DEP_VERSION} REQUIRED)
 
 find_package(Canberra REQUIRED)
-find_package(KF6PulseAudioQt REQUIRED)
+find_package(KF6PulseAudioQt 1.5.0 REQUIRED)
 
 pkg_check_modules(LIBPULSE libpulse REQUIRED IMPORTED_TARGET)
 pkg_check_modules(LIBPULSE_MAINLOOP libpulse-mainloop-glib REQUIRED IMPORTED_TARGET)
