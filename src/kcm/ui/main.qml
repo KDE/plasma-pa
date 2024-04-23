@@ -301,16 +301,20 @@ KCM.ScrollViewKCM {
         }
     }
 
-    Kirigami.OverlaySheet {
+    Kirigami.Dialog {
         id: testOverlay
 
         property var sinkObject: null
         property string description: ""
-        property string iconName: "audio-card"
         property string profile: ""
         property string port: ""
+        property string iconName
 
-        function testSink(index) {
+        title: testOverlay.description
+        standardButtons: undefined
+        horizontalPadding: Kirigami.Units.largeSpacing
+
+        function testSink(index): void {
             let modelIndex = sinks.model.index(Math.max(index, 0), 0);
             sinkObject = sinks.model.data(modelIndex, sinks.model.KItemModels.KRoleNames.role("PulseObject"));
             description = sinks.model.data(modelIndex, sinks.model.KItemModels.KRoleNames.role("Description"));
@@ -335,21 +339,9 @@ KCM.ScrollViewKCM {
             }
         }
 
-        header: GridLayout {
-            columns: 2
-            rowSpacing: Kirigami.Units.smallSpacing
+        contentItem: ColumnLayout {
+            spacing: Kirigami.Units.largeSpacing
 
-            Kirigami.Icon {
-                source: testOverlay.iconName || "audio-card"
-                Layout.rowSpan: 3
-                Layout.alignment: Qt.AlignCenter
-            }
-            Label {
-                text: testOverlay.description
-                font.bold: true
-                Layout.fillWidth: true
-                wrapMode: Text.WordWrap
-            }
             Label {
                 text: {
                     if (testOverlay.port.length === 0) { return testOverlay.profile }
@@ -360,9 +352,7 @@ KCM.ScrollViewKCM {
                 Layout.fillWidth: true
                 elide: Text.ElideRight
             }
-        }
 
-        ColumnLayout {
             Kirigami.InlineMessage {
                 id: testError
                 type: Kirigami.MessageType.Error
@@ -372,7 +362,7 @@ KCM.ScrollViewKCM {
 
             GridLayout {
                 columns: 3
-                rowSpacing: Kirigami.Units.gridUnit
+                rowSpacing: Kirigami.Units.largeSpacing
 
                 LayoutMirroring.enabled: false  // To preserve spacial layout on RTL
 
@@ -388,6 +378,7 @@ KCM.ScrollViewKCM {
                     Layout.row: 1
                     Layout.column: 1
                     Layout.alignment: Qt.AlignCenter
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
                 }
 
                 Repeater {
@@ -429,6 +420,10 @@ KCM.ScrollViewKCM {
                         contentItem: ColumnLayout {
                             spacing: 0
 
+                            Item {
+                                Layout.fillHeight: true
+                            }
+
                             Kirigami.Icon {
                                 source: ":/kcm/kcm_pulseaudio/icons/audio-speakers-symbolic.svg"
                                 isMask: true
@@ -444,11 +439,14 @@ KCM.ScrollViewKCM {
                                 text: channelData.text
                                 color: isPlaying ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                                 Layout.fillWidth: true
-                                Layout.fillHeight: true
                                 Layout.margins: Kirigami.Units.smallSpacing
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignTop
                                 wrapMode: Text.WordWrap
+                            }
+
+                            Item {
+                                Layout.fillHeight: true
                             }
                         }
 
@@ -463,8 +461,9 @@ KCM.ScrollViewKCM {
             Label {
                 text: i18nd("kcm_pulseaudio", "Click on any speaker to test sound")
                 font: Kirigami.Theme.smallFont
-                Layout.alignment: Qt.AlignCenter
-                Layout.topMargin: Kirigami.Units.gridUnit
+                horizontalAlignment: Text.AlignHCenter
+                Layout.fillWidth: true
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
             }
         }
     }
