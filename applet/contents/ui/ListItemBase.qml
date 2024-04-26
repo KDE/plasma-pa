@@ -114,7 +114,7 @@ PC3.ItemDelegate {
                     Layout.leftMargin: !mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                     Layout.rightMargin: mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                     spacing: Kirigami.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
-                    checked: item.model.PulseObject.hasOwnProperty("default") ? item.model.PulseObject.default : false
+                    checked: item.model.PulseObject?.default ?? false
                     visible: (item.type === "sink" || item.type === "source") && item.ListView.view.count > 1
                     onClicked: item.model.PulseObject.default = true;
                 }
