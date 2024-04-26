@@ -111,8 +111,8 @@ PC3.ItemDelegate {
                     // Maximum width of the button need to match the text. Empty area must not change the default device.
                     Layout.maximumWidth: controlsRow.width - Layout.leftMargin - Layout.rightMargin
                                             - (contextMenuButton.visible ? contextMenuButton.implicitWidth + Kirigami.Units.smallSpacing * 2 : 0)
-                    Layout.leftMargin: LayoutMirroring.enabled ? 0 : Math.round((muteButton.width - defaultButton.indicator.width) / 2)
-                    Layout.rightMargin: LayoutMirroring.enabled ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
+                    Layout.leftMargin: !mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
+                    Layout.rightMargin: mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                     spacing: Kirigami.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
                     checked: item.model.PulseObject.hasOwnProperty("default") ? item.model.PulseObject.default : false
                     visible: (item.type === "sink" || item.type === "source") && item.ListView.view.count > 1
