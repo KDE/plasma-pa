@@ -106,56 +106,65 @@ PC3.ItemDelegate {
                 Layout.minimumHeight: contextMenuButton.implicitHeight
                 spacing: Kirigami.Units.smallSpacing
 
-                PC3.RadioButton {
-                    id: defaultButton
-                    // Maximum width of the button need to match the text. Empty area must not change the default device.
-                    Layout.maximumWidth: controlsRow.width - Layout.leftMargin - Layout.rightMargin
-                                            - (contextMenuButton.visible ? contextMenuButton.implicitWidth + Kirigami.Units.smallSpacing * 2 : 0)
-                    Layout.leftMargin: !mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
-                    Layout.rightMargin: mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
-                    spacing: Kirigami.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
-                    checked: item.model.PulseObject?.default ?? false
+                RowLayout {
+                    spacing: 0
+                    Layout.maximumWidth: Infinity // Ignore maximum width of children
                     visible: (item.type === "sink" || item.type === "source") && item.ListView.view.count > 1
-                    onToggled: {
-                        if (checked) {
-                            item.model.PulseObject.default = true;
+
+                    PC3.RadioButton {
+                        id: defaultButton
+                        // Maximum width of the button need to match the text. Empty area must not change the default device.
+                        Layout.maximumWidth: item.availableWidth - Layout.leftMargin - Layout.rightMargin
+                            - (contextMenuButton.visible ? contextMenuButton.implicitWidth + Kirigami.Units.smallSpacing * 2 : 0)
+                        Layout.leftMargin: !mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
+                        Layout.rightMargin: mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
+                        spacing: Kirigami.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
+                        checked: item.model.PulseObject?.default ?? false
+                        onToggled: {
+                            if (checked) {
+                                item.model.PulseObject.default = true;
+                            }
                         }
                     }
                 }
 
-                RowLayout {
+                Item {
                     Layout.fillWidth: true
                     visible: !defaultButton.visible
-                    spacing: Kirigami.Units.smallSpacing
+                    implicitHeight: Math.max(friendlyDescriptionLabel.implicitHeight, longDescriptionLabel.implicitHeight)
 
                     // User-friendly name
                     PC3.Label {
-                        Layout.fillWidth: !longDescription.visible
+                        id: friendlyDescriptionLabel
+
+                        anchors {
+                            left: parent.left
+                            verticalCenter: parent.verticalCenter
+                        }
+                        width: Math.min(implicitWidth, parent.width)
+
                         text: defaultButton.text
                         elide: Text.ElideRight
 
-                        MouseArea {
+                        HoverHandler {
                             id: labelHoverHandler
-
-                            // Only want to handle hover for the width of
-                            // the actual text item itself
-                            anchors.left: parent.left
-                            anchors.top: parent.top
-                            width: parent.contentWidth
-                            height: parent.contentHeight
-
-                            enabled: item.fullNameToShowOnHover.length > 0
-                            hoverEnabled: true
-                            acceptedButtons: Qt.NoButton
+                            enabled: item.fullNameToShowOnHover !== ""
                         }
                     }
+
                     // Possibly not user-friendly description; only show on hover
                     PC3.Label {
-                        id: longDescription
+                        id: longDescriptionLabel
 
-                        Layout.fillWidth: true
-                        visible: opacity > 0
-                        opacity: labelHoverHandler.containsMouse ? 1 : 0
+                        anchors {
+                            left: friendlyDescriptionLabel.right
+                            leftMargin: Kirigami.Units.smallSpacing
+                            right: parent.right
+                            verticalCenter: parent.verticalCenter
+                        }
+
+                        visible: width > 0 && opacity > 0
+                        opacity: labelHoverHandler.hovered ? 1 : 0
                         Behavior on opacity {
                             NumberAnimation {
                                 duration: Kirigami.Units.shortDuration
@@ -167,11 +176,6 @@ PC3.ItemDelegate {
                         text: "(" + item.fullNameToShowOnHover + ")"
                         elide: Text.ElideRight
                     }
-                }
-
-                Item {
-                    Layout.fillWidth: true
-                    visible: contextMenuButton.visible
                 }
 
                 SmallToolButton {
