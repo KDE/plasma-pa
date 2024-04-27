@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 00:38+0000\n"
+"POT-Creation-Date: 2024-04-27 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -28,52 +28,52 @@ msgstr "当前不在录音"
 msgid "Currently not playing"
 msgstr "当前不在播放"
 
-#: contents/ui/ListItemBase.qml:183
+#: contents/ui/ListItemBase.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "更多选项"
 
-#: contents/ui/ListItemBase.qml:185
+#: contents/ui/ListItemBase.qml:189
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "显示用于 %1 的附加选项"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "取消静音"
 
-#: contents/ui/ListItemBase.qml:204
+#: contents/ui/ListItemBase.qml:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "静音"
 
-#: contents/ui/ListItemBase.qml:206
+#: contents/ui/ListItemBase.qml:210
 #, kde-format
 msgid "Unmute %1"
 msgstr "取消静音 %1"
 
-#: contents/ui/ListItemBase.qml:206
+#: contents/ui/ListItemBase.qml:210
 #, kde-format
 msgid "Mute %1"
 msgstr "静音 %1"
 
-#: contents/ui/ListItemBase.qml:227
+#: contents/ui/ListItemBase.qml:231
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "调整 %1 的音量"
 
-#: contents/ui/ListItemBase.qml:288
+#: contents/ui/ListItemBase.qml:292
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:308
+#: contents/ui/ListItemBase.qml:312
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
