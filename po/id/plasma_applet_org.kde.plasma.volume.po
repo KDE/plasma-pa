@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:39+0000\n"
+"POT-Creation-Date: 2024-04-30 00:40+0000\n"
 "PO-Revision-Date: 2023-01-29 08:01+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -28,52 +28,52 @@ msgstr "Saat ini tidak merekam"
 msgid "Currently not playing"
 msgstr "Saat ini tidak memainkan"
 
-#: contents/ui/ListItemBase.qml:187
+#: contents/ui/ListItemBase.qml:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Opsi Tambahan"
 
-#: contents/ui/ListItemBase.qml:189
+#: contents/ui/ListItemBase.qml:193
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Tampilkan opsi tambahan untuk %1"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Bunyikan"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Senyapkan"
 
-#: contents/ui/ListItemBase.qml:210
+#: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Unmute %1"
 msgstr "Bunyikan %1"
 
-#: contents/ui/ListItemBase.qml:210
+#: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Mute %1"
 msgstr "Senyapkan %1"
 
-#: contents/ui/ListItemBase.qml:231
+#: contents/ui/ListItemBase.qml:235
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Sesuaikan volume untuk %1"
 
-#: contents/ui/ListItemBase.qml:292
+#: contents/ui/ListItemBase.qml:296
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:312
+#: contents/ui/ListItemBase.qml:316
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

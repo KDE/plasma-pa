@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:39+0000\n"
+"POT-Creation-Date: 2024-04-30 00:40+0000\n"
 "PO-Revision-Date: 2024-04-03 12:49+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -29,52 +29,52 @@ msgstr "Šobrīd neieraksta"
 msgid "Currently not playing"
 msgstr "Šobrīd neatskaņo"
 
-#: contents/ui/ListItemBase.qml:187
+#: contents/ui/ListItemBase.qml:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Papildu opcijas"
 
-#: contents/ui/ListItemBase.qml:189
+#: contents/ui/ListItemBase.qml:193
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Rādīt „%1“ papildu opcijas"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Atjaunot skaņu"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Apklusināt"
 
-#: contents/ui/ListItemBase.qml:210
+#: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Unmute %1"
 msgstr "Atjaunot skaņu „%1“"
 
-#: contents/ui/ListItemBase.qml:210
+#: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Mute %1"
 msgstr "Apklusināt „%1“"
 
-#: contents/ui/ListItemBase.qml:231
+#: contents/ui/ListItemBase.qml:235
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Regulēt „%1“ skaļumu"
 
-#: contents/ui/ListItemBase.qml:292
+#: contents/ui/ListItemBase.qml:296
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:312
+#: contents/ui/ListItemBase.qml:316
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

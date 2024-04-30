@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:39+0000\n"
+"POT-Creation-Date: 2024-04-30 00:40+0000\n"
 "PO-Revision-Date: 2023-05-21 14:47+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -27,52 +27,52 @@ msgstr "Currently not recording"
 msgid "Currently not playing"
 msgstr "Currently not playing"
 
-#: contents/ui/ListItemBase.qml:187
+#: contents/ui/ListItemBase.qml:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Additional Options"
 
-#: contents/ui/ListItemBase.qml:189
+#: contents/ui/ListItemBase.qml:193
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Show additional options for %1"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Unmute"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Mute"
 
-#: contents/ui/ListItemBase.qml:210
+#: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Unmute %1"
 msgstr "Unmute %1"
 
-#: contents/ui/ListItemBase.qml:210
+#: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Mute %1"
 msgstr "Mute %1"
 
-#: contents/ui/ListItemBase.qml:231
+#: contents/ui/ListItemBase.qml:235
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Adjust volume for %1"
 
-#: contents/ui/ListItemBase.qml:292
+#: contents/ui/ListItemBase.qml:296
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:312
+#: contents/ui/ListItemBase.qml:316
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

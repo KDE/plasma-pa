@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 00:39+0000\n"
+"POT-Creation-Date: 2024-04-30 00:40+0000\n"
 "PO-Revision-Date: 2023-04-07 23:42-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -28,52 +28,52 @@ msgstr "現在録音していません"
 msgid "Currently not playing"
 msgstr "現在再生していません"
 
-#: contents/ui/ListItemBase.qml:187
+#: contents/ui/ListItemBase.qml:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "追加オプション"
 
-#: contents/ui/ListItemBase.qml:189
+#: contents/ui/ListItemBase.qml:193
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1の追加オプションを表示"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ミュート解除"
 
-#: contents/ui/ListItemBase.qml:208
+#: contents/ui/ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "ミュート"
 
-#: contents/ui/ListItemBase.qml:210
+#: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1 をミュート解除"
 
-#: contents/ui/ListItemBase.qml:210
+#: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 をミュート"
 
-#: contents/ui/ListItemBase.qml:231
+#: contents/ui/ListItemBase.qml:235
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 の音量を調整"
 
-#: contents/ui/ListItemBase.qml:292
+#: contents/ui/ListItemBase.qml:296
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:312
+#: contents/ui/ListItemBase.qml:316
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
