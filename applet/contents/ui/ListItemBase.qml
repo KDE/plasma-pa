@@ -122,7 +122,7 @@ PC3.ItemDelegate {
                         checked: item.model.PulseObject?.default ?? false
                         onToggled: {
                             if (checked) {
-                                item.model.PulseObject.default = true;
+                                item.setAsDefault();
                             }
                         }
                     }
@@ -375,6 +375,12 @@ PC3.ItemDelegate {
         item.model.PulseObject.volume = Math.round(PulseAudio.NormalVolume * (targetPercent/100));
     }
 
+    function setAsDefault(): void {
+        if (type === "sink" || type === "source") {
+            model.PulseObject.default = true;
+        }
+    }
+
     Keys.onPressed: event => {
         const k = event.key;
 
@@ -383,9 +389,7 @@ PC3.ItemDelegate {
         } else if (k >= Qt.Key_0 && k <= Qt.Key_9) {
             setVolumeByPercent((k - Qt.Key_0) * 10);
         } else if (k === Qt.Key_Return) {
-            if (defaultButton.visible) {
-                defaultButton.clicked();
-            }
+            setAsDefault();
         } else if (k === Qt.Key_Menu && contextMenu.hasContent) {
             contextMenu.visualParent = contextMenuButton;
             contextMenu.openRelative();
