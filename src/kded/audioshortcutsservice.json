@@ -1,6 +1,7 @@
 {
     "KPlugin": {
         "Description": "Provides shortcuts for audio device and volume control",
+        "Description[ar]": "يوفر اختصارات لجهاز الصوت والتحكم في مستوى الصوت",
         "Description[bg]": "Предоставя клавишни комбинации за контрол на звукови устройства и сила на звука",
         "Description[ca@valencia]": "Proporciona dreceres per al control del dispositiu d'àudio i el volum",
         "Description[ca]": "Proporciona dreceres per al control del dispositiu d'àudio i el volum",
@@ -27,6 +28,7 @@
         "Description[zh_CN]": "提供音频设备和音量控制的快捷方式",
         "Description[zh_TW]": "提供音效裝置與音量控制的快捷鍵",
         "Name": "Audio Shortcuts",
+        "Name[ar]": "اختصارات الصوت",
         "Name[bg]": "Клавишни комбинации за контрол на звука",
         "Name[ca@valencia]": "Dreceres d'àudio",
         "Name[ca]": "Dreceres d'àudio",
