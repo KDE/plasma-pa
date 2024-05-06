@@ -1,1 +1,13 @@
-plasma_install_package(. org.kde.plasma.volume)
+plasma_add_applet(org.kde.plasma.volume
+    QML_SOURCES
+        DeviceListItem.qml
+        HorizontalStackView.qml
+        SmallToolButton.qml
+        StreamListItem.qml
+        VolumeSlider.qml
+        main.qml
+        ListItemBase.qml
+    RESOURCES
+        main.xml
+    GENERATE_APPLET_CLASS
+)

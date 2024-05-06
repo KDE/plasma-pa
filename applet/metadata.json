@@ -105,7 +105,6 @@
             "desktop"
         ],
         "Icon": "audio-volume-high",
-        "Id": "org.kde.plasma.volume",
         "License": "GPL",
         "Name": "Audio Volume",
         "Name[ar]": "مستوى الصّوت",
