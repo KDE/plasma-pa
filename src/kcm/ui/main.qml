@@ -50,18 +50,12 @@ KCM.ScrollViewKCM {
 
     PulseObjectFilterModel {
         id: paSinkFilterModel
-
-        sortRoleName: "SortByDefault"
-        sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
         sourceModel: paSinkModel
     }
 
     PulseObjectFilterModel {
         id: paSourceFilterModel
-
-        sortRoleName: "SortByDefault"
-        sortOrder: Qt.DescendingOrder
         filterOutInactiveDevices: true
         sourceModel: paSourceModel
     }
