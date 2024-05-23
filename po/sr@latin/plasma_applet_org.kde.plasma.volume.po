@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 00:40+0000\n"
+"POT-Creation-Date: 2024-05-23 00:40+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -124,38 +124,38 @@ msgstr ""
 msgid "Device name not found"
 msgstr ""
 
-#: contents/ui/main.qml:293
+#: contents/ui/main.qml:289
 #, kde-format
 msgid "Devices"
 msgstr "Uređaji"
 
-#: contents/ui/main.qml:300
+#: contents/ui/main.qml:296
 #, kde-format
 msgid "Applications"
 msgstr "Programi"
 
-#: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
+#: contents/ui/main.qml:313 contents/ui/main.qml:315 contents/ui/main.qml:534
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:367
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nijedan program ne pušta niti snima zvuk."
 
-#: contents/ui/main.qml:526
+#: contents/ui/main.qml:522
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Podigni najveću jačinu"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:543
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: contents/ui/main.qml:557
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

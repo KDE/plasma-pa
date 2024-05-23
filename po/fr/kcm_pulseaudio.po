@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:40+0000\n"
 "PO-Revision-Date: 2024-03-18 10:06+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -72,27 +72,27 @@ msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
 msgstr "Balance"
 
-#: kcm/ui/main.qml:80
+#: kcm/ui/main.qml:74
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Afficher les périphériques inactifs"
 
-#: kcm/ui/main.qml:87
+#: kcm/ui/main.qml:81
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Configurer les contrôles de volume..."
 
-#: kcm/ui/main.qml:94
+#: kcm/ui/main.qml:88
 #, kde-format
 msgid "Configure…"
 msgstr "Configurer…"
 
-#: kcm/ui/main.qml:97
+#: kcm/ui/main.qml:91
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Nécessite le module PulseAudio « %1 »"
 
-#: kcm/ui/main.qml:100
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -100,7 +100,7 @@ msgstr ""
 "Ajouter un périphérique de lecture virtuel pour lire simultanément sur "
 "toutes les cartes sons"
 
-#: kcm/ui/main.qml:106
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
@@ -108,32 +108,32 @@ msgstr ""
 "Commuter automatiquement tous les flux en cours quand une nouvelle sortie "
 "devient disponible"
 
-#: kcm/ui/main.qml:143
+#: kcm/ui/main.qml:137
 #, kde-format
 msgid "Playback Devices"
 msgstr "Périphériques de lecture"
 
-#: kcm/ui/main.qml:167
+#: kcm/ui/main.qml:161
 #, kde-format
 msgid "Recording Devices"
 msgstr "Périphériques d'enregistrement"
 
-#: kcm/ui/main.qml:191
+#: kcm/ui/main.qml:185
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Cartes inactives"
 
-#: kcm/ui/main.qml:222
+#: kcm/ui/main.qml:216
 #, kde-format
 msgid "Playback Streams"
 msgstr "Flux de lecture"
 
-#: kcm/ui/main.qml:271
+#: kcm/ui/main.qml:265
 #, kde-format
 msgid "Recording Streams"
 msgstr "Flux d'enregistrement"
 
-#: kcm/ui/main.qml:305
+#: kcm/ui/main.qml:299
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -145,52 +145,52 @@ msgstr ""
 "Erreur durant la tentative de jouer un son de test.\n"
 "Le système a indiqué : « %1 »"
 
-#: kcm/ui/main.qml:402
+#: kcm/ui/main.qml:396
 #, kde-format
 msgid "Front Left"
 msgstr "Avant gauche"
 
-#: kcm/ui/main.qml:403
+#: kcm/ui/main.qml:397
 #, kde-format
 msgid "Front Center"
 msgstr "Avant centre"
 
-#: kcm/ui/main.qml:404
+#: kcm/ui/main.qml:398
 #, kde-format
 msgid "Front Right"
 msgstr "Avant droit"
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:399
 #, kde-format
 msgid "Side Left"
 msgstr "Latéral gauche"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:400
 #, kde-format
 msgid "Side Right"
 msgstr "Latéral droit"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:401
 #, kde-format
 msgid "Rear Left"
 msgstr "Arrière gauche"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:402
 #, kde-format
 msgid "Subwoofer"
 msgstr "Caisson de basses"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Rear Right"
 msgstr "Arrière droit"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:464
+#: kcm/ui/main.qml:458
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Cliquez sur n'importe quel haut-parleur pour tester le son"

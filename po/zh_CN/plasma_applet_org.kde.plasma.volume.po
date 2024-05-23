@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 00:40+0000\n"
+"POT-Creation-Date: 2024-05-23 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -119,37 +119,37 @@ msgstr "滚动鼠标滚轮以调节音量"
 msgid "Device name not found"
 msgstr "找不到设备名称"
 
-#: contents/ui/main.qml:293
+#: contents/ui/main.qml:289
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: contents/ui/main.qml:300
+#: contents/ui/main.qml:296
 #, kde-format
 msgid "Applications"
 msgstr "应用程序"
 
-#: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
+#: contents/ui/main.qml:313 contents/ui/main.qml:315 contents/ui/main.qml:534
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:367
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
-#: contents/ui/main.qml:526
+#: contents/ui/main.qml:522
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:543
 #, kde-format
 msgid "Show virtual devices"
 msgstr "显示虚拟设备"
 
-#: contents/ui/main.qml:557
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "配置音频设备(&C)…"

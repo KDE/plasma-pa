@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 00:40+0000\n"
+"POT-Creation-Date: 2024-05-23 00:40+0000\n"
 "PO-Revision-Date: 2021-07-07 11:46+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -123,38 +123,38 @@ msgstr ""
 msgid "Device name not found"
 msgstr "Το όνομα της συσκευής δεν βρέθηκε"
 
-#: contents/ui/main.qml:293
+#: contents/ui/main.qml:289
 #, kde-format
 msgid "Devices"
 msgstr "Συσκευές"
 
-#: contents/ui/main.qml:300
+#: contents/ui/main.qml:296
 #, kde-format
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
+#: contents/ui/main.qml:313 contents/ui/main.qml:315 contents/ui/main.qml:534
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Εξαναγκασμός σίγασης για όλες τις συσκευές αναπαραγωγής"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:367
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Καμιά εφαρμογή δεν πραγματοποιεί εγγραφή ή αναπαραγωγή ήχου"
 
-#: contents/ui/main.qml:526
+#: contents/ui/main.qml:522
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Αύξηση μέγιστης έντασης"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:543
 #, fuzzy, kde-format
 #| msgid "Show hidden devices"
 msgid "Show virtual devices"
 msgstr "Εμφάνιση κρυμμένων συσκευών"
 
-#: contents/ui/main.qml:557
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Διαμόρφωση συσκευών ήχου…"

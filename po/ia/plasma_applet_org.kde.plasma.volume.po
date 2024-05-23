@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 00:40+0000\n"
+"POT-Creation-Date: 2024-05-23 00:40+0000\n"
 "PO-Revision-Date: 2023-05-11 10:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -118,37 +118,37 @@ msgstr "Rola pro adjustar volumine"
 msgid "Device name not found"
 msgstr "Nomine de dispositivo non trovate"
 
-#: contents/ui/main.qml:293
+#: contents/ui/main.qml:289
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivos"
 
-#: contents/ui/main.qml:300
+#: contents/ui/main.qml:296
 #, kde-format
 msgid "Applications"
 msgstr "Applicationes"
 
-#: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
+#: contents/ui/main.qml:313 contents/ui/main.qml:315 contents/ui/main.qml:534
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Fortia silentiar omne dispositivos de reproduction"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:367
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Necun application reproducente o registrante audio"
 
-#: contents/ui/main.qml:526
+#: contents/ui/main.qml:522
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altia maxime volumine"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:543
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Monstrar dispositivo virtual"
 
-#: contents/ui/main.qml:557
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configura dispositivos audio..."

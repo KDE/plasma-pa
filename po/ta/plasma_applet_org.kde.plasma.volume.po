@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 00:40+0000\n"
+"POT-Creation-Date: 2024-05-23 00:40+0000\n"
 "PO-Revision-Date: 2023-05-14 15:17+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -118,37 +118,37 @@ msgstr "ஒலி அளவை மாற்ற உருளவும்"
 msgid "Device name not found"
 msgstr "சாதனத்தின் பெயர் தெரியாது"
 
-#: contents/ui/main.qml:293
+#: contents/ui/main.qml:289
 #, kde-format
 msgid "Devices"
 msgstr "சாதனங்கள்"
 
-#: contents/ui/main.qml:300
+#: contents/ui/main.qml:296
 #, kde-format
 msgid "Applications"
 msgstr "செயலிகள்"
 
-#: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
+#: contents/ui/main.qml:313 contents/ui/main.qml:315 contents/ui/main.qml:534
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:367
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
-#: contents/ui/main.qml:526
+#: contents/ui/main.qml:522
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:543
 #, kde-format
 msgid "Show virtual devices"
 msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
-#: contents/ui/main.qml:557
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"

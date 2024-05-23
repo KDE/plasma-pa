@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 00:40+0000\n"
+"POT-Creation-Date: 2024-05-23 00:40+0000\n"
 "PO-Revision-Date: 2024-03-07 17:18-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -118,37 +118,37 @@ msgstr "ਵਾਲੀਅਮ ਕੰਟਰੋਲ ਕਰਨ ਲਈ ਸਕਰੋਲ �
 msgid "Device name not found"
 msgstr "ਡਿਵਾਈਸ ਨਾਂ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: contents/ui/main.qml:293
+#: contents/ui/main.qml:289
 #, kde-format
 msgid "Devices"
 msgstr "ਡਿਵਾਈਸ"
 
-#: contents/ui/main.qml:300
+#: contents/ui/main.qml:296
 #, kde-format
 msgid "Applications"
 msgstr "ਐਪਲੀਕੇਸ਼ਨਾਂ"
 
-#: contents/ui/main.qml:317 contents/ui/main.qml:319 contents/ui/main.qml:538
+#: contents/ui/main.qml:313 contents/ui/main.qml:315 contents/ui/main.qml:534
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ਸਾਰੇ ਪਲੇਅਬੈਕ ਡਿਵਾਈਸਾਂ ਨੂੰ ਧੱਕੇ ਨਾਲ ਮੌਨ ਕਰੋ"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:367
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ਕੋਈ ਵੀ ਐਪਲੀਕੇਸ਼ਨ ਆਡੀਓ ਚਲਾ ਜਾਂ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰ ਰਹੀ ਹੈ"
 
-#: contents/ui/main.qml:526
+#: contents/ui/main.qml:522
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: contents/ui/main.qml:547
+#: contents/ui/main.qml:543
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ਵਰਚੁਅਲ ਡਿਵਾਈਸ ਵੇਖੋ"
 
-#: contents/ui/main.qml:557
+#: contents/ui/main.qml:553
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "…ਆਡੀਓ ਡਿਵਾਈਸਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"
