@@ -3,21 +3,21 @@
 #
 # SPDX-FileCopyrightText: 2017, 2023 Kiszel Kristóf <kiszel.kristof@gmail.com>
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2019, 2020, 2021.
-# Kristof Kiszel <ulysses@fsf.hu>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:40+0000\n"
-"PO-Revision-Date: 2023-12-17 22:16+0100\n"
-"Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-05-27 22:49+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
 #, kde-format
@@ -270,34 +270,32 @@ msgstr "100%"
 #: kded/audioshortcutsservice.cpp:59
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Hangerő növelése"
 
 #: kded/audioshortcutsservice.cpp:74
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Hangerő csökkentése"
 
 #: kded/audioshortcutsservice.cpp:89
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Hangerő növelése 1%-kal"
 
 #: kded/audioshortcutsservice.cpp:104
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Hangerő csökkentése 1%-kal"
 
 #: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Mikrofon némítva"
+msgstr "Mikrofon hangerejének növelése"
 
 #: kded/audioshortcutsservice.cpp:133
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Mikrofon némítva"
+msgstr "Mikrofon hangerejének csökkentése"
 
 #: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -305,40 +303,35 @@ msgid "Mute"
 msgstr "Némítás"
 
 #: kded/audioshortcutsservice.cpp:160
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Mikrofon"
+msgstr "Mikrofon némítása"
 
 #: kded/audioshortcutsservice.cpp:174
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
 msgstr "Hangerő"
 
 #: kded/audioshortcutsservice.cpp:192
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Nincs ilyen eszköz"
 
 #: kded/audioshortcutsservice.cpp:208
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Az eszköznév nem található"
 
 #: kded/audioshortcutsservice.cpp:240
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "Alapértelmezett kimeneti eszköz"
+msgstr "Nincs kimeneti eszköz"
 
 #: kded/audioshortcutsservice.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% akkumulátor)"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
