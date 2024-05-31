@@ -157,36 +157,3 @@ msgstr "&Конфигуриране на звукови устройства…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Името на потока не е намерено"
-
-#~ msgid "No output device"
-#~ msgstr "Няма изходно устройство"
-
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (%2% батерия)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Увеличаване на звука"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "Увеличаване на звука с 1%"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Намаляване на звука"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "Намаляване на звука с 1%"
-
-#~ msgid "Mute"
-#~ msgstr "Изключване на звука"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "Увеличаване силата на микрофона"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "Намаляване силата на микрофона"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "Изключване на микрофон"
