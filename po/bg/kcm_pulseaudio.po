@@ -406,7 +406,3 @@ msgstr "%1 използва микрофона (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 използва микрофона"
-
-#~ msgctxt "Name shown in debug pulseaudio tools"
-#~ msgid "Plasma PA"
-#~ msgstr "Plasma PA"
