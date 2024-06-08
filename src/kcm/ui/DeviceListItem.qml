@@ -34,7 +34,7 @@ ColumnLayout {
         Layout.fillWidth: true
         // To keep the top row the same height as the row below, and stop things moving too much
         // as the KCM loads (and the port/profile ComboBoxes may appear)
-        Layout.minimumHeight: balanceButton.implicitHeight
+        Layout.minimumHeight: channelsButton.implicitHeight
 
         RadioButton {
             id: defaultButton
@@ -178,11 +178,11 @@ ColumnLayout {
                 id: volumeSlider
                 Layout.columnSpan: 2
                 Layout.alignment: Qt.AlignVCenter
-                visible: !balanceButton.checked
+                visible: !channelsButton.checked
             }
 
             Repeater {
-                model: balanceButton.checked ? Channels : null
+                model: channelsButton.checked ? Channels : null
 
                 Label {
                     Layout.alignment: Qt.AlignTop | Qt.AlignRight
@@ -192,7 +192,7 @@ ColumnLayout {
 
             Repeater {
                 id: channelSliderRepeater
-                model: balanceButton.checked ? RawChannels : null
+                model: channelsButton.checked ? RawChannels : null
 
                 VolumeSlider {
                     Layout.fillWidth: true
@@ -219,8 +219,8 @@ ColumnLayout {
 
         Button {
             Layout.alignment: Qt.AlignTop
-            id: balanceButton
-            text: i18ndc("kcm_pulseaudio", "Audio balance (e.g. control left/right volume individually", "Balance")
+            id: channelsButton
+            text: i18ndc("kcm_pulseaudio", "Show audio channels (e.g. to control left/right audio balance", "Show Channels")
             icon.name: "view-media-equalizer"
             checkable: true
 
