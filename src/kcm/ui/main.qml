@@ -329,6 +329,12 @@ KCM.ScrollViewKCM {
             testOverlay.open();
         }
 
+        onSinkObjectChanged: {
+            if (!sinkObject) {
+                testOverlay.close();
+            }
+        }
+
         header: GridLayout {
             columns: 2
             rowSpacing: Kirigami.Units.smallSpacing
