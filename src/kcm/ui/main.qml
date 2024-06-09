@@ -375,6 +375,7 @@ KCM.ScrollViewKCM {
                 rowSpacing: Kirigami.Units.gridUnit
 
                 LayoutMirroring.enabled: false  // To preserve spacial layout on RTL
+                Layout.alignment: Qt.AlignCenter
 
                 KirigamiComponents.Avatar {
                     KCoreAddons.KUser {
@@ -458,13 +459,28 @@ KCM.ScrollViewKCM {
                         }
                     }
                 }
+
+                // Spacers for when the left and right columns are empty
+                Item {
+                    Layout.row: 3
+                    Layout.column: 0
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 4
+                }
+                Item {
+                    Layout.row: 3
+                    Layout.column: 2
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 4
+                }
             }
 
             Label {
                 text: i18nd("kcm_pulseaudio", "Click on any speaker to test sound")
                 font: Kirigami.Theme.smallFont
-                Layout.alignment: Qt.AlignCenter
-                Layout.topMargin: Kirigami.Units.gridUnit
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
             }
         }
     }
