@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:40+0000\n"
+"POT-Creation-Date: 2024-06-09 00:40+0000\n"
 "PO-Revision-Date: 2024-03-18 10:12+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -60,9 +60,9 @@ msgstr "Prova"
 
 #: kcm/ui/DeviceListItem.qml:223
 #, kde-format
-msgctxt "Audio balance (e.g. control left/right volume individually"
-msgid "Balance"
-msgstr "Bilanciamento"
+msgctxt "Show audio channels (e.g. to control left/right audio balance"
+msgid "Show Channels"
+msgstr ""
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -408,6 +408,10 @@ msgstr "%1 sta utilizzando il microfono (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 sta utilizzando il microfono"
+
+#~ msgctxt "Audio balance (e.g. control left/right volume individually"
+#~ msgid "Balance"
+#~ msgstr "Bilanciamento"
 
 #~ msgctxt "Name shown in debug pulseaudio tools"
 #~ msgid "Plasma PA"

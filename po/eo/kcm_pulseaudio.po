@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:40+0000\n"
+"POT-Creation-Date: 2024-06-09 00:40+0000\n"
 "PO-Revision-Date: 2024-03-21 09:47+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -61,9 +61,9 @@ msgstr "Testo"
 
 #: kcm/ui/DeviceListItem.qml:223
 #, kde-format
-msgctxt "Audio balance (e.g. control left/right volume individually"
-msgid "Balance"
-msgstr "Ekvilibro"
+msgctxt "Show audio channels (e.g. to control left/right audio balance"
+msgid "Show Channels"
+msgstr ""
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -406,3 +406,7 @@ msgstr "%1 uzas la mikrofonon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 uzas la mikrofonon"
+
+#~ msgctxt "Audio balance (e.g. control left/right volume individually"
+#~ msgid "Balance"
+#~ msgstr "Ekvilibro"

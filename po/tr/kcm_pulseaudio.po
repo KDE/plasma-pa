@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:40+0000\n"
+"POT-Creation-Date: 2024-06-09 00:40+0000\n"
 "PO-Revision-Date: 2024-03-17 21:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -61,9 +61,9 @@ msgstr "Sına"
 
 #: kcm/ui/DeviceListItem.qml:223
 #, kde-format
-msgctxt "Audio balance (e.g. control left/right volume individually"
-msgid "Balance"
-msgstr "Denge"
+msgctxt "Show audio channels (e.g. to control left/right audio balance"
+msgid "Show Channels"
+msgstr ""
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -407,6 +407,10 @@ msgstr "%1, mikrofonu kullanıyor (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1, mikrofonu kullanıyor"
+
+#~ msgctxt "Audio balance (e.g. control left/right volume individually"
+#~ msgid "Balance"
+#~ msgstr "Denge"
 
 #~ msgctxt "Name shown in debug pulseaudio tools"
 #~ msgid "Plasma PA"
