@@ -62,7 +62,7 @@ msgstr "测试"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "显示声道"
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -404,7 +404,3 @@ msgstr "%1 正在使用麦克风 (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 正在使用麦克风"
-
-#~ msgctxt "Audio balance (e.g. control left/right volume individually"
-#~ msgid "Balance"
-#~ msgstr "平衡"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-09 00:40+0000\n"
-"PO-Revision-Date: 2024-04-04 17:25+0900\n"
+"PO-Revision-Date: 2024-06-09 19:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: Traditional Chinese\n"
@@ -64,7 +64,7 @@ msgstr "測試"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "顯示頻道"
 
 #: kcm/ui/main.qml:74
 #, kde-format
