@@ -425,7 +425,6 @@ KCM.ScrollViewKCM {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         Layout.preferredWidth: Kirigami.Units.gridUnit * 8
-                        Layout.maximumWidth: Kirigami.Units.gridUnit * 12
                         Layout.minimumHeight: Kirigami.Units.gridUnit * 4
 
                         contentItem: ColumnLayout {
@@ -460,6 +459,20 @@ KCM.ScrollViewKCM {
                         }
                     }
                 }
+
+                // Spacers for when the left and right columns are empty
+                Item {
+                    Layout.row: 3
+                    Layout.column: 0
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 4
+                }
+                Item {
+                    Layout.row: 3
+                    Layout.column: 2
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 4
+                }
             }
 
             Label {
@@ -468,10 +481,6 @@ KCM.ScrollViewKCM {
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
-                Layout.maximumWidth: Kirigami.Units.gridUnit * 24
-                Layout.topMargin: Kirigami.Units.gridUnit
-                Layout.leftMargin: Kirigami.Units.largeSpacing
-                Layout.rightMargin: Kirigami.Units.largeSpacing
             }
         }
     }
