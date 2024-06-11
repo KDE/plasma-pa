@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
-# Sergiu Bivol <sergiu@cip.md>, 2020, 2021, 2022, 2023.
+# Sergiu Bivol <sergiu@cip.md>, 2020, 2021, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 00:40+0000\n"
-"PO-Revision-Date: 2023-04-10 19:16+0100\n"
+"POT-Creation-Date: 2024-06-11 00:40+0000\n"
+"PO-Revision-Date: 2024-06-09 13:03+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -63,7 +63,7 @@ msgstr "Testează"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Arată canale"
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -136,52 +136,52 @@ msgstr ""
 "Eroare la încercarea de a reda un sunet de testare. \n"
 "Sistemul a spus: „%1”"
 
-#: kcm/ui/main.qml:396
+#: kcm/ui/main.qml:402
 #, kde-format
 msgid "Front Left"
 msgstr "Față stânga"
 
-#: kcm/ui/main.qml:397
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Center"
 msgstr "Față centru"
 
-#: kcm/ui/main.qml:398
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Right"
 msgstr "Față dreapta"
 
-#: kcm/ui/main.qml:399
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Side Left"
 msgstr "Lateral stânga"
 
-#: kcm/ui/main.qml:400
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Right"
 msgstr "Lateral dreapta"
 
-#: kcm/ui/main.qml:401
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Rear Left"
 msgstr "Spate stânga"
 
-#: kcm/ui/main.qml:402
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/ui/main.qml:403
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Rear Right"
 msgstr "Spate dreapta"
 
-#: kcm/ui/main.qml:404
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:458
+#: kcm/ui/main.qml:464
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Apăsați pe oricare difuzor pentru a testa sunetul"
@@ -269,34 +269,32 @@ msgstr "100%"
 #: kded/audioshortcutsservice.cpp:59
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Mărește volumul"
 
 #: kded/audioshortcutsservice.cpp:74
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Micșorează volumul"
 
 #: kded/audioshortcutsservice.cpp:89
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Mărește volumul cu 1%"
 
 #: kded/audioshortcutsservice.cpp:104
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Micșorează volumul cu 1%"
 
 #: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Microfon muțit"
+msgstr "Mărește volumul microfonului"
 
 #: kded/audioshortcutsservice.cpp:133
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Microfon muțit"
+msgstr "Micșorează volumul microfonului"
 
 #: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -304,40 +302,35 @@ msgid "Mute"
 msgstr "Tăcut"
 
 #: kded/audioshortcutsservice.cpp:160
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Microfon"
+msgstr "Muțește microfonul"
 
 #: kded/audioshortcutsservice.cpp:174
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
 msgstr "Volum audio"
 
 #: kded/audioshortcutsservice.cpp:192
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Dispozitivul nu există"
 
 #: kded/audioshortcutsservice.cpp:208
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Denumirea dispozitivului nu a fost găsită"
 
 #: kded/audioshortcutsservice.cpp:240
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "Dispozitiv implicit de ieșire"
+msgstr "Niciun dispozitiv de ieșire"
 
 #: kded/audioshortcutsservice.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% acumulator)"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format

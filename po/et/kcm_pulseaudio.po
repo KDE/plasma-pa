@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 00:40+0000\n"
+"POT-Creation-Date: 2024-06-11 00:40+0000\n"
 "PO-Revision-Date: 2020-09-28 13:55+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -139,52 +139,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/ui/main.qml:396
+#: kcm/ui/main.qml:402
 #, kde-format
 msgid "Front Left"
 msgstr "Ees vasakul"
 
-#: kcm/ui/main.qml:397
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Center"
 msgstr "Ees keskel"
 
-#: kcm/ui/main.qml:398
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Right"
 msgstr "Ees paremal"
 
-#: kcm/ui/main.qml:399
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Side Left"
 msgstr "Küljel vasakul"
 
-#: kcm/ui/main.qml:400
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Right"
 msgstr "Küljel paremal"
 
-#: kcm/ui/main.qml:401
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Rear Left"
 msgstr "Taga vasakul"
 
-#: kcm/ui/main.qml:402
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Subwoofer"
 msgstr "Bassikõlar"
 
-#: kcm/ui/main.qml:403
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Rear Right"
 msgstr "Taga paremal"
 
-#: kcm/ui/main.qml:404
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Mono"
 msgstr ""
 
-#: kcm/ui/main.qml:458
+#: kcm/ui/main.qml:464
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr ""
