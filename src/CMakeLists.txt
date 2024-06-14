@@ -92,7 +92,7 @@ target_link_libraries(plasma-volume PRIVATE
 )
 
 ecm_finalize_qml_module(plasma-volume-declarative)
-install(TARGETS plasma-volume ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS plasma-volume ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 add_subdirectory(kcm)
 add_subdirectory(kded)
