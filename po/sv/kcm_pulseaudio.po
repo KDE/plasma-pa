@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-11 00:40+0000\n"
-"PO-Revision-Date: 2022-04-21 17:00+0200\n"
+"PO-Revision-Date: 2024-06-21 09:45+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
 #, kde-format
@@ -62,7 +62,7 @@ msgstr "Prova"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Visa kanaler"
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -70,10 +70,9 @@ msgid "Show Inactive Devices"
 msgstr "Visa inaktiva enheter"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Anpassa…"
+msgstr "Anpassa volymkontroller…"
 
 #: kcm/ui/main.qml:88
 #, kde-format
@@ -212,50 +211,47 @@ msgstr "%1: %2"
 #: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Volymkontroller"
 
 #: kcm/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Höj maximal volym"
 
 #: kcm/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Volymändringssteg:"
 
 #: kcm/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Spela ljud som återmatning för ändringar av:"
 
 #: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Ljudvolym"
 
 #: kcm/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Ge visuell återmatning för ändringar av:"
 
 #: kcm/ui/VolumeControlsConfig.qml:80
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Mikrofon tystad"
+msgstr "Mikrofonkänslighet"
 
 #: kcm/ui/VolumeControlsConfig.qml:87
-#, fuzzy, kde-format
-#| msgid "Mute audio"
+#, kde-format
 msgid "Mute state"
-msgstr "Tysta ljud"
+msgstr "Tyst tillstånd"
 
 #: kcm/ui/VolumeControlsConfig.qml:94
-#, fuzzy, kde-format
-#| msgid "Default Device"
+#, kde-format
 msgid "Default output device"
-msgstr "Standardenhet"
+msgstr "Standardutenhet"
 
 #: kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -272,34 +268,32 @@ msgstr "100 %"
 #: kded/audioshortcutsservice.cpp:59
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Öka volym"
 
 #: kded/audioshortcutsservice.cpp:74
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Minska volym"
 
 #: kded/audioshortcutsservice.cpp:89
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Öka volym med 1 %"
 
 #: kded/audioshortcutsservice.cpp:104
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Minska volym med 1 %"
 
 #: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Mikrofon tystad"
+msgstr "Öka mikrofonvolym"
 
 #: kded/audioshortcutsservice.cpp:133
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Mikrofon tystad"
+msgstr "Minska mikrofonvolym"
 
 #: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -307,41 +301,35 @@ msgid "Mute"
 msgstr "Tyst"
 
 #: kded/audioshortcutsservice.cpp:160
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Mikrofon"
+msgstr "Tysta mikrofon"
 
 #: kded/audioshortcutsservice.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Configure the Audio Volume"
+#, kde-format
 msgid "Audio Volume"
-msgstr "Anpassa ljudvolym"
+msgstr "Ljudvolym"
 
 #: kded/audioshortcutsservice.cpp:192
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Ingen sådan enhet"
 
 #: kded/audioshortcutsservice.cpp:208
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Enhetsnamn hittades inte"
 
 #: kded/audioshortcutsservice.cpp:240
-#, fuzzy, kde-format
-#| msgid "Default Device"
+#, kde-format
 msgid "No output device"
-msgstr "Standardenhet"
+msgstr "Ingen utenhet"
 
 #: kded/audioshortcutsservice.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2 % batteri)"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
