@@ -72,8 +72,13 @@ PlasmoidItem {
         return lines.join("\n");
     }
 
+    DeviceNameSourceModel {
+        id: deviceNameSourceModel
+    }
+
     function nodeName(pulseObject) {
-        const nodeNick = pulseObject.pulseProperties["node.nick"]
+        const propertiesKey = deviceNameSourceModel.valueToProperty(config.deviceNameSource)
+        const nodeNick = pulseObject.pulseProperties[propertiesKey]
         if (nodeNick) {
             return nodeNick
         }

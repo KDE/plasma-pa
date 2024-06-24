@@ -93,6 +93,15 @@ Kirigami.Page {
                 onToggled: { config.defaultOutputDeviceOsd = checked; config.save() }
                 text: i18n("Default output device")
             }
+
+            QQC2.ComboBox {
+                textRole: "display"
+                model: DeviceNameSourceModel {}
+                Kirigami.FormData.label: i18nc("@label", "Preferred Device Name Source")
+
+                onActivated: { config.deviceNameSource = currentIndex; config.save() }
+                Component.onCompleted: currentIndex = config.deviceNameSource
+            }
         }
 
         Item {

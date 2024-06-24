@@ -15,6 +15,7 @@ set(plasma-volume_SRCS
     volumefeedback.cpp
     audioicon.cpp
     preferreddevice.cpp
+    devicenamesourcemodel.cpp
 )
 
 add_library(plasma-volume
