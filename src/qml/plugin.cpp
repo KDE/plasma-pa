@@ -14,6 +14,7 @@
 #include <PulseAudioQt/Models>
 #include <PulseAudioQt/Port>
 #include <PulseAudioQt/Profile>
+#include <PulseAudioQt/Server>
 #include <PulseAudioQt/Sink>
 #include <PulseAudioQt/Source>
 
@@ -22,6 +23,9 @@
 #include "preferreddevice.h"
 #include "volumemonitor.h"
 
+#include "devicenamesourcemodel.h"
+#include "devicerenamemodel.h"
+#include "devicerenamesaver.h"
 #include "globalconfig.h"
 #include "globalservice.h"
 #include "listitemmenu.h"
@@ -69,6 +73,9 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterType<VolumeFeedback>(uri, 0, 1, "VolumeFeedback");
     qmlRegisterType<SpeakerTest>(uri, 0, 1, "SpeakerTest");
     qmlRegisterType<GlobalConfig>(uri, 0, 1, "GlobalConfig");
+    qmlRegisterType<DeviceRenameModel>(uri, 0, 1, "DeviceRenameModel");
+    qmlRegisterType<DeviceRenameSaver>(uri, 0, 1, "DeviceRenameSaver");
+    qmlRegisterType<DeviceNameSourceModel>(uri, 0, 1, "DeviceNameSourceModel");
     qmlRegisterSingletonType(uri, 0, 1, "PulseAudio", pulseaudio_singleton);
     qmlRegisterSingletonType<MicrophoneIndicator>(uri, 0, 1, "MicrophoneIndicator", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
         Q_UNUSED(engine);
@@ -89,6 +96,13 @@ void Plugin::registerTypes(const char *uri)
         Q_UNUSED(engine);
         Q_UNUSED(jsEngine);
         return new PreferredDevice();
+    });
+    qmlRegisterSingletonType<PulseAudioQt::Server>(uri, 0, 1, "Server", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
+        Q_UNUSED(engine);
+        Q_UNUSED(jsEngine);
+        auto server = PulseAudioQt::Context::instance()->server();
+        QQmlEngine::setObjectOwnership(server, QQmlEngine::CppOwnership);
+        return server;
     });
     qmlRegisterAnonymousType<PulseAudioQt::Client>(uri, 1);
     qmlRegisterAnonymousType<PulseAudioQt::Sink>(uri, 1);

@@ -45,5 +45,15 @@
         <entry name="GlobalMuteDevices" type="StringList">
             <label>Devices that were not muted with global mute, and will remain muted afterwards.</label>
         </entry>
+        <entry name="DeviceNameSource" type="Enum">
+            <choices> <!-- NOTE: this is intentionally nameless, kcfg picks the name for us and makes it a Q_ENUM -->
+                <!-- beware that the enum index is linked to RenameDevices.qml's visualization; never ever change existing choices -->
+                <choice name="DeviceNick"/>
+                <choice name="DeviceDescription"/>
+                <choice name="ALSACardName"/>
+                <choice name="ALSALongCardName"/>
+            </choices>
+            <default>DeviceNick</default>
+        </entry>
     </group>
 </kcfg>

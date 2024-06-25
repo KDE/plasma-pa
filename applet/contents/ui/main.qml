@@ -27,6 +27,10 @@ PlasmoidItem {
         id: config
     }
 
+    DeviceNameSourceModel {
+        id: deviceNameSourceModel
+    }
+
     property bool volumeFeedback: config.audioFeedback
     property bool globalMute: config.globalMute
     property string displayName: i18n("Audio Volume")
@@ -88,7 +92,8 @@ PlasmoidItem {
     }
 
     function nodeName(pulseObject) {
-        const nodeNick = pulseObject.pulseProperties["node.nick"]
+        const propertiesKey = deviceNameSourceModel.valueToProperty(config.deviceNameSource)
+        const nodeNick = pulseObject.pulseProperties[propertiesKey]
         if (nodeNick) {
             return nodeNick
         }
