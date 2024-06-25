@@ -45,7 +45,23 @@ ColumnLayout {
             checked: Default
             visible: delegate.ListView.view.count > 1
             onClicked: Default = true
-            text: !currentPort ? Description : i18ndc("kcm_pulseaudio", "label of device items", "%1 (%2)", currentPort.description, Description)
+            text: {
+                const propertiesKey = deviceNameSourceModel.valueToProperty(config.deviceNameSource)
+                const nodeNick = pulseObject.pulseProperties[propertiesKey]
+                if (nodeNick) {
+                    return nodeNick;
+                }
+
+                if (pulseObject.description) {
+                    return pulseObject.description
+                }
+
+                if (pulseObject.name) {
+                    return pulseObject.name
+                }
+
+                return i18n("Device name not found")
+            }
 
             ToolTip {
                 text: parent.text

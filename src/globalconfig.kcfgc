@@ -8,3 +8,4 @@ GenerateProperties=true
 Mutators=true
 Notifiers=true
 ParentInConstructor=true
+GlobalEnums=true
