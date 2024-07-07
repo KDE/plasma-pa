@@ -221,7 +221,7 @@ PC3.ItemDelegate {
                 VolumeSlider {
                     id: slider
 
-                    readonly property bool forceRaiseMaxVolume: (raiseMaximumVolumeCheckbox.checked && (item.type === "sink" || item.type === "source"))
+                    readonly property bool forceRaiseMaxVolume: (raiseMaximumVolumeCheckbox.checked && (item.type === "sink" || item.type === "source" || item.type === "sink-input" || item.type === "source-output"))
 
                     Layout.fillWidth: true
                     from: PulseAudio.MinimalVolume
