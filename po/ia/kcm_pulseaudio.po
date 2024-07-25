@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:40+0000\n"
+"POT-Creation-Date: 2024-07-25 00:40+0000\n"
 "PO-Revision-Date: 2024-06-10 12:11+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -137,52 +137,52 @@ msgstr ""
 "Error quando il essayava sonar un sono de test. \n"
 "Le systema diceva: \"%1\""
 
-#: kcm/ui/main.qml:402
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Left"
 msgstr "Fronte sinistre"
 
-#: kcm/ui/main.qml:403
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Center"
 msgstr "Fronte centro"
 
-#: kcm/ui/main.qml:404
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Front Right"
 msgstr "Fronte dextere"
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Left"
 msgstr "Latere sinistre"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Side Right"
 msgstr "Latere dextere"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Rear Left"
 msgstr "Posterior sinistre"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Rear Right"
 msgstr "Posterior dextere"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:464
+#: kcm/ui/main.qml:479
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Pulsa sur ulle altoparlatores pro essayar sono"

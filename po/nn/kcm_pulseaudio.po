@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:40+0000\n"
+"POT-Creation-Date: 2024-07-25 00:40+0000\n"
 "PO-Revision-Date: 2024-07-06 14:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -136,52 +136,52 @@ msgstr ""
 "Feil ved avspeling av testlyd. \n"
 "Systemet gav meldinga: «%1»"
 
-#: kcm/ui/main.qml:402
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Left"
 msgstr "Framme venstre"
 
-#: kcm/ui/main.qml:403
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Center"
 msgstr "Framme i midten"
 
-#: kcm/ui/main.qml:404
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Front Right"
 msgstr "Framme til høgre"
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Left"
 msgstr "Til venstre"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Side Right"
 msgstr "Til høgre"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Rear Left"
 msgstr "Bak til venstre"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Subwoofer"
 msgstr "Basshøgtalar"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Rear Right"
 msgstr "Bak til høgre"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:464
+#: kcm/ui/main.qml:479
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Trykk på ein høgtalar for å testa lyden"
