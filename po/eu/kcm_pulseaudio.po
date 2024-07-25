@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 02:35+0000\n"
+"POT-Creation-Date: 2024-07-25 02:30+0000\n"
 "PO-Revision-Date: 2024-03-19 23:49+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -140,52 +140,52 @@ msgstr ""
 "Errorea probako soinu bat jotzeko saiakeran.\n"
 "Sistemak esan du: \"%1\""
 
-#: kcm/ui/main.qml:402
+#: kcm/ui/main.qml:403
 #, kde-format
 msgid "Front Left"
 msgstr "Aurreko ezkerrekoa"
 
-#: kcm/ui/main.qml:403
+#: kcm/ui/main.qml:404
 #, kde-format
 msgid "Front Center"
 msgstr "Aurreko erdikoa"
 
-#: kcm/ui/main.qml:404
+#: kcm/ui/main.qml:405
 #, kde-format
 msgid "Front Right"
 msgstr "Aurreko eskuinekoa"
 
-#: kcm/ui/main.qml:405
+#: kcm/ui/main.qml:406
 #, kde-format
 msgid "Side Left"
 msgstr "Alboko ezkerrekoa"
 
-#: kcm/ui/main.qml:406
+#: kcm/ui/main.qml:407
 #, kde-format
 msgid "Side Right"
 msgstr "Alboko eskuinekoa"
 
-#: kcm/ui/main.qml:407
+#: kcm/ui/main.qml:408
 #, kde-format
 msgid "Rear Left"
 msgstr "Atzeko ezkerrekoa"
 
-#: kcm/ui/main.qml:408
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Subwoofer"
 msgstr "Azpibaxuen bozgorailua"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Rear Right"
 msgstr "Atzeko eskuinekoa"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:464
+#: kcm/ui/main.qml:479
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Egin klik bozgorailuetako edozeinetan soinua probatzeko"
