@@ -134,7 +134,13 @@ void VolumeMonitor::createStream()
 
     snprintf(t, sizeof(t), "%u", sourceIdx);
 
-    if (!(m_stream = pa_stream_new(Context::instance()->context(), "PlasmaPA-VolumeMeter", &ss, nullptr))) {
+    auto context = Context::instance()->context();
+    if (!context) {
+        qCWarning(PLASMAPA) << "Failed to create stream - no context available";
+        return;
+    }
+
+    if (!(m_stream = pa_stream_new(context, "PlasmaPA-VolumeMeter", &ss, nullptr))) {
         qCWarning(PLASMAPA) << "Failed to create stream";
         return;
     }
