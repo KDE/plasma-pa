@@ -100,8 +100,8 @@ set_package_properties(KItemModels PROPERTIES
     TYPE RUNTIME
 )
 
-ecm_set_disabled_deprecation_versions(QT 5.15.2
-    KF 5.240.0
+ecm_set_disabled_deprecation_versions(QT 6.7.0
+    KF 6.5.0
 )
 
 add_subdirectory(applet)
