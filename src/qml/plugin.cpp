@@ -26,6 +26,7 @@
 #include "globalservice.h"
 #include "listitemmenu.h"
 #include "microphoneindicator.h"
+#include "pulseobjectfiltermodel.h"
 #include "speakertest.h"
 #include "volumefeedback.h"
 
@@ -63,6 +64,8 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterType<VolumeFeedback>(uri, 0, 1, "VolumeFeedback");
     qmlRegisterType<SpeakerTest>(uri, 0, 1, "SpeakerTest");
     qmlRegisterType<GlobalConfig>(uri, 0, 1, "GlobalConfig");
+    qmlRegisterType<PulseObjectFilterModel>(uri, 0, 1, "PulseObjectFilterModel");
+    qmlRegisterUncreatableType<PulseObjectFilter>(uri, 0, 1, "pulseObjectFilter", QString());
     qmlRegisterSingletonType(uri, 0, 1, "PulseAudio", pulseaudio_singleton);
     qmlRegisterSingletonType<MicrophoneIndicator>(uri, 0, 1, "MicrophoneIndicator", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
         Q_UNUSED(engine);

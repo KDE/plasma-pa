@@ -138,14 +138,14 @@ PlasmoidItem {
     // non-virtual streams going to output devices
     readonly property PulseObjectFilterModel paSinkInputFilterModel: PulseObjectFilterModel {
         id: paSinkInputFilterModel
-        filters: [ { role: "VirtualStream", value: false } ]
+        filters: [ makeFilter("VirtualStream", false) ]
         sourceModel: paSinkInputModel
     }
 
     // non-virtual streams coming from input devices
     readonly property PulseObjectFilterModel paSourceOutputFilterModel: PulseObjectFilterModel {
         id: paSourceOutputFilterModel
-        filters: [ { role: "VirtualStream", value: false } ]
+        filters: [ makeFilter("VirtualStream", false) ]
         sourceModel: paSourceOutputModel
     }
 

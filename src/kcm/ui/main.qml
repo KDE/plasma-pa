@@ -229,7 +229,7 @@ KCM.ScrollViewKCM {
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
                 model: PulseObjectFilterModel {
-                    filters: [ { role: "Name", value: "sink-input-by-media-role:event" } ]
+                    filters: [ makeFilter("Name", "sink-input-by-media-role:event") ]
                     sourceModel: StreamRestoreModel {}
                 }
                 delegate: StreamListItem {
@@ -250,7 +250,7 @@ KCM.ScrollViewKCM {
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
                 model: PulseObjectFilterModel {
-                    filters: [ { role: "VirtualStream", value: false } ]
+                    filters: [ makeFilter("VirtualStream", false) ]
                     sourceModel: SinkInputModel {}
                 }
                 delegate: StreamListItem {
@@ -277,7 +277,7 @@ KCM.ScrollViewKCM {
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
                 model: PulseObjectFilterModel {
-                    filters: [ { role: "VirtualStream", value: false } ]
+                    filters: [ makeFilter("VirtualStream", false) ]
                     sourceModel: SourceOutputModel {}
                 }
 
