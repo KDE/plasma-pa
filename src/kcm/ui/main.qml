@@ -485,5 +485,58 @@ KCM.ScrollViewKCM {
         }
     }
 
-    ContextBrokenOverlay {}
+    Item {
+        id: breakageDetector
+
+        readonly property bool broken: Context.state !== Context.State.Ready
+        property bool __startupDelayTriggered: false
+
+        Timer {
+            id: startupDelay
+            interval: 500
+            running: true
+            onTriggered: breakageDetector.__startupDelayTriggered = true
+        }
+
+        onBrokenChanged: {
+            const lastPage = kcm.mainUi.columnView.currentItem
+            if (broken && __startupDelayTriggered) {
+                kcm.push("ContextBrokenPage.qml")
+            } else if (!broken && lastPage instanceof ContextBrokenPage) {
+                kcm.takeLast()
+            }
+        }
+    }
+
+    // The attached property is quite buggy and doesn't consistently appear on children
+    // of the ColumnView. Indeed only the first child appears to get it and even then only after a dealy.
+    // So, **bind** to it **here**.
+    property Kirigami.ColumnView columnView: Kirigami.ColumnView.view
+    onColumnViewChanged: {
+        if (!columnView) {
+            return
+        }
+
+        // It gets better still. Because we don't have ready access to the PageRow we can't manipulate our buttons.
+        // We'll have to find the PageRow in our parents and then install a suitable binding.
+
+        let parent = columnView.parent
+        while (parent) {
+            if (parent instanceof Kirigami.PageRow) {
+                const pageRow = (parent as Kirigami.PageRow)
+                pageRow.globalToolBar.showNavigationButtons = Qt.binding(function() {
+                    if (columnView.currentItem instanceof ContextBrokenPage) {
+                        return Kirigami.ApplicationHeaderStyle.NoNavigationButtons
+                    }
+                    // Absolutely stupid but there is no way to set this to auto, so we need to explicitly copy the logic from kcmutils. Ugh!
+                    if (columnView.currentIndex > 0) {
+                        return Kirigami.ApplicationHeaderStyle.ShowBackButton
+                    }
+                    return Kirigami.ApplicationHeaderStyle.NoNavigationButtons
+                })
+                return
+            }
+            parent = parent.parent
+        }
+    }
 }
