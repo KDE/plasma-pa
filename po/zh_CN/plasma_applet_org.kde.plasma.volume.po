@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:40+0000\n"
+"POT-Creation-Date: 2024-08-20 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -84,72 +84,90 @@ msgstr "100%"
 msgid "Audio Volume"
 msgstr "音频音量"
 
-#: contents/ui/main.qml:39
+#: contents/ui/main.qml:43 contents/ui/main.qml:45
+#, kde-format
+msgctxt "@label"
+msgid "Connection to the Sound Service Lost"
+msgstr ""
+
+#: contents/ui/main.qml:47
 #, kde-format
 msgid "No output or input devices found"
 msgstr "没有找到输出或者输入设备"
 
-#: contents/ui/main.qml:53
+#: contents/ui/main.qml:51
+#, kde-format
+msgctxt "@info reconnecting to pulseaudio"
+msgid "Trying to reconnect…"
+msgstr ""
+
+#: contents/ui/main.qml:68
 #, kde-format
 msgid "Audio Muted"
 msgstr "音频已静音"
 
-#: contents/ui/main.qml:55
+#: contents/ui/main.qml:70
 #, kde-format
 msgid "Volume at %1%"
 msgstr "音量为 %1%"
 
-#: contents/ui/main.qml:66
+#: contents/ui/main.qml:81
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "中键单击以取消静音"
 
-#: contents/ui/main.qml:67
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "中键单击以静音全部音频"
 
-#: contents/ui/main.qml:68
+#: contents/ui/main.qml:83
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "滚动鼠标滚轮以调节音量"
 
-#: contents/ui/main.qml:89
+#: contents/ui/main.qml:104
 #, kde-format
 msgid "Device name not found"
 msgstr "找不到设备名称"
 
-#: contents/ui/main.qml:289
+#: contents/ui/main.qml:304
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: contents/ui/main.qml:296
+#: contents/ui/main.qml:311
 #, kde-format
 msgid "Applications"
 msgstr "应用程序"
 
-#: contents/ui/main.qml:313 contents/ui/main.qml:315 contents/ui/main.qml:534
+#: contents/ui/main.qml:328 contents/ui/main.qml:330 contents/ui/main.qml:561
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
 
-#: contents/ui/main.qml:367
+#: contents/ui/main.qml:366
+#, kde-format
+msgctxt "@action retry connecting to pulseaudio"
+msgid "Retry"
+msgstr ""
+
+#: contents/ui/main.qml:390
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
-#: contents/ui/main.qml:522
+#: contents/ui/main.qml:549
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: contents/ui/main.qml:543
+#: contents/ui/main.qml:570
 #, kde-format
 msgid "Show virtual devices"
 msgstr "显示虚拟设备"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:580
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "配置音频设备(&C)…"

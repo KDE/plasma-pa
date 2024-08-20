@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:40+0000\n"
+"POT-Creation-Date: 2024-08-20 00:42+0000\n"
 "PO-Revision-Date: 2023-06-02 21:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -86,72 +86,90 @@ msgstr "% 100"
 msgid "Audio Volume"
 msgstr "Audioaren bolumena"
 
-#: contents/ui/main.qml:39
+#: contents/ui/main.qml:43 contents/ui/main.qml:45
+#, kde-format
+msgctxt "@label"
+msgid "Connection to the Sound Service Lost"
+msgstr ""
+
+#: contents/ui/main.qml:47
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Ez da aurkitu sarrerako edo irteerako gailurik"
 
-#: contents/ui/main.qml:53
+#: contents/ui/main.qml:51
+#, kde-format
+msgctxt "@info reconnecting to pulseaudio"
+msgid "Trying to reconnect…"
+msgstr ""
+
+#: contents/ui/main.qml:68
 #, kde-format
 msgid "Audio Muted"
 msgstr "Audioa isilarazi da"
 
-#: contents/ui/main.qml:55
+#: contents/ui/main.qml:70
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Bolumena % %1(e)an"
 
-#: contents/ui/main.qml:66
+#: contents/ui/main.qml:81
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Erdiko-klik ozentzeko"
 
-#: contents/ui/main.qml:67
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Erdiko-klik audio guztia ozentzeko"
 
-#: contents/ui/main.qml:68
+#: contents/ui/main.qml:83
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Kiribildu bolumena doitzeko"
 
-#: contents/ui/main.qml:89
+#: contents/ui/main.qml:104
 #, kde-format
 msgid "Device name not found"
 msgstr "Gailu izena ez da aurkitu"
 
-#: contents/ui/main.qml:289
+#: contents/ui/main.qml:304
 #, kde-format
 msgid "Devices"
 msgstr "Gailuak"
 
-#: contents/ui/main.qml:296
+#: contents/ui/main.qml:311
 #, kde-format
 msgid "Applications"
 msgstr "Aplikazioak"
 
-#: contents/ui/main.qml:313 contents/ui/main.qml:315 contents/ui/main.qml:534
+#: contents/ui/main.qml:328 contents/ui/main.qml:330 contents/ui/main.qml:561
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Indarrez isilarazi atzera-jotzeko gailu guztiak"
 
-#: contents/ui/main.qml:367
+#: contents/ui/main.qml:366
+#, kde-format
+msgctxt "@action retry connecting to pulseaudio"
+msgid "Retry"
+msgstr ""
+
+#: contents/ui/main.qml:390
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ez dago audioa jotzen edo grabatzen ari den aplikaziorik"
 
-#: contents/ui/main.qml:522
+#: contents/ui/main.qml:549
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altxatu bolumen muga"
 
-#: contents/ui/main.qml:543
+#: contents/ui/main.qml:570
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Erakutsi alegiazko gailuak"
 
-#: contents/ui/main.qml:553
+#: contents/ui/main.qml:580
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfiguratu audio gailuak..."
