@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-20 00:42+0000\n"
-"PO-Revision-Date: 2023-03-01 00:11+0100\n"
+"PO-Revision-Date: 2024-08-21 00:19+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:135
 #, kde-format
@@ -27,19 +27,19 @@ msgstr "프로필:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "소리 서비스와의 연결이 끊어짐"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "다시 연결 시도 중…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "다시 시도"
 
 #: kcm/ui/DeviceListItem.qml:48
 #, kde-format
@@ -80,7 +80,7 @@ msgstr "시험"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "채널 표시"
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -284,34 +284,32 @@ msgstr "100%"
 #: kded/audioshortcutsservice.cpp:59
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "음량 증가"
 
 #: kded/audioshortcutsservice.cpp:74
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "음량 감소"
 
 #: kded/audioshortcutsservice.cpp:89
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "음량 1% 증가"
 
 #: kded/audioshortcutsservice.cpp:104
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "음량 1% 감소"
 
 #: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "마이크 음소거됨"
+msgstr "마이크 음량 증가"
 
 #: kded/audioshortcutsservice.cpp:133
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "마이크 음소거됨"
+msgstr "마이크 음량 감소"
 
 #: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -319,40 +317,35 @@ msgid "Mute"
 msgstr "음소거"
 
 #: kded/audioshortcutsservice.cpp:160
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "마이크"
+msgstr "마이크 음소거"
 
 #: kded/audioshortcutsservice.cpp:174
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
 msgstr "오디오 음량"
 
 #: kded/audioshortcutsservice.cpp:192
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "장치 없음"
 
 #: kded/audioshortcutsservice.cpp:208
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "장치 이름을 찾을 수 없음"
 
 #: kded/audioshortcutsservice.cpp:240
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "기본 출력 장치"
+msgstr "출력 장치 없음"
 
 #: kded/audioshortcutsservice.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1(%2)"
+msgstr "%1(배터리 %2%)"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format

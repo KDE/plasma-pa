@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-20 00:42+0000\n"
-"PO-Revision-Date: 2024-06-21 09:45+0200\n"
+"PO-Revision-Date: 2024-08-20 07:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: contents/ui/ListItemBase.qml:66
 #, kde-format
@@ -87,7 +87,7 @@ msgstr "Ljudvolym"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Anslutning till ljudtjänsten har gått förlorad"
 
 #: contents/ui/main.qml:47
 #, kde-format
@@ -98,7 +98,7 @@ msgstr "Inga ut- eller inenheter hittades"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Försöker ansluta igen…"
 
 #: contents/ui/main.qml:68
 #, kde-format
@@ -149,7 +149,7 @@ msgstr "Tysta alla uppspelningsenheter"
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Försök igen"
 
 #: contents/ui/main.qml:390
 #, kde-format
