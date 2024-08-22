@@ -1,16 +1,16 @@
 # Translation of plasma_applet_org.kde.plasma.volume.po to Catalan (Valencian)
-# Copyright (C) 2015-2023 This_file_is_part_of_KDE
+# Copyright (C) 2015-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2016, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-20 00:42+0000\n"
-"PO-Revision-Date: 2023-09-24 20:27+0200\n"
+"PO-Revision-Date: 2024-08-20 09:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: contents/ui/ListItemBase.qml:66
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "Volum de l'àudio"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "S'ha perdut la connexió amb el servei de so"
 
 #: contents/ui/main.qml:47
 #, kde-format
@@ -102,7 +102,7 @@ msgstr "No s'ha trobat cap dispositiu d'eixida o entrada"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "S'està intentant tornar a connectar…"
 
 #: contents/ui/main.qml:68
 #, kde-format
@@ -153,7 +153,7 @@ msgstr "Força el silenci de tots els dispositius de reproducció"
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Torna-ho a intentar"
 
 #: contents/ui/main.qml:390
 #, kde-format
@@ -179,40 +179,3 @@ msgstr "&Configura els dispositius d'àudio…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "No s'ha trobat el nom del flux"
-
-#~ msgid "No output device"
-#~ msgstr "Cap dispositiu d'eixida"
-
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (Bateria %2%)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Apuja el volum"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "Apuja el volum un 1%"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Abaixa el volum"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "Abaixa el volum un 1%"
-
-#~ msgid "Mute"
-#~ msgstr "Silencia"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "Apuja el volum del micròfon"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "Abaixa el volum del micròfon"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "Silencia el micròfon"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
