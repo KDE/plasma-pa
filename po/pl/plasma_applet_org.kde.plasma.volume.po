@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-20 00:42+0000\n"
-"PO-Revision-Date: 2024-01-21 09:42+0100\n"
+"PO-Revision-Date: 2024-08-24 11:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: contents/ui/ListItemBase.qml:66
 #, kde-format
@@ -87,7 +88,7 @@ msgstr "Głośność dźwięku"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Utracono połączenie do usługi dźwiękowej"
 
 #: contents/ui/main.qml:47
 #, kde-format
@@ -98,7 +99,7 @@ msgstr "Nie znaleziono żadnych urządzeń wejściowych, ani wyjściowych"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Próba ponownego połączenia się…"
 
 #: contents/ui/main.qml:68
 #, kde-format
@@ -149,7 +150,7 @@ msgstr "Wycisz wszystkie urządzenia odtwarzające"
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Ponów"
 
 #: contents/ui/main.qml:390
 #, kde-format
