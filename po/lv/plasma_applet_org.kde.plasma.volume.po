@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:42+0000\n"
+"POT-Creation-Date: 2024-09-01 00:40+0000\n"
 "PO-Revision-Date: 2024-04-03 12:49+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -80,95 +80,95 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:32
+#: contents/ui/main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "Skaļums"
 
-#: contents/ui/main.qml:43 contents/ui/main.qml:45
+#: contents/ui/main.qml:47 contents/ui/main.qml:49
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr ""
 
-#: contents/ui/main.qml:47
+#: contents/ui/main.qml:51
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nav atrastas ievades vai izvades ierīces"
 
-#: contents/ui/main.qml:51
+#: contents/ui/main.qml:55
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr ""
 
-#: contents/ui/main.qml:68
+#: contents/ui/main.qml:72
 #, kde-format
 msgid "Audio Muted"
 msgstr "Skaņa ir apklusināta"
 
-#: contents/ui/main.qml:70
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Skaļums ir %1%"
 
-#: contents/ui/main.qml:81
+#: contents/ui/main.qml:85
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Atjaunojiet skaņu ar vidējo klikšķi"
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Apklusiniet visu ar vidējo klikšķi"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:87
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Ritiniet, lai mainītu skaļumu"
 
-#: contents/ui/main.qml:104
+#: contents/ui/main.qml:109
 #, kde-format
 msgid "Device name not found"
 msgstr "Ierīces nosaukums nav atrasts"
 
-#: contents/ui/main.qml:304
+#: contents/ui/main.qml:309
 #, kde-format
 msgid "Devices"
 msgstr "Ierīces"
 
-#: contents/ui/main.qml:311
+#: contents/ui/main.qml:316
 #, kde-format
 msgid "Applications"
 msgstr "Programmas"
 
-#: contents/ui/main.qml:328 contents/ui/main.qml:330 contents/ui/main.qml:561
+#: contents/ui/main.qml:333 contents/ui/main.qml:335 contents/ui/main.qml:566
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
 
-#: contents/ui/main.qml:366
+#: contents/ui/main.qml:371
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: contents/ui/main.qml:390
+#: contents/ui/main.qml:395
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Pašlaik neviena programma neatskaņo vai neieraksta audio"
 
-#: contents/ui/main.qml:549
+#: contents/ui/main.qml:554
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Palielināt maksimālo skaļumu"
 
-#: contents/ui/main.qml:570
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rādīt virtuālās ierīces"
 
-#: contents/ui/main.qml:580
+#: contents/ui/main.qml:585
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurēt skaņas ierīces..."

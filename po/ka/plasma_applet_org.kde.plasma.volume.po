@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:42+0000\n"
+"POT-Creation-Date: 2024-09-01 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 06:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -79,95 +79,95 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:32
+#: contents/ui/main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "აუდიოს ხმა"
 
-#: contents/ui/main.qml:43 contents/ui/main.qml:45
+#: contents/ui/main.qml:47 contents/ui/main.qml:49
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "ხმის სერვერთან კავშირი დაიკარგა"
 
-#: contents/ui/main.qml:47
+#: contents/ui/main.qml:51
 #, kde-format
 msgid "No output or input devices found"
 msgstr "არც შესატანი, არც გამოსატანი მოწყობილობა ნაპოვნი არაა"
 
-#: contents/ui/main.qml:51
+#: contents/ui/main.qml:55
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "თავიდან დაკავშირების ცდა…"
 
-#: contents/ui/main.qml:68
+#: contents/ui/main.qml:72
 #, kde-format
 msgid "Audio Muted"
 msgstr "აუდიო ჩაჩუმებულია"
 
-#: contents/ui/main.qml:70
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Volume at %1%"
 msgstr "ხმა: %1%"
 
-#: contents/ui/main.qml:81
+#: contents/ui/main.qml:85
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "შუა-წკაპი დადუმების გასაუქმებლად"
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "შუა-წკაპი ყველა ხმის დასადუმებლად"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:87
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "ხმის მოსარგებად აქაჩეთ"
 
-#: contents/ui/main.qml:104
+#: contents/ui/main.qml:109
 #, kde-format
 msgid "Device name not found"
 msgstr "მოწყობილობა ნაპოვნი არაა"
 
-#: contents/ui/main.qml:304
+#: contents/ui/main.qml:309
 #, kde-format
 msgid "Devices"
 msgstr "მოწყობილობები"
 
-#: contents/ui/main.qml:311
+#: contents/ui/main.qml:316
 #, kde-format
 msgid "Applications"
 msgstr "პროგრამები"
 
-#: contents/ui/main.qml:328 contents/ui/main.qml:330 contents/ui/main.qml:561
+#: contents/ui/main.qml:333 contents/ui/main.qml:335 contents/ui/main.qml:566
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ყველა დამკვრელი მოწყობილბის დადუმება"
 
-#: contents/ui/main.qml:366
+#: contents/ui/main.qml:371
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "გამეორება"
 
-#: contents/ui/main.qml:390
+#: contents/ui/main.qml:395
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ამჟამად აუდიოს არც ერთი აპლიკაცია არ უკრავს და არც იწერს"
 
-#: contents/ui/main.qml:549
+#: contents/ui/main.qml:554
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "მაქსიმალური ხმის აწევა"
 
-#: contents/ui/main.qml:570
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ვირტუალური მოწყობილობების ჩვენება"
 
-#: contents/ui/main.qml:580
+#: contents/ui/main.qml:585
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "აუდიო მოწყობილობების &მორგება…"

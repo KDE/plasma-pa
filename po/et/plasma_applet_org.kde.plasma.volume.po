@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:42+0000\n"
+"POT-Creation-Date: 2024-09-01 00:40+0000\n"
 "PO-Revision-Date: 2020-09-28 13:57+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -83,96 +83,96 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:32
+#: contents/ui/main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "Helitugevus"
 
-#: contents/ui/main.qml:43 contents/ui/main.qml:45
+#: contents/ui/main.qml:47 contents/ui/main.qml:49
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr ""
 
-#: contents/ui/main.qml:47
+#: contents/ui/main.qml:51
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Ühtegi väljund- ega sisendseadet ei leitud"
 
-#: contents/ui/main.qml:51
+#: contents/ui/main.qml:55
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr ""
 
-#: contents/ui/main.qml:68
+#: contents/ui/main.qml:72
 #, kde-format
 msgid "Audio Muted"
 msgstr "Heli summutatud"
 
-#: contents/ui/main.qml:70
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Helitugevus %1%"
 
-#: contents/ui/main.qml:81
+#: contents/ui/main.qml:85
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:87
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr ""
 
-#: contents/ui/main.qml:104
+#: contents/ui/main.qml:109
 #, kde-format
 msgid "Device name not found"
 msgstr "Seadme nime ei leitud"
 
-#: contents/ui/main.qml:304
+#: contents/ui/main.qml:309
 #, kde-format
 msgid "Devices"
 msgstr "Seadmed"
 
-#: contents/ui/main.qml:311
+#: contents/ui/main.qml:316
 #, kde-format
 msgid "Applications"
 msgstr "Rakendused"
 
-#: contents/ui/main.qml:328 contents/ui/main.qml:330 contents/ui/main.qml:561
+#: contents/ui/main.qml:333 contents/ui/main.qml:335 contents/ui/main.qml:566
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Jõuga heli maha kõigis taasesitamisseadmetes"
 
-#: contents/ui/main.qml:366
+#: contents/ui/main.qml:371
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: contents/ui/main.qml:390
+#: contents/ui/main.qml:395
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ükski rakendus ei esita ega salvesta heli"
 
-#: contents/ui/main.qml:549
+#: contents/ui/main.qml:554
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Helitugevuse maksimumi suurendamine"
 
-#: contents/ui/main.qml:570
+#: contents/ui/main.qml:575
 #, fuzzy, kde-format
 #| msgid "Show hidden devices"
 msgid "Show virtual devices"
 msgstr "Peidetud seadmete näitamine"
 
-#: contents/ui/main.qml:580
+#: contents/ui/main.qml:585
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
