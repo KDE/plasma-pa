@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2024-08-25 12:13+0200\n"
+"PO-Revision-Date: 2024-09-01 15:19+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 24.08.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -30,7 +30,7 @@ msgstr "Fann ikkje einingsnamn"
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Description"
-msgstr ""
+msgstr "Einingsskildring"
 
 #: devicenamesourcemodel.cpp:42
 #, kde-format
@@ -148,10 +148,9 @@ msgid "Show Inactive Devices"
 msgstr "Vis einingar som ikkje er i bruk"
 
 #: kcm/ui/main.qml:85
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Opptakseiningar"
+msgstr "Endra namn på einingar …"
 
 #: kcm/ui/main.qml:91
 #, kde-format
@@ -281,11 +280,10 @@ msgid "Mute %1"
 msgstr "Demp %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Opptakseiningar"
+msgstr "Endra namn på einingar"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
@@ -297,7 +295,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Lagra"
 
 #: kcm/ui/RenameDevices.qml:86
 #, kde-format
@@ -311,7 +309,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Meld frå om feil"
 
 #: kcm/ui/RenameDevices.qml:110
 #, kde-format
@@ -323,26 +321,26 @@ msgstr ""
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (Trykk «Lagra» for å ta i bruk)"
 
 #: kcm/ui/RenameDevices.qml:169
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Bruk"
 
 #: kcm/ui/RenameDevices.qml:175
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Tilbakestill"
 
 #: kcm/ui/RenameDevices.qml:182
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "STANDARD"
 
 #: kcm/ui/StreamListItem.qml:57
 #, kde-format
@@ -548,7 +546,3 @@ msgstr "%1 brukar mikrofonen (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 brukar mikrofonen"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
