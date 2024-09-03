@@ -18,11 +18,10 @@ msgstr ""
 "X-Crowdin-File-ID: 43649\n"
 
 #: devicenamesourcemodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Device name not found"
+#, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Nickname"
-msgstr "没有找到设备名称"
+msgstr ""
 
 #: devicenamesourcemodel.cpp:40
 #, kde-format
@@ -146,10 +145,9 @@ msgid "Show Inactive Devices"
 msgstr "显示非活动设备"
 
 #: kcm/ui/main.qml:85
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "录音设备"
+msgstr ""
 
 #: kcm/ui/main.qml:91
 #, kde-format
@@ -278,11 +276,10 @@ msgid "Mute %1"
 msgstr "静音 %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "录音设备"
+msgstr ""
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
@@ -545,7 +542,3 @@ msgstr "%1 正在使用麦克风 (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 正在使用麦克风"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
