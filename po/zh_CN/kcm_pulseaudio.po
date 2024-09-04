@@ -21,25 +21,25 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Nickname"
-msgstr ""
+msgstr "设备昵称"
 
 #: devicenamesourcemodel.cpp:40
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Description"
-msgstr ""
+msgstr "设备描述"
 
 #: devicenamesourcemodel.cpp:42
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Card Name"
-msgstr ""
+msgstr "ALSA 声卡名称"
 
 #: devicenamesourcemodel.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Long Card Name"
-msgstr ""
+msgstr "ALSA 声卡长名称"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -48,6 +48,7 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"更改没有应用。<nl/>执行 restart wireplumber.service 失败。该命令已崩溃。"
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -56,24 +57,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"更改没有应用。<nl/>执行 restart wireplumber.service 失败。该命令已被终止，退"
+"出码：%1。"
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "处理设备失败：%1。"
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "创建目录失败：%1。"
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "打开要写入的文件失败：%1。"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -147,7 +150,7 @@ msgstr "显示非活动设备"
 #: kcm/ui/main.qml:85
 #, kde-format
 msgid "Rename Devices…"
-msgstr ""
+msgstr "重命名设备…"
 
 #: kcm/ui/main.qml:91
 #, kde-format
@@ -279,19 +282,19 @@ msgstr "静音 %1"
 #, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr ""
+msgstr "重命名设备"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@label:listbox the default naming scheme for audio devices"
 msgid "Standard naming scheme:"
-msgstr ""
+msgstr "标准命名方案："
 
 #: kcm/ui/RenameDevices.qml:56
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: kcm/ui/RenameDevices.qml:86
 #, kde-format
@@ -300,43 +303,45 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"保存更改将重新启动音频服务。正在播放音频的应用将中断播放，并可能需要重新启"
+"动。"
 
 #: kcm/ui/RenameDevices.qml:98
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "报告程序缺陷"
 
 #: kcm/ui/RenameDevices.qml:110
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "正在重新加载"
 
 #: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (点击“保存”以应用更改)"
 
 #: kcm/ui/RenameDevices.qml:169
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "应用"
 
 #: kcm/ui/RenameDevices.qml:175
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 #: kcm/ui/RenameDevices.qml:182
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "默认"
 
 #: kcm/ui/StreamListItem.qml:57
 #, kde-format
