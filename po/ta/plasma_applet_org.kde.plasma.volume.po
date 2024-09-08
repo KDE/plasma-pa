@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2023-05-14 15:17+0530\n"
+"PO-Revision-Date: 2024-09-07 20:37+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: contents/ui/ListItemBase.qml:66
 #, kde-format
@@ -87,7 +87,7 @@ msgstr "ஒலி அளவு"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "ஒலிக்கான பின்னணி நிரலுடனான இணைப்பு முறிவடைந்தது"
 
 #: contents/ui/main.qml:51
 #, kde-format
@@ -98,7 +98,7 @@ msgstr "எந்த உள்ளீட்டு அல்லது வெளி
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "திரும்ப இணைக்க முயற்சிக்கிறது…"
 
 #: contents/ui/main.qml:72
 #, kde-format
@@ -149,7 +149,7 @@ msgstr "அனைத்து வெளியீட்டு சாதனங்�
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "மீண்டும் முயற்சி"
 
 #: contents/ui/main.qml:395
 #, kde-format
@@ -174,7 +174,7 @@ msgstr "ஒலி சாதனங்களை &அமை…"
 #: contents/ui/StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
-msgstr ""
+msgstr "அப்பெயரையுடைய ஒலித்தடத்தை (stream-ஐ) கண்டுபிடிக்க முடியவில்லை"
 
 #~ msgid "No output device"
 #~ msgstr "வெளியீட்டு சாதனம் இல்லை"
