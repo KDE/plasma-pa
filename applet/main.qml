@@ -596,29 +596,55 @@ PlasmoidItem {
         }
 
         footer: PlasmaExtras.PlasmoidHeading {
-            height: fullRep.header.height
-            PC3.Switch {
-                id: raiseMaximumVolumeCheckbox
-                anchors.left: parent.left
-                anchors.leftMargin: Kirigami.Units.smallSpacing
-                anchors.verticalCenter: parent.verticalCenter
+            id: footerToolbar
 
-                checked: config.raiseMaximumVolume
+            readonly property int margins: Kirigami.Units.smallSpacing
 
-                Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
-                Keys.onUpPressed: event => {
-                    if (KeyNavigation.up.count > 0) {
-                        KeyNavigation.up.currentIndex = KeyNavigation.up.count - 1
-                    }
-                    event.accepted = false // pass to KeyNavigation, set inside StackView
+            Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
+            Keys.onUpPressed: event => {
+                if (KeyNavigation.up.count > 0) {
+                    KeyNavigation.up.currentIndex = KeyNavigation.up.count - 1
                 }
-                Keys.onDownPressed: event => event.accepted = true // don't pass to parent
+                event.accepted = false // pass to KeyNavigation, set inside StackView
+            }
+            Keys.onDownPressed: event => event.accepted = true // don't pass to parent
 
-                text: i18n("Raise maximum volume")
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
 
-                onToggled: {
-                    config.raiseMaximumVolume = checked;
-                    config.save();
+                Kirigami.InlineMessage {
+                    id: raiseMaxVolumeWarning
+
+                    Layout.fillWidth: true
+                    Layout.margins: footerToolbar.margins
+
+                    showCloseButton: true
+                    type: Kirigami.MessageType.Warning
+
+                    text: xi18nc("@info", "Prolonged use of this feature will damage the device's speakers. Only use it temporarily to make quiet media audible.")
+                }
+
+                PC3.Switch {
+                    id: raiseMaximumVolumeCheckbox
+                    Layout.fillWidth: true
+                    Layout.margins: footerToolbar.margins
+
+                    checked: config.raiseMaximumVolume
+
+                    Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
+                    KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
+                    Keys.onUpPressed: event => {
+                        KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
+                    }
+
+                    text: i18n("Raise maximum volume")
+
+                    onToggled: {
+                        config.raiseMaximumVolume = checked;
+                        config.save();
+                        raiseMaxVolumeWarning.visible = checked;
+                    }
                 }
             }
         }
