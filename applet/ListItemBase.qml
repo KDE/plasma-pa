@@ -280,7 +280,7 @@ PC3.ItemDelegate {
                         seqAnimation.restart();
                     }
 
-                    function updateVolume() {
+                    function capVolumeIfNeeded() {
                         if (!forceRaiseMaxVolume && item.model.Volume > PulseAudio.NormalVolume) {
                             item.model.Volume = PulseAudio.NormalVolume;
                         }
@@ -296,8 +296,12 @@ PC3.ItemDelegate {
                             easing.type: Easing.InOutQuad
                         }
                         ScriptAction {
-                            script: slider.updateVolume()
+                            script: slider.capVolumeIfNeeded()
                         }
+                    }
+
+                    Component.onCompleted: {
+                        capVolumeIfNeeded()
                     }
                 }
                 PC3.Label {
