@@ -536,26 +536,46 @@ PlasmoidItem {
         }
 
         footer: PlasmaExtras.PlasmoidHeading {
-            height: fullRep.header.height
-            PC3.Switch {
-                id: raiseMaximumVolumeCheckbox
-                anchors.left: parent.left
-                anchors.leftMargin: Kirigami.Units.smallSpacing
-                anchors.verticalCenter: parent.verticalCenter
+            id: footerToolbar
 
-                checked: config.raiseMaximumVolume
+            readonly property int margins: Kirigami.Units.smallSpacing
 
-                Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
-                KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
-                Keys.onUpPressed: event => {
-                    KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
+            ColumnLayout {
+                width: parent.width
+                spacing: 0
+
+                Kirigami.InlineMessage {
+                    id: raiseMaxVolumeWarning
+
+                    Layout.fillWidth: true
+                    Layout.margins: footerToolbar.margins
+
+                    showCloseButton: true
+                    type: Kirigami.MessageType.Warning
+
+                    text: xi18nc("@info", "Use this feature only to temporarily boost very quiet sounds; using it with normal-volume sounds can damage your hearing and the device's speakers.<nl/><nl/>It will be automatically turned off when the system restarts or goes to sleep.")
                 }
 
-                text: i18n("Raise maximum volume")
+                PC3.Switch {
+                    id: raiseMaximumVolumeCheckbox
+                    Layout.fillWidth: true
+                    Layout.margins: footerToolbar.margins
 
-                onToggled: {
-                    config.raiseMaximumVolume = checked;
-                    config.save();
+                    checked: config.raiseMaximumVolume
+
+                    Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
+                    KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
+                    Keys.onUpPressed: event => {
+                        KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
+                    }
+
+                    text: i18n("Temporarily raise maximum volume")
+
+                    onToggled: {
+                        config.raiseMaximumVolume = checked;
+                        config.save();
+                        raiseMaxVolumeWarning.visible = checked;
+                    }
                 }
             }
         }
@@ -592,6 +612,11 @@ PlasmoidItem {
     Component.onCompleted: {
         MicrophoneIndicator.init();
         Plasmoid.setInternalAction("configure", configureAction);
+
+        // Always reset "raise maximum volume" to false to avoid letting the user keep this
+        // turned on long-term, which is dangerous.
+        config.raiseMaximumVolume = false;
+        config.save();
 
         // migrate settings if they aren't default
         // this needs to be done per instance of the applet
