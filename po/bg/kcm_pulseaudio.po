@@ -7,40 +7,39 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2024-06-15 23:13+0200\n"
+"PO-Revision-Date: 2024-09-11 12:28+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.07.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: devicenamesourcemodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Device name not found"
+#, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Nickname"
-msgstr "Името на устройството не е намерено"
+msgstr "Псевдоним на устройството"
 
 #: devicenamesourcemodel.cpp:40
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Description"
-msgstr ""
+msgstr "Описание на устройство"
 
 #: devicenamesourcemodel.cpp:42
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Card Name"
-msgstr ""
+msgstr "Име на карта ALSA"
 
 #: devicenamesourcemodel.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Long Card Name"
-msgstr ""
+msgstr "Пълно име на карта ALSA"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -74,7 +73,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Не може да се отвори файл  за запис: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -86,19 +85,19 @@ msgstr "Профил:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Връзката със сървъра е прекъсната"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Опит за повторно свързване…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Повторен опит"
 
 #: kcm/ui/DeviceListItem.qml:63 kded/audioshortcutsservice.cpp:208
 #, kde-format
@@ -146,10 +145,9 @@ msgid "Show Inactive Devices"
 msgstr "Показване на неактивни устройства"
 
 #: kcm/ui/main.qml:85
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Устройства за запис"
+msgstr "Преименуване на устройства…"
 
 #: kcm/ui/main.qml:91
 #, kde-format
@@ -280,11 +278,10 @@ msgid "Mute %1"
 msgstr "Без звук %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Устройства за запис"
+msgstr "Преименуване на устройства"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
@@ -296,7 +293,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Запазване"
 
 #: kcm/ui/RenameDevices.qml:86
 #, kde-format
@@ -310,13 +307,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Подаване на сигнал за грешка"
 
 #: kcm/ui/RenameDevices.qml:110
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "Презареждане"
 
 #: kcm/ui/RenameDevices.qml:146
 #, kde-format
@@ -328,20 +325,20 @@ msgstr ""
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Прилагане"
 
 #: kcm/ui/RenameDevices.qml:175
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Нулиране"
 
 #: kcm/ui/RenameDevices.qml:182
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "По подразбиране"
 
 #: kcm/ui/StreamListItem.qml:57
 #, kde-format

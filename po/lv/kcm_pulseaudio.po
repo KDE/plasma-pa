@@ -8,41 +8,40 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2024-04-06 20:02+0300\n"
-"Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2024-09-12 15:52+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: devicenamesourcemodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Device name not found"
+#, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Nickname"
-msgstr "Ierīces nosaukums nav atrasts"
+msgstr "Ierīces iesauka"
 
 #: devicenamesourcemodel.cpp:40
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Description"
-msgstr ""
+msgstr "Ierīces apraksts"
 
 #: devicenamesourcemodel.cpp:42
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Card Name"
-msgstr ""
+msgstr "ALSA kartes nosaukums"
 
 #: devicenamesourcemodel.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Long Card Name"
-msgstr ""
+msgstr "ALSA kartes garais nosaukums"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -51,6 +50,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Izmaiņas nav pielietotas.<nl/>Neizdevās pārstartēt „wireplumber.service“. "
+"Komanda avarēja."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -59,24 +60,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Izmaiņas nav pielietotas.<nl/>Neizdevās pārstartēt „wireplumber.service“. "
+"Komanda pārtrauca darbību ar kodu: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Neizdevās apstrādāt ierīces: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Neizdevās izveidot mapi: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Neizdevās atvērt datni rakstīšanai: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -88,19 +91,19 @@ msgstr "Profils:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Savienojums ar skaņas servisu ir pazudis"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Mēģina savienoties no jauna…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Mēģināt vēlreiz"
 
 #: kcm/ui/DeviceListItem.qml:63 kded/audioshortcutsservice.cpp:208
 #, kde-format
@@ -140,7 +143,7 @@ msgstr "Pārbaude"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Rādīt kanālus"
 
 #: kcm/ui/main.qml:78
 #, kde-format
@@ -148,20 +151,19 @@ msgid "Show Inactive Devices"
 msgstr "Rādīt neaktīvās ierīces"
 
 #: kcm/ui/main.qml:85
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Ierakstīšanas ierīces"
+msgstr "Pārdēvēt ierīces…"
 
 #: kcm/ui/main.qml:91
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Konfigurēt skaļuma vadību..."
+msgstr "Konfigurēt skaļuma vadību…"
 
 #: kcm/ui/main.qml:98
 #, kde-format
 msgid "Configure…"
-msgstr "Konfigurēt..."
+msgstr "Konfigurēt…"
 
 #: kcm/ui/main.qml:101
 #, kde-format
@@ -283,23 +285,22 @@ msgid "Mute %1"
 msgstr "Apklusināt „%1“"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Ierakstīšanas ierīces"
+msgstr "Pārdēvēt ierīces"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@label:listbox the default naming scheme for audio devices"
 msgid "Standard naming scheme:"
-msgstr ""
+msgstr "Standarta nosaukumu shēma:"
 
 #: kcm/ui/RenameDevices.qml:56
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Saglabāt"
 
 #: kcm/ui/RenameDevices.qml:86
 #, kde-format
@@ -308,43 +309,45 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Izmaiņu saglabāšana pārstartēs audio servisus. Programmas, kas atskaņo "
+"skaņu, saskarsies ar pārrāvumiem un tās var būt nepieciešams pārstartēt."
 
 #: kcm/ui/RenameDevices.qml:98
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Ziņot par kļūdu"
 
 #: kcm/ui/RenameDevices.qml:110
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "Pārlādē"
 
 #: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (klikšķiniet uz „Saglabāt“, lai pielietotu)"
 
 #: kcm/ui/RenameDevices.qml:169
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Pielietot"
 
 #: kcm/ui/RenameDevices.qml:175
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Atiestatīt"
 
 #: kcm/ui/RenameDevices.qml:182
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "NOKLUSĒJUMS"
 
 #: kcm/ui/StreamListItem.qml:57
 #, kde-format

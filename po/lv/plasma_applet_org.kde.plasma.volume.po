@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2024-04-03 12:49+0300\n"
+"PO-Revision-Date: 2024-09-12 15:52+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: contents/ui/ListItemBase.qml:66
 #, kde-format
@@ -89,7 +89,7 @@ msgstr "Skaļums"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Savienojums ar skaņas servisu ir pazudis"
 
 #: contents/ui/main.qml:51
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "Nav atrastas ievades vai izvades ierīces"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Mēģina savienoties no jauna…"
 
 #: contents/ui/main.qml:72
 #, kde-format
@@ -151,7 +151,7 @@ msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Mēģināt vēlreiz"
 
 #: contents/ui/main.qml:395
 #, kde-format
@@ -171,7 +171,7 @@ msgstr "Rādīt virtuālās ierīces"
 #: contents/ui/main.qml:585
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr "&Konfigurēt skaņas ierīces..."
+msgstr "&Konfigurēt skaņas ierīces…"
 
 #: contents/ui/StreamListItem.qml:25
 #, kde-format
