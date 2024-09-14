@@ -57,8 +57,8 @@ PlasmoidItem {
         return ""
     }
 
-    switchHeight: Layout.minimumHeight
-    switchWidth: Layout.minimumWidth
+    switchHeight: Kirigami.Units.gridUnit * 8
+    switchWidth: Kirigami.Units.gridUnit * 14
 
     Plasmoid.icon: PreferredDevice.sink && !isDummyOutput(PreferredDevice.sink) ? AudioIcon.forVolume(volumePercent(PreferredDevice.sink.volume), PreferredDevice.sink.muted, "")
                                                                                           : AudioIcon.forVolume(0, true, "")
@@ -242,8 +242,8 @@ PlasmoidItem {
     fullRepresentation: PlasmaExtras.Representation {
         id: fullRep
 
-        Layout.minimumHeight: Kirigami.Units.gridUnit * 8
-        Layout.minimumWidth: Kirigami.Units.gridUnit * 14
+        Layout.minimumHeight: main.switchHeight
+        Layout.minimumWidth: main.switchWidth
         Layout.preferredHeight: Kirigami.Units.gridUnit * 21
         Layout.preferredWidth: Kirigami.Units.gridUnit * 24
 
