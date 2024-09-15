@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2023-09-23 21:42-0700\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
+"PO-Revision-Date: 2024-09-13 03:50+0900\n"
+"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -16,31 +16,31 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: devicenamesourcemodel.cpp:38
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Nickname"
-msgstr ""
+msgstr "デバイスのニックネーム"
 
 #: devicenamesourcemodel.cpp:40
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Description"
-msgstr ""
+msgstr "デバイスの説明"
 
 #: devicenamesourcemodel.cpp:42
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Card Name"
-msgstr ""
+msgstr "ALSA カード名"
 
 #: devicenamesourcemodel.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Long Card Name"
-msgstr ""
+msgstr "ALSA 詳細カード名"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -49,6 +49,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"変更は適用されていません。<nl/>wireplumber.service の再起動に失敗しました。コ"
+"マンドがクラッシュしました。"
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -57,24 +59,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"変更は適用されていません。<nl/>wireplumber.service の再起動に失敗しました。コ"
+"マンドはコード %1 で終了しました。"
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "デバイスの処理に失敗しました: %1。"
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "ディレクトリの作成に失敗しました: %1。"
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "書き込み用にファイルを開けませんでした: %1。"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -86,24 +90,24 @@ msgstr "プロファイル:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "サウンドサービスへの接続がロストしました"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "再接続を試行..."
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "リトライ"
 
 #: kcm/ui/DeviceListItem.qml:63 kded/audioshortcutsservice.cpp:208
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "デバイス名が見つかりません"
 
 #: kcm/ui/DeviceListItem.qml:105
 #, kde-format
@@ -138,7 +142,7 @@ msgstr "テスト"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "チャンネルを表示"
 
 #: kcm/ui/main.qml:78
 #, kde-format
@@ -146,15 +150,14 @@ msgid "Show Inactive Devices"
 msgstr "非アクティブなデバイスを表示"
 
 #: kcm/ui/main.qml:85
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "録音デバイス"
+msgstr "デバイス名を変更..."
 
 #: kcm/ui/main.qml:91
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "音量制御を設定..."
+msgstr "音量コントロールを設定..."
 
 #: kcm/ui/main.qml:98
 #, kde-format
@@ -278,23 +281,22 @@ msgid "Mute %1"
 msgstr "%1 をミュート"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "録音デバイス"
+msgstr "デバイス名を変更"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@label:listbox the default naming scheme for audio devices"
 msgid "Standard naming scheme:"
-msgstr ""
+msgstr "標準的な命名規則:"
 
 #: kcm/ui/RenameDevices.qml:56
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: kcm/ui/RenameDevices.qml:86
 #, kde-format
@@ -303,43 +305,45 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"変更を保存するとオーディオサービスが再起動します。オーディオを再生するアプリ"
+"が中断されるため、再起動が必要になる場合があります。"
 
 #: kcm/ui/RenameDevices.qml:98
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "バグを報告"
 
 #: kcm/ui/RenameDevices.qml:110
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "リロード"
 
 #: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (適用するには「保存」をクリッ)"
 
 #: kcm/ui/RenameDevices.qml:169
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "適用"
 
 #: kcm/ui/RenameDevices.qml:175
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "リセット"
 
 #: kcm/ui/RenameDevices.qml:182
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "デフォルト"
 
 #: kcm/ui/StreamListItem.qml:57
 #, kde-format
@@ -355,7 +359,7 @@ msgstr "%1: %2"
 #: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr "音量制御"
+msgstr "音量コントロール"
 
 #: kcm/ui/VolumeControlsConfig.qml:31
 #, kde-format
@@ -412,34 +416,32 @@ msgstr "100%"
 #: kded/audioshortcutsservice.cpp:59
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "音量を上げる"
 
 #: kded/audioshortcutsservice.cpp:74
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "音量を下げる"
 
 #: kded/audioshortcutsservice.cpp:89
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "音量を 1% 上げる"
 
 #: kded/audioshortcutsservice.cpp:104
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "音量を 1% 下げる"
 
 #: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "マイクミュート"
+msgstr "マイクの音量を上げる"
 
 #: kded/audioshortcutsservice.cpp:133
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "マイクミュート"
+msgstr "マイクの音量を下げる"
 
 #: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -447,35 +449,30 @@ msgid "Mute"
 msgstr "ミュート"
 
 #: kded/audioshortcutsservice.cpp:160
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "マイク"
+msgstr "マイクをミュートする"
 
 #: kded/audioshortcutsservice.cpp:174
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
-msgstr "音量"
+msgstr "オーディオの音量"
 
 #: kded/audioshortcutsservice.cpp:192
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "そのデバイスはありません"
 
 #: kded/audioshortcutsservice.cpp:240
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "デフォルトの出力デバイス"
+msgstr "出力デバイスなし"
 
 #: kded/audioshortcutsservice.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% バッテリー)"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
@@ -552,15 +549,3 @@ msgstr "%1 はマイクを使用しています (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 はマイクを使用しています"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgctxt "Audio balance (e.g. control left/right volume individually"
-#~ msgid "Balance"
-#~ msgstr "バランス"
-
-#~ msgctxt "Name shown in debug pulseaudio tools"
-#~ msgid "Plasma PA"
-#~ msgstr "Plasma PA"
