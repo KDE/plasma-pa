@@ -97,9 +97,9 @@ QHash<int, QByteArray> DeviceRenameModel::roleNames() const
     // Do not start out with the original role names. We'd get confused over what
     // is what since this is an IdentityProxy and churns through roles from the source model
     QHash<int, QByteArray> roleNames;
-    roleNames.insert(static_cast<int>(Role::PulseProperties), "PulseProperties"_qba);
-    roleNames.insert(static_cast<int>(Role::HasOverride), "HasOverride"_qba);
-    roleNames.insert(static_cast<int>(Role::HadOverride), "HadOverride"_qba);
+    roleNames.insert(static_cast<int>(Role::PulseProperties), "PulseProperties"_ba);
+    roleNames.insert(static_cast<int>(Role::HasOverride), "HasOverride"_ba);
+    roleNames.insert(static_cast<int>(Role::HadOverride), "HadOverride"_ba);
     return roleNames;
 }
 
