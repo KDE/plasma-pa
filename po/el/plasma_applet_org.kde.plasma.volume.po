@@ -48,8 +48,7 @@ msgid "Unmute"
 msgstr "Σίγαση %1"
 
 #: contents/ui/ListItemBase.qml:212
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Σίγαση"
