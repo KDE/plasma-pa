@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2024-09-22 16:33+0200\n"
+"PO-Revision-Date: 2024-09-26 19:06+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -20,11 +20,10 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 
 #: devicenamesourcemodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Device name not found"
+#, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "Device Nickname"
-msgstr "Fann ikkje einingsnamn"
+msgstr "Einingskallenamn"
 
 #: devicenamesourcemodel.cpp:40
 #, kde-format
@@ -36,13 +35,13 @@ msgstr "Einingsskildring"
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Card Name"
-msgstr ""
+msgstr "ALSA kortnamn"
 
 #: devicenamesourcemodel.cpp:44
 #, kde-format
 msgctxt "@item:inlistbox a type of name source"
 msgid "ALSA Long Card Name"
-msgstr ""
+msgstr "ALSA langt namn"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -51,6 +50,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Endringane vart ikkje tekne i bruk.<nl/>Klarte ikkje starta tenesta "
+"wireplumber.service på nytt. Kommandoen krasja."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -59,24 +60,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Endringane vart ikkje tekne i bruk.<nl/>Klarte ikkje starta tenesta "
+"wireplumber.service på nytt. Kommandoen vart avslutta med koden: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Klarte ikkje handsama eningar: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Klarte ikkje laga ny mappe: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Klarte ikkje opna fila for skriving: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -289,7 +292,7 @@ msgstr "Endra namn på einingar"
 #, kde-format
 msgctxt "@label:listbox the default naming scheme for audio devices"
 msgid "Standard naming scheme:"
-msgstr ""
+msgstr "Standard namneformat:"
 
 #: kcm/ui/RenameDevices.qml:56
 #, kde-format
@@ -304,6 +307,8 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Lagrar du endringane, vert lydtenestene starta på nytt. Lyden i program som "
+"spelar av lyd, vert avbroten, og programma må kanskje òg startast på nytt."
 
 #: kcm/ui/RenameDevices.qml:98
 #, kde-format
