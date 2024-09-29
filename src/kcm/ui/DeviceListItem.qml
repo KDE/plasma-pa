@@ -116,7 +116,7 @@ ColumnLayout {
 
             onModelChanged: currentIndex = ActivePortIndex
             currentIndex: ActivePortIndex
-            onActivated: ActivePortIndex = index
+            onActivated: index => ActivePortIndex = index
 
             onPortsChanged: {
                 var items = [];

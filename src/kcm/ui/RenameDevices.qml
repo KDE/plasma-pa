@@ -95,8 +95,6 @@ KCM.ScrollViewKCM {
     component RenameDelegate: ColumnLayout {
         id: delegate
 
-        width: parent.width
-
         readonly property var pulseProperties: PulseProperties
         readonly property var hasOverride: HasOverride
         readonly property var hadOverride: HadOverride
@@ -220,7 +218,9 @@ KCM.ScrollViewKCM {
                 spacing: Kirigami.Units.largeSpacing
                 model: sinkRenameModel
 
-                delegate: RenameDelegate {}
+                delegate: RenameDelegate {
+                    width: ListView.view.width
+                }
             }
 
             Kirigami.ListSectionHeader {
