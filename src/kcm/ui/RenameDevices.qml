@@ -21,12 +21,14 @@ KCM.ScrollViewKCM {
 
     required property var config
     required property DeviceNameSourceModel deviceNameSourceModel
-    readonly property list<string> possibleProperties: ['node.nick',
+    // These are the properties we will override and draw values from, not the UI choices. Those are controlled by the kcfg.
+    readonly property list<string> possibleProperties: ['node.description',
                                                         'device.description',
+                                                        'node.nick',
+                                                        'device.name',
                                                         'alsa.card_name',
-                                                        'alsa.long_card_name',
-                                                        'device.name']
-    property string defaultKey: 'node.nick'
+                                                        'alsa.long_card_name']
+    property string defaultKey: 'plasma-pa.description'
 
     title: i18nc("@title rename audio devices", "Rename Devices")
     implicitHeight: Kirigami.Units.gridUnit * 28
@@ -118,6 +120,7 @@ KCM.ScrollViewKCM {
         readonly property var pulseProperties: PulseProperties
         readonly property var hasOverride: HasOverride
         readonly property var hadOverride: HadOverride
+        readonly property var pulseObject: PulseObject
 
         RowLayout {
             id: root
@@ -125,6 +128,10 @@ KCM.ScrollViewKCM {
             Layout.fillWidth: true
 
             readonly property string initialText: {
+                if (page.defaultKey === "plasma-pa.description" && delegate.pulseObject.description !== undefined) {
+                    return delegate.pulseObject.description
+                }
+
                 for (const key of [page.defaultKey].concat(page.possibleProperties)) {
                     const text = delegate.pulseProperties[key]
                     if (text !== undefined) {

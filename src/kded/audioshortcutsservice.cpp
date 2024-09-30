@@ -192,11 +192,6 @@ QString AudioShortcutsService::nameForDevice(const PulseAudioQt::Device *device)
         return i18n("No such device");
     }
 
-    const QString nodeNick = device->pulseProperties()["node.nick"].toString();
-    if (!nodeNick.isEmpty()) {
-        return nodeNick;
-    }
-
     if (!device->description().isEmpty()) {
         return device->description();
     }

@@ -53,7 +53,7 @@
                 <choice name="ALSACardName"/>
                 <choice name="ALSALongCardName"/>
             </choices>
-            <default>DeviceNick</default>
+            <default>DeviceDescription</default>
         </entry>
     </group>
 </kcfg>
