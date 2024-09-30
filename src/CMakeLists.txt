@@ -16,7 +16,6 @@ set(plasma-volume_SRCS
     audioicon.cpp
     preferreddevice.cpp
     devicerenamemodel.cpp
-    devicenamesourcemodel.cpp
     devicerenamesaver.cpp
 )
 

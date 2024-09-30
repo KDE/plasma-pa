@@ -31,7 +31,7 @@ QVariant DeviceRenameModel::data(const QModelIndex &index, int intRole) const
         }
         return m_saver->containsOverride(name);
     }
-    case Role::PulseProperties:
+    case Role::PulseProperties: {
         const auto base = pulseProperties(index).toMap();
         const auto override = m_saver->override(pulseName(index));
         auto result = base;
@@ -39,6 +39,23 @@ QVariant DeviceRenameModel::data(const QModelIndex &index, int intRole) const
             result.insert(key, value);
         }
         return result;
+    }
+    case Role::Description: {
+        const auto description = pulseDescription(index);
+        if (description.isEmpty()) {
+            qWarning() << "Description unexpectedly empty" << index;
+            return false;
+        }
+        return description;
+    }
+    case Role::Name: {
+        const auto name = pulseName(index);
+        if (name.isEmpty()) {
+            qWarning() << "Name unexpectedly empty" << index;
+            return false;
+        }
+        return name;
+    }
     }
 
     return QIdentityProxyModel::data(index, intRole);
@@ -53,7 +70,9 @@ bool DeviceRenameModel::setData(const QModelIndex &index, const QVariant &value,
     switch (static_cast<Role>(intRole)) {
     case Role::HasOverride:
     case Role::HadOverride:
-        qCWarning(PLASMAPA) << "Cannot write to HasOverride it's implied.";
+    case Role::Description:
+    case Role::Name:
+        qCWarning(PLASMAPA) << "Cannot write to role.";
         return false;
     case Role::PulseProperties:
         const auto name = pulseName(index);
@@ -100,12 +119,20 @@ QHash<int, QByteArray> DeviceRenameModel::roleNames() const
     roleNames.insert(static_cast<int>(Role::PulseProperties), "PulseProperties"_ba);
     roleNames.insert(static_cast<int>(Role::HasOverride), "HasOverride"_ba);
     roleNames.insert(static_cast<int>(Role::HadOverride), "HadOverride"_ba);
+    roleNames.insert(static_cast<int>(Role::Description), "Description"_ba);
+    roleNames.insert(static_cast<int>(Role::Name), "Name"_ba);
     return roleNames;
 }
 
 QString DeviceRenameModel::pulseName(const QModelIndex &index) const
 {
     const auto key = sourceModel()->roleNames().key("Name");
+    return QIdentityProxyModel::data(index, key).toString();
+}
+
+QString DeviceRenameModel::pulseDescription(const QModelIndex &index) const
+{
+    const auto key = sourceModel()->roleNames().key("Description");
     return QIdentityProxyModel::data(index, key).toString();
 }
 

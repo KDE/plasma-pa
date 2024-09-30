@@ -20,7 +20,6 @@ KCM.ScrollViewKCM {
     id: page
 
     required property var config
-    required property DeviceNameSourceModel deviceNameSourceModel
     // These are the properties we will override and draw values from, not the UI choices. Those are controlled by the kcfg.
     readonly property list<string> possibleProperties: ['node.description',
                                                         'device.description',
@@ -28,31 +27,12 @@ KCM.ScrollViewKCM {
                                                         'device.name',
                                                         'alsa.card_name',
                                                         'alsa.long_card_name']
-    property string defaultKey: 'plasma-pa.description'
 
     title: i18nc("@title rename audio devices", "Rename Devices")
     implicitHeight: Kirigami.Units.gridUnit * 28
     implicitWidth: Kirigami.Units.gridUnit * 28
 
     actions: [
-        Kirigami.Action {
-            id: sourceAction
-            text: i18nc("@label:listbox the default naming scheme for audio devices", "Standard naming scheme:")
-            displayComponent: RowLayout {
-                Label { text: sourceAction.text }
-                ComboBox {
-                    textRole: "display"
-                    model: deviceNameSourceModel
-                    onActivated: index => {
-                        page.defaultKey = model.valueToProperty(currentIndex)
-                        config.deviceNameSource = currentIndex
-                        config.save()
-                    }
-                    Component.onCompleted: currentIndex = config.deviceNameSource
-                }
-            }
-        },
-
         Kirigami.Action {
             icon.source: "dialog-ok-apply-symbolic"
             text: i18nc("@action save changes", "Save")
@@ -120,7 +100,8 @@ KCM.ScrollViewKCM {
         readonly property var pulseProperties: PulseProperties
         readonly property var hasOverride: HasOverride
         readonly property var hadOverride: HadOverride
-        readonly property var pulseObject: PulseObject
+        readonly property string description: Description
+        readonly property string name: Name
 
         RowLayout {
             id: root
@@ -128,16 +109,14 @@ KCM.ScrollViewKCM {
             Layout.fillWidth: true
 
             readonly property string initialText: {
-                if (page.defaultKey === "plasma-pa.description" && delegate.pulseObject.description !== undefined) {
-                    return delegate.pulseObject.description
+                if (delegate.description) {
+                    return delegate.description
                 }
 
-                for (const key of [page.defaultKey].concat(page.possibleProperties)) {
-                    const text = delegate.pulseProperties[key]
-                    if (text !== undefined) {
-                        return text
-                    }
+                if (delegate.name) {
+                    return delegate.name
                 }
+
                 console.warn("Failed to find initialText property.")
                 return ''
             }

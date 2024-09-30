@@ -46,17 +46,6 @@ ColumnLayout {
             visible: delegate.ListView.view.count > 1
             onClicked: Default = true
             text: {
-                const propertiesKey = deviceNameSourceModel.valueToProperty(config.deviceNameSource)
-
-                if (propertiesKey === "plasma-pa.description" && pulseObject.description !== undefined) {
-                    return pulseObject.description
-                }
-
-                const preferredProperty = pulseObject.pulseProperties[propertiesKey]
-                if (preferredProperty) {
-                    return preferredProperty
-                }
-
                 if (pulseObject.description) {
                     return pulseObject.description
                 }
