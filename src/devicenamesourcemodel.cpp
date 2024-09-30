@@ -54,7 +54,7 @@ QString DeviceNameSourceModel::valueToProperty(int value)
     case GlobalConfig::EnumDeviceNameSource::DeviceNick:
         return u"node.nick"_s;
     case GlobalConfig::EnumDeviceNameSource::DeviceDescription:
-        return u"device.description"_s;
+        return u"plasma-pa.description"_s;
     case GlobalConfig::EnumDeviceNameSource::ALSACardName:
         return u"alsa.card_name"_s;
     case GlobalConfig::EnumDeviceNameSource::ALSALongCardName:
@@ -62,5 +62,5 @@ QString DeviceNameSourceModel::valueToProperty(int value)
     }
 
     Q_ASSERT_X(false, Q_FUNC_INFO, "Unexpected enum entry");
-    return u"node.nick"_s;
+    return u"plasma-pa.description"_s;
 }
