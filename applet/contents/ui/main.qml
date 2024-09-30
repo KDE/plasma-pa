@@ -27,10 +27,6 @@ PlasmoidItem {
         id: config
     }
 
-    DeviceNameSourceModel {
-        id: deviceNameSourceModel
-    }
-
     property bool volumeFeedback: config.audioFeedback
     property bool globalMute: config.globalMute
     property string displayName: i18n("Audio Volume")
@@ -92,17 +88,6 @@ PlasmoidItem {
     }
 
     function nodeName(pulseObject) {
-        const propertiesKey = deviceNameSourceModel.valueToProperty(config.deviceNameSource)
-
-        if (propertiesKey === "plasma-pa.description" && pulseObject.description !== undefined) {
-            return pulseObject.description
-        }
-
-        const preferredProperty = pulseObject.pulseProperties[propertiesKey]
-        if (preferredProperty) {
-            return preferredProperty
-        }
-
         if (pulseObject.description) {
             return pulseObject.description
         }

@@ -64,10 +64,6 @@ KCM.ScrollViewKCM {
         id: moduleManager
     }
 
-    DeviceNameSourceModel {
-        id: deviceNameSourceModel
-    }
-
     actions: [
         Kirigami.Action {
             id: inactiveDevicesSwitch
@@ -84,7 +80,7 @@ KCM.ScrollViewKCM {
             icon.name: "edit-rename-symbolic"
             text: i18nd("kcm_pulseaudio", "Rename Devices…")
             visible: Server.hasWirePlumber && Server.isPipeWire
-            onTriggered: kcm.push("RenameDevices.qml", { "config": config, "deviceNameSourceModel": deviceNameSourceModel })
+            onTriggered: kcm.push("RenameDevices.qml", { "config": config })
         },
         Kirigami.Action {
             icon.name: "configure"
