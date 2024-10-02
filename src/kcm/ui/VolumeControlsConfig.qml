@@ -49,6 +49,11 @@ Kirigami.Page {
                 valueFromText: function(text) {
                     return parseInt(text);
                 }
+
+                validator: PercentValidator {
+                    bottom: Math.min(volumeStep.from, volumeStep.to)
+                    top: Math.max(volumeStep.from, volumeStep.to)
+                }
             }
 
             Item {
