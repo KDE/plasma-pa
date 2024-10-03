@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-03 02:31+0000\n"
 "PO-Revision-Date: 2024-09-23 15:09+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -16,30 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 24.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#: devicenamesourcemodel.cpp:38
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "Device Nickname"
-msgstr "Псевдоним на устройството"
-
-#: devicenamesourcemodel.cpp:40
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "Device Description"
-msgstr "Описание на устройство"
-
-#: devicenamesourcemodel.cpp:42
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "ALSA Card Name"
-msgstr "Име на карта ALSA"
-
-#: devicenamesourcemodel.cpp:44
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "ALSA Long Card Name"
-msgstr "Пълно име на карта ALSA"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -79,7 +55,7 @@ msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
 msgstr "Не може да се отвори файл  за запис: %1."
 
-#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:145
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
@@ -103,72 +79,72 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Повторен опит"
 
-#: kcm/ui/DeviceListItem.qml:63 kded/audioshortcutsservice.cpp:208
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:203
 #, kde-format
 msgid "Device name not found"
 msgstr "Името на устройството не е намерено"
 
-#: kcm/ui/DeviceListItem.qml:105
+#: kcm/ui/DeviceListItem.qml:99
 #, kde-format
 msgid "Port:"
 msgstr "Порт:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:365
+#: kcm/ui/DeviceListItem.qml:122 qml/listitemmenu.cpp:365
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (недостъпен)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:367
+#: kcm/ui/DeviceListItem.qml:124 qml/listitemmenu.cpp:367
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (изключен)"
 
-#: kcm/ui/DeviceListItem.qml:205
+#: kcm/ui/DeviceListItem.qml:199
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/ui/DeviceListItem.qml:230
+#: kcm/ui/DeviceListItem.qml:224
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Тест"
 
-#: kcm/ui/DeviceListItem.qml:239
+#: kcm/ui/DeviceListItem.qml:233
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr "Показване на каналите"
 
-#: kcm/ui/main.qml:78
+#: kcm/ui/main.qml:74
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Показване на неактивни устройства"
 
-#: kcm/ui/main.qml:85
+#: kcm/ui/main.qml:81
 #, kde-format
 msgid "Rename Devices…"
 msgstr "Преименуване на устройства…"
 
-#: kcm/ui/main.qml:91
+#: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Конфигуриране на звука…"
 
-#: kcm/ui/main.qml:98
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
 msgstr "Конфигуриране…"
 
-#: kcm/ui/main.qml:101
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Изисква %1 модул на PulseAudio"
 
-#: kcm/ui/main.qml:104
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -176,38 +152,38 @@ msgstr ""
 "Добавяне на виртуално изходно устройство за едновременно извеждане на всички "
 "локални звукови карти"
 
-#: kcm/ui/main.qml:110
+#: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "Автоматично превключване на всички текущи потоци при наличен нов изход"
 
-#: kcm/ui/main.qml:147 kcm/ui/RenameDevices.qml:221
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:207
 #, kde-format
 msgid "Playback Devices"
 msgstr "Устройства за възпроизвеждане"
 
-#: kcm/ui/main.qml:171 kcm/ui/RenameDevices.qml:243
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
 #, kde-format
 msgid "Recording Devices"
 msgstr "Устройства за запис"
 
-#: kcm/ui/main.qml:195
+#: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Неактивни звукови карти"
 
-#: kcm/ui/main.qml:226
+#: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
 msgstr "Възпроизвеждане на потоци"
 
-#: kcm/ui/main.qml:275
+#: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
 msgstr "Записване на потоци"
 
-#: kcm/ui/main.qml:309
+#: kcm/ui/main.qml:305
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -219,52 +195,52 @@ msgstr ""
 "Грешка при опит за тестване на звука. \n"
 "Съобщение: \"%1\""
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Front Left"
 msgstr "Преден ляв"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Front Center"
 msgstr "Преден център"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Front Right"
 msgstr "Преден десен"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Side Left"
 msgstr "Страничен ляв"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Side Right"
 msgstr "Страничен десен"
 
-#: kcm/ui/main.qml:418
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Rear Left"
 msgstr "Заден ляв"
 
-#: kcm/ui/main.qml:419
+#: kcm/ui/main.qml:415
 #, kde-format
 msgid "Subwoofer"
 msgstr "Субуфер"
 
-#: kcm/ui/main.qml:420
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Rear Right"
 msgstr "Заден десен"
 
-#: kcm/ui/main.qml:421
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Mono"
 msgstr "Моно"
 
-#: kcm/ui/main.qml:489
+#: kcm/ui/main.qml:485
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Кликнете върху високоговорителите, за да тествате звука"
@@ -289,17 +265,11 @@ msgstr "Преименуване на устройства"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
-msgctxt "@label:listbox the default naming scheme for audio devices"
-msgid "Standard naming scheme:"
-msgstr "Стандартна схема за наименования:"
-
-#: kcm/ui/RenameDevices.qml:56
-#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr "Запазване"
 
-#: kcm/ui/RenameDevices.qml:86
+#: kcm/ui/RenameDevices.qml:68
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -310,37 +280,37 @@ msgstr ""
 "възпроизвеждат аудио, ще имат прекъсвания и може да се наложи да бъдат "
 "рестартирани."
 
-#: kcm/ui/RenameDevices.qml:98
+#: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr "Подаване на сигнал за грешка"
 
-#: kcm/ui/RenameDevices.qml:110
+#: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "Презареждане"
 
-#: kcm/ui/RenameDevices.qml:146
+#: kcm/ui/RenameDevices.qml:132
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (натиснете \"Запази\", за да приложите)"
 
-#: kcm/ui/RenameDevices.qml:169
+#: kcm/ui/RenameDevices.qml:155
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "Прилагане"
 
-#: kcm/ui/RenameDevices.qml:175
+#: kcm/ui/RenameDevices.qml:161
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Нулиране"
 
-#: kcm/ui/RenameDevices.qml:182
+#: kcm/ui/RenameDevices.qml:168
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
@@ -373,32 +343,32 @@ msgstr "Повишаване на максималния звук"
 msgid "Volume change step:"
 msgstr "Скала на силата на звука:"
 
-#: kcm/ui/VolumeControlsConfig.qml:63
+#: kcm/ui/VolumeControlsConfig.qml:68
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Възпроизвеждане на аудио обратна връзка при промени в:"
 
-#: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
+#: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
 #, kde-format
 msgid "Audio volume"
 msgstr "Сила на звука"
 
-#: kcm/ui/VolumeControlsConfig.qml:72
+#: kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Show visual feedback for changes to:"
 msgstr "Показване на визуална обратна връзка за промени в:"
 
-#: kcm/ui/VolumeControlsConfig.qml:80
+#: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "Чувствителност на микрофона"
 
-#: kcm/ui/VolumeControlsConfig.qml:87
+#: kcm/ui/VolumeControlsConfig.qml:92
 #, kde-format
 msgid "Mute state"
 msgstr "Състояние на звук"
 
-#: kcm/ui/VolumeControlsConfig.qml:94
+#: kcm/ui/VolumeControlsConfig.qml:99
 #, kde-format
 msgid "Default output device"
 msgstr "Изходно устройство по подразбиране"
@@ -465,12 +435,12 @@ msgstr "Сила на звука"
 msgid "No such device"
 msgstr "Няма такова устройство"
 
-#: kded/audioshortcutsservice.cpp:240
+#: kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "No output device"
 msgstr "Няма изходно устройство"
 
-#: kded/audioshortcutsservice.cpp:254
+#: kded/audioshortcutsservice.cpp:249
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
@@ -551,3 +521,23 @@ msgstr "%1 използва микрофона (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 използва микрофона"
+
+#~ msgctxt "@item:inlistbox a type of name source"
+#~ msgid "Device Nickname"
+#~ msgstr "Псевдоним на устройството"
+
+#~ msgctxt "@item:inlistbox a type of name source"
+#~ msgid "Device Description"
+#~ msgstr "Описание на устройство"
+
+#~ msgctxt "@item:inlistbox a type of name source"
+#~ msgid "ALSA Card Name"
+#~ msgstr "Име на карта ALSA"
+
+#~ msgctxt "@item:inlistbox a type of name source"
+#~ msgid "ALSA Long Card Name"
+#~ msgstr "Пълно име на карта ALSA"
+
+#~ msgctxt "@label:listbox the default naming scheme for audio devices"
+#~ msgid "Standard naming scheme:"
+#~ msgstr "Стандартна схема за наименования:"

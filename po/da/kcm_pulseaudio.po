@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-03 02:31+0000\n"
 "PO-Revision-Date: 2024-07-25 11:49+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -17,31 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
-
-#: devicenamesourcemodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Device name not found"
-msgctxt "@item:inlistbox a type of name source"
-msgid "Device Nickname"
-msgstr "Enhedsnavn ikke fundet"
-
-#: devicenamesourcemodel.cpp:40
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "Device Description"
-msgstr ""
-
-#: devicenamesourcemodel.cpp:42
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "ALSA Card Name"
-msgstr ""
-
-#: devicenamesourcemodel.cpp:44
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "ALSA Long Card Name"
-msgstr ""
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -77,7 +52,7 @@ msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
 msgstr ""
 
-#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:145
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
@@ -101,73 +76,73 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: kcm/ui/DeviceListItem.qml:63 kded/audioshortcutsservice.cpp:208
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:203
 #, kde-format
 msgid "Device name not found"
 msgstr "Enhedsnavn ikke fundet"
 
-#: kcm/ui/DeviceListItem.qml:105
+#: kcm/ui/DeviceListItem.qml:99
 #, kde-format
 msgid "Port:"
 msgstr "Port:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:365
+#: kcm/ui/DeviceListItem.qml:122 qml/listitemmenu.cpp:365
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (utilgængelig)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:367
+#: kcm/ui/DeviceListItem.qml:124 qml/listitemmenu.cpp:367
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (ikke tilsluttet)"
 
-#: kcm/ui/DeviceListItem.qml:205
+#: kcm/ui/DeviceListItem.qml:199
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/ui/DeviceListItem.qml:230
+#: kcm/ui/DeviceListItem.qml:224
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Test"
 
-#: kcm/ui/DeviceListItem.qml:239
+#: kcm/ui/DeviceListItem.qml:233
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr "Vis kanaler"
 
-#: kcm/ui/main.qml:78
+#: kcm/ui/main.qml:74
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "Vis inaktive enheder"
 
-#: kcm/ui/main.qml:85
+#: kcm/ui/main.qml:81
 #, fuzzy, kde-format
 #| msgid "Recording Devices"
 msgid "Rename Devices…"
 msgstr "Optagelsesenheder"
 
-#: kcm/ui/main.qml:91
+#: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Indstil lydstyrkekontroller…"
 
-#: kcm/ui/main.qml:98
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
 msgstr "Indstil…"
 
-#: kcm/ui/main.qml:101
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Kræver PulseAudio-modulet %1"
 
-#: kcm/ui/main.qml:104
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
@@ -175,39 +150,39 @@ msgstr ""
 "Tilføj virtuelle output-enheder for at få output på alle lokale lydkort "
 "samtidigt"
 
-#: kcm/ui/main.qml:110
+#: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
 "Skift automatisk alle kørende streams når et nyt output bliver tilgængeligt"
 
-#: kcm/ui/main.qml:147 kcm/ui/RenameDevices.qml:221
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:207
 #, kde-format
 msgid "Playback Devices"
 msgstr "Afspilningsenheder"
 
-#: kcm/ui/main.qml:171 kcm/ui/RenameDevices.qml:243
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
 #, kde-format
 msgid "Recording Devices"
 msgstr "Optagelsesenheder"
 
-#: kcm/ui/main.qml:195
+#: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
 msgstr "Inaktive kort"
 
-#: kcm/ui/main.qml:226
+#: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
 msgstr "Afspilning af streams"
 
-#: kcm/ui/main.qml:275
+#: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
 msgstr "Optagelse af streams"
 
-#: kcm/ui/main.qml:309
+#: kcm/ui/main.qml:305
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -219,52 +194,52 @@ msgstr ""
 "Fejl under forsøg på at afspille testlyd. \n"
 "Systemet sagde: \"%1\""
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Front Left"
 msgstr "Venstre fronthøjttaler"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Front Center"
 msgstr "Centerhøjttaler, front"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Front Right"
 msgstr "Højre fronthøjttaler"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Side Left"
 msgstr "Side venstre"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Side Right"
 msgstr "Side højre"
 
-#: kcm/ui/main.qml:418
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Rear Left"
 msgstr "Venstre baghøjttaler"
 
-#: kcm/ui/main.qml:419
+#: kcm/ui/main.qml:415
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/ui/main.qml:420
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Rear Right"
 msgstr "Højre baghøjttaler"
 
-#: kcm/ui/main.qml:421
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:489
+#: kcm/ui/main.qml:485
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Klik på en højtaler for at teste lyden"
@@ -290,17 +265,11 @@ msgstr "Optagelsesenheder"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
-msgctxt "@label:listbox the default naming scheme for audio devices"
-msgid "Standard naming scheme:"
-msgstr ""
-
-#: kcm/ui/RenameDevices.qml:56
-#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:86
+#: kcm/ui/RenameDevices.qml:68
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -308,37 +277,37 @@ msgid ""
 "experience interruptions and may need to be restarted."
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:98
+#: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:110
+#: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:146
+#: kcm/ui/RenameDevices.qml:132
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:169
+#: kcm/ui/RenameDevices.qml:155
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:175
+#: kcm/ui/RenameDevices.qml:161
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:182
+#: kcm/ui/RenameDevices.qml:168
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
@@ -371,32 +340,32 @@ msgstr "Hæv maksimal lydstyrke"
 msgid "Volume change step:"
 msgstr "Trin for ændring af lydstyrke"
 
-#: kcm/ui/VolumeControlsConfig.qml:63
+#: kcm/ui/VolumeControlsConfig.qml:68
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Afspil lydfeedback for ændringer til:"
 
-#: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
+#: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
 #, kde-format
 msgid "Audio volume"
 msgstr "Lydstyrke"
 
-#: kcm/ui/VolumeControlsConfig.qml:72
+#: kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Show visual feedback for changes to:"
 msgstr "Vis visuel feedback for ændringer til:"
 
-#: kcm/ui/VolumeControlsConfig.qml:80
+#: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "Mikrofonens følsomhed"
 
-#: kcm/ui/VolumeControlsConfig.qml:87
+#: kcm/ui/VolumeControlsConfig.qml:92
 #, kde-format
 msgid "Mute state"
 msgstr "Lydløs-tilstand"
 
-#: kcm/ui/VolumeControlsConfig.qml:94
+#: kcm/ui/VolumeControlsConfig.qml:99
 #, kde-format
 msgid "Default output device"
 msgstr "Standard output-enhed"
@@ -463,12 +432,12 @@ msgstr "Lydstyrken"
 msgid "No such device"
 msgstr "Ingen sådan enhed"
 
-#: kded/audioshortcutsservice.cpp:240
+#: kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "No output device"
 msgstr "Ingen outputenhed"
 
-#: kded/audioshortcutsservice.cpp:254
+#: kded/audioshortcutsservice.cpp:249
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
@@ -549,6 +518,12 @@ msgstr "%1 bruger mikrofonen (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 bruger mikrofonen"
+
+#, fuzzy
+#~| msgid "Device name not found"
+#~ msgctxt "@item:inlistbox a type of name source"
+#~ msgid "Device Nickname"
+#~ msgstr "Enhedsnavn ikke fundet"
 
 #~ msgctxt "label of device items"
 #~ msgid "%1 (%2)"
