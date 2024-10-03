@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-03 00:41+0000\n"
 "PO-Revision-Date: 2024-08-20 17:27+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -78,95 +78,95 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
 msgstr "Geluidsvolume"
 
-#: contents/ui/main.qml:47 contents/ui/main.qml:49
+#: contents/ui/main.qml:43 contents/ui/main.qml:45
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Verbinding met de geluidsservice is verbroken"
 
-#: contents/ui/main.qml:51
+#: contents/ui/main.qml:47
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Geen in- of uitvoerapparaten gevonden"
 
-#: contents/ui/main.qml:55
+#: contents/ui/main.qml:51
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Proberen opnieuw te verbinden…"
 
-#: contents/ui/main.qml:72
+#: contents/ui/main.qml:68
 #, kde-format
 msgid "Audio Muted"
 msgstr "Geluid gedempt"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:70
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volume op %1%"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:81
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Midden-klik om dempen op te heffen"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Midden-klik om alle audio te dempen"
 
-#: contents/ui/main.qml:87
+#: contents/ui/main.qml:83
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Scrollen om geluidsvolume aan te passen"
 
-#: contents/ui/main.qml:109
+#: contents/ui/main.qml:99
 #, kde-format
 msgid "Device name not found"
 msgstr "Apparaatnaam niet gevonden"
 
-#: contents/ui/main.qml:309
+#: contents/ui/main.qml:299
 #, kde-format
 msgid "Devices"
 msgstr "Apparaten"
 
-#: contents/ui/main.qml:316
+#: contents/ui/main.qml:306
 #, kde-format
 msgid "Applications"
 msgstr "Toepassingen"
 
-#: contents/ui/main.qml:333 contents/ui/main.qml:335 contents/ui/main.qml:566
+#: contents/ui/main.qml:323 contents/ui/main.qml:325 contents/ui/main.qml:556
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Alle afspeelapparaten afdwingen te dempen"
 
-#: contents/ui/main.qml:371
+#: contents/ui/main.qml:361
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Opnieuw proberen"
 
-#: contents/ui/main.qml:395
+#: contents/ui/main.qml:385
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Geen toepassingen die geluid afspelen of opnemen"
 
-#: contents/ui/main.qml:554
+#: contents/ui/main.qml:544
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximum volume vergroten:"
 
-#: contents/ui/main.qml:575
+#: contents/ui/main.qml:565
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuele apparaten tonen"
 
-#: contents/ui/main.qml:585
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Audio-apparaten &configureren…"

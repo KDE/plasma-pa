@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-03 00:41+0000\n"
 "PO-Revision-Date: 2024-01-28 18:13-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -16,31 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.08.4\n"
-
-#: devicenamesourcemodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Device Profiles"
-msgctxt "@item:inlistbox a type of name source"
-msgid "Device Nickname"
-msgstr "ਡਿਵਾਈਸ ਪਰੋਫਾਈਲ"
-
-#: devicenamesourcemodel.cpp:40
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "Device Description"
-msgstr ""
-
-#: devicenamesourcemodel.cpp:42
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "ALSA Card Name"
-msgstr ""
-
-#: devicenamesourcemodel.cpp:44
-#, kde-format
-msgctxt "@item:inlistbox a type of name source"
-msgid "ALSA Long Card Name"
-msgstr ""
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -76,7 +51,7 @@ msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
 msgstr ""
 
-#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:145
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
@@ -100,111 +75,111 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: kcm/ui/DeviceListItem.qml:63 kded/audioshortcutsservice.cpp:208
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:203
 #, kde-format
 msgid "Device name not found"
 msgstr ""
 
-#: kcm/ui/DeviceListItem.qml:105
+#: kcm/ui/DeviceListItem.qml:99
 #, kde-format
 msgid "Port:"
 msgstr "ਪੋਰਟ:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:365
+#: kcm/ui/DeviceListItem.qml:122 qml/listitemmenu.cpp:365
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (ਨਾ ਉਪਲੱਬਧ)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:367
+#: kcm/ui/DeviceListItem.qml:124 qml/listitemmenu.cpp:367
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (ਪਲੱਗ ਕੱਢੇ)"
 
-#: kcm/ui/DeviceListItem.qml:205
+#: kcm/ui/DeviceListItem.qml:199
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/ui/DeviceListItem.qml:230
+#: kcm/ui/DeviceListItem.qml:224
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "ਟੈਸਟ"
 
-#: kcm/ui/DeviceListItem.qml:239
+#: kcm/ui/DeviceListItem.qml:233
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr ""
 
-#: kcm/ui/main.qml:78
+#: kcm/ui/main.qml:74
 #, kde-format
 msgid "Show Inactive Devices"
 msgstr "ਨਾ-ਸਰਗਰਮ ਡਿਵਾਈਸ ਵੇਖਾਓ"
 
-#: kcm/ui/main.qml:85
+#: kcm/ui/main.qml:81
 #, fuzzy, kde-format
 #| msgid "Recording Devices"
 msgid "Rename Devices…"
 msgstr "ਰਿਕਾਰਡਿੰਗ ਡਿਵਾਈਸ"
 
-#: kcm/ui/main.qml:91
+#: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
 msgstr "ਵਾਲੀਅਮ ਕੰਟਰੋਲਾਂ ਦੀ ਸੰਰਚਨਾ…"
 
-#: kcm/ui/main.qml:98
+#: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
 msgstr "…ਸੰਰਚਨਾ"
 
-#: kcm/ui/main.qml:101
+#: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "%1 ਪਲਸਆਡੀਓ ਮੋਡੀਊਲ ਚਾਹੀਦਾ ਹੈ"
 
-#: kcm/ui/main.qml:104
+#: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr ""
 
-#: kcm/ui/main.qml:110
+#: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
 "ਜਦੋਂ ਵੀ ਨਵੀਂ ਆਉਟਪੁੱਟ ਉਪਲੱਬਧ ਹੋਵ ਤਾਂ ਸਾਰੀਆਂ ਚੱਲ ਰਹੀਆਂ ਸਟਰੀਮਾਂ ਨੂੰ ਉਸ ਲਈ ਆਪਣੇ-ਆਪ ਤਬਦੀਲ ਕਰੋ"
 
-#: kcm/ui/main.qml:147 kcm/ui/RenameDevices.qml:221
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:207
 #, kde-format
 msgid "Playback Devices"
 msgstr "ਪਲੇਅਬੈਕ ਡਿਵਾਈਸ"
 
-#: kcm/ui/main.qml:171 kcm/ui/RenameDevices.qml:243
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
 #, kde-format
 msgid "Recording Devices"
 msgstr "ਰਿਕਾਰਡਿੰਗ ਡਿਵਾਈਸ"
 
-#: kcm/ui/main.qml:195
+#: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
 msgstr "ਨਾ-ਸਰਗਰਮ ਕਾਰਡ"
 
-#: kcm/ui/main.qml:226
+#: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
 msgstr "ਪਲੇਅਬੈਕ ਸਟਰੀਮਾਂ"
 
-#: kcm/ui/main.qml:275
+#: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
 msgstr "ਰਿਕਾਰਡਿੰਗ ਸਟਰੀਮਾਂ"
 
-#: kcm/ui/main.qml:309
+#: kcm/ui/main.qml:305
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -216,52 +191,52 @@ msgstr ""
 "ਟੈਸਟ ਆਵਾਜ਼ ਚਲਾਉਣ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।\n"
 "ਸਿਸਟਮ ਨੇ ਕਿਹਾ: \"%1\""
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:409
 #, kde-format
 msgid "Front Left"
 msgstr "ਅੱਗੇ ਖੱਬਾ"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:410
 #, kde-format
 msgid "Front Center"
 msgstr "ਅੱਗੇ ਸੈਂਟਰ"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:411
 #, kde-format
 msgid "Front Right"
 msgstr "ਅੱਗੇ ਸੱਜਾ"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:412
 #, kde-format
 msgid "Side Left"
 msgstr "ਪਾਸੇ ਖੱਬਾ"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Side Right"
 msgstr "ਪਾਸੇ ਸੱਜਾ"
 
-#: kcm/ui/main.qml:418
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Rear Left"
 msgstr "ਪਿੱਛੇ ਖੱਬਾ"
 
-#: kcm/ui/main.qml:419
+#: kcm/ui/main.qml:415
 #, kde-format
 msgid "Subwoofer"
 msgstr "ਸਬ-ਵੂਫ਼ਰ"
 
-#: kcm/ui/main.qml:420
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Rear Right"
 msgstr "ਪਿੱਛੇ ਸੱਜਾ"
 
-#: kcm/ui/main.qml:421
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Mono"
 msgstr "ਮੋਨੋ"
 
-#: kcm/ui/main.qml:489
+#: kcm/ui/main.qml:485
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "ਆਵਾਜ਼ ਟੈਸਟ ਕਰਨ ਲਈ ਕਿਸੇ ਵੀ ਸਪੀਕਰ ਉੱਤੇ ਕਲਿੱਕ ਕਰੋ"
@@ -287,17 +262,11 @@ msgstr "ਰਿਕਾਰਡਿੰਗ ਡਿਵਾਈਸ"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
-msgctxt "@label:listbox the default naming scheme for audio devices"
-msgid "Standard naming scheme:"
-msgstr ""
-
-#: kcm/ui/RenameDevices.qml:56
-#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:86
+#: kcm/ui/RenameDevices.qml:68
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -305,37 +274,37 @@ msgid ""
 "experience interruptions and may need to be restarted."
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:98
+#: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:110
+#: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:146
+#: kcm/ui/RenameDevices.qml:132
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:169
+#: kcm/ui/RenameDevices.qml:155
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:175
+#: kcm/ui/RenameDevices.qml:161
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:182
+#: kcm/ui/RenameDevices.qml:168
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
@@ -368,32 +337,32 @@ msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਵਾਲੀਅਮ ਵਧਾਓ"
 msgid "Volume change step:"
 msgstr "ਵਾਲੀਅਮ ਬਦਲਣ ਪੜਾਅ:"
 
-#: kcm/ui/VolumeControlsConfig.qml:63
+#: kcm/ui/VolumeControlsConfig.qml:68
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "ਇਸ ਲਈ ਤਬਦੀਲੀਆਂ ਵਾਸਤੇ ਆਡੀਓ ਫੀਡਬੈਕ ਚਲਾਓ:"
 
-#: kcm/ui/VolumeControlsConfig.qml:64 kcm/ui/VolumeControlsConfig.qml:73
+#: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
 #, kde-format
 msgid "Audio volume"
 msgstr "ਆਡੀਓ ਵਾਲੀਅਮ"
 
-#: kcm/ui/VolumeControlsConfig.qml:72
+#: kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Show visual feedback for changes to:"
 msgstr "ਇਸ ਲਈ ਤਬਦੀਲੀਆਂ ਵਾਸਤੇ ਦਿੱਖ ਫੀਡਬੈਕ ਵੇਖਾਓ:"
 
-#: kcm/ui/VolumeControlsConfig.qml:80
+#: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "ਮਾਈਕਰੋਫ਼ੋਨ ਸੰਵੇਦਨਸ਼ੀਲਤਾ"
 
-#: kcm/ui/VolumeControlsConfig.qml:87
+#: kcm/ui/VolumeControlsConfig.qml:92
 #, kde-format
 msgid "Mute state"
 msgstr "ਚੁੱਪ ਹਾਲਤ"
 
-#: kcm/ui/VolumeControlsConfig.qml:94
+#: kcm/ui/VolumeControlsConfig.qml:99
 #, kde-format
 msgid "Default output device"
 msgstr "ਮੂਲ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ"
@@ -464,13 +433,13 @@ msgstr "ਆਡੀਓ ਵਾਲੀਅਮ"
 msgid "No such device"
 msgstr ""
 
-#: kded/audioshortcutsservice.cpp:240
+#: kded/audioshortcutsservice.cpp:235
 #, fuzzy, kde-format
 #| msgid "Default output device"
 msgid "No output device"
 msgstr "ਮੂਲ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ"
 
-#: kded/audioshortcutsservice.cpp:254
+#: kded/audioshortcutsservice.cpp:249
 #, fuzzy, kde-format
 #| msgctxt "label of device items"
 #| msgid "%1 (%2)"
@@ -553,6 +522,12 @@ msgstr "%1 ਵਲੋਂ ਮਾਈਕਰੋਫ਼ੋਨ (%2) ਵਰਤਿਆ ਜ�
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 ਵਲੋਂ ਮਾਈਕਰੋਫ਼ੋਨ ਵਰਤਿਆ ਜਾ ਰਿਹਾ ਹੈ"
+
+#, fuzzy
+#~| msgid "Device Profiles"
+#~ msgctxt "@item:inlistbox a type of name source"
+#~ msgid "Device Nickname"
+#~ msgstr "ਡਿਵਾਈਸ ਪਰੋਫਾਈਲ"
 
 #~ msgctxt "label of device items"
 #~ msgid "%1 (%2)"
