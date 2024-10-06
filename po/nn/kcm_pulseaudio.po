@@ -521,23 +521,3 @@ msgstr "%1 brukar mikrofonen (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 brukar mikrofonen"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Nickname"
-#~ msgstr "Einingskallenamn"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Description"
-#~ msgstr "Einingsskildring"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Card Name"
-#~ msgstr "ALSA kortnamn"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Long Card Name"
-#~ msgstr "ALSA langt namn"
-
-#~ msgctxt "@label:listbox the default naming scheme for audio devices"
-#~ msgid "Standard naming scheme:"
-#~ msgstr "Standard namneformat:"
