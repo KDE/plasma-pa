@@ -517,23 +517,3 @@ msgstr "%1 正在使用麦克风 (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 正在使用麦克风"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Nickname"
-#~ msgstr "设备昵称"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Description"
-#~ msgstr "设备描述"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Card Name"
-#~ msgstr "ALSA 声卡名称"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Long Card Name"
-#~ msgstr "ALSA 声卡长名称"
-
-#~ msgctxt "@label:listbox the default naming scheme for audio devices"
-#~ msgid "Standard naming scheme:"
-#~ msgstr "标准命名方案："
