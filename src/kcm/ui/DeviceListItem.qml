@@ -73,7 +73,13 @@ ColumnLayout {
         Label {
             id: soloLabel
             Layout.fillWidth: true
-            text: currentPort.description
+            text: {
+                if (delegate.currentPort && delegate.currentPort.description) {
+                    return delegate.currentPort.description
+                }
+
+                return defaultButton.text
+            }
             visible: delegate.ListView.view.count === 1
             elide: Text.ElideRight
 
