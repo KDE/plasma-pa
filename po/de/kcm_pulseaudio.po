@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:41+0000\n"
+"POT-Creation-Date: 2024-10-18 00:41+0000\n"
 "PO-Revision-Date: 2023-03-12 17:31+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -50,7 +50,7 @@ msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
 msgstr ""
 
-#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:145
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
@@ -79,36 +79,36 @@ msgstr ""
 msgid "Device name not found"
 msgstr ""
 
-#: kcm/ui/DeviceListItem.qml:99
+#: kcm/ui/DeviceListItem.qml:105
 #, kde-format
 msgid "Port:"
 msgstr "Port:"
 
-#: kcm/ui/DeviceListItem.qml:122 qml/listitemmenu.cpp:365
+#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:365
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (Nicht verfügbar)"
 
-#: kcm/ui/DeviceListItem.qml:124 qml/listitemmenu.cpp:367
+#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:367
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (Nicht angeschlossen)"
 
-#: kcm/ui/DeviceListItem.qml:199
+#: kcm/ui/DeviceListItem.qml:205
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/ui/DeviceListItem.qml:224
+#: kcm/ui/DeviceListItem.qml:230
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Test"
 
-#: kcm/ui/DeviceListItem.qml:233
+#: kcm/ui/DeviceListItem.qml:239
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
