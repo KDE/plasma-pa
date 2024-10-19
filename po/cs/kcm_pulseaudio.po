@@ -515,23 +515,3 @@ msgstr "%1 používá mikrofon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 používá mikrofon"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Nickname"
-#~ msgstr "Přezdívka zařízení"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Description"
-#~ msgstr "Popis zařízení"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Card Name"
-#~ msgstr "Název karty ALSA"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Long Card Name"
-#~ msgstr "Dlouhý název karty ALSA"
-
-#~ msgctxt "@label:listbox the default naming scheme for audio devices"
-#~ msgid "Standard naming scheme:"
-#~ msgstr "Standardní schéma pro názvy:"
