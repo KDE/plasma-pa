@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-03 00:41+0000\n"
-"PO-Revision-Date: 2024-07-17 14:32+0200\n"
+"PO-Revision-Date: 2024-10-21 11:11+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
 "Language: da\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: contents/ui/ListItemBase.qml:66
 #, kde-format
@@ -88,7 +88,7 @@ msgstr "Lydstyrke"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Forbindelse til lydtjenesten mistet"
 
 #: contents/ui/main.qml:47
 #, kde-format
@@ -99,7 +99,7 @@ msgstr "Ingen output- eller input-enheder fundet"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Prøver at genoprette forbindelse…"
 
 #: contents/ui/main.qml:68
 #, kde-format
@@ -150,7 +150,7 @@ msgstr "Gennemtving lydløs for alle afspilningsenheder"
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Prøv igen"
 
 #: contents/ui/main.qml:385
 #, kde-format
