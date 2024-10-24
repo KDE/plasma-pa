@@ -177,7 +177,7 @@ KCM.ScrollViewKCM {
                         // There is a bit of a problem because we can't rightly tell what the original property
                         // was, so we can't keep placeholder and text 100% correct, but we can at least
                         // indicate if this is an override or not.
-                        text = root.initialText
+                        text = delegate.pulseProperties['node.description']
                     } else {
                         text = ""
                     }
