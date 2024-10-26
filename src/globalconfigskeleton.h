@@ -22,7 +22,7 @@ public:
     {
         setupWatcher();
     };
-    ~GlobalConfigSkeleton() override{};
+    ~GlobalConfigSkeleton() override { };
 
 private:
     KConfigWatcher::Ptr m_configWatcher;

@@ -12,7 +12,13 @@ class DeviceRenameModel : public QIdentityProxyModel
 {
     Q_OBJECT
 public:
-    enum class Role { PulseProperties = Qt::UserRole, HasOverride, HadOverride, Description, Name };
+    enum class Role {
+        PulseProperties = Qt::UserRole,
+        HasOverride,
+        HadOverride,
+        Description,
+        Name
+    };
     using QIdentityProxyModel::QIdentityProxyModel;
 
     void setSaver(DeviceRenameSaver *saver);
