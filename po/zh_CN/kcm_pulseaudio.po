@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:41+0000\n"
+"POT-Creation-Date: 2024-10-29 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -155,7 +155,7 @@ msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "自动切换所有当前音频流到新输出设备"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:207
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
 #, kde-format
 msgid "Playback Devices"
 msgstr "播放设备"
@@ -288,25 +288,25 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "正在重新加载"
 
-#: kcm/ui/RenameDevices.qml:132
+#: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (点击“保存”以应用更改)"
 
-#: kcm/ui/RenameDevices.qml:155
+#: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "应用"
 
-#: kcm/ui/RenameDevices.qml:161
+#: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "重置"
 
-#: kcm/ui/RenameDevices.qml:168
+#: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:41+0000\n"
+"POT-Creation-Date: 2024-10-29 00:41+0000\n"
 "PO-Revision-Date: 2024-09-01 09:10+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -158,7 +158,7 @@ msgid ""
 msgstr ""
 "Byt automatiskt alla pågående strömmar när en ny utgång blir tillgänglig"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:207
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
 #, kde-format
 msgid "Playback Devices"
 msgstr "Uppspelningsenheter"
@@ -291,25 +291,25 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "Läser in igen"
 
-#: kcm/ui/RenameDevices.qml:132
+#: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (klicka på 'Spara' för att verkställa)"
 
-#: kcm/ui/RenameDevices.qml:155
+#: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "Verkställ"
 
-#: kcm/ui/RenameDevices.qml:161
+#: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Återställ"
 
-#: kcm/ui/RenameDevices.qml:168
+#: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:41+0000\n"
+"POT-Creation-Date: 2024-10-29 00:41+0000\n"
 "PO-Revision-Date: 2024-01-28 18:13-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -154,7 +154,7 @@ msgid ""
 msgstr ""
 "ਜਦੋਂ ਵੀ ਨਵੀਂ ਆਉਟਪੁੱਟ ਉਪਲੱਬਧ ਹੋਵ ਤਾਂ ਸਾਰੀਆਂ ਚੱਲ ਰਹੀਆਂ ਸਟਰੀਮਾਂ ਨੂੰ ਉਸ ਲਈ ਆਪਣੇ-ਆਪ ਤਬਦੀਲ ਕਰੋ"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:207
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
 #, kde-format
 msgid "Playback Devices"
 msgstr "ਪਲੇਅਬੈਕ ਡਿਵਾਈਸ"
@@ -286,25 +286,25 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:132
+#: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:155
+#: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:161
+#: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr ""
 
-#: kcm/ui/RenameDevices.qml:168
+#: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
