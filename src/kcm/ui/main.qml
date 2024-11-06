@@ -468,13 +468,13 @@ KCM.ScrollViewKCM {
 
                 // Spacers for when the left and right columns are empty
                 Item {
-                    Layout.row: 3
+                    Layout.row: 9 // So we don't override an occupied cell
                     Layout.column: 0
                     Layout.fillWidth: true
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 4
                 }
                 Item {
-                    Layout.row: 3
+                    Layout.row: 9 // So we don't override an occupied cell
                     Layout.column: 2
                     Layout.fillWidth: true
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 4
