@@ -54,6 +54,6 @@ private:
     GlobalConfig *m_globalConfig;
     OsdServiceInterface *m_osdDBusInterface;
     VolumeFeedback *m_feedback;
-    bool m_initialDefaultSinkSet = false;
+    bool m_hasDefaultSink = false;
     PreferredDevice m_preferredDevice;
 };

@@ -219,17 +219,20 @@ int AudioShortcutsService::changeVolumePercent(PulseAudioQt::Device *device, int
 void AudioShortcutsService::handleDefaultSinkChange()
 {
     const PulseAudioQt::Sink *defaultSink = PulseAudioQt::Context::instance()->server()->defaultSink();
-    // we don't want to show the OSD on startup
-    if (!m_initialDefaultSinkSet) {
-        m_initialDefaultSinkSet = true;
-        return;
-    }
+
+    // we don't want to show the OSD on startup nor when we didn't have a sink before (e.g. after a TTY change).
+    const bool hadDefaultSink = m_hasDefaultSink;
+    m_hasDefaultSink = (defaultSink != nullptr);
+
     if (!m_globalConfig->defaultOutputDeviceOsd()) {
         return;
     }
-    if (!defaultSink) {
+
+    if (!hadDefaultSink || !defaultSink) {
         return;
     }
+
+    QString icon;
     QString description = nameForDevice(defaultSink);
     if (defaultSink->name() == DUMMY_OUTPUT_NAME) {
         description = i18n("No output device");
@@ -249,7 +252,7 @@ void AudioShortcutsService::handleDefaultSinkChange()
                 description = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, cardBluetoothBattery);
             }
         }
-        QString icon = AudioIcon::forFormFactor(defaultSink->formFactor());
+        icon = AudioIcon::forFormFactor(defaultSink->formFactor());
         if (icon.isEmpty()) {
             if (defaultSink->name() == DUMMY_OUTPUT_NAME) {
                 icon = u"audio-volume-muted"_s;
@@ -257,8 +260,9 @@ void AudioShortcutsService::handleDefaultSinkChange()
                 icon = AudioIcon::forVolume(volumePercent(defaultSink->volume()), defaultSink->isMuted(), QString());
             }
         }
-        m_osdDBusInterface->showText(icon, description);
     }
+
+    m_osdDBusInterface->showText(icon, description);
 }
 
 void AudioShortcutsService::handleNewSink()
