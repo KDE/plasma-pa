@@ -218,26 +218,28 @@ int AudioShortcutsService::changeVolumePercent(PulseAudioQt::Device *device, int
 
 void AudioShortcutsService::handleDefaultSinkChange()
 {
-    const PulseAudioQt::Sink *defaultSink = PulseAudioQt::Context::instance()->server()->defaultSink();
-    // we don't want to show the OSD on startup
-    if (!m_initialDefaultSinkSet) {
-        m_initialDefaultSinkSet = true;
-        return;
-    }
+    // we don't want to show the OSD on startup nor when we didn't have a sink before (e.g. after a TTY change).
+    const bool hadDefaultSink = m_defaultSink;
+
+    m_defaultSink = PulseAudioQt::Context::instance()->server()->defaultSink();
+
     if (!m_globalConfig->defaultOutputDeviceOsd()) {
         return;
     }
-    if (!defaultSink) {
+
+    if (!hadDefaultSink || !m_defaultSink) {
         return;
     }
-    QString description = nameForDevice(defaultSink);
-    if (defaultSink->name() == DUMMY_OUTPUT_NAME) {
+
+    QString icon;
+    QString description = nameForDevice(m_defaultSink);
+    if (m_defaultSink->name() == DUMMY_OUTPUT_NAME) {
         description = i18n("No output device");
     } else {
         auto cardIdx = m_cardModel->index(-1, 0);
         for (int i = 0; i < m_cardModel->rowCount(); i++) {
             const auto idx = m_cardModel->index(i, 0);
-            if (m_cardModel->data(idx, m_cardModel->role("Index"_ba)) == defaultSink->cardIndex()) {
+            if (m_cardModel->data(idx, m_cardModel->role("Index"_ba)) == m_defaultSink->cardIndex()) {
                 cardIdx = idx;
             }
         }
@@ -249,16 +251,17 @@ void AudioShortcutsService::handleDefaultSinkChange()
                 description = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, cardBluetoothBattery);
             }
         }
-        QString icon = AudioIcon::forFormFactor(defaultSink->formFactor());
+        icon = AudioIcon::forFormFactor(m_defaultSink->formFactor());
         if (icon.isEmpty()) {
-            if (defaultSink->name() == DUMMY_OUTPUT_NAME) {
+            if (m_defaultSink->name() == DUMMY_OUTPUT_NAME) {
                 icon = u"audio-volume-muted"_s;
             } else {
-                icon = AudioIcon::forVolume(volumePercent(defaultSink->volume()), defaultSink->isMuted(), QString());
+                icon = AudioIcon::forVolume(volumePercent(m_defaultSink->volume()), m_defaultSink->isMuted(), QString());
             }
         }
-        m_osdDBusInterface->showText(icon, description);
     }
+
+    m_osdDBusInterface->showText(icon, description);
 }
 
 void AudioShortcutsService::handleNewSink()

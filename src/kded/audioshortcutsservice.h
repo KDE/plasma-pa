@@ -19,6 +19,7 @@
 namespace PulseAudioQt
 {
 class Device;
+class Sink;
 } // namespace PulseAudioQt
 
 using namespace Qt::Literals::StringLiterals;
@@ -54,6 +55,6 @@ private:
     GlobalConfig *m_globalConfig;
     OsdServiceInterface *m_osdDBusInterface;
     VolumeFeedback *m_feedback;
-    bool m_initialDefaultSinkSet = false;
     PreferredDevice m_preferredDevice;
+    PulseAudioQt::Sink *m_defaultSink = nullptr;
 };
