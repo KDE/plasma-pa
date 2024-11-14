@@ -333,9 +333,10 @@ QMenu *ListItemMenu::createMenu()
         // Ports
         const auto ports = device->ports();
         bool activePortUnavailable = false;
-        if (device->activePortIndex() != static_cast<quint32>(-1)) {
-            auto *activePort = static_cast<Port *>(ports.at(device->activePortIndex()));
-            activePortUnavailable = activePort->availability() == Port::Unavailable;
+        if (auto index = device->activePortIndex(); index != static_cast<quint32>(-1)) {
+            if (auto activePort = ports.at(index)) {
+                activePortUnavailable = activePort->availability() == Port::Unavailable;
+            }
         }
 
         QMap<int, Port *> availablePorts;
