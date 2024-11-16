@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:41+0000\n"
+"POT-Creation-Date: 2024-11-16 00:42+0000\n"
 "PO-Revision-Date: 2024-10-21 11:18+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -90,13 +90,13 @@ msgstr "Enhedsnavn ikke fundet"
 msgid "Port:"
 msgstr "Port:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:365
+#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:366
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (utilgængelig)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:367
+#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:368
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
@@ -457,7 +457,7 @@ msgstr "Afspil al lyd via denne enhed"
 msgid "Record all audio via this device"
 msgstr "Optag al lyd via denne enhed"
 
-#: qml/listitemmenu.cpp:353
+#: qml/listitemmenu.cpp:354
 #, kde-format
 msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
@@ -465,7 +465,7 @@ msgctxt ""
 msgid "Ports"
 msgstr "Porte"
 
-#: qml/listitemmenu.cpp:423
+#: qml/listitemmenu.cpp:424
 #, kde-format
 msgctxt ""
 "Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
@@ -473,7 +473,7 @@ msgctxt ""
 msgid "Profiles"
 msgstr "Profiler"
 
-#: qml/listitemmenu.cpp:457
+#: qml/listitemmenu.cpp:458
 #, kde-format
 msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
@@ -481,7 +481,7 @@ msgctxt ""
 msgid "Play audio using"
 msgstr "Afspil lyd med"
 
-#: qml/listitemmenu.cpp:459
+#: qml/listitemmenu.cpp:460
 #, kde-format
 msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:41+0000\n"
+"POT-Creation-Date: 2024-11-16 00:42+0000\n"
 "PO-Revision-Date: 2024-09-01 06:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -92,13 +92,13 @@ msgstr "Imena naprave ni mogoče najti"
 msgid "Port:"
 msgstr "Vrata:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:365
+#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:366
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (ni na voljo)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:367
+#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:368
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
@@ -459,7 +459,7 @@ msgstr "Predvajaj vse zvoke prek te naprave"
 msgid "Record all audio via this device"
 msgstr "Posnemi vse zvoke prek te naprave"
 
-#: qml/listitemmenu.cpp:353
+#: qml/listitemmenu.cpp:354
 #, kde-format
 msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
@@ -467,7 +467,7 @@ msgctxt ""
 msgid "Ports"
 msgstr "Vrata"
 
-#: qml/listitemmenu.cpp:423
+#: qml/listitemmenu.cpp:424
 #, kde-format
 msgctxt ""
 "Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
@@ -475,7 +475,7 @@ msgctxt ""
 msgid "Profiles"
 msgstr "Profili"
 
-#: qml/listitemmenu.cpp:457
+#: qml/listitemmenu.cpp:458
 #, kde-format
 msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
@@ -483,7 +483,7 @@ msgctxt ""
 msgid "Play audio using"
 msgstr "Predvajaj zvok z uporabo"
 
-#: qml/listitemmenu.cpp:459
+#: qml/listitemmenu.cpp:460
 #, kde-format
 msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "

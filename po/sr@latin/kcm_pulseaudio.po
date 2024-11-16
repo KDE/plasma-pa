@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-29 00:41+0000\n"
+"POT-Creation-Date: 2024-11-16 00:42+0000\n"
 "PO-Revision-Date: 2017-05-07 22:20+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Port:"
 msgstr "Port"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:365
+#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:366
 #, fuzzy, kde-format
 #| msgctxt "Port is unavailable"
 #| msgid " (unavailable)"
@@ -95,7 +95,7 @@ msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr " (nedostupan)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:367
+#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:368
 #, fuzzy, kde-format
 #| msgctxt "Port is unplugged"
 #| msgid " (unplugged)"
@@ -460,7 +460,7 @@ msgstr ""
 msgid "Record all audio via this device"
 msgstr ""
 
-#: qml/listitemmenu.cpp:353
+#: qml/listitemmenu.cpp:354
 #, fuzzy, kde-format
 #| msgid "Port"
 msgctxt ""
@@ -469,7 +469,7 @@ msgctxt ""
 msgid "Ports"
 msgstr "Port"
 
-#: qml/listitemmenu.cpp:423
+#: qml/listitemmenu.cpp:424
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Profile:"
@@ -479,7 +479,7 @@ msgctxt ""
 msgid "Profiles"
 msgstr "Profil:"
 
-#: qml/listitemmenu.cpp:457
+#: qml/listitemmenu.cpp:458
 #, kde-format
 msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
@@ -487,7 +487,7 @@ msgctxt ""
 msgid "Play audio using"
 msgstr ""
 
-#: qml/listitemmenu.cpp:459
+#: qml/listitemmenu.cpp:460
 #, kde-format
 msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "
