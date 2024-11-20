@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
 # Burkhard Lück <lueck@hube-lueck.de>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2015, 2016, 2021, 2022, 2023.
 # Jannick Kuhr <opensource@kuhr.org>, 2023.
@@ -6,15 +7,15 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-16 00:42+0000\n"
-"PO-Revision-Date: 2023-03-12 17:31+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2024-11-14 13:53+0100\n"
+"Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -23,6 +24,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Die Änderungen wurden nicht übernommen.<nl/>Neustart von wireplumber.service "
+"fehlgeschlagen. Der Befehl ist abgestürzt."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -31,24 +34,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Die Änderungen wurden nicht übernommen.<nl/>Neustart von wireplumber.service "
+"fehlgeschlagen. Der Befehl hat sich mit folgender Fehlernummer beendet: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Fehler beim Behandeln der Geräte: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Der Ordner „%1“ kann nicht erstellt werden."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Die Datei „%1“ lässt sich nicht zum Schreiben öffnen."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -60,24 +65,24 @@ msgstr "Profil:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Verbindung zum Sound-Dienst verloren"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Versuche Verbindung wiederherzustellen …"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Erneut versuchen"
 
 #: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:203
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Gerätename nicht gefunden"
 
 #: kcm/ui/DeviceListItem.qml:105
 #, kde-format
@@ -112,7 +117,7 @@ msgstr "Test"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Kanäle anzeigen"
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -120,10 +125,9 @@ msgid "Show Inactive Devices"
 msgstr "Inaktive Geräte anzeigen"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Aufnahmegeräte"
+msgstr "Geräte umbenennen …"
 
 #: kcm/ui/main.qml:87
 #, kde-format
@@ -256,17 +260,16 @@ msgid "Mute %1"
 msgstr "%1 stummschalten"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Aufnahmegeräte"
+msgstr "Geräte umbenennen"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: kcm/ui/RenameDevices.qml:68
 #, kde-format
@@ -275,43 +278,46 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Durch das Speichern der Änderungen werden Audio-Dienste neu gestartet. Bei "
+"Anwendungen, die Audio abspielen, kommt es zu Unterbrechungen und müssen "
+"möglicherweise neu gestartet werden."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Probleme oder Wünsche berichten"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "Erneut laden"
 
 #: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (zum Übernehmen „Speichern“ anklicken)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Anwenden"
 
 #: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "STANDARD"
 
 #: kcm/ui/StreamListItem.qml:57
 #, kde-format
@@ -384,34 +390,32 @@ msgstr "100 %"
 #: kded/audioshortcutsservice.cpp:59
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Lautstärke erhöhen"
 
 #: kded/audioshortcutsservice.cpp:74
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Lautstärke verringern"
 
 #: kded/audioshortcutsservice.cpp:89
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Lautstärke um 1 % erhöhen"
 
 #: kded/audioshortcutsservice.cpp:104
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Lautstärke um 1 % verringern"
 
 #: kded/audioshortcutsservice.cpp:119
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Mikrofon stummgeschaltet"
+msgstr "Mikrofonlautstärke erhöhen"
 
 #: kded/audioshortcutsservice.cpp:133
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Mikrofon stummgeschaltet"
+msgstr "Mikrofonlautstärke verringern"
 
 #: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
 #, kde-format
@@ -419,35 +423,30 @@ msgid "Mute"
 msgstr "Stummschalten"
 
 #: kded/audioshortcutsservice.cpp:160
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Mikrofon"
+msgstr "Mikrofon stummschalten"
 
 #: kded/audioshortcutsservice.cpp:174
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
 msgstr "Lautstärke"
 
 #: kded/audioshortcutsservice.cpp:192
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Kein solches Gerät"
 
 #: kded/audioshortcutsservice.cpp:235
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "Standard-Ausgabegerät"
+msgstr "Kein Ausgabegerät"
 
 #: kded/audioshortcutsservice.cpp:249
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2 % Akku)"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
