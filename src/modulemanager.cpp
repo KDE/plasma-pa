@@ -78,7 +78,6 @@ ModuleManager::ModuleManager(QObject *parent)
 }
 
 ModuleManager::~ModuleManager() = default;
-;
 
 bool ModuleManager::settingsSupported() const
 {
