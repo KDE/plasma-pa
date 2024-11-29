@@ -9,7 +9,6 @@ set(plasma-volume_SRCS
     volumemonitor.cpp
     canberracontext.cpp
     speakertest.cpp
-    gsettingsitem.cpp
     soundthemeconfig.cpp
     volumefeedback.cpp
     audioicon.cpp
@@ -17,6 +16,7 @@ set(plasma-volume_SRCS
     devicerenamemodel.cpp
     devicerenamesaver.cpp
     percentvalidator.cpp
+    pipewiredaemon.cpp
 )
 
 ecm_qt_declare_logging_category(plasma-volume_SRCS HEADER debug.h IDENTIFIER PLASMAPA

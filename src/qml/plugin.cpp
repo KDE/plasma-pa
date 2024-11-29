@@ -30,6 +30,7 @@
 #include "listitemmenu.h"
 #include "microphoneindicator.h"
 #include "percentvalidator.h"
+#include "pipewiredaemon.h"
 #include "speakertest.h"
 #include "volumefeedback.h"
 
@@ -96,6 +97,11 @@ void Plugin::registerTypes(const char *uri)
         Q_UNUSED(engine);
         Q_UNUSED(jsEngine);
         return new PreferredDevice();
+    });
+    qmlRegisterSingletonType<PipeWireDaemon>(uri, 0, 1, "PipeWireDaemon", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
+        Q_UNUSED(engine);
+        Q_UNUSED(jsEngine);
+        return new PipeWireDaemon;
     });
     qmlRegisterSingletonType<PulseAudioQt::Server>(uri, 0, 1, "Server", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
         Q_UNUSED(engine);

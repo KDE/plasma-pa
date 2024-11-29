@@ -1,91 +1,166 @@
 /*
     SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
+    SPDX-FileCopyrightText: 2024 Harald Sitter <sitter@kde.org>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
 #include "modulemanager.h"
 
+#include <QDir>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
+
+#include <PulseAudioQt/Context>
 #include <PulseAudioQt/Module>
-#include <PulseAudioQt/Server>
 
-#include "gsettingsitem.h"
-#define PA_SETTINGS_PATH_MODULES "/org/freedesktop/pulseaudio/module-groups"
+using namespace Qt::StringLiterals;
 
-#include <QTimer>
-#include <chrono>
+namespace
+{
+inline QString configDir()
+{
+    return QDir::homePath() + QLatin1String("/.config/pipewire/pipewire-pulse.conf.d/");
+}
 
-using namespace std::chrono_literals;
+void loadModuleByName(const QString &moduleName)
+{
+    PulseAudioQt::Context::instance()->loadModule(moduleName, QString());
+}
+
+void unloadModuleByName(const QString &moduleName)
+{
+    const auto modules = PulseAudioQt::Context::instance()->modules();
+    for (const auto &module : modules) {
+        if (module->name() == moduleName) {
+            PulseAudioQt::Context::instance()->unloadModule(module);
+        }
+    }
+}
+} // namespace
 
 namespace PulseAudioQt
 {
-class ConfigModule : public GSettingsItem
+class GenericModule
 {
-public:
-    ConfigModule(const QString &configName, const QString &moduleName, QObject *parent);
-    bool isEnabled() const;
-    void setEnabled(bool enabled, const QVariant &args = QVariant());
+    using MakeConfigurationCallback = std::function<QJsonObject(const QString &moduleName)>;
+    using DisableModuleCallback = std::function<QJsonObject(const QString &moduleName)>;
 
-private:
+public:
+    GenericModule(const QString &moduleName);
+    virtual ~GenericModule() = default;
+    Q_DISABLE_COPY_MOVE(GenericModule)
+
+    [[nodiscard]] bool isEnabled() const;
+    void setEnabled(bool enabled);
+
+    // Called to create the QJsonObject configuration for this module
+    [[nodiscard]] virtual QJsonObject makeConfiguration();
+    // Called to enable the module (i.e. load it server-side)
+    virtual void loadModule();
+    // Called to disable the module (i.e. unload it server-side)
+    virtual void unloadModule();
+
+protected:
     QString m_moduleName;
+    QString m_configName = u"00-plasma-pa-%1.conf"_s.arg(m_moduleName);
+    QString m_configFile = configDir() + m_configName;
 };
 
-ConfigModule::ConfigModule(const QString &configName, const QString &moduleName, QObject *parent)
-    : GSettingsItem(QStringLiteral(PA_SETTINGS_PATH_MODULES "/") + configName + QStringLiteral("/"), parent)
-    , m_moduleName(moduleName)
+GenericModule::GenericModule(const QString &moduleName)
+    : m_moduleName(moduleName)
 {
 }
 
-bool ConfigModule::isEnabled() const
+QJsonObject GenericModule::makeConfiguration()
 {
-    return value(QStringLiteral("enabled")).toBool();
+    QJsonObject loadModuleCommand({
+        {"cmd"_L1, "load-module"},
+        {"args"_L1, m_moduleName},
+        {"flags"_L1, QJsonArray()},
+    });
+    return QJsonObject({{"pulse.cmd"_L1, QJsonArray({loadModuleCommand})}});
 }
 
-void ConfigModule::setEnabled(bool enabled, const QVariant &args)
+void GenericModule::loadModule()
 {
-    set(QStringLiteral("locked"), true);
+    loadModuleByName(m_moduleName);
+}
 
+void GenericModule::unloadModule()
+{
+    unloadModuleByName(m_moduleName);
+}
+
+bool GenericModule::isEnabled() const
+{
+    return QFile::exists(m_configFile);
+}
+
+void GenericModule::setEnabled(bool enabled)
+{
     if (enabled) {
-        set(QStringLiteral("name0"), m_moduleName);
-        set(QStringLiteral("args0"), args);
-        set(QStringLiteral("enabled"), true);
+        if (!QDir().mkpath(configDir())) {
+            qWarning("Failed to create config directory %s!", qPrintable(configDir()));
+            return;
+        }
+        QFile config(m_configFile);
+        if (!config.open(QIODevice::WriteOnly)) {
+            qWarning("Failed to open config file %s!", qPrintable(m_configFile));
+            return;
+        }
+        if (config.write(QJsonDocument(makeConfiguration()).toJson()) == -1) {
+            qWarning("Failed to write to config file %s!", qPrintable(m_configFile));
+            return;
+        }
+        loadModule();
     } else {
-        set(QStringLiteral("enabled"), false);
+        unloadModule();
+        if (QFile::exists(m_configFile) && !QFile::remove(m_configFile)) {
+            qWarning("Failed to remove config file %s!", qPrintable(m_configFile));
+            return;
+        }
     }
-    set(QStringLiteral("locked"), false);
 }
+
+// SwitchOnConnectModule is a special case of GenericModule that also disables the device-manager module.
+// device-manager and switch-on-connect try to do similar things and get in each other's way.
+class SwitchOnConnectModule : public GenericModule
+{
+public:
+    using GenericModule::GenericModule;
+
+    [[nodiscard]] QJsonObject makeConfiguration() override
+    {
+        auto config = GenericModule::makeConfiguration();
+        // Additionally disable device-manager. This is a builtin option of pipewire-pulse.conf.
+        config.insert("pulse.properties"_L1, QJsonObject({{"pulse.cmd.device-manager"_L1, false}}));
+        return config;
+    }
+
+    void loadModule() override
+    {
+        unloadModuleByName("module-device-manager"_L1);
+        loadModuleByName(m_moduleName);
+    }
+
+    void unloadModule() override
+    {
+        unloadModuleByName(m_moduleName);
+        loadModuleByName("module-device-manager"_L1);
+    }
+};
 
 ModuleManager::ModuleManager(QObject *parent)
     : QObject(parent)
+    , m_combineSinks(new GenericModule(u"module-combine-sink"_s))
+    , m_switchOnConnect(new SwitchOnConnectModule(u"module-switch-on-connect"_s))
 {
-    m_combineSinks = new ConfigModule(QStringLiteral("combine"), QStringLiteral("module-combine-sink"), this);
-    m_switchOnConnect = new ConfigModule(QStringLiteral("switch-on-connect"), QStringLiteral("module-switch-on-connect"), this);
-    m_deviceManager = new ConfigModule(QStringLiteral("device-manager"), QStringLiteral("module-device-manager"), this);
-
-    connect(m_combineSinks, &ConfigModule::subtreeChanged, this, &ModuleManager::combineSinksChanged);
-    connect(m_switchOnConnect, &ConfigModule::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
-    connect(m_deviceManager, &ConfigModule::subtreeChanged, this, &ModuleManager::switchOnConnectChanged);
-
-    connect(Context::instance()->server(), &Server::updated, this, &ModuleManager::serverUpdated);
-
-    auto *updateModulesTimer = new QTimer(this);
-    updateModulesTimer->setInterval(500ms);
-    updateModulesTimer->setSingleShot(true);
-    connect(updateModulesTimer, &QTimer::timeout, this, &ModuleManager::updateLoadedModules);
-    connect(Context::instance(), &Context::moduleAdded, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));
-    connect(Context::instance(), &Context::moduleRemoved, updateModulesTimer, static_cast<void (QTimer::*)(void)>(&QTimer::start));
-    updateLoadedModules();
 }
 
 ModuleManager::~ModuleManager() = default;
-
-bool ModuleManager::settingsSupported() const
-{
-    // PipeWire does not (yet) have support for module-switch-on-connect and module-combine-sink
-    // Also switching streams is the default there
-    // TODO Check whether there is a PipeWire-specific way to do these
-    return !Context::instance()->server()->isPipeWire();
-}
 
 bool ModuleManager::combineSinks() const
 {
@@ -99,44 +174,14 @@ void ModuleManager::setCombineSinks(bool combineSinks)
 
 bool ModuleManager::switchOnConnect() const
 {
-    // switch on connect and device-manager do the same task. Only one should be enabled
-
-    // Note on the first run m_deviceManager will appear to be disabled even though it's actually running
-    // because there is no gconf entry, however m_switchOnConnect will only exist if set by Plasma PA
-    // hence only check this entry
     return m_switchOnConnect->isEnabled();
 }
 
 void ModuleManager::setSwitchOnConnect(bool switchOnConnect)
 {
-    m_deviceManager->setEnabled(!switchOnConnect);
     m_switchOnConnect->setEnabled(switchOnConnect);
 }
 
-QStringList ModuleManager::loadedModules() const
-{
-    return m_loadedModules;
-}
-
-void ModuleManager::updateLoadedModules()
-{
-    m_loadedModules.clear();
-    const auto modules = Context::instance()->modules();
-    for (Module *module : modules) {
-        m_loadedModules.append(module->name());
-    }
-    Q_EMIT loadedModulesChanged();
-}
-
-bool ModuleManager::configModuleLoaded() const
-{
-    return m_loadedModules.contains(configModuleName());
-}
-
-QString ModuleManager::configModuleName() const
-{
-    return QStringLiteral("module-gsettings");
-}
-}
+} // namespace PulseAudioQt
 
 #include "moc_modulemanager.cpp"
