@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-16 02:38+0000\n"
-"PO-Revision-Date: 2024-08-21 00:19+0200\n"
+"PO-Revision-Date: 2024-11-29 00:04+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -24,6 +24,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"변경 사항이 적용되지 않았습니다.<nl/>wireplumber.service를 다시 시작할 수 없"
+"습니다. 명령이 충돌했습니다."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -32,24 +34,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"변경 사항이 적용되지 않았습니다.<nl/>wireplumber.service를 다시 시작할 수 없"
+"습니다. 명령 종료 코드는 다음과 같습니다: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "장치를 처리할 수 없음: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "디렉터리를 생성할 수 없음: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "파일에 쓰려고 열 수 없음: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -121,10 +125,9 @@ msgid "Show Inactive Devices"
 msgstr "비활성 장치 표시"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "녹음 장치"
+msgstr "장치 이름 바꾸기…"
 
 #: kcm/ui/main.qml:87
 #, kde-format
@@ -253,17 +256,16 @@ msgid "Mute %1"
 msgstr "%1 음소거"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "녹음 장치"
+msgstr "장치 이름 바꾸기"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "저장"
 
 #: kcm/ui/RenameDevices.qml:68
 #, kde-format
@@ -272,43 +274,45 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"변경 사항을 저장하면 오디오 서비스를 다시 시작합니다. 오디오를 재생하는 앱이 "
+"중단될 수 있으며 다시 시작해야 할 수도 있습니다."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "버그 보고"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "다시 불러오는 중"
 
 #: kcm/ui/RenameDevices.qml:132
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1('저장'을 클릭하여 적용)"
 
 #: kcm/ui/RenameDevices.qml:155
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "적용"
 
 #: kcm/ui/RenameDevices.qml:161
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "초기화"
 
 #: kcm/ui/RenameDevices.qml:168
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "기본값"
 
 #: kcm/ui/StreamListItem.qml:57
 #, kde-format
