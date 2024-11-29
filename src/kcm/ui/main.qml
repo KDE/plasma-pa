@@ -89,12 +89,11 @@ KCM.ScrollViewKCM {
         },
         Kirigami.Action {
             id: configureButton
-            visible: moduleManager.settingsSupported
-            enabled: moduleManager.configModuleLoaded
+            enabled: Server.isPipeWire && !PipeWireDaemon.hasBuggedConfigMerging
             text: i18nd("kcm_pulseaudio", "Configure…")
             icon.name: "configure"
 
-            tooltip: i18nd("kcm_pulseaudio", "Requires %1 PulseAudio module", moduleManager.configModuleName)
+            tooltip: enabled ? "" : i18nd("kcm_pulseaudio", "Requires PipeWire audio server version 1.3.0 or above")
 
             Kirigami.Action {
                 text: i18nd("kcm_pulseaudio", "Add virtual output device for simultaneous output on all local sound cards")

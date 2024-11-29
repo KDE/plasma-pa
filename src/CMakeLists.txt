@@ -10,7 +10,6 @@ set(plasma-volume_SRCS
     debug.cpp
     canberracontext.cpp
     speakertest.cpp
-    gsettingsitem.cpp
     soundthemeconfig.cpp
     volumefeedback.cpp
     audioicon.cpp
@@ -18,6 +17,7 @@ set(plasma-volume_SRCS
     devicerenamemodel.cpp
     devicerenamesaver.cpp
     percentvalidator.cpp
+    pipewiredaemon.cpp
 )
 
 add_library(plasma-volume
