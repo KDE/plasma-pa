@@ -108,3 +108,5 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterAnonymousType<PulseAudioQt::Sink>(uri, 1);
     qmlRegisterAnonymousType<PulseAudioQt::Source>(uri, 1);
 }
+
+#include "moc_plugin.cpp"

@@ -104,3 +104,5 @@ GSettingsItem::~GSettingsItem()
         g_object_unref(m_settings);
     }
 }
+
+#include "moc_gsettingsitem.cpp"

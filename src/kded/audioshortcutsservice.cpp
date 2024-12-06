@@ -379,3 +379,5 @@ void AudioShortcutsService::showMicMute(int percent)
 }
 
 #include "audioshortcutsservice.moc"
+
+#include "moc_audioshortcutsservice.cpp"

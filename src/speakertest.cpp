@@ -119,3 +119,5 @@ void SpeakerTest::playingFinished(const QString &name, int errorCode)
         Q_EMIT showErrorMessage(ca_strerror(errorCode));
     };
 }
+
+#include "moc_speakertest.cpp"

@@ -311,3 +311,5 @@ GConfItem::~GConfItem()
     }
     delete priv;
 }
+
+#include "moc_gconfitem.cpp"

@@ -57,3 +57,4 @@ void GlobalService::ensureKDEDModule()
     invokeMsg.setArguments({u"audioshortcutsservice"_s});
     bus.call(invokeMsg, QDBus::Block);
 }
+#include "moc_globalservice.cpp"

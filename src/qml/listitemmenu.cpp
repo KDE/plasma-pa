@@ -493,3 +493,5 @@ QMenu *ListItemMenu::createMenu()
 
     return menu;
 }
+
+#include "moc_listitemmenu.cpp"

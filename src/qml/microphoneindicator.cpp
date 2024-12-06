@@ -330,3 +330,5 @@ QString MicrophoneIndicator::sourceOutputDisplayName(const QModelIndex &idx) con
 
     return client ? client->name() : idx.data(s_nameRole).toString();
 }
+
+#include "moc_microphoneindicator.cpp"

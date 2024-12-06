@@ -102,3 +102,5 @@ void PreferredDevice::updatePreferredSource()
         Q_EMIT sourceChanged();
     }
 }
+
+#include "moc_preferreddevice.cpp"

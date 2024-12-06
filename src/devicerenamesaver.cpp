@@ -318,3 +318,5 @@ bool DeviceRenameSaver::containsOriginalOverride(const QString &name) const
 {
     return m_originalOverrides.contains(name);
 }
+
+#include "moc_devicerenamesaver.cpp"

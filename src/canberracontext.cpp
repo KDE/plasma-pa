@@ -49,3 +49,5 @@ void CanberraContext::unref()
     }
 }
 }
+
+#include "moc_canberracontext.cpp"

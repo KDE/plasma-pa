@@ -139,3 +139,5 @@ QString ModuleManager::configModuleName() const
     return QStringLiteral("module-gsettings");
 }
 }
+
+#include "moc_modulemanager.cpp"

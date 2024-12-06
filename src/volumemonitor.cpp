@@ -200,3 +200,5 @@ void VolumeMonitor::read_callback(pa_stream *s, size_t length, void *userdata)
     volume = qBound(0.0, volume, 1.0);
     w->updateVolume(volume);
 }
+
+#include "moc_volumemonitor.cpp"

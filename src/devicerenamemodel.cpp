@@ -166,3 +166,5 @@ void DeviceRenameModel::setSaver(DeviceRenameSaver *saver)
     }
     m_saver = saver;
 }
+
+#include "moc_devicerenamemodel.cpp"

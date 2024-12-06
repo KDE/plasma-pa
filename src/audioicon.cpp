@@ -52,3 +52,5 @@ QString AudioIcon::forVolume(int percent, bool muted, QString prefix)
         return prefix + "-high-danger-symbolic";
     }
 }
+
+#include "moc_audioicon.cpp"

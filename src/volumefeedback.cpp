@@ -82,3 +82,5 @@ void VolumeFeedback::updateCachedSound()
                      nullptr);
     /* clang-format on */
 }
+
+#include "moc_volumefeedback.cpp"
