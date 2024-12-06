@@ -7,7 +7,6 @@ set(CMAKE_CXX_VISIBILITY_PRESET default)
 set(plasma-volume_SRCS
     modulemanager.cpp
     volumemonitor.cpp
-    debug.cpp
     canberracontext.cpp
     speakertest.cpp
     gsettingsitem.cpp
@@ -19,6 +18,9 @@ set(plasma-volume_SRCS
     devicerenamesaver.cpp
     percentvalidator.cpp
 )
+
+ecm_qt_declare_logging_category(plasma-volume_SRCS HEADER debug.h IDENTIFIER PLASMAPA
+	CATEGORY_NAME log_plasmapa DESCRIPTION "Plasma pa" EXPORT PLASMAPA)
 
 add_library(plasma-volume
     ${plasma-volume_SRCS}
@@ -99,3 +101,6 @@ install(TARGETS plasma-volume ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELI
 
 add_subdirectory(kcm)
 add_subdirectory(kded)
+
+ecm_qt_install_logging_categories(EXPORT PLASMAPA FILE plasmapa.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+

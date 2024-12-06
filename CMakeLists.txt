@@ -29,6 +29,7 @@ include(FindPkgConfig)
 include(ECMDeprecationSettings)
 include(ECMQmlModule)
 include(ECMGenerateExportHeader)
+include(ECMQtDeclareLoggingCategory)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX PLASMAPA
