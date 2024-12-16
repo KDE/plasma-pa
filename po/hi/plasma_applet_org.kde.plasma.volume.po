@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-pa package.
+# Hindi translations for plasma-pa package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -9,36 +9,36 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-03 00:41+0000\n"
-"PO-Revision-Date: 2024-12-14 01:12+0530\n"
+"PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
-"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
-"Language: sa\n"
+"Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
 #: contents/ui/ListItemBase.qml:66
 #, kde-format
 msgid "Currently not recording"
-msgstr "सम्प्रति रिकार्डिङ्ग् न भवति"
+msgstr "वर्तमान में रिकॉर्डिंग नहीं हो रही है"
 
 #: contents/ui/ListItemBase.qml:67
 #, kde-format
 msgid "Currently not playing"
-msgstr "सम्प्रति न क्रीडति"
+msgstr "वर्तमान में नहीं चल रहा"
 
 #: contents/ui/ListItemBase.qml:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr "अतिरिक्तविकल्पाः"
+msgstr "अतिरिक्त विकल्प"
 
 #: contents/ui/ListItemBase.qml:193
 #, kde-format
 msgid "Show additional options for %1"
-msgstr "%1 कृते अतिरिक्तविकल्पान् दर्शयतु"
+msgstr "%1 के लिए अतिरिक्त विकल्प दिखाएं"
 
 #: contents/ui/ListItemBase.qml:212
 #, kde-format
@@ -50,7 +50,7 @@ msgstr "अप्रसन्नता"
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
-msgstr "मूक"
+msgstr "आवाज़ बंद करना"
 
 #: contents/ui/ListItemBase.qml:214
 #, kde-format
@@ -60,120 +60,120 @@ msgstr "अप्रसन्नता %1"
 #: contents/ui/ListItemBase.qml:214
 #, kde-format
 msgid "Mute %1"
-msgstr "म्यूट %1"
+msgstr "म्यूट करें %1"
 
 #: contents/ui/ListItemBase.qml:235
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
-msgstr "%1 कृते आयतनं समायोजयन्तु"
+msgstr "%1 के लिए वॉल्यूम समायोजित करें"
 
 #: contents/ui/ListItemBase.qml:296
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1% २."
+msgstr "%1%"
 
 #: contents/ui/ListItemBase.qml:316
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "१००% २."
+msgstr "100%"
 
 #: contents/ui/main.qml:32
 #, kde-format
 msgid "Audio Volume"
-msgstr "श्रव्य मात्रा"
+msgstr "ऑडियो वॉल्यूम"
 
 #: contents/ui/main.qml:43 contents/ui/main.qml:45
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr "ध्वनिसेवायाः सह संयोजनं नष्टम्"
+msgstr "ध्वनि सेवा से कनेक्शन टूट गया"
 
 #: contents/ui/main.qml:47
 #, kde-format
 msgid "No output or input devices found"
-msgstr "न आउटपुट् अथवा इनपुट् उपकरणानि प्राप्तानि"
+msgstr "कोई आउटपुट या इनपुट डिवाइस नहीं मिला"
 
 #: contents/ui/main.qml:51
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr "पुनः संयोजयितुं प्रयतमानोऽस्मि..."
+msgstr "पुनः कनेक्ट करने का प्रयास कर रहा हूँ…"
 
 #: contents/ui/main.qml:68
 #, kde-format
 msgid "Audio Muted"
-msgstr "ऑडियो म्यूट्"
+msgstr "ऑडियो म्यूट किया गया"
 
 #: contents/ui/main.qml:70
 #, kde-format
 msgid "Volume at %1%"
-msgstr "%1% इत्यत्र आयतनम् ।"
+msgstr "वॉल्यूम %1% पर"
 
 #: contents/ui/main.qml:81
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr "म्यूट् अनम्यूट् कर्तुं मध्य-क्लिक् कुर्वन्तु"
+msgstr "अनम्यूट करने के लिए मध्य-क्लिक करें"
 
 #: contents/ui/main.qml:82
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr "सर्वाणि श्रव्यं निःशब्दं कर्तुं मध्य-क्लिक् कुर्वन्तु"
+msgstr "सभी ऑडियो म्यूट करने के लिए मध्य-क्लिक करें"
 
 #: contents/ui/main.qml:83
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr "मात्रा समायोजितुं स्क्रॉल कुर्वन्तु"
+msgstr "वॉल्यूम समायोजित करने के लिए स्क्रॉल करें"
 
 #: contents/ui/main.qml:99
 #, kde-format
 msgid "Device name not found"
-msgstr "यन्त्रनाम न प्राप्तम्"
+msgstr "डिवाइस का नाम नहीं मिला"
 
 #: contents/ui/main.qml:299
 #, kde-format
 msgid "Devices"
-msgstr "यन्त्राणि"
+msgstr "उपकरण"
 
 #: contents/ui/main.qml:306
 #, kde-format
 msgid "Applications"
-msgstr "अनुप्रयोगाः"
+msgstr "अनुप्रयोग"
 
 #: contents/ui/main.qml:323 contents/ui/main.qml:325 contents/ui/main.qml:556
 #, kde-format
 msgid "Force mute all playback devices"
-msgstr "सर्वाणि प्लेबैक-यन्त्राणि बलात् म्यूट् कुर्वन्तु"
+msgstr "सभी प्लेबैक डिवाइस को बलपूर्वक म्यूट करें"
 
 #: contents/ui/main.qml:361
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr "पुनः प्रयासं कुर्वन्तु"
+msgstr "पुन: प्रयास करें"
 
 #: contents/ui/main.qml:385
 #, kde-format
 msgid "No applications playing or recording audio"
-msgstr "श्रव्यं वादयति वा रिकार्ड् करोति वा अनुप्रयोगाः नास्ति"
+msgstr "कोई भी एप्लीकेशन ऑडियो नहीं चला रहा या रिकॉर्ड नहीं कर रहा"
 
 #: contents/ui/main.qml:544
 #, kde-format
 msgid "Raise maximum volume"
-msgstr "अधिकतमं मात्रां वर्धयन्तु"
+msgstr "अधिकतम वॉल्यूम बढ़ाएँ"
 
 #: contents/ui/main.qml:565
 #, kde-format
 msgid "Show virtual devices"
-msgstr "आभासीयन्त्राणि दर्शयन्तु"
+msgstr "वर्चुअल डिवाइस दिखाएँ"
 
 #: contents/ui/main.qml:575
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr "&श्रव्ययन्त्राणि विन्यस्तं कुर्वन्तु..."
+msgstr "&ऑडियो डिवाइस कॉन्फ़िगर करें…"
 
 #: contents/ui/StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
-msgstr "धारानाम न प्राप्तम्"
+msgstr "स्ट्रीम नाम नहीं मिला"

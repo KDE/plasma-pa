@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-pa package.
+# Hindi translations for plasma-pa package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-16 00:42+0000\n"
-"PO-Revision-Date: 2024-12-14 01:12+0530\n"
+"PO-Revision-Date: 2024-12-15 19:41+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
-"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
-"Language: sa\n"
+"Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -26,8 +26,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
-"परिवर्तनं न प्रयुक्तम्।<nl/>wireplumber.service पुनः आरभ्यतुं असफलम्। आदेशः दुर्घटनाम् अभवत् "
-"।"
+"परिवर्तन लागू नहीं किए गए हैं।<nl/>wireplumber.service को पुनः आरंभ करने में विफल। "
+"कमांड क्रैश हो गया।"
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -36,78 +36,78 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
-"परिवर्तनं न प्रयुक्तम्।<nl/>wireplumber.service पुनः आरभ्यतुं असफलम्। आदेशः कोडेन समाप्तः: "
-"%1 ।"
+"परिवर्तन लागू नहीं किए गए हैं।<nl/>wireplumber.service को पुनः आरंभ करने में विफल। आदेश "
+"कोड: %1 के साथ समाप्त हुआ।"
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr "उपकरणानि नियन्त्रयितुं असफलम्: %1."
+msgstr "डिवाइसों को संभालने में विफल: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr "निर्देशिकां निर्मातुं असफलम्: %1."
+msgstr "निर्देशिका बनाने में विफल: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr "लेखनार्थं सञ्चिकां उद्घाटयितुं असफलम्: %1."
+msgstr "लेखन हेतु फ़ाइल खोलने में विफल: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
-msgstr "रूपरेखा:"
+msgstr "प्रोफ़ाइल:"
 
 #: kcm/ui/ContextBrokenOverlay.qml:25
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr "ध्वनिसेवायाः सह संयोजनं नष्टम्"
+msgstr "ध्वनि सेवा से कनेक्शन टूट गया"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr "पुनः संयोजयितुं प्रयतमानोऽस्मि..."
+msgstr "पुनः कनेक्ट करने का प्रयास कर रहा हूँ…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr "पुनः प्रयासं कुर्वन्तु"
+msgstr "पुन: प्रयास करें"
 
 #: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:203
 #, kde-format
 msgid "Device name not found"
-msgstr "यन्त्रनाम न प्राप्तम्"
+msgstr "डिवाइस का नाम नहीं मिला"
 
 #: kcm/ui/DeviceListItem.qml:105
 #, kde-format
 msgid "Port:"
-msgstr "पोताश्रय:"
+msgstr "पत्तन:"
 
 #: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:366
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
-msgstr "%1 (अनुपलब्धम्) २."
+msgstr "%1 (अनुपलब्ध)"
 
 #: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:368
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
-msgstr "%1 (अनप्लग्ड्) २."
+msgstr "%1 (अनप्लग्ड)"
 
 #: kcm/ui/DeviceListItem.qml:205
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
-msgstr "%1: १."
+msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:230
 #, kde-format
@@ -119,54 +119,55 @@ msgstr "परीक्षा"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr "चैनल्स् दर्शयतु"
+msgstr "चैनल दिखाएं"
 
 #: kcm/ui/main.qml:74
 #, kde-format
 msgid "Show Inactive Devices"
-msgstr "निष्क्रिययन्त्राणि दर्शयतु"
+msgstr "निष्क्रिय डिवाइस दिखाएं"
 
 #: kcm/ui/main.qml:81
 #, kde-format
 msgid "Rename Devices…"
-msgstr "उपकरणानां नाम परिवर्तनं कुर्वन्तु..."
+msgstr "डिवाइस का नाम बदलें…"
 
 #: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "आयतननियन्त्रणानि विन्यस्तं कुर्वन्तु..."
+msgstr "वॉल्यूम नियंत्रण कॉन्फ़िगर करें…"
 
 #: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
-msgstr "विन्यस्तं कुर्वन्तु..."
+msgstr "कॉन्फ़िगर करें…"
 
 #: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
-msgstr "%1 PulseAudio मॉड्यूलस्य आवश्यकता अस्ति"
+msgstr "%1 पल्सऑडियो मॉड्यूल की आवश्यकता है"
 
 #: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
-msgstr "सर्वेषु स्थानीयध्वनिकार्डेषु एकत्रितनिर्गमाय आभासीनिर्गमयन्त्रं योजयन्तु"
+msgstr "सभी स्थानीय साउंड कार्ड पर एक साथ आउटपुट के लिए वर्चुअल आउटपुट डिवाइस जोड़ें"
 
 #: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
-msgstr "यदा नूतनं निर्गमं उपलब्धं भवति तदा स्वयमेव सर्वाणि चालितधाराणि स्विच् कुर्वन्तु"
+msgstr ""
+"जब कोई नया आउटपुट उपलब्ध हो जाए तो सभी चल रही स्ट्रीम को स्वचालित रूप से स्विच करें"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
 #, kde-format
 msgid "Playback Devices"
-msgstr "प्लेबैक उपकरणम्"
+msgstr "प्रतिश्रवण उपकरण"
 
 #: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
 #, kde-format
 msgid "Recording Devices"
-msgstr "अभिलेखनयन्त्राणि"
+msgstr "रिकॉर्डिंग डिवाइस"
 
 #: kcm/ui/main.qml:191
 #, kde-format
@@ -176,12 +177,12 @@ msgstr "निष्क्रिय कार्ड"
 #: kcm/ui/main.qml:222
 #, kde-format
 msgid "Playback Streams"
-msgstr "प्लेबैक स्ट्रीम्स"
+msgstr "प्लेबैक स्ट्रीम"
 
 #: kcm/ui/main.qml:271
 #, kde-format
 msgid "Recording Streams"
-msgstr "रिकार्डिंग स्ट्रीम्स"
+msgstr "रिकॉर्डिंग स्ट्रीम"
 
 #: kcm/ui/main.qml:305
 #, kde-format
@@ -191,39 +192,37 @@ msgctxt ""
 msgid ""
 "Error trying to play a test sound. \n"
 "The system said: \"%1\""
-msgstr ""
-"परीक्षणध्वनिं वादयितुं प्रयतमाने त्रुटिः। \n"
-"व्यवस्था अवदत्- \"%1\" इति।"
+msgstr "परीक्षण ध्वनि चलाने का प्रयास करते समय त्रुटि हुई। सिस्टम ने कहा: \"%1\""
 
 #: kcm/ui/main.qml:409
 #, kde-format
 msgid "Front Left"
-msgstr "अग्रे वामभागे"
+msgstr "आगे से बयां"
 
 #: kcm/ui/main.qml:410
 #, kde-format
 msgid "Front Center"
-msgstr "अग्रकेन्द्र"
+msgstr "सामने का केंद्र"
 
 #: kcm/ui/main.qml:411
 #, kde-format
 msgid "Front Right"
-msgstr "अग्रदक्षिणम्"
+msgstr "सामने सही"
 
 #: kcm/ui/main.qml:412
 #, kde-format
 msgid "Side Left"
-msgstr "पार्श्व वाम"
+msgstr "बाएँ तरफ"
 
 #: kcm/ui/main.qml:413
 #, kde-format
 msgid "Side Right"
-msgstr "पार्श्व दक्षिण"
+msgstr "साइड दायाँ"
 
 #: kcm/ui/main.qml:414
 #, kde-format
 msgid "Rear Left"
-msgstr "पृष्ठ वाम"
+msgstr "पीछे बाएँ"
 
 #: kcm/ui/main.qml:415
 #, kde-format
@@ -233,7 +232,7 @@ msgstr "सबवूफर"
 #: kcm/ui/main.qml:416
 #, kde-format
 msgid "Rear Right"
-msgstr "पृष्ठ दक्षिण"
+msgstr "पीछे दायाँ"
 
 #: kcm/ui/main.qml:417
 #, kde-format
@@ -243,7 +242,7 @@ msgstr "मोनो"
 #: kcm/ui/main.qml:485
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr "ध्वनिपरीक्षणार्थं कस्यापि स्पीकरस्य उपरि क्लिक् कुर्वन्तु"
+msgstr "ध्वनि का परीक्षण करने के लिए किसी भी स्पीकर पर क्लिक करें"
 
 #: kcm/ui/MuteButton.qml:25
 #, kde-format
@@ -255,19 +254,19 @@ msgstr "अप्रसन्नता %1"
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
-msgstr "म्यूट %1"
+msgstr "म्यूट करें %1"
 
 #: kcm/ui/RenameDevices.qml:31
 #, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "उपकरणानां नाम परिवर्तनं कुर्वन्तु"
+msgstr "डिवाइस का नाम बदलें"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr "रक्ष्"
+msgstr "बचाना"
 
 #: kcm/ui/RenameDevices.qml:68
 #, kde-format
@@ -276,50 +275,50 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
-"परिवर्तनस्य रक्षणेन श्रव्यसेवाः पुनः आरभ्यन्ते । श्रव्यं वादयन्तः एप्स् व्यत्ययान् अनुभविष्यन्ति, "
-"पुनः आरम्भस्य आवश्यकता भवितुम् अर्हति ।"
+"परिवर्तनों को सहेजने से ऑडियो सेवाएँ पुनः आरंभ हो जाएँगी। ऑडियो चलाने वाले ऐप्स में रुकावट "
+"आएगी और उन्हें पुनः आरंभ करने की आवश्यकता हो सकती है।"
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr "बगस्य सूचनां ददातु"
+msgstr "रिपोर्ट बग"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr "पुनः लोडिंग"
+msgstr "पुन: लोड"
 
 #: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr "%1 (अनुप्रयोगाय 'रक्षतु' नुदन्तु)"
+msgstr "%1 (लागू करने के लिए 'सहेजें' पर क्लिक करें)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr "आचरतु"
+msgstr "आवेदन करना"
 
 #: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr "पुनः सेट् करें"
+msgstr "रीसेट करें"
 
 #: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr "मूलभूतम्‌"
+msgstr "गलती करना"
 
 #: kcm/ui/StreamListItem.qml:57
 #, kde-format
 msgid "Notification Sounds"
-msgstr "सूचना ध्वनयः"
+msgstr "अधिसूचना ध्वनियाँ"
 
 #: kcm/ui/StreamListItem.qml:63
 #, kde-format
@@ -330,114 +329,114 @@ msgstr "%1: %2"
 #: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr "मात्रा नियन्त्रणम्"
+msgstr "वॉल्यूम नियंत्रण"
 
 #: kcm/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr "अधिकतमं मात्रां वर्धयन्तु"
+msgstr "अधिकतम वॉल्यूम बढ़ाएँ"
 
 #: kcm/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr "आयतनपरिवर्तनपदम् : १."
+msgstr "आयतन परिवर्तन चरण:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr "परिवर्तनार्थं श्रव्यप्रतिक्रियां वादयन्तु:"
+msgstr "निम्नलिखित में परिवर्तन के लिए ऑडियो फ़ीडबैक चलाएँ:"
 
 #: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
 #, kde-format
 msgid "Audio volume"
-msgstr "श्रव्य मात्रा"
+msgstr "ऑडियो वॉल्यूम"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr "परिवर्तनार्थं दृश्यप्रतिक्रियां दर्शयतु:"
+msgstr "निम्न में परिवर्तन के लिए दृश्य प्रतिक्रिया दिखाएँ:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
 msgid "Microphone sensitivity"
-msgstr "माइक्रोफोन संवेदनशीलता"
+msgstr "माइक्रोफ़ोन संवेदनशीलता"
 
 #: kcm/ui/VolumeControlsConfig.qml:92
 #, kde-format
 msgid "Mute state"
-msgstr "मूक अवस्था"
+msgstr "मौन अवस्था"
 
 #: kcm/ui/VolumeControlsConfig.qml:99
 #, kde-format
 msgid "Default output device"
-msgstr "पूर्वनिर्धारितनिर्गमयन्त्रम्"
+msgstr "डिफ़ॉल्ट आउटपुट डिवाइस"
 
 #: kcm/ui/VolumeSlider.qml:68
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1% २."
+msgstr "%1%"
 
 #: kcm/ui/VolumeSlider.qml:88
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "१००% २."
+msgstr "100%"
 
 #: kded/audioshortcutsservice.cpp:59
 #, kde-format
 msgid "Increase Volume"
-msgstr "Volume वर्धयतु"
+msgstr "वॉल्यूम बढ़ाएँ"
 
 #: kded/audioshortcutsservice.cpp:74
 #, kde-format
 msgid "Decrease Volume"
-msgstr "मात्रां न्यूनीकरोतु"
+msgstr "वॉल्यूम घटाएँ"
 
 #: kded/audioshortcutsservice.cpp:89
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr "मात्रा १% वर्धयतु"
+msgstr "वॉल्यूम 1% बढ़ाएँ"
 
 #: kded/audioshortcutsservice.cpp:104
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr "आयतनं १% न्यूनीकरोतु"
+msgstr "वॉल्यूम में 1% की कमी करें"
 
 #: kded/audioshortcutsservice.cpp:119
 #, kde-format
 msgid "Increase Microphone Volume"
-msgstr "माइक्रोफोनस्य मात्रां वर्धयन्तु"
+msgstr "माइक्रोफ़ोन वॉल्यूम बढ़ाएँ"
 
 #: kded/audioshortcutsservice.cpp:133
 #, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "माइक्रोफोनस्य मात्रां न्यूनीकरोतु"
+msgstr "माइक्रोफ़ोन वॉल्यूम घटाएँ"
 
 #: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
-msgstr "मूक"
+msgstr "आवाज़ बंद करना"
 
 #: kded/audioshortcutsservice.cpp:160
 #, kde-format
 msgid "Mute Microphone"
-msgstr "म्यूट माइक्रोफोन"
+msgstr "माइक्रोफ़ोन म्यूट करें"
 
 #: kded/audioshortcutsservice.cpp:174
 #, kde-format
 msgid "Audio Volume"
-msgstr "श्रव्य मात्रा"
+msgstr "ऑडियो वॉल्यूम"
 
 #: kded/audioshortcutsservice.cpp:192
 #, kde-format
 msgid "No such device"
-msgstr "न तादृशं यन्त्रम्"
+msgstr "ऐसा कोई उपकरण नहीं"
 
 #: kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "No output device"
-msgstr "न निर्गमयन्त्रम्"
+msgstr "कोई आउटपुट डिवाइस नहीं"
 
 #: kded/audioshortcutsservice.cpp:249
 #, kde-format
@@ -448,12 +447,12 @@ msgstr "%1 (%2% बैटरी)"
 #: qml/listitemmenu.cpp:320
 #, kde-format
 msgid "Play all audio via this device"
-msgstr "अस्य यन्त्रस्य माध्यमेन सर्वाणि श्रव्यं वादयन्तु"
+msgstr "इस डिवाइस के माध्यम से सभी ऑडियो चलाएं"
 
 #: qml/listitemmenu.cpp:325
 #, kde-format
 msgid "Record all audio via this device"
-msgstr "अस्य यन्त्रस्य माध्यमेन सर्वाणि श्रव्यं रिकार्ड् कुर्वन्तु"
+msgstr "इस डिवाइस के माध्यम से सभी ऑडियो रिकॉर्ड करें"
 
 #: qml/listitemmenu.cpp:354
 #, kde-format
@@ -461,7 +460,7 @@ msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
 "speakers or a plug for headphones)"
 msgid "Ports"
-msgstr "बन्दरगाहाः"
+msgstr "बंदरगाहों"
 
 #: qml/listitemmenu.cpp:424
 #, kde-format
@@ -477,7 +476,7 @@ msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
 "choose"
 msgid "Play audio using"
-msgstr "उपयोगेन श्रव्यं वादयन्तु"
+msgstr "ऑडियो चलाएँ"
 
 #: qml/listitemmenu.cpp:460
 #, kde-format
@@ -485,38 +484,38 @@ msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "
 "headset, ...) to choose"
 msgid "Record audio using"
-msgstr "उपयोगेन श्रव्यं अभिलेखयन्तु"
+msgstr "ऑडियो रिकॉर्ड करें"
 
 #: qml/microphoneindicator.cpp:136 qml/microphoneindicator.cpp:138
 #, kde-format
 msgid "Microphone"
-msgstr "माइक्रोफोन"
+msgstr "माइक्रोफ़ोन"
 
 #: qml/microphoneindicator.cpp:138
 #, kde-format
 msgid "Microphone Muted"
-msgstr "माइक्रोफोन म्यूट्"
+msgstr "माइक्रोफ़ोन म्यूट किया गया"
 
 #: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ", ९. "
+msgstr ", "
 
 #: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
-msgstr "%1 माइक्रोफोनस्य उपयोगं कुर्वन्ति"
+msgstr "%1 माइक्रोफ़ोन का उपयोग कर रहे हैं"
 
 #: qml/microphoneindicator.cpp:310
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
-msgstr "%1 माइक्रोफोनस्य उपयोगं करोति (%2) ।"
+msgstr "%1 माइक्रोफ़ोन का उपयोग कर रहा है (%2)"
 
 #: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
-msgstr "%1 माइक्रोफोनस्य उपयोगं करोति"
+msgstr "%1 माइक्रोफ़ोन का उपयोग कर रहा है"
