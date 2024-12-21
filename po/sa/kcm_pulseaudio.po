@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-16 00:42+0000\n"
-"PO-Revision-Date: 2024-12-14 01:12+0530\n"
+"PO-Revision-Date: 2024-12-20 21:54+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -95,19 +95,19 @@ msgstr "पोताश्रय:"
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
-msgstr "%1 (अनुपलब्धम्) २."
+msgstr "%1 (अनुपलब्धम्)"
 
 #: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:368
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
-msgstr "%1 (अनप्लग्ड्) २."
+msgstr "%1 (अनप्लग्ड्)"
 
 #: kcm/ui/DeviceListItem.qml:205
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
-msgstr "%1: १."
+msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:230
 #, kde-format
@@ -340,7 +340,7 @@ msgstr "अधिकतमं मात्रां वर्धयन्तु"
 #: kcm/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr "आयतनपरिवर्तनपदम् : १."
+msgstr "आयतनपरिवर्तनपदम् :"
 
 #: kcm/ui/VolumeControlsConfig.qml:68
 #, kde-format
@@ -376,13 +376,13 @@ msgstr "पूर्वनिर्धारितनिर्गमयन्त
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1% २."
+msgstr "%1%"
 
 #: kcm/ui/VolumeSlider.qml:88
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "१००% २."
+msgstr "१००%"
 
 #: kded/audioshortcutsservice.cpp:59
 #, kde-format

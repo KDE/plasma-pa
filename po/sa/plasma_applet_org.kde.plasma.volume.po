@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-03 00:41+0000\n"
-"PO-Revision-Date: 2024-12-14 01:12+0530\n"
+"PO-Revision-Date: 2024-12-20 12:26+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -72,13 +72,13 @@ msgstr "%1 कृते आयतनं समायोजयन्तु"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1% २."
+msgstr "%1%"
 
 #: contents/ui/ListItemBase.qml:316
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "१००% २."
+msgstr "१००%"
 
 #: contents/ui/main.qml:32
 #, kde-format
