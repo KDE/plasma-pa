@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-16 00:42+0000\n"
-"PO-Revision-Date: 2024-09-17 21:39+0200\n"
+"PO-Revision-Date: 2024-12-29 19:47+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -25,6 +25,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Ŝanĝoj ne estis aplikitaj.<nl/>Malsukcesis rekomenci wireplumber.service. La "
+"komando paneis."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -33,6 +35,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Ŝanĝoj ne estis aplikitaj.<nl/>Malsukcesis rekomenci wireplumber.service. La "
+"komando finiĝis kun kodo: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
@@ -62,7 +66,7 @@ msgstr "Profilo:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Konekto al la Sonservo Perdiĝis"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
@@ -272,6 +276,8 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Konservado de ŝanĝoj rekomencos sonservojn. Aplikoj ludantaj aŭdon spertos "
+"interrompojn kaj eble bezonos esti rekomencitaj."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
