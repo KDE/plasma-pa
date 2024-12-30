@@ -13,6 +13,8 @@ set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(BUILD_DOC "Whether to build the documentation" ON)
+
 find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
 
@@ -46,7 +48,6 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     Config
     CoreAddons
     Declarative
-    DocTools
     GlobalAccel
     StatusNotifierItem
     I18n
@@ -101,6 +102,14 @@ set_package_properties(KItemModels PROPERTIES
     TYPE RUNTIME
 )
 
+if (BUILD_DOC)
+    find_package(KF6DocTools ${KF6_MIN_VERSION})
+    set_package_properties(KF6DocTools PROPERTIES
+        DESCRIPTION "Tools to generate documentation"
+        TYPE REQUIRED
+    )
+endif()
+
 ecm_set_disabled_deprecation_versions(QT 6.7.0
     KF 6.5.0
 )
@@ -108,7 +117,6 @@ ecm_set_disabled_deprecation_versions(QT 6.7.0
 add_subdirectory(autotests)
 add_subdirectory(applet)
 add_subdirectory(src)
-add_subdirectory(doc)
 add_subdirectory(appiumtests)
 
 # add clang-format target for all our real source files
@@ -116,7 +124,11 @@ file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
+if (BUILD_DOC)
+    add_subdirectory(doc)
+    kdoctools_install(po)
+endif()
+
 ki18n_install(po)
-kdoctools_install(po)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
