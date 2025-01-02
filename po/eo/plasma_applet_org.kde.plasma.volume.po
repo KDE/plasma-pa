@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-03 02:31+0000\n"
-"PO-Revision-Date: 2024-03-28 10:37+0100\n"
+"PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -71,7 +71,7 @@ msgstr "Alĝustigi laŭtecon por %1"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1 %"
+msgstr "%1%"
 
 #: contents/ui/ListItemBase.qml:316
 #, kde-format
@@ -88,7 +88,7 @@ msgstr "Aŭdio-Laŭteco"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Konekto al Sonservo Perdiĝis"
 
 #: contents/ui/main.qml:47
 #, kde-format
@@ -99,7 +99,7 @@ msgstr "Neniu eligo aŭ eniga aparatoj trovitaj"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Provante rekonekti…"
 
 #: contents/ui/main.qml:68
 #, kde-format
@@ -150,7 +150,7 @@ msgstr "Devigi silentigi ĉiujn reproduktajn aparatojn"
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Reprovi"
 
 #: contents/ui/main.qml:385
 #, kde-format
@@ -176,40 +176,3 @@ msgstr "&Agordi Aŭdio-Aparatojn…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Fluonomo ne trovita"
-
-#~ msgid "No output device"
-#~ msgstr "Neniu eliga aparato"
-
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (%2% Baterio)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Pliigi Volumon"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "Pliigi Volumon je 1%"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Malpliigi laŭtecon"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "Malpliigi laŭtecon je 1%"
-
-#~ msgid "Mute"
-#~ msgstr "Mute"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "Pliigi mikrofonan laŭtecon"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "Malpliigi mikrofonan laŭteco"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "Mute Mikrofono"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
