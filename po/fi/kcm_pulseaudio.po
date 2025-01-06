@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-16 00:42+0000\n"
+"POT-Creation-Date: 2025-01-06 00:43+0000\n"
 "PO-Revision-Date: 2024-10-18 11:31+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -439,12 +439,12 @@ msgstr "Äänenvoimakkuus"
 msgid "No such device"
 msgstr "Ei tällaista laitetta"
 
-#: kded/audioshortcutsservice.cpp:235
+#: kded/audioshortcutsservice.cpp:238
 #, kde-format
 msgid "No output device"
 msgstr "Ei ulostulolaitetta"
 
-#: kded/audioshortcutsservice.cpp:249
+#: kded/audioshortcutsservice.cpp:252
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-16 00:42+0000\n"
+"POT-Creation-Date: 2025-01-06 00:43+0000\n"
 "PO-Revision-Date: 2024-09-01 06:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -438,12 +438,12 @@ msgstr "Glasnost zvoka"
 msgid "No such device"
 msgstr "Ni take naprave"
 
-#: kded/audioshortcutsservice.cpp:235
+#: kded/audioshortcutsservice.cpp:238
 #, kde-format
 msgid "No output device"
 msgstr "Izhodna naprava"
 
-#: kded/audioshortcutsservice.cpp:249
+#: kded/audioshortcutsservice.cpp:252
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"

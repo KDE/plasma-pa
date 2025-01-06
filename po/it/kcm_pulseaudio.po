@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-16 00:42+0000\n"
+"POT-Creation-Date: 2025-01-06 00:43+0000\n"
 "PO-Revision-Date: 2024-09-01 17:24+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -437,12 +437,12 @@ msgstr "Volume audio"
 msgid "No such device"
 msgstr "Nessun dispositivo"
 
-#: kded/audioshortcutsservice.cpp:235
+#: kded/audioshortcutsservice.cpp:238
 #, kde-format
 msgid "No output device"
 msgstr "Nessun dispositivo di uscita"
 
-#: kded/audioshortcutsservice.cpp:249
+#: kded/audioshortcutsservice.cpp:252
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
