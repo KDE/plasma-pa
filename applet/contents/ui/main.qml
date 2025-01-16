@@ -310,19 +310,44 @@ PlasmoidItem {
                 }
 
                 PC3.ToolButton {
-                    id: globalMuteCheckbox
+                    id: actionsButton
 
                     visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
 
-                    icon.name: "audio-volume-muted"
-                    onClicked: {
-                        GlobalService.globalMute()
+                    icon.name: "application-menu"
+                    display: PC3.AbstractButton.IconOnly
+                    checkable: true
+                    checked: configMenu.status !== PlasmaExtras.Menu.Closed
+                    onToggled: {
+                        if (checked) {
+                            configMenu.openRelative();
+                        } else {
+                            configMenu.close();
+                        }
                     }
-                    checked: globalMute
 
-                    Accessible.name: i18n("Force mute all playback devices")
+                    text: i18nc("@action:button", "More actions")
                     PC3.ToolTip {
-                        text: i18n("Force mute all playback devices")
+                        text: parent.text
+                    }
+                }
+
+                PlasmaExtras.Menu {
+                    id: configMenu
+                    visualParent: actionsButton
+                    placement: PlasmaExtras.Menu.BottomPosedLeftAlignedPopup
+                }
+
+                Instantiator {
+                    model: Plasmoid.contextualActions
+                    delegate: PlasmaExtras.MenuItem {
+                        id: menuItem
+                        action: modelData
+                    }
+                    onObjectAdded: (index, object) => {
+                        if (object.action.priority === PlasmaCore.Action.NormalPriority) {
+                            configMenu.addMenuItem(object);
+                        }
                     }
                 }
 
