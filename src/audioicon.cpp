@@ -39,17 +39,17 @@ QString AudioIcon::forVolume(int percent, bool muted, QString prefix)
         prefix = u"audio-volume"_s;
     }
     if (percent <= 0 || muted) {
-        return prefix + "-muted-symbolic";
+        return prefix + u"-muted-symbolic"_s;
     } else if (percent <= 25) {
-        return prefix + "-low-symbolic";
+        return prefix + u"-low-symbolic"_s;
     } else if (percent <= 75) {
-        return prefix + "-medium-symbolic";
+        return prefix + u"-medium-symbolic"_s;
     } else if (percent <= HIGH_UPPER_BOUND) {
-        return prefix + "-high-symbolic";
+        return prefix + u"-high-symbolic"_s;
     } else if (percent <= VERY_HIGH_UPPER_BOUND) {
-        return prefix + "-high-warning-symbolic";
+        return prefix + u"-high-warning-symbolic"_s;
     } else {
-        return prefix + "-high-danger-symbolic";
+        return prefix + u"-high-danger-symbolic"_s;
     }
 }
 
