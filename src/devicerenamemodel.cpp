@@ -18,7 +18,7 @@ QVariant DeviceRenameModel::data(const QModelIndex &index, int intRole) const
     case Role::HadOverride: {
         const auto name = pulseName(index);
         if (name.isEmpty()) {
-            qWarning() << "Name unexpectedly empty. Cannot override" << index;
+            qCWarning(PLASMAPA) << "Name unexpectedly empty. Cannot override" << index;
             return false;
         }
         return m_saver->containsOriginalOverride(name);
@@ -26,7 +26,7 @@ QVariant DeviceRenameModel::data(const QModelIndex &index, int intRole) const
     case Role::HasOverride: {
         const auto name = pulseName(index);
         if (name.isEmpty()) {
-            qWarning() << "Name unexpectedly empty. Cannot override" << index;
+            qCWarning(PLASMAPA) << "Name unexpectedly empty. Cannot override" << index;
             return false;
         }
         return m_saver->containsOverride(name);
@@ -43,7 +43,7 @@ QVariant DeviceRenameModel::data(const QModelIndex &index, int intRole) const
     case Role::Description: {
         const auto description = pulseDescription(index);
         if (description.isEmpty()) {
-            qWarning() << "Description unexpectedly empty" << index;
+            qCWarning(PLASMAPA) << "Description unexpectedly empty" << index;
             return false;
         }
         return description;
@@ -51,7 +51,7 @@ QVariant DeviceRenameModel::data(const QModelIndex &index, int intRole) const
     case Role::Name: {
         const auto name = pulseName(index);
         if (name.isEmpty()) {
-            qWarning() << "Name unexpectedly empty" << index;
+            qCWarning(PLASMAPA) << "Name unexpectedly empty" << index;
             return false;
         }
         return name;
