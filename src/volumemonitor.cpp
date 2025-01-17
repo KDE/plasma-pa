@@ -17,8 +17,6 @@
 
 #include "debug.h"
 
-#include <QtGlobal>
-
 using namespace PulseAudioQt;
 
 VolumeMonitor::VolumeMonitor(QObject *parent)
