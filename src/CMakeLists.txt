@@ -5,18 +5,18 @@ ecm_add_qml_module(plasma-volume-declarative URI org.kde.plasma.private.volume)
 set(CMAKE_CXX_VISIBILITY_PRESET default)
 
 set(plasma-volume_SRCS
-    modulemanager.cpp
-    volumemonitor.cpp
-    canberracontext.cpp
-    speakertest.cpp
-    gsettingsitem.cpp
-    soundthemeconfig.cpp
-    volumefeedback.cpp
-    audioicon.cpp
-    preferreddevice.cpp
-    devicerenamemodel.cpp
-    devicerenamesaver.cpp
-    percentvalidator.cpp
+    modulemanager.cpp modulemanager.h
+    volumemonitor.cpp volumemonitor.h
+    canberracontext.cpp canberracontext.h
+    speakertest.cpp speakertest.h
+    gsettingsitem.cpp gsettingsitem.h
+    soundthemeconfig.cpp soundthemeconfig.h
+    volumefeedback.cpp volumefeedback.h
+    audioicon.cpp audioicon.h
+    preferreddevice.cpp preferreddevice.h
+    devicerenamemodel.cpp devicerenamemodel.h
+    devicerenamesaver.cpp devicerenamesaver.h
+    percentvalidator.cpp percentvalidator.h
 )
 
 ecm_qt_declare_logging_category(plasma-volume_SRCS HEADER debug.h IDENTIFIER PLASMAPA
@@ -33,10 +33,10 @@ set_target_properties(plasma-volume PROPERTIES
 
 target_sources(plasma-volume-declarative PRIVATE
     ${plasma-volume_SRCS}
-    qml/listitemmenu.cpp
-    qml/plugin.cpp
-    qml/microphoneindicator.cpp
-    qml/globalservice.cpp
+    qml/listitemmenu.cpp qml/listitemmenu.h
+    qml/plugin.cpp qml/plugin.h
+    qml/microphoneindicator.cpp qml/microphoneindicator.h
+    qml/globalservice.cpp qml/globalservice.h
 )
 
 ecm_target_qml_sources(plasma-volume-declarative VERSION 0.1 SOURCES
