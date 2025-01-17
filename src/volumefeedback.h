@@ -31,7 +31,7 @@ private Q_SLOTS:
     void updateCachedSound();
 
 private:
-    SoundThemeConfig *m_config = nullptr;
+    SoundThemeConfig *const m_config;
 };
 
 #endif // VOLUMEFEEDBACK_H
