@@ -18,11 +18,11 @@ ColumnLayout {
     spacing: Kirigami.Units.smallSpacing
     width: parent.width
 
-    property bool isPlayback: type.substring(0, 4) == "sink"
+    property bool isPlayback: type.substring(0, 4) === "sink"
 
     readonly property var currentPort: Ports[ActivePortIndex]
 
-    opacity: (Ports.length === 1 && Ports[0].availability == Port.Unavailable) ? 0.5 : 1
+    opacity: (Ports.length === 1 && Ports[0].availability === Port.Unavailable) ? 0.5 : 1
 
     property var pulseObject: model.PulseObject
 
@@ -123,8 +123,8 @@ ColumnLayout {
                 for (var i = 0; i < ports.length; ++i) {
                     var port = ports[i];
                     var text;
-                    if (port.availability == Port.Unavailable) {
-                        if (port.name == "analog-output-speaker" || port.name == "analog-input-microphone-internal") {
+                    if (port.availability === Port.Unavailable) {
+                        if (port.name === "analog-output-speaker" || port.name === "analog-input-microphone-internal") {
                             text = i18ndc("kcm_pulseaudio", "Port is unavailable", "%1 (unavailable)", port.description);
                         } else {
                             text = i18ndc("kcm_pulseaudio", "Port is unplugged", "%1 (unplugged)", port.description);
@@ -267,7 +267,7 @@ ColumnLayout {
     }
 
     Kirigami.Separator {
-        visible: (delegate.ListView.view.count != 0) && (delegate.ListView.view.count != (index + 1))
+        visible: (delegate.ListView.view.count != 0) && (delegate.ListView.view.count !== (index + 1))
         Layout.topMargin: Kirigami.Units.smallSpacing
         Layout.fillWidth: true
     }

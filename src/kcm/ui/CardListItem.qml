@@ -68,7 +68,7 @@ ColumnLayout {
     }
 
     Kirigami.Separator {
-        visible: (delegate.ListView.view.count != 0) && (delegate.ListView.view.count != (index + 1))
+        visible: (delegate.ListView.view.count !== 0) && (delegate.ListView.view.count !== (index + 1))
         Layout.topMargin: Kirigami.Units.smallSpacing
         Layout.fillWidth: true
     }

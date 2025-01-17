@@ -40,7 +40,7 @@ KCM.ScrollViewKCM {
 
         function indexOfCardNumber(cardNumber) {
             for (var idx = 0; idx < count; idx++) {
-                if (data(index(idx, 0), KItemModels.KRoleNames.role("Index")) == cardNumber) {
+                if (data(index(idx, 0), KItemModels.KRoleNames.role("Index")) === cardNumber) {
                     return index(idx, 0);
                 }
             }
@@ -126,12 +126,12 @@ KCM.ScrollViewKCM {
             readonly property var comboBoxLabelsVisible: {
                 for (var i = 0; i < sinks.count; ++i) {
                     let delegate = sinks.itemAtIndex(i)
-                    if (delegate != null && delegate.portVisible)
+                    if (delegate !== null && delegate.portVisible)
                         return true
                 }
                 for (var i = 0; i < sources.count; ++i) {
                     let delegate = sources.itemAtIndex(i)
-                    if (delegate != null && delegate.portVisible)
+                    if (delegate !== null && delegate.portVisible)
                         return true
                 }
                 return false
