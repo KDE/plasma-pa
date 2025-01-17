@@ -40,8 +40,8 @@ class VolumeMonitor : public QObject
     Q_PROPERTY(bool available READ isAvailable NOTIFY availableChanged)
 
 public:
-    VolumeMonitor(QObject *parent = nullptr);
-    ~VolumeMonitor();
+    explicit VolumeMonitor(QObject *parent = nullptr);
+    ~VolumeMonitor() override;
 
     bool isAvailable() const;
 

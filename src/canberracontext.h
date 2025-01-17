@@ -16,7 +16,7 @@ class CanberraContext : public QObject
 
 public:
     explicit CanberraContext(QObject *parent = nullptr);
-    virtual ~CanberraContext();
+    ~CanberraContext() override;
 
     static CanberraContext *instance();
 
