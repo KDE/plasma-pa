@@ -124,7 +124,7 @@ PC3.Slider {
             anchors.bottom: parent.bottom
             LayoutMirroring.enabled: control.mirrored
 
-            width: control.horizontal ? Math.max(fixedMargins.left + fixedMargins.right, Math.round(control.volume * control.position * control.availableWidth)) : parent.width
+            width: control.horizontal ? Math.max(fixedMargins.left + fixedMargins.right, Math.round(control.volume * control.availableWidth)) : parent.width
             height: control.vertical ? Math.max(fixedMargins.top + fixedMargins.bottom, Math.round(control.volume * control.position * control.availableHeight)) : parent.height
         }
     }
