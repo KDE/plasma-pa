@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:41+0000\n"
+"POT-Creation-Date: 2025-01-25 00:42+0000\n"
 "PO-Revision-Date: 2024-09-07 20:37+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -140,33 +140,39 @@ msgstr "சாதனங்கள்"
 msgid "Applications"
 msgstr "செயலிகள்"
 
-#: contents/ui/main.qml:323 contents/ui/main.qml:325 contents/ui/main.qml:556
+#: contents/ui/main.qml:329
 #, kde-format
-msgid "Force mute all playback devices"
-msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
+msgctxt "@action:button"
+msgid "More actions"
+msgstr ""
 
-#: contents/ui/main.qml:361
+#: contents/ui/main.qml:386
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி"
 
-#: contents/ui/main.qml:385
+#: contents/ui/main.qml:410
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
-#: contents/ui/main.qml:544
+#: contents/ui/main.qml:569
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: contents/ui/main.qml:565
+#: contents/ui/main.qml:581
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
+
+#: contents/ui/main.qml:590
 #, kde-format
 msgid "Show virtual devices"
 msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
-#: contents/ui/main.qml:575
+#: contents/ui/main.qml:600
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"

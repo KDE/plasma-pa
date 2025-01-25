@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:41+0000\n"
+"POT-Creation-Date: 2025-01-25 00:42+0000\n"
 "PO-Revision-Date: 2024-08-21 15:19+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -143,33 +143,39 @@ msgstr "Gailuak"
 msgid "Applications"
 msgstr "Aplikazioak"
 
-#: contents/ui/main.qml:323 contents/ui/main.qml:325 contents/ui/main.qml:556
+#: contents/ui/main.qml:329
 #, kde-format
-msgid "Force mute all playback devices"
-msgstr "Indarrez isilarazi atzera-jotzeko gailu guztiak"
+msgctxt "@action:button"
+msgid "More actions"
+msgstr ""
 
-#: contents/ui/main.qml:361
+#: contents/ui/main.qml:386
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Berriz saiatu"
 
-#: contents/ui/main.qml:385
+#: contents/ui/main.qml:410
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ez dago audioa jotzen edo grabatzen ari den aplikaziorik"
 
-#: contents/ui/main.qml:544
+#: contents/ui/main.qml:569
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altxatu bolumen muga"
 
-#: contents/ui/main.qml:565
+#: contents/ui/main.qml:581
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "Indarrez isilarazi atzera-jotzeko gailu guztiak"
+
+#: contents/ui/main.qml:590
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Erakutsi alegiazko gailuak"
 
-#: contents/ui/main.qml:575
+#: contents/ui/main.qml:600
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfiguratu audio gailuak..."

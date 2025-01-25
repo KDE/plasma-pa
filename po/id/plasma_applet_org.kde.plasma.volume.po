@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:41+0000\n"
+"POT-Creation-Date: 2025-01-25 00:42+0000\n"
 "PO-Revision-Date: 2023-01-29 08:01+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -141,33 +141,39 @@ msgstr "Peranti"
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: contents/ui/main.qml:323 contents/ui/main.qml:325 contents/ui/main.qml:556
+#: contents/ui/main.qml:329
 #, kde-format
-msgid "Force mute all playback devices"
-msgstr "Paksa senyap semua pemutaran peranti"
+msgctxt "@action:button"
+msgid "More actions"
+msgstr ""
 
-#: contents/ui/main.qml:361
+#: contents/ui/main.qml:386
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: contents/ui/main.qml:385
+#: contents/ui/main.qml:410
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Tidak ada aplikasi yang memutar atau merekam audio"
 
-#: contents/ui/main.qml:544
+#: contents/ui/main.qml:569
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Tingkatkan volume maksimum"
 
-#: contents/ui/main.qml:565
+#: contents/ui/main.qml:581
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "Paksa senyap semua pemutaran peranti"
+
+#: contents/ui/main.qml:590
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Tampilkan peranti virtual"
 
-#: contents/ui/main.qml:575
+#: contents/ui/main.qml:600
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurasikan Peranti Audio..."

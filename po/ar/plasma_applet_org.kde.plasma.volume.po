@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:41+0000\n"
+"POT-Creation-Date: 2025-01-25 00:42+0000\n"
 "PO-Revision-Date: 2024-09-05 13:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -142,33 +142,39 @@ msgstr "الأجهزة"
 msgid "Applications"
 msgstr "التّطبيقات"
 
-#: contents/ui/main.qml:323 contents/ui/main.qml:325 contents/ui/main.qml:556
+#: contents/ui/main.qml:329
 #, kde-format
-msgid "Force mute all playback devices"
-msgstr "افرض كتم صوت جميع أجهزة التشغيل"
+msgctxt "@action:button"
+msgid "More actions"
+msgstr ""
 
-#: contents/ui/main.qml:361
+#: contents/ui/main.qml:386
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "أعِد المحاولة"
 
-#: contents/ui/main.qml:385
+#: contents/ui/main.qml:410
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "لا توجد تطبيقات تشغل أو تسجل الصوت"
 
-#: contents/ui/main.qml:544
+#: contents/ui/main.qml:569
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ارفع لأقصى مستوى"
 
-#: contents/ui/main.qml:565
+#: contents/ui/main.qml:581
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "افرض كتم صوت جميع أجهزة التشغيل"
+
+#: contents/ui/main.qml:590
 #, kde-format
 msgid "Show virtual devices"
 msgstr "أظهر الأجهزة الافتراضية"
 
-#: contents/ui/main.qml:575
+#: contents/ui/main.qml:600
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ا&ضبط أجهزة الصوت..."

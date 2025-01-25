@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 00:41+0000\n"
+"POT-Creation-Date: 2025-01-25 00:42+0000\n"
 "PO-Revision-Date: 2024-08-21 00:19+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -140,33 +140,39 @@ msgstr "장치"
 msgid "Applications"
 msgstr "앱"
 
-#: contents/ui/main.qml:323 contents/ui/main.qml:325 contents/ui/main.qml:556
+#: contents/ui/main.qml:329
 #, kde-format
-msgid "Force mute all playback devices"
-msgstr "강제로 모든 재생 장치 음소거"
+msgctxt "@action:button"
+msgid "More actions"
+msgstr ""
 
-#: contents/ui/main.qml:361
+#: contents/ui/main.qml:386
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "다시 시도"
 
-#: contents/ui/main.qml:385
+#: contents/ui/main.qml:410
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "오디오를 재생하거나 녹음하는 앱 없음"
 
-#: contents/ui/main.qml:544
+#: contents/ui/main.qml:569
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "최대 음량 높이기"
 
-#: contents/ui/main.qml:565
+#: contents/ui/main.qml:581
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "강제로 모든 재생 장치 음소거"
+
+#: contents/ui/main.qml:590
 #, kde-format
 msgid "Show virtual devices"
 msgstr "가상 장치 표시"
 
-#: contents/ui/main.qml:575
+#: contents/ui/main.qml:600
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "오디오 장치 설정(&C)…"
