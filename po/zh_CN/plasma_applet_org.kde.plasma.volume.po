@@ -145,7 +145,7 @@ msgstr "应用程序"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "更多操作"
 
 #: contents/ui/main.qml:386
 #, kde-format
