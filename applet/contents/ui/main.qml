@@ -599,7 +599,6 @@ PlasmoidItem {
         id: configureAction
         text: i18n("&Configure Audio Devices…")
         icon.name: "configure"
-        shortcut: "alt+d, s"
         visible: KConfig.KAuthorized.authorizeControlModule("kcm_pulseaudio")
         onTriggered: KCMUtils.KCMLauncher.openSystemSettings("kcm_pulseaudio")
     }
