@@ -21,6 +21,7 @@
 #include <PulseAudioQt/Sink>
 #include <PulseAudioQt/Source>
 
+#include "mutedmicrophonereminder.h"
 #include "preferreddevice.h"
 
 K_PLUGIN_CLASS_WITH_JSON(AudioShortcutsService, "audioshortcutsservice.json")
@@ -34,9 +35,23 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     , m_sourceModel(new PulseAudioQt::SourceModel(this))
     , m_cardModel(new PulseAudioQt::CardModel(this))
     , m_globalConfig(new GlobalConfig(this))
+    , m_globalConfigWatcher(KConfigWatcher::create(m_globalConfig->sharedConfig()))
     , m_osdDBusInterface(new OsdServiceInterface(OSD_DBUS_SERVICE, OSD_DBUS_PATH, QDBusConnection::sessionBus(), this))
     , m_feedback(new VolumeFeedback(this))
 {
+    connect(m_globalConfigWatcher.get(), &KConfigWatcher::configChanged, this, [this](const KConfigGroup &group, const QByteArrayList &names) {
+        if (group.name() == "General"_ba && names.contains("MutedMicrophoneReminderOsd"_ba)) {
+            if (m_globalConfig->mutedMicrophoneReminderOsd()) {
+                m_mutedMicrophoneReminder = std::make_unique<MutedMicrophoneReminder>();
+            } else {
+                m_mutedMicrophoneReminder.reset();
+            }
+        }
+    });
+    if (m_globalConfig->mutedMicrophoneReminderOsd()) {
+        m_mutedMicrophoneReminder = std::make_unique<MutedMicrophoneReminder>();
+    }
+
     connect(PulseAudioQt::Context::instance()->server(), &PulseAudioQt::Server::defaultSinkChanged, this, &AudioShortcutsService::handleDefaultSinkChange);
     connect(&m_preferredDevice, &PreferredDevice::sinkChanged, this, [this]() {
         auto sink = m_preferredDevice.sink();

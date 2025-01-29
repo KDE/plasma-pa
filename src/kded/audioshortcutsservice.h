@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include <memory>
+
 #include <KConfigWatcher>
 #include <kdedmodule.h>
 
@@ -15,6 +17,8 @@
 #include "osdservice.h"
 #include "preferreddevice.h"
 #include "volumefeedback.h"
+
+class MutedMicrophoneReminder;
 
 namespace PulseAudioQt
 {
@@ -32,10 +36,11 @@ class AudioShortcutsService : public KDEDModule
 public:
     AudioShortcutsService(QObject *parent, const QList<QVariant> &);
 
+    static QString nameForDevice(const PulseAudioQt::Device *device);
+
 private:
     static qint64 boundVolume(qint64 volume, int maxVolume);
     static int volumePercent(qint64 volume);
-    static QString nameForDevice(const PulseAudioQt::Device *device);
     int changeVolumePercent(PulseAudioQt::Device *device, int deltaPercent);
     void handleDefaultSinkChange();
     void handleNewSink();
@@ -52,8 +57,10 @@ private:
     PulseAudioQt::SourceModel *m_sourceModel = nullptr;
     PulseAudioQt::CardModel *m_cardModel = nullptr;
     GlobalConfig *m_globalConfig;
+    KConfigWatcher::Ptr m_globalConfigWatcher;
     OsdServiceInterface *m_osdDBusInterface;
     VolumeFeedback *m_feedback;
     bool m_hasDefaultSink = false;
     PreferredDevice m_preferredDevice;
+    std::unique_ptr<MutedMicrophoneReminder> m_mutedMicrophoneReminder;
 };
