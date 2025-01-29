@@ -93,6 +93,12 @@ Kirigami.Page {
             }
 
             QQC2.CheckBox {
+                checked: config.mutedMicrophoneReminderOsd
+                onToggled: { config.mutedMicrophoneReminderOsd = checked; config.save() }
+                text: i18nc("Show OSD when", "Application starts using muted microphone")
+            }
+
+            QQC2.CheckBox {
                 id: outputChangeOsd
                 checked: config.defaultOutputDeviceOsd
                 onToggled: { config.defaultOutputDeviceOsd = checked; config.save() }

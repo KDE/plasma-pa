@@ -34,6 +34,10 @@
             <label>Show OSD when muting/unmuting.</label>
             <default>true</default>
         </entry>
+        <entry name="MutedMicrophoneReminderOsd" type="Bool">
+            <label>Show OSD when application starts using muted microphone.</label>
+            <default>true</default>
+        </entry>
         <entry name="DefaultOutputDeviceOsd" type="Bool">
             <label>Show OSD when changing default output device.</label>
             <default>true</default>
