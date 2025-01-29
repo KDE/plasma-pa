@@ -208,7 +208,11 @@ KCM.ScrollViewKCM {
                         let idx = sourceModel.index(source_row, 0);
                         let profiles = sourceModel.data(idx, sourceModel.KItemModels.KRoleNames.role("Profiles"))
                         let activeProfileIndex = sourceModel.data(idx, sourceModel.KItemModels.KRoleNames.role("ActiveProfileIndex"))
-                        return profiles[activeProfileIndex].name == "off";
+                        const profile = profiles[activeProfileIndex]
+                        // Note that sometimes profiles can be functionally equal to 'off' by having neither sinks nor sources.
+                        // https://bugs.kde.org/show_bug.cgi?id=496682
+                        const functionallyOff = profile.sinkCount === 0 && profile.sourceCount === 0
+                        return profile.name == "off" || functionallyOff
                     }
                 }
                 delegate: CardListItem {
