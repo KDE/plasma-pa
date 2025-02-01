@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-06 00:43+0000\n"
+"POT-Creation-Date: 2025-02-01 00:43+0000\n"
 "PO-Revision-Date: 2024-09-13 03:50+0900\n"
 "Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -172,17 +172,17 @@ msgstr "録音デバイス"
 msgid "Inactive Cards"
 msgstr "非アクティブのカード"
 
-#: kcm/ui/main.qml:222
+#: kcm/ui/main.qml:226
 #, kde-format
 msgid "Playback Streams"
 msgstr "再生ストリーム"
 
-#: kcm/ui/main.qml:271
+#: kcm/ui/main.qml:275
 #, kde-format
 msgid "Recording Streams"
 msgstr "録音ストリーム"
 
-#: kcm/ui/main.qml:305
+#: kcm/ui/main.qml:309
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -194,52 +194,52 @@ msgstr ""
 "テスト音声の再生中にエラーが発生しました。\n"
 "システムのメッセージ: \"%1\""
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Front Left"
 msgstr "正面左"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Front Center"
 msgstr "正面中央"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:415
 #, kde-format
 msgid "Front Right"
 msgstr "正面右"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Side Left"
 msgstr "左横"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Side Right"
 msgstr "右横"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:418
 #, kde-format
 msgid "Rear Left"
 msgstr "背面左"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:419
 #, kde-format
 msgid "Subwoofer"
 msgstr "サブウーファー"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:420
 #, kde-format
 msgid "Rear Right"
 msgstr "背面右"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:421
 #, kde-format
 msgid "Mono"
 msgstr "モノラル"
 
-#: kcm/ui/main.qml:485
+#: kcm/ui/main.qml:489
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "スピーカーをクリックしてテスト"
