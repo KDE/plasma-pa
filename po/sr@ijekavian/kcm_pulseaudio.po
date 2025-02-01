@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-06 00:43+0000\n"
+"POT-Creation-Date: 2025-02-01 02:33+0000\n"
 "PO-Revision-Date: 2017-05-07 22:20+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -179,18 +179,18 @@ msgstr ""
 msgid "Inactive Cards"
 msgstr ""
 
-#: kcm/ui/main.qml:222
+#: kcm/ui/main.qml:226
 #, fuzzy, kde-format
 #| msgid "Playback"
 msgid "Playback Streams"
 msgstr "Пуштање"
 
-#: kcm/ui/main.qml:271
+#: kcm/ui/main.qml:275
 #, kde-format
 msgid "Recording Streams"
 msgstr ""
 
-#: kcm/ui/main.qml:305
+#: kcm/ui/main.qml:309
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -200,52 +200,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr ""
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Front Left"
 msgstr ""
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Front Center"
 msgstr ""
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:415
 #, kde-format
 msgid "Front Right"
 msgstr ""
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Side Left"
 msgstr ""
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Side Right"
 msgstr ""
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:418
 #, kde-format
 msgid "Rear Left"
 msgstr ""
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:419
 #, kde-format
 msgid "Subwoofer"
 msgstr ""
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:420
 #, kde-format
 msgid "Rear Right"
 msgstr ""
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:421
 #, kde-format
 msgid "Mono"
 msgstr ""
 
-#: kcm/ui/main.qml:485
+#: kcm/ui/main.qml:489
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr ""

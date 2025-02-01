@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-06 00:43+0000\n"
+"POT-Creation-Date: 2025-02-01 02:33+0000\n"
 "PO-Revision-Date: 2024-06-09 13:03+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -171,17 +171,17 @@ msgstr "Dispozitive de înregistrare"
 msgid "Inactive Cards"
 msgstr "Cartele inactive"
 
-#: kcm/ui/main.qml:222
+#: kcm/ui/main.qml:226
 #, kde-format
 msgid "Playback Streams"
 msgstr "Fluxuri de redare"
 
-#: kcm/ui/main.qml:271
+#: kcm/ui/main.qml:275
 #, kde-format
 msgid "Recording Streams"
 msgstr "Fluxuri de înregistrare"
 
-#: kcm/ui/main.qml:305
+#: kcm/ui/main.qml:309
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -193,52 +193,52 @@ msgstr ""
 "Eroare la încercarea de a reda un sunet de testare. \n"
 "Sistemul a spus: „%1”"
 
-#: kcm/ui/main.qml:409
+#: kcm/ui/main.qml:413
 #, kde-format
 msgid "Front Left"
 msgstr "Față stânga"
 
-#: kcm/ui/main.qml:410
+#: kcm/ui/main.qml:414
 #, kde-format
 msgid "Front Center"
 msgstr "Față centru"
 
-#: kcm/ui/main.qml:411
+#: kcm/ui/main.qml:415
 #, kde-format
 msgid "Front Right"
 msgstr "Față dreapta"
 
-#: kcm/ui/main.qml:412
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Side Left"
 msgstr "Lateral stânga"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Side Right"
 msgstr "Lateral dreapta"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:418
 #, kde-format
 msgid "Rear Left"
 msgstr "Spate stânga"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:419
 #, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:420
 #, kde-format
 msgid "Rear Right"
 msgstr "Spate dreapta"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:421
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:485
+#: kcm/ui/main.qml:489
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Apăsați pe oricare difuzor pentru a testa sunetul"
