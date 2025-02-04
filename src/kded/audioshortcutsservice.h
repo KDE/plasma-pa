@@ -15,6 +15,7 @@
 #include "osdservice.h"
 #include "preferreddevice.h"
 #include "volumefeedback.h"
+#include "KDBusPropertiesChangedAdaptor.h"
 
 namespace PulseAudioQt
 {
@@ -29,8 +30,19 @@ constexpr QLatin1String DUMMY_OUTPUT_NAME = "auto_null"_L1;
 class AudioShortcutsService : public KDEDModule
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.plasma.audioshortcuts")
+    Q_PROPERTY(bool contextConnected READ contextConnected NOTIFY contextConnectedChanged)
+    Q_PROPERTY(bool contextAutoConnecting READ contextAutoConnecting NOTIFY contextAutoConnectingChanged)
 public:
     AudioShortcutsService(QObject *parent, const QList<QVariant> &);
+
+    [[nodiscard]] bool contextConnected() const;
+    [[nodiscard]] bool contextAutoConnecting() const;
+    Q_SCRIPTABLE void reconnectContext();
+
+Q_SIGNALS:
+    void contextConnectedChanged();
+    void contextAutoConnectingChanged();
 
 private:
     static qint64 boundVolume(qint64 volume, int maxVolume);
@@ -56,4 +68,5 @@ private:
     VolumeFeedback *m_feedback;
     bool m_hasDefaultSink = false;
     PreferredDevice m_preferredDevice;
+    KDBusPropertiesChangedAdaptor m_adaptor = {QStringLiteral("/modules/audioshortcutsservice"), this};
 };
