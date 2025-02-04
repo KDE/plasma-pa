@@ -27,6 +27,10 @@ PlasmoidItem {
         id: config
     }
 
+    KDEDProxy {
+        id: kded
+    }
+
     property bool volumeFeedback: config.audioFeedback
     property bool globalMute: config.globalMute
     property string displayName: i18n("Audio Volume")
@@ -36,10 +40,15 @@ PlasmoidItem {
 
     // DEFAULT_SINK_NAME in module-always-sink.c
     readonly property string dummyOutputName: "auto_null"
-    readonly property bool contextIsReady: Context.state === Context.State.Ready
+    readonly property bool appletContextReady: Context.state === Context.State.Ready
+    readonly property bool kdedContextReady: kded.contextConnected
+    readonly property bool contextIsReady: {
+        return appletContextReady && kdedContextReady
+    }
+    readonly property bool contextIsAutoConnecting: Context.autoConnecting || kded.contextAutoConnecting
     readonly property string noDevicePlaceholderMessage: {
         if (!contextIsReady) {
-            if (!Context.autoConnecting) {
+            if (!contextIsAutoConnecting) {
                 return i18nc("@label", "Connection to the Sound Service Lost")
             }
             return i18nc("@label", "Connection to the Sound Service Lost")
@@ -47,7 +56,7 @@ PlasmoidItem {
         return i18n("No output or input devices found")
     }
     readonly property string noDeviceExplanation: {
-        if (!contextIsReady && Context.autoConnecting) {
+        if (!contextIsReady && contextIsAutoConnecting) {
             return i18nc("@info reconnecting to pulseaudio", "Trying to reconnect…")
         }
         return ""
@@ -385,9 +394,16 @@ PlasmoidItem {
                 helpfulAction: Kirigami.Action {
                     text: i18nc("@action retry connecting to pulseaudio", "Retry")
                     icon.name: "view-refresh-symbolic"
-                    onTriggered: Context.reconnectDaemon()
+                    onTriggered: {
+                        if (!main.kdedContextReady) {
+                            kded.reconnectContextAsync()
+                        }
+                        if (!main.appletContextReady) {
+                            Context.reconnectDaemon()
+                        }
+                    }
                     // Fun fact: visibility of the helpfulAction inside PlaceholderMessage is linked to enabled, not visible
-                    enabled: !Context.autoConnecting && !main.contextIsReady
+                    enabled: !main.contextIsAutoConnecting && !main.contextIsReady
                 }
                 upperDelegate: DeviceListItem {
                     width: ListView.view.width

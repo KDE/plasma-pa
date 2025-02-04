@@ -1,6 +1,8 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"kcm_pulseaudio\")
 
-ecm_add_qml_module(plasma-volume-declarative URI org.kde.plasma.private.volume)
+ecm_add_qml_module(plasma-volume-declarative URI org.kde.plasma.private.volume VERSION 0.1
+    NO_GENERATE_PLUGIN_SOURCE
+    NO_PLUGIN_OPTIONAL)
 
 set(CMAKE_CXX_VISIBILITY_PRESET default)
 
@@ -31,13 +33,16 @@ set_target_properties(plasma-volume PROPERTIES
                       SOVERSION ${PROJECT_VERSION_MAJOR}
                       EXPORT_NAME LibPlasmaVolume)
 
+qt_add_dbus_interface(plasma-volume_SRCS qml/org.freedesktop.DBus.Properties.xml org.freedesktop.DBus.Properties)
 target_sources(plasma-volume-declarative PRIVATE
     ${plasma-volume_SRCS}
     qml/listitemmenu.cpp qml/listitemmenu.h
     qml/plugin.cpp qml/plugin.h
     qml/microphoneindicator.cpp qml/microphoneindicator.h
     qml/globalservice.cpp qml/globalservice.h
+    qml/dbusinterface.cpp
 )
+target_include_directories(plasma-volume-declarative PRIVATE qml/)
 
 ecm_target_qml_sources(plasma-volume-declarative VERSION 0.1 SOURCES
     qml/PulseObjectFilterModel.qml

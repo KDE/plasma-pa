@@ -7,6 +7,7 @@ kcoreaddons_add_plugin(audioshortcutsservice
     SOURCES
         audioshortcutsservice.cpp
         audioshortcutsservice.h
+        KDBusPropertiesChangedAdaptor.cpp
     INSTALL_NAMESPACE
         "kf6/kded")
 

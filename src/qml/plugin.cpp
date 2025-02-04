@@ -23,6 +23,7 @@
 #include "preferreddevice.h"
 #include "volumemonitor.h"
 
+#include "dbusinterface.h"
 #include "devicerenamemodel.h"
 #include "devicerenamesaver.h"
 #include "globalconfig.h"
@@ -76,6 +77,7 @@ void Plugin::registerTypes(const char *uri)
     qmlRegisterType<DeviceRenameModel>(uri, 0, 1, "DeviceRenameModel");
     qmlRegisterType<DeviceRenameSaver>(uri, 0, 1, "DeviceRenameSaver");
     qmlRegisterType<PercentValidator>(uri, 0, 1, "PercentValidator");
+    qmlRegisterType<DBusInterface>(uri, 0, 1, "DBusInterface");
     qmlRegisterSingletonType(uri, 0, 1, "PulseAudio", pulseaudio_singleton);
     qmlRegisterSingletonType<MicrophoneIndicator>(uri, 0, 1, "MicrophoneIndicator", [](QQmlEngine *engine, QJSEngine *jsEngine) -> QObject * {
         Q_UNUSED(engine);
