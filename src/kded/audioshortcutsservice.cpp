@@ -54,6 +54,8 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     }
 
     connect(PulseAudioQt::Context::instance()->server(), &PulseAudioQt::Server::defaultSinkChanged, this, &AudioShortcutsService::handleDefaultSinkChange);
+    connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::stateChanged, this, &AudioShortcutsService::contextConnectedChanged);
+    connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::autoConnectingChanged, this, &AudioShortcutsService::contextAutoConnectingChanged);
     connect(&m_preferredDevice, &PreferredDevice::sinkChanged, this, [this]() {
         auto sink = m_preferredDevice.sink();
         if (!sink) {
@@ -604,6 +606,21 @@ void AudioShortcutsService::pushToTalk(bool talk)
     }
 
     showPushToTalk(talk);
+}
+
+bool AudioShortcutsService::contextConnected() const
+{
+    return PulseAudioQt::Context::instance()->state() == PulseAudioQt::Context::State::Ready;
+}
+
+void AudioShortcutsService::reconnectContext()
+{
+    PulseAudioQt::Context::instance()->reconnectDaemon();
+}
+
+bool AudioShortcutsService::contextAutoConnecting() const
+{
+    return PulseAudioQt::Context::instance()->isAutoConnecting();
 }
 
 #include "audioshortcutsservice.moc"

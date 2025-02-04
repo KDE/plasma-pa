@@ -9,6 +9,7 @@ kcoreaddons_add_plugin(audioshortcutsservice
         audioshortcutsservice.h
         mutedmicrophonereminder.cpp
         mutedmicrophonereminder.h
+        KDBusPropertiesChangedAdaptor.cpp
     INSTALL_NAMESPACE
         "kf6/kded")
 

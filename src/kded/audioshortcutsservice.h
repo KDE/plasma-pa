@@ -13,6 +13,7 @@
 #include <PulseAudioQt/Context>
 #include <PulseAudioQt/Models>
 
+#include "KDBusPropertiesChangedAdaptor.h"
 #include "globalconfig.h"
 #include "osdservice.h"
 #include "preferreddevice.h"
@@ -33,10 +34,21 @@ constexpr QLatin1String DUMMY_OUTPUT_NAME = "auto_null"_L1;
 class AudioShortcutsService : public KDEDModule
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.plasma.audioshortcuts")
+    Q_PROPERTY(bool contextConnected READ contextConnected NOTIFY contextConnectedChanged)
+    Q_PROPERTY(bool contextAutoConnecting READ contextAutoConnecting NOTIFY contextAutoConnectingChanged)
 public:
     AudioShortcutsService(QObject *parent, const QList<QVariant> &);
 
     static QString nameForDevice(const PulseAudioQt::Device *device);
+
+    [[nodiscard]] bool contextConnected() const;
+    [[nodiscard]] bool contextAutoConnecting() const;
+    Q_SCRIPTABLE void reconnectContext();
+
+Q_SIGNALS:
+    void contextConnectedChanged();
+    void contextAutoConnectingChanged();
 
 private:
     static qint64 boundVolume(qint64 volume, int maxVolume);
@@ -73,4 +85,5 @@ private:
     bool m_hasDefaultSink = false;
     PreferredDevice m_preferredDevice;
     std::unique_ptr<MutedMicrophoneReminder> m_mutedMicrophoneReminder;
+    KDBusPropertiesChangedAdaptor m_adaptor = {QStringLiteral("/modules/audioshortcutsservice"), this};
 };

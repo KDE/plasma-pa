@@ -8,6 +8,7 @@ plasma_add_applet(org.kde.plasma.volume
         main.qml
         ListItemBase.qml
         MicrophoneTestView.qml
+        KDEDProxy.qml
     RESOURCES
         main.xml
     GENERATE_APPLET_CLASS
