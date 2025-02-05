@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-01 00:43+0000\n"
+"POT-Creation-Date: 2025-02-05 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 19:41+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -81,7 +81,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "पुन: प्रयास करें"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:203
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:196
 #, kde-format
 msgid "Device name not found"
 msgstr "डिवाइस का नाम नहीं मिला"
@@ -383,62 +383,62 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:59
+#: kded/audioshortcutsservice.cpp:52
 #, kde-format
 msgid "Increase Volume"
 msgstr "वॉल्यूम बढ़ाएँ"
 
-#: kded/audioshortcutsservice.cpp:74
+#: kded/audioshortcutsservice.cpp:67
 #, kde-format
 msgid "Decrease Volume"
 msgstr "वॉल्यूम घटाएँ"
 
-#: kded/audioshortcutsservice.cpp:89
+#: kded/audioshortcutsservice.cpp:82
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "वॉल्यूम 1% बढ़ाएँ"
 
-#: kded/audioshortcutsservice.cpp:104
+#: kded/audioshortcutsservice.cpp:97
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "वॉल्यूम में 1% की कमी करें"
 
-#: kded/audioshortcutsservice.cpp:119
+#: kded/audioshortcutsservice.cpp:112
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "माइक्रोफ़ोन वॉल्यूम बढ़ाएँ"
 
-#: kded/audioshortcutsservice.cpp:133
+#: kded/audioshortcutsservice.cpp:126
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "माइक्रोफ़ोन वॉल्यूम घटाएँ"
 
-#: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:140 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "आवाज़ बंद करना"
 
-#: kded/audioshortcutsservice.cpp:160
+#: kded/audioshortcutsservice.cpp:153
 #, kde-format
 msgid "Mute Microphone"
 msgstr "माइक्रोफ़ोन म्यूट करें"
 
-#: kded/audioshortcutsservice.cpp:174
+#: kded/audioshortcutsservice.cpp:167
 #, kde-format
 msgid "Audio Volume"
 msgstr "ऑडियो वॉल्यूम"
 
-#: kded/audioshortcutsservice.cpp:192
+#: kded/audioshortcutsservice.cpp:185
 #, kde-format
 msgid "No such device"
 msgstr "ऐसा कोई उपकरण नहीं"
 
-#: kded/audioshortcutsservice.cpp:238
+#: kded/audioshortcutsservice.cpp:231
 #, kde-format
 msgid "No output device"
 msgstr "कोई आउटपुट डिवाइस नहीं"
 
-#: kded/audioshortcutsservice.cpp:252
+#: kded/audioshortcutsservice.cpp:245
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"

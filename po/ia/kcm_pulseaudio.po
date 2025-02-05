@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-01 00:43+0000\n"
+"POT-Creation-Date: 2025-02-05 00:43+0000\n"
 "PO-Revision-Date: 2024-09-03 12:06+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -79,7 +79,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Prova de nove"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:203
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:196
 #, kde-format
 msgid "Device name not found"
 msgstr "Nomine de dispositivo non trovate"
@@ -386,62 +386,62 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:59
+#: kded/audioshortcutsservice.cpp:52
 #, kde-format
 msgid "Increase Volume"
 msgstr "Augmenta volumine"
 
-#: kded/audioshortcutsservice.cpp:74
+#: kded/audioshortcutsservice.cpp:67
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Diminue Volumine"
 
-#: kded/audioshortcutsservice.cpp:89
+#: kded/audioshortcutsservice.cpp:82
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "Augmenta volumine per 1%"
 
-#: kded/audioshortcutsservice.cpp:104
+#: kded/audioshortcutsservice.cpp:97
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "Diminue Volumine per 1%"
 
-#: kded/audioshortcutsservice.cpp:119
+#: kded/audioshortcutsservice.cpp:112
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Augmenta volumine de microphono"
 
-#: kded/audioshortcutsservice.cpp:133
+#: kded/audioshortcutsservice.cpp:126
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Diminue Volumine de microphono"
 
-#: kded/audioshortcutsservice.cpp:147 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:140 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "Mute"
 
-#: kded/audioshortcutsservice.cpp:160
+#: kded/audioshortcutsservice.cpp:153
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Silentia Microphono"
 
-#: kded/audioshortcutsservice.cpp:174
+#: kded/audioshortcutsservice.cpp:167
 #, kde-format
 msgid "Audio Volume"
 msgstr "Volumine de audio"
 
-#: kded/audioshortcutsservice.cpp:192
+#: kded/audioshortcutsservice.cpp:185
 #, kde-format
 msgid "No such device"
 msgstr "Necun tal dispositivo"
 
-#: kded/audioshortcutsservice.cpp:238
+#: kded/audioshortcutsservice.cpp:231
 #, kde-format
 msgid "No output device"
 msgstr "Nulle dipositivo de egresso"
 
-#: kded/audioshortcutsservice.cpp:252
+#: kded/audioshortcutsservice.cpp:245
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
