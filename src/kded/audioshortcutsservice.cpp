@@ -41,6 +41,13 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
         if (!sink) {
             return;
         }
+        connect(sink, &PulseAudioQt::Sink::volumeChanged, this, [this]() {
+            auto sink = m_preferredDevice.sink();
+            if (!sink) {
+                return;
+            }
+            showVolume(volumePercent(sink->volume()));
+        });
     });
     connect(m_sinkModel, &PulseAudioQt::SinkModel::rowsInserted, this, &AudioShortcutsService::handleNewSink);
 
