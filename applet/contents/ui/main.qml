@@ -373,7 +373,7 @@ PlasmoidItem {
             id: contentView
             initialItem: plasmoid.configuration.currentTab === "streams" ? streamsView : devicesView
             movementTransitionsEnabled: currentItem !== null
-            TwoPartView {
+            property TwoPartView deviceViewItem: TwoPartView {
                 id: devicesView
                 upperModel: paSinkFilterModel
                 upperType: "sink"
@@ -400,7 +400,7 @@ PlasmoidItem {
             }
             // NOTE: Don't unload this while dragging and dropping a stream
             // to a device or else the D&D operation will be cancelled.
-            TwoPartView {
+            property TwoPartView streamsViewItem: TwoPartView {
                 id: streamsView
                 upperModel: paSinkInputFilterModel
                 upperType: "sink-input"
