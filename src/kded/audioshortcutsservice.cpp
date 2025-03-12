@@ -8,6 +8,8 @@
 #include "audioicon.h"
 
 #include <QAction>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QStringBuilder>
 
 #include <KGlobalAccel>
@@ -232,11 +234,18 @@ void AudioShortcutsService::handleDefaultSinkChange()
         return;
     }
 
-    QString icon;
+    QString icon = AudioIcon::forFormFactor(defaultSink->formFactor());
     QString description = nameForDevice(defaultSink);
     if (defaultSink->name() == DUMMY_OUTPUT_NAME) {
         description = i18n("No output device");
+        if (icon.isEmpty()) {
+            icon = u"audio-volume-muted"_s;
+        }
     } else {
+        if (icon.isEmpty()) {
+            icon = AudioIcon::forVolume(volumePercent(defaultSink->volume()), defaultSink->isMuted(), QString());
+        }
+
         auto cardIdx = m_cardModel->index(-1, 0);
         for (int i = 0; i < m_cardModel->rowCount(); i++) {
             const auto idx = m_cardModel->index(i, 0);
@@ -250,14 +259,34 @@ void AudioShortcutsService::handleDefaultSinkChange()
             const int cardBluetoothBattery = cardProperties[u"bluetooth.battery"_s].toString().remove('%').toInt(&convOk);
             if (convOk) {
                 description = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, cardBluetoothBattery);
-            }
-        }
-        icon = AudioIcon::forFormFactor(defaultSink->formFactor());
-        if (icon.isEmpty()) {
-            if (defaultSink->name() == DUMMY_OUTPUT_NAME) {
-                icon = u"audio-volume-muted"_s;
             } else {
-                icon = AudioIcon::forVolume(volumePercent(defaultSink->volume()), defaultSink->isMuted(), QString());
+                // Ask Bluez, if it is a bluetooth device.
+                const QString bluezPath = cardProperties[u"api.bluez5.path"_s].toString();
+                if (!bluezPath.isEmpty()) {
+                    QDBusMessage batteryMessage = QDBusMessage::createMethodCall(u"org.bluez"_s, bluezPath, u"org.freedesktop.DBus.Properties"_s, u"Get"_s);
+                    batteryMessage.setArguments({u"org.bluez.Battery1"_s, u"Percentage"_s});
+
+                    auto reply = QDBusConnection::systemBus().asyncCall(batteryMessage);
+                    auto *watcher = new QDBusPendingCallWatcher(reply, this);
+                    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher, icon, description] {
+                        QDBusPendingReply<QDBusVariant> reply = *watcher;
+
+                        QString newDescription = description;
+
+                        if (!reply.isError()) {
+                            bool ok;
+                            // NOTE "Percentage" on org.bluez.Battery1 is of type Byte (y).
+                            const int percentage = reply.value().variant().toInt(&ok);
+                            if (ok) {
+                                newDescription = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, percentage);
+                            }
+                        }
+
+                        m_osdDBusInterface->showText(icon, newDescription);
+                        watcher->deleteLater();
+                    });
+                    return;
+                }
             }
         }
     }
