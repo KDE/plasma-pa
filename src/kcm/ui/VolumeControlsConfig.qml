@@ -74,7 +74,7 @@ Kirigami.Page {
                 id: volumeOsd
                 checked: config.volumeOsd
                 onToggled: { config.volumeOsd = checked; config.save() }
-                Kirigami.FormData.label: i18n("Show visual feedback for changes to:")
+                Kirigami.FormData.label: i18n("Show OSD popups for changes to:")
                 text: i18n("Audio volume")
             }
 
