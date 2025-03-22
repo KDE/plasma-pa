@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-22 00:43+0000\n"
 "PO-Revision-Date: 2024-09-07 20:45+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -352,8 +352,9 @@ msgid "Audio volume"
 msgstr "ஒலியின் அளவு"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, kde-format
-msgid "Show visual feedback for changes to:"
+#, fuzzy, kde-format
+#| msgid "Show visual feedback for changes to:"
+msgid "Show OSD popups for changes to:"
 msgstr "இம்மாற்றங்களுக்கு காட்சிமுறையாக பின்னூட்டம் தா:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85

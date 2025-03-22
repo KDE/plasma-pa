@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-22 00:43+0000\n"
 "PO-Revision-Date: 2024-12-29 19:47+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -353,8 +353,9 @@ msgid "Audio volume"
 msgstr "Sona laŭteco"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, kde-format
-msgid "Show visual feedback for changes to:"
+#, fuzzy, kde-format
+#| msgid "Show visual feedback for changes to:"
+msgid "Show OSD popups for changes to:"
 msgstr "Montri vidajn rimarkojn pri ŝanĝoj al:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85

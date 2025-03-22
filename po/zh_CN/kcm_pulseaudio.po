@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-22 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -350,8 +350,9 @@ msgid "Audio volume"
 msgstr "音频音量"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, kde-format
-msgid "Show visual feedback for changes to:"
+#, fuzzy, kde-format
+#| msgid "Show visual feedback for changes to:"
+msgid "Show OSD popups for changes to:"
 msgstr "显示视觉反馈，如果更改了："
 
 #: kcm/ui/VolumeControlsConfig.qml:85

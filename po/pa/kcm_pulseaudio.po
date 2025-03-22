@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-22 00:43+0000\n"
 "PO-Revision-Date: 2024-01-28 18:13-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -348,8 +348,9 @@ msgid "Audio volume"
 msgstr "ਆਡੀਓ ਵਾਲੀਅਮ"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, kde-format
-msgid "Show visual feedback for changes to:"
+#, fuzzy, kde-format
+#| msgid "Show visual feedback for changes to:"
+msgid "Show OSD popups for changes to:"
 msgstr "ਇਸ ਲਈ ਤਬਦੀਲੀਆਂ ਵਾਸਤੇ ਦਿੱਖ ਫੀਡਬੈਕ ਵੇਖਾਓ:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
