@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-22 00:43+0000\n"
-"PO-Revision-Date: 2024-12-29 19:47+0100\n"
+"PO-Revision-Date: 2025-03-22 22:36+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -353,10 +353,9 @@ msgid "Audio volume"
 msgstr "Sona laŭteco"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Montri vidajn rimarkojn pri ŝanĝoj al:"
+msgstr "Montri OSD-ŝprucfenestron por ŝanĝoj al:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
@@ -521,23 +520,3 @@ msgstr "%1 uzas la mikrofonon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 uzas la mikrofonon"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Nickname"
-#~ msgstr "Aparata Kromnomo"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Description"
-#~ msgstr "Aparata Priskribo"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Card Name"
-#~ msgstr "ALSA-Kartnomo"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Long Card Name"
-#~ msgstr "ALSA-Karta Longnomo"
-
-#~ msgctxt "@label:listbox the default naming scheme for audio devices"
-#~ msgid "Standard naming scheme:"
-#~ msgstr "Norma nomskemo:"

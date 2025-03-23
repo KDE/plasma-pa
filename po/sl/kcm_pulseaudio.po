@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-22 00:43+0000\n"
-"PO-Revision-Date: 2024-09-01 06:32+0200\n"
+"PO-Revision-Date: 2025-03-22 11:05+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -357,10 +357,9 @@ msgid "Audio volume"
 msgstr "Glasnost zvoka"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Prikazuj vizualni odziv sprememb na:"
+msgstr "Prikaži pojavna okna na zaslonu za spremembe:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format

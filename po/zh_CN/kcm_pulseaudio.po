@@ -350,10 +350,9 @@ msgid "Audio volume"
 msgstr "音频音量"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "显示视觉反馈，如果更改了："
+msgstr ""
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
