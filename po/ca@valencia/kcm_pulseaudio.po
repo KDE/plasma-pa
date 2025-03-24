@@ -1,17 +1,17 @@
 # Translation of kcm_pulseaudio.po to Catalan (Valencian)
-# Copyright (C) 2015-2024 This_file_is_part_of_KDE
+# Copyright (C) 2015-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2016, 2018, 2020.
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Empar Montoro Martín <montoro_mde@gva.es>, 2019.
+# Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-22 00:43+0000\n"
-"PO-Revision-Date: 2024-09-01 14:31+0200\n"
+"PO-Revision-Date: 2025-03-22 22:30+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -361,10 +361,9 @@ msgid "Audio volume"
 msgstr "Volum de l'àudio"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Mostra una retroalimentació visual per als canvis a:"
+msgstr "Mostra texts OSD emergents per als canvis a:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
@@ -529,23 +528,3 @@ msgstr "%1 està utilitzant el micròfon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 està utilitzant el micròfon"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Nickname"
-#~ msgstr "Sobrenom del dispositiu"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Description"
-#~ msgstr "Descripció del dispositiu"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Card Name"
-#~ msgstr "Nom de la targeta ALSA"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Long Card Name"
-#~ msgstr "Nom llarg de la targeta ALSA"
-
-#~ msgctxt "@label:listbox the default naming scheme for audio devices"
-#~ msgid "Standard naming scheme:"
-#~ msgstr "Esquema de noms estàndard:"

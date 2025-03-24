@@ -1,13 +1,13 @@
-# Translation of kcm_pulseaudio to Spanish
+# Spanish translations for kcm_pulseaudio.po package.
 # This file is distributed under the same license as the plasma-pa package.
 #
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-22 00:43+0000\n"
-"PO-Revision-Date: 2024-09-01 12:23+0200\n"
+"PO-Revision-Date: 2025-03-23 03:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -71,7 +71,7 @@ msgstr "Conexión con el sistema de sonido perdida"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr "Intentando reconectar..."
+msgstr "Intentando reconectar…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
@@ -127,17 +127,17 @@ msgstr "Mostrar dispositivos inactivos"
 #: kcm/ui/main.qml:81
 #, kde-format
 msgid "Rename Devices…"
-msgstr "Cambiar nombre de dispositivos..."
+msgstr "Cambiar nombre de dispositivos…"
 
 #: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Configurar los controles del volumen..."
+msgstr "Configurar los controles del volumen…"
 
 #: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: kcm/ui/main.qml:97
 #, kde-format
@@ -356,10 +356,9 @@ msgid "Audio volume"
 msgstr "Volumen del sonido"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Mostrar información visual para los cambios de:"
+msgstr "Mostrar ventanas emergentes OSD para los cambios de:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
@@ -524,145 +523,3 @@ msgstr "%1 está usando el micrófono (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 está usando el micrófono"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Nickname"
-#~ msgstr "Alias del dispositivo"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Description"
-#~ msgstr "Descripción del dispositivo"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Card Name"
-#~ msgstr "Nombre de la tarjeta ALSA"
-
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "ALSA Long Card Name"
-#~ msgstr "Nombre largo de la tarjeta ALSA"
-
-#~ msgctxt "@label:listbox the default naming scheme for audio devices"
-#~ msgid "Standard naming scheme:"
-#~ msgstr "Esquema de nombre estándar:"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgctxt "Audio balance (e.g. control left/right volume individually"
-#~ msgid "Balance"
-#~ msgstr "Balance"
-
-#~ msgctxt "Name shown in debug pulseaudio tools"
-#~ msgid "Plasma PA"
-#~ msgstr "Plasma PA"
-
-#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
-#~ msgstr "Este módulo permite configurar el subsistema de sonido PulseAudio."
-
-#~ msgid "100%"
-#~ msgstr "100%"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Eloy Cuadra"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "ecuadra@eloihr.net"
-
-#~ msgctxt "@title"
-#~ msgid "Audio"
-#~ msgstr "Audio"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Copyright 2015 Harald Sitter"
-#~ msgstr "Copyright 2015 Harald Sitter"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Harald Sitter"
-#~ msgstr "Harald Sitter"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Author"
-#~ msgstr "Autor"
-
-#~ msgid "Configure"
-#~ msgstr "Configurar"
-
-#~ msgid "Device Profiles"
-#~ msgstr "Perfiles de dispositivos"
-
-#~ msgid "Advanced Output Configuration"
-#~ msgstr "Configuración avanzada de salida"
-
-#~ msgid "Speaker Placement and Testing"
-#~ msgstr "Emplazamiento de los altavoces y prueba"
-
-#~ msgctxt "@label"
-#~ msgid "Output:"
-#~ msgstr "Salida:"
-
-#~ msgctxt "Port is unavailable"
-#~ msgid " (unavailable)"
-#~ msgstr " (no disponible)"
-
-#~ msgctxt "Port is unplugged"
-#~ msgid " (unplugged)"
-#~ msgstr " (sin conectar)"
-
-#~ msgid "Configure..."
-#~ msgstr "Configurar..."
-
-#~ msgctxt "@label"
-#~ msgid "No Device Profiles Available"
-#~ msgstr "Ningún perfil de dispositivo disponible"
-
-#~ msgctxt "@label"
-#~ msgid "No Playback Devices Available"
-#~ msgstr "Ningún dispositivo de reproducción disponible"
-
-#~ msgctxt "@label"
-#~ msgid "No Recording Devices Available"
-#~ msgstr "Ningún dispositivo de grabación disponible"
-
-#~ msgctxt "@label"
-#~ msgid "No Applications Playing Audio"
-#~ msgstr "Ninguna aplicación reproduce sonido"
-
-#~ msgctxt "@label"
-#~ msgid "No Applications Recording Audio"
-#~ msgstr "Ninguna aplicación graba sonido"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Devices"
-#~ msgstr "Dispositivos"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Applications"
-#~ msgstr "Aplicaciones"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Advanced"
-#~ msgstr "Avanzado"
-
-#~ msgid "Outputs"
-#~ msgstr "Salidas"
-
-#~ msgctxt "@label"
-#~ msgid "No Output Devices Available"
-#~ msgstr "Ningún dispositivo de salida disponible"
-
-#~ msgid "Inputs"
-#~ msgstr "Entradas"
-
-#~ msgctxt "@title"
-#~ msgid "Configure the Audio Volume"
-#~ msgstr "Configurar el volumen del sonido"
-
-#~ msgid "Capture"
-#~ msgstr "Capturar"
-
-#~ msgctxt "@label"
-#~ msgid "No Additional Configuration Available"
-#~ msgstr "No hay configuración adicional disponible"

@@ -352,7 +352,7 @@ msgstr "音频音量"
 #: kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr ""
+msgstr "更改设置时显示 OSD 弹窗通知："
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
