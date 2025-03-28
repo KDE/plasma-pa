@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2015, 2018, 2019, 2020, 2021, 2022, 2024 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2015, 2018, 2019, 2020, 2021, 2022, 2024, 2025 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-22 00:43+0000\n"
-"PO-Revision-Date: 2024-09-01 17:24+0200\n"
+"PO-Revision-Date: 2025-03-24 09:01+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -356,10 +356,9 @@ msgid "Audio volume"
 msgstr "Volume audio"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Mostra un riscontro visivo per le modifiche a:"
+msgstr "Mostra oggetti OSD a comparsa per le modifiche a:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format

@@ -1,14 +1,14 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 # Māris Nartišs <maris.kde@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-22 00:43+0000\n"
-"PO-Revision-Date: 2024-09-12 15:52+0300\n"
+"PO-Revision-Date: 2025-03-26 16:20+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -356,15 +356,14 @@ msgid "Audio volume"
 msgstr "Skaļums"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Rādīt vizuālu paziņojumu šādām izmaiņām:"
+msgstr "Rādīt virsekrāna paziņojumu (OSD) šādām izmaiņām:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
 msgid "Microphone sensitivity"
-msgstr "Mikrofona sensitivitāte"
+msgstr "Mikrofona jutīgums"
 
 #: kcm/ui/VolumeControlsConfig.qml:92
 #, kde-format
