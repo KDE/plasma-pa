@@ -6,15 +6,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-26 02:43+0000\n"
-"PO-Revision-Date: 2015-08-27 17:01+0200\n"
-"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"PO-Revision-Date: 2025-03-29 07:53+0100\n"
+"Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -23,7 +23,7 @@ msgstr ""
 #, kde-format
 msgctxt "Name shown in debug pulseaudio tools"
 msgid "Plasma PA"
-msgstr ""
+msgstr "Plasma PA"
 
 #: kcm/package/contents/ui/CardListItem.qml:52
 #: kcm/package/contents/ui/DeviceListItem.qml:134
@@ -36,104 +36,105 @@ msgstr "Profil:"
 #, kde-format
 msgctxt "label of device items"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kcm/package/contents/ui/DeviceListItem.qml:88
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: kcm/package/contents/ui/DeviceListItem.qml:111 qml/listitemmenu.cpp:387
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
-msgstr ""
+msgstr "%1 (ikke tilgjengelig)"
 
 #: kcm/package/contents/ui/DeviceListItem.qml:113 qml/listitemmenu.cpp:389
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
-msgstr ""
+msgstr "%1 (koblet fra)"
 
 #: kcm/package/contents/ui/DeviceListItem.qml:188
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: kcm/package/contents/ui/DeviceListItem.qml:213
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: kcm/package/contents/ui/DeviceListItem.qml:222
 #, kde-format
 msgctxt "Audio balance (e.g. control left/right volume individually"
 msgid "Balance"
-msgstr ""
+msgstr "Balanse"
 
 #: kcm/package/contents/ui/main.qml:24
 #, kde-format
 msgid "This module allows configuring the Pulseaudio sound subsystem."
-msgstr ""
+msgstr "Denne modulen brukes til å sette opp lydsystemet PulseAudio."
 
 #: kcm/package/contents/ui/main.qml:105
 #, kde-format
 msgid "Playback Devices"
-msgstr ""
+msgstr "Avspillingsenheter"
 
 #: kcm/package/contents/ui/main.qml:129
 #, kde-format
 msgid "Recording Devices"
-msgstr ""
+msgstr "Opptaksenheter"
 
 #: kcm/package/contents/ui/main.qml:153
 #, kde-format
 msgid "Inactive Cards"
-msgstr ""
+msgstr "Inaktive kort"
 
 #: kcm/package/contents/ui/main.qml:187
 #, kde-format
 msgid "Playback Streams"
-msgstr ""
+msgstr "Avspillingsstrømmer"
 
 #: kcm/package/contents/ui/main.qml:236
 #, kde-format
 msgid "Recording Streams"
-msgstr ""
+msgstr "Opptaksstrømmer"
 
 #: kcm/package/contents/ui/main.qml:271
 #, kde-format
 msgid "Show Inactive Devices"
-msgstr ""
+msgstr "Vis enheter som ikke er i bruk"
 
 #: kcm/package/contents/ui/main.qml:279
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr ""
+msgstr "Sett opp lydstyrke-kontroll …"
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "Sett opp …"
 
 #: kcm/package/contents/ui/main.qml:292
 #, kde-format
 msgid "Requires %1 PulseAudio module"
-msgstr ""
+msgstr "Krever PulseAudio-modulen %1"
 
 #: kcm/package/contents/ui/main.qml:304
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
-msgstr ""
+msgstr "Legg til virtuell lydenhet for samtidig lyd på alle tilkoblede lydkort"
 
 #: kcm/package/contents/ui/main.qml:310
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
+"Flytt automatisk alle kjørende strømmer når en ny utenhet er tilgjengelig"
 
 #: kcm/package/contents/ui/main.qml:326
 #, kde-format
@@ -144,6 +145,8 @@ msgid ""
 "Error trying to play a test sound. \n"
 "The system said: \"%1\""
 msgstr ""
+"Feil ved avspilling av testlyd. \n"
+"Systemet ga meldinga: «%1»"
 
 #: kcm/package/contents/ui/main.qml:422
 #, kde-format
@@ -178,7 +181,7 @@ msgstr "Bak til venstre"
 #: kcm/package/contents/ui/main.qml:428
 #, kde-format
 msgid "Subwoofer"
-msgstr "Subwoofer"
+msgstr "Basshøyttaler"
 
 #: kcm/package/contents/ui/main.qml:429
 #, kde-format
@@ -188,29 +191,29 @@ msgstr "Bak til høyre"
 #: kcm/package/contents/ui/main.qml:430
 #, kde-format
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #: kcm/package/contents/ui/main.qml:484
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr ""
+msgstr "Trykk på en høyttaler for å teste lyden"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
-msgstr ""
+msgstr "Slå av lyddemping for %1"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
-msgstr ""
+msgstr "Demp %1"
 
 #: kcm/package/contents/ui/StreamListItem.qml:57
 #, kde-format
 msgid "Notification Sounds"
-msgstr ""
+msgstr "Varslingslyder"
 
 #: kcm/package/contents/ui/StreamListItem.qml:63
 #, kde-format
@@ -221,48 +224,48 @@ msgstr "%1: %2"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Lydstyrke-kontroll"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:31
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Øk høyeste lydstyrke"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:39
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Lydstyrke-steg:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:63
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Spill av lydvarsling for endringer i:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:64
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:73
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Lydstyrke"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:72
 #, kde-format
 msgid "Show visual feedback for changes to:"
-msgstr ""
+msgstr "Vis visuell varsling for endringer i:"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:80
 #, kde-format
 msgid "Microphone sensitivity"
-msgstr ""
+msgstr "Mikrofonfølsomhet"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:87
 #, kde-format
 msgid "Mute state"
-msgstr ""
+msgstr "Dempingsstatus"
 
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:94
 #, kde-format
 msgid "Default output device"
-msgstr ""
+msgstr "Standard utenhet"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:65
 #, kde-format
@@ -274,17 +277,17 @@ msgstr "%1%"
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: qml/listitemmenu.cpp:342
 #, kde-format
 msgid "Play all audio via this device"
-msgstr ""
+msgstr "Spill av all lyd via denne enheten"
 
 #: qml/listitemmenu.cpp:347
 #, kde-format
 msgid "Record all audio via this device"
-msgstr ""
+msgstr "Ta opp all lyd via denne enheten"
 
 #: qml/listitemmenu.cpp:375
 #, kde-format
@@ -292,7 +295,7 @@ msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
 "speakers or a plug for headphones)"
 msgid "Ports"
-msgstr ""
+msgstr "Porter"
 
 #: qml/listitemmenu.cpp:445
 #, kde-format
@@ -300,7 +303,7 @@ msgctxt ""
 "Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
 "only, ...)"
 msgid "Profiles"
-msgstr ""
+msgstr "Profiler"
 
 #: qml/listitemmenu.cpp:479
 #, kde-format
@@ -308,7 +311,7 @@ msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
 "choose"
 msgid "Play audio using"
-msgstr ""
+msgstr "Spill av lyd med"
 
 #: qml/listitemmenu.cpp:481
 #, kde-format
@@ -316,43 +319,43 @@ msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "
 "headset, ...) to choose"
 msgid "Record audio using"
-msgstr ""
+msgstr "Ta opp lyd med"
 
 #: qml/microphoneindicator.cpp:102
 #, kde-format
 msgid "Mute"
-msgstr ""
+msgstr "Demp lyd"
 
 #: qml/microphoneindicator.cpp:132 qml/microphoneindicator.cpp:134
 #, kde-format
 msgid "Microphone"
-msgstr ""
+msgstr "Mikrofon"
 
 #: qml/microphoneindicator.cpp:134
 #, kde-format
 msgid "Microphone Muted"
-msgstr ""
+msgstr "Mikrofon dempet"
 
 #: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: qml/microphoneindicator.cpp:284
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
-msgstr ""
+msgstr "%1 bruker mikrofonen"
 
 #: qml/microphoneindicator.cpp:310
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
-msgstr ""
+msgstr "%1 bruker mikrofonen (%2)"
 
 #: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
-msgstr ""
+msgstr "%1 bruker mikrofonen"
