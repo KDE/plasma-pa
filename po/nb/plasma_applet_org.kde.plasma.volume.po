@@ -1,0 +1,186 @@
+# Translation of plasma_applet_org.kde.plasma.volume to Norwegian Bokmål
+#
+# SPDX-FileCopyrightText: 2025 Martin Hansen <mh306602@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-pa\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-01-25 00:42+0000\n"
+"PO-Revision-Date: 2025-03-29 07:53+0100\n"
+"Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
+"Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.12.3\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: contents/ui/ListItemBase.qml:66
+#, kde-format
+msgid "Currently not recording"
+msgstr "Spiller ikke inn lyd"
+
+#: contents/ui/ListItemBase.qml:67
+#, kde-format
+msgid "Currently not playing"
+msgstr "Spiller ikke av lyd"
+
+#: contents/ui/ListItemBase.qml:191
+#, kde-format
+msgctxt "@action:button"
+msgid "Additional Options"
+msgstr "Flere valg"
+
+#: contents/ui/ListItemBase.qml:193
+#, kde-format
+msgid "Show additional options for %1"
+msgstr "Vis flere valg for %1"
+
+#: contents/ui/ListItemBase.qml:212
+#, kde-format
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "Lyddemping av"
+
+#: contents/ui/ListItemBase.qml:212
+#, kde-format
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "Demp lyd"
+
+#: contents/ui/ListItemBase.qml:214
+#, kde-format
+msgid "Unmute %1"
+msgstr "Slå av lyddemping for %1"
+
+#: contents/ui/ListItemBase.qml:214
+#, kde-format
+msgid "Mute %1"
+msgstr "Demp %1"
+
+#: contents/ui/ListItemBase.qml:235
+#, kde-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "Juster lydstyrke for %1"
+
+#: contents/ui/ListItemBase.qml:296
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: contents/ui/ListItemBase.qml:316
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100 %"
+
+#: contents/ui/main.qml:32
+#, kde-format
+msgid "Audio Volume"
+msgstr "Lydstyrke"
+
+#: contents/ui/main.qml:43 contents/ui/main.qml:45
+#, kde-format
+msgctxt "@label"
+msgid "Connection to the Sound Service Lost"
+msgstr "Mistet tilkobling til lydtjenesten"
+
+#: contents/ui/main.qml:47
+#, kde-format
+msgid "No output or input devices found"
+msgstr "Fant ingen lydenheter"
+
+#: contents/ui/main.qml:51
+#, kde-format
+msgctxt "@info reconnecting to pulseaudio"
+msgid "Trying to reconnect…"
+msgstr "Prøver å koble til på nytt …"
+
+#: contents/ui/main.qml:68
+#, kde-format
+msgid "Audio Muted"
+msgstr "Dempet lyd"
+
+#: contents/ui/main.qml:70
+#, kde-format
+msgid "Volume at %1%"
+msgstr "Lydstyrken er %1%"
+
+#: contents/ui/main.qml:81
+#, kde-format
+msgid "Middle-click to unmute"
+msgstr "Midtklikk for å oppheve lyddemping"
+
+#: contents/ui/main.qml:82
+#, kde-format
+msgid "Middle-click to mute all audio"
+msgstr "Midtklikk for å dempe all lyd"
+
+#: contents/ui/main.qml:83
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr "Rull for å justere lydstyrken"
+
+#: contents/ui/main.qml:99
+#, kde-format
+msgid "Device name not found"
+msgstr "Fant ikke enhetsnavn"
+
+#: contents/ui/main.qml:299
+#, kde-format
+msgid "Devices"
+msgstr "Enheter"
+
+#: contents/ui/main.qml:306
+#, kde-format
+msgid "Applications"
+msgstr "Programmer"
+
+#: contents/ui/main.qml:329
+#, kde-format
+msgctxt "@action:button"
+msgid "More actions"
+msgstr "Flere handlinger"
+
+#: contents/ui/main.qml:386
+#, kde-format
+msgctxt "@action retry connecting to pulseaudio"
+msgid "Retry"
+msgstr "Prøv på nytt"
+
+#: contents/ui/main.qml:410
+#, kde-format
+msgid "No applications playing or recording audio"
+msgstr "Ingen programmer spiller av eller tar opp lyd"
+
+#: contents/ui/main.qml:569
+#, kde-format
+msgid "Raise maximum volume"
+msgstr "Øk høyeste lydstyrke"
+
+#: contents/ui/main.qml:581
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr "Slå av lyden på alle avspillingsenheter"
+
+#: contents/ui/main.qml:590
+#, kde-format
+msgid "Show virtual devices"
+msgstr "Vis virtuelle enheter"
+
+#: contents/ui/main.qml:600
+#, kde-format
+msgid "&Configure Audio Devices…"
+msgstr "%Sett opp lydenheter …"
+
+#: contents/ui/StreamListItem.qml:25
+#, kde-format
+msgid "Stream name not found"
+msgstr "Fant ikke strømmenavn"
