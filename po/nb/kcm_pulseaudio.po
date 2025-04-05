@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-18 02:35+0000\n"
-"PO-Revision-Date: 2025-03-29 07:53+0100\n"
+"PO-Revision-Date: 2025-04-04 11:49+0200\n"
 "Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
 "Language: nb\n"
@@ -377,7 +377,7 @@ msgstr "Standard utenhet"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: kcm/ui/VolumeSlider.qml:88
 #, kde-format
