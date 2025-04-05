@@ -355,7 +355,6 @@ msgstr "Lydstyrke"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
 #, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
 msgid "Show OSD popups for changes to:"
 msgstr "Vis visuell varsling for endringar i:"
 

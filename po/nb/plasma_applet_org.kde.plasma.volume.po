@@ -1,13 +1,12 @@
 # Translation of plasma_applet_org.kde.plasma.volume to Norwegian Bokmål
 #
-# SPDX-FileCopyrightText: 2025 Martin Hansen <mh306602@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-25 00:42+0000\n"
-"PO-Revision-Date: 2025-03-29 07:53+0100\n"
+"PO-Revision-Date: 2025-04-04 09:48+0200\n"
 "Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
 "Language: nb\n"
@@ -73,7 +72,7 @@ msgstr "Juster lydstyrke for %1"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: contents/ui/ListItemBase.qml:316
 #, kde-format
@@ -111,7 +110,7 @@ msgstr "Dempet lyd"
 #: contents/ui/main.qml:70
 #, kde-format
 msgid "Volume at %1%"
-msgstr "Lydstyrken er %1%"
+msgstr "Lydstyrken er %1 %"
 
 #: contents/ui/main.qml:81
 #, kde-format
@@ -178,7 +177,7 @@ msgstr "Vis virtuelle enheter"
 #: contents/ui/main.qml:600
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr "%Sett opp lydenheter …"
+msgstr "&Sett opp lydenheter …"
 
 #: contents/ui/StreamListItem.qml:25
 #, kde-format
