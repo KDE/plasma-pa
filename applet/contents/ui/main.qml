@@ -198,7 +198,13 @@ PlasmoidItem {
         }
         onWheel: wheel => {
             const delta = (wheel.inverted ? -1 : 1) * (wheel.angleDelta.y ? wheel.angleDelta.y : -wheel.angleDelta.x);
+            if ((wheelDelta > 0 && delta < 0) || (wheelDelta < 0 && delta > 0)) {
+                // reset wheelDelta when changing scrolling direction, as there
+                // might be a remainder from the previous wheel action.
+                wheelDelta = 0;
+            }
             wheelDelta += delta;
+
             // Magic number 120 for common "one click"
             // See: https://qt-project.org/doc/qt-5/qml-qtquick-wheelevent.html#angleDelta-prop
             while (wheelDelta >= 120) {
