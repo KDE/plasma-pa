@@ -14,15 +14,17 @@ import gi
 from appium import webdriver
 from appium.options.common.base import AppiumOptions
 from appium.webdriver.common.appiumby import AppiumBy
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
 from appium.webdriver.webdriver import ExtensionBase
 from appium.webdriver.webelement import WebElement
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gdk
 
 WIDGET_ID: Final = "org.kde.plasma.volume"
+
 
 class SetValueCommand(ExtensionBase):
 
@@ -105,14 +107,21 @@ class AppletTest(unittest.TestCase):
         self.driver.find_element(AppiumBy.NAME, description)
 
         # Raise the maximum volume
-        self.driver.find_element(AppiumBy.NAME, "Raise maximum volume").click()
-        slider_element: WebElement = self.driver.find_element(AppiumBy.NAME, f"Adjust volume for {description}")
-        self.driver.set_value(slider_element, str(int(0x10000 * 1.5)))  # PA_VOLUME_NORM * 1.5
-        slider_element.click()
         wait = WebDriverWait(self.driver, 30)
-        wait.until(EC.presence_of_element_located((AppiumBy.NAME, "150%")))
-        time.sleep(1)
+        self.driver.find_element(AppiumBy.NAME, "Raise maximum volume").click()
+        wait.until(EC.presence_of_element_located((AppiumBy.XPATH, "//check_box[@name='Raise maximum volume' and contains(@states, 'checked')]")))
+        slider_element: WebElement = self.driver.find_element(AppiumBy.NAME, f"Adjust volume for {description}")
 
+        def check_volume() -> None:
+            self.driver.set_value(slider_element, str(int(0x10000 * 1.5)))  # PA_VOLUME_NORM * 1.5
+            slider_element.click()
+            wait.until(EC.presence_of_element_located((AppiumBy.NAME, "150%")))
+
+        try:
+            check_volume()
+        except TimeoutException:
+            check_volume()
+        time.sleep(1)
         self.assertIn("150%", subprocess.check_output(["pactl", "list", "sinks"]).decode(encoding="utf-8"))
 
 
