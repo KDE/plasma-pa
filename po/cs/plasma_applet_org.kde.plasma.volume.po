@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:42+0000\n"
+"POT-Creation-Date: 2025-04-24 00:43+0000\n"
 "PO-Revision-Date: 2024-08-20 14:09+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -131,49 +131,49 @@ msgstr "Rolujte kolečkem pro upravení hlasitosti"
 msgid "Device name not found"
 msgstr "Název zařízení nenalezen"
 
-#: contents/ui/main.qml:299
+#: contents/ui/main.qml:305
 #, kde-format
 msgid "Devices"
 msgstr "Zařízení"
 
-#: contents/ui/main.qml:306
+#: contents/ui/main.qml:312
 #, kde-format
 msgid "Applications"
 msgstr "Aplikace"
 
-#: contents/ui/main.qml:329
+#: contents/ui/main.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: contents/ui/main.qml:386
+#: contents/ui/main.qml:392
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Zkusit znovu"
 
-#: contents/ui/main.qml:410
+#: contents/ui/main.qml:416
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Žádné aplikace přehrávající nebo nahrávající audio"
 
-#: contents/ui/main.qml:569
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvýšit maximální hlasitost"
 
-#: contents/ui/main.qml:581
+#: contents/ui/main.qml:587
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Vynutit ztlumení všech přehrávacích zařízení"
 
-#: contents/ui/main.qml:590
+#: contents/ui/main.qml:596
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Zobrazit virtuální zařízení"
 
-#: contents/ui/main.qml:600
+#: contents/ui/main.qml:606
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Nastavit a&udio zařízení…"

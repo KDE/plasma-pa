@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:42+0000\n"
+"POT-Creation-Date: 2025-04-24 00:43+0000\n"
 "PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -131,49 +131,49 @@ msgstr "Rulumu por ĝustigi laŭtecon"
 msgid "Device name not found"
 msgstr "Aparatonomo ne trovita"
 
-#: contents/ui/main.qml:299
+#: contents/ui/main.qml:305
 #, kde-format
 msgid "Devices"
 msgstr "Aparatoj"
 
-#: contents/ui/main.qml:306
+#: contents/ui/main.qml:312
 #, kde-format
 msgid "Applications"
 msgstr "Aplikoj"
 
-#: contents/ui/main.qml:329
+#: contents/ui/main.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: contents/ui/main.qml:386
+#: contents/ui/main.qml:392
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Reprovi"
 
-#: contents/ui/main.qml:410
+#: contents/ui/main.qml:416
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Neniuj aplikoj ludantaj aŭ registrante audio"
 
-#: contents/ui/main.qml:569
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altigi maksimuman laŭtecon"
 
-#: contents/ui/main.qml:581
+#: contents/ui/main.qml:587
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Devigi silentigi ĉiujn reproduktajn aparatojn"
 
-#: contents/ui/main.qml:590
+#: contents/ui/main.qml:596
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Montri virtualajn aparatojn"
 
-#: contents/ui/main.qml:600
+#: contents/ui/main.qml:606
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Agordi Aŭdio-Aparatojn…"

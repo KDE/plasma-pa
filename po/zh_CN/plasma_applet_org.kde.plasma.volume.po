@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:42+0000\n"
+"POT-Creation-Date: 2025-04-24 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -131,49 +131,49 @@ msgstr "滚动鼠标滚轮以调节音量"
 msgid "Device name not found"
 msgstr "找不到设备名称"
 
-#: contents/ui/main.qml:299
+#: contents/ui/main.qml:305
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: contents/ui/main.qml:306
+#: contents/ui/main.qml:312
 #, kde-format
 msgid "Applications"
 msgstr "应用程序"
 
-#: contents/ui/main.qml:329
+#: contents/ui/main.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "更多操作"
 
-#: contents/ui/main.qml:386
+#: contents/ui/main.qml:392
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "重试"
 
-#: contents/ui/main.qml:410
+#: contents/ui/main.qml:416
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
-#: contents/ui/main.qml:569
+#: contents/ui/main.qml:575
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: contents/ui/main.qml:581
+#: contents/ui/main.qml:587
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
 
-#: contents/ui/main.qml:590
+#: contents/ui/main.qml:596
 #, kde-format
 msgid "Show virtual devices"
 msgstr "显示虚拟设备"
 
-#: contents/ui/main.qml:600
+#: contents/ui/main.qml:606
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "配置音频设备(&C)…"
