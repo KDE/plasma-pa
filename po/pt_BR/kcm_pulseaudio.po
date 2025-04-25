@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-22 00:43+0000\n"
+"POT-Creation-Date: 2025-04-25 00:43+0000\n"
 "PO-Revision-Date: 2025-03-28 01:42-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -83,7 +83,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Tentar novamente"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:205
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:220
 #, kde-format
 msgid "Device name not found"
 msgstr "Nome do dispositivo não encontrado"
@@ -373,7 +373,15 @@ msgstr "Sensibilidade do microfone"
 msgid "Mute state"
 msgstr "Estado mudo"
 
-#: kcm/ui/VolumeControlsConfig.qml:99
+#: kcm/ui/VolumeControlsConfig.qml:98
+#, fuzzy, kde-format
+#| msgctxt "List of apps is using mic"
+#| msgid "%1 are using the microphone"
+msgctxt "Show OSD when"
+msgid "Application starts using muted microphone"
+msgstr "%1 estão usando o microfone"
+
+#: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
 msgid "Default output device"
 msgstr "Dispositivo de saída padrão"
@@ -390,66 +398,73 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:61
+#: kded/audioshortcutsservice.cpp:76
 #, kde-format
 msgid "Increase Volume"
 msgstr "Aumentar volume"
 
-#: kded/audioshortcutsservice.cpp:76
+#: kded/audioshortcutsservice.cpp:91
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Diminuir volume"
 
-#: kded/audioshortcutsservice.cpp:91
+#: kded/audioshortcutsservice.cpp:106
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "Aumenta o volume em 1%"
 
-#: kded/audioshortcutsservice.cpp:106
+#: kded/audioshortcutsservice.cpp:121
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "Diminui o volume em 1%"
 
-#: kded/audioshortcutsservice.cpp:121
+#: kded/audioshortcutsservice.cpp:136
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Aumentar volume do microfone"
 
-#: kded/audioshortcutsservice.cpp:135
+#: kded/audioshortcutsservice.cpp:150
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Diminuir volume do microfone"
 
-#: kded/audioshortcutsservice.cpp:149 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:164 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "Sem áudio"
 
-#: kded/audioshortcutsservice.cpp:162
+#: kded/audioshortcutsservice.cpp:177
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Microfone sem som"
 
-#: kded/audioshortcutsservice.cpp:176
+#: kded/audioshortcutsservice.cpp:191
 #, kde-format
 msgid "Audio Volume"
 msgstr "Volume do áudio"
 
-#: kded/audioshortcutsservice.cpp:194
+#: kded/audioshortcutsservice.cpp:209
 #, kde-format
 msgid "No such device"
 msgstr "Este dispositivo não existe"
 
-#: kded/audioshortcutsservice.cpp:240
+#: kded/audioshortcutsservice.cpp:255
 #, kde-format
 msgid "No output device"
 msgstr "Sem dispositivo de saída"
 
-#: kded/audioshortcutsservice.cpp:261 kded/audioshortcutsservice.cpp:281
+#: kded/audioshortcutsservice.cpp:276 kded/audioshortcutsservice.cpp:296
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% Bateria)"
+
+#: kded/mutedmicrophonereminder.cpp:131
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "Microphone name: is currently muted (osd, keep short)"
+msgid "%1: Muted"
+msgstr "Sem áudio"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format

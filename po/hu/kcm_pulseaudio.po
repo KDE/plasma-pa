@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-22 00:43+0000\n"
+"POT-Creation-Date: 2025-04-25 00:43+0000\n"
 "PO-Revision-Date: 2024-09-23 21:23+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -81,7 +81,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Újra"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:205
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:220
 #, kde-format
 msgid "Device name not found"
 msgstr "Az eszköznév nem található"
@@ -371,7 +371,15 @@ msgstr "Mikrofon érzékenysége"
 msgid "Mute state"
 msgstr "Némítás állapota"
 
-#: kcm/ui/VolumeControlsConfig.qml:99
+#: kcm/ui/VolumeControlsConfig.qml:98
+#, fuzzy, kde-format
+#| msgctxt "List of apps is using mic"
+#| msgid "%1 are using the microphone"
+msgctxt "Show OSD when"
+msgid "Application starts using muted microphone"
+msgstr "Ezek az alkalmazások használják a mikrofont: %1"
+
+#: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
 msgid "Default output device"
 msgstr "Alapértelmezett kimeneti eszköz"
@@ -388,66 +396,73 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:61
+#: kded/audioshortcutsservice.cpp:76
 #, kde-format
 msgid "Increase Volume"
 msgstr "Hangerő növelése"
 
-#: kded/audioshortcutsservice.cpp:76
+#: kded/audioshortcutsservice.cpp:91
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Hangerő csökkentése"
 
-#: kded/audioshortcutsservice.cpp:91
+#: kded/audioshortcutsservice.cpp:106
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "Hangerő növelése 1%-kal"
 
-#: kded/audioshortcutsservice.cpp:106
+#: kded/audioshortcutsservice.cpp:121
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "Hangerő csökkentése 1%-kal"
 
-#: kded/audioshortcutsservice.cpp:121
+#: kded/audioshortcutsservice.cpp:136
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Mikrofon hangerejének növelése"
 
-#: kded/audioshortcutsservice.cpp:135
+#: kded/audioshortcutsservice.cpp:150
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Mikrofon hangerejének csökkentése"
 
-#: kded/audioshortcutsservice.cpp:149 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:164 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "Némítás"
 
-#: kded/audioshortcutsservice.cpp:162
+#: kded/audioshortcutsservice.cpp:177
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Mikrofon némítása"
 
-#: kded/audioshortcutsservice.cpp:176
+#: kded/audioshortcutsservice.cpp:191
 #, kde-format
 msgid "Audio Volume"
 msgstr "Hangerő"
 
-#: kded/audioshortcutsservice.cpp:194
+#: kded/audioshortcutsservice.cpp:209
 #, kde-format
 msgid "No such device"
 msgstr "Nincs ilyen eszköz"
 
-#: kded/audioshortcutsservice.cpp:240
+#: kded/audioshortcutsservice.cpp:255
 #, kde-format
 msgid "No output device"
 msgstr "Nincs kimeneti eszköz"
 
-#: kded/audioshortcutsservice.cpp:261 kded/audioshortcutsservice.cpp:281
+#: kded/audioshortcutsservice.cpp:276 kded/audioshortcutsservice.cpp:296
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% akkumulátor)"
+
+#: kded/mutedmicrophonereminder.cpp:131
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "Microphone name: is currently muted (osd, keep short)"
+msgid "%1: Muted"
+msgstr "Némítás"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format

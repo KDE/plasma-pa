@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-22 00:43+0000\n"
+"POT-Creation-Date: 2025-04-25 00:43+0000\n"
 "PO-Revision-Date: 2024-12-20 21:54+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -81,7 +81,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "पुनः प्रयासं कुर्वन्तु"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:205
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:220
 #, kde-format
 msgid "Device name not found"
 msgstr "यन्त्रनाम न प्राप्तम्"
@@ -368,7 +368,15 @@ msgstr "माइक्रोफोन संवेदनशीलता"
 msgid "Mute state"
 msgstr "मूक अवस्था"
 
-#: kcm/ui/VolumeControlsConfig.qml:99
+#: kcm/ui/VolumeControlsConfig.qml:98
+#, fuzzy, kde-format
+#| msgctxt "List of apps is using mic"
+#| msgid "%1 are using the microphone"
+msgctxt "Show OSD when"
+msgid "Application starts using muted microphone"
+msgstr "%1 माइक्रोफोनस्य उपयोगं कुर्वन्ति"
+
+#: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
 msgid "Default output device"
 msgstr "पूर्वनिर्धारितनिर्गमयन्त्रम्"
@@ -385,66 +393,73 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "१००%"
 
-#: kded/audioshortcutsservice.cpp:61
+#: kded/audioshortcutsservice.cpp:76
 #, kde-format
 msgid "Increase Volume"
 msgstr "Volume वर्धयतु"
 
-#: kded/audioshortcutsservice.cpp:76
+#: kded/audioshortcutsservice.cpp:91
 #, kde-format
 msgid "Decrease Volume"
 msgstr "मात्रां न्यूनीकरोतु"
 
-#: kded/audioshortcutsservice.cpp:91
+#: kded/audioshortcutsservice.cpp:106
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "मात्रा १% वर्धयतु"
 
-#: kded/audioshortcutsservice.cpp:106
+#: kded/audioshortcutsservice.cpp:121
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "आयतनं १% न्यूनीकरोतु"
 
-#: kded/audioshortcutsservice.cpp:121
+#: kded/audioshortcutsservice.cpp:136
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "माइक्रोफोनस्य मात्रां वर्धयन्तु"
 
-#: kded/audioshortcutsservice.cpp:135
+#: kded/audioshortcutsservice.cpp:150
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "माइक्रोफोनस्य मात्रां न्यूनीकरोतु"
 
-#: kded/audioshortcutsservice.cpp:149 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:164 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "मूक"
 
-#: kded/audioshortcutsservice.cpp:162
+#: kded/audioshortcutsservice.cpp:177
 #, kde-format
 msgid "Mute Microphone"
 msgstr "म्यूट माइक्रोफोन"
 
-#: kded/audioshortcutsservice.cpp:176
+#: kded/audioshortcutsservice.cpp:191
 #, kde-format
 msgid "Audio Volume"
 msgstr "श्रव्य मात्रा"
 
-#: kded/audioshortcutsservice.cpp:194
+#: kded/audioshortcutsservice.cpp:209
 #, kde-format
 msgid "No such device"
 msgstr "न तादृशं यन्त्रम्"
 
-#: kded/audioshortcutsservice.cpp:240
+#: kded/audioshortcutsservice.cpp:255
 #, kde-format
 msgid "No output device"
 msgstr "न निर्गमयन्त्रम्"
 
-#: kded/audioshortcutsservice.cpp:261 kded/audioshortcutsservice.cpp:281
+#: kded/audioshortcutsservice.cpp:276 kded/audioshortcutsservice.cpp:296
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% बैटरी)"
+
+#: kded/mutedmicrophonereminder.cpp:131
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "Microphone name: is currently muted (osd, keep short)"
+msgid "%1: Muted"
+msgstr "मूक"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
