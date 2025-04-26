@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-24 00:43+0000\n"
+"POT-Creation-Date: 2025-04-26 00:44+0000\n"
 "PO-Revision-Date: 2025-03-04 17:03+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -19,167 +19,167 @@ msgstr ""
 "2);\n"
 "X-Generator: Lokalize 24.12.2\n"
 
-#: contents/ui/ListItemBase.qml:66
+#: ListItemBase.qml:66
 #, kde-format
 msgid "Currently not recording"
 msgstr "Šobrīd neieraksta"
 
-#: contents/ui/ListItemBase.qml:67
+#: ListItemBase.qml:67
 #, kde-format
 msgid "Currently not playing"
 msgstr "Šobrīd neatskaņo"
 
-#: contents/ui/ListItemBase.qml:191
+#: ListItemBase.qml:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Papildu opcijas"
 
-#: contents/ui/ListItemBase.qml:193
+#: ListItemBase.qml:193
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Rādīt „%1“ papildu opcijas"
 
-#: contents/ui/ListItemBase.qml:212
+#: ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Atjaunot skaņu"
 
-#: contents/ui/ListItemBase.qml:212
+#: ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Apklusināt"
 
-#: contents/ui/ListItemBase.qml:214
+#: ListItemBase.qml:214
 #, kde-format
 msgid "Unmute %1"
 msgstr "Atjaunot skaņu „%1“"
 
-#: contents/ui/ListItemBase.qml:214
+#: ListItemBase.qml:214
 #, kde-format
 msgid "Mute %1"
 msgstr "Apklusināt „%1“"
 
-#: contents/ui/ListItemBase.qml:235
+#: ListItemBase.qml:235
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Regulēt „%1“ skaļumu"
 
-#: contents/ui/ListItemBase.qml:296
+#: ListItemBase.qml:296
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:316
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:32
+#: main.qml:32
 #, kde-format
 msgid "Audio Volume"
 msgstr "Skaļums"
 
-#: contents/ui/main.qml:43 contents/ui/main.qml:45
+#: main.qml:43 main.qml:45
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Savienojums ar skaņas servisu ir pazudis"
 
-#: contents/ui/main.qml:47
+#: main.qml:47
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nav atrastas ievades vai izvades ierīces"
 
-#: contents/ui/main.qml:51
+#: main.qml:51
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Mēģina savienoties no jauna…"
 
-#: contents/ui/main.qml:68
+#: main.qml:68
 #, kde-format
 msgid "Audio Muted"
 msgstr "Skaņa ir apklusināta"
 
-#: contents/ui/main.qml:70
+#: main.qml:70
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Skaļums ir %1%"
 
-#: contents/ui/main.qml:81
+#: main.qml:81
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Atjaunojiet skaņu ar vidējo klikšķi"
 
-#: contents/ui/main.qml:82
+#: main.qml:82
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Apklusiniet visu ar vidējo klikšķi"
 
-#: contents/ui/main.qml:83
+#: main.qml:83
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Ritiniet, lai mainītu skaļumu"
 
-#: contents/ui/main.qml:99
+#: main.qml:99
 #, kde-format
 msgid "Device name not found"
 msgstr "Ierīces nosaukums nav atrasts"
 
-#: contents/ui/main.qml:305
+#: main.qml:305
 #, kde-format
 msgid "Devices"
 msgstr "Ierīces"
 
-#: contents/ui/main.qml:312
+#: main.qml:312
 #, kde-format
 msgid "Applications"
 msgstr "Programmas"
 
-#: contents/ui/main.qml:335
+#: main.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Vairāk darbību"
 
-#: contents/ui/main.qml:392
+#: main.qml:392
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Mēģināt vēlreiz"
 
-#: contents/ui/main.qml:416
+#: main.qml:416
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Pašlaik neviena programma neatskaņo vai neieraksta audio"
 
-#: contents/ui/main.qml:575
+#: main.qml:575
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Palielināt maksimālo skaļumu"
 
-#: contents/ui/main.qml:587
+#: main.qml:587
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
 
-#: contents/ui/main.qml:596
+#: main.qml:596
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rādīt virtuālās ierīces"
 
-#: contents/ui/main.qml:606
+#: main.qml:606
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurēt skaņas ierīces…"
 
-#: contents/ui/StreamListItem.qml:25
+#: StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
 msgstr "Straumes nosaukums nav atrasts"

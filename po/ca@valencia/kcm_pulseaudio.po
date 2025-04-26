@@ -5,13 +5,13 @@
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2016, 2018, 2020.
 # Empar Montoro Martín <montoro_mde@gva.es>, 2019.
-# Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2025-03-22 22:30+0100\n"
+"PO-Revision-Date: 2025-04-25 12:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -376,12 +376,10 @@ msgid "Mute state"
 msgstr "Estat de silenci"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 estan utilitzant el micròfon"
+msgstr "L'aplicació comença amb el micròfon en silenci"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -462,11 +460,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (Bateria %2%)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Silenci"
+msgstr "%1: silenciat"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format

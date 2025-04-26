@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-24 00:43+0000\n"
+"POT-Creation-Date: 2025-04-26 00:44+0000\n"
 "PO-Revision-Date: 2025-01-31 11:32+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -17,167 +17,167 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.03.70\n"
 
-#: contents/ui/ListItemBase.qml:66
+#: ListItemBase.qml:66
 #, kde-format
 msgid "Currently not recording"
 msgstr "В момента не се записва нищо"
 
-#: contents/ui/ListItemBase.qml:67
+#: ListItemBase.qml:67
 #, kde-format
 msgid "Currently not playing"
 msgstr "В момента не се възпроизвежда нищо"
 
-#: contents/ui/ListItemBase.qml:191
+#: ListItemBase.qml:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Допълнителни опции"
 
-#: contents/ui/ListItemBase.qml:193
+#: ListItemBase.qml:193
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Показване на допълнителни опции за %1"
 
-#: contents/ui/ListItemBase.qml:212
+#: ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Включване на звука"
 
-#: contents/ui/ListItemBase.qml:212
+#: ListItemBase.qml:212
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Изключване на звука"
 
-#: contents/ui/ListItemBase.qml:214
+#: ListItemBase.qml:214
 #, kde-format
 msgid "Unmute %1"
 msgstr "Включване на звука на %1"
 
-#: contents/ui/ListItemBase.qml:214
+#: ListItemBase.qml:214
 #, kde-format
 msgid "Mute %1"
 msgstr "Изключване на звука на %1"
 
-#: contents/ui/ListItemBase.qml:235
+#: ListItemBase.qml:235
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Регулиране силата на звука за %1"
 
-#: contents/ui/ListItemBase.qml:296
+#: ListItemBase.qml:296
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: contents/ui/ListItemBase.qml:316
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: contents/ui/main.qml:32
+#: main.qml:32
 #, kde-format
 msgid "Audio Volume"
 msgstr "Сила на звука"
 
-#: contents/ui/main.qml:43 contents/ui/main.qml:45
+#: main.qml:43 main.qml:45
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Връзката със сървъра е прекъсната"
 
-#: contents/ui/main.qml:47
+#: main.qml:47
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Не са намерени изходни или входни устройства"
 
-#: contents/ui/main.qml:51
+#: main.qml:51
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Опит за повторно свързване…"
 
-#: contents/ui/main.qml:68
+#: main.qml:68
 #, kde-format
 msgid "Audio Muted"
 msgstr "Аудио заглушено"
 
-#: contents/ui/main.qml:70
+#: main.qml:70
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Сила на звука %1%"
 
-#: contents/ui/main.qml:81
+#: main.qml:81
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Кликване със среден бутон на мишката за включване на звука"
 
-#: contents/ui/main.qml:82
+#: main.qml:82
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Кликване със среден бутон на мишката за изключване на звука"
 
-#: contents/ui/main.qml:83
+#: main.qml:83
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Скролирайте за регулиране силата на звука"
 
-#: contents/ui/main.qml:99
+#: main.qml:99
 #, kde-format
 msgid "Device name not found"
 msgstr "Името на устройството не е намерено"
 
-#: contents/ui/main.qml:305
+#: main.qml:305
 #, kde-format
 msgid "Devices"
 msgstr "Устройства"
 
-#: contents/ui/main.qml:312
+#: main.qml:312
 #, kde-format
 msgid "Applications"
 msgstr "Приложения"
 
-#: contents/ui/main.qml:335
+#: main.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Допълнителни действия"
 
-#: contents/ui/main.qml:392
+#: main.qml:392
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Повторен опит"
 
-#: contents/ui/main.qml:416
+#: main.qml:416
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Няма приложения, които възпроизвеждат или записват звук"
 
-#: contents/ui/main.qml:575
+#: main.qml:575
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Повишаване на максималния обем"
 
-#: contents/ui/main.qml:587
+#: main.qml:587
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Принудително заглушаване на всички устройства за възпроизвеждане"
 
-#: contents/ui/main.qml:596
+#: main.qml:596
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показване на виртуални устройства"
 
-#: contents/ui/main.qml:606
+#: main.qml:606
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Конфигуриране на звукови устройства…"
 
-#: contents/ui/StreamListItem.qml:25
+#: StreamListItem.qml:25
 #, kde-format
 msgid "Stream name not found"
 msgstr "Името на потока не е намерено"

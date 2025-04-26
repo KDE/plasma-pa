@@ -1,4 +1,5 @@
 # Spanish translations for kcm_pulseaudio.po package.
+# Copyright (C) 2015-2025 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
 # SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
@@ -7,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2025-03-23 03:52+0100\n"
+"PO-Revision-Date: 2025-04-25 12:12+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -371,12 +372,10 @@ msgid "Mute state"
 msgstr "Estado de silencio"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 están usando el micrófono"
+msgstr "Una aplicación empieza a usar el micrófono silenciado"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -457,11 +456,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (Batería al %2 %)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Silenciar"
+msgstr "%1: Silenciado"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
