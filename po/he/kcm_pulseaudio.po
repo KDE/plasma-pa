@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2025-03-22 19:19+0200\n"
+"PO-Revision-Date: 2025-04-26 10:01+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -368,12 +368,10 @@ msgid "Mute state"
 msgstr "מצב השתקה"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 משתמשים במיקרופון"
+msgstr "יישום מתחיל להשתמש במיקרופון מושתק"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -454,11 +452,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% סוללה)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "השתקה"
+msgstr "%1: מושתק"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
