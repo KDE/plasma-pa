@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2025-04-05 12:05+0400\n"
+"PO-Revision-Date: 2025-04-28 17:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -367,12 +367,10 @@ msgid "Mute state"
 msgstr "حالة الكتم"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 تستخدم الميكروفون"
+msgstr "يبدأ التطبيق باستخدام الميكروفون المكتوم"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -453,11 +451,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2٪ البطارية)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "اكتم"
+msgstr "%1: مكتوم"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
