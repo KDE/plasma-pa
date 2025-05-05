@@ -3,21 +3,21 @@
 # Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>, 2015, 2016, 2017.
 # SPDX-FileCopyrightText: 2024 Adrian Chaves (Gallaecio)
 #
-# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2024, 2025 Adrián Chaves (Gallaecio)
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2024-09-02 18:07+0200\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"PO-Revision-Date: 2025-05-04 13:36+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -357,10 +357,9 @@ msgid "Audio volume"
 msgstr "Volume de son"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Amosar información visual para cambios de:"
+msgstr "Amosar cadros emerxentes para cambios de:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
@@ -373,12 +372,10 @@ msgid "Mute state"
 msgstr "Estado de silencio"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 están a usar o micrófono"
+msgstr "A aplicación comeza a usar o micrófono silenciado."
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -459,11 +456,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% de batería)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Silenciar"
+msgstr "%1: Silenciado"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
