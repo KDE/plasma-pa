@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Flori G <Renner03@protonmail.com>
 # Burkhard Lück <lueck@hube-lueck.de>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2015, 2016, 2021, 2022, 2023.
 # Jannick Kuhr <opensource@kuhr.org>, 2023.
@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2024-11-14 13:53+0100\n"
+"PO-Revision-Date: 2025-02-22 03:03+0100\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -286,7 +286,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr "Probleme oder Wünsche berichten"
+msgstr "Problem melden"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
