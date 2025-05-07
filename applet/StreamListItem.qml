@@ -16,13 +16,23 @@ ListItemBase {
 
     draggable: devicesModel && devicesModel.count > 1
     label: {
+        let parts = []
         if (model.Client && model.Client.name && model.Client.name != "pipewire-media-session") {
-            return model.Client.name;
+            parts.push(model.Client.name);
+        } else if (model.Name) {
+            parts.push(model.Name);
         }
-        if (model.Name) {
-            return model.Name;
+
+        const mediaName = model.Properties["media.name"];
+        if (mediaName && !/playback|audio|stream|alsa|pulse|pipewire/gi.test(mediaName)) {
+            parts.push(mediaName);
         }
-        return i18n("Stream name not found");
+
+        if (parts.length > 0) {
+            return parts.join(" · ");
+        } else {
+            return i18n("Stream name not found");
+        }
     }
     fullNameToShowOnHover: {
         if (devicesModel.count > 1) {
