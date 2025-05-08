@@ -144,6 +144,7 @@ PC3.ItemDelegate {
                         width: Math.min(implicitWidth, parent.width)
 
                         text: defaultButton.text
+                        textFormat: Text.PlainText
                         elide: Text.ElideRight
 
                         HoverHandler {
@@ -174,6 +175,7 @@ PC3.ItemDelegate {
 
                         // Not a word puzzle because this is not a translated string
                         text: "(" + item.fullNameToShowOnHover + ")"
+                        textFormat: Text.PlainText
                         elide: Text.ElideRight
                     }
                 }
@@ -195,6 +197,7 @@ PC3.ItemDelegate {
 
                     PC3.ToolTip {
                         text: parent.Accessible.description
+                        textFormat: Text.PlainText
                     }
                 }
             }
@@ -215,6 +218,7 @@ PC3.ItemDelegate {
 
                     PC3.ToolTip {
                         text: parent.Accessible.description
+                        textFormat: Text.PlainText
                     }
                 }
 
@@ -294,6 +298,7 @@ PC3.ItemDelegate {
                     Layout.minimumWidth: percentMetrics.advanceWidth
                     horizontalAlignment: Qt.AlignRight
                     text: i18nc("volume percentage", "%1%", displayValue)
+                    textFormat: Text.PlainText
                     // Display a subtle visual indication that the volume
                     // might be dangerously high
                     // ------------------------------------------------
