@@ -479,6 +479,25 @@ PlasmoidItem {
                     id: layout
                     width: parent.width
                     spacing: 0
+
+                    PlasmaExtras.ListSectionHeader {
+                        id: upperSectionHeader
+                        visible: upperSection.visible && text != "" && (upperSection.count > 1 || lowerSection.count > 1)
+                        Layout.fillWidth: true
+                        topPadding: Kirigami.Units.mediumSpacing
+                        leftPadding: Kirigami.Units.smallSpacing * 2 // extra spacing to align with icon/label/radiobutton
+                        text: {
+                            switch (scrollView.upperType) {
+                                case "sink":
+                                    return i18nc("@title:group listview section header", "Output Devices")
+                                case "sink-input":
+                                    return i18nc("@title:group listview section header", "Output Streams")
+                                default:
+                                    return ""
+                            }
+                        }
+                    }
+
                     ListView {
                         id: upperSection
                         visible: count && !fullRep.hiddenTypes.includes(scrollView.upperType)
@@ -517,8 +536,25 @@ PlasmoidItem {
                         Layout.fillWidth: true
                         Layout.leftMargin: Kirigami.Units.smallSpacing * 2
                         Layout.rightMargin: Layout.leftMargin
-                        Layout.topMargin: Kirigami.Units.smallSpacing
-                        visible: upperSection.visible && lowerSection.visible
+                        Layout.topMargin: Kirigami.Units.smallSpacing // a bit smaller as the sliders cause a visual gap
+                        visible: upperSection.visible && lowerSection.visible && upperSection.count === 1 && lowerSection.count === 1
+                    }
+                    PlasmaExtras.ListSectionHeader {
+                        id: lowerSectionHeader
+                        visible: lowerSection.visible && text != ""  && (upperSection.count > 1 || lowerSection.count > 1)
+                        Layout.fillWidth: true
+                        topPadding: Kirigami.Units.smallSpacing
+                        leftPadding: 2 * Kirigami.Units.smallSpacing // extra spacing to align with icon/label/radiobutton
+                        text: {
+                            switch (scrollView.lowerType) {
+                                case "source":
+                                    return i18nc("@title:group listview section header", "Input Devices")
+                                case "source-output":
+                                    return i18nc("@title:group listview section header", "Input Streams")
+                                default:
+                                    return ""
+                            }
+                        }
                     }
                     ListView {
                         id: lowerSection
