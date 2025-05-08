@@ -11,9 +11,9 @@ import org.kde.plasma.components as PlasmaComponents3
 
 PlasmaComponents3.ToolButton {
     id: smallToolButton
-    readonly property int size: Math.ceil(Kirigami.Units.iconSizes.small + Kirigami.Units.smallSpacing * 2)
-    implicitWidth: size
-    implicitHeight: size
+    readonly property int iconSize: Kirigami.Units.iconSizes.small
+    icon.width: iconSize
+    icon.height: iconSize
 
     display: PlasmaComponents3.AbstractButton.IconOnly
 }
