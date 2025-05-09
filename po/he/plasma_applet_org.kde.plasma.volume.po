@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:44+0000\n"
+"POT-Creation-Date: 2025-05-09 00:43+0000\n"
 "PO-Revision-Date: 2025-01-25 12:58+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -30,52 +30,52 @@ msgstr "לא מקליט כרגע"
 msgid "Currently not playing"
 msgstr "לא מנגן כרגע"
 
-#: ListItemBase.qml:191
+#: ListItemBase.qml:193
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "אפשרויות נוספות"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:195
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "הצגת אפשרויות נוספות עבור %1"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ביטול השתקה"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "השתקה"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Unmute %1"
 msgstr "ביטול השתקת %1"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Mute %1"
 msgstr "השתקת %1"
 
-#: ListItemBase.qml:235
+#: ListItemBase.qml:239
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "כיוון עוצמת השמע עבור %1"
 
-#: ListItemBase.qml:296
+#: ListItemBase.qml:300
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -180,7 +180,7 @@ msgstr "הצגת התקנים וירטואליים"
 msgid "&Configure Audio Devices…"
 msgstr "ה&גדרת התקני שמע…"
 
-#: StreamListItem.qml:25
+#: StreamListItem.qml:34
 #, kde-format
 msgid "Stream name not found"
 msgstr "שם התזרים לא נמצא"

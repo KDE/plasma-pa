@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:44+0000\n"
+"POT-Creation-Date: 2025-05-09 00:43+0000\n"
 "PO-Revision-Date: 2023-05-12 19:37+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -26,52 +26,52 @@ msgstr "Derzeit keine Aufnahme"
 msgid "Currently not playing"
 msgstr "Derzeit keine Wiedergabe"
 
-#: ListItemBase.qml:191
+#: ListItemBase.qml:193
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Weitere Einstellungen"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:195
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Weitere Einstellungen für %1 anzeigen"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Stummschaltung aufheben"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Stummschalten"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Unmute %1"
 msgstr "Stummschaltung von %1 aufheben"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 Stummschalten"
 
-#: ListItemBase.qml:235
+#: ListItemBase.qml:239
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Lautstärke für %1 anpassen"
 
-#: ListItemBase.qml:296
+#: ListItemBase.qml:300
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -176,7 +176,7 @@ msgstr "Virtuelle Geräte anzeigen"
 msgid "&Configure Audio Devices…"
 msgstr "&Audio-Geräte einrichten ..."
 
-#: StreamListItem.qml:25
+#: StreamListItem.qml:34
 #, kde-format
 msgid "Stream name not found"
 msgstr "Name des Streams nicht gefunden"

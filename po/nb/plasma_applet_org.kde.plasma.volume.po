@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:44+0000\n"
+"POT-Creation-Date: 2025-05-09 00:43+0000\n"
 "PO-Revision-Date: 2025-04-04 09:48+0200\n"
 "Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -28,52 +28,52 @@ msgstr "Spiller ikke inn lyd"
 msgid "Currently not playing"
 msgstr "Spiller ikke av lyd"
 
-#: ListItemBase.qml:191
+#: ListItemBase.qml:193
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Flere valg"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:195
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Vis flere valg for %1"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Lyddemping av"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Demp lyd"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Unmute %1"
 msgstr "Slå av lyddemping for %1"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Mute %1"
 msgstr "Demp %1"
 
-#: ListItemBase.qml:235
+#: ListItemBase.qml:239
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Juster lydstyrke for %1"
 
-#: ListItemBase.qml:296
+#: ListItemBase.qml:300
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -178,7 +178,7 @@ msgstr "Vis virtuelle enheter"
 msgid "&Configure Audio Devices…"
 msgstr "&Sett opp lydenheter …"
 
-#: StreamListItem.qml:25
+#: StreamListItem.qml:34
 #, kde-format
 msgid "Stream name not found"
 msgstr "Fant ikke strømmenavn"

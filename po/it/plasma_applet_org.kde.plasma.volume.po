@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:44+0000\n"
+"POT-Creation-Date: 2025-05-09 00:43+0000\n"
 "PO-Revision-Date: 2025-01-25 14:11+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -27,52 +27,52 @@ msgstr "Attualmente non in registrazione"
 msgid "Currently not playing"
 msgstr "Attualmente non in riproduzione"
 
-#: ListItemBase.qml:191
+#: ListItemBase.qml:193
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Opzioni aggiuntive"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:195
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Mostra opzioni aggiuntive per %1"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Rimuovi silenzio"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Silenzia"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Unmute %1"
 msgstr "Rimuovi silenzio per %1"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Mute %1"
 msgstr "Silenzia %1"
 
-#: ListItemBase.qml:235
+#: ListItemBase.qml:239
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Regola il volume per %1"
 
-#: ListItemBase.qml:296
+#: ListItemBase.qml:300
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -177,7 +177,7 @@ msgstr "Mostra i dispositivi virtuali"
 msgid "&Configure Audio Devices…"
 msgstr "&Configura i dispositivi audio..."
 
-#: StreamListItem.qml:25
+#: StreamListItem.qml:34
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nome del flusso non trovato"

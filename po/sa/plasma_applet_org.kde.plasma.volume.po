@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:44+0000\n"
+"POT-Creation-Date: 2025-05-09 00:43+0000\n"
 "PO-Revision-Date: 2024-12-20 12:26+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,52 +29,52 @@ msgstr "सम्प्रति रिकार्डिङ्ग् न भव
 msgid "Currently not playing"
 msgstr "सम्प्रति न क्रीडति"
 
-#: ListItemBase.qml:191
+#: ListItemBase.qml:193
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "अतिरिक्तविकल्पाः"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:195
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 कृते अतिरिक्तविकल्पान् दर्शयतु"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "अप्रसन्नता"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "मूक"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Unmute %1"
 msgstr "अप्रसन्नता %1"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Mute %1"
 msgstr "म्यूट %1"
 
-#: ListItemBase.qml:235
+#: ListItemBase.qml:239
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 कृते आयतनं समायोजयन्तु"
 
-#: ListItemBase.qml:296
+#: ListItemBase.qml:300
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -179,7 +179,7 @@ msgstr "आभासीयन्त्राणि दर्शयन्तु"
 msgid "&Configure Audio Devices…"
 msgstr "&श्रव्ययन्त्राणि विन्यस्तं कुर्वन्तु..."
 
-#: StreamListItem.qml:25
+#: StreamListItem.qml:34
 #, kde-format
 msgid "Stream name not found"
 msgstr "धारानाम न प्राप्तम्"

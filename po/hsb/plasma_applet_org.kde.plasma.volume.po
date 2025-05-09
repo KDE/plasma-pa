@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:44+0000\n"
+"POT-Creation-Date: 2025-05-09 00:43+0000\n"
 "PO-Revision-Date: 2021-10-28 12:36+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -27,56 +27,56 @@ msgstr "Tuchwilu so njenahrawa"
 msgid "Currently not playing"
 msgstr "Tuchwilu so njewothrawa"
 
-#: ListItemBase.qml:191
+#: ListItemBase.qml:193
 #, fuzzy, kde-format
 #| msgid "Show additional options for %1"
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Dodatne opcije za %1 pokazać"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:195
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Dodatne opcije za %1 pokazać"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "%1 doněmić"
 
-#: ListItemBase.qml:212
+#: ListItemBase.qml:215
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Woně&mić"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgid "Unmute %1"
 msgstr "%1 doněmić"
 
-#: ListItemBase.qml:214
+#: ListItemBase.qml:217
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 doněmić"
 
-#: ListItemBase.qml:235
+#: ListItemBase.qml:239
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Wótrosć za %1 připrawić"
 
-#: ListItemBase.qml:296
+#: ListItemBase.qml:300
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -182,7 +182,7 @@ msgstr "Žadyn outputowy grat"
 msgid "&Configure Audio Devices…"
 msgstr "Awdijo-&graty připrawić..."
 
-#: StreamListItem.qml:25
+#: StreamListItem.qml:34
 #, kde-format
 msgid "Stream name not found"
 msgstr "Njemóžach mjeno streama namakać"
