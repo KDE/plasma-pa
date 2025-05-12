@@ -77,6 +77,9 @@ void VolumeFeedback::updateCachedSound()
     ca_context_cache(context,
                      CA_PROP_EVENT_DESCRIPTION, "Volume Control Feedback Sound",
                      CA_PROP_EVENT_ID, "audio-volume-change",
+                     // The default role "event" is played on the Notification sound channel
+                     // which is muted in do not disturb mode. Volume change should always play.
+                     CA_PROP_MEDIA_ROLE, "alert",
                      CA_PROP_CANBERRA_ENABLE, "1",
                      CA_PROP_CANBERRA_XDG_THEME_NAME, m_config->soundTheme().toLatin1().constData(),
                      nullptr);
