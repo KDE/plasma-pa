@@ -365,12 +365,10 @@ msgid "Mute state"
 msgstr "静音状态"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 正在使用麦克风"
+msgstr "应用程序启动时使用已静音的麦克风"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -451,11 +449,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% 电量)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "静音"
+msgstr "%1：已静音"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
