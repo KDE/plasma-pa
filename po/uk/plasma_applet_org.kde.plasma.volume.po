@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-01-25 09:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -160,22 +160,50 @@ msgstr "Повторити"
 msgid "No applications playing or recording audio"
 msgstr "Жодна програма не відтворює і не записує звук"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Немає пристрою для виведення"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Потоки захоплення даних"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Пристрої захоплення"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Потоки захоплення даних"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Збільшити максимальну гучність"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Примусово вимкнути всі пристрої відтворення"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показати віртуальні пристрої"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Налаштувати звукові пристрої…"
@@ -184,9 +212,6 @@ msgstr "&Налаштувати звукові пристрої…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Назву потоку не знайдено"
-
-#~ msgid "No output device"
-#~ msgstr "Немає пристрою для виведення"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -323,12 +348,6 @@ msgstr "Назву потоку не знайдено"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Типовий"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Потоки захоплення даних"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Пристрої захоплення"
 
 #~ msgid "Volume"
 #~ msgstr "Гучність"

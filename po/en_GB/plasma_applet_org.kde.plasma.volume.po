@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2024-08-24 11:59+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -157,22 +157,50 @@ msgstr "Retry"
 msgid "No applications playing or recording audio"
 msgstr "No applications playing or recording audio"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "No output device"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Capture Streams"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Capture Devices"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Capture Streams"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Raise maximum volume"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Force mute all playback devices"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Show virtual devices"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configure Audio Devices…"
@@ -181,9 +209,6 @@ msgstr "&Configure Audio Devices…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Stream name not found"
-
-#~ msgid "No output device"
-#~ msgstr "No output device"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -320,12 +345,6 @@ msgstr "Stream name not found"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Default"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Capture Streams"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Capture Devices"
 
 #~ msgid "Volume"
 #~ msgstr "Volume"

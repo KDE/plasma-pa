@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-03-04 17:03+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -159,22 +159,50 @@ msgstr "Mēģināt vēlreiz"
 msgid "No applications playing or recording audio"
 msgstr "Pašlaik neviena programma neatskaņo vai neieraksta audio"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output or input devices found"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Nav atrastas ievades vai izvades iekārtas"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Ķert straumes"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Ķeršanas iekārtas"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Ķert straumes"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Palielināt maksimālo skaļumu"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rādīt virtuālās ierīces"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurēt skaņas ierīces…"
@@ -183,11 +211,6 @@ msgstr "&Konfigurēt skaņas ierīces…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Straumes nosaukums nav atrasts"
-
-#, fuzzy
-#~| msgid "No output or input devices found"
-#~ msgid "No output device"
-#~ msgstr "Nav atrastas ievades vai izvades iekārtas"
 
 #, fuzzy
 #~| msgctxt "label of device items"
@@ -305,12 +328,6 @@ msgstr "Straumes nosaukums nav atrasts"
 #~ msgctxt "Checkable switch for (un-)muting sound output."
 #~ msgid "Mute"
 #~ msgstr "Apklusināt"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Ķert straumes"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Ķeršanas iekārtas"
 
 #~ msgid "Volume"
 #~ msgstr "Skaļums"

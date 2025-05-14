@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-01-26 18:03+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -157,22 +157,48 @@ msgstr "மீண்டும் முயற்சி"
 msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "வெளியீட்டு சாதனம் இல்லை"
+
+#: main.qml:494
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr ""
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "சாதனங்கள்"
+
+#: main.qml:553
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr ""
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"
@@ -181,9 +207,6 @@ msgstr "ஒலி சாதனங்களை &அமை…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "அப்பெயரையுடைய ஒலித்தடத்தை (stream-ஐ) கண்டுபிடிக்க முடியவில்லை"
-
-#~ msgid "No output device"
-#~ msgstr "வெளியீட்டு சாதனம் இல்லை"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"

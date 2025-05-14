@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2023-01-29 08:01+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -158,22 +158,50 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Tidak ada aplikasi yang memutar atau merekam audio"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Tidak ada peranti output"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Stream Capture"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Perangkat Capture"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Stream Capture"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Tingkatkan volume maksimum"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Paksa senyap semua pemutaran peranti"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Tampilkan peranti virtual"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurasikan Peranti Audio..."
@@ -182,9 +210,6 @@ msgstr "&Konfigurasikan Peranti Audio..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nama stream tidak ditemukan"
-
-#~ msgid "No output device"
-#~ msgstr "Tidak ada peranti output"
 
 #, fuzzy
 #~| msgctxt "label of device items"
@@ -325,12 +350,6 @@ msgstr "Nama stream tidak ditemukan"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Baku"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Stream Capture"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Perangkat Capture"
 
 #~ msgid "Volume"
 #~ msgstr "Volume"

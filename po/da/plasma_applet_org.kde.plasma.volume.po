@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2024-10-21 11:11+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -158,22 +158,50 @@ msgstr "Prøv igen"
 msgid "No applications playing or recording audio"
 msgstr "Ingen programmer afspiller eller optager lyd"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Ingen outputenhed"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Optagelsesstreams"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Optagelsesenheder"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Optagelsesstreams"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Hæv maksimal lydstyrke"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Gennemtving lydløs for alle afspilningsenheder"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Vis virtuelle enheder"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Indstil lydenheder..."
@@ -182,9 +210,6 @@ msgstr "&Indstil lydenheder..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Streamnavn ikke fundet"
-
-#~ msgid "No output device"
-#~ msgstr "Ingen outputenhed"
 
 #, fuzzy
 #~| msgctxt "label of device items"
@@ -328,12 +353,6 @@ msgstr "Streamnavn ikke fundet"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Standard"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Optagelsesstreams"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Optagelsesenheder"
 
 #~ msgid "Volume"
 #~ msgstr "Lydstyrke"

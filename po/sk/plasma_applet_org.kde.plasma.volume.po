@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2023-12-10 15:08+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -159,22 +159,50 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Žiadne aplikácie neprehrávajú ani nenahrávajú zvuk"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Žiadne výstupné zariadenie"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Prúdy zachytávania"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Zariadenia pre zachytávanie"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Prúdy zachytávania"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvýšiť maximálnu hlasitosť"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Zobraziť virtuálne zariadenia"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Nastaviť zvukové zariadenia..."
@@ -183,9 +211,6 @@ msgstr "&Nastaviť zvukové zariadenia..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Názov prúdu nebol nájdený"
-
-#~ msgid "No output device"
-#~ msgstr "Žiadne výstupné zariadenie"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -322,12 +347,6 @@ msgstr "Názov prúdu nebol nájdený"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Predvolené"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Prúdy zachytávania"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Zariadenia pre zachytávanie"
 
 #~ msgid "Volume"
 #~ msgstr "Hlasitosť"

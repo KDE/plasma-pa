@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2019-02-18 03:11+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -158,22 +158,46 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr ""
 
-#: main.qml:575
+#: main.qml:492
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr ""
+
+#: main.qml:494
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr ""
+
+#: main.qml:551
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr ""
+
+#: main.qml:553
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr ""
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr ""
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr ""
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

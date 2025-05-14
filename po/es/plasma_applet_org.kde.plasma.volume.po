@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-01-25 11:57+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -159,22 +159,50 @@ msgstr "Reintentar"
 msgid "No applications playing or recording audio"
 msgstr "No hay aplicaciones reproduciendo ni grabando sonido"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Sin dispositivo de salida"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Emisiones de captura"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Dispositivos de captura"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Emisiones de captura"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Subir el volumen máximo"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forzar el silencio en todos los dispositivos de reproducción"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostrar dispositivos virtuales"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar dispositivos de sonido..."
@@ -183,9 +211,6 @@ msgstr "&Configurar dispositivos de sonido..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nombre de transmisión no encontrado"
-
-#~ msgid "No output device"
-#~ msgstr "Sin dispositivo de salida"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -323,12 +348,6 @@ msgstr "Nombre de transmisión no encontrado"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Por omisión"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Emisiones de captura"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Dispositivos de captura"
 
 #~ msgid "Volume"
 #~ msgstr "Volumen"

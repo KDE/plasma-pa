@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2024-03-07 17:18-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -157,22 +157,50 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "ਕੋਈ ਵੀ ਐਪਲੀਕੇਸ਼ਨ ਆਡੀਓ ਚਲਾ ਜਾਂ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰ ਰਹੀ ਹੈ"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "ਕੈਪਚਰ ਸਟਰੀਮਾਂ"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "ਕੈਪਚਰ ਡਿਵਾਈਸ"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "ਕੈਪਚਰ ਸਟਰੀਮਾਂ"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ਸਾਰੇ ਪਲੇਅਬੈਕ ਡਿਵਾਈਸਾਂ ਨੂੰ ਧੱਕੇ ਨਾਲ ਮੌਨ ਕਰੋ"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ਵਰਚੁਅਲ ਡਿਵਾਈਸ ਵੇਖੋ"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "…ਆਡੀਓ ਡਿਵਾਈਸਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"
@@ -181,9 +209,6 @@ msgstr "…ਆਡੀਓ ਡਿਵਾਈਸਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"
 #, kde-format
 msgid "Stream name not found"
 msgstr "ਸਟਰੀਮ ਦਾ ਨਾਂ ਨਹੀਂ ਲੱਭਿਆ"
-
-#~ msgid "No output device"
-#~ msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -297,12 +322,6 @@ msgstr "ਸਟਰੀਮ ਦਾ ਨਾਂ ਨਹੀਂ ਲੱਭਿਆ"
 #~ msgctxt "Checkable switch for (un-)muting sound output."
 #~ msgid "Mute"
 #~ msgstr "ਚੁੱਪ"
-
-#~ msgid "Capture Streams"
-#~ msgstr "ਕੈਪਚਰ ਸਟਰੀਮਾਂ"
-
-#~ msgid "Capture Devices"
-#~ msgstr "ਕੈਪਚਰ ਡਿਵਾਈਸ"
 
 #~ msgid "Volume"
 #~ msgstr "ਵਾਲੀਅਮ"

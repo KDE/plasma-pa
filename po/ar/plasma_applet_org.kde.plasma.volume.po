@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-01-28 19:05+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -159,22 +159,50 @@ msgstr "أعِد المحاولة"
 msgid "No applications playing or recording audio"
 msgstr "لا توجد تطبيقات تشغل أو تسجل الصوت"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "لا يوجد جهاز إخراج"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "دفق الالتقاط"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "الأجهزة"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "دفق الالتقاط"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ارفع لأقصى مستوى"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "افرض كتم صوت جميع أجهزة التشغيل"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "أظهر الأجهزة الافتراضية"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ا&ضبط أجهزة الصوت..."
@@ -183,9 +211,6 @@ msgstr "ا&ضبط أجهزة الصوت..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "اسم الدفق غير موجود"
-
-#~ msgid "No output device"
-#~ msgstr "لا يوجد جهاز إخراج"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -270,9 +295,6 @@ msgstr "اسم الدفق غير موجود"
 #~ msgctxt "Checkable switch for (un-)muting sound output."
 #~ msgid "Mute"
 #~ msgstr "اكتم"
-
-#~ msgid "Capture Streams"
-#~ msgstr "دفق الالتقاط"
 
 #~ msgid "Volume"
 #~ msgstr "المستوى"

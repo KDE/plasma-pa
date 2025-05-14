@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-02-06 20:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -159,22 +159,49 @@ msgstr "重試"
 msgid "No applications playing or recording audio"
 msgstr "沒有正在播放或錄音的應用程式"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "沒有輸出裝置"
+
+#: main.qml:494
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr ""
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "裝置"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Recording Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "錄製串流"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "強制靜音所有播放裝置"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "顯示虛擬裝置"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "設定音效裝置(&C)…"
@@ -183,9 +210,6 @@ msgstr "設定音效裝置(&C)…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "找不到串流名稱"
-
-#~ msgid "No output device"
-#~ msgstr "沒有輸出裝置"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -288,9 +312,6 @@ msgstr "找不到串流名稱"
 
 #~ msgid "Playback Streams"
 #~ msgstr "播放串流"
-
-#~ msgid "Recording Streams"
-#~ msgstr "錄製串流"
 
 #~ msgid "Playback Devices"
 #~ msgstr "播放裝置"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2020-09-28 13:57+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -162,23 +162,51 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Ükski rakendus ei esita ega salvesta heli"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Väljundseade puudub"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Hõivevood"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Seadmed"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Hõivevood"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Helitugevuse maksimumi suurendamine"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Jõuga heli maha kõigis taasesitamisseadmetes"
 
-#: main.qml:596
+#: main.qml:632
 #, fuzzy, kde-format
 #| msgid "Show hidden devices"
 msgid "Show virtual devices"
 msgstr "Peidetud seadmete näitamine"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
@@ -187,9 +215,6 @@ msgstr ""
 #, kde-format
 msgid "Stream name not found"
 msgstr "Voo nime ei leitud"
-
-#~ msgid "No output device"
-#~ msgstr "Väljundseade puudub"
 
 #, fuzzy
 #~| msgctxt "label of device items"
@@ -327,9 +352,6 @@ msgstr "Voo nime ei leitud"
 #~ msgctxt "Checkable switch for (un-)muting sound output."
 #~ msgid "Mute"
 #~ msgstr "Tummaks"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Hõivevood"
 
 #~ msgid "Volume"
 #~ msgstr "Helitugevus"

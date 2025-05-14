@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2023-02-15 15:24+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -153,22 +153,48 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Sem aplicações a gravar ou reproduzir áudio"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Sem dispositivo de saída"
+
+#: main.qml:494
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr ""
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Dispositivos"
+
+#: main.qml:553
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr ""
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Aumentar o volume máximo"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forçar o silenciamento de todos os dispositivos de reprodução"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostrar os dispositivos virtuais"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar os Dispositivos de Áudio…"
@@ -177,9 +203,6 @@ msgstr "&Configurar os Dispositivos de Áudio…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nome da sequência não encontrado"
-
-#~ msgid "No output device"
-#~ msgstr "Sem dispositivo de saída"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"

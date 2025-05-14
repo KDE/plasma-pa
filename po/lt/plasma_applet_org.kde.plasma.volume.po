@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-02-02 23:11+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -160,22 +160,50 @@ msgstr "Bandyti dar kartą"
 msgid "No applications playing or recording audio"
 msgstr "Šiuo metu jokios programos neatkuria ir neįrašinėja garso"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Nėra jokio išvesties įrenginio"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Įrašymo srautai"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Įrašymo įrenginiai"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Įrašymo srautai"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Padidinti didžiausią garsumą"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Priverstinai nutildyti visus atkūrimo įrenginius"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rodyti virtualius įrenginius"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigūruoti garso įrenginius…"
@@ -184,9 +212,6 @@ msgstr "&Konfigūruoti garso įrenginius…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Srauto pavadinimas nerastas"
-
-#~ msgid "No output device"
-#~ msgstr "Nėra jokio išvesties įrenginio"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -323,12 +348,6 @@ msgstr "Srauto pavadinimas nerastas"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Numatytasis"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Įrašymo srautai"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Įrašymo įrenginiai"
 
 #~ msgid "Volume"
 #~ msgstr "Garsumas"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-01-25 02:56+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -158,22 +158,48 @@ msgstr "გამეორება"
 msgid "No applications playing or recording audio"
 msgstr "ამჟამად აუდიოს არც ერთი აპლიკაცია არ უკრავს და არც იწერს"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "გამოტანის მოწყობილობის გარეშე"
+
+#: main.qml:494
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr ""
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "მოწყობილობები"
+
+#: main.qml:553
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr ""
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "მაქსიმალური ხმის აწევა"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ყველა დამკვრელი მოწყობილბის დადუმება"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ვირტუალური მოწყობილობების ჩვენება"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "აუდიო მოწყობილობების &მორგება…"
@@ -182,9 +208,6 @@ msgstr "აუდიო მოწყობილობების &მორგ
 #, kde-format
 msgid "Stream name not found"
 msgstr "ნაკადის სახელი ვერ ვიპოვე"
-
-#~ msgid "No output device"
-#~ msgstr "გამოტანის მოწყობილობის გარეშე"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"

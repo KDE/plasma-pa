@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-02-14 19:47+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -161,22 +161,50 @@ msgstr "Yritä uudelleen"
 msgid "No applications playing or recording audio"
 msgstr "Mikään sovellus ei toista tai tallenna ääntä"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Ei ulostulolaitetta"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Kaappausvirrat"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Kaappauslaitteet"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Kaappausvirrat"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Nosta enimmäisvoimakkuutta"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Pakota vaimennus kaikissa toistolaitteissa"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Näytä virtuaalilaitteet"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Äänilaitteiden asetukset…"
@@ -185,9 +213,6 @@ msgstr "&Äänilaitteiden asetukset…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Virran nimeä ei löytynyt"
-
-#~ msgid "No output device"
-#~ msgstr "Ei ulostulolaitetta"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -324,12 +349,6 @@ msgstr "Virran nimeä ei löytynyt"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Oletus"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Kaappausvirrat"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Kaappauslaitteet"
 
 #~ msgid "Volume"
 #~ msgstr "Äänenvoimakkuus"

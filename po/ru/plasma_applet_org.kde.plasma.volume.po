@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-01-27 11:30+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -160,22 +160,50 @@ msgstr "Повторить"
 msgid "No applications playing or recording audio"
 msgstr "Ни одно приложение не воспроизводит и не записывает звук."
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Не найдено устройств вывода звука"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Захват звука"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Устройства захвата звука"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Захват звука"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Увеличить максимальную громкость"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Принудительно выключить звук всех устройств воспроизведения"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показывать виртуальные устройства"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Настроить звуковые устройства..."
@@ -184,9 +212,6 @@ msgstr "&Настроить звуковые устройства..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Имя потока не найдено"
-
-#~ msgid "No output device"
-#~ msgstr "Не найдено устройств вывода звука"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -323,12 +348,6 @@ msgstr "Имя потока не найдено"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Устройство по умолчанию"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Захват звука"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Устройства захвата звука"
 
 #~ msgid "Volume"
 #~ msgstr "Громкость"

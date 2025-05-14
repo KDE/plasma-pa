@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2023-05-12 19:37+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -156,22 +156,50 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Keine Anwendung spielt Audio ab oder nimmt Audio auf"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Kein Ausgabegerät"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Aufnahmestreams"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Aufnahmegeräte"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Aufnahmestreams"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximale Lautstärke erhöhen"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Stummschalten aller Wiedergabegeräte erzwingen"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuelle Geräte anzeigen"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Audio-Geräte einrichten ..."
@@ -180,9 +208,6 @@ msgstr "&Audio-Geräte einrichten ..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Name des Streams nicht gefunden"
-
-#~ msgid "No output device"
-#~ msgstr "Kein Ausgabegerät"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -316,12 +341,6 @@ msgstr "Name des Streams nicht gefunden"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Standard"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Aufnahmestreams"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Aufnahmegeräte"
 
 #~ msgid "Volume"
 #~ msgstr "Lautstärke"

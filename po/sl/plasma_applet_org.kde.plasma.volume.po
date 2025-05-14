@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-01-25 08:13+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -160,22 +160,50 @@ msgstr "Ponovno poskusi"
 msgid "No applications playing or recording audio"
 msgstr "Noben program ne predvaja ali snema zvoka"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Ni izhodnih naprav"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Tokovi za zajem"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Naprave za zajem"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Tokovi za zajem"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvišaj največjo glasnost"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Prisilno utišaj vse naprave za playback"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Prikaži navidezne naprave"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Nastavi zvočne naprave…"
@@ -184,9 +212,6 @@ msgstr "Nastavi zvočne naprave…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "Imena toka ni mogoče najti"
-
-#~ msgid "No output device"
-#~ msgstr "Ni izhodnih naprav"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -327,12 +352,6 @@ msgstr "Imena toka ni mogoče najti"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Privzeto"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Tokovi za zajem"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Naprave za zajem"
 
 #~ msgid "Volume"
 #~ msgstr "Glasnost"

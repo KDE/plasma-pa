@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2021-10-28 12:36+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -161,23 +161,49 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Žane aplikacije za nahrawanje abo wothrawanje"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Žadyn outputowy grat"
+
+#: main.qml:494
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr ""
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Graty"
+
+#: main.qml:553
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr ""
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maksimalnu wótrosć powyšić"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Wšitke wothrawace graty doněmić"
 
-#: main.qml:596
+#: main.qml:632
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgid "Show virtual devices"
 msgstr "Žadyn outputowy grat"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Awdijo-&graty připrawić..."
@@ -186,9 +212,6 @@ msgstr "Awdijo-&graty připrawić..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Njemóžach mjeno streama namakać"
-
-#~ msgid "No output device"
-#~ msgstr "Žadyn outputowy grat"
 
 #, fuzzy
 #~| msgctxt "label of device items"

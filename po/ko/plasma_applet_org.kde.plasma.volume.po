@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-04-07 00:25+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -157,22 +157,50 @@ msgstr "다시 시도"
 msgid "No applications playing or recording audio"
 msgstr "오디오를 재생하거나 녹음하는 앱 없음"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "출력 장치를 찾을 수 없음"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "캡처 스트림"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "캡처 장치"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "캡처 스트림"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "최대 음량 높이기"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "강제로 모든 재생 장치 음소거"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "가상 장치 표시"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "오디오 장치 설정(&C)…"
@@ -181,9 +209,6 @@ msgstr "오디오 장치 설정(&C)…"
 #, kde-format
 msgid "Stream name not found"
 msgstr "스트림 이름을 찾을 수 없음"
-
-#~ msgid "No output device"
-#~ msgstr "출력 장치를 찾을 수 없음"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -320,12 +345,6 @@ msgstr "스트림 이름을 찾을 수 없음"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "기본값"
-
-#~ msgid "Capture Streams"
-#~ msgstr "캡처 스트림"
-
-#~ msgid "Capture Devices"
-#~ msgstr "캡처 장치"
 
 #~ msgid "Volume"
 #~ msgstr "음량"

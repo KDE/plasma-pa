@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-01-26 10:09+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -166,22 +166,50 @@ msgid "No applications playing or recording audio"
 msgstr ""
 "Aucune application ne lit ou n'enregistre actuellement du contenu sonore"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Aucun périphérique de sortie"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Flux de capture"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Périphériques de capture"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Flux de capture"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Augmenter le volume maximum"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Couper le son de tous les périphériques de lecture"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Afficher les périphériques virtuels"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurer les périphériques audio..."
@@ -190,9 +218,6 @@ msgstr "&Configurer les périphériques audio..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nom du flux introuvable"
-
-#~ msgid "No output device"
-#~ msgstr "Aucun périphérique de sortie"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -331,12 +356,6 @@ msgstr "Nom du flux introuvable"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Par défaut"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Flux de capture"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Périphériques de capture"
 
 #~ msgid "Volume"
 #~ msgstr "Volume"

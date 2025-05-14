@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-09 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-02-08 17:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -158,22 +158,50 @@ msgstr "Ponów"
 msgid "No applications playing or recording audio"
 msgstr "Żadna aplikacja nie odtwarza, ani nie nagrywa teraz dźwięku"
 
-#: main.qml:575
+#: main.qml:492
+#, fuzzy, kde-format
+#| msgid "No output device"
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr "Nie ma żadnego urządzenia wyjściowego"
+
+#: main.qml:494
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr "Przechwytywane strumienie"
+
+#: main.qml:551
+#, fuzzy, kde-format
+#| msgid "Capture Devices"
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "Urządzenia nagrywające"
+
+#: main.qml:553
+#, fuzzy, kde-format
+#| msgid "Capture Streams"
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr "Przechwytywane strumienie"
+
+#: main.qml:611
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zwiększ graniczną głośność"
 
-#: main.qml:587
+#: main.qml:623
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Wycisz wszystkie urządzenia odtwarzające"
 
-#: main.qml:596
+#: main.qml:632
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Pokaż urządzenia wirtualne"
 
-#: main.qml:606
+#: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Ustawienia urządzeń dźwiękowych..."
@@ -182,9 +210,6 @@ msgstr "&Ustawienia urządzeń dźwiękowych..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nie znaleziono nazwy strumienia"
-
-#~ msgid "No output device"
-#~ msgstr "Nie ma żadnego urządzenia wyjściowego"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
@@ -321,12 +346,6 @@ msgstr "Nie znaleziono nazwy strumienia"
 #~ msgctxt "Checkable switch to change the current default output."
 #~ msgid "Default"
 #~ msgstr "Domyślnie"
-
-#~ msgid "Capture Streams"
-#~ msgstr "Przechwytywane strumienie"
-
-#~ msgid "Capture Devices"
-#~ msgstr "Urządzenia nagrywające"
 
 #~ msgid "Volume"
 #~ msgstr "Głośność"
