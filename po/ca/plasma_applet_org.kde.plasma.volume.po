@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-14 00:45+0000\n"
-"PO-Revision-Date: 2025-01-25 12:02+0100\n"
+"PO-Revision-Date: 2025-05-14 09:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -162,30 +162,28 @@ msgid "No applications playing or recording audio"
 msgstr "No hi ha cap aplicació reproduint o enregistrant àudio"
 
 #: main.qml:492
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Dispositius"
+msgstr "Dispositius de sortida"
 
 #: main.qml:494
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "Fluxos de sortida"
 
 #: main.qml:551
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Dispositius"
+msgstr "Dispositius d'entrada"
 
 #: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "Fluxos d'entrada"
 
 #: main.qml:611
 #, kde-format

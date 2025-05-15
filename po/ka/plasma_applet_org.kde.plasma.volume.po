@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-14 00:45+0000\n"
-"PO-Revision-Date: 2025-01-25 02:56+0100\n"
+"PO-Revision-Date: 2025-05-14 03:33+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: ListItemBase.qml:66
 #, kde-format
@@ -159,30 +159,28 @@ msgid "No applications playing or recording audio"
 msgstr "ამჟამად აუდიოს არც ერთი აპლიკაცია არ უკრავს და არც იწერს"
 
 #: main.qml:492
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "გამოტანის მოწყობილობის გარეშე"
+msgstr "გამოტანის მოწყობილობები"
 
 #: main.qml:494
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "გამავალი ნაკადები"
 
 #: main.qml:551
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "მოწყობილობები"
+msgstr "შეტანის მოწყობილობები"
 
 #: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "შემომავალი ნაკადები"
 
 #: main.qml:611
 #, kde-format

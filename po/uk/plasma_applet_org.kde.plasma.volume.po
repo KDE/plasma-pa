@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-14 00:45+0000\n"
-"PO-Revision-Date: 2025-01-25 09:01+0200\n"
+"PO-Revision-Date: 2025-05-14 09:16+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -161,32 +161,28 @@ msgid "No applications playing or recording audio"
 msgstr "Жодна програма не відтворює і не записує звук"
 
 #: main.qml:492
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Немає пристрою для виведення"
+msgstr "Пристрої відтворення"
 
 #: main.qml:494
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Потоки захоплення даних"
+msgstr "Потоки відтворення"
 
 #: main.qml:551
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Пристрої захоплення"
+msgstr "Пристрої введення"
 
 #: main.qml:553
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Потоки захоплення даних"
+msgstr "Потоки вхідних даних"
 
 #: main.qml:611
 #, kde-format

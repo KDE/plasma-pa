@@ -159,11 +159,10 @@ msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
 #: main.qml:492
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "设备"
+msgstr ""
 
 #: main.qml:494
 #, kde-format
@@ -172,11 +171,10 @@ msgid "Output Streams"
 msgstr ""
 
 #: main.qml:551
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "设备"
+msgstr ""
 
 #: main.qml:553
 #, kde-format

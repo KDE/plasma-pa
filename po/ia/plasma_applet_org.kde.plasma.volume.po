@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-14 00:45+0000\n"
-"PO-Revision-Date: 2025-01-27 11:25+0100\n"
+"PO-Revision-Date: 2025-05-14 12:27+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -158,32 +158,28 @@ msgid "No applications playing or recording audio"
 msgstr "Necun application reproducente o registrante audio"
 
 #: main.qml:492
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Nulle dipositivo de egresso"
+msgstr "Dispositivos de egresso"
 
 #: main.qml:494
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Captura fluxos"
+msgstr "Fluxos (Streams) de egresso"
 
 #: main.qml:551
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Dispositivos"
+msgstr "Dispositivos de Ingresso"
 
 #: main.qml:553
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Captura fluxos"
+msgstr "Fluxos (Streams) de Ingresso"
 
 #: main.qml:611
 #, kde-format
