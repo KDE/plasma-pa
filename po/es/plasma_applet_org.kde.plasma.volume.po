@@ -1,15 +1,15 @@
 # Spanish translations for plasma_applet_org.kde.plasma.volume.po package.
-# Copyright (C) 2015 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2015-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-pa package.
 # Automatically generated, 2015.
+#
 # SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma_applet_org\n"
+"Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-14 00:45+0000\n"
-"PO-Revision-Date: 2025-01-25 11:57+0100\n"
+"PO-Revision-Date: 2025-05-15 19:00+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: ListItemBase.qml:66
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "No se han encontrado dispositivos de entrada ni de salida"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr "Intentando reconectar..."
+msgstr "Intentando reconectar…"
 
 #: main.qml:68
 #, kde-format
@@ -160,32 +160,28 @@ msgid "No applications playing or recording audio"
 msgstr "No hay aplicaciones reproduciendo ni grabando sonido"
 
 #: main.qml:492
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Sin dispositivo de salida"
+msgstr "Dispositivos de salida"
 
 #: main.qml:494
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Emisiones de captura"
+msgstr "Emisiones de salida"
 
 #: main.qml:551
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Dispositivos de captura"
+msgstr "Dispositivos de entrada"
 
 #: main.qml:553
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Emisiones de captura"
+msgstr "Emisiones de entrada"
 
 #: main.qml:611
 #, kde-format
@@ -205,275 +201,9 @@ msgstr "Mostrar dispositivos virtuales"
 #: main.qml:642
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr "&Configurar dispositivos de sonido..."
+msgstr "&Configurar dispositivos de sonido…"
 
 #: StreamListItem.qml:34
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nombre de transmisión no encontrado"
-
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (batería al %2%)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Subir el volumen"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "Subir el volumen un 1%"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Bajar el volumen"
-
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "Bajar el volumen un 1%"
-
-#~ msgid "Mute"
-#~ msgstr "Silenciar"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "Subir el volumen del micrófono"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "Bajar el volumen del micrófono"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "Silenciar el micrófono"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Volume step:"
-#~ msgstr "Paso de volumen:"
-
-#~ msgid "Play audio feedback for changes to:"
-#~ msgstr "Reproducir sonido para notificar cambios de:"
-
-#~ msgid "Audio volume"
-#~ msgstr "Volumen del sonido"
-
-#~ msgid "Show visual feedback for changes to:"
-#~ msgstr "Mostrar información visual para cambios de:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Sensibilidad del micrófono"
-
-#~ msgid "Mute state"
-#~ msgstr "Estado de silencio"
-
-#~ msgid "Default output device"
-#~ msgstr "Dispositivo de salida por omisión"
-
-#~ msgctxt "@title"
-#~ msgid "Display:"
-#~ msgstr "Mostrar:"
-
-#~ msgid "Record all audio via this device"
-#~ msgstr "Grabar todo el sonido con este dispositivo"
-
-#~ msgid "Play all audio via this device"
-#~ msgstr "Reproducir todo el sonido con este dispositivo"
-
-#~ msgctxt ""
-#~ "Heading for a list of ports of a device (for example built-in laptop "
-#~ "speakers or a plug for headphones)"
-#~ msgid "Ports"
-#~ msgstr "Puertos"
-
-#~ msgctxt "Port is unavailable"
-#~ msgid "%1 (unavailable)"
-#~ msgstr "%1 (no disponible)"
-
-#~ msgctxt "Port is unplugged"
-#~ msgid "%1 (unplugged)"
-#~ msgstr "%1 (sin conectar)"
-
-#~ msgctxt ""
-#~ "Heading for a list of possible output devices (speakers, headphones, ...) "
-#~ "to choose"
-#~ msgid "Play audio using"
-#~ msgstr "Reproducir sonido usando"
-
-#~ msgctxt ""
-#~ "Heading for a list of possible input devices (built-in microphone, "
-#~ "headset, ...) to choose"
-#~ msgid "Record audio using"
-#~ msgstr "Grabar sonido usando"
-
-#~ msgid "show hidden devices"
-#~ msgstr "mostrar dispositivos ocultos"
-
-#~ msgid "Feedback:"
-#~ msgstr "Información de respuesta:"
-
-#~ msgid "Play sound when volume changes"
-#~ msgstr "Reproducir sonido cuando cambia el volumen"
-
-#~ msgid "Display notification when default output device changes"
-#~ msgstr ""
-#~ "Mostrar notificación cuando cambia el dispositivo de salida por omisión"
-
-#~ msgid "Maximum volume:"
-#~ msgstr "Volumen máximo:"
-
-#~ msgid "Default Device"
-#~ msgstr "Dispositivo por omisión"
-
-#~ msgid "Playback Streams"
-#~ msgstr "Emisiones de reproducción"
-
-#~ msgid "Recording Streams"
-#~ msgstr "Emisiones grabadas"
-
-#~ msgid "Playback Devices"
-#~ msgstr "Dispositivos de reproducción"
-
-#~ msgid "Recording Devices"
-#~ msgstr "Dispositivos de grabación"
-
-#~ msgctxt "label of stream items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgctxt "Checkable switch for (un-)muting sound output."
-#~ msgid "Mute"
-#~ msgstr "Silenciar"
-
-#~ msgctxt "Checkable switch to change the current default output."
-#~ msgid "Default"
-#~ msgstr "Por omisión"
-
-#~ msgid "Volume"
-#~ msgstr "Volumen"
-
-#~ msgid "%"
-#~ msgstr "%"
-
-#~ msgid "Behavior"
-#~ msgstr "Comportamiento"
-
-#~ msgid "Volume feedback"
-#~ msgstr "Notificaciones de cambio de volumen"
-
-#~ msgid "Device Profiles"
-#~ msgstr "Perfiles de dispositivos"
-
-#~ msgctxt "@label"
-#~ msgid "No Device Profiles Available"
-#~ msgstr "Ningún perfil de dispositivo disponible"
-
-#~ msgid "Advanced Output Configuration"
-#~ msgstr "Configuración avanzada de salida"
-
-#~ msgid ""
-#~ "Add virtual output device for simultaneous output on all local sound cards"
-#~ msgstr ""
-#~ "Añadir dispositivo de salida virtual para salida simultánea en todas las "
-#~ "tarjetas de sonido locales"
-
-#~ msgid ""
-#~ "Automatically switch all running streams when a new output becomes "
-#~ "available"
-#~ msgstr ""
-#~ "Cambiar automáticamente todos los flujos activos cuando esté disponible "
-#~ "una nueva salida"
-
-#~ msgid "Requires 'module-gconf' PulseAudio module"
-#~ msgstr "Necesita el módulo «module-gconf» de PulseAudio"
-
-#~ msgid "Speaker Placement and Testing"
-#~ msgstr "Emplazamiento de los altavoces y prueba"
-
-#~ msgctxt "@label"
-#~ msgid "Output:"
-#~ msgstr "Salida:"
-
-#~ msgid "Front Left"
-#~ msgstr "Frontal izquierdo"
-
-#~ msgid "Front Center"
-#~ msgstr "Frontal central"
-
-#~ msgid "Front Right"
-#~ msgstr "Frontal derecho"
-
-#~ msgid "Side Left"
-#~ msgstr "Lateral izquierdo"
-
-#~ msgid "Side Right"
-#~ msgstr "Lateral derecho"
-
-#~ msgid "Rear Left"
-#~ msgstr "Trasero izquierdo"
-
-#~ msgid "Subwoofer"
-#~ msgstr "Subwoofer"
-
-#~ msgid "Rear Right"
-#~ msgstr "Trasero derecho"
-
-#~ msgid "Playback"
-#~ msgstr "Reproducción"
-
-#~ msgctxt "@label"
-#~ msgid "No Applications Playing Audio"
-#~ msgstr "No hay aplicaciones reproduciendo sonido"
-
-#~ msgid "Capture"
-#~ msgstr "Capturar"
-
-#~ msgctxt "@label"
-#~ msgid "No Applications Recording Audio"
-#~ msgstr "No hay aplicaciones grabando sonido"
-
-#~ msgctxt "@label"
-#~ msgid "Profile:"
-#~ msgstr "Perfil:"
-
-#~ msgid "Port"
-#~ msgstr "Puerto"
-
-#~ msgid "Outputs"
-#~ msgstr "Salidas"
-
-#~ msgctxt "@label"
-#~ msgid "No Output Devices Available"
-#~ msgstr "No hay dispositivos de salida disponibles"
-
-#~ msgid "Inputs"
-#~ msgstr "Entradas"
-
-#~ msgctxt "@label"
-#~ msgid "No Input Devices Available"
-#~ msgstr "No hay dispositivos de entrada disponibles"
-
-#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
-#~ msgstr "Este módulo permite configurar el subsistema de sonido PulseAudio."
-
-#~ msgctxt "@title:tab"
-#~ msgid "Devices"
-#~ msgstr "Dispositivos"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Applications"
-#~ msgstr "Aplicaciones"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Advanced"
-#~ msgstr "Avanzado"
-
-#~ msgid "Notification Sounds"
-#~ msgstr "Sonidos de notificaciones"
-
-#~ msgctxt "label of stream items"
-#~ msgid "%1: %2"
-#~ msgstr "%1: %2"
-
-#~ msgid "100%"
-#~ msgstr "100%"

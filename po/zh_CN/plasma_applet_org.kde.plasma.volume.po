@@ -162,25 +162,25 @@ msgstr "没有正在播放或者录制音频的应用程序"
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr ""
+msgstr "输出设备"
 
 #: main.qml:494
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "输出流"
 
 #: main.qml:551
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr ""
+msgstr "输入设备"
 
 #: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "输入流"
 
 #: main.qml:611
 #, kde-format
