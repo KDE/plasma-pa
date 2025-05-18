@@ -161,7 +161,6 @@ msgstr "沒有正在播放或錄音的應用程式"
 
 #: main.qml:492
 #, kde-format
-#| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "輸出裝置"
@@ -174,14 +173,12 @@ msgstr "輸出串流"
 
 #: main.qml:551
 #, kde-format
-#| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "輸入裝置"
 
 #: main.qml:553
 #, kde-format
-#| msgid "Recording Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "輸入串流"
