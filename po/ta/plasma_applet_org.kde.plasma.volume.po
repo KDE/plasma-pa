@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-14 00:45+0000\n"
-"PO-Revision-Date: 2025-01-26 18:03+0530\n"
+"PO-Revision-Date: 2025-05-18 20:55+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: ListItemBase.qml:66
 #, kde-format
@@ -158,30 +158,28 @@ msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
 #: main.qml:492
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "வெளியீட்டு சாதனம் இல்லை"
+msgstr "வெளியீடு சாதனங்கள்"
 
 #: main.qml:494
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "வெளியீடு ஒலித்தடங்கள்"
 
 #: main.qml:551
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "சாதனங்கள்"
+msgstr "உள்ளீடு கருவிகள்"
 
 #: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "உள்ளீடு ஒலித்தடங்கள்"
 
 #: main.qml:611
 #, kde-format
