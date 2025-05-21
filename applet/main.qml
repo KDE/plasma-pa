@@ -287,7 +287,10 @@ PlasmoidItem {
                         }
                     }
 
-                    KeyNavigation.down: contentView.currentItem.contentItem.upperListView.itemAtIndex(0)
+                    Keys.onDownPressed: event => {
+                        contentView.currentItem.contentItem.upperListView.currentIndex = 0
+                        event.accepted = false // pass to KeyNavigation, set inside StackView
+                    }
 
                     onCurrentIndexChanged: {
                         switch (currentIndex) {
@@ -398,10 +401,12 @@ PlasmoidItem {
                 upperDelegate: DeviceListItem {
                     width: ListView.view.width
                     type: devicesView.upperType
+                    focus: ListView.isCurrentItem
                 }
                 lowerDelegate: DeviceListItem {
                     width: ListView.view.width
                     type: devicesView.lowerType
+                    focus: ListView.isCurrentItem
                 }
             }
             // NOTE: Don't unload this while dragging and dropping a stream
@@ -418,11 +423,13 @@ PlasmoidItem {
                     width: ListView.view.width
                     type: streamsView.upperType
                     devicesModel: paSinkFilterModel
+                    focus: ListView.isCurrentItem
                 }
                 lowerDelegate: StreamListItem {
                     width: ListView.view.width
                     type: streamsView.lowerType
                     devicesModel: paSourceFilterModel
+                    focus: ListView.isCurrentItem
                 }
             }
             Connections {
@@ -507,28 +514,18 @@ PlasmoidItem {
                         model: scrollView.upperModel
                         delegate: scrollView.upperDelegate
                         focus: visible
+                        keyNavigationEnabled: true
 
+                        // Careful, qml can get confused about the fallback chain between StackView and outside
+                        KeyNavigation.up: scrollView.PC3.StackView?.status === PC3.StackView.Active ? tabBar : null
                         Keys.onDownPressed: event => {
-                            if (currentIndex < count - 1) {
-                                incrementCurrentIndex();
-                                currentItem.forceActiveFocus();
-                            } else if (lowerSection.visible) {
+                            if (currentIndex == count - 1 && lowerSection.visible) {
                                 lowerSection.currentIndex = 0;
-                                lowerSection.currentItem.forceActiveFocus();
-                            } else {
-                                raiseMaximumVolumeCheckbox.forceActiveFocus(Qt.TabFocusReason);
                             }
-                            event.accepted = true;
+                            event.accepted = false; // pass to KeyNavigation
                         }
-                        Keys.onUpPressed: event => {
-                            if (currentIndex > 0) {
-                                decrementCurrentIndex();
-                                currentItem.forceActiveFocus();
-                            } else {
-                                tabBar.currentItem.forceActiveFocus(Qt.BacktabFocusReason);
-                            }
-                            event.accepted = true;
-                        }
+                        KeyNavigation.down: lowerSection
+
                     }
                     KSvg.SvgItem {
                         imagePath: "widgets/line"
@@ -564,29 +561,16 @@ PlasmoidItem {
                         implicitHeight: contentHeight
                         model: scrollView.lowerModel
                         delegate: scrollView.lowerDelegate
-                        focus: visible && !upperSection.visible
+                        keyNavigationEnabled: true
 
-                        Keys.onDownPressed: event => {
-                            if (currentIndex < count - 1) {
-                                incrementCurrentIndex();
-                                currentItem.forceActiveFocus();
-                            } else {
-                                raiseMaximumVolumeCheckbox.forceActiveFocus(Qt.TabFocusReason);
-                            }
-                            event.accepted = true;
-                        }
                         Keys.onUpPressed: event => {
-                            if (currentIndex > 0) {
-                                decrementCurrentIndex();
-                                currentItem.forceActiveFocus();
-                            } else if (upperSection.visible) {
+                            if (currentIndex == 0 && upperSection.visible) {
                                 upperSection.currentIndex = upperSection.count - 1;
-                                upperSection.currentItem.forceActiveFocus();
-                            } else {
-                                tabBar.currentItem.forceActiveFocus(Qt.BacktabFocusReason);
                             }
-                            event.accepted = true;
+                            event.accepted = false; // pass to KeyNavigation
                         }
+                        KeyNavigation.up: upperSection
+                        KeyNavigation.down: scrollView.PC3.StackView?.status === PC3.StackView.Active ? raiseMaximumVolumeCheckbox : null
                     }
                 }
             }
@@ -603,10 +587,13 @@ PlasmoidItem {
                 checked: config.raiseMaximumVolume
 
                 Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()
-                KeyNavigation.backtab: contentView.currentItem.contentItem.lowerListView.itemAtIndex(contentView.currentItem.contentItem.lowerListView.count - 1)
                 Keys.onUpPressed: event => {
-                    KeyNavigation.backtab.forceActiveFocus(Qt.BacktabFocusReason);
+                    if (KeyNavigation.up.count > 0) {
+                        KeyNavigation.up.currentIndex = KeyNavigation.up.count - 1
+                    }
+                    event.accepted = false // pass to KeyNavigation, set inside StackView
                 }
+                Keys.onDownPressed: event => event.accepted = true // don't pass to parent
 
                 text: i18n("Raise maximum volume")
 
