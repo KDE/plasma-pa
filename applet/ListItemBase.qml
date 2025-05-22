@@ -188,7 +188,7 @@ PC3.ItemDelegate {
 
                 SmallToolButton {
                     id: contextMenuButton
-                    icon.name: "application-menu"
+                    icon.name: "view-more-symbolic"
                     checked: contextMenu.visible && contextMenu.visualParent === this
                     onPressed: {
                         contextMenu.visualParent = this;
