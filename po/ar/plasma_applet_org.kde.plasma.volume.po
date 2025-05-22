@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-14 00:45+0000\n"
+"POT-Creation-Date: 2025-05-22 02:42+0000\n"
 "PO-Revision-Date: 2025-05-14 17:16+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -40,41 +40,41 @@ msgstr "خيارات إضافيّة"
 msgid "Show additional options for %1"
 msgstr "أظهر خيارات إضافية لـ%1"
 
-#: ListItemBase.qml:215
+#: ListItemBase.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ألغ الكتم"
 
-#: ListItemBase.qml:215
+#: ListItemBase.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "اكتم"
 
-#: ListItemBase.qml:217
+#: ListItemBase.qml:221
 #, kde-format
 msgid "Unmute %1"
 msgstr "ألغ كتم %1"
 
-#: ListItemBase.qml:217
+#: ListItemBase.qml:221
 #, kde-format
 msgid "Mute %1"
 msgstr "اكتم %1"
 
-#: ListItemBase.qml:239
+#: ListItemBase.qml:243
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "اضبط المستوى إلى %1"
 
-#: ListItemBase.qml:300
+#: ListItemBase.qml:304
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1٪"
 
-#: ListItemBase.qml:321
+#: ListItemBase.qml:325
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -132,73 +132,73 @@ msgstr "مرر لتضبط الصوت"
 msgid "Device name not found"
 msgstr "لم يعثر على اسم الجهاز"
 
-#: main.qml:305
+#: main.qml:308
 #, kde-format
 msgid "Devices"
 msgstr "الأجهزة"
 
-#: main.qml:312
+#: main.qml:315
 #, kde-format
 msgid "Applications"
 msgstr "التّطبيقات"
 
-#: main.qml:335
+#: main.qml:338
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "إجراءات أكثر"
 
-#: main.qml:392
+#: main.qml:395
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "أعِد المحاولة"
 
-#: main.qml:416
+#: main.qml:421
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "لا توجد تطبيقات تشغل أو تسجل الصوت"
 
-#: main.qml:492
+#: main.qml:499
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "أجهزة الإخراج"
 
-#: main.qml:494
+#: main.qml:501
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "تدفقات الإخراج"
 
-#: main.qml:551
+#: main.qml:548
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "أجهزة الإدخال"
 
-#: main.qml:553
+#: main.qml:550
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "تدفقات الإدخال"
 
-#: main.qml:611
+#: main.qml:598
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ارفع لأقصى مستوى"
 
-#: main.qml:623
+#: main.qml:610
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "افرض كتم صوت جميع أجهزة التشغيل"
 
-#: main.qml:632
+#: main.qml:619
 #, kde-format
 msgid "Show virtual devices"
 msgstr "أظهر الأجهزة الافتراضية"
 
-#: main.qml:642
+#: main.qml:629
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ا&ضبط أجهزة الصوت..."

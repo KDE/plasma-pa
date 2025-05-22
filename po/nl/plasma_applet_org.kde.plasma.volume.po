@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-14 00:45+0000\n"
+"POT-Creation-Date: 2025-05-22 02:42+0000\n"
 "PO-Revision-Date: 2025-05-14 23:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -38,41 +38,41 @@ msgstr "Aanvullende opties"
 msgid "Show additional options for %1"
 msgstr "Additionele opties voor %1 tonen"
 
-#: ListItemBase.qml:215
+#: ListItemBase.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Dempen opheffen"
 
-#: ListItemBase.qml:215
+#: ListItemBase.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Dempen"
 
-#: ListItemBase.qml:217
+#: ListItemBase.qml:221
 #, kde-format
 msgid "Unmute %1"
 msgstr "Van %1 dempen opheffen"
 
-#: ListItemBase.qml:217
+#: ListItemBase.qml:221
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 dempen"
 
-#: ListItemBase.qml:239
+#: ListItemBase.qml:243
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Volume voor %1 aanpassen"
 
-#: ListItemBase.qml:300
+#: ListItemBase.qml:304
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:321
+#: ListItemBase.qml:325
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -130,73 +130,73 @@ msgstr "Scrollen om geluidsvolume aan te passen"
 msgid "Device name not found"
 msgstr "Apparaatnaam niet gevonden"
 
-#: main.qml:305
+#: main.qml:308
 #, kde-format
 msgid "Devices"
 msgstr "Apparaten"
 
-#: main.qml:312
+#: main.qml:315
 #, kde-format
 msgid "Applications"
 msgstr "Toepassingen"
 
-#: main.qml:335
+#: main.qml:338
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Meer acties"
 
-#: main.qml:392
+#: main.qml:395
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Opnieuw proberen"
 
-#: main.qml:416
+#: main.qml:421
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Geen toepassingen die geluid afspelen of opnemen"
 
-#: main.qml:492
+#: main.qml:499
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Uitvoerapparaten"
 
-#: main.qml:494
+#: main.qml:501
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Uitvoerstreams"
 
-#: main.qml:551
+#: main.qml:548
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Invoerapparaten"
 
-#: main.qml:553
+#: main.qml:550
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Invoerstreams"
 
-#: main.qml:611
+#: main.qml:598
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximum volume vergroten:"
 
-#: main.qml:623
+#: main.qml:610
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Alle afspeelapparaten afdwingen te dempen"
 
-#: main.qml:632
+#: main.qml:619
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuele apparaten tonen"
 
-#: main.qml:642
+#: main.qml:629
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Audio-apparaten &configureren…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-14 00:45+0000\n"
+"POT-Creation-Date: 2025-05-22 02:42+0000\n"
 "PO-Revision-Date: 2025-01-25 08:20+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -38,41 +38,41 @@ msgstr "Ytterligare alternativ"
 msgid "Show additional options for %1"
 msgstr "Visa ytterligare alternativ för %1"
 
-#: ListItemBase.qml:215
+#: ListItemBase.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Tysta inte"
 
-#: ListItemBase.qml:215
+#: ListItemBase.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Tysta"
 
-#: ListItemBase.qml:217
+#: ListItemBase.qml:221
 #, kde-format
 msgid "Unmute %1"
 msgstr "Tysta inte %1"
 
-#: ListItemBase.qml:217
+#: ListItemBase.qml:221
 #, kde-format
 msgid "Mute %1"
 msgstr "Tysta %1"
 
-#: ListItemBase.qml:239
+#: ListItemBase.qml:243
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Justera volym för %1"
 
-#: ListItemBase.qml:300
+#: ListItemBase.qml:304
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
 
-#: ListItemBase.qml:321
+#: ListItemBase.qml:325
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -130,77 +130,77 @@ msgstr "Rulla för att justera volymen"
 msgid "Device name not found"
 msgstr "Enhetsnamn hittades inte"
 
-#: main.qml:305
+#: main.qml:308
 #, kde-format
 msgid "Devices"
 msgstr "Enheter"
 
-#: main.qml:312
+#: main.qml:315
 #, kde-format
 msgid "Applications"
 msgstr "Program"
 
-#: main.qml:335
+#: main.qml:338
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Fler åtgärder"
 
-#: main.qml:392
+#: main.qml:395
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Försök igen"
 
-#: main.qml:416
+#: main.qml:421
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Inga program spelar upp eller spelar in ljud"
 
-#: main.qml:492
+#: main.qml:499
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Ingen utenhet"
 
-#: main.qml:494
+#: main.qml:501
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Spela in strömmar"
 
-#: main.qml:551
+#: main.qml:548
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Inspelningsenheter"
 
-#: main.qml:553
+#: main.qml:550
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Spela in strömmar"
 
-#: main.qml:611
+#: main.qml:598
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Höj maximal volym"
 
-#: main.qml:623
+#: main.qml:610
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Tysta alla uppspelningsenheter"
 
-#: main.qml:632
+#: main.qml:619
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Visa virtuella enheter"
 
-#: main.qml:642
+#: main.qml:629
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "An&passa ljudenheter…"
