@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:44+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 20:55+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -27,52 +27,52 @@ msgstr "இப்போது பதிவு செய்யவில்லை"
 msgid "Currently not playing"
 msgstr "இப்போது இயங்கவில்லை"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "மேம்பட்ட அமைப்புகள்"
 
-#: ListItemBase.qml:195
+#: ListItemBase.qml:201
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 என்பதற்கு கூடுதல் விருப்பங்களை காட்டு"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ஒலிமுடக்கத்தை நீக்கு"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "ஒலியை அடக்கு"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:227
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1-இன் ஒலியை அனுமதி"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:227
 #, kde-format
 msgid "Mute %1"
 msgstr "%1-இன் ஒலியை அடக்கு"
 
-#: ListItemBase.qml:243
+#: ListItemBase.qml:249
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1-க்கு ஒலியின் அளவை மாற்று"
 
-#: ListItemBase.qml:304
+#: ListItemBase.qml:310
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:325
+#: ListItemBase.qml:331
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -130,73 +130,73 @@ msgstr "ஒலி அளவை மாற்ற உருளவும்"
 msgid "Device name not found"
 msgstr "சாதனத்தின் பெயர் தெரியாது"
 
-#: main.qml:305
+#: main.qml:308
 #, kde-format
 msgid "Devices"
 msgstr "சாதனங்கள்"
 
-#: main.qml:312
+#: main.qml:315
 #, kde-format
 msgid "Applications"
 msgstr "செயலிகள்"
 
-#: main.qml:335
+#: main.qml:338
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "மேலும் செயல்கள்"
 
-#: main.qml:392
+#: main.qml:395
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி"
 
-#: main.qml:416
+#: main.qml:421
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
-#: main.qml:492
+#: main.qml:499
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "வெளியீடு சாதனங்கள்"
 
-#: main.qml:494
+#: main.qml:501
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "வெளியீடு ஒலித்தடங்கள்"
 
-#: main.qml:551
+#: main.qml:549
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "உள்ளீடு கருவிகள்"
 
-#: main.qml:553
+#: main.qml:551
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "உள்ளீடு ஒலித்தடங்கள்"
 
-#: main.qml:611
+#: main.qml:600
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: main.qml:623
+#: main.qml:612
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
 
-#: main.qml:632
+#: main.qml:621
 #, kde-format
 msgid "Show virtual devices"
 msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
-#: main.qml:642
+#: main.qml:631
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"

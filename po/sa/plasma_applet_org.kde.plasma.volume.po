@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:44+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 12:26+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,52 +29,52 @@ msgstr "सम्प्रति रिकार्डिङ्ग् न भव
 msgid "Currently not playing"
 msgstr "सम्प्रति न क्रीडति"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "अतिरिक्तविकल्पाः"
 
-#: ListItemBase.qml:195
+#: ListItemBase.qml:201
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 कृते अतिरिक्तविकल्पान् दर्शयतु"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "अप्रसन्नता"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "मूक"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:227
 #, kde-format
 msgid "Unmute %1"
 msgstr "अप्रसन्नता %1"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:227
 #, kde-format
 msgid "Mute %1"
 msgstr "म्यूट %1"
 
-#: ListItemBase.qml:243
+#: ListItemBase.qml:249
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 कृते आयतनं समायोजयन्तु"
 
-#: ListItemBase.qml:304
+#: ListItemBase.qml:310
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:325
+#: ListItemBase.qml:331
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -132,75 +132,75 @@ msgstr "मात्रा समायोजितुं स्क्रॉल 
 msgid "Device name not found"
 msgstr "यन्त्रनाम न प्राप्तम्"
 
-#: main.qml:305
+#: main.qml:308
 #, kde-format
 msgid "Devices"
 msgstr "यन्त्राणि"
 
-#: main.qml:312
+#: main.qml:315
 #, kde-format
 msgid "Applications"
 msgstr "अनुप्रयोगाः"
 
-#: main.qml:335
+#: main.qml:338
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:392
+#: main.qml:395
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "पुनः प्रयासं कुर्वन्तु"
 
-#: main.qml:416
+#: main.qml:421
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "श्रव्यं वादयति वा रिकार्ड् करोति वा अनुप्रयोगाः नास्ति"
 
-#: main.qml:492
+#: main.qml:499
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "यन्त्राणि"
 
-#: main.qml:494
+#: main.qml:501
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:551
+#: main.qml:549
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "यन्त्राणि"
 
-#: main.qml:553
+#: main.qml:551
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:611
+#: main.qml:600
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "अधिकतमं मात्रां वर्धयन्तु"
 
-#: main.qml:623
+#: main.qml:612
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "सर्वाणि प्लेबैक-यन्त्राणि बलात् म्यूट् कुर्वन्तु"
 
-#: main.qml:632
+#: main.qml:621
 #, kde-format
 msgid "Show virtual devices"
 msgstr "आभासीयन्त्राणि दर्शयन्तु"
 
-#: main.qml:642
+#: main.qml:631
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&श्रव्ययन्त्राणि विन्यस्तं कुर्वन्तु..."

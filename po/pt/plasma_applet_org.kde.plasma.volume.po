@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:44+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2023-02-15 15:24+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -23,52 +23,52 @@ msgstr "A não gravar de momento"
 msgid "Currently not playing"
 msgstr "A não reproduzir de momento"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Opções Adicionais"
 
-#: ListItemBase.qml:195
+#: ListItemBase.qml:201
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Mostrar as opções adicionais do %1"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Repor o som"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Silenciar"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:227
 #, kde-format
 msgid "Unmute %1"
 msgstr "Repor o som do %1"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:227
 #, kde-format
 msgid "Mute %1"
 msgstr "Silenciar o %1"
 
-#: ListItemBase.qml:243
+#: ListItemBase.qml:249
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Ajustar o volume de %1"
 
-#: ListItemBase.qml:304
+#: ListItemBase.qml:310
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:325
+#: ListItemBase.qml:331
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -126,75 +126,75 @@ msgstr "Deslocar para ajustar o volume"
 msgid "Device name not found"
 msgstr "Nome do dispositivo não encontrado"
 
-#: main.qml:305
+#: main.qml:308
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivos"
 
-#: main.qml:312
+#: main.qml:315
 #, kde-format
 msgid "Applications"
 msgstr "Aplicações"
 
-#: main.qml:335
+#: main.qml:338
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:392
+#: main.qml:395
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:416
+#: main.qml:421
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Sem aplicações a gravar ou reproduzir áudio"
 
-#: main.qml:492
+#: main.qml:499
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Sem dispositivo de saída"
 
-#: main.qml:494
+#: main.qml:501
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:551
+#: main.qml:549
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Dispositivos"
 
-#: main.qml:553
+#: main.qml:551
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:611
+#: main.qml:600
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Aumentar o volume máximo"
 
-#: main.qml:623
+#: main.qml:612
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forçar o silenciamento de todos os dispositivos de reprodução"
 
-#: main.qml:632
+#: main.qml:621
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostrar os dispositivos virtuais"
 
-#: main.qml:642
+#: main.qml:631
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar os Dispositivos de Áudio…"

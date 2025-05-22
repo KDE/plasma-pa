@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:44+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2025-05-14 03:33+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,52 +28,52 @@ msgstr "ამჟამად ჩაწერა არ მიმდინარ
 msgid "Currently not playing"
 msgstr "ამჟამად დაკვრა არ მიმდინარეობს"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "დამატებითი პარამეტრები"
 
-#: ListItemBase.qml:195
+#: ListItemBase.qml:201
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1-სთვის დამატებითი პარამეტრების ჩვენება"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "დადუმების გამორთვა"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "დადუმება"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:227
 #, kde-format
 msgid "Unmute %1"
 msgstr "დადუმების გამორთვა: %1"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:227
 #, kde-format
 msgid "Mute %1"
 msgstr "დადუმება: %1"
 
-#: ListItemBase.qml:243
+#: ListItemBase.qml:249
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1-ის ხმის მორგება"
 
-#: ListItemBase.qml:304
+#: ListItemBase.qml:310
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:325
+#: ListItemBase.qml:331
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -131,73 +131,73 @@ msgstr "ხმის მოსარგებად აქაჩეთ"
 msgid "Device name not found"
 msgstr "მოწყობილობა ნაპოვნი არაა"
 
-#: main.qml:305
+#: main.qml:308
 #, kde-format
 msgid "Devices"
 msgstr "მოწყობილობები"
 
-#: main.qml:312
+#: main.qml:315
 #, kde-format
 msgid "Applications"
 msgstr "პროგრამები"
 
-#: main.qml:335
+#: main.qml:338
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "მეტი ქმედება"
 
-#: main.qml:392
+#: main.qml:395
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "გამეორება"
 
-#: main.qml:416
+#: main.qml:421
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ამჟამად აუდიოს არც ერთი აპლიკაცია არ უკრავს და არც იწერს"
 
-#: main.qml:492
+#: main.qml:499
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "გამოტანის მოწყობილობები"
 
-#: main.qml:494
+#: main.qml:501
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "გამავალი ნაკადები"
 
-#: main.qml:551
+#: main.qml:549
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "შეტანის მოწყობილობები"
 
-#: main.qml:553
+#: main.qml:551
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "შემომავალი ნაკადები"
 
-#: main.qml:611
+#: main.qml:600
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "მაქსიმალური ხმის აწევა"
 
-#: main.qml:623
+#: main.qml:612
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ყველა დამკვრელი მოწყობილბის დადუმება"
 
-#: main.qml:632
+#: main.qml:621
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ვირტუალური მოწყობილობების ჩვენება"
 
-#: main.qml:642
+#: main.qml:631
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "აუდიო მოწყობილობების &მორგება…"
