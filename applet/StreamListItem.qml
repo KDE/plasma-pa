@@ -14,6 +14,8 @@ ListItemBase {
 
     property PulseObjectFilterModel devicesModel
 
+    Accessible.onToggleAction: toggleMuteItem()
+    Keys.onSpacePressed: toggleMuteItem()
     draggable: devicesModel && devicesModel.count > 1
     label: {
         let parts = []

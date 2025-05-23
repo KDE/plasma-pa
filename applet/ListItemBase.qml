@@ -25,9 +25,14 @@ PC3.ItemDelegate {
     property string /* "sink" | "sink-input" | "source" | "source-output" */ type
     property string fullNameToShowOnHover: ""
 
-    highlighted: dropArea.containsDrag || activeFocus
+    highlighted: dropArea.containsDrag
     background.visible: highlighted
     opacity: (main.draggedStream && main.draggedStream.deviceIndex === item.model.Index) ? 0.3 : 1.0
+    checked: defaultButton.visible ? defaultButton.checked : !muteButton.checked
+    Accessible.name: label
+    Accessible.description: percentText.text
+    Accessible.onIncreaseAction: slider.increase()
+    Accessible.onDecreaseAction: slider.decrease()
 
     ListView.delayRemove: clientIcon.Drag.active
 
@@ -119,6 +124,8 @@ PC3.ItemDelegate {
                         Layout.leftMargin: !mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                         Layout.rightMargin: mirrored ? Math.round((muteButton.width - defaultButton.indicator.width) / 2) : 0
                         spacing: Kirigami.Units.smallSpacing + Math.round((muteButton.width - defaultButton.indicator.width) / 2)
+                        Accessible.ignored: true // read out from delegate
+                        activeFocusOnTab: false // toggle from delegate
                         checked: item.model.PulseObject?.default ?? false
                         onToggled: {
                             if (checked) {
@@ -213,7 +220,7 @@ PC3.ItemDelegate {
                     Layout.rightMargin:  defaultButton.visible && Qt.application.layoutDirection === Qt.RightToLeft
                         ? defaultButton.indicator.width + defaultButton.spacing : Layout.margins
                     icon.name: AudioIcon.forVolume(volumePercent(item.model.Volume), item.model.Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
-                    onClicked: item.model.Muted = !item.model.Muted
+                    onClicked: toggleMuteItem()
                     checked: item.model.Muted
 
                     text: item.model.Muted ? i18nc("@action:button", "Unmute") : i18nc("@action:button", "Mute")
@@ -240,15 +247,19 @@ PC3.ItemDelegate {
                     enabled: item.model.VolumeWritable
                     muted: item.model.Muted
                     volumeObject: item.model.PulseObject
+                    activeFocusOnTab: false // access from delegate
                     Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
                     Accessible.onPressAction: moved()
 
                     value: to, item.model.Volume
-                    function increase() { value = value + myStepSize }
-                    function decrease() { value = value - myStepSize }
+                    function increase() { value = value + myStepSize; moved() }
+                    function decrease() { value = value - myStepSize; moved() }
+                    Keys.onLeftPressed: Qt.application.layoutDirection === Qt.LeftToRight ? decrease() : increase()
+                    Keys.onRightPressed: Qt.application.layoutDirection === Qt.LeftToRight ? increase() : decrease()
                     onMoved: {
                         item.model.Volume = value;
                         item.model.Muted = value === 0;
+                        Accessible.announce(percentText.text)
                     }
                     onPressedChanged: {
                         if (!pressed) {
@@ -388,6 +399,10 @@ PC3.ItemDelegate {
         if (type === "sink" || type === "source") {
             model.PulseObject.default = true;
         }
+    }
+
+    function toggleMuteItem(): void {
+        item.model.Muted = !item.model.Muted
     }
 
     Keys.onPressed: event => {

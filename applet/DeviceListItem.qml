@@ -16,6 +16,8 @@ ListItemBase {
 
     fullNameToShowOnHover: ListView.view.count === 1 ? model.Description : ""
 
+    Accessible.onToggleAction: setAsDefault()
+    Keys.onSpacePressed: setAsDefault()
     draggable: false
     label: {
         // >1 entry -> use unique-ish names (e.g. 'Konqi Headset 5')
