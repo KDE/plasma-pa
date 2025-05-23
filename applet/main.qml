@@ -287,6 +287,7 @@ PlasmoidItem {
                         }
                     }
 
+                    KeyNavigation.right: actionsButton
                     Keys.onDownPressed: event => {
                         contentView.currentItem.contentItem.upperListView.currentIndex = 0
                         event.accepted = false // pass to KeyNavigation, set inside StackView
@@ -334,6 +335,7 @@ PlasmoidItem {
                             configMenu.close();
                         }
                     }
+                    KeyNavigation.right: configureButton
 
                     text: i18nc("@action:button", "More actions")
                     PC3.ToolTip {
@@ -361,6 +363,7 @@ PlasmoidItem {
                 }
 
                 PC3.ToolButton {
+                    id: configureButton
                     visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
 
                     icon.name: "configure"
@@ -512,21 +515,29 @@ PlasmoidItem {
                         interactive: false
                         Layout.fillWidth: true
                         implicitHeight: contentHeight
+                        Accessible.name: upperSectionHeader.text
+                        Accessible.role: Accessible.List
                         model: scrollView.upperModel
                         delegate: scrollView.upperDelegate
                         focus: visible
                         keyNavigationEnabled: true
+                        highlight: PlasmaExtras.Highlight {
+                            visible: upperSection.activeFocus
+                        }
+                        highlightMoveDuration: Kirigami.Units.shortDuration
 
                         // Careful, qml can get confused about the fallback chain between StackView and outside
-                        KeyNavigation.up: scrollView.PC3.StackView?.status === PC3.StackView.Active ? tabBar : null
+                        KeyNavigation.up: scrollView.PC3.StackView.status === PC3.StackView.Active ? tabBar : null
+                        KeyNavigation.backtab: scrollView.PC3.StackView.status !== PC3.StackView.Active ? null
+                                             : (configureButton.visible ? configureButton : tabBar)
+
                         Keys.onDownPressed: event => {
                             if (currentIndex == count - 1 && lowerSection.visible) {
                                 lowerSection.currentIndex = 0;
                             }
                             event.accepted = false; // pass to KeyNavigation
                         }
-                        KeyNavigation.down: lowerSection
-
+                        KeyNavigation.down: lowerSection.visible ? lowerSection : raiseMaximumVolumeCheckbox
                     }
                     KSvg.SvgItem {
                         imagePath: "widgets/line"
@@ -561,9 +572,15 @@ PlasmoidItem {
                         interactive: false
                         Layout.fillWidth: true
                         implicitHeight: contentHeight
+                        Accessible.name: lowerSectionHeader.text
+                        Accessible.role: Accessible.List
                         model: scrollView.lowerModel
                         delegate: scrollView.lowerDelegate
                         keyNavigationEnabled: true
+                        highlight: PlasmaExtras.Highlight {
+                            visible: lowerSection.activeFocus
+                        }
+                        highlightMoveDuration: Kirigami.Units.shortDuration
 
                         Keys.onUpPressed: event => {
                             if (currentIndex == 0 && upperSection.visible) {
@@ -572,7 +589,7 @@ PlasmoidItem {
                             event.accepted = false; // pass to KeyNavigation
                         }
                         KeyNavigation.up: upperSection
-                        KeyNavigation.down: scrollView.PC3.StackView?.status === PC3.StackView.Active ? raiseMaximumVolumeCheckbox : null
+                        KeyNavigation.down: scrollView.PC3.StackView.status === PC3.StackView.Active ? raiseMaximumVolumeCheckbox : null
                     }
                 }
             }
