@@ -100,7 +100,7 @@ PC3.ItemDelegate {
 
         ColumnLayout {
             id: column
-            spacing: 0
+            spacing: Kirigami.Units.smallSpacing
 
             RowLayout {
                 Layout.minimumHeight: contextMenuButton.implicitHeight
