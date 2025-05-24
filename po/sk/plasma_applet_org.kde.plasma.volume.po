@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-05-24 00:44+0000\n"
 "PO-Revision-Date: 2023-12-10 15:08+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -19,62 +19,62 @@ msgstr ""
 "X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ListItemBase.qml:66
+#: ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
 msgstr "Práve sa nenahráva"
 
-#: ListItemBase.qml:67
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
 msgstr "Práve sa neprehráva"
 
-#: ListItemBase.qml:199
+#: ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Ďalšie možnosti"
 
-#: ListItemBase.qml:201
+#: ListItemBase.qml:208
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Zobraziť dodatočné voľby pre %1"
 
-#: ListItemBase.qml:225
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Zrušiť stlmenie"
 
-#: ListItemBase.qml:225
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Stlmiť"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Unmute %1"
 msgstr "Zrušiť stlmenie %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Mute %1"
 msgstr "Stlmiť %1"
 
-#: ListItemBase.qml:249
+#: ListItemBase.qml:257
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Upraviť hlasitosť pre %1"
 
-#: ListItemBase.qml:310
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:331
+#: ListItemBase.qml:342
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -132,82 +132,82 @@ msgstr "Posúvaním upraviť hlasitosť"
 msgid "Device name not found"
 msgstr "Názov zariadenia nebol nájdený"
 
-#: main.qml:308
+#: main.qml:309
 #, kde-format
 msgid "Devices"
 msgstr "Zariadenia"
 
-#: main.qml:315
+#: main.qml:316
 #, kde-format
 msgid "Applications"
 msgstr "Aplikácie"
 
-#: main.qml:338
+#: main.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:395
+#: main.qml:398
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:421
+#: main.qml:424
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Žiadne aplikácie neprehrávajú ani nenahrávajú zvuk"
 
-#: main.qml:499
+#: main.qml:502
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Žiadne výstupné zariadenie"
 
-#: main.qml:501
+#: main.qml:504
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Prúdy zachytávania"
 
-#: main.qml:549
+#: main.qml:560
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Zariadenia pre zachytávanie"
 
-#: main.qml:551
+#: main.qml:562
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Prúdy zachytávania"
 
-#: main.qml:600
+#: main.qml:617
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvýšiť maximálnu hlasitosť"
 
-#: main.qml:612
+#: main.qml:629
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
 
-#: main.qml:621
+#: main.qml:638
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Zobraziť virtuálne zariadenia"
 
-#: main.qml:631
+#: main.qml:648
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Nastaviť zvukové zariadenia..."
 
-#: StreamListItem.qml:34
+#: StreamListItem.qml:36
 #, kde-format
 msgid "Stream name not found"
 msgstr "Názov prúdu nebol nájdený"

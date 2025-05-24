@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-05-24 00:44+0000\n"
 "PO-Revision-Date: 2024-10-21 11:11+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -18,62 +18,62 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: ListItemBase.qml:66
+#: ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
 msgstr "Optager ikke i øjeblikket"
 
-#: ListItemBase.qml:67
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
 msgstr "Afspiller ikke i øjeblikket"
 
-#: ListItemBase.qml:199
+#: ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Yderligere indstillinger"
 
-#: ListItemBase.qml:201
+#: ListItemBase.qml:208
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Vis yderligere indstillinger for %1"
 
-#: ListItemBase.qml:225
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Slå lyden ti"
 
-#: ListItemBase.qml:225
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Gør lydløs"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Unmute %1"
 msgstr "Slå lyden til på %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Mute %1"
 msgstr "Sæt %1 på lydløs"
 
-#: ListItemBase.qml:249
+#: ListItemBase.qml:257
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Juster lydstyrken for %1"
 
-#: ListItemBase.qml:310
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:331
+#: ListItemBase.qml:342
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -131,82 +131,82 @@ msgstr "Rul for at justere lydstyrken"
 msgid "Device name not found"
 msgstr "Enhedsnavn ikke fundet"
 
-#: main.qml:308
+#: main.qml:309
 #, kde-format
 msgid "Devices"
 msgstr "Enheder"
 
-#: main.qml:315
+#: main.qml:316
 #, kde-format
 msgid "Applications"
 msgstr "Programmer"
 
-#: main.qml:338
+#: main.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:395
+#: main.qml:398
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Prøv igen"
 
-#: main.qml:421
+#: main.qml:424
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ingen programmer afspiller eller optager lyd"
 
-#: main.qml:499
+#: main.qml:502
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Ingen outputenhed"
 
-#: main.qml:501
+#: main.qml:504
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Optagelsesstreams"
 
-#: main.qml:549
+#: main.qml:560
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Optagelsesenheder"
 
-#: main.qml:551
+#: main.qml:562
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Optagelsesstreams"
 
-#: main.qml:600
+#: main.qml:617
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Hæv maksimal lydstyrke"
 
-#: main.qml:612
+#: main.qml:629
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Gennemtving lydløs for alle afspilningsenheder"
 
-#: main.qml:621
+#: main.qml:638
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Vis virtuelle enheder"
 
-#: main.qml:631
+#: main.qml:648
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Indstil lydenheder..."
 
-#: StreamListItem.qml:34
+#: StreamListItem.qml:36
 #, kde-format
 msgid "Stream name not found"
 msgstr "Streamnavn ikke fundet"

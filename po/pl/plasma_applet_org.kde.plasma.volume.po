@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-05-24 00:44+0000\n"
 "PO-Revision-Date: 2025-02-08 17:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -18,62 +18,62 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 24.12.1\n"
 
-#: ListItemBase.qml:66
+#: ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
 msgstr "Obecnie nic nie jest nagrywane"
 
-#: ListItemBase.qml:67
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
 msgstr "Obecnie nic nie jest odtwarzane"
 
-#: ListItemBase.qml:199
+#: ListItemBase.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Dodatkowe ustawienia"
 
-#: ListItemBase.qml:201
+#: ListItemBase.qml:208
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Pokaż dodatkowe ustawienia dla %1"
 
-#: ListItemBase.qml:225
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Wyłącz wyciszenie"
 
-#: ListItemBase.qml:225
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Wycisz"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Unmute %1"
 msgstr "Usuń wyciszenie %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Mute %1"
 msgstr "Wycisz %1"
 
-#: ListItemBase.qml:249
+#: ListItemBase.qml:257
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Dostosuj głośność dla %1"
 
-#: ListItemBase.qml:310
+#: ListItemBase.qml:321
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:331
+#: ListItemBase.qml:342
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -131,82 +131,82 @@ msgstr "Przewiń myszą, aby dostosować głośność"
 msgid "Device name not found"
 msgstr "Nie znaleziono nazwy urządzenia"
 
-#: main.qml:308
+#: main.qml:309
 #, kde-format
 msgid "Devices"
 msgstr "Urządzenia"
 
-#: main.qml:315
+#: main.qml:316
 #, kde-format
 msgid "Applications"
 msgstr "Programy"
 
-#: main.qml:338
+#: main.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Więcej działań"
 
-#: main.qml:395
+#: main.qml:398
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Ponów"
 
-#: main.qml:421
+#: main.qml:424
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Żadna aplikacja nie odtwarza, ani nie nagrywa teraz dźwięku"
 
-#: main.qml:499
+#: main.qml:502
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Nie ma żadnego urządzenia wyjściowego"
 
-#: main.qml:501
+#: main.qml:504
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Przechwytywane strumienie"
 
-#: main.qml:549
+#: main.qml:560
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Urządzenia nagrywające"
 
-#: main.qml:551
+#: main.qml:562
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Przechwytywane strumienie"
 
-#: main.qml:600
+#: main.qml:617
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zwiększ graniczną głośność"
 
-#: main.qml:612
+#: main.qml:629
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Wycisz wszystkie urządzenia odtwarzające"
 
-#: main.qml:621
+#: main.qml:638
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Pokaż urządzenia wirtualne"
 
-#: main.qml:631
+#: main.qml:648
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Ustawienia urządzeń dźwiękowych..."
 
-#: StreamListItem.qml:34
+#: StreamListItem.qml:36
 #, kde-format
 msgid "Stream name not found"
 msgstr "Nie znaleziono nazwy strumienia"
