@@ -250,7 +250,7 @@ msgstr "Mono"
 #: kcm/ui/main.qml:489
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr "Feu clic en qualsevol altaveu per a provar el so"
+msgstr "Cliqueu damunt de qualsevol altaveu per a provar el so"
 
 #: kcm/ui/MuteButton.qml:25
 #, kde-format
@@ -303,7 +303,7 @@ msgstr "S'està tornant a carregar"
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr "%1 (feu clic en «Guarda» per a aplicar)"
+msgstr "%1 (cliqueu damunt «Guarda» per a aplicar)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format

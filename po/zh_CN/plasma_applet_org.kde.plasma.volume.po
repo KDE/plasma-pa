@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 02:42+0000\n"
+"POT-Creation-Date: 2025-05-25 03:09+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,62 +18,62 @@ msgstr ""
 "volume.pot\n"
 "X-Crowdin-File-ID: 52856\n"
 
-#: ListItemBase.qml:66
+#: ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
 msgstr "当前不在录音"
 
-#: ListItemBase.qml:67
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
 msgstr "当前不在播放"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:200
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "更多选项"
 
-#: ListItemBase.qml:195
+#: ListItemBase.qml:202
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "显示用于 %1 的附加选项"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "取消静音"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "静音"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:228
 #, kde-format
 msgid "Unmute %1"
 msgstr "取消静音 %1"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:228
 #, kde-format
 msgid "Mute %1"
 msgstr "静音 %1"
 
-#: ListItemBase.qml:243
+#: ListItemBase.qml:251
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "调整 %1 的音量"
 
-#: ListItemBase.qml:304
+#: ListItemBase.qml:315
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:325
+#: ListItemBase.qml:336
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -131,78 +131,78 @@ msgstr "滚动鼠标滚轮以调节音量"
 msgid "Device name not found"
 msgstr "找不到设备名称"
 
-#: main.qml:308
+#: main.qml:309
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: main.qml:315
+#: main.qml:316
 #, kde-format
 msgid "Applications"
 msgstr "应用程序"
 
-#: main.qml:338
+#: main.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "更多操作"
 
-#: main.qml:395
+#: main.qml:398
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "重试"
 
-#: main.qml:421
+#: main.qml:424
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
-#: main.qml:499
+#: main.qml:502
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "输出设备"
 
-#: main.qml:501
+#: main.qml:504
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "输出流"
 
-#: main.qml:548
+#: main.qml:559
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "输入设备"
 
-#: main.qml:550
+#: main.qml:561
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "输入流"
 
-#: main.qml:598
+#: main.qml:615
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: main.qml:610
+#: main.qml:627
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
 
-#: main.qml:619
+#: main.qml:636
 #, kde-format
 msgid "Show virtual devices"
 msgstr "显示虚拟设备"
 
-#: main.qml:629
+#: main.qml:646
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "配置音频设备(&C)…"
 
-#: StreamListItem.qml:34
+#: StreamListItem.qml:36
 #, kde-format
 msgid "Stream name not found"
 msgstr "找不到流名称"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 02:42+0000\n"
+"POT-Creation-Date: 2025-05-25 03:09+0000\n"
 "PO-Revision-Date: 2025-02-02 23:11+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -20,62 +20,62 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.5\n"
 
-#: ListItemBase.qml:66
+#: ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
 msgstr "Šiuo metu neįrašoma"
 
-#: ListItemBase.qml:67
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
 msgstr "Šiuo metu neatkuriama"
 
-#: ListItemBase.qml:193
+#: ListItemBase.qml:200
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Papildomos parinktys"
 
-#: ListItemBase.qml:195
+#: ListItemBase.qml:202
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Rodyti papildomas %1 parinktis"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Įjungti garsą"
 
-#: ListItemBase.qml:219
+#: ListItemBase.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Nutildyti"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:228
 #, kde-format
 msgid "Unmute %1"
 msgstr "Įjungti garsą %1"
 
-#: ListItemBase.qml:221
+#: ListItemBase.qml:228
 #, kde-format
 msgid "Mute %1"
 msgstr "Nutildyti %1"
 
-#: ListItemBase.qml:243
+#: ListItemBase.qml:251
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Reguliuoti %1 garsumą"
 
-#: ListItemBase.qml:304
+#: ListItemBase.qml:315
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:325
+#: ListItemBase.qml:336
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -133,82 +133,82 @@ msgstr "Slinkite norėdami reguliuoti garsumą"
 msgid "Device name not found"
 msgstr "Įrenginio pavadinimas nerastas"
 
-#: main.qml:308
+#: main.qml:309
 #, kde-format
 msgid "Devices"
 msgstr "Įrenginiai"
 
-#: main.qml:315
+#: main.qml:316
 #, kde-format
 msgid "Applications"
 msgstr "Programos"
 
-#: main.qml:338
+#: main.qml:340
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Daugiau veiksmų"
 
-#: main.qml:395
+#: main.qml:398
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Bandyti dar kartą"
 
-#: main.qml:421
+#: main.qml:424
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Šiuo metu jokios programos neatkuria ir neįrašinėja garso"
 
-#: main.qml:499
+#: main.qml:502
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Nėra jokio išvesties įrenginio"
 
-#: main.qml:501
+#: main.qml:504
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Įrašymo srautai"
 
-#: main.qml:548
+#: main.qml:559
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Įrašymo įrenginiai"
 
-#: main.qml:550
+#: main.qml:561
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Įrašymo srautai"
 
-#: main.qml:598
+#: main.qml:615
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Padidinti didžiausią garsumą"
 
-#: main.qml:610
+#: main.qml:627
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Priverstinai nutildyti visus atkūrimo įrenginius"
 
-#: main.qml:619
+#: main.qml:636
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rodyti virtualius įrenginius"
 
-#: main.qml:629
+#: main.qml:646
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigūruoti garso įrenginius…"
 
-#: StreamListItem.qml:34
+#: StreamListItem.qml:36
 #, kde-format
 msgid "Stream name not found"
 msgstr "Srauto pavadinimas nerastas"
