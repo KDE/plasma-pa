@@ -202,7 +202,7 @@ msgstr "Mono"
 #: kcm/package/contents/ui/main.qml:484
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr "Feu clic en qualsevol altaveu per a provar el so"
+msgstr "Cliqueu damunt de qualsevol altaveu per a provar el so"
 
 #: kcm/package/contents/ui/MuteButton.qml:22
 #, kde-format
