@@ -221,9 +221,9 @@ PC3.ItemDelegate {
                 SmallToolButton {
                     id: muteButton
                     readonly property bool isPlayback: item.type.startsWith("sink")
-                    Layout.leftMargin:  defaultButton.visible && Qt.application.layoutDirection === Qt.LeftToRight
+                    Layout.leftMargin:  (defaultButton.visible  ||  item.ListView.view.otherViewHasRadioButtons) && Qt.application.layoutDirection === Qt.LeftToRight
                         ? defaultButton.indicator.width + defaultButton.spacing : Layout.margins
-                    Layout.rightMargin:  defaultButton.visible && Qt.application.layoutDirection === Qt.RightToLeft
+                    Layout.rightMargin:  (defaultButton.visible || item.ListView.view.otherViewHasRadioButtons) && Qt.application.layoutDirection === Qt.RightToLeft
                         ? defaultButton.indicator.width + defaultButton.spacing : Layout.margins
                     icon.name: AudioIcon.forVolume(volumePercent(item.model.Volume), item.model.Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                     onClicked: toggleMuteItem()
