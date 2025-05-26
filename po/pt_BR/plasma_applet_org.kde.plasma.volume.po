@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 03:09+0000\n"
-"PO-Revision-Date: 2025-02-05 01:28-0300\n"
+"PO-Revision-Date: 2025-05-25 01:01-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -19,17 +19,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
-msgstr "Atualmente não gravando"
+msgstr "Atualmente não está gravando"
 
 #: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not playing"
-msgstr "Atualmente não reproduzindo"
+msgstr "Atualmente não está reproduzindo"
 
 #: ListItemBase.qml:200
 #, kde-format
@@ -52,23 +52,23 @@ msgstr "Ativar o som"
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
-msgstr "Sem áudio"
+msgstr "Silenciar"
 
 #: ListItemBase.qml:228
 #, kde-format
 msgid "Unmute %1"
-msgstr "Ativar o som %1"
+msgstr "Ativar o som de %1"
 
 #: ListItemBase.qml:228
 #, kde-format
 msgid "Mute %1"
-msgstr "Sem áudio em %1"
+msgstr "Silenciar %1"
 
 #: ListItemBase.qml:251
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
-msgstr "Ajustar volume para %1"
+msgstr "Ajustar volume de %1"
 
 #: ListItemBase.qml:315
 #, kde-format
@@ -107,7 +107,7 @@ msgstr "Tentando reconectar…"
 #: main.qml:68
 #, kde-format
 msgid "Audio Muted"
-msgstr "Sem áudio"
+msgstr "Áudio silenciado"
 
 #: main.qml:70
 #, kde-format
@@ -162,30 +162,28 @@ msgid "No applications playing or recording audio"
 msgstr "Nenhum aplicativo reproduzindo ou gravando áudio"
 
 #: main.qml:502
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Nenhum dispositivo de saída"
+msgstr "Dispositivos de saída"
 
 #: main.qml:504
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "Fluxos de saída"
 
 #: main.qml:559
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Dispositivos"
+msgstr "Dispositivos de entrada"
 
 #: main.qml:561
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "Fluxos de entrada"
 
 #: main.qml:615
 #, kde-format
@@ -205,7 +203,7 @@ msgstr "Mostrar dispositivos virtuais"
 #: main.qml:646
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr "&Configurar dispositivos de áudio..."
+msgstr "&Configurar dispositivos de áudio…"
 
 #: StreamListItem.qml:36
 #, kde-format

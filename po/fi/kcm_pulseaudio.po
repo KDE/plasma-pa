@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2025-04-08 21:10+0300\n"
+"PO-Revision-Date: 2025-05-25 10:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -373,12 +373,10 @@ msgid "Mute state"
 msgstr "Vaimennustila"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 käyttävät mikrofonia"
+msgstr "Sovellus käynnistyy mikrofoni vaimennettuna"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -459,11 +457,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (akku %2 %)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Vaimenna"
+msgstr "%1: vaimennettu"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
