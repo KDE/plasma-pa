@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-24 00:44+0000\n"
-"PO-Revision-Date: 2025-02-14 19:47+0200\n"
+"PO-Revision-Date: 2025-05-25 10:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -162,32 +162,28 @@ msgid "No applications playing or recording audio"
 msgstr "Mikään sovellus ei toista tai tallenna ääntä"
 
 #: main.qml:502
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Ei ulostulolaitetta"
+msgstr "Ulostulolaitteet"
 
 #: main.qml:504
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Kaappausvirrat"
+msgstr "Ulostulovirrat"
 
 #: main.qml:560
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Kaappauslaitteet"
+msgstr "Sisäänmenolaitteet"
 
 #: main.qml:562
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Kaappausvirrat"
+msgstr "Sisäänmenovirrat"
 
 #: main.qml:617
 #, kde-format
