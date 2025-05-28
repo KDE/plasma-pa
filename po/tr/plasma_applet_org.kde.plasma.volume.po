@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:44+0000\n"
+"POT-Creation-Date: 2025-05-28 00:44+0000\n"
 "PO-Revision-Date: 2025-05-15 13:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -182,22 +182,30 @@ msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Giriş Akışları"
 
-#: main.qml:617
+#: main.qml:625
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Prolonged use of this feature will damage the device's speakers. Only use it "
+"temporarily to make quiet media audible."
+msgstr ""
+
+#: main.qml:641
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Sesi sonuna kadar aç"
 
-#: main.qml:629
+#: main.qml:655
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Tümünün Sesini Kapat"
 
-#: main.qml:638
+#: main.qml:664
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Sanal Aygıtları Göster"
 
-#: main.qml:648
+#: main.qml:674
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Ses Aygıtlarını Yapılandır…"

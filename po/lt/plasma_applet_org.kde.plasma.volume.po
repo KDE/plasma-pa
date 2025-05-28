@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:44+0000\n"
+"POT-Creation-Date: 2025-05-28 00:44+0000\n"
 "PO-Revision-Date: 2025-02-02 23:11+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -188,22 +188,30 @@ msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Įrašymo srautai"
 
-#: main.qml:617
+#: main.qml:625
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Prolonged use of this feature will damage the device's speakers. Only use it "
+"temporarily to make quiet media audible."
+msgstr ""
+
+#: main.qml:641
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Padidinti didžiausią garsumą"
 
-#: main.qml:629
+#: main.qml:655
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Priverstinai nutildyti visus atkūrimo įrenginius"
 
-#: main.qml:638
+#: main.qml:664
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rodyti virtualius įrenginius"
 
-#: main.qml:648
+#: main.qml:674
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigūruoti garso įrenginius…"

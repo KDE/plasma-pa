@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:44+0000\n"
+"POT-Creation-Date: 2025-05-28 00:44+0000\n"
 "PO-Revision-Date: 2025-05-14 09:16+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -184,22 +184,30 @@ msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Потоки вхідних даних"
 
-#: main.qml:617
+#: main.qml:625
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Prolonged use of this feature will damage the device's speakers. Only use it "
+"temporarily to make quiet media audible."
+msgstr ""
+
+#: main.qml:641
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Збільшити максимальну гучність"
 
-#: main.qml:629
+#: main.qml:655
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Примусово вимкнути всі пристрої відтворення"
 
-#: main.qml:638
+#: main.qml:664
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показати віртуальні пристрої"
 
-#: main.qml:648
+#: main.qml:674
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Налаштувати звукові пристрої…"

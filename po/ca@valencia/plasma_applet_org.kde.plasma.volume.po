@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:44+0000\n"
+"POT-Creation-Date: 2025-05-28 00:44+0000\n"
 "PO-Revision-Date: 2025-05-14 09:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -185,22 +185,30 @@ msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Fluxos d'entrada"
 
-#: main.qml:617
+#: main.qml:625
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Prolonged use of this feature will damage the device's speakers. Only use it "
+"temporarily to make quiet media audible."
+msgstr ""
+
+#: main.qml:641
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Eleva el volum màxim"
 
-#: main.qml:629
+#: main.qml:655
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Força el silenci de tots els dispositius de reproducció"
 
-#: main.qml:638
+#: main.qml:664
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostra els dispositius virtuals"
 
-#: main.qml:648
+#: main.qml:674
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configura els dispositius d'àudio…"
