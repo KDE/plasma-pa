@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-28 00:44+0000\n"
-"PO-Revision-Date: 2025-05-14 07:05+0200\n"
+"PO-Revision-Date: 2025-05-28 07:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: ListItemBase.qml:71
 #, kde-format
 msgid "Currently not recording"
-msgstr "Trenutno ne snema"
+msgstr "Trenutno se ne snema"
 
 #: ListItemBase.qml:72
 #, kde-format
@@ -191,6 +191,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Dolgotrajna uporaba te zmožnosti bo poškodovala zvočnike naprave. Uporabite "
+"ga le začasno, da omogočite zvok tihih medijev."
 
 #: main.qml:641
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-28 00:44+0000\n"
-"PO-Revision-Date: 2025-05-14 23:35+0200\n"
+"PO-Revision-Date: 2025-05-28 11:54+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -188,6 +188,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Verlengd gebruik van deze mogelijkheid zal de speakers van het apparaat "
+"beschadigen. Gebruik het alleen tijdelijk om zachte media hoorbaar te maken."
 
 #: main.qml:641
 #, kde-format

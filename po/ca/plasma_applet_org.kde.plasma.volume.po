@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-28 00:44+0000\n"
-"PO-Revision-Date: 2025-05-14 09:53+0200\n"
+"PO-Revision-Date: 2025-05-28 11:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: ListItemBase.qml:71
 #, kde-format
@@ -192,6 +192,9 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"L'ús prolongat d'aquesta característica danyarà els altaveus del dispositiu. "
+"Només l'utilitzeu temporalment per a fer audibles els mitjans de comunicació "
+"silenciosos."
 
 #: main.qml:641
 #, kde-format

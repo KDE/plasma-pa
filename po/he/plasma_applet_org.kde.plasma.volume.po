@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-28 00:44+0000\n"
-"PO-Revision-Date: 2025-05-16 13:45+0300\n"
+"PO-Revision-Date: 2025-05-28 09:52+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -191,6 +191,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"שימוש ביכולת הזאת למשך זמן יפגום ברמקולים שלך. יש להשתמש בה באופן זמני כדי "
+"להפוך שמע חלש ליותר ברור."
 
 #: main.qml:641
 #, kde-format
