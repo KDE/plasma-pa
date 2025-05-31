@@ -495,7 +495,8 @@ PlasmoidItem {
                         visible: upperSection.visible && text != "" && (upperSection.count > 1 || lowerSection.count > 1)
                         Layout.fillWidth: true
                         topPadding: Kirigami.Units.mediumSpacing
-                        leftPadding: Kirigami.Units.smallSpacing * 2 // extra spacing to align with icon/label/radiobutton
+                        leftPadding: !mirrored ? 2 * Kirigami.Units.smallSpacing : padding // extra spacing to align with icon/label/radiobutton
+                        rightPadding: mirrored ? 2 * Kirigami.Units.smallSpacing : padding
                         text: {
                             switch (scrollView.upperType) {
                                 case "sink":
@@ -553,7 +554,8 @@ PlasmoidItem {
                         visible: lowerSection.visible && text != ""  && (upperSection.count > 1 || lowerSection.count > 1)
                         Layout.fillWidth: true
                         topPadding: Kirigami.Units.smallSpacing
-                        leftPadding: 2 * Kirigami.Units.smallSpacing // extra spacing to align with icon/label/radiobutton
+                        leftPadding: !mirrored ? 2 * Kirigami.Units.smallSpacing : padding // extra spacing to align with icon/label/radiobutton
+                        rightPadding: mirrored ? 2 * Kirigami.Units.smallSpacing : padding
                         text: {
                             switch (scrollView.lowerType) {
                                 case "source":
