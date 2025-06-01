@@ -510,6 +510,7 @@ PlasmoidItem {
 
                     ListView {
                         id: upperSection
+                        property bool otherViewHasRadioButtons: lowerSection.visible && (lowerSection.count > 1)
                         visible: count && !fullRep.hiddenTypes.includes(scrollView.upperType)
                         interactive: false
                         Layout.fillWidth: true
@@ -566,6 +567,7 @@ PlasmoidItem {
                     }
                     ListView {
                         id: lowerSection
+                        property bool otherViewHasRadioButtons: upperSection.visible && (upperSection.count > 1)
                         visible: count && !fullRep.hiddenTypes.includes(scrollView.lowerType)
                         interactive: false
                         Layout.fillWidth: true

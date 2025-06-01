@@ -137,6 +137,12 @@ PC3.ItemDelegate {
 
                 Item {
                     Layout.fillWidth: true
+                    Layout.leftMargin:  Qt.application.layoutDirection === Qt.LeftToRight &&  item.ListView.view.otherViewHasRadioButtons
+                        ? (defaultButton.Layout.leftMargin - Layout.margins) + defaultButton.indicator.width + defaultButton.spacing
+                        : Layout.margins
+                    Layout.rightMargin:  Qt.application.layoutDirection === Qt.RightToLeft &&  item.ListView.view.otherViewHasRadioButtons
+                        ? (defaultButton.Layout.rightMargin - Layout.margins) + defaultButton.indicator.width + defaultButton.spacing
+                        : Layout.margins
                     visible: !defaultButton.visible
                     implicitHeight: Math.max(friendlyDescriptionLabel.implicitHeight, longDescriptionLabel.implicitHeight)
 
