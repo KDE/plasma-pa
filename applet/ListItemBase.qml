@@ -137,11 +137,8 @@ PC3.ItemDelegate {
 
                 Item {
                     Layout.fillWidth: true
-                    Layout.leftMargin:  Qt.application.layoutDirection === Qt.LeftToRight &&  item.ListView.view.otherViewHasRadioButtons
+                    Layout.leftMargin: item.ListView.view.otherViewHasRadioButtons
                         ? (defaultButton.Layout.leftMargin - Layout.margins) + defaultButton.indicator.width + defaultButton.spacing
-                        : Layout.margins
-                    Layout.rightMargin:  Qt.application.layoutDirection === Qt.RightToLeft &&  item.ListView.view.otherViewHasRadioButtons
-                        ? (defaultButton.Layout.rightMargin - Layout.margins) + defaultButton.indicator.width + defaultButton.spacing
                         : Layout.margins
                     visible: !defaultButton.visible
                     implicitHeight: Math.max(friendlyDescriptionLabel.implicitHeight, longDescriptionLabel.implicitHeight)
@@ -221,9 +218,7 @@ PC3.ItemDelegate {
                 SmallToolButton {
                     id: muteButton
                     readonly property bool isPlayback: item.type.startsWith("sink")
-                    Layout.leftMargin:  (defaultButton.visible  ||  item.ListView.view.otherViewHasRadioButtons) && Qt.application.layoutDirection === Qt.LeftToRight
-                        ? defaultButton.indicator.width + defaultButton.spacing : Layout.margins
-                    Layout.rightMargin:  (defaultButton.visible || item.ListView.view.otherViewHasRadioButtons) && Qt.application.layoutDirection === Qt.RightToLeft
+                    Layout.leftMargin:  (defaultButton.visible  ||  item.ListView.view.otherViewHasRadioButtons)
                         ? defaultButton.indicator.width + defaultButton.spacing : Layout.margins
                     icon.name: AudioIcon.forVolume(volumePercent(item.model.Volume), item.model.Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                     onClicked: toggleMuteItem()
