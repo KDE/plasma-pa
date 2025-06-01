@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-28 00:44+0000\n"
-"PO-Revision-Date: 2025-01-25 08:20+0100\n"
+"PO-Revision-Date: 2025-05-31 12:51+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: ListItemBase.qml:71
 #, kde-format
@@ -158,32 +158,28 @@ msgid "No applications playing or recording audio"
 msgstr "Inga program spelar upp eller spelar in ljud"
 
 #: main.qml:502
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Ingen utenhet"
+msgstr "Utenheter"
 
 #: main.qml:504
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Spela in strömmar"
+msgstr "Utströmmar"
 
 #: main.qml:560
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Inspelningsenheter"
+msgstr "Inenheter"
 
 #: main.qml:562
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Spela in strömmar"
+msgstr "Inströmmar"
 
 #: main.qml:625
 #, kde-kuit-format
@@ -192,6 +188,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Långvarig användning av funktionen skadar enhetens högtalare. Använd den "
+"bara tillfälligt för att göra tyst media hörbart."
 
 #: main.qml:641
 #, kde-format

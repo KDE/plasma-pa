@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2025-03-26 16:20+0200\n"
+"PO-Revision-Date: 2025-05-29 16:59+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -371,12 +371,10 @@ msgid "Mute state"
 msgstr "Apklusināšanas stāvoklis"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "„%1“ izmanto mikrofonu"
+msgstr "Programma sāk izmantot apklusinātu mikrofonu"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -387,13 +385,13 @@ msgstr "Noklusējuma izvades ierīce"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: kcm/ui/VolumeSlider.qml:88
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: kded/audioshortcutsservice.cpp:76
 #, kde-format
@@ -454,14 +452,13 @@ msgstr "Nav izvades ierīces"
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2% baterija)"
+msgstr "%1 (%2 % baterija)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Apklusināt"
+msgstr "%1: apklusināts"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format

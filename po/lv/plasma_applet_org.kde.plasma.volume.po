@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-28 00:44+0000\n"
-"PO-Revision-Date: 2025-03-04 17:03+0200\n"
+"PO-Revision-Date: 2025-05-29 17:01+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: ListItemBase.qml:71
 #, kde-format
@@ -160,32 +160,28 @@ msgid "No applications playing or recording audio"
 msgstr "Pašlaik neviena programma neatskaņo vai neieraksta audio"
 
 #: main.qml:502
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Nav atrastas ievades vai izvades iekārtas"
+msgstr "Izvades ierīces"
 
 #: main.qml:504
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Ķert straumes"
+msgstr "Izvades straumes"
 
 #: main.qml:560
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Ķeršanas iekārtas"
+msgstr "Ievades ierīces"
 
 #: main.qml:562
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Ķert straumes"
+msgstr "Ievades straumes"
 
 #: main.qml:625
 #, kde-kuit-format
@@ -194,6 +190,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Ilgāka šīs iespējas izmantošana sabojās ierīces skaļruņus. Izmantojiet tikai "
+"uz laiku, lai sadzirdētu klusāku multividi."
 
 #: main.qml:641
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-28 00:44+0000\n"
-"PO-Revision-Date: 2025-05-14 17:19+0200\n"
+"PO-Revision-Date: 2025-05-31 10:23+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -188,6 +188,9 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Продължителната употреба на тази функция ще повреди високоговорителите на "
+"устройството. Използвайте я само временно, за да могат тихите мултимедийни "
+"файлове да се чуват."
 
 #: main.qml:641
 #, kde-format
