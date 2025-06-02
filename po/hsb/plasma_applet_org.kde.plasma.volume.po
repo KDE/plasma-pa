@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:44+0000\n"
+"POT-Creation-Date: 2025-06-02 00:44+0000\n"
 "PO-Revision-Date: 2021-10-28 12:36+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -27,56 +27,56 @@ msgstr "Tuchwilu so njenahrawa"
 msgid "Currently not playing"
 msgstr "Tuchwilu so njewothrawa"
 
-#: ListItemBase.qml:206
+#: ListItemBase.qml:203
 #, fuzzy, kde-format
 #| msgid "Show additional options for %1"
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Dodatne opcije za %1 pokazać"
 
-#: ListItemBase.qml:208
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Dodatne opcije za %1 pokazać"
 
-#: ListItemBase.qml:232
+#: ListItemBase.qml:227
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "%1 doněmić"
 
-#: ListItemBase.qml:232
+#: ListItemBase.qml:227
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Woně&mić"
 
-#: ListItemBase.qml:234
+#: ListItemBase.qml:229
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgid "Unmute %1"
 msgstr "%1 doněmić"
 
-#: ListItemBase.qml:234
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 doněmić"
 
-#: ListItemBase.qml:257
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Wótrosć za %1 připrawić"
 
-#: ListItemBase.qml:321
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:342
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -161,33 +161,33 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Žane aplikacije za nahrawanje abo wothrawanje"
 
-#: main.qml:502
+#: main.qml:503
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Žadyn outputowy grat"
 
-#: main.qml:504
+#: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:560
+#: main.qml:562
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Graty"
 
-#: main.qml:562
+#: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:625
+#: main.qml:627
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -195,23 +195,23 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:641
+#: main.qml:643
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maksimalnu wótrosć powyšić"
 
-#: main.qml:655
+#: main.qml:657
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Wšitke wothrawace graty doněmić"
 
-#: main.qml:664
+#: main.qml:666
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgid "Show virtual devices"
 msgstr "Žadyn outputowy grat"
 
-#: main.qml:674
+#: main.qml:676
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Awdijo-&graty připrawić..."

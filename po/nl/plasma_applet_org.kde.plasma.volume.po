@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:44+0000\n"
+"POT-Creation-Date: 2025-06-02 00:44+0000\n"
 "PO-Revision-Date: 2025-05-28 11:54+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27,52 +27,52 @@ msgstr "Geen opname op dit moment"
 msgid "Currently not playing"
 msgstr "Geen afspelen op dit moment"
 
-#: ListItemBase.qml:206
+#: ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Aanvullende opties"
 
-#: ListItemBase.qml:208
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Additionele opties voor %1 tonen"
 
-#: ListItemBase.qml:232
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Dempen opheffen"
 
-#: ListItemBase.qml:232
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Dempen"
 
-#: ListItemBase.qml:234
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Unmute %1"
 msgstr "Van %1 dempen opheffen"
 
-#: ListItemBase.qml:234
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 dempen"
 
-#: ListItemBase.qml:257
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Volume voor %1 aanpassen"
 
-#: ListItemBase.qml:321
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:342
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -157,31 +157,31 @@ msgstr "Opnieuw proberen"
 msgid "No applications playing or recording audio"
 msgstr "Geen toepassingen die geluid afspelen of opnemen"
 
-#: main.qml:502
+#: main.qml:503
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Uitvoerapparaten"
 
-#: main.qml:504
+#: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Uitvoerstreams"
 
-#: main.qml:560
+#: main.qml:562
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Invoerapparaten"
 
-#: main.qml:562
+#: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Invoerstreams"
 
-#: main.qml:625
+#: main.qml:627
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -191,22 +191,22 @@ msgstr ""
 "Verlengd gebruik van deze mogelijkheid zal de speakers van het apparaat "
 "beschadigen. Gebruik het alleen tijdelijk om zachte media hoorbaar te maken."
 
-#: main.qml:641
+#: main.qml:643
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximum volume vergroten:"
 
-#: main.qml:655
+#: main.qml:657
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Alle afspeelapparaten afdwingen te dempen"
 
-#: main.qml:664
+#: main.qml:666
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuele apparaten tonen"
 
-#: main.qml:674
+#: main.qml:676
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Audio-apparaten &configureren…"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:44+0000\n"
+"POT-Creation-Date: 2025-06-02 00:44+0000\n"
 "PO-Revision-Date: 2025-05-29 17:01+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -29,52 +29,52 @@ msgstr "Šobrīd neieraksta"
 msgid "Currently not playing"
 msgstr "Šobrīd neatskaņo"
 
-#: ListItemBase.qml:206
+#: ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Papildu opcijas"
 
-#: ListItemBase.qml:208
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Rādīt „%1“ papildu opcijas"
 
-#: ListItemBase.qml:232
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Atjaunot skaņu"
 
-#: ListItemBase.qml:232
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Apklusināt"
 
-#: ListItemBase.qml:234
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Unmute %1"
 msgstr "Atjaunot skaņu „%1“"
 
-#: ListItemBase.qml:234
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "Apklusināt „%1“"
 
-#: ListItemBase.qml:257
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Regulēt „%1“ skaļumu"
 
-#: ListItemBase.qml:321
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:342
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -159,31 +159,31 @@ msgstr "Mēģināt vēlreiz"
 msgid "No applications playing or recording audio"
 msgstr "Pašlaik neviena programma neatskaņo vai neieraksta audio"
 
-#: main.qml:502
+#: main.qml:503
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Izvades ierīces"
 
-#: main.qml:504
+#: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Izvades straumes"
 
-#: main.qml:560
+#: main.qml:562
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Ievades ierīces"
 
-#: main.qml:562
+#: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Ievades straumes"
 
-#: main.qml:625
+#: main.qml:627
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -193,22 +193,22 @@ msgstr ""
 "Ilgāka šīs iespējas izmantošana sabojās ierīces skaļruņus. Izmantojiet tikai "
 "uz laiku, lai sadzirdētu klusāku multividi."
 
-#: main.qml:641
+#: main.qml:643
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Palielināt maksimālo skaļumu"
 
-#: main.qml:655
+#: main.qml:657
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
 
-#: main.qml:664
+#: main.qml:666
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rādīt virtuālās ierīces"
 
-#: main.qml:674
+#: main.qml:676
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurēt skaņas ierīces…"
