@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 03:09+0000\n"
+"POT-Creation-Date: 2025-06-03 02:41+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -29,7 +29,7 @@ msgid "Currently not playing"
 msgstr ""
 
 # >> @info:tooltip
-#: ListItemBase.qml:200
+#: ListItemBase.qml:203
 #, fuzzy, kde-format
 #| msgid "Show additional options for %1"
 msgctxt "@action:button"
@@ -37,48 +37,48 @@ msgid "Additional Options"
 msgstr "Dodatne opcije za %1"
 
 # >> @info:tooltip
-#: ListItemBase.qml:202
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Dodatne opcije za %1"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr ""
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Utišaj"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgid "Unmute %1"
 msgstr "Utišaj %1"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "Utišaj %1"
 
-#: ListItemBase.qml:251
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Podesi jačinu za %1"
 
-#: ListItemBase.qml:315
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:336
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -163,49 +163,49 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Nijedan program ne pušta niti snima zvuk."
 
-#: main.qml:502
+#: main.qml:503
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:504
+#: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:559
+#: main.qml:562
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Uređaji"
 
-#: main.qml:561
+#: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:615
+#: main.qml:619
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Podigni najveću jačinu"
 
-#: main.qml:627
+#: main.qml:631
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: main.qml:636
+#: main.qml:640
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:646
+#: main.qml:650
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

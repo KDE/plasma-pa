@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 03:09+0000\n"
-"PO-Revision-Date: 2024-08-25 12:14+0200\n"
+"POT-Creation-Date: 2025-06-03 02:41+0000\n"
+"PO-Revision-Date: 2025-06-01 15:05+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -29,52 +29,52 @@ msgstr "Spelar ikkje inn lyd"
 msgid "Currently not playing"
 msgstr "Spelar ikkje av lyd"
 
-#: ListItemBase.qml:200
+#: ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Fleire val"
 
-#: ListItemBase.qml:202
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Vis fleire val for %1"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Lyddemping av"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Demp lyd"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Unmute %1"
 msgstr "Slå av lyddemping for %1"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "Demp %1"
 
-#: ListItemBase.qml:251
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Juster lydstyrke for %1"
 
-#: ListItemBase.qml:315
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
 
-#: ListItemBase.qml:336
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -146,7 +146,7 @@ msgstr "Program"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Fleire handlingar"
 
 #: main.qml:398
 #, kde-format
@@ -159,48 +159,46 @@ msgstr "Prøv på nytt"
 msgid "No applications playing or recording audio"
 msgstr "Ingen program spelar av eller tek opp lyd"
 
-#: main.qml:502
-#, fuzzy, kde-format
-#| msgid "Devices"
+#: main.qml:503
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Einingar"
+msgstr "Ut­einingar"
 
-#: main.qml:504
+#: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "Ut­strøymar"
 
-#: main.qml:559
-#, fuzzy, kde-format
-#| msgid "Devices"
+#: main.qml:562
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Einingar"
+msgstr "Inn­einingar"
 
-#: main.qml:561
+#: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "Inn­strøymar"
 
-#: main.qml:615
+#: main.qml:619
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Auk høgste lydstyrke"
 
-#: main.qml:627
+#: main.qml:631
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Slå av lyden på alle avspelingseiningar"
 
-#: main.qml:636
+#: main.qml:640
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Vis virtuelle einingar"
 
-#: main.qml:646
+#: main.qml:650
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Set opp lydeiningar …"

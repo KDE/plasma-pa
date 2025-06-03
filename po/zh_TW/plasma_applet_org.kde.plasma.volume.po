@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 03:09+0000\n"
+"POT-Creation-Date: 2025-06-03 02:41+0000\n"
 "PO-Revision-Date: 2025-05-16 16:10+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -29,52 +29,52 @@ msgstr "目前沒有在錄音"
 msgid "Currently not playing"
 msgstr "目前沒有在播放"
 
-#: ListItemBase.qml:200
+#: ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "額外選項"
 
-#: ListItemBase.qml:202
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "顯示 %1 的額外選項"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "取消靜音"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "靜音"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Unmute %1"
 msgstr "取消靜音 %1"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "靜音 %1"
 
-#: ListItemBase.qml:251
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "調整 %1 的音量"
 
-#: ListItemBase.qml:315
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:336
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -159,46 +159,46 @@ msgstr "重試"
 msgid "No applications playing or recording audio"
 msgstr "沒有正在播放或錄音的應用程式"
 
-#: main.qml:502
+#: main.qml:503
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "輸出裝置"
 
-#: main.qml:504
+#: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "輸出串流"
 
-#: main.qml:559
+#: main.qml:562
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "輸入裝置"
 
-#: main.qml:561
+#: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "輸入串流"
 
-#: main.qml:615
+#: main.qml:619
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: main.qml:627
+#: main.qml:631
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "強制靜音所有播放裝置"
 
-#: main.qml:636
+#: main.qml:640
 #, kde-format
 msgid "Show virtual devices"
 msgstr "顯示虛擬裝置"
 
-#: main.qml:646
+#: main.qml:650
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "設定音效裝置(&C)…"

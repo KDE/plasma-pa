@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 03:09+0000\n"
+"POT-Creation-Date: 2025-06-03 02:41+0000\n"
 "PO-Revision-Date: 2024-08-20 14:09+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -28,52 +28,52 @@ msgstr "Právě se nenahrává"
 msgid "Currently not playing"
 msgstr "Právě se nepřehrává"
 
-#: ListItemBase.qml:200
+#: ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Další volby"
 
-#: ListItemBase.qml:202
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Zobrazit další možnosti pro %1"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Povolit zvuk"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Ztlumit"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Unmute %1"
 msgstr "Povolit zvuk %1"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "Ztišit %1"
 
-#: ListItemBase.qml:251
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Upravit hlasitost pro %1"
 
-#: ListItemBase.qml:315
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:336
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -158,48 +158,48 @@ msgstr "Zkusit znovu"
 msgid "No applications playing or recording audio"
 msgstr "Žádné aplikace přehrávající nebo nahrávající audio"
 
-#: main.qml:502
+#: main.qml:503
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Zařízení"
 
-#: main.qml:504
+#: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:559
+#: main.qml:562
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Zařízení"
 
-#: main.qml:561
+#: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:615
+#: main.qml:619
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvýšit maximální hlasitost"
 
-#: main.qml:627
+#: main.qml:631
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Vynutit ztlumení všech přehrávacích zařízení"
 
-#: main.qml:636
+#: main.qml:640
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Zobrazit virtuální zařízení"
 
-#: main.qml:646
+#: main.qml:650
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Nastavit a&udio zařízení…"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 03:09+0000\n"
+"POT-Creation-Date: 2025-06-03 02:41+0000\n"
 "PO-Revision-Date: 2025-05-21 22:04+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -28,52 +28,52 @@ msgstr "Jelenleg nincs felvétel"
 msgid "Currently not playing"
 msgstr "Jelenleg nincs lejátszás"
 
-#: ListItemBase.qml:200
+#: ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "További beállítások ehhez"
 
-#: ListItemBase.qml:202
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "További beállítások ehhez: %1"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Visszahangosítás"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Némítás"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1 visszahangosítása"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "A(z) %1 némítása"
 
-#: ListItemBase.qml:251
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "A(z) %1 hangerejének beállítása"
 
-#: ListItemBase.qml:315
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:336
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -158,46 +158,46 @@ msgstr "Újra"
 msgid "No applications playing or recording audio"
 msgstr "Egy alkalmazás sem játszik le vagy vesz fel hangot"
 
-#: main.qml:502
+#: main.qml:503
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Kimeneti eszközök"
 
-#: main.qml:504
+#: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Kimeneti adatfolyamok"
 
-#: main.qml:559
+#: main.qml:562
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Bemeneti eszközök"
 
-#: main.qml:561
+#: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Bemeneti adatfolyamok"
 
-#: main.qml:615
+#: main.qml:619
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximális hangerő növelése"
 
-#: main.qml:627
+#: main.qml:631
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Összes lejátszóeszköz kényszerített némítása"
 
-#: main.qml:636
+#: main.qml:640
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuális eszközök megjelenítése"
 
-#: main.qml:646
+#: main.qml:650
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Hangeszközök &beállítása…"

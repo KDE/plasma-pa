@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 03:09+0000\n"
+"POT-Creation-Date: 2025-06-03 02:41+0000\n"
 "PO-Revision-Date: 2023-05-12 19:37+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -26,52 +26,52 @@ msgstr "Derzeit keine Aufnahme"
 msgid "Currently not playing"
 msgstr "Derzeit keine Wiedergabe"
 
-#: ListItemBase.qml:200
+#: ListItemBase.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Weitere Einstellungen"
 
-#: ListItemBase.qml:202
+#: ListItemBase.qml:205
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Weitere Einstellungen für %1 anzeigen"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Stummschaltung aufheben"
 
-#: ListItemBase.qml:226
+#: ListItemBase.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Stummschalten"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Unmute %1"
 msgstr "Stummschaltung von %1 aufheben"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 Stummschalten"
 
-#: ListItemBase.qml:251
+#: ListItemBase.qml:252
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Lautstärke für %1 anpassen"
 
-#: ListItemBase.qml:315
+#: ListItemBase.qml:316
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
 
-#: ListItemBase.qml:336
+#: ListItemBase.qml:337
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -156,50 +156,50 @@ msgstr ""
 msgid "No applications playing or recording audio"
 msgstr "Keine Anwendung spielt Audio ab oder nimmt Audio auf"
 
-#: main.qml:502
+#: main.qml:503
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Kein Ausgabegerät"
 
-#: main.qml:504
+#: main.qml:505
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Aufnahmestreams"
 
-#: main.qml:559
+#: main.qml:562
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Aufnahmegeräte"
 
-#: main.qml:561
+#: main.qml:564
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Aufnahmestreams"
 
-#: main.qml:615
+#: main.qml:619
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximale Lautstärke erhöhen"
 
-#: main.qml:627
+#: main.qml:631
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Stummschalten aller Wiedergabegeräte erzwingen"
 
-#: main.qml:636
+#: main.qml:640
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuelle Geräte anzeigen"
 
-#: main.qml:646
+#: main.qml:650
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Audio-Geräte einrichten ..."
