@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-02 00:44+0000\n"
-"PO-Revision-Date: 2024-08-25 12:14+0200\n"
+"PO-Revision-Date: 2025-06-01 15:05+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -146,7 +146,7 @@ msgstr "Program"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Fleire handlingar"
 
 #: main.qml:398
 #, kde-format
@@ -160,30 +160,28 @@ msgid "No applications playing or recording audio"
 msgstr "Ingen program spelar av eller tek opp lyd"
 
 #: main.qml:503
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Einingar"
+msgstr "Ut­einingar"
 
 #: main.qml:505
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "Ut­strøymar"
 
 #: main.qml:562
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Einingar"
+msgstr "Inn­einingar"
 
 #: main.qml:564
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "Inn­strøymar"
 
 #: main.qml:627
 #, kde-kuit-format
@@ -192,6 +190,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Langvarig bruk av denne funksjonen vil skada høgtalarane. Bruk han berre "
+"mellombels og for å auka lydstyrken på lydmateriale med låg lydstyrke."
 
 #: main.qml:643
 #, kde-format

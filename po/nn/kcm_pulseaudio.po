@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2024-09-26 19:06+0200\n"
+"PO-Revision-Date: 2025-06-01 15:06+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -354,9 +354,9 @@ msgid "Audio volume"
 msgstr "Lydstyrke"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Vis visuell varsling for endringar i:"
+msgstr "Vis skjermmelding-sprettopp for endringar i:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
@@ -369,12 +369,10 @@ msgid "Mute state"
 msgstr "Dempingsstatus"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 brukar mikrofonen"
+msgstr "Porgram startar å bruka dempa mikrofonen"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -455,11 +453,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2 % batteri)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Demp lyd"
+msgstr "%1: dempa"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
