@@ -189,6 +189,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"长时间使用此功能会损坏设备的扬声器。请仅在需要听清音量较低的媒体内容时短暂使"
+"用。"
 
 #: main.qml:643
 #, kde-format
