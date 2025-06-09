@@ -263,6 +263,15 @@ PlasmoidItem {
             tabBar.setCurrentIndex(streamsTab.PC3.TabBar.index)
         }
 
+        Connections {
+            target: main
+            function onExpandedChanged() : void {
+                if (!expanded) {
+                    contentView.currentItem.reset()
+                }
+            }
+        }
+
         header: PlasmaExtras.PlasmoidHeading {
             // Make this toolbar's buttons align vertically with the ones above
             rightPadding: -1
@@ -411,6 +420,7 @@ PlasmoidItem {
                     type: devicesView.lowerType
                     focus: ListView.isCurrentItem
                 }
+                HorizontalStackView.onStatusChanged: devicesView.reset()
             }
             // NOTE: Don't unload this while dragging and dropping a stream
             // to a device or else the D&D operation will be cancelled.
@@ -434,6 +444,7 @@ PlasmoidItem {
                     devicesModel: paSourceFilterModel
                     focus: ListView.isCurrentItem
                 }
+                HorizontalStackView.onStatusChanged: devicesView.reset()
             }
             Connections {
                 target: tabBar
@@ -464,6 +475,11 @@ PlasmoidItem {
 
              // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
             PC3.ScrollBar.horizontal.policy: PC3.ScrollBar.AlwaysOff
+
+            function reset() : void {
+                upperSection.currentIndex = -1
+                lowerSection.currentIndex = -1
+            }
 
             Loader {
                 parent: scrollView
@@ -522,6 +538,7 @@ PlasmoidItem {
                         delegate: scrollView.upperDelegate
                         focus: visible
                         keyNavigationEnabled: true
+                        currentIndex: -1
                         highlight: PlasmaExtras.Highlight {
                             visible: upperSection.activeFocus
                         }
@@ -579,6 +596,7 @@ PlasmoidItem {
                         model: scrollView.lowerModel
                         delegate: scrollView.lowerDelegate
                         keyNavigationEnabled: true
+                        currentIndex: -1
                         highlight: PlasmaExtras.Highlight {
                             visible: lowerSection.activeFocus
                         }
