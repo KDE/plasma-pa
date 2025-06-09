@@ -28,6 +28,7 @@
 using namespace PulseAudioQt;
 
 static const auto s_offProfile = QLatin1String("off");
+static const auto s_proAudioProfile = QLatin1String("pro-audio");
 
 ListItemMenu::ListItemMenu(QObject *parent)
     : QObject(parent)
@@ -230,6 +231,10 @@ bool ListItemMenu::checkHasContent()
                             continue;
                         }
 
+                        if (profile->name() == s_proAudioProfile && !device->supportsProAudio()) {
+                            continue;
+                        }
+
                         // TODO should we also check "if current profile is unavailable" like with ports?
                         if (++availableProfiles == 2) {
                             return true;
@@ -412,6 +417,11 @@ QMenu *ListItemMenu::createMenu()
                     // Don't let user easily remove a device with no obvious way to get it back
                     // Only let that be done from the KCM where one can just flip the ComboBox back.
                     if (profile->name() == s_offProfile) {
+                        continue;
+                    }
+
+                    // Don't show "Pro Audio" profile if it doesn't make sense for this device
+                    if (profile->name() == s_proAudioProfile && !device->supportsProAudio()) {
                         continue;
                     }
 

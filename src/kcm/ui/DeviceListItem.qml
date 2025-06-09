@@ -161,7 +161,9 @@ ColumnLayout {
             visible: profileBox.count > 1
             textRole: "description"
 
-            model: card ? card.profiles.filter(profile => profile.availability === Profile.Available) : []
+            model: card
+            ? card.profiles.filter(profile => (profile.availability === Profile.Available && !(profile.name == "pro-audio" && !SupportsProAudio)))
+            : []
             currentIndex: card ? model.indexOf(card.profiles[card.activeProfileIndex]) : -1
 
             onActivated: index => card.activeProfileIndex = card.profiles.indexOf(model[index])
