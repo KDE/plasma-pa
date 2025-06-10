@@ -27,12 +27,21 @@ PlasmoidItem {
         id: config
     }
 
+    height: Kirigami.Units.gridUnit * 21
+    width: Kirigami.Units.gridUnit * 24
+
     property bool volumeFeedback: config.audioFeedback
     property bool globalMute: config.globalMute
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
     property bool showVirtualDevices: Plasmoid.configuration.showVirtualDevices
+
+    readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
+        || Plasmoid.location === PlasmaCore.Types.RightEdge
+        || Plasmoid.location === PlasmaCore.Types.BottomEdge
+        || Plasmoid.location === PlasmaCore.Types.LeftEdge)
+    readonly property bool compactInPanel: inPanel && !!compactRepresentationItem?.visible
 
     // DEFAULT_SINK_NAME in module-always-sink.c
     readonly property string dummyOutputName: "auto_null"
@@ -238,10 +247,8 @@ PlasmoidItem {
     fullRepresentation: PlasmaExtras.Representation {
         id: fullRep
 
-        Layout.minimumHeight: main.switchHeight
-        Layout.minimumWidth: main.switchWidth
-        Layout.preferredHeight: Kirigami.Units.gridUnit * 21
-        Layout.preferredWidth: Kirigami.Units.gridUnit * 24
+        Layout.minimumHeight: (main.inPanel && !main.compactInPanel) ? -1 : main.switchHeight
+        Layout.minimumWidth: (main.inPanel && !main.compactInPanel) ? -1 : main.switchWidth
 
         collapseMarginsHint: true
 
