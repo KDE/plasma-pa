@@ -52,6 +52,7 @@
                 "Name[zh_TW]": "Harald Sitter"
             }
         ],
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=plasmashell&component=Audio%20Volume%20widget",
         "Category": "Multimedia",
         "Description": "Adjust the volume of devices and applications",
         "Description[ar]": "ضبط مستوى صوت الأجهزة والتطبيقات",
