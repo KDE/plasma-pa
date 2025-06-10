@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 02:41+0000\n"
+"POT-Creation-Date: 2025-06-10 02:39+0000\n"
 "PO-Revision-Date: 2024-10-21 11:11+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -131,77 +131,77 @@ msgstr "Rul for at justere lydstyrken"
 msgid "Device name not found"
 msgstr "Enhedsnavn ikke fundet"
 
-#: main.qml:309
+#: main.qml:318
 #, kde-format
 msgid "Devices"
 msgstr "Enheder"
 
-#: main.qml:316
+#: main.qml:325
 #, kde-format
 msgid "Applications"
 msgstr "Programmer"
 
-#: main.qml:340
+#: main.qml:349
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:398
+#: main.qml:407
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Prøv igen"
 
-#: main.qml:424
+#: main.qml:434
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ingen programmer afspiller eller optager lyd"
 
-#: main.qml:503
+#: main.qml:519
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Ingen outputenhed"
 
-#: main.qml:505
+#: main.qml:521
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Optagelsesstreams"
 
-#: main.qml:562
+#: main.qml:579
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Optagelsesenheder"
 
-#: main.qml:564
+#: main.qml:581
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Optagelsesstreams"
 
-#: main.qml:619
+#: main.qml:637
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Hæv maksimal lydstyrke"
 
-#: main.qml:631
+#: main.qml:649
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Gennemtving lydløs for alle afspilningsenheder"
 
-#: main.qml:640
+#: main.qml:658
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Vis virtuelle enheder"
 
-#: main.qml:650
+#: main.qml:668
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Indstil lydenheder..."

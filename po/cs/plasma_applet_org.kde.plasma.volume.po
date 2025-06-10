@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 02:41+0000\n"
+"POT-Creation-Date: 2025-06-10 02:39+0000\n"
 "PO-Revision-Date: 2024-08-20 14:09+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -131,75 +131,75 @@ msgstr "Rolujte kolečkem pro upravení hlasitosti"
 msgid "Device name not found"
 msgstr "Název zařízení nenalezen"
 
-#: main.qml:309
+#: main.qml:318
 #, kde-format
 msgid "Devices"
 msgstr "Zařízení"
 
-#: main.qml:316
+#: main.qml:325
 #, kde-format
 msgid "Applications"
 msgstr "Aplikace"
 
-#: main.qml:340
+#: main.qml:349
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:398
+#: main.qml:407
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Zkusit znovu"
 
-#: main.qml:424
+#: main.qml:434
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Žádné aplikace přehrávající nebo nahrávající audio"
 
-#: main.qml:503
+#: main.qml:519
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Zařízení"
 
-#: main.qml:505
+#: main.qml:521
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:562
+#: main.qml:579
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Zařízení"
 
-#: main.qml:564
+#: main.qml:581
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:619
+#: main.qml:637
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvýšit maximální hlasitost"
 
-#: main.qml:631
+#: main.qml:649
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Vynutit ztlumení všech přehrávacích zařízení"
 
-#: main.qml:640
+#: main.qml:658
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Zobrazit virtuální zařízení"
 
-#: main.qml:650
+#: main.qml:668
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Nastavit a&udio zařízení…"

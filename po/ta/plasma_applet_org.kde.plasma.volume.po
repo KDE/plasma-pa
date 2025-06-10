@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 02:41+0000\n"
+"POT-Creation-Date: 2025-06-10 02:39+0000\n"
 "PO-Revision-Date: 2025-05-18 20:55+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -130,73 +130,73 @@ msgstr "ஒலி அளவை மாற்ற உருளவும்"
 msgid "Device name not found"
 msgstr "சாதனத்தின் பெயர் தெரியாது"
 
-#: main.qml:309
+#: main.qml:318
 #, kde-format
 msgid "Devices"
 msgstr "சாதனங்கள்"
 
-#: main.qml:316
+#: main.qml:325
 #, kde-format
 msgid "Applications"
 msgstr "செயலிகள்"
 
-#: main.qml:340
+#: main.qml:349
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "மேலும் செயல்கள்"
 
-#: main.qml:398
+#: main.qml:407
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி"
 
-#: main.qml:424
+#: main.qml:434
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
-#: main.qml:503
+#: main.qml:519
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "வெளியீடு சாதனங்கள்"
 
-#: main.qml:505
+#: main.qml:521
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "வெளியீடு ஒலித்தடங்கள்"
 
-#: main.qml:562
+#: main.qml:579
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "உள்ளீடு கருவிகள்"
 
-#: main.qml:564
+#: main.qml:581
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "உள்ளீடு ஒலித்தடங்கள்"
 
-#: main.qml:619
+#: main.qml:637
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: main.qml:631
+#: main.qml:649
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
 
-#: main.qml:640
+#: main.qml:658
 #, kde-format
 msgid "Show virtual devices"
 msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
-#: main.qml:650
+#: main.qml:668
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"

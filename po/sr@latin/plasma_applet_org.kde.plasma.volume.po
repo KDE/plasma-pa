@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 02:41+0000\n"
+"POT-Creation-Date: 2025-06-10 02:39+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -136,76 +136,76 @@ msgstr ""
 msgid "Device name not found"
 msgstr ""
 
-#: main.qml:309
+#: main.qml:318
 #, kde-format
 msgid "Devices"
 msgstr "Uređaji"
 
-#: main.qml:316
+#: main.qml:325
 #, kde-format
 msgid "Applications"
 msgstr "Programi"
 
-#: main.qml:340
+#: main.qml:349
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:398
+#: main.qml:407
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:424
+#: main.qml:434
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nijedan program ne pušta niti snima zvuk."
 
-#: main.qml:503
+#: main.qml:519
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:505
+#: main.qml:521
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:562
+#: main.qml:579
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Uređaji"
 
-#: main.qml:564
+#: main.qml:581
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:619
+#: main.qml:637
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Podigni najveću jačinu"
 
-#: main.qml:631
+#: main.qml:649
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: main.qml:640
+#: main.qml:658
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:650
+#: main.qml:668
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
