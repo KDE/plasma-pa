@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2025-05-28 11:54+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -130,58 +130,58 @@ msgstr "Scrollen om geluidsvolume aan te passen"
 msgid "Device name not found"
 msgstr "Apparaatnaam niet gevonden"
 
-#: main.qml:309
+#: main.qml:318
 #, kde-format
 msgid "Devices"
 msgstr "Apparaten"
 
-#: main.qml:316
+#: main.qml:325
 #, kde-format
 msgid "Applications"
 msgstr "Toepassingen"
 
-#: main.qml:340
+#: main.qml:349
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Meer acties"
 
-#: main.qml:398
+#: main.qml:407
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Opnieuw proberen"
 
-#: main.qml:424
+#: main.qml:434
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Geen toepassingen die geluid afspelen of opnemen"
 
-#: main.qml:503
+#: main.qml:519
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Uitvoerapparaten"
 
-#: main.qml:505
+#: main.qml:521
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Uitvoerstreams"
 
-#: main.qml:562
+#: main.qml:579
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Invoerapparaten"
 
-#: main.qml:564
+#: main.qml:581
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Invoerstreams"
 
-#: main.qml:627
+#: main.qml:645
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -191,22 +191,22 @@ msgstr ""
 "Verlengd gebruik van deze mogelijkheid zal de speakers van het apparaat "
 "beschadigen. Gebruik het alleen tijdelijk om zachte media hoorbaar te maken."
 
-#: main.qml:643
+#: main.qml:661
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximum volume vergroten:"
 
-#: main.qml:657
+#: main.qml:675
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Alle afspeelapparaten afdwingen te dempen"
 
-#: main.qml:666
+#: main.qml:684
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuele apparaten tonen"
 
-#: main.qml:676
+#: main.qml:694
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Audio-apparaten &configureren…"

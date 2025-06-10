@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -131,58 +131,58 @@ msgstr "滚动鼠标滚轮以调节音量"
 msgid "Device name not found"
 msgstr "找不到设备名称"
 
-#: main.qml:309
+#: main.qml:318
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: main.qml:316
+#: main.qml:325
 #, kde-format
 msgid "Applications"
 msgstr "应用程序"
 
-#: main.qml:340
+#: main.qml:349
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "更多操作"
 
-#: main.qml:398
+#: main.qml:407
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "重试"
 
-#: main.qml:424
+#: main.qml:434
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
-#: main.qml:503
+#: main.qml:519
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "输出设备"
 
-#: main.qml:505
+#: main.qml:521
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "输出流"
 
-#: main.qml:562
+#: main.qml:579
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "输入设备"
 
-#: main.qml:564
+#: main.qml:581
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "输入流"
 
-#: main.qml:627
+#: main.qml:645
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -192,22 +192,22 @@ msgstr ""
 "长时间使用此功能会损坏设备的扬声器。请仅在需要听清音量较低的媒体内容时短暂使"
 "用。"
 
-#: main.qml:643
+#: main.qml:661
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: main.qml:657
+#: main.qml:675
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
 
-#: main.qml:666
+#: main.qml:684
 #, kde-format
 msgid "Show virtual devices"
 msgstr "显示虚拟设备"
 
-#: main.qml:676
+#: main.qml:694
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "配置音频设备(&C)…"

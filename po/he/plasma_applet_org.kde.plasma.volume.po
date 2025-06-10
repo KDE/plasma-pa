@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2025-05-28 09:52+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -133,58 +133,58 @@ msgstr "גלילה משנה את עוצמת השמע"
 msgid "Device name not found"
 msgstr "שם ההתקן לא נמצא"
 
-#: main.qml:309
+#: main.qml:318
 #, kde-format
 msgid "Devices"
 msgstr "התקנים"
 
-#: main.qml:316
+#: main.qml:325
 #, kde-format
 msgid "Applications"
 msgstr "יישומים"
 
-#: main.qml:340
+#: main.qml:349
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "פעולות נוספות"
 
-#: main.qml:398
+#: main.qml:407
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "לנסות שוב"
 
-#: main.qml:424
+#: main.qml:434
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "אין ישומים המשמיעים או מקליטים שמע"
 
-#: main.qml:503
+#: main.qml:519
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "התקני פלט"
 
-#: main.qml:505
+#: main.qml:521
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "תזרימי פלט"
 
-#: main.qml:562
+#: main.qml:579
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "התקני קלט"
 
-#: main.qml:564
+#: main.qml:581
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "תזרימי קלט"
 
-#: main.qml:627
+#: main.qml:645
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -194,22 +194,22 @@ msgstr ""
 "שימוש ביכולת הזאת למשך זמן יפגום ברמקולים שלך. יש להשתמש בה באופן זמני כדי "
 "להפוך שמע חלש ליותר ברור."
 
-#: main.qml:643
+#: main.qml:661
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "הגברת עוצמה מרבית"
 
-#: main.qml:657
+#: main.qml:675
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "אילוץ השתקת כל התקני הנגינה"
 
-#: main.qml:666
+#: main.qml:684
 #, kde-format
 msgid "Show virtual devices"
 msgstr "הצגת התקנים וירטואליים"
 
-#: main.qml:676
+#: main.qml:694
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ה&גדרת התקני שמע…"

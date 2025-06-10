@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2021-10-28 12:36+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -134,60 +134,60 @@ msgstr ""
 msgid "Device name not found"
 msgstr "Njemóžach mjeno grata namakać"
 
-#: main.qml:309
+#: main.qml:318
 #, kde-format
 msgid "Devices"
 msgstr "Graty"
 
-#: main.qml:316
+#: main.qml:325
 #, kde-format
 msgid "Applications"
 msgstr "Aplikacije"
 
-#: main.qml:340
+#: main.qml:349
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:398
+#: main.qml:407
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:424
+#: main.qml:434
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Žane aplikacije za nahrawanje abo wothrawanje"
 
-#: main.qml:503
+#: main.qml:519
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Žadyn outputowy grat"
 
-#: main.qml:505
+#: main.qml:521
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:562
+#: main.qml:579
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Graty"
 
-#: main.qml:564
+#: main.qml:581
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:627
+#: main.qml:645
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -195,23 +195,23 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:643
+#: main.qml:661
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maksimalnu wótrosć powyšić"
 
-#: main.qml:657
+#: main.qml:675
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Wšitke wothrawace graty doněmić"
 
-#: main.qml:666
+#: main.qml:684
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgid "Show virtual devices"
 msgstr "Žadyn outputowy grat"
 
-#: main.qml:676
+#: main.qml:694
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Awdijo-&graty připrawić..."
