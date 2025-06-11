@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:44+0000\n"
+"POT-Creation-Date: 2025-06-11 00:44+0000\n"
 "PO-Revision-Date: 2025-06-04 19:17+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -80,110 +80,110 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: main.qml:32
+#: main.qml:35
 #, kde-format
 msgid "Audio Volume"
 msgstr "Volumen del sonido"
 
-#: main.qml:43 main.qml:45
+#: main.qml:52 main.qml:54
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Conexión con el sistema de sonido perdida"
 
-#: main.qml:47
+#: main.qml:56
 #, kde-format
 msgid "No output or input devices found"
 msgstr "No se han encontrado dispositivos de entrada ni de salida"
 
-#: main.qml:51
+#: main.qml:60
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Intentando reconectar…"
 
-#: main.qml:68
+#: main.qml:77
 #, kde-format
 msgid "Audio Muted"
 msgstr "Sonido silenciado"
 
-#: main.qml:70
+#: main.qml:79
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volumen al %1%"
 
-#: main.qml:81
+#: main.qml:90
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Pulse con el botón central para reanudar el sonido"
 
-#: main.qml:82
+#: main.qml:91
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Pulse con el botón central para silenciar todos los sonidos"
 
-#: main.qml:83
+#: main.qml:92
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Desplazar para ajustar el volumen"
 
-#: main.qml:99
+#: main.qml:108
 #, kde-format
 msgid "Device name not found"
 msgstr "Dispositivo no encontrado"
 
-#: main.qml:318
+#: main.qml:325
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivos"
 
-#: main.qml:325
+#: main.qml:332
 #, kde-format
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: main.qml:349
+#: main.qml:356
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Más acciones"
 
-#: main.qml:407
+#: main.qml:414
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Reintentar"
 
-#: main.qml:434
+#: main.qml:441
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "No hay aplicaciones reproduciendo ni grabando sonido"
 
-#: main.qml:519
+#: main.qml:526
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Dispositivos de salida"
 
-#: main.qml:521
+#: main.qml:528
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Emisiones de salida"
 
-#: main.qml:579
+#: main.qml:586
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Dispositivos de entrada"
 
-#: main.qml:581
+#: main.qml:588
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Emisiones de entrada"
 
-#: main.qml:645
+#: main.qml:652
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -193,22 +193,22 @@ msgstr ""
 "El uso prolongado de esta función dañará los altavoces del dispositivo. "
 "Úselo temporalmente para poder oír medios con muy bajo volumen."
 
-#: main.qml:661
+#: main.qml:668
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Subir el volumen máximo"
 
-#: main.qml:675
+#: main.qml:682
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Forzar el silencio en todos los dispositivos de reproducción"
 
-#: main.qml:684
+#: main.qml:691
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostrar dispositivos virtuales"
 
-#: main.qml:694
+#: main.qml:701
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurar dispositivos de sonido…"
