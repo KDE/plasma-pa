@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 02:39+0000\n"
+"POT-Creation-Date: 2025-06-11 02:47+0000\n"
 "PO-Revision-Date: 2025-05-21 22:04+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -79,125 +79,125 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: main.qml:32
+#: main.qml:35
 #, kde-format
 msgid "Audio Volume"
 msgstr "Hangerő"
 
-#: main.qml:43 main.qml:45
+#: main.qml:52 main.qml:54
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "A kapcsolat a Hangszolgáltatáshoz megszakadt"
 
-#: main.qml:47
+#: main.qml:56
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nem találhatók kimeneti vagy bemeneti eszközök"
 
-#: main.qml:51
+#: main.qml:60
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Újrakapcsolódás…"
 
-#: main.qml:68
+#: main.qml:77
 #, kde-format
 msgid "Audio Muted"
 msgstr "Hang elnémítva"
 
-#: main.qml:70
+#: main.qml:79
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Hangerő: %1%"
 
-#: main.qml:81
+#: main.qml:90
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Visszahangosítás a középső gombbal"
 
-#: main.qml:82
+#: main.qml:91
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Összes hang némítésa a középső gombbal"
 
-#: main.qml:83
+#: main.qml:92
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Hangerőállítás görgetéssel"
 
-#: main.qml:99
+#: main.qml:108
 #, kde-format
 msgid "Device name not found"
 msgstr "Az eszköznév nem található"
 
-#: main.qml:318
+#: main.qml:325
 #, kde-format
 msgid "Devices"
 msgstr "Eszközök"
 
-#: main.qml:325
+#: main.qml:332
 #, kde-format
 msgid "Applications"
 msgstr "Alkalmazások"
 
-#: main.qml:349
+#: main.qml:356
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "További műveletek"
 
-#: main.qml:407
+#: main.qml:414
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Újra"
 
-#: main.qml:434
+#: main.qml:441
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Egy alkalmazás sem játszik le vagy vesz fel hangot"
 
-#: main.qml:519
+#: main.qml:526
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Kimeneti eszközök"
 
-#: main.qml:521
+#: main.qml:528
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Kimeneti adatfolyamok"
 
-#: main.qml:579
+#: main.qml:586
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Bemeneti eszközök"
 
-#: main.qml:581
+#: main.qml:588
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Bemeneti adatfolyamok"
 
-#: main.qml:637
+#: main.qml:644
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximális hangerő növelése"
 
-#: main.qml:649
+#: main.qml:656
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Összes lejátszóeszköz kényszerített némítása"
 
-#: main.qml:658
+#: main.qml:665
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuális eszközök megjelenítése"
 
-#: main.qml:668
+#: main.qml:675
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Hangeszközök &beállítása…"

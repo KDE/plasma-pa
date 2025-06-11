@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2025-04-07 00:25+0200\n"
+"PO-Revision-Date: 2025-06-10 22:22+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -366,12 +366,10 @@ msgid "Mute state"
 msgstr "음소거 상태"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1에서 마이크 사용 중"
+msgstr "앱에서 음소거된 마이크를 사용할 때"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -452,11 +450,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1(배터리 %2%)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "음소거"
+msgstr "%1: 음소거됨"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
