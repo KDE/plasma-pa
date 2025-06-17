@@ -66,7 +66,10 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
             showVolume(volumePercent(sink->volume()));
         });
     });
+
+    // For global mute, we need to track sinks and changes to them
     connect(m_sinkModel, &PulseAudioQt::SinkModel::rowsInserted, this, &AudioShortcutsService::handleNewSink);
+    connect(m_sinkModel, &PulseAudioQt::SinkModel::dataChanged, this, &AudioShortcutsService::handleDataChanged);
 
     QList<QAction *> actions;
 
@@ -309,15 +312,6 @@ void AudioShortcutsService::handleDefaultSinkChange()
     m_osdDBusInterface->showText(icon, description);
 }
 
-void AudioShortcutsService::handleNewSink()
-{
-    if (m_globalConfig->globalMute()) {
-        for (int i = 0; i < m_sinkModel->rowCount(); i++) {
-            m_sinkModel->setData(m_sinkModel->index(i, 0), true, m_sinkModel->role("Muted"_ba));
-        }
-    }
-}
-
 void AudioShortcutsService::muteVolume()
 {
     auto sink = m_preferredDevice.sink();
@@ -333,51 +327,6 @@ void AudioShortcutsService::muteVolume()
         }
         sink->setMuted(false);
         showMute(sink->volume());
-        playFeedback(-1);
-    }
-}
-
-void AudioShortcutsService::enableGlobalMute()
-{
-    QStringList alreadyMutedDevices;
-    for (int i = 0; i < m_sinkModel->rowCount(); i++) {
-        const auto idx = m_sinkModel->index(i, 0);
-        const bool isAlreadyMuted = m_sinkModel->data(idx, m_sinkModel->role("Muted"_ba)).toBool();
-        const QString name = m_sinkModel->data(idx, m_sinkModel->role("Name"_ba)).toString();
-        const QString activePortIdx = QString::number(m_sinkModel->data(idx, m_sinkModel->role("ActivePortIndex"_ba)).toUInt());
-        if (isAlreadyMuted) {
-            alreadyMutedDevices.append(name % "." % activePortIdx);
-        } else {
-            m_sinkModel->setData(idx, true, m_sinkModel->role("Muted"_ba));
-        }
-    }
-    if (alreadyMutedDevices.length() == m_sinkModel->rowCount()) {
-        alreadyMutedDevices.clear();
-    }
-    m_globalConfig->setGlobalMuteDevices(alreadyMutedDevices);
-    m_globalConfig->setGlobalMute(true);
-    m_globalConfig->save();
-    showMute(0);
-}
-
-void AudioShortcutsService::disableGlobalMute()
-{
-    QStringList keepMutedDevices = m_globalConfig->globalMuteDevices();
-    for (int i = 0; i < m_sinkModel->rowCount(); i++) {
-        const auto idx = m_sinkModel->index(i, 0);
-        const QString name = m_sinkModel->data(idx, m_sinkModel->role("Name"_ba)).toString();
-        const QString activePortIdx = QString::number(m_sinkModel->data(idx, m_sinkModel->role("ActivePortIndex"_ba)).toUInt());
-        const QString deviceId = name % "." % activePortIdx;
-        if (!keepMutedDevices.contains(deviceId)) {
-            m_sinkModel->setData(idx, false, m_sinkModel->role("Muted"_ba));
-        }
-    }
-    m_globalConfig->setGlobalMute(false);
-    m_globalConfig->setGlobalMuteDevices({});
-    m_globalConfig->save();
-    auto sink = m_preferredDevice.sink();
-    if (sink) {
-        showMute(volumePercent(sink->volume()));
         playFeedback(-1);
     }
 }
@@ -424,6 +373,102 @@ void AudioShortcutsService::showMicMute(int percent)
         return;
     }
     m_osdDBusInterface->microphoneVolumeChanged(percent);
+}
+
+void AudioShortcutsService::applyGlobalMute(const QModelIndex &index, const bool globalMute, QStringList &globalMuteMutedDevices)
+{
+    const QString name = m_sinkModel->data(index, m_sinkModel->role("Name"_ba)).toString();
+    const QString activePortIdx = QString::number(m_sinkModel->data(index, m_sinkModel->role("ActivePortIndex"_ba)).toUInt());
+    const QString deviceId = name % "." % activePortIdx;
+
+    if (globalMute) {
+        // Mute the device if unmuted
+        const bool isUnmuted = !m_sinkModel->data(index, m_sinkModel->role("Muted"_ba)).toBool();
+        if (isUnmuted) {
+            if (!globalMuteMutedDevices.contains(deviceId)) {
+                globalMuteMutedDevices.append(deviceId);
+            }
+            m_sinkModel->setData(index, true, m_sinkModel->role("Muted"_ba));
+        }
+    } else {
+        // Unmute the device if global mute has muted it
+        if (globalMuteMutedDevices.removeAll(deviceId)) {
+            m_sinkModel->setData(index, false, m_sinkModel->role("Muted"_ba));
+        }
+    }
+}
+
+void AudioShortcutsService::handleNewSink(const QModelIndex &parent, int first, int last)
+{
+    Q_UNUSED(parent)
+
+    QStringList globalMuteMutedDevices = m_globalConfig->globalMuteMutedDevices();
+    const bool globalMute = m_globalConfig->globalMute();
+
+    for (int i = first; i <= last; ++i) {
+        applyGlobalMute(m_sinkModel->index(i, 0), globalMute, globalMuteMutedDevices);
+    }
+
+    m_globalConfig->setGlobalMuteMutedDevices(globalMuteMutedDevices);
+    m_globalConfig->save();
+}
+
+void AudioShortcutsService::handleDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles)
+{
+    QStringList globalMuteMutedDevices = m_globalConfig->globalMuteMutedDevices();
+    const bool globalMute = m_globalConfig->globalMute();
+
+    for (int i = topLeft.row(); i <= bottomRight.row(); ++i) {
+        const auto index = m_sinkModel->index(i, 0);
+
+        const bool activePortIndexChanged = roles.contains(m_sinkModel->role("ActivePortIndex"_ba));
+        const bool volumeChanged = roles.contains(m_sinkModel->role("Volume"_ba));
+        const bool mutedChanged = roles.contains(m_sinkModel->role("Muted"_ba));
+        const bool isUnmuted = !m_sinkModel->data(index, m_sinkModel->role("Muted"_ba)).toBool();
+
+        if (activePortIndexChanged) {
+            // Apply global mute to new device
+            applyGlobalMute(index, globalMute, globalMuteMutedDevices);
+
+            m_globalConfig->setGlobalMuteMutedDevices(globalMuteMutedDevices);
+            m_globalConfig->save();
+        } else if (globalMute && (volumeChanged || (mutedChanged && isUnmuted))) {
+            // Changes to volume or unmuting break global mute
+            disableGlobalMute();
+        }
+    }
+}
+
+void AudioShortcutsService::enableGlobalMute()
+{
+    QStringList globalMuteMutedDevices = m_globalConfig->globalMuteMutedDevices();
+    for (int i = 0; i < m_sinkModel->rowCount(); ++i) {
+        applyGlobalMute(m_sinkModel->index(i, 0), true, globalMuteMutedDevices);
+    }
+
+    m_globalConfig->setGlobalMuteMutedDevices(globalMuteMutedDevices);
+    m_globalConfig->setGlobalMute(true);
+    m_globalConfig->save();
+
+    showMute(0);
+}
+
+void AudioShortcutsService::disableGlobalMute()
+{
+    QStringList globalMuteMutedDevices = m_globalConfig->globalMuteMutedDevices();
+    for (int i = 0; i < m_sinkModel->rowCount(); ++i) {
+        applyGlobalMute(m_sinkModel->index(i, 0), false, globalMuteMutedDevices);
+    }
+
+    m_globalConfig->setGlobalMuteMutedDevices(globalMuteMutedDevices);
+    m_globalConfig->setGlobalMute(false);
+    m_globalConfig->save();
+
+    const auto sink = m_preferredDevice.sink();
+    if (sink) {
+        showMute(volumePercent(sink->volume()));
+        playFeedback(-1);
+    }
 }
 
 #include "audioshortcutsservice.moc"

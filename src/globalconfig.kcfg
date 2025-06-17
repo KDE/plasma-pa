@@ -46,8 +46,8 @@
             <label>Mute all audio.</label>
             <default>false</default>
         </entry>
-        <entry name="GlobalMuteDevices" type="StringList">
-            <label>Devices that were not muted with global mute, and will remain muted afterwards.</label>
+        <entry name="GlobalMuteMutedDevices" type="StringList">
+            <label>Devices that were muted by global mute, and should be unmuted after global mute is disabled.</label>
         </entry>
     </group>
 </kcfg>

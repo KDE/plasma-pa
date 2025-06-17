@@ -741,14 +741,6 @@ PlasmoidItem {
             config.globalMute = true;
             config.save();
         }
-        if (Plasmoid.configuration.globalMuteDevices.length !== 0) {
-            for (const device in Plasmoid.configuration.globalMuteDevices) {
-                if (!config.globalMuteDevices.includes(device)) {
-                    config.globalMuteDevices.push(device);
-                }
-            }
-            config.save();
-        }
         Plasmoid.configuration.migrated = true;
     }
 }

@@ -43,15 +43,18 @@ private:
     static int volumePercent(qint64 volume);
     int changeVolumePercent(PulseAudioQt::Device *device, int deltaPercent);
     void handleDefaultSinkChange();
-    void handleNewSink();
     void muteVolume();
-    void enableGlobalMute();
-    void disableGlobalMute();
     void playFeedback(int sinkIdx);
     void showMute(int percent);
     void showVolume(int percent);
     void showMicMute(int percent);
     void showMicVolume(int percent);
+
+    void applyGlobalMute(const QModelIndex &index, const bool globalMute, QStringList &globalMuteMutedDevices);
+    void handleNewSink(const QModelIndex &parent, int first, int last);
+    void handleDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
+    void enableGlobalMute();
+    void disableGlobalMute();
 
     PulseAudioQt::SinkModel *m_sinkModel = nullptr;
     PulseAudioQt::SourceModel *m_sourceModel = nullptr;

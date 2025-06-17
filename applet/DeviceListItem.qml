@@ -11,8 +11,6 @@ import org.kde.plasma.private.volume
 
 ListItemBase {
     readonly property var currentPort: model.Ports[model.ActivePortIndex]
-    readonly property bool muted: model.Muted
-    readonly property int activePortIndex: model.ActivePortIndex
 
     fullNameToShowOnHover: ListView.view.count === 1 ? model.Description : ""
 
@@ -31,19 +29,5 @@ ListItemBase {
         }
 
         return nodeName(model.PulseObject)
-    }
-
-    onActivePortIndexChanged: {
-        if (type === "sink" && globalMute && !model.Muted) {
-            model.Muted = true;
-        }
-    }
-
-    onMutedChanged: {
-        if (type === "sink" && globalMute && !model.Muted) {
-            config.globalMute = false;
-            config.globalMuteDevices = [];
-            config.save();
-        }
     }
 }
