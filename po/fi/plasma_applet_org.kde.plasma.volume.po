@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-11 00:44+0000\n"
-"PO-Revision-Date: 2025-05-25 10:15+0300\n"
+"PO-Revision-Date: 2025-05-31 10:42+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -192,6 +192,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Ominaisuuden pitkittynyt käyttö voi vahingoittaa laitteen kaiuttimia. Käytä "
+"sitä vain väliaikaisesti tehdäksesi hiljaisen median kuuluvaksi."
 
 #: main.qml:668
 #, kde-format
