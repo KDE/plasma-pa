@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -131,60 +131,60 @@ msgstr "Rulumu por ĝustigi laŭtecon"
 msgid "Device name not found"
 msgstr "Aparatonomo ne trovita"
 
-#: main.qml:325
+#: main.qml:350
 #, kde-format
 msgid "Devices"
 msgstr "Aparatoj"
 
-#: main.qml:332
+#: main.qml:357
 #, kde-format
 msgid "Applications"
 msgstr "Aplikoj"
 
-#: main.qml:356
+#: main.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:414
+#: main.qml:439
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Reprovi"
 
-#: main.qml:441
+#: main.qml:466
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Neniuj aplikoj ludantaj aŭ registrante audio"
 
-#: main.qml:526
+#: main.qml:551
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Aparatoj"
 
-#: main.qml:528
+#: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:586
+#: main.qml:611
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Aparatoj"
 
-#: main.qml:588
+#: main.qml:613
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:652
+#: main.qml:677
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -192,22 +192,22 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:668
+#: main.qml:693
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altigi maksimuman laŭtecon"
 
-#: main.qml:682
+#: main.qml:707
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Devigi silentigi ĉiujn reproduktajn aparatojn"
 
-#: main.qml:691
+#: main.qml:716
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Montri virtualajn aparatojn"
 
-#: main.qml:701
+#: main.qml:726
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Agordi Aŭdio-Aparatojn…"

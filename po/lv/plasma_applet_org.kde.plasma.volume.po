@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2025-05-29 17:01+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -132,58 +132,58 @@ msgstr "Ritiniet, lai mainītu skaļumu"
 msgid "Device name not found"
 msgstr "Ierīces nosaukums nav atrasts"
 
-#: main.qml:325
+#: main.qml:350
 #, kde-format
 msgid "Devices"
 msgstr "Ierīces"
 
-#: main.qml:332
+#: main.qml:357
 #, kde-format
 msgid "Applications"
 msgstr "Programmas"
 
-#: main.qml:356
+#: main.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Vairāk darbību"
 
-#: main.qml:414
+#: main.qml:439
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Mēģināt vēlreiz"
 
-#: main.qml:441
+#: main.qml:466
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Pašlaik neviena programma neatskaņo vai neieraksta audio"
 
-#: main.qml:526
+#: main.qml:551
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Izvades ierīces"
 
-#: main.qml:528
+#: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Izvades straumes"
 
-#: main.qml:586
+#: main.qml:611
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Ievades ierīces"
 
-#: main.qml:588
+#: main.qml:613
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Ievades straumes"
 
-#: main.qml:652
+#: main.qml:677
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -193,22 +193,22 @@ msgstr ""
 "Ilgāka šīs iespējas izmantošana sabojās ierīces skaļruņus. Izmantojiet tikai "
 "uz laiku, lai sadzirdētu klusāku multividi."
 
-#: main.qml:668
+#: main.qml:693
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Palielināt maksimālo skaļumu"
 
-#: main.qml:682
+#: main.qml:707
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
 
-#: main.qml:691
+#: main.qml:716
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rādīt virtuālās ierīces"
 
-#: main.qml:701
+#: main.qml:726
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurēt skaņas ierīces…"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2025-02-02 23:11+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -133,62 +133,62 @@ msgstr "Slinkite norėdami reguliuoti garsumą"
 msgid "Device name not found"
 msgstr "Įrenginio pavadinimas nerastas"
 
-#: main.qml:325
+#: main.qml:350
 #, kde-format
 msgid "Devices"
 msgstr "Įrenginiai"
 
-#: main.qml:332
+#: main.qml:357
 #, kde-format
 msgid "Applications"
 msgstr "Programos"
 
-#: main.qml:356
+#: main.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Daugiau veiksmų"
 
-#: main.qml:414
+#: main.qml:439
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Bandyti dar kartą"
 
-#: main.qml:441
+#: main.qml:466
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Šiuo metu jokios programos neatkuria ir neįrašinėja garso"
 
-#: main.qml:526
+#: main.qml:551
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Nėra jokio išvesties įrenginio"
 
-#: main.qml:528
+#: main.qml:553
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Įrašymo srautai"
 
-#: main.qml:586
+#: main.qml:611
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Įrašymo įrenginiai"
 
-#: main.qml:588
+#: main.qml:613
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Įrašymo srautai"
 
-#: main.qml:652
+#: main.qml:677
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -196,22 +196,22 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:668
+#: main.qml:693
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Padidinti didžiausią garsumą"
 
-#: main.qml:682
+#: main.qml:707
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Priverstinai nutildyti visus atkūrimo įrenginius"
 
-#: main.qml:691
+#: main.qml:716
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rodyti virtualius įrenginius"
 
-#: main.qml:701
+#: main.qml:726
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigūruoti garso įrenginius…"

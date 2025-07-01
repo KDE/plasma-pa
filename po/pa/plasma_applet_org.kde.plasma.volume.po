@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2024-03-07 17:18-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -130,62 +130,62 @@ msgstr "ਵਾਲੀਅਮ ਕੰਟਰੋਲ ਕਰਨ ਲਈ ਸਕਰੋਲ �
 msgid "Device name not found"
 msgstr "ਡਿਵਾਈਸ ਨਾਂ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: main.qml:325
+#: main.qml:350
 #, kde-format
 msgid "Devices"
 msgstr "ਡਿਵਾਈਸ"
 
-#: main.qml:332
+#: main.qml:357
 #, kde-format
 msgid "Applications"
 msgstr "ਐਪਲੀਕੇਸ਼ਨਾਂ"
 
-#: main.qml:356
+#: main.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:414
+#: main.qml:439
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:441
+#: main.qml:466
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ਕੋਈ ਵੀ ਐਪਲੀਕੇਸ਼ਨ ਆਡੀਓ ਚਲਾ ਜਾਂ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰ ਰਹੀ ਹੈ"
 
-#: main.qml:526
+#: main.qml:551
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ"
 
-#: main.qml:528
+#: main.qml:553
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "ਕੈਪਚਰ ਸਟਰੀਮਾਂ"
 
-#: main.qml:586
+#: main.qml:611
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "ਕੈਪਚਰ ਡਿਵਾਈਸ"
 
-#: main.qml:588
+#: main.qml:613
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "ਕੈਪਚਰ ਸਟਰੀਮਾਂ"
 
-#: main.qml:652
+#: main.qml:677
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -193,22 +193,22 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:668
+#: main.qml:693
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: main.qml:682
+#: main.qml:707
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ਸਾਰੇ ਪਲੇਅਬੈਕ ਡਿਵਾਈਸਾਂ ਨੂੰ ਧੱਕੇ ਨਾਲ ਮੌਨ ਕਰੋ"
 
-#: main.qml:691
+#: main.qml:716
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ਵਰਚੁਅਲ ਡਿਵਾਈਸ ਵੇਖੋ"
 
-#: main.qml:701
+#: main.qml:726
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "…ਆਡੀਓ ਡਿਵਾਈਸਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"
