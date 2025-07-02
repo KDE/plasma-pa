@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 02:47+0000\n"
+"POT-Creation-Date: 2025-07-02 02:39+0000\n"
 "PO-Revision-Date: 2025-05-14 23:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -130,73 +130,73 @@ msgstr "Scrollen om geluidsvolume aan te passen"
 msgid "Device name not found"
 msgstr "Apparaatnaam niet gevonden"
 
-#: main.qml:325
+#: main.qml:350
 #, kde-format
 msgid "Devices"
 msgstr "Apparaten"
 
-#: main.qml:332
+#: main.qml:357
 #, kde-format
 msgid "Applications"
 msgstr "Toepassingen"
 
-#: main.qml:356
+#: main.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Meer acties"
 
-#: main.qml:414
+#: main.qml:439
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Opnieuw proberen"
 
-#: main.qml:441
+#: main.qml:466
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Geen toepassingen die geluid afspelen of opnemen"
 
-#: main.qml:526
+#: main.qml:551
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Uitvoerapparaten"
 
-#: main.qml:528
+#: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Uitvoerstreams"
 
-#: main.qml:586
+#: main.qml:611
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Invoerapparaten"
 
-#: main.qml:588
+#: main.qml:613
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Invoerstreams"
 
-#: main.qml:644
+#: main.qml:669
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximum volume vergroten:"
 
-#: main.qml:656
+#: main.qml:681
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Alle afspeelapparaten afdwingen te dempen"
 
-#: main.qml:665
+#: main.qml:690
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuele apparaten tonen"
 
-#: main.qml:675
+#: main.qml:700
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "Audio-apparaten &configureren…"
