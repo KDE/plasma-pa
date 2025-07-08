@@ -2,20 +2,21 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2015, 2016, 2021, 2022, 2023.
 # Jannick Kuhr <opensource@kuhr.org>, 2023.
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n@prly.mozmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-26 02:43+0000\n"
-"PO-Revision-Date: 2023-03-12 17:31+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2025-06-25 12:09+0200\n"
+"Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: context.cpp:596
 #, kde-format
@@ -110,12 +111,12 @@ msgstr "Inaktive Geräte anzeigen"
 #: kcm/package/contents/ui/main.qml:279
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Lautstärkeregler einrichten ..."
+msgstr "Lautstärkeregler einrichten …"
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Configure…"
-msgstr "Einrichten ..."
+msgstr "Einrichten …"
 
 #: kcm/package/contents/ui/main.qml:292
 #, kde-format
