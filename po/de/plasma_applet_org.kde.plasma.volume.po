@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n@prly.mozmail.com>
 # Burkhard Lück <lueck@hube-lueck.de>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2016, 2018, 2022, 2023.
 # Jannick Kuhr <opensource@kuhr.org>, 2023.
@@ -6,15 +7,15 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-02 02:39+0000\n"
-"PO-Revision-Date: 2023-05-12 19:37+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2025-06-25 12:16+0200\n"
+"Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: ListItemBase.qml:71
 #, kde-format
@@ -86,7 +87,7 @@ msgstr "Lautstärke"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Verbindung zum Sound-Dienst verloren"
 
 #: main.qml:56
 #, kde-format
@@ -97,7 +98,7 @@ msgstr "Keine Eingabe- oder Ausgabegeräte gefunden"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Wiederherstellen der Verbindung wird versucht …"
 
 #: main.qml:77
 #, kde-format
@@ -143,13 +144,13 @@ msgstr "Anwendungen"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Weitere Aktionen"
 
 #: main.qml:439
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Erneut versuchen"
 
 #: main.qml:466
 #, kde-format
@@ -157,32 +158,28 @@ msgid "No applications playing or recording audio"
 msgstr "Keine Anwendung spielt Audio ab oder nimmt Audio auf"
 
 #: main.qml:551
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Kein Ausgabegerät"
+msgstr "Ausgabegeräte"
 
 #: main.qml:553
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Aufnahmestreams"
+msgstr "Ausgabestreams"
 
 #: main.qml:611
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Aufnahmegeräte"
+msgstr "Eingabegeräte"
 
 #: main.qml:613
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Aufnahmestreams"
+msgstr "Eingabestreams"
 
 #: main.qml:669
 #, kde-format
@@ -202,7 +199,7 @@ msgstr "Virtuelle Geräte anzeigen"
 #: main.qml:700
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr "&Audio-Geräte einrichten ..."
+msgstr "&Audio-Geräte einrichten …"
 
 #: StreamListItem.qml:36
 #, kde-format

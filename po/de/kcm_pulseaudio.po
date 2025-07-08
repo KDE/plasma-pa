@@ -2,20 +2,21 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2015, 2016, 2021, 2022, 2023.
 # Jannick Kuhr <opensource@kuhr.org>, 2023.
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n@prly.mozmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-25 00:43+0000\n"
-"PO-Revision-Date: 2025-02-22 03:03+0100\n"
-"Last-Translator: Flori G <Renner03@protonmail.com>\n"
+"PO-Revision-Date: 2025-06-25 12:09+0200\n"
+"Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -71,7 +72,7 @@ msgstr "Verbindung zum Sound-Dienst verloren"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr "Versuche Verbindung wiederherzustellen …"
+msgstr "Wiederherstellen der Verbindung wird versucht …"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
@@ -127,17 +128,17 @@ msgstr "Inaktive Geräte anzeigen"
 #: kcm/ui/main.qml:81
 #, kde-format
 msgid "Rename Devices…"
-msgstr "Geräte umbenennen …"
+msgstr "Geräte umbenennen …"
 
 #: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Lautstärkeregler einrichten ..."
+msgstr "Lautstärkeregler einrichten …"
 
 #: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
-msgstr "Einrichten ..."
+msgstr "Einrichten …"
 
 #: kcm/ui/main.qml:97
 #, kde-format
@@ -279,7 +280,7 @@ msgid ""
 "experience interruptions and may need to be restarted."
 msgstr ""
 "Durch das Speichern der Änderungen werden Audio-Dienste neu gestartet. Bei "
-"Anwendungen, die Audio abspielen, kommt es zu Unterbrechungen und müssen "
+"Anwendungen, die Audio abspielen, kommt es zu Unterbrechungen und sie müssen "
 "möglicherweise neu gestartet werden."
 
 #: kcm/ui/RenameDevices.qml:80
@@ -356,10 +357,9 @@ msgid "Audio volume"
 msgstr "Lautstärke"
 
 #: kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Visuelle Rückmeldung bei Änderung an:"
+msgstr "OSD anzeigen bei Änderung an:"
 
 #: kcm/ui/VolumeControlsConfig.qml:85
 #, kde-format
@@ -372,12 +372,10 @@ msgid "Mute state"
 msgstr "Stummschaltung"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 benutzen das Mikrofon"
+msgstr "Anwendung ein stummgeschaltetes Mikrofon verwendet"
 
 #: kcm/ui/VolumeControlsConfig.qml:105
 #, kde-format
@@ -458,11 +456,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2 % Akku)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Stummschalten"
+msgstr "%1: Stummgeschaltet"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
