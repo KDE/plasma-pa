@@ -263,7 +263,7 @@ msgstr "ნაკადის სახელი ვერ ვიპოვე"
 #~ msgstr "დადუმების მდგომარეობა"
 
 #~ msgid "Default output device"
-#~ msgstr "ნაგულისხმები გამოსატანი მოწყობილობა"
+#~ msgstr "ნაგულისხმევი გამოსატანი მოწყობილობა"
 
 #~ msgctxt "@title"
 #~ msgid "Display:"
