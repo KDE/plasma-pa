@@ -24,7 +24,6 @@ Kirigami.Page {
         anchors.fill: parent
 
         Kirigami.FormLayout {
-            wideMode: true
 
             QQC2.CheckBox {
                 checked: config.raiseMaximumVolume
