@@ -90,7 +90,7 @@ ColumnLayout {
                 MuteButton {
                     Layout.alignment: Qt.AlignTop
                     muted: Muted
-                    onCheckedChanged: Muted = checked
+                    onToggled: Muted = checked
                     toolTipText: inputText.text
                 }
 

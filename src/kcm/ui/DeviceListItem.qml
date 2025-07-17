@@ -182,7 +182,7 @@ ColumnLayout {
             id: muteButton
             Layout.alignment: Qt.AlignTop | Qt.AlignVCenter
             muted: Muted
-            onCheckedChanged: Muted = checked
+            onToggled: Muted = checked
             toolTipText: !currentPort ? Description : currentPort.description
         }
 

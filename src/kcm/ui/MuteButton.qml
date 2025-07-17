@@ -19,7 +19,6 @@ QQC2.ToolButton {
     icon.name: AudioIcon.forVolume(volumePercent, Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
     checkable: true
     checked: muted
-    onMutedChanged: checked = muted
 
     QQC2.ToolTip {
         text: muted ? i18ndc("kcm_pulseaudio", "Unmute audio stream", "Unmute %1", toolTipText) : i18ndc("kcm_pulseaudio", "Mute audio stream", "Mute %1", toolTipText)
