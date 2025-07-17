@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 02:35+0000\n"
 "PO-Revision-Date: 2025-04-13 18:12+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -331,42 +331,42 @@ msgstr "%1: %2"
 msgid "Volume Controls"
 msgstr "ஒலியளவு கட்டுப்படுத்திகள்"
 
-#: kcm/ui/VolumeControlsConfig.qml:31
+#: kcm/ui/VolumeControlsConfig.qml:30
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
-#: kcm/ui/VolumeControlsConfig.qml:39
+#: kcm/ui/VolumeControlsConfig.qml:38
 #, kde-format
 msgid "Volume change step:"
 msgstr "ஒலியளவை மாற்றுவதற்கான படி:"
 
-#: kcm/ui/VolumeControlsConfig.qml:68
+#: kcm/ui/VolumeControlsConfig.qml:67
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "இம்மாற்றங்களுக்கு ஒலியாக பின்னூட்டம் தா:"
 
-#: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
+#: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Audio volume"
 msgstr "ஒலியின் அளவு"
 
-#: kcm/ui/VolumeControlsConfig.qml:77
+#: kcm/ui/VolumeControlsConfig.qml:76
 #, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr "இம்மாற்றங்களுக்கு திரையின் நடுவில் அறிவிப்பிடு:"
 
-#: kcm/ui/VolumeControlsConfig.qml:85
+#: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "ஒலிவாங்கியின் உணர்வுத்திறன்"
 
-#: kcm/ui/VolumeControlsConfig.qml:92
+#: kcm/ui/VolumeControlsConfig.qml:91
 #, kde-format
 msgid "Mute state"
 msgstr "ஒலியடக்க நிலை"
 
-#: kcm/ui/VolumeControlsConfig.qml:98
+#: kcm/ui/VolumeControlsConfig.qml:97
 #, fuzzy, kde-format
 #| msgctxt "List of apps is using mic"
 #| msgid "%1 are using the microphone"
@@ -374,7 +374,7 @@ msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "%1 ஒலிவாங்கியை பயன்படுத்துகின்றன"
 
-#: kcm/ui/VolumeControlsConfig.qml:105
+#: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
 msgid "Default output device"
 msgstr "இயல்பிருப்பு வெளியீடு சாதனம்"

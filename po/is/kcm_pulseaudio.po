@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 02:35+0000\n"
 "PO-Revision-Date: 2025-04-18 13:26+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -334,42 +334,42 @@ msgstr "%1: %2"
 msgid "Volume Controls"
 msgstr "Hljóðstyrksstýringar"
 
-#: kcm/ui/VolumeControlsConfig.qml:31
+#: kcm/ui/VolumeControlsConfig.qml:30
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Hækka hámarkshljóðstyrk"
 
-#: kcm/ui/VolumeControlsConfig.qml:39
+#: kcm/ui/VolumeControlsConfig.qml:38
 #, kde-format
 msgid "Volume change step:"
 msgstr "Hljóðstyrksþrep:"
 
-#: kcm/ui/VolumeControlsConfig.qml:68
+#: kcm/ui/VolumeControlsConfig.qml:67
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Gefa hljóðmerki við breytingar á:"
 
-#: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
+#: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Audio volume"
 msgstr "hljóðstyrk"
 
-#: kcm/ui/VolumeControlsConfig.qml:77
+#: kcm/ui/VolumeControlsConfig.qml:76
 #, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr "Birta skjátilkynningu við breytingar á:"
 
-#: kcm/ui/VolumeControlsConfig.qml:85
+#: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "næmi hljóðnema"
 
-#: kcm/ui/VolumeControlsConfig.qml:92
+#: kcm/ui/VolumeControlsConfig.qml:91
 #, kde-format
 msgid "Mute state"
 msgstr "þöggunarstöðu"
 
-#: kcm/ui/VolumeControlsConfig.qml:98
+#: kcm/ui/VolumeControlsConfig.qml:97
 #, fuzzy, kde-format
 #| msgctxt "List of apps is using mic"
 #| msgid "%1 are using the microphone"
@@ -377,7 +377,7 @@ msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "%1 eru að nota hljóðnemann"
 
-#: kcm/ui/VolumeControlsConfig.qml:105
+#: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
 msgid "Default output device"
 msgstr "sjálfgefnu úttakstæki"

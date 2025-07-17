@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 02:35+0000\n"
 "PO-Revision-Date: 2025-04-30 08:23+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -333,48 +333,48 @@ msgstr "%1: %2"
 msgid "Volume Controls"
 msgstr "Контрол на силата на звука"
 
-#: kcm/ui/VolumeControlsConfig.qml:31
+#: kcm/ui/VolumeControlsConfig.qml:30
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Повишаване на максималния звук"
 
-#: kcm/ui/VolumeControlsConfig.qml:39
+#: kcm/ui/VolumeControlsConfig.qml:38
 #, kde-format
 msgid "Volume change step:"
 msgstr "Скала на силата на звука:"
 
-#: kcm/ui/VolumeControlsConfig.qml:68
+#: kcm/ui/VolumeControlsConfig.qml:67
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Възпроизвеждане на аудио обратна връзка при промени в:"
 
-#: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
+#: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Audio volume"
 msgstr "Сила на звука"
 
-#: kcm/ui/VolumeControlsConfig.qml:77
+#: kcm/ui/VolumeControlsConfig.qml:76
 #, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr "Показване на изскачащи прозорци на екранното меню за промени в:"
 
-#: kcm/ui/VolumeControlsConfig.qml:85
+#: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "Чувствителност на микрофона"
 
-#: kcm/ui/VolumeControlsConfig.qml:92
+#: kcm/ui/VolumeControlsConfig.qml:91
 #, kde-format
 msgid "Mute state"
 msgstr "Състояние на звук"
 
-#: kcm/ui/VolumeControlsConfig.qml:98
+#: kcm/ui/VolumeControlsConfig.qml:97
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "Приложението започва с изключен микрофон"
 
-#: kcm/ui/VolumeControlsConfig.qml:105
+#: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
 msgid "Default output device"
 msgstr "Изходно устройство по подразбиране"

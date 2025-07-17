@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 02:35+0000\n"
 "PO-Revision-Date: 2024-06-09 13:03+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -329,43 +329,43 @@ msgstr "%1: %2"
 msgid "Volume Controls"
 msgstr "Controalele volumului"
 
-#: kcm/ui/VolumeControlsConfig.qml:31
+#: kcm/ui/VolumeControlsConfig.qml:30
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Mărește volumul maxim"
 
-#: kcm/ui/VolumeControlsConfig.qml:39
+#: kcm/ui/VolumeControlsConfig.qml:38
 #, kde-format
 msgid "Volume change step:"
 msgstr "Pas de schimbare volum:"
 
-#: kcm/ui/VolumeControlsConfig.qml:68
+#: kcm/ui/VolumeControlsConfig.qml:67
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Reacționează sonor la schimbări pentru:"
 
-#: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
+#: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Audio volume"
 msgstr "Volum audio"
 
-#: kcm/ui/VolumeControlsConfig.qml:77
+#: kcm/ui/VolumeControlsConfig.qml:76
 #, fuzzy, kde-format
 #| msgid "Show visual feedback for changes to:"
 msgid "Show OSD popups for changes to:"
 msgstr "Arată reacții vizuale la schimbări pentru:"
 
-#: kcm/ui/VolumeControlsConfig.qml:85
+#: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr "Sensibilitatea microfonului"
 
-#: kcm/ui/VolumeControlsConfig.qml:92
+#: kcm/ui/VolumeControlsConfig.qml:91
 #, kde-format
 msgid "Mute state"
 msgstr "Starea muțirii"
 
-#: kcm/ui/VolumeControlsConfig.qml:98
+#: kcm/ui/VolumeControlsConfig.qml:97
 #, fuzzy, kde-format
 #| msgctxt "List of apps is using mic"
 #| msgid "%1 are using the microphone"
@@ -373,7 +373,7 @@ msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "%1 folosesc microfonul"
 
-#: kcm/ui/VolumeControlsConfig.qml:105
+#: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
 msgid "Default output device"
 msgstr "Dispozitiv implicit de ieșire"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-17 02:35+0000\n"
 "PO-Revision-Date: 2019-12-12 22:41+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -323,48 +323,48 @@ msgstr ""
 msgid "Volume Controls"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:31
+#: kcm/ui/VolumeControlsConfig.qml:30
 #, kde-format
 msgid "Raise maximum volume"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:39
+#: kcm/ui/VolumeControlsConfig.qml:38
 #, kde-format
 msgid "Volume change step:"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:68
+#: kcm/ui/VolumeControlsConfig.qml:67
 #, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:69 kcm/ui/VolumeControlsConfig.qml:78
+#: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Audio volume"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:77
+#: kcm/ui/VolumeControlsConfig.qml:76
 #, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:85
+#: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
 msgid "Microphone sensitivity"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:92
+#: kcm/ui/VolumeControlsConfig.qml:91
 #, kde-format
 msgid "Mute state"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:98
+#: kcm/ui/VolumeControlsConfig.qml:97
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:105
+#: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
 msgid "Default output device"
 msgstr ""
