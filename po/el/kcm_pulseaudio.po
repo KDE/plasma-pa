@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:43+0000\n"
+"POT-Creation-Date: 2025-07-18 00:43+0000\n"
 "PO-Revision-Date: 2021-09-04 09:35+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -244,7 +244,7 @@ msgstr "Μονοφωνική"
 msgid "Click on any speaker to test sound"
 msgstr ""
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, fuzzy, kde-format
 #| msgctxt "Mute audio stream"
 #| msgid "Mute %1"
@@ -252,7 +252,7 @@ msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Σίγαση %1"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"

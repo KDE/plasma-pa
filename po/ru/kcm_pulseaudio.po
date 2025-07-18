@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:43+0000\n"
+"POT-Creation-Date: 2025-07-18 00:43+0000\n"
 "PO-Revision-Date: 2025-05-18 21:45+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -250,13 +250,13 @@ msgstr "Моно"
 msgid "Click on any speaker to test sound"
 msgstr "Для проверки нажмите на значок динамика"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Включить звук на %1"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"

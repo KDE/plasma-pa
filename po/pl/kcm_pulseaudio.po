@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:43+0000\n"
+"POT-Creation-Date: 2025-07-18 00:43+0000\n"
 "PO-Revision-Date: 2024-09-07 11:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -247,13 +247,13 @@ msgstr "Mono"
 msgid "Click on any speaker to test sound"
 msgstr "Naciśnij na dowolnym głośniku, aby wypróbować jego dźwięk"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Usuń wyciszenie %1"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"

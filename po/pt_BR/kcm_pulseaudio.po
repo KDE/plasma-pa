@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:43+0000\n"
+"POT-Creation-Date: 2025-07-18 00:43+0000\n"
 "PO-Revision-Date: 2025-05-25 00:15-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -251,13 +251,13 @@ msgstr "Mono"
 msgid "Click on any speaker to test sound"
 msgstr "Clique em qualquer alto-falante para testar o som"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Ativar o som de %1"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"

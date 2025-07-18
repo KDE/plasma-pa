@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:43+0000\n"
+"POT-Creation-Date: 2025-07-18 00:43+0000\n"
 "PO-Revision-Date: 2025-04-30 01:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -243,13 +243,13 @@ msgstr "單聲道"
 msgid "Click on any speaker to test sound"
 msgstr "點擊任何喇叭來測試聲音"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "取消靜音 %1"
 
-#: kcm/ui/MuteButton.qml:25
+#: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
