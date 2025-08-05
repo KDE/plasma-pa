@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-17 02:35+0000\n"
-"PO-Revision-Date: 2025-04-28 17:41+0400\n"
+"PO-Revision-Date: 2025-08-04 20:19+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -155,7 +155,7 @@ msgstr "أضف جهاز إخراج افتراضيًا للإخراج المتز�
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
-msgstr "تبديل جميع التدفقات الجارية تلقائيًا عند توفر مخرجات جديدة"
+msgstr "تبديل جميع التدفقات الجارية آليًّا عند توفر مخرجات جديدة"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
 #, kde-format
@@ -375,7 +375,7 @@ msgstr "يبدأ التطبيق باستخدام الميكروفون المكت
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
 msgid "Default output device"
-msgstr "جهاز الإخراج المبدئي"
+msgstr "جهاز الإخراج الافتراضي"
 
 #: kcm/ui/VolumeSlider.qml:68
 #, kde-format
