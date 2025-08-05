@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-26 02:43+0000\n"
-"PO-Revision-Date: 2022-11-07 20:14+0400\n"
+"PO-Revision-Date: 2025-08-04 20:19+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -133,7 +133,7 @@ msgstr "أضف جهاز إخراج افتراضيًا للإخراج المتز�
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
-msgstr "تبديل جميع التدفقات الجارية تلقائيًا عند توفر مخرجات جديدة"
+msgstr "تبديل جميع التدفقات الجارية آليًّا عند توفر مخرجات جديدة"
 
 #: kcm/package/contents/ui/main.qml:326
 #, kde-format
@@ -264,7 +264,7 @@ msgstr "حالة الكتم"
 #: kcm/package/contents/ui/VolumeControlsConfig.qml:94
 #, kde-format
 msgid "Default output device"
-msgstr "جهاز الإخراج المبدئي"
+msgstr "جهاز الإخراج الافتراضي"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:65
 #, kde-format
