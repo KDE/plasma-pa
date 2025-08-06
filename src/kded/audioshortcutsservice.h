@@ -50,11 +50,16 @@ private:
     void showMicMute(int percent);
     void showMicVolume(int percent);
 
-    void applyGlobalMute(const QModelIndex &index, const bool globalMute, QStringList &globalMuteMutedDevices);
+    void applyGlobalSinkMute(const QModelIndex &index, const bool globalMute, QStringList &globalMuteMutedDevices);
+    void applyGlobalSourceMute(const QModelIndex &index, const bool globalMute, QStringList &globalMuteMutedDevices);
     void handleNewSink(const QModelIndex &parent, int first, int last);
-    void handleDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
-    void enableGlobalMute();
-    void disableGlobalMute();
+    void handleNewSource(const QModelIndex &parent, int first, int last);
+    void handleSinkDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
+    void handleSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
+    void enableGlobalSinkMute();
+    void enableGlobalSourceMute();
+    void disableGlobalSinkMute();
+    void disableGlobalSourceMute();
 
     PulseAudioQt::SinkModel *m_sinkModel = nullptr;
     PulseAudioQt::SourceModel *m_sourceModel = nullptr;

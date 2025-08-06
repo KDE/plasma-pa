@@ -31,7 +31,8 @@ PlasmoidItem {
     width: Kirigami.Units.gridUnit * 24
 
     property bool volumeFeedback: config.audioFeedback
-    property bool globalMute: config.globalMute
+    property bool globalMuteSinks: config.globalMuteSinks
+    property bool globalMuteSources: config.globalMuteSources
     property string displayName: i18n("Audio Volume")
     property QtObject draggedStream: null
 
@@ -87,7 +88,7 @@ PlasmoidItem {
         }
 
         if (paSinkFilterModel.count > 0) {
-            lines.push(main.globalMute ? i18n("Middle-click to unmute")
+            lines.push(main.globalMuteSinks ? i18n("Middle-click to unmute")
                                     : i18n("Middle-click to mute all audio"));
             lines.push(i18n("Scroll to adjust volume"));
         } else {
@@ -222,7 +223,7 @@ PlasmoidItem {
             if (mouse.button == Qt.LeftButton) {
                 wasExpanded = main.expanded;
             } else if (mouse.button == Qt.MiddleButton) {
-                GlobalService.globalMute();
+                GlobalService.globalMuteSinks();
             }
         }
         onClicked: mouse => {
@@ -707,9 +708,18 @@ PlasmoidItem {
             text: i18n("Force mute all playback devices")
             icon.name: "audio-volume-muted"
             checkable: true
-            checked: globalMute
+            checked: globalMuteSinks
             onTriggered: {
-                GlobalService.globalMute();
+                GlobalService.globalMuteSinks();
+            }
+        },
+        PlasmaCore.Action {
+            text: i18n("Force mute all input devices")
+            icon.name: "microphone-sensitivity-muted"
+            checkable: true
+            checked: globalMuteSources
+            onTriggered: {
+                GlobalService.globalMuteSources();
             }
         },
         PlasmaCore.Action {
@@ -762,8 +772,8 @@ PlasmoidItem {
             config.microphoneSensitivityOsd = false;
             config.save();
         }
-        if (Plasmoid.configuration.globalMute === true && !config.globalMute) {
-            config.globalMute = true;
+        if (Plasmoid.configuration.globalMute === true && !config.globalMuteSinks) {
+            config.globalMuteSinks = true;
             config.save();
         }
         Plasmoid.configuration.migrated = true;
