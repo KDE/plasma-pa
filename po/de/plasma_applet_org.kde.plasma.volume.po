@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2025-06-25 12:16+0200\n"
 "Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -78,110 +78,110 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100 %"
 
-#: main.qml:35
+#: main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "Lautstärke"
 
-#: main.qml:52 main.qml:54
+#: main.qml:53 main.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Verbindung zum Sound-Dienst verloren"
 
-#: main.qml:56
+#: main.qml:57
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Keine Eingabe- oder Ausgabegeräte gefunden"
 
-#: main.qml:60
+#: main.qml:61
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Wiederherstellen der Verbindung wird versucht …"
 
-#: main.qml:77
+#: main.qml:78
 #, kde-format
 msgid "Audio Muted"
 msgstr "Audio stumm"
 
-#: main.qml:79
+#: main.qml:80
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Lautstärke bei %1 %"
 
-#: main.qml:90
+#: main.qml:91
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Mittelklick um Stummschaltung aufzuheben"
 
-#: main.qml:91
+#: main.qml:92
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Mittelklick für komplette Stummschaltung"
 
-#: main.qml:92
+#: main.qml:93
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Drehen am Mausrad zur Anpassung der Lautstärke"
 
-#: main.qml:108
+#: main.qml:109
 #, kde-format
 msgid "Device name not found"
 msgstr "Gerätename nicht gefunden"
 
-#: main.qml:350
+#: main.qml:351
 #, kde-format
 msgid "Devices"
 msgstr "Geräte"
 
-#: main.qml:357
+#: main.qml:358
 #, kde-format
 msgid "Applications"
 msgstr "Anwendungen"
 
-#: main.qml:381
+#: main.qml:382
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Weitere Aktionen"
 
-#: main.qml:439
+#: main.qml:440
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Erneut versuchen"
 
-#: main.qml:466
+#: main.qml:467
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Keine Anwendung spielt Audio ab oder nimmt Audio auf"
 
-#: main.qml:551
+#: main.qml:552
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Ausgabegeräte"
 
-#: main.qml:553
+#: main.qml:554
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Ausgabestreams"
 
-#: main.qml:611
+#: main.qml:612
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Eingabegeräte"
 
-#: main.qml:613
+#: main.qml:614
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Eingabestreams"
 
-#: main.qml:677
+#: main.qml:678
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -192,22 +192,28 @@ msgstr ""
 "beschädigen. Verwenden Sie die Funktion nur für kurze Zeit, um leise Medien "
 "hörbar zu machen."
 
-#: main.qml:693
+#: main.qml:694
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Maximale Lautstärke erhöhen"
 
-#: main.qml:707
+#: main.qml:708
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Stummschalten aller Wiedergabegeräte erzwingen"
 
-#: main.qml:716
+#: main.qml:717
+#, fuzzy, kde-format
+#| msgid "Force mute all playback devices"
+msgid "Force mute all input devices"
+msgstr "Stummschalten aller Wiedergabegeräte erzwingen"
+
+#: main.qml:726
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Virtuelle Geräte anzeigen"
 
-#: main.qml:726
+#: main.qml:736
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Audio-Geräte einrichten …"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-18 00:43+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 21:54+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -393,42 +393,42 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "१००%"
 
-#: kded/audioshortcutsservice.cpp:79
+#: kded/audioshortcutsservice.cpp:81
 #, kde-format
 msgid "Increase Volume"
 msgstr "Volume वर्धयतु"
 
-#: kded/audioshortcutsservice.cpp:94
+#: kded/audioshortcutsservice.cpp:96
 #, kde-format
 msgid "Decrease Volume"
 msgstr "मात्रां न्यूनीकरोतु"
 
-#: kded/audioshortcutsservice.cpp:109
+#: kded/audioshortcutsservice.cpp:111
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "मात्रा १% वर्धयतु"
 
-#: kded/audioshortcutsservice.cpp:124
+#: kded/audioshortcutsservice.cpp:126
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "आयतनं १% न्यूनीकरोतु"
 
-#: kded/audioshortcutsservice.cpp:139
+#: kded/audioshortcutsservice.cpp:141
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "माइक्रोफोनस्य मात्रां वर्धयन्तु"
 
-#: kded/audioshortcutsservice.cpp:153
+#: kded/audioshortcutsservice.cpp:155
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "माइक्रोफोनस्य मात्रां न्यूनीकरोतु"
 
-#: kded/audioshortcutsservice.cpp:167 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:169 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "मूक"
 
-#: kded/audioshortcutsservice.cpp:180
+#: kded/audioshortcutsservice.cpp:182
 #, kde-format
 msgid "Mute Microphone"
 msgstr "म्यूट माइक्रोफोन"

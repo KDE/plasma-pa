@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2025-05-28 23:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -80,110 +80,110 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: main.qml:35
+#: main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "音效音量"
 
-#: main.qml:52 main.qml:54
+#: main.qml:53 main.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "已喪失與聲音服務的連線"
 
-#: main.qml:56
+#: main.qml:57
 #, kde-format
 msgid "No output or input devices found"
 msgstr "找不到輸出或輸入裝置"
 
-#: main.qml:60
+#: main.qml:61
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "正在嘗試重新連線…"
 
-#: main.qml:77
+#: main.qml:78
 #, kde-format
 msgid "Audio Muted"
 msgstr "音效靜音"
 
-#: main.qml:79
+#: main.qml:80
 #, kde-format
 msgid "Volume at %1%"
 msgstr "音量在 %1%"
 
-#: main.qml:90
+#: main.qml:91
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "按中鍵取消靜音"
 
-#: main.qml:91
+#: main.qml:92
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "按中鍵將所有音效靜音"
 
-#: main.qml:92
+#: main.qml:93
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "捲動調整音量"
 
-#: main.qml:108
+#: main.qml:109
 #, kde-format
 msgid "Device name not found"
 msgstr "找不到裝置名稱"
 
-#: main.qml:350
+#: main.qml:351
 #, kde-format
 msgid "Devices"
 msgstr "裝置"
 
-#: main.qml:357
+#: main.qml:358
 #, kde-format
 msgid "Applications"
 msgstr "應用程式"
 
-#: main.qml:381
+#: main.qml:382
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "更多動作"
 
-#: main.qml:439
+#: main.qml:440
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "重試"
 
-#: main.qml:466
+#: main.qml:467
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "沒有正在播放或錄音的應用程式"
 
-#: main.qml:551
+#: main.qml:552
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "輸出裝置"
 
-#: main.qml:553
+#: main.qml:554
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "輸出串流"
 
-#: main.qml:611
+#: main.qml:612
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "輸入裝置"
 
-#: main.qml:613
+#: main.qml:614
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "輸入串流"
 
-#: main.qml:677
+#: main.qml:678
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -193,22 +193,28 @@ msgstr ""
 "長期使用這個功能會損害裝置的喇叭。請只使用這個功能來暫時讓安靜的媒體變得聽得"
 "見。"
 
-#: main.qml:693
+#: main.qml:694
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: main.qml:707
+#: main.qml:708
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "強制靜音所有播放裝置"
 
-#: main.qml:716
+#: main.qml:717
+#, fuzzy, kde-format
+#| msgid "Force mute all playback devices"
+msgid "Force mute all input devices"
+msgstr "強制靜音所有播放裝置"
+
+#: main.qml:726
 #, kde-format
 msgid "Show virtual devices"
 msgstr "顯示虛擬裝置"
 
-#: main.qml:726
+#: main.qml:736
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "設定音效裝置(&C)…"

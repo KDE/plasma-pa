@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-18 00:43+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2025-04-29 21:40+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -393,42 +393,42 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:79
+#: kded/audioshortcutsservice.cpp:81
 #, kde-format
 msgid "Increase Volume"
 msgstr "Hangerő növelése"
 
-#: kded/audioshortcutsservice.cpp:94
+#: kded/audioshortcutsservice.cpp:96
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Hangerő csökkentése"
 
-#: kded/audioshortcutsservice.cpp:109
+#: kded/audioshortcutsservice.cpp:111
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "Hangerő növelése 1%-kal"
 
-#: kded/audioshortcutsservice.cpp:124
+#: kded/audioshortcutsservice.cpp:126
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "Hangerő csökkentése 1%-kal"
 
-#: kded/audioshortcutsservice.cpp:139
+#: kded/audioshortcutsservice.cpp:141
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Mikrofon hangerejének növelése"
 
-#: kded/audioshortcutsservice.cpp:153
+#: kded/audioshortcutsservice.cpp:155
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Mikrofon hangerejének csökkentése"
 
-#: kded/audioshortcutsservice.cpp:167 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:169 qml/microphoneindicator.cpp:106
 #, kde-format
 msgid "Mute"
 msgstr "Némítás"
 
-#: kded/audioshortcutsservice.cpp:180
+#: kded/audioshortcutsservice.cpp:182
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Mikrofon némítása"
