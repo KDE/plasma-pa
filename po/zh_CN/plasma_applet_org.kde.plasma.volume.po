@@ -203,10 +203,9 @@ msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
 
 #: main.qml:717
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "强制静音所有播放设备"
+msgstr ""
 
 #: main.qml:726
 #, kde-format
