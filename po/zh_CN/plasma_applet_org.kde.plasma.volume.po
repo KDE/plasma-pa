@@ -205,7 +205,7 @@ msgstr "强制静音所有播放设备"
 #: main.qml:717
 #, kde-format
 msgid "Force mute all input devices"
-msgstr ""
+msgstr "强制静音所有输入设备"
 
 #: main.qml:726
 #, kde-format
