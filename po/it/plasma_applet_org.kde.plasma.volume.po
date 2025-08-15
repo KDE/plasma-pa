@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-05-28 16:29+0200\n"
+"PO-Revision-Date: 2025-08-07 14:21+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #: ListItemBase.qml:71
 #, kde-format
@@ -203,10 +203,9 @@ msgid "Force mute all playback devices"
 msgstr "Forza il silenziamento di tutti i dispositivi"
 
 #: main.qml:717
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "Forza il silenziamento di tutti i dispositivi"
+msgstr "Forza il silenziamento di tutti i dispositivi di ingresso"
 
 #: main.qml:726
 #, kde-format
