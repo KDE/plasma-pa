@@ -22,7 +22,16 @@ KItemModels.KSortFilterProxyModel {
 
         // Optionally run the role-based filters
         for (const { role, value } of filters) {
-            if (sourceModel.data(idx, sourceModel.KItemModels.KRoleNames.role(role)) !== value) {
+            const data = sourceModel.data(idx, sourceModel.KItemModels.KRoleNames.role(role));
+
+            // Default matching function is strict equality
+            let matchesFilter = (data) => data === value;
+            if (value instanceof Function) {
+                // Use custom matching function
+                matchesFilter = value;
+            }
+
+            if (!matchesFilter(data)) {
                 return false;
             }
         }
