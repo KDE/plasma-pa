@@ -260,7 +260,10 @@ KCM.ScrollViewKCM {
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
                 model: PulseObjectFilterModel {
-                    filters: [ { role: "VirtualStream", value: false } ]
+                    filters: [
+                        { role: "VirtualStream", value: false },
+                        { role: "Client", value: (client) => client.name !== "libcanberra" },
+                    ]
                     sourceModel: SinkInputModel {}
                 }
                 delegate: StreamListItem {
