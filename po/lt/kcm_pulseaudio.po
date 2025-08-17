@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2024-09-04 23:43+0300\n"
+"PO-Revision-Date: 2025-08-16 13:39+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -359,10 +359,9 @@ msgid "Audio volume"
 msgstr "Garso garsumas"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Rodyti vaizdinį atsaką, kai keičiamas:"
+msgstr "Rodyti iškylančiuosius pranešimus ekrane, kai keičiamas:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
@@ -375,12 +374,10 @@ msgid "Mute state"
 msgstr "Nutildymo būsena"
 
 #: kcm/ui/VolumeControlsConfig.qml:97
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 naudoja mikrofoną"
+msgstr "Programa pradeda naudoti nutildytą mikrofoną"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -461,11 +458,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% akumuliatoriaus)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Nutildyti"
+msgstr "%1: Nutildytas"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format
