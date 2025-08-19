@@ -103,7 +103,6 @@
         "FormFactors": [
             "handset",
             "tablet",
-            "mediacenter",
             "desktop"
         ],
         "Icon": "preferences-desktop-sound",
