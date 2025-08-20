@@ -14,6 +14,7 @@ Dependencies:
     'frameworks/kpackage': '@latest-kf6'
     'frameworks/kcmutils': '@latest-kf6'
     'frameworks/ksvg': '@latest-kf6'
+    'frameworks/kitemmodels': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
     'libraries/pulseaudio-qt': '@latest-kf6'
     'plasma/libplasma': '@same'
