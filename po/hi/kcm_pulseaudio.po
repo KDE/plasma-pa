@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-21 00:45+0000\n"
 "PO-Revision-Date: 2024-12-15 19:41+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -179,12 +179,12 @@ msgstr "निष्क्रिय कार्ड"
 msgid "Playback Streams"
 msgstr "प्लेबैक स्ट्रीम"
 
-#: kcm/ui/main.qml:275
+#: kcm/ui/main.qml:278
 #, kde-format
 msgid "Recording Streams"
 msgstr "रिकॉर्डिंग स्ट्रीम"
 
-#: kcm/ui/main.qml:309
+#: kcm/ui/main.qml:312
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -194,52 +194,52 @@ msgid ""
 "The system said: \"%1\""
 msgstr "परीक्षण ध्वनि चलाने का प्रयास करते समय त्रुटि हुई। सिस्टम ने कहा: \"%1\""
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Front Left"
 msgstr "आगे से बयां"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Front Center"
 msgstr "सामने का केंद्र"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:418
 #, kde-format
 msgid "Front Right"
 msgstr "सामने सही"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:419
 #, kde-format
 msgid "Side Left"
 msgstr "बाएँ तरफ"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:420
 #, kde-format
 msgid "Side Right"
 msgstr "साइड दायाँ"
 
-#: kcm/ui/main.qml:418
+#: kcm/ui/main.qml:421
 #, kde-format
 msgid "Rear Left"
 msgstr "पीछे बाएँ"
 
-#: kcm/ui/main.qml:419
+#: kcm/ui/main.qml:422
 #, kde-format
 msgid "Subwoofer"
 msgstr "सबवूफर"
 
-#: kcm/ui/main.qml:420
+#: kcm/ui/main.qml:423
 #, kde-format
 msgid "Rear Right"
 msgstr "पीछे दायाँ"
 
-#: kcm/ui/main.qml:421
+#: kcm/ui/main.qml:424
 #, kde-format
 msgid "Mono"
 msgstr "मोनो"
 
-#: kcm/ui/main.qml:489
+#: kcm/ui/main.qml:492
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "ध्वनि का परीक्षण करने के लिए किसी भी स्पीकर पर क्लिक करें"

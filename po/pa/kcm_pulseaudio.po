@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-21 00:45+0000\n"
 "PO-Revision-Date: 2024-01-28 18:13-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -174,12 +174,12 @@ msgstr "ਨਾ-ਸਰਗਰਮ ਕਾਰਡ"
 msgid "Playback Streams"
 msgstr "ਪਲੇਅਬੈਕ ਸਟਰੀਮਾਂ"
 
-#: kcm/ui/main.qml:275
+#: kcm/ui/main.qml:278
 #, kde-format
 msgid "Recording Streams"
 msgstr "ਰਿਕਾਰਡਿੰਗ ਸਟਰੀਮਾਂ"
 
-#: kcm/ui/main.qml:309
+#: kcm/ui/main.qml:312
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -191,52 +191,52 @@ msgstr ""
 "ਟੈਸਟ ਆਵਾਜ਼ ਚਲਾਉਣ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।\n"
 "ਸਿਸਟਮ ਨੇ ਕਿਹਾ: \"%1\""
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Front Left"
 msgstr "ਅੱਗੇ ਖੱਬਾ"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Front Center"
 msgstr "ਅੱਗੇ ਸੈਂਟਰ"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:418
 #, kde-format
 msgid "Front Right"
 msgstr "ਅੱਗੇ ਸੱਜਾ"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:419
 #, kde-format
 msgid "Side Left"
 msgstr "ਪਾਸੇ ਖੱਬਾ"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:420
 #, kde-format
 msgid "Side Right"
 msgstr "ਪਾਸੇ ਸੱਜਾ"
 
-#: kcm/ui/main.qml:418
+#: kcm/ui/main.qml:421
 #, kde-format
 msgid "Rear Left"
 msgstr "ਪਿੱਛੇ ਖੱਬਾ"
 
-#: kcm/ui/main.qml:419
+#: kcm/ui/main.qml:422
 #, kde-format
 msgid "Subwoofer"
 msgstr "ਸਬ-ਵੂਫ਼ਰ"
 
-#: kcm/ui/main.qml:420
+#: kcm/ui/main.qml:423
 #, kde-format
 msgid "Rear Right"
 msgstr "ਪਿੱਛੇ ਸੱਜਾ"
 
-#: kcm/ui/main.qml:421
+#: kcm/ui/main.qml:424
 #, kde-format
 msgid "Mono"
 msgstr "ਮੋਨੋ"
 
-#: kcm/ui/main.qml:489
+#: kcm/ui/main.qml:492
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "ਆਵਾਜ਼ ਟੈਸਟ ਕਰਨ ਲਈ ਕਿਸੇ ਵੀ ਸਪੀਕਰ ਉੱਤੇ ਕਲਿੱਕ ਕਰੋ"

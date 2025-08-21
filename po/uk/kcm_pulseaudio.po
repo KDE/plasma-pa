@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-21 00:45+0000\n"
 "PO-Revision-Date: 2025-04-25 09:23+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -183,12 +183,12 @@ msgstr "Неактивні картки"
 msgid "Playback Streams"
 msgstr "Потоки відтворення даних"
 
-#: kcm/ui/main.qml:275
+#: kcm/ui/main.qml:278
 #, kde-format
 msgid "Recording Streams"
 msgstr "Потоки запису"
 
-#: kcm/ui/main.qml:309
+#: kcm/ui/main.qml:312
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -200,52 +200,52 @@ msgstr ""
 "Помилка під час спроби відтворити тестовий звук. \n"
 "Повідомлення системи: «%1»"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Front Left"
 msgstr "Передній лівий"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Front Center"
 msgstr "Передній центральний"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:418
 #, kde-format
 msgid "Front Right"
 msgstr "Передній правий"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:419
 #, kde-format
 msgid "Side Left"
 msgstr "Бічний лівий"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:420
 #, kde-format
 msgid "Side Right"
 msgstr "Бічний правий"
 
-#: kcm/ui/main.qml:418
+#: kcm/ui/main.qml:421
 #, kde-format
 msgid "Rear Left"
 msgstr "Задній лівий"
 
-#: kcm/ui/main.qml:419
+#: kcm/ui/main.qml:422
 #, kde-format
 msgid "Subwoofer"
 msgstr "Сабвуфер"
 
-#: kcm/ui/main.qml:420
+#: kcm/ui/main.qml:423
 #, kde-format
 msgid "Rear Right"
 msgstr "Задній правий"
 
-#: kcm/ui/main.qml:421
+#: kcm/ui/main.qml:424
 #, kde-format
 msgid "Mono"
 msgstr "Моно"
 
-#: kcm/ui/main.qml:489
+#: kcm/ui/main.qml:492
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Натисніть на гучномовці для перевірки звуку"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-21 00:45+0000\n"
 "PO-Revision-Date: 2024-09-07 11:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -180,12 +180,12 @@ msgstr "Nieaktywna karta"
 msgid "Playback Streams"
 msgstr "Odtwarzane strumienie"
 
-#: kcm/ui/main.qml:275
+#: kcm/ui/main.qml:278
 #, kde-format
 msgid "Recording Streams"
 msgstr "Nagrywane strumienie"
 
-#: kcm/ui/main.qml:309
+#: kcm/ui/main.qml:312
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -197,52 +197,52 @@ msgstr ""
 "Nie udało się odtworzyć dźwięku próbnego.\n"
 "System odpowiedział: \"%1\""
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Front Left"
 msgstr "Przedni lewy"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Front Center"
 msgstr "Przedni środkowy"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:418
 #, kde-format
 msgid "Front Right"
 msgstr "Przedni prawy"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:419
 #, kde-format
 msgid "Side Left"
 msgstr "Boczny lewy"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:420
 #, kde-format
 msgid "Side Right"
 msgstr "Boczny prawy"
 
-#: kcm/ui/main.qml:418
+#: kcm/ui/main.qml:421
 #, kde-format
 msgid "Rear Left"
 msgstr "Tylny lewy"
 
-#: kcm/ui/main.qml:419
+#: kcm/ui/main.qml:422
 #, kde-format
 msgid "Subwoofer"
 msgstr "Głośnik niskotonowy"
 
-#: kcm/ui/main.qml:420
+#: kcm/ui/main.qml:423
 #, kde-format
 msgid "Rear Right"
 msgstr "Tylny prawy"
 
-#: kcm/ui/main.qml:421
+#: kcm/ui/main.qml:424
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:489
+#: kcm/ui/main.qml:492
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Naciśnij na dowolnym głośniku, aby wypróbować jego dźwięk"

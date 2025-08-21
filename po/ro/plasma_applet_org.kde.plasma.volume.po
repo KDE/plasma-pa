@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-21 00:45+0000\n"
 "PO-Revision-Date: 2023-06-18 19:07+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -131,60 +131,60 @@ msgstr "Derulează pentru ajustarea volumului"
 msgid "Device name not found"
 msgstr "Denumirea dispozitivului nu a fost găsită"
 
-#: main.qml:351
+#: main.qml:354
 #, kde-format
 msgid "Devices"
 msgstr "Dispozitive"
 
-#: main.qml:358
+#: main.qml:361
 #, kde-format
 msgid "Applications"
 msgstr "Aplicații"
 
-#: main.qml:382
+#: main.qml:385
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:440
+#: main.qml:443
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:467
+#: main.qml:470
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nicio aplicație nu redă sau înregistrează sunet"
 
-#: main.qml:552
+#: main.qml:555
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Niciun dispozitiv de ieșire"
 
-#: main.qml:554
+#: main.qml:557
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:612
+#: main.qml:615
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Dispozitive"
 
-#: main.qml:614
+#: main.qml:617
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:678
+#: main.qml:681
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -192,28 +192,28 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:694
+#: main.qml:697
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Mărește volumul maxim"
 
-#: main.qml:708
+#: main.qml:711
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Muțește forțat toate dispozitivele de redare"
 
-#: main.qml:717
+#: main.qml:720
 #, fuzzy, kde-format
 #| msgid "Force mute all playback devices"
 msgid "Force mute all input devices"
 msgstr "Muțește forțat toate dispozitivele de redare"
 
-#: main.qml:726
+#: main.qml:729
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Arată dispozitivele virtuale"
 
-#: main.qml:736
+#: main.qml:739
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurează dispozitive audio…"

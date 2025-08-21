@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-21 00:45+0000\n"
 "PO-Revision-Date: 2025-04-25 12:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -185,12 +185,12 @@ msgstr "Targetes inactives"
 msgid "Playback Streams"
 msgstr "Fluxos de reproducció"
 
-#: kcm/ui/main.qml:275
+#: kcm/ui/main.qml:278
 #, kde-format
 msgid "Recording Streams"
 msgstr "Fluxos d'enregistrament"
 
-#: kcm/ui/main.qml:309
+#: kcm/ui/main.qml:312
 #, kde-format
 msgctxt ""
 "%1 is an error string produced by an external component, and probably "
@@ -202,52 +202,52 @@ msgstr ""
 "Error en intentar reproduir un so de prova. \n"
 "El sistema ha indicat: «%1»"
 
-#: kcm/ui/main.qml:413
+#: kcm/ui/main.qml:416
 #, kde-format
 msgid "Front Left"
 msgstr "Frontal esquerra"
 
-#: kcm/ui/main.qml:414
+#: kcm/ui/main.qml:417
 #, kde-format
 msgid "Front Center"
 msgstr "Frontal centre"
 
-#: kcm/ui/main.qml:415
+#: kcm/ui/main.qml:418
 #, kde-format
 msgid "Front Right"
 msgstr "Frontal dreta"
 
-#: kcm/ui/main.qml:416
+#: kcm/ui/main.qml:419
 #, kde-format
 msgid "Side Left"
 msgstr "Banda esquerra"
 
-#: kcm/ui/main.qml:417
+#: kcm/ui/main.qml:420
 #, kde-format
 msgid "Side Right"
 msgstr "Banda dreta"
 
-#: kcm/ui/main.qml:418
+#: kcm/ui/main.qml:421
 #, kde-format
 msgid "Rear Left"
 msgstr "Posterior esquerra"
 
-#: kcm/ui/main.qml:419
+#: kcm/ui/main.qml:422
 #, kde-format
 msgid "Subwoofer"
 msgstr "Altaveu de greus"
 
-#: kcm/ui/main.qml:420
+#: kcm/ui/main.qml:423
 #, kde-format
 msgid "Rear Right"
 msgstr "Posterior dreta"
 
-#: kcm/ui/main.qml:421
+#: kcm/ui/main.qml:424
 #, kde-format
 msgid "Mono"
 msgstr "Mono"
 
-#: kcm/ui/main.qml:489
+#: kcm/ui/main.qml:492
 #, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Feu clic en qualsevol altaveu per a provar el so"

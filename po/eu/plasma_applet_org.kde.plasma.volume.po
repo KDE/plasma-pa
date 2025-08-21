@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-08-21 00:45+0000\n"
 "PO-Revision-Date: 2025-08-09 12:44+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -133,58 +133,58 @@ msgstr "Kiribildu bolumena doitzeko"
 msgid "Device name not found"
 msgstr "Gailu izena ez da aurkitu"
 
-#: main.qml:351
+#: main.qml:354
 #, kde-format
 msgid "Devices"
 msgstr "Gailuak"
 
-#: main.qml:358
+#: main.qml:361
 #, kde-format
 msgid "Applications"
 msgstr "Aplikazioak"
 
-#: main.qml:382
+#: main.qml:385
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Ekintza gehiago"
 
-#: main.qml:440
+#: main.qml:443
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Berriz saiatu"
 
-#: main.qml:467
+#: main.qml:470
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ez dago audioa jotzen edo grabatzen ari den aplikaziorik"
 
-#: main.qml:552
+#: main.qml:555
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Irteerako gailuak"
 
-#: main.qml:554
+#: main.qml:557
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Irteerako korronteak"
 
-#: main.qml:612
+#: main.qml:615
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Sarrerako gailuak"
 
-#: main.qml:614
+#: main.qml:617
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Sarrerako korronteak"
 
-#: main.qml:678
+#: main.qml:681
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -194,27 +194,27 @@ msgstr ""
 "Ezaugarri hau denbora luzez erabiltzea gailuaren bozgorailuak kaltetuko "
 "ditu. Aldian behin bakarrik erabili, hedabide isilak entzunarazteko."
 
-#: main.qml:694
+#: main.qml:697
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Altxatu bolumen muga"
 
-#: main.qml:708
+#: main.qml:711
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Atzera-jotzeko gailu guztiak isilaraztea behartu"
 
-#: main.qml:717
+#: main.qml:720
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Sarrerako gailu guztiak isilaraztea behartu"
 
-#: main.qml:726
+#: main.qml:729
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Erakutsi alegiazko gailuak"
 
-#: main.qml:736
+#: main.qml:739
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfiguratu audio gailuak..."
