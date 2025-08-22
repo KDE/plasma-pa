@@ -197,27 +197,8 @@ PlasmoidItem {
         // same minimum sizes as the default compact representation - this is necessary here as
         // the applet/panel may get confused and briefly apply the fullRepresentation's minimum
         // sizes, especially after a display disconnection, and keep it afterwards.
-        Layout.minimumWidth: {
-            switch (Plasmoid.formFactor) {
-                case PlasmaCore.Types.Vertical:
-                    return 0;
-                case PlasmaCore.Types.Horizontal:
-                    return height;
-                default:
-                    return Kirigami.Units.gridUnit * 3;
-            }
-        }
-
-        Layout.minimumHeight: {
-            switch (Plasmoid.formFactor) {
-                case PlasmaCore.Types.Vertical:
-                    return width;
-                case PlasmaCore.Types.Horizontal:
-                    return 0;
-                default:
-                    return Kirigami.Units.gridUnit * 3;
-            }
-        }
+        Layout.minimumWidth: height
+        Layout.minimumHeight: width
 
         anchors.fill: parent
         hoverEnabled: true
