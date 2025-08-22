@@ -24,6 +24,7 @@ PC3.ItemDelegate {
     // TODO: convert to a proper enum?
     property string /* "sink" | "sink-input" | "source" | "source-output" */ type
     property string fullNameToShowOnHover: ""
+    readonly property bool isStream: item.type === "sink-input" || item.type === "source-output"
 
     highlighted: dropArea.containsDrag
     background.visible: highlighted
@@ -48,7 +49,7 @@ PC3.ItemDelegate {
             implicitHeight: Kirigami.Units.iconSizes.medium
             implicitWidth: implicitHeight
             source: "unknown"
-            visible: item.type === "sink-input" || item.type === "source-output"
+            visible: item.isStream
 
             onSourceChanged: {
                 if (!valid && source !== "unknown") {
@@ -63,7 +64,7 @@ PC3.ItemDelegate {
                 }
                 implicitHeight: Kirigami.Units.iconSizes.small
                 implicitWidth: implicitHeight
-                source: item.type === "sink-input" || item.type === "source-output" ? "emblem-pause" : ""
+                source: item.isStream ? "emblem-pause" : ""
                 visible: valid && item.model.Corked
 
                 PC3.ToolTip.visible: visible && dragMouseArea.containsMouse
@@ -137,7 +138,7 @@ PC3.ItemDelegate {
 
                 Item {
                     Layout.fillWidth: true
-                    Layout.leftMargin: item.ListView.view.otherViewHasRadioButtons
+                    Layout.leftMargin: (item.ListView.view.otherViewHasRadioButtons && !item.isStream)
                         ? (defaultButton.Layout.leftMargin - Layout.margins) + defaultButton.indicator.width + defaultButton.spacing
                         : Layout.margins
                     visible: !defaultButton.visible
@@ -218,7 +219,7 @@ PC3.ItemDelegate {
                 SmallToolButton {
                     id: muteButton
                     readonly property bool isPlayback: item.type.startsWith("sink")
-                    Layout.leftMargin:  (defaultButton.visible  ||  item.ListView.view.otherViewHasRadioButtons)
+                    Layout.leftMargin:  (defaultButton.visible  ||  (item.ListView.view.otherViewHasRadioButtons && !item.isStream))
                         ? defaultButton.indicator.width + defaultButton.spacing : Layout.margins
                     icon.name: AudioIcon.forVolume(volumePercent(item.model.Volume), item.model.Muted, isPlayback ? "audio-volume" : "microphone-sensitivity")
                     onClicked: toggleMuteItem()
