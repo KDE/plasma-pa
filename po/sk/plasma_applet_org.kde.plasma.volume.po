@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 02:39+0000\n"
+"POT-Creation-Date: 2025-08-23 02:40+0000\n"
 "PO-Revision-Date: 2025-05-25 12:50+0200\n"
 "Last-Translator: Lucia Mrenica <lucia.mrenica@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -20,62 +20,62 @@ msgstr ""
 "X-Generator: Lokalize 25.04.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ListItemBase.qml:71
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not recording"
 msgstr "Práve sa nenahráva"
 
-#: ListItemBase.qml:72
+#: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not playing"
 msgstr "Práve sa neprehráva"
 
-#: ListItemBase.qml:203
+#: ListItemBase.qml:204
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Ďalšie možnosti"
 
-#: ListItemBase.qml:205
+#: ListItemBase.qml:206
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Zobraziť dodatočné voľby pre %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Zrušiť stlmenie"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Stlmiť"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, kde-format
 msgid "Unmute %1"
 msgstr "Zrušiť stlmenie %1"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, kde-format
 msgid "Mute %1"
 msgstr "Stlmiť %1"
 
-#: ListItemBase.qml:252
+#: ListItemBase.qml:253
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Upraviť hlasitosť pre %1"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:317
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:337
+#: ListItemBase.qml:338
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

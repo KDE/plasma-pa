@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 02:39+0000\n"
+"POT-Creation-Date: 2025-08-23 02:40+0000\n"
 "PO-Revision-Date: 2021-07-07 11:46+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -18,65 +18,65 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.04.2\n"
 
-#: ListItemBase.qml:71
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not recording"
 msgstr "Προς το παρόν δεν γίνεται ηχογράφηση"
 
-#: ListItemBase.qml:72
+#: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not playing"
 msgstr "Προς το παρόν δεν γίνεται αναπαραγωγή"
 
-#: ListItemBase.qml:203
+#: ListItemBase.qml:204
 #, fuzzy, kde-format
 #| msgid "Show additional options for %1"
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Εμφάνιση επιπλέον επιλογών για το %1"
 
-#: ListItemBase.qml:205
+#: ListItemBase.qml:206
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Εμφάνιση επιπλέον επιλογών για το %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Σίγαση %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Σίγαση"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgid "Unmute %1"
 msgstr "Σίγαση %1"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, kde-format
 msgid "Mute %1"
 msgstr "Σίγαση %1"
 
-#: ListItemBase.qml:252
+#: ListItemBase.qml:253
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Προσαρμογή έντασης για το %1"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:317
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:337
+#: ListItemBase.qml:338
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"

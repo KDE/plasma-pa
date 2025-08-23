@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 02:39+0000\n"
+"POT-Creation-Date: 2025-08-23 02:40+0000\n"
 "PO-Revision-Date: 2025-05-14 09:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -21,62 +21,62 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: ListItemBase.qml:71
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not recording"
 msgstr "Actualment no està gravant"
 
-#: ListItemBase.qml:72
+#: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not playing"
 msgstr "Actualment no està reproduint"
 
-#: ListItemBase.qml:203
+#: ListItemBase.qml:204
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Opcions addicionals"
 
-#: ListItemBase.qml:205
+#: ListItemBase.qml:206
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Mostra les opcions addicionals per a %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Activa el so"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Silencia"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, kde-format
 msgid "Unmute %1"
 msgstr "Activa el so de %1"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, kde-format
 msgid "Mute %1"
 msgstr "Silencia %1"
 
-#: ListItemBase.qml:252
+#: ListItemBase.qml:253
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Ajusta el volum de %1"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:317
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:337
+#: ListItemBase.qml:338
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
