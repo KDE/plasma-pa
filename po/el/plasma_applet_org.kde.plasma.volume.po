@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 00:45+0000\n"
+"POT-Creation-Date: 2025-08-23 00:44+0000\n"
 "PO-Revision-Date: 2021-07-07 11:46+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -18,65 +18,65 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.04.2\n"
 
-#: ListItemBase.qml:71
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not recording"
 msgstr "Προς το παρόν δεν γίνεται ηχογράφηση"
 
-#: ListItemBase.qml:72
+#: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not playing"
 msgstr "Προς το παρόν δεν γίνεται αναπαραγωγή"
 
-#: ListItemBase.qml:203
+#: ListItemBase.qml:204
 #, fuzzy, kde-format
 #| msgid "Show additional options for %1"
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Εμφάνιση επιπλέον επιλογών για το %1"
 
-#: ListItemBase.qml:205
+#: ListItemBase.qml:206
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Εμφάνιση επιπλέον επιλογών για το %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Σίγαση %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Σίγαση"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgid "Unmute %1"
 msgstr "Σίγαση %1"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, kde-format
 msgid "Mute %1"
 msgstr "Σίγαση %1"
 
-#: ListItemBase.qml:252
+#: ListItemBase.qml:253
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Προσαρμογή έντασης για το %1"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:317
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:337
+#: ListItemBase.qml:338
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -134,62 +134,62 @@ msgstr ""
 msgid "Device name not found"
 msgstr "Το όνομα της συσκευής δεν βρέθηκε"
 
-#: main.qml:354
+#: main.qml:335
 #, kde-format
 msgid "Devices"
 msgstr "Συσκευές"
 
-#: main.qml:361
+#: main.qml:342
 #, kde-format
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: main.qml:385
+#: main.qml:366
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:443
+#: main.qml:424
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:470
+#: main.qml:451
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Καμιά εφαρμογή δεν πραγματοποιεί εγγραφή ή αναπαραγωγή ήχου"
 
-#: main.qml:555
+#: main.qml:536
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Δε υπάρχουν συσκευές εξόδου"
 
-#: main.qml:557
+#: main.qml:538
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Ροές εγγραφής"
 
-#: main.qml:615
+#: main.qml:596
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Συσκευές εγγραφής"
 
-#: main.qml:617
+#: main.qml:598
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Ροές εγγραφής"
 
-#: main.qml:681
+#: main.qml:662
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -197,29 +197,29 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:697
+#: main.qml:678
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Αύξηση μέγιστης έντασης"
 
-#: main.qml:711
+#: main.qml:692
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Εξαναγκασμός σίγασης για όλες τις συσκευές αναπαραγωγής"
 
-#: main.qml:720
+#: main.qml:701
 #, fuzzy, kde-format
 #| msgid "Force mute all playback devices"
 msgid "Force mute all input devices"
 msgstr "Εξαναγκασμός σίγασης για όλες τις συσκευές αναπαραγωγής"
 
-#: main.qml:729
+#: main.qml:710
 #, fuzzy, kde-format
 #| msgid "Show hidden devices"
 msgid "Show virtual devices"
 msgstr "Εμφάνιση κρυμμένων συσκευών"
 
-#: main.qml:739
+#: main.qml:720
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Διαμόρφωση συσκευών ήχου…"

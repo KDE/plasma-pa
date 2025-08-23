@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 00:45+0000\n"
+"POT-Creation-Date: 2025-08-23 00:44+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,18 +18,18 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: ListItemBase.qml:71
+#: ListItemBase.qml:72
 #, kde-format
 msgid "Currently not recording"
 msgstr ""
 
-#: ListItemBase.qml:72
+#: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not playing"
 msgstr ""
 
 # >> @info:tooltip
-#: ListItemBase.qml:203
+#: ListItemBase.qml:204
 #, fuzzy, kde-format
 #| msgid "Show additional options for %1"
 msgctxt "@action:button"
@@ -37,48 +37,48 @@ msgid "Additional Options"
 msgstr "Dodatne opcije za %1"
 
 # >> @info:tooltip
-#: ListItemBase.qml:205
+#: ListItemBase.qml:206
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Dodatne opcije za %1"
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr ""
 
-#: ListItemBase.qml:227
+#: ListItemBase.qml:228
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Utišaj"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, fuzzy, kde-format
 #| msgid "Mute %1"
 msgid "Unmute %1"
 msgstr "Utišaj %1"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:230
 #, kde-format
 msgid "Mute %1"
 msgstr "Utišaj %1"
 
-#: ListItemBase.qml:252
+#: ListItemBase.qml:253
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Podesi jačinu za %1"
 
-#: ListItemBase.qml:316
+#: ListItemBase.qml:317
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:337
+#: ListItemBase.qml:338
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -136,60 +136,60 @@ msgstr ""
 msgid "Device name not found"
 msgstr ""
 
-#: main.qml:354
+#: main.qml:335
 #, kde-format
 msgid "Devices"
 msgstr "Uređaji"
 
-#: main.qml:361
+#: main.qml:342
 #, kde-format
 msgid "Applications"
 msgstr "Programi"
 
-#: main.qml:385
+#: main.qml:366
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:443
+#: main.qml:424
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:470
+#: main.qml:451
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nijedan program ne pušta niti snima zvuk."
 
-#: main.qml:555
+#: main.qml:536
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:557
+#: main.qml:538
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:615
+#: main.qml:596
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Uređaji"
 
-#: main.qml:617
+#: main.qml:598
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:681
+#: main.qml:662
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -197,29 +197,29 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:697
+#: main.qml:678
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Podigni najveću jačinu"
 
-#: main.qml:711
+#: main.qml:692
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: main.qml:720
+#: main.qml:701
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Force mute all input devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:729
+#: main.qml:710
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:739
+#: main.qml:720
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""
