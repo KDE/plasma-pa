@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-23 00:44+0000\n"
-"PO-Revision-Date: 2025-05-29 17:01+0300\n"
+"PO-Revision-Date: 2025-08-22 15:51+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ListItemBase.qml:72
 #, kde-format
@@ -201,13 +201,12 @@ msgstr "Palielināt maksimālo skaļumu"
 #: main.qml:692
 #, kde-format
 msgid "Force mute all playback devices"
-msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
+msgstr "Piespiedu apklusināt visas atskaņojošās ierīces"
 
 #: main.qml:701
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "Piespiest apklusināt visas atskaņojošās ierīces"
+msgstr "Piespiedu apklusināt visas ievades ierīces"
 
 #: main.qml:710
 #, kde-format
