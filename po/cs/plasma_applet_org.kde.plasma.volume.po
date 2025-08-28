@@ -159,11 +159,10 @@ msgid "No applications playing or recording audio"
 msgstr "Žádné aplikace přehrávající nebo nahrávající audio"
 
 #: main.qml:536
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Zařízení"
+msgstr ""
 
 #: main.qml:538
 #, kde-format
@@ -172,11 +171,10 @@ msgid "Output Streams"
 msgstr ""
 
 #: main.qml:596
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Zařízení"
+msgstr ""
 
 #: main.qml:598
 #, kde-format
@@ -203,10 +201,9 @@ msgid "Force mute all playback devices"
 msgstr "Vynutit ztlumení všech přehrávacích zařízení"
 
 #: main.qml:701
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "Vynutit ztlumení všech přehrávacích zařízení"
+msgstr ""
 
 #: main.qml:710
 #, kde-format
