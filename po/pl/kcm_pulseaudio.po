@@ -1,21 +1,22 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-21 00:45+0000\n"
-"PO-Revision-Date: 2024-09-07 11:40+0200\n"
+"PO-Revision-Date: 2025-08-30 08:09+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -355,10 +356,9 @@ msgid "Audio volume"
 msgstr "Głośność dźwięku"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Pokazuj informację zwrotną dla zmian w:"
+msgstr "Pokazuj okna na ekranie dla zmian w:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
@@ -371,12 +371,10 @@ msgid "Mute state"
 msgstr "Stan wyciszenia"
 
 #: kcm/ui/VolumeControlsConfig.qml:97
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 używają mikrofonu"
+msgstr "Aplikacja uruchamia się przy wyciszonym mikrofonie"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -457,11 +455,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% Bateria)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Wycisz"
+msgstr "%1: Wyciszone"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format

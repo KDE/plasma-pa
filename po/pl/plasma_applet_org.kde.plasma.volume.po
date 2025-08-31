@@ -7,15 +7,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-23 00:44+0000\n"
-"PO-Revision-Date: 2025-02-08 17:31+0100\n"
+"PO-Revision-Date: 2025-08-30 08:12+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ListItemBase.qml:72
 #, kde-format
@@ -158,32 +159,28 @@ msgid "No applications playing or recording audio"
 msgstr "Żadna aplikacja nie odtwarza, ani nie nagrywa teraz dźwięku"
 
 #: main.qml:536
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Nie ma żadnego urządzenia wyjściowego"
+msgstr "Urządzenia wyjściowe"
 
 #: main.qml:538
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Przechwytywane strumienie"
+msgstr "Strumienie wyjściowe"
 
 #: main.qml:596
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Urządzenia nagrywające"
+msgstr "Urządzenie wejściowe"
 
 #: main.qml:598
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Przechwytywane strumienie"
+msgstr "Strumienie wejściowe"
 
 #: main.qml:662
 #, kde-kuit-format
@@ -192,6 +189,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Dłuższe korzystanie z tej funkcji uszkodzi głośniki urządzenia. Używaj tego "
+"tylko tymczasowo, aby móc usłyszeć ciche dźwięki."
 
 #: main.qml:678
 #, kde-format
@@ -204,10 +203,9 @@ msgid "Force mute all playback devices"
 msgstr "Wycisz wszystkie urządzenia odtwarzające"
 
 #: main.qml:701
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "Wycisz wszystkie urządzenia odtwarzające"
+msgstr "Wymuś wyciszenie na wszystkich urządzeniach wejściowych"
 
 #: main.qml:710
 #, kde-format
