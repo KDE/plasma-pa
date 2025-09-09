@@ -47,7 +47,6 @@
                 "Name[ta]": "ஹரால்டு சிட்டர்",
                 "Name[tr]": "Harald Sitter",
                 "Name[uk]": "Harald Sitter",
-                "Name[x-test]": "xxHarald Sitterxx",
                 "Name[zh_CN]": "Harald Sitter",
                 "Name[zh_TW]": "Harald Sitter"
             }
@@ -97,7 +96,6 @@
         "Description[ta]": "செயலிகளின் மற்றும் சாதனங்களின் ஒலியளவை மாற்றுங்கள்",
         "Description[tr]": "Aygıtların ve uygulamaların ses düzeyini ayarlayın",
         "Description[uk]": "Коригування гучності пристроїв і звуків програм",
-        "Description[x-test]": "xxAdjust the volume of devices and applicationsxx",
         "Description[zh_CN]": "调整设备和应用程序的音量",
         "Description[zh_TW]": "調整裝置與應用程式的音量",
         "EnabledByDefault": true,
@@ -158,7 +156,6 @@
         "Name[tg]": "Баландии садо",
         "Name[tr]": "Ses Düzeyi",
         "Name[uk]": "Гучність",
-        "Name[x-test]": "xxAudio Volumexx",
         "Name[zh_CN]": "音量",
         "Name[zh_TW]": "音效音量",
         "Website": "https://kde.org/plasma-desktop"
