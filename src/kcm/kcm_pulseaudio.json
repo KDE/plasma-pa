@@ -39,7 +39,6 @@
                 "Name[ta]": "ஹரால்டு சிட்டர்",
                 "Name[tr]": "Harald Sitter",
                 "Name[uk]": "Harald Sitter",
-                "Name[x-test]": "xxHarald Sitterxx",
                 "Name[zh_CN]": "Harald Sitter",
                 "Name[zh_TW]": "Harald Sitter"
             }
@@ -81,7 +80,6 @@
         "Description[ta]": "ஒலி சாதனங்களையும் ஒலியின் அளவையும் அமையுங்கள்",
         "Description[tr]": "Ses aygıtlarını ve düzeyini yapılandırın",
         "Description[uk]": "Налаштування звукових пристроїв та гучності",
-        "Description[x-test]": "xxConfigure audio devices and volumexx",
         "Description[zh_CN]": "配置音频设备和音量",
         "Description[zh_TW]": "設定音效裝置及音量",
         "FormFactors": [
@@ -137,7 +135,6 @@
         "Name[tg]": "Аудио",
         "Name[tr]": "Ses",
         "Name[uk]": "Аудіо",
-        "Name[x-test]": "xxAudioxx",
         "Name[zh_CN]": "音频",
         "Name[zh_TW]": "音效"
     },
@@ -176,7 +173,6 @@
     "X-KDE-Keywords[sv]": "ljud,volym,utmatning,inmatning,högtalare,mikrofon,ljud,musik,maskinvara,enheter,alsa,pulseaudio,pipewire,jack,hdmi,inspelning,uppspelning,strömmar,sänke,balans,ljudbalans,mono,stereo,surround,ljudkort,höger högtalare,vänster högtalare,centerhögtalare,underrättelseljud,analog,digital,hörlur,hörlurar,öronsnäckor,headset,kanal,kanaler,2.0,2.1,5.1,6.1,7.1",
     "X-KDE-Keywords[ta]": "sound,volume,output,input,speakers,microphone,audio,music,hardware,devices,alsa,pulseaudio,pipewire,jack,hdmi,recording,playback,streams,sink,balance,audio balance,mono,stereo,surround,sound card,right speaker,left speaker,center speaker,notification sounds,analog,digital,headphone,headphones,earbuds,headset,earpiece,channel,channels,2.0,2.1,5.1,6.1,7.1, ஒலி, ஓசை, சத்தம், சப்தம், உள்ளீடு, வெளியீடு, ஒலிபெருக்கி, ஒலிவாங்கி, பாட்டு, இசை, வன்பொருள், சாதனங்கள், ஒலி அளவு, ஒலியளவு, ஒலிப்பதிவு, பதிவு, அறிவிப்பு ஒலிகள், ஒலி அட்டை, ஒலியட்டை",
     "X-KDE-Keywords[uk]": "sound,volume,output,input,speakers,microphone,audio,music,hardware,devices,alsa,pulseaudio,pipewire,jack,hdmi,recording,playback,streams,sink,balance,audio balance,mono,stereo,surround,sound card,right speaker,left speaker,center speaker,notification sounds,analog,digital,headphone,headphones,earbuds,headset,earpiece,channel,channels,2.0,2.1,5.1,6.1,7.1,звук,гучність,виведення,вихід,введення,вхід,гучномовці,спікери,динаміки,мікрофон,звук,аудіо,музика,обладнання,апаратне забезпечення,пристрої,алса,пульсаудіо,пульсавдіо,пайпвайр,пайпває,джек,ейчдіемай,хдма,запис,відтворення,потоки,баланс,баланс звуку,моно,стерео,просторовий,звукова картка,правий динамік,лівий динамік,центральний динамік,звуки сповіщень,аналоговий,цифровий,навушник,навушники,вкладиші,гарнітура,канал,канали",
-    "X-KDE-Keywords[x-test]": "xxsoundxx,xxvolumexx,xxoutputxx,xxinputxx,xxspeakersxx,xxmicrophonexx,xxaudioxx,xxmusicxx,xxhardwarexx,xxdevicesxx,xxalsaxx,xxpulseaudioxx,xxpipewirexx,xxjackxx,xxhdmixx,xxrecordingxx,xxplaybackxx,xxstreamsxx,xxsinkxx,xxbalancexx,xxaudio balancexx,xxmonoxx,xxstereoxx,xxsurroundxx,xxsound cardxx,xxright speakerxx,xxleft speakerxx,xxcenter speakerxx,xxnotification soundsxx,xxanalogxx,xxdigitalxx,xxheadphonexx,xxheadphonesxx,xxearbudsxx,xxheadsetxx,xxearpiecexx,xxchannelxx,xxchannelsxx,xx2.0xx,xx2.1xx,xx5.1xx,xx6.1xx,xx7.1xx",
     "X-KDE-System-Settings-Parent-Category": "hardware",
     "X-KDE-Weight": 60
 }
