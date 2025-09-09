@@ -39,7 +39,6 @@
         "Description[ta]": "ஒலி சாதனங்களையும் ஒலியின் அளவையும் கட்டுப்படுத்தும் சுருக்குவழிகளை வழங்கும்",
         "Description[tr]": "Ses aygıtları ve ses düzeyi için kısayollar sağlar",
         "Description[uk]": "Клавіатурні скорочення для звукового пристрою та керування гучністю",
-        "Description[x-test]": "xxProvides shortcuts for audio device and volume controlxx",
         "Description[zh_CN]": "提供音频设备和音量控制的快捷方式",
         "Description[zh_TW]": "提供音效裝置與音量控制的快捷鍵",
         "Name": "Audio Shortcuts",
@@ -81,7 +80,6 @@
         "Name[ta]": "ஒலி சுருக்குவழிகள்",
         "Name[tr]": "Ses Kısayolları",
         "Name[uk]": "Звукові клавіатурні скорочення",
-        "Name[x-test]": "xxAudio Shortcutsxx",
         "Name[zh_CN]": "音频快捷键",
         "Name[zh_TW]": "音效快捷鍵"
     },
