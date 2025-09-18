@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-21 00:45+0000\n"
-"PO-Revision-Date: 2025-04-18 13:26+0000\n"
+"PO-Revision-Date: 2025-09-17 00:05+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -370,12 +370,10 @@ msgid "Mute state"
 msgstr "þöggunarstöðu"
 
 #: kcm/ui/VolumeControlsConfig.qml:97
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 eru að nota hljóðnemann"
+msgstr "ef forrit byrjar að nota þaggaðan hljóðnema"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -456,11 +454,10 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% rafhlaða)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Þagga"
+msgstr "%1: þaggað"
 
 #: qml/listitemmenu.cpp:320
 #, kde-format

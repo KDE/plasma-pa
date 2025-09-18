@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-23 00:44+0000\n"
-"PO-Revision-Date: 2025-04-18 13:27+0000\n"
+"PO-Revision-Date: 2025-09-17 00:05+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: ListItemBase.qml:72
 #, kde-format
@@ -158,30 +158,28 @@ msgid "No applications playing or recording audio"
 msgstr "Engin forrit spila eða taka upp hljóð"
 
 #: main.qml:536
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Ekkert úttakstæki"
+msgstr "Úttakstæki"
 
 #: main.qml:538
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "Úttaksstraumar"
 
 #: main.qml:596
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Tæki"
+msgstr "Inntakstæki"
 
 #: main.qml:598
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "Inntaksstraumar"
 
 #: main.qml:662
 #, kde-kuit-format
@@ -190,6 +188,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Langvarandi notkun á þessum eiginleika skemmir hátalara tækisins. Notaðu "
+"hann aðeins tímabundið til að geta heyrt lágvært hljóð."
 
 #: main.qml:678
 #, kde-format
@@ -202,10 +202,9 @@ msgid "Force mute all playback devices"
 msgstr "Þagga niður í öllum afspilunartækjum"
 
 #: main.qml:701
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "Þagga niður í öllum afspilunartækjum"
+msgstr "Þagga með valdi niður í öllum inntakstækjum"
 
 #: main.qml:710
 #, kde-format
