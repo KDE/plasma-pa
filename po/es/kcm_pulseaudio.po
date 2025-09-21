@@ -1,15 +1,15 @@
 # Spanish translations for kcm_pulseaudio.po package.
-# Copyright (C) 2015 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2015-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-pa package.
 # Automatically generated, 2015.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+#
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-26 02:43+0000\n"
-"PO-Revision-Date: 2022-11-03 12:22+0100\n"
+"PO-Revision-Date: 2025-09-20 20:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: context.cpp:596
 #, kde-format
@@ -111,12 +111,12 @@ msgstr "Mostrar dispositivos inactivos"
 #: kcm/package/contents/ui/main.qml:279
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Configurar los controles del volumen..."
+msgstr "Configurar los controles del volumen…"
 
 #: kcm/package/contents/ui/main.qml:288
 #, kde-format
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: kcm/package/contents/ui/main.qml:292
 #, kde-format
@@ -274,13 +274,13 @@ msgstr "Dispositivo de salida predeterminado"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: kcm/package/contents/ui/VolumeSlider.qml:85
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: qml/listitemmenu.cpp:342
 #, kde-format
@@ -362,110 +362,3 @@ msgstr "%1 está usando el micrófono (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 está usando el micrófono"
-
-#~ msgid "100%"
-#~ msgstr "100%"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Eloy Cuadra"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "ecuadra@eloihr.net"
-
-#~ msgctxt "@title"
-#~ msgid "Audio"
-#~ msgstr "Audio"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Copyright 2015 Harald Sitter"
-#~ msgstr "Copyright 2015 Harald Sitter"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Harald Sitter"
-#~ msgstr "Harald Sitter"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Author"
-#~ msgstr "Autor"
-
-#~ msgid "Configure"
-#~ msgstr "Configurar"
-
-#~ msgid "Device Profiles"
-#~ msgstr "Perfiles de dispositivos"
-
-#~ msgid "Advanced Output Configuration"
-#~ msgstr "Configuración avanzada de salida"
-
-#~ msgid "Speaker Placement and Testing"
-#~ msgstr "Emplazamiento de los altavoces y prueba"
-
-#~ msgctxt "@label"
-#~ msgid "Output:"
-#~ msgstr "Salida:"
-
-#~ msgctxt "Port is unavailable"
-#~ msgid " (unavailable)"
-#~ msgstr " (no disponible)"
-
-#~ msgctxt "Port is unplugged"
-#~ msgid " (unplugged)"
-#~ msgstr " (sin conectar)"
-
-#~ msgid "Configure..."
-#~ msgstr "Configurar..."
-
-#~ msgctxt "@label"
-#~ msgid "No Device Profiles Available"
-#~ msgstr "Ningún perfil de dispositivo disponible"
-
-#~ msgctxt "@label"
-#~ msgid "No Playback Devices Available"
-#~ msgstr "Ningún dispositivo de reproducción disponible"
-
-#~ msgctxt "@label"
-#~ msgid "No Recording Devices Available"
-#~ msgstr "Ningún dispositivo de grabación disponible"
-
-#~ msgctxt "@label"
-#~ msgid "No Applications Playing Audio"
-#~ msgstr "Ninguna aplicación reproduce sonido"
-
-#~ msgctxt "@label"
-#~ msgid "No Applications Recording Audio"
-#~ msgstr "Ninguna aplicación graba sonido"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Devices"
-#~ msgstr "Dispositivos"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Applications"
-#~ msgstr "Aplicaciones"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Advanced"
-#~ msgstr "Avanzado"
-
-#~ msgid "Outputs"
-#~ msgstr "Salidas"
-
-#~ msgctxt "@label"
-#~ msgid "No Output Devices Available"
-#~ msgstr "Ningún dispositivo de salida disponible"
-
-#~ msgid "Inputs"
-#~ msgstr "Entradas"
-
-#~ msgctxt "@title"
-#~ msgid "Configure the Audio Volume"
-#~ msgstr "Configurar el volumen del sonido"
-
-#~ msgid "Capture"
-#~ msgstr "Capturar"
-
-#~ msgctxt "@label"
-#~ msgid "No Additional Configuration Available"
-#~ msgstr "No hay configuración adicional disponible"
