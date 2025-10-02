@@ -57,14 +57,17 @@ ListItemBase {
     }
 
     iconSource: {
+        let finalIcon = ""
+
         if (model.IconName.length !== 0) {
-            return model.IconName
+            finalIcon = model.IconName
+        } else if (item.type === "source-output") {
+            finalIcon = "audio-input-microphone"
+        } else {
+            finalIcon = "audio-volume-high"
         }
 
-        if (item.type === "source-output") {
-            return "audio-input-microphone"
-        }
+        return finalIcon + (Qt.application.layoutDirection === Qt.RightToLeft ? "-rtl" : "");
 
-        return "audio-volume-high"
     }
 }

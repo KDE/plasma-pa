@@ -312,17 +312,22 @@ QMenu *ListItemMenu::createMenu()
     if (auto *device = qobject_cast<PulseAudioQt::Device *>(m_pulseObject.data())) {
         // Switch all streams of the relevant kind to this device
         if (m_sourceModel->rowCount() > 1) {
+            const bool mirrored = QGuiApplication::layoutDirection() == Qt::RightToLeft;
             QAction *switchStreamsAction = nullptr;
+
             if (m_itemType == Sink) {
-                switchStreamsAction = menu->addAction(
-                    QIcon::fromTheme(QStringLiteral("audio-on"),
-                                     QIcon::fromTheme(QStringLiteral("audio-ready"), QIcon::fromTheme(QStringLiteral("audio-speakers-symbolic")))),
-                    i18n("Play all audio via this device"));
+                const QString audioOnIcon = mirrored ? QStringLiteral("audio-on-rtl") : QStringLiteral("audio-on");
+                const QString audioReadyIcon = mirrored ? QStringLiteral("audio-ready-rtl") : QStringLiteral("audio-ready");
+                const QString speakersIcon = mirrored ? QStringLiteral("audio-speakers-symbolic-rtl") : QStringLiteral("audio-speakers-symbolic");
+                switchStreamsAction = menu->addAction(QIcon::fromTheme(audioOnIcon, QIcon::fromTheme(audioReadyIcon, QIcon::fromTheme(speakersIcon))),
+                                                      i18n("Play all audio via this device"));
             } else if (m_itemType == Source) {
-                switchStreamsAction = menu->addAction(
-                    QIcon::fromTheme(QStringLiteral("mic-on"),
-                                     QIcon::fromTheme(QStringLiteral("mic-ready"), QIcon::fromTheme(QStringLiteral("audio-input-microphone-symbolic")))),
-                    i18n("Record all audio via this device"));
+                const QString micOnIcon = mirrored ? QStringLiteral("mic-on-rtl") : QStringLiteral("mic-on");
+                const QString micReadyIcon = mirrored ? QStringLiteral("mic-ready-rtl") : QStringLiteral("mic-ready");
+                const QString microphoneIcon =
+                    mirrored ? QStringLiteral("audio-input-microphone-symbolic-rtl") : QStringLiteral("audio-input-microphone-symbolic");
+                switchStreamsAction = menu->addAction(QIcon::fromTheme(micOnIcon, QIcon::fromTheme(micReadyIcon, QIcon::fromTheme(microphoneIcon))),
+                                                      i18n("Record all audio via this device"));
             }
 
             if (switchStreamsAction) {

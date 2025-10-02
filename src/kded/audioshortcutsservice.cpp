@@ -10,6 +10,7 @@
 #include <QAction>
 #include <QDBusConnection>
 #include <QDBusMessage>
+#include <QGuiApplication>
 #include <QStringBuilder>
 
 #include <KGlobalAccel>
@@ -257,7 +258,7 @@ void AudioShortcutsService::handleDefaultSinkChange()
     if (defaultSink->name() == DUMMY_OUTPUT_NAME) {
         description = i18n("No output device");
         if (icon.isEmpty()) {
-            icon = u"audio-volume-muted"_s;
+            icon = QGuiApplication::layoutDirection() == Qt::RightToLeft ? u"audio-volume-muted-rtl"_s : u"audio-volume-muted"_s;
         }
     } else {
         if (icon.isEmpty()) {

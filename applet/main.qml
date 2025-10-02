@@ -417,7 +417,7 @@ PlasmoidItem {
                 upperType: "sink"
                 lowerModel: paSourceFilterModel
                 lowerType: "source"
-                iconName: "audio-volume-muted"
+                iconName: "audio-volume-muted" + (Qt.application.layoutDirection === Qt.RightToLeft ? "-rtl" : "");
                 placeholderText: main.noDevicePlaceholderMessage
                 explanationText: main.noDeviceExplanation
                 helpfulAction: Kirigami.Action {
@@ -690,7 +690,7 @@ PlasmoidItem {
     Plasmoid.contextualActions: [
         PlasmaCore.Action {
             text: i18n("Force mute all playback devices")
-            icon.name: "audio-volume-muted"
+            icon.name: "audio-volume-muted" + (Qt.application.layoutDirection === Qt.RightToLeft ? "-rtl" : "");
             checkable: true
             checked: globalMuteSinks
             onTriggered: {
@@ -699,7 +699,7 @@ PlasmoidItem {
         },
         PlasmaCore.Action {
             text: i18n("Force mute all input devices")
-            icon.name: "microphone-sensitivity-muted"
+            icon.name: "microphone-sensitivity-muted" + (Qt.application.layoutDirection === Qt.RightToLeft ? "-rtl" : "");
             checkable: true
             checked: globalMuteSources
             onTriggered: {

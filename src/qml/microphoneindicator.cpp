@@ -9,6 +9,7 @@
 #include "microphoneindicator.h"
 
 #include <QAction>
+#include <QGuiApplication>
 #include <QIcon>
 #include <QMenu>
 #include <QTimer>
@@ -103,7 +104,9 @@ void MicrophoneIndicator::update()
 
         QMenu *menu = m_sni->contextMenu();
 
-        m_muteAction = menu->addAction(QIcon::fromTheme(QStringLiteral("microphone-sensitivity-muted")), i18n("Mute"));
+        const QString muteIcon = QGuiApplication::layoutDirection() == Qt::RightToLeft ? QStringLiteral("microphone-sensitivity-muted-rtl")
+                                                                                       : QStringLiteral("microphone-sensitivity-muted");
+        m_muteAction = menu->addAction(QIcon::fromTheme(muteIcon), i18n("Mute"));
         m_muteAction->setCheckable(true);
         connect(m_muteAction.data(), &QAction::triggered, this, &MicrophoneIndicator::setMuted);
 
@@ -131,6 +134,10 @@ void MicrophoneIndicator::update()
         } else {
             iconName = QStringLiteral("microphone-sensitivity-high");
         }
+    }
+
+    if (QGuiApplication::layoutDirection() == Qt::RightToLeft) {
+        iconName.append(QStringLiteral("-rtl"));
     }
 
     m_sni->setTitle(i18n("Microphone"));

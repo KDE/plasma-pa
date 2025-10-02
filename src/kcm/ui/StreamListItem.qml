@@ -37,15 +37,17 @@ ColumnLayout {
                     width: height
                     height: Kirigami.Units.iconSizes.medium
                     source: {
+                        let finalIcon = ""
+
                         if (IconName.length !== 0) {
-                            return IconName
+                            finalIcon = IconName
+                        } else if (delegate.isPlayback) {
+                            finalIcon = "audio-speakers-symbolic"
+                        } else {
+                            finalIcon = "audio-input-microphone-symbolic"
                         }
 
-                        if (delegate.isPlayback) {
-                            return "audio-speakers-symbolic"
-                        } else {
-                            return "audio-input-microphone-symbolic"
-                        }
+                        return finalIcon + (Qt.application.layoutDirection === Qt.RightToLeft ? "-rtl" : "")
                     }
                 }
                 Label {

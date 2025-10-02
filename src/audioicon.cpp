@@ -6,6 +6,7 @@
 
 #include "audioicon.h"
 
+#include <QGuiApplication>
 #include <QMap>
 #include <QString>
 
@@ -35,22 +36,31 @@ QString AudioIcon::forFormFactor(QString formFactor)
 
 QString AudioIcon::forVolume(int percent, bool muted, QString prefix)
 {
+    QString finalIcon = "";
+
     if (prefix.isEmpty()) {
         prefix = u"audio-volume"_s;
     }
+
     if (percent <= 0 || muted) {
-        return prefix + u"-muted-symbolic"_s;
+        finalIcon = prefix + u"-muted-symbolic"_s;
     } else if (percent <= 25) {
-        return prefix + u"-low-symbolic"_s;
+        finalIcon = prefix + u"-low-symbolic"_s;
     } else if (percent <= 75) {
-        return prefix + u"-medium-symbolic"_s;
+        finalIcon = prefix + u"-medium-symbolic"_s;
     } else if (percent <= HIGH_UPPER_BOUND) {
-        return prefix + u"-high-symbolic"_s;
+        finalIcon = prefix + u"-high-symbolic"_s;
     } else if (percent <= VERY_HIGH_UPPER_BOUND) {
-        return prefix + u"-high-warning-symbolic"_s;
+        finalIcon = prefix + u"-high-warning-symbolic"_s;
     } else {
-        return prefix + u"-high-danger-symbolic"_s;
+        finalIcon = prefix + u"-high-danger-symbolic"_s;
     }
+
+    if (QGuiApplication::layoutDirection() == Qt::RightToLeft) {
+        finalIcon.append(u"-rtl"_s);
+    }
+
+    return finalIcon;
 }
 
 #include "moc_audioicon.cpp"

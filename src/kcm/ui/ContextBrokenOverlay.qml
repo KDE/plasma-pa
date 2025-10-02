@@ -21,7 +21,7 @@ Loader {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            icon.name: "audio-volume-muted"
+            icon.name: "audio-volume-muted"  + (Qt.application.layoutDirection === Qt.RightToLeft ? "-rtl" : "");
             text: i18nc("@label", "Connection to the Sound Service Lost")
             explanation: {
                 if (Context.autoConnecting) {
