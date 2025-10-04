@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 00:45+0000\n"
+"POT-Creation-Date: 2025-10-04 00:44+0000\n"
 "PO-Revision-Date: 2025-04-13 18:12+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -79,7 +79,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:223
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:224
 #, kde-format
 msgid "Device name not found"
 msgstr "சாதனத்தின் பெயர் தெரியாது"
@@ -89,13 +89,13 @@ msgstr "சாதனத்தின் பெயர் தெரியாது"
 msgid "Port:"
 msgstr "புறை:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:366
+#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:371
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (கிட்டவில்லை)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:368
+#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:373
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
@@ -315,12 +315,12 @@ msgctxt ""
 msgid "DEFAULT"
 msgstr "இயல்பிருப்பு"
 
-#: kcm/ui/StreamListItem.qml:57
+#: kcm/ui/StreamListItem.qml:59
 #, kde-format
 msgid "Notification Sounds"
 msgstr "அறிவிப்பு ஒலிகள்"
 
-#: kcm/ui/StreamListItem.qml:63
+#: kcm/ui/StreamListItem.qml:65
 #, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
@@ -391,62 +391,62 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:81
+#: kded/audioshortcutsservice.cpp:82
 #, kde-format
 msgid "Increase Volume"
 msgstr "ஒலியைக் கூட்டு"
 
-#: kded/audioshortcutsservice.cpp:96
+#: kded/audioshortcutsservice.cpp:97
 #, kde-format
 msgid "Decrease Volume"
 msgstr "ஒலியைக் குறை"
 
-#: kded/audioshortcutsservice.cpp:111
+#: kded/audioshortcutsservice.cpp:112
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "ஒலியை 1% கூட்டு"
 
-#: kded/audioshortcutsservice.cpp:126
+#: kded/audioshortcutsservice.cpp:127
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "ஒலியை 1% குறை"
 
-#: kded/audioshortcutsservice.cpp:141
+#: kded/audioshortcutsservice.cpp:142
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "ஒலிவாங்கியின் ஒலியை கூட்டு"
 
-#: kded/audioshortcutsservice.cpp:155
+#: kded/audioshortcutsservice.cpp:156
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "ஒலிவாங்கியின் ஒலியை குறை"
 
-#: kded/audioshortcutsservice.cpp:169 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:170 qml/microphoneindicator.cpp:109
 #, kde-format
 msgid "Mute"
 msgstr "ஒலியை அடக்கு"
 
-#: kded/audioshortcutsservice.cpp:182
+#: kded/audioshortcutsservice.cpp:183
 #, kde-format
 msgid "Mute Microphone"
 msgstr "ஒலிவாங்கியின் ஒலியை அடக்கு"
 
-#: kded/audioshortcutsservice.cpp:194
+#: kded/audioshortcutsservice.cpp:195
 #, kde-format
 msgid "Audio Volume"
 msgstr "ஒலியின் அளவு"
 
-#: kded/audioshortcutsservice.cpp:212
+#: kded/audioshortcutsservice.cpp:213
 #, kde-format
 msgid "No such device"
 msgstr "அப்படிப்பட்ட சாதனம் இல்லை"
 
-#: kded/audioshortcutsservice.cpp:258
+#: kded/audioshortcutsservice.cpp:259
 #, kde-format
 msgid "No output device"
 msgstr "வெளியீட்டு சாதனம் இல்லை"
 
-#: kded/audioshortcutsservice.cpp:279 kded/audioshortcutsservice.cpp:299
+#: kded/audioshortcutsservice.cpp:280 kded/audioshortcutsservice.cpp:300
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
@@ -459,17 +459,17 @@ msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
 msgstr "ஒலியை அடக்கு"
 
-#: qml/listitemmenu.cpp:320
+#: qml/listitemmenu.cpp:323
 #, kde-format
 msgid "Play all audio via this device"
 msgstr "எல்லா ஒலிகளையும் இதன் வழியாக இயக்கு"
 
-#: qml/listitemmenu.cpp:325
+#: qml/listitemmenu.cpp:330
 #, kde-format
 msgid "Record all audio via this device"
 msgstr "எல்லா ஒலிகளையும் இதன் வழியாக பதிவு செய்"
 
-#: qml/listitemmenu.cpp:354
+#: qml/listitemmenu.cpp:359
 #, kde-format
 msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
@@ -477,7 +477,7 @@ msgctxt ""
 msgid "Ports"
 msgstr "புறைகள்"
 
-#: qml/listitemmenu.cpp:424
+#: qml/listitemmenu.cpp:429
 #, kde-format
 msgctxt ""
 "Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
@@ -485,7 +485,7 @@ msgctxt ""
 msgid "Profiles"
 msgstr "பயன்முறைகள்"
 
-#: qml/listitemmenu.cpp:458
+#: qml/listitemmenu.cpp:463
 #, kde-format
 msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
@@ -493,7 +493,7 @@ msgctxt ""
 msgid "Play audio using"
 msgstr "இதனை கொண்டு ஒலியை இயக்கு"
 
-#: qml/listitemmenu.cpp:460
+#: qml/listitemmenu.cpp:465
 #, kde-format
 msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "
@@ -501,35 +501,35 @@ msgctxt ""
 msgid "Record audio using"
 msgstr "இதனை கொண்டு ஒலிப்பதிவு செய்"
 
-#: qml/microphoneindicator.cpp:136 qml/microphoneindicator.cpp:138
+#: qml/microphoneindicator.cpp:143 qml/microphoneindicator.cpp:145
 #, kde-format
 msgid "Microphone"
 msgstr "ஒலிவாங்கி"
 
-#: qml/microphoneindicator.cpp:138
+#: qml/microphoneindicator.cpp:145
 #, kde-format
 msgid "Microphone Muted"
 msgstr "ஒலிவாங்கி அடக்கப்பட்டது"
 
-#: qml/microphoneindicator.cpp:284
+#: qml/microphoneindicator.cpp:291
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: qml/microphoneindicator.cpp:284
+#: qml/microphoneindicator.cpp:291
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
 msgstr "%1 ஒலிவாங்கியை பயன்படுத்துகின்றன"
 
-#: qml/microphoneindicator.cpp:310
+#: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
 msgstr "%1 ஒலிவாங்கியை பயன்படுத்துகிறது (%2)"
 
-#: qml/microphoneindicator.cpp:317
+#: qml/microphoneindicator.cpp:324
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"

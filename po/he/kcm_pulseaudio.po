@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-21 00:45+0000\n"
+"POT-Creation-Date: 2025-10-04 00:44+0000\n"
 "PO-Revision-Date: 2025-04-26 10:01+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -81,7 +81,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "לנסות שוב"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:223
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:224
 #, kde-format
 msgid "Device name not found"
 msgstr "שם ההתקן לא נמצא"
@@ -91,13 +91,13 @@ msgstr "שם ההתקן לא נמצא"
 msgid "Port:"
 msgstr "פתחה:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:366
+#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:371
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (לא זמין)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:368
+#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:373
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
@@ -316,12 +316,12 @@ msgctxt ""
 msgid "DEFAULT"
 msgstr "ברירת מחדל"
 
-#: kcm/ui/StreamListItem.qml:57
+#: kcm/ui/StreamListItem.qml:59
 #, kde-format
 msgid "Notification Sounds"
 msgstr "צלילי התראה"
 
-#: kcm/ui/StreamListItem.qml:63
+#: kcm/ui/StreamListItem.qml:65
 #, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
@@ -390,62 +390,62 @@ msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: kded/audioshortcutsservice.cpp:81
+#: kded/audioshortcutsservice.cpp:82
 #, kde-format
 msgid "Increase Volume"
 msgstr "הגברת עוצמת השמע"
 
-#: kded/audioshortcutsservice.cpp:96
+#: kded/audioshortcutsservice.cpp:97
 #, kde-format
 msgid "Decrease Volume"
 msgstr "הנמכת עוצמת השמע"
 
-#: kded/audioshortcutsservice.cpp:111
+#: kded/audioshortcutsservice.cpp:112
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "הגברת עוצמת השמע ב־1%"
 
-#: kded/audioshortcutsservice.cpp:126
+#: kded/audioshortcutsservice.cpp:127
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "הנמכת עוצמת השמע ב־1%"
 
-#: kded/audioshortcutsservice.cpp:141
+#: kded/audioshortcutsservice.cpp:142
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "הגברת עוצמת המיקרופון"
 
-#: kded/audioshortcutsservice.cpp:155
+#: kded/audioshortcutsservice.cpp:156
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "הנמכת עוצמת המיקרופון"
 
-#: kded/audioshortcutsservice.cpp:169 qml/microphoneindicator.cpp:106
+#: kded/audioshortcutsservice.cpp:170 qml/microphoneindicator.cpp:109
 #, kde-format
 msgid "Mute"
 msgstr "השתקה"
 
-#: kded/audioshortcutsservice.cpp:182
+#: kded/audioshortcutsservice.cpp:183
 #, kde-format
 msgid "Mute Microphone"
 msgstr "השתקת המיקרופון"
 
-#: kded/audioshortcutsservice.cpp:194
+#: kded/audioshortcutsservice.cpp:195
 #, kde-format
 msgid "Audio Volume"
 msgstr "עוצמת שמע"
 
-#: kded/audioshortcutsservice.cpp:212
+#: kded/audioshortcutsservice.cpp:213
 #, kde-format
 msgid "No such device"
 msgstr "אין כזה התקן"
 
-#: kded/audioshortcutsservice.cpp:258
+#: kded/audioshortcutsservice.cpp:259
 #, kde-format
 msgid "No output device"
 msgstr "אין התקן פלט"
 
-#: kded/audioshortcutsservice.cpp:279 kded/audioshortcutsservice.cpp:299
+#: kded/audioshortcutsservice.cpp:280 kded/audioshortcutsservice.cpp:300
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
@@ -457,17 +457,17 @@ msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
 msgstr "%1: מושתק"
 
-#: qml/listitemmenu.cpp:320
+#: qml/listitemmenu.cpp:323
 #, kde-format
 msgid "Play all audio via this device"
 msgstr "לנגן את כל השמע דרך ההתקן הזה"
 
-#: qml/listitemmenu.cpp:325
+#: qml/listitemmenu.cpp:330
 #, kde-format
 msgid "Record all audio via this device"
 msgstr "להקליט את כל השמע דרך ההתקן הזה"
 
-#: qml/listitemmenu.cpp:354
+#: qml/listitemmenu.cpp:359
 #, kde-format
 msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
@@ -475,7 +475,7 @@ msgctxt ""
 msgid "Ports"
 msgstr "פתחות"
 
-#: qml/listitemmenu.cpp:424
+#: qml/listitemmenu.cpp:429
 #, kde-format
 msgctxt ""
 "Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
@@ -483,7 +483,7 @@ msgctxt ""
 msgid "Profiles"
 msgstr "פרופילים"
 
-#: qml/listitemmenu.cpp:458
+#: qml/listitemmenu.cpp:463
 #, kde-format
 msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
@@ -491,7 +491,7 @@ msgctxt ""
 msgid "Play audio using"
 msgstr "לנגן שמע באמצעות"
 
-#: qml/listitemmenu.cpp:460
+#: qml/listitemmenu.cpp:465
 #, kde-format
 msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "
@@ -499,35 +499,35 @@ msgctxt ""
 msgid "Record audio using"
 msgstr "להקליט שמע באמצעות"
 
-#: qml/microphoneindicator.cpp:136 qml/microphoneindicator.cpp:138
+#: qml/microphoneindicator.cpp:143 qml/microphoneindicator.cpp:145
 #, kde-format
 msgid "Microphone"
 msgstr "מיקרופון"
 
-#: qml/microphoneindicator.cpp:138
+#: qml/microphoneindicator.cpp:145
 #, kde-format
 msgid "Microphone Muted"
 msgstr "המיקרופון מושתק"
 
-#: qml/microphoneindicator.cpp:284
+#: qml/microphoneindicator.cpp:291
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: qml/microphoneindicator.cpp:284
+#: qml/microphoneindicator.cpp:291
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
 msgstr "%1 משתמשים במיקרופון"
 
-#: qml/microphoneindicator.cpp:310
+#: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
 msgstr "%1 משתמש במיקרופון (%2)"
 
-#: qml/microphoneindicator.cpp:317
+#: qml/microphoneindicator.cpp:324
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
