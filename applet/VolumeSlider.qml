@@ -37,6 +37,7 @@ PC3.Slider {
     }
 
     Behavior on volume {
+        enabled: control.visible
         NumberAnimation  {
             id: animate
             duration: Kirigami.Units.shortDuration
@@ -46,6 +47,7 @@ PC3.Slider {
 
     // When a maximum volume limit is raised/lower, animate the change.
     Behavior on to {
+        enabled: control.visible
         NumberAnimation {
             duration: Kirigami.Units.shortDuration
             easing.type: Easing.InOutQuad
