@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-23 00:44+0000\n"
-"PO-Revision-Date: 2025-06-10 22:24+0200\n"
+"PO-Revision-Date: 2025-10-09 01:23+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -202,10 +202,9 @@ msgid "Force mute all playback devices"
 msgstr "강제로 모든 재생 장치 음소거"
 
 #: main.qml:701
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "강제로 모든 재생 장치 음소거"
+msgstr "강제로 모든 입력 장치 음소거"
 
 #: main.qml:710
 #, kde-format
