@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Martin Schlander <mschlander@opensuse.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
 # scootergrisen, 2017.
-# SPDX-FileCopyrightText: 2024 rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>
+# SPDX-FileCopyrightText: 2024, 2025 rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-23 00:44+0000\n"
-"PO-Revision-Date: 2024-10-21 11:11+0200\n"
-"Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
+"PO-Revision-Date: 2025-10-31 23:03+0100\n"
+"Last-Translator: Rasmus Rosendahl-Kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: ListItemBase.qml:72
 #, kde-format
@@ -145,7 +145,7 @@ msgstr "Programmer"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Flere handlinger"
 
 #: main.qml:424
 #, kde-format
@@ -159,32 +159,28 @@ msgid "No applications playing or recording audio"
 msgstr "Ingen programmer afspiller eller optager lyd"
 
 #: main.qml:536
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Ingen outputenhed"
+msgstr "Outputenheder"
 
 #: main.qml:538
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Optagelsesstreams"
+msgstr "Outputstrømme"
 
 #: main.qml:596
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Optagelsesenheder"
+msgstr "Inputenheder"
 
 #: main.qml:598
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Optagelsesstreams"
+msgstr "Inputstrømme"
 
 #: main.qml:662
 #, kde-kuit-format
@@ -193,6 +189,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Langvarig brug af denne funktion vil ødelægge enhedens højtaler. Brug den "
+"kun midlertidigt for at gøre stille medier klare."
 
 #: main.qml:678
 #, kde-format
@@ -205,10 +203,9 @@ msgid "Force mute all playback devices"
 msgstr "Gennemtving lydløs for alle afspilningsenheder"
 
 #: main.qml:701
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "Gennemtving lydløs for alle afspilningsenheder"
+msgstr "Gennemtving lydløs for alle inputenheder"
 
 #: main.qml:710
 #, kde-format
