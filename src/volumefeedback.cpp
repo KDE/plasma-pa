@@ -55,7 +55,6 @@ void VolumeFeedback::play(quint32 sinkIndex)
     snprintf(dev, sizeof(dev), "%lu", (unsigned long)sinkIndex);
     ca_context_change_device(context, dev);
 
-    // Ideally we'd use something like ca_gtk_play_for_widget()...
     /* clang-format off */
     ca_context_play(context, cindex,
                     CA_PROP_EVENT_ID, "audio-volume-change",
