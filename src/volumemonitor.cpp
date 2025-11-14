@@ -150,7 +150,7 @@ void VolumeMonitor::createStream()
     pa_stream_set_read_callback(m_stream, read_callback, this);
     pa_stream_set_suspended_callback(m_stream, suspended_callback, this);
 
-    flags = (pa_stream_flags_t)(PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY | PA_STREAM_DONT_INHIBIT_AUTO_SUSPEND);
+    flags = (pa_stream_flags_t)(PA_STREAM_DONT_MOVE | PA_STREAM_PEAK_DETECT | PA_STREAM_ADJUST_LATENCY);
 
     if (pa_stream_connect_record(m_stream, t, &attr, flags) < 0) {
         pa_stream_unref(m_stream);
