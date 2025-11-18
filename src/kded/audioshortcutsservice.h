@@ -13,6 +13,8 @@
 #include <PulseAudioQt/Context>
 #include <PulseAudioQt/Models>
 
+#include <QCoroTask>
+
 #include "globalconfig.h"
 #include "osdservice.h"
 #include "preferreddevice.h"
@@ -42,7 +44,7 @@ private:
     static qint64 boundVolume(qint64 volume, int maxVolume);
     static int volumePercent(qint64 volume);
     int changeVolumePercent(PulseAudioQt::Device *device, int deltaPercent);
-    void handleDefaultSinkChange();
+    QCoro::Task<> handleDefaultSinkChange();
     void muteVolume();
     void playFeedback(int sinkIdx);
     void showMute(int percent);

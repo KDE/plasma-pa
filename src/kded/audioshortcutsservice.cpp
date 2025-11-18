@@ -7,6 +7,8 @@
 
 #include "audioicon.h"
 
+#include <optional>
+
 #include <QAction>
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -21,6 +23,8 @@
 #include <PulseAudioQt/Server>
 #include <PulseAudioQt/Sink>
 #include <PulseAudioQt/Source>
+
+#include <QCoroDBusPendingCall>
 
 #include "mutedmicrophonereminder.h"
 #include "preferreddevice.h"
@@ -237,7 +241,7 @@ int AudioShortcutsService::changeVolumePercent(PulseAudioQt::Device *device, int
     return newPercent;
 }
 
-void AudioShortcutsService::handleDefaultSinkChange()
+QCoro::Task<> AudioShortcutsService::handleDefaultSinkChange()
 {
     const PulseAudioQt::Sink *defaultSink = PulseAudioQt::Context::instance()->server()->defaultSink();
 
@@ -246,15 +250,20 @@ void AudioShortcutsService::handleDefaultSinkChange()
     m_hasDefaultSink = (defaultSink != nullptr);
 
     if (!m_globalConfig->defaultOutputDeviceOsd()) {
-        return;
+        co_return;
     }
 
     if (!hadDefaultSink || !defaultSink) {
-        return;
+        co_return;
     }
+
+    // Could be cone after co_await.
+    QPointer<OsdServiceInterface> osd = m_osdDBusInterface;
 
     QString icon = AudioIcon::forFormFactor(defaultSink->formFactor());
     QString description = nameForDevice(defaultSink);
+    std::optional<int> batteryPercentage;
+
     if (defaultSink->name() == DUMMY_OUTPUT_NAME) {
         description = i18n("No output device");
         if (icon.isEmpty()) {
@@ -277,7 +286,7 @@ void AudioShortcutsService::handleDefaultSinkChange()
             bool convOk = false;
             const int cardBluetoothBattery = cardProperties[u"bluetooth.battery"_s].toString().remove('%').toInt(&convOk);
             if (convOk) {
-                description = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, cardBluetoothBattery);
+                batteryPercentage = cardBluetoothBattery;
             } else {
                 // Ask Bluez, if it is a bluetooth device.
                 const QString bluezPath = cardProperties[u"api.bluez5.path"_s].toString();
@@ -285,32 +294,27 @@ void AudioShortcutsService::handleDefaultSinkChange()
                     QDBusMessage batteryMessage = QDBusMessage::createMethodCall(u"org.bluez"_s, bluezPath, u"org.freedesktop.DBus.Properties"_s, u"Get"_s);
                     batteryMessage.setArguments({u"org.bluez.Battery1"_s, u"Percentage"_s});
 
-                    auto reply = QDBusConnection::systemBus().asyncCall(batteryMessage);
-                    auto *watcher = new QDBusPendingCallWatcher(reply, this);
-                    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher, icon, description] {
-                        QDBusPendingReply<QDBusVariant> reply = *watcher;
-
-                        QString newDescription = description;
-
-                        if (!reply.isError()) {
-                            bool ok;
-                            // NOTE "Percentage" on org.bluez.Battery1 is of type Byte (y).
-                            const int percentage = reply.value().variant().toInt(&ok);
-                            if (ok) {
-                                newDescription = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, percentage);
-                            }
+                    QDBusReply<QDBusVariant> reply = co_await QDBusConnection::sessionBus().asyncCall(batteryMessage);
+                    if (reply.isValid()) {
+                        bool ok;
+                        // NOTE "Percentage" on org.bluez.Battery1 is of type Byte (y).
+                        const int percentage = reply.value().variant().toInt(&ok);
+                        if (ok) {
+                            batteryPercentage = percentage;
                         }
-
-                        m_osdDBusInterface->showText(icon, newDescription);
-                        watcher->deleteLater();
-                    });
-                    return;
+                    }
                 }
             }
         }
     }
 
-    m_osdDBusInterface->showText(icon, description);
+    if (batteryPercentage.has_value()) {
+        description = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, batteryPercentage.value());
+    }
+
+    if (osd) {
+        osd->showText(icon, description);
+    }
 }
 
 void AudioShortcutsService::muteVolume()
