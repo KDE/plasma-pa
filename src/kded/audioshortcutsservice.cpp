@@ -321,6 +321,11 @@ QCoro::Task<> AudioShortcutsService::handleDefaultSinkChange()
         }
     }
 
+    // By the time we did all of the battery DBus stuff above, the output might have already changed...
+    if (defaultSink != PulseAudioQt::Context::instance()->server()->defaultSink()) {
+        co_return;
+    }
+
     if (batteryPercentage.has_value()) {
         description = i18nc("Device name (Battery percent)", "%1 (%2% Battery)", description, batteryPercentage.value());
     }
