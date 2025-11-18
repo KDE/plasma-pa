@@ -7,6 +7,7 @@
 
 #include "audioicon.h"
 
+#include <chrono>
 #include <optional>
 
 #include <QAction>
@@ -25,6 +26,7 @@
 #include <PulseAudioQt/Source>
 
 #include <QCoroDBusPendingCall>
+#include <QCoroTimer>
 
 #include "mutedmicrophonereminder.h"
 #include "preferreddevice.h"
@@ -33,6 +35,8 @@ K_PLUGIN_CLASS_WITH_JSON(AudioShortcutsService, "audioshortcutsservice.json")
 
 constexpr QLatin1String OSD_DBUS_SERVICE = "org.kde.plasmashell"_L1;
 constexpr QLatin1String OSD_DBUS_PATH = "/org/kde/osdService"_L1;
+
+using namespace std::literals::chrono_literals;
 
 AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVariant> &)
     : KDEDModule(parent)
@@ -295,6 +299,15 @@ QCoro::Task<> AudioShortcutsService::handleDefaultSinkChange()
                     batteryMessage.setArguments({u"org.bluez.Battery1"_s, u"Percentage"_s});
 
                     QDBusReply<QDBusVariant> reply = co_await QDBusConnection::sessionBus().asyncCall(batteryMessage);
+
+                    // The interface might not be there yet by the time we query it when it was only just connected.
+                    // InvalidArgs "No such interface 'org.bluez.Battery1'"
+                    if (reply.error().type() == QDBusError::InvalidArgs) {
+                        co_await QCoro::sleepFor(1s);
+
+                        reply = co_await QDBusConnection::systemBus().asyncCall(batteryMessage);
+                    }
+
                     if (reply.isValid()) {
                         bool ok;
                         // NOTE "Percentage" on org.bluez.Battery1 is of type Byte (y).
