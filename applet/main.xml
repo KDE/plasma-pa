@@ -44,6 +44,10 @@
     <entry name="migrated" type="Bool">
       <default>false</default>
     </entry>
+    <entry name="pin" type="Bool">
+      <label>Whether to keep the popup open after losing focus</label>
+      <default>false</default>
+    </entry>
   </group>
 
 </kcfg>

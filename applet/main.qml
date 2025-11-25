@@ -67,7 +67,8 @@ PlasmoidItem {
     switchWidth: Kirigami.Units.gridUnit * 14
 
     Plasmoid.icon: PreferredDevice.sink && !isDummyOutput(PreferredDevice.sink) ? AudioIcon.forVolume(volumePercent(PreferredDevice.sink.volume), PreferredDevice.sink.muted, "")
-                                                                                          : AudioIcon.forVolume(0, true, "")
+                                                                                : AudioIcon.forVolume(0, true, "")
+    hideOnWindowDeactivate: !Plasmoid.configuration.pin
     toolTipMainText: {
         var sink = PreferredDevice.sink
         if (!sink || isDummyOutput(sink)) {
@@ -399,6 +400,22 @@ PlasmoidItem {
                     PC3.ToolTip {
                         text: plasmoid.internalAction("configure").text
                     }
+                }
+
+                PC3.ToolButton {
+                    visible: main.compactInPanel && !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+
+                    icon.name: "window-pin-symbolic"
+                    text: i18nc("@action:button keep this widget's pop-up open until explicitly dismissed", "Keep open")
+                    display: PC3.AbstractButton.IconOnly
+
+                    checkable: true
+                    checked: Plasmoid.configuration.pin
+                    onToggled: Plasmoid.configuration.pin = checked
+
+                    PC3.ToolTip.text: text
+                    PC3.ToolTip.visible: hovered || activeFocus
+                    PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
             }
         }
