@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-29 00:44+0000\n"
 "PO-Revision-Date: 2025-08-07 08:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -104,88 +104,95 @@ msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "S'està intentant reconnectar…"
 
-#: main.qml:78
+#: main.qml:79
 #, kde-format
 msgid "Audio Muted"
 msgstr "Àudio silenciat"
 
-#: main.qml:80
+#: main.qml:81
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volum al %1%"
 
-#: main.qml:91
+#: main.qml:92
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Clic del mig per a activar el so"
 
-#: main.qml:92
+#: main.qml:93
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Clic del mig per a silenciar tot l'àudio"
 
-#: main.qml:93
+#: main.qml:94
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Desplaçament per a ajustar el volum"
 
-#: main.qml:109
+#: main.qml:110
 #, kde-format
 msgid "Device name not found"
 msgstr "No s'ha trobat el nom del dispositiu"
 
-#: main.qml:335
+#: main.qml:336
 #, kde-format
 msgid "Devices"
 msgstr "Dispositius"
 
-#: main.qml:342
+#: main.qml:343
 #, kde-format
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: main.qml:366
+#: main.qml:367
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Més accions"
 
-#: main.qml:424
+#: main.qml:409
+#, kde-format
+msgctxt ""
+"@action:button keep this widget's pop-up open until explicitly dismissed"
+msgid "Keep open"
+msgstr ""
+
+#: main.qml:441
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Torna a intentar-ho"
 
-#: main.qml:451
+#: main.qml:468
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "No hi ha cap aplicació reproduint o enregistrant àudio"
 
-#: main.qml:536
+#: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Dispositius de sortida"
 
-#: main.qml:538
+#: main.qml:555
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Fluxos de sortida"
 
-#: main.qml:596
+#: main.qml:613
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Dispositius d'entrada"
 
-#: main.qml:598
+#: main.qml:615
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Fluxos d'entrada"
 
-#: main.qml:662
+#: main.qml:679
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -196,27 +203,27 @@ msgstr ""
 "Només l'utilitzeu temporalment per a fer audibles els mitjans de comunicació "
 "silenciosos."
 
-#: main.qml:678
+#: main.qml:695
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Eleva el volum màxim"
 
-#: main.qml:692
+#: main.qml:709
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Força el silenci de tots els dispositius de reproducció"
 
-#: main.qml:701
+#: main.qml:718
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Força el silenci de tots els dispositius d'entrada"
 
-#: main.qml:710
+#: main.qml:727
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Mostra els dispositius virtuals"
 
-#: main.qml:720
+#: main.qml:737
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configura els dispositius d'àudio…"

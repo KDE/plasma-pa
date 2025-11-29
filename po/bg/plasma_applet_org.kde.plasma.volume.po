@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-29 00:44+0000\n"
 "PO-Revision-Date: 2025-08-16 22:35+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -100,88 +100,95 @@ msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Опит за повторно свързване…"
 
-#: main.qml:78
+#: main.qml:79
 #, kde-format
 msgid "Audio Muted"
 msgstr "Аудио заглушено"
 
-#: main.qml:80
+#: main.qml:81
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Сила на звука %1%"
 
-#: main.qml:91
+#: main.qml:92
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Кликване със среден бутон на мишката за включване на звука"
 
-#: main.qml:92
+#: main.qml:93
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Кликване със среден бутон на мишката за изключване на звука"
 
-#: main.qml:93
+#: main.qml:94
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Скролирайте за регулиране силата на звука"
 
-#: main.qml:109
+#: main.qml:110
 #, kde-format
 msgid "Device name not found"
 msgstr "Името на устройството не е намерено"
 
-#: main.qml:335
+#: main.qml:336
 #, kde-format
 msgid "Devices"
 msgstr "Устройства"
 
-#: main.qml:342
+#: main.qml:343
 #, kde-format
 msgid "Applications"
 msgstr "Приложения"
 
-#: main.qml:366
+#: main.qml:367
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Допълнителни действия"
 
-#: main.qml:424
+#: main.qml:409
+#, kde-format
+msgctxt ""
+"@action:button keep this widget's pop-up open until explicitly dismissed"
+msgid "Keep open"
+msgstr ""
+
+#: main.qml:441
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Повторен опит"
 
-#: main.qml:451
+#: main.qml:468
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Няма приложения, които възпроизвеждат или записват звук"
 
-#: main.qml:536
+#: main.qml:553
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Изходни устройства"
 
-#: main.qml:538
+#: main.qml:555
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Изходни потоци"
 
-#: main.qml:596
+#: main.qml:613
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Входни устройства"
 
-#: main.qml:598
+#: main.qml:615
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Входящи потоци"
 
-#: main.qml:662
+#: main.qml:679
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -192,27 +199,27 @@ msgstr ""
 "устройството. Използвайте я само временно, за да могат тихите мултимедийни "
 "файлове да се чуват."
 
-#: main.qml:678
+#: main.qml:695
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Повишаване на максималния обем"
 
-#: main.qml:692
+#: main.qml:709
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Принудително заглушаване на всички устройства за възпроизвеждане"
 
-#: main.qml:701
+#: main.qml:718
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Принудително заглушаване на всички устройства"
 
-#: main.qml:710
+#: main.qml:727
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показване на виртуални устройства"
 
-#: main.qml:720
+#: main.qml:737
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Конфигуриране на звукови устройства…"
