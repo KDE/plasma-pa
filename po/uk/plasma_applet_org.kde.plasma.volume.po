@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-29 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 08:25+0300\n"
+"PO-Revision-Date: 2025-11-29 18:34+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -154,7 +154,7 @@ msgstr "Додаткові дії"
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "Тримати відкритим"
 
 #: main.qml:441
 #, kde-format
