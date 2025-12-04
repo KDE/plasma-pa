@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-29 00:44+0000\n"
-"PO-Revision-Date: 2025-11-30 11:19+0000\n"
+"PO-Revision-Date: 2025-12-03 11:08+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -114,12 +114,12 @@ msgstr "Hljóðstyrkur á %1%"
 #: main.qml:92
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr "Miðjusmella til að afþagga"
+msgstr "Miðjusmelltu til að afþagga"
 
 #: main.qml:93
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr "Miðjusmella til að þagga allt hljóð"
+msgstr "Miðjusmelltu til að þagga allt hljóð"
 
 #: main.qml:94
 #, kde-format
@@ -129,7 +129,7 @@ msgstr "Skrunaðu til að stilla hljóðstyrkinn"
 #: main.qml:110
 #, kde-format
 msgid "Device name not found"
-msgstr "Nafn tækis fannst ekki"
+msgstr "Heiti tækis fannst ekki"
 
 #: main.qml:336
 #, kde-format
@@ -175,7 +175,7 @@ msgstr "Úttakstæki"
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Úttaksstraumar"
+msgstr "Úttaksstreymi"
 
 #: main.qml:613
 #, kde-format
@@ -187,7 +187,7 @@ msgstr "Inntakstæki"
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Inntaksstraumar"
+msgstr "Inntaksstreymi"
 
 #: main.qml:679
 #, kde-kuit-format
@@ -227,7 +227,7 @@ msgstr "&Grunnstilla hljóðtæki…"
 #: StreamListItem.qml:36
 #, kde-format
 msgid "Stream name not found"
-msgstr "Nafn straums fannst ekki"
+msgstr "Heiti streymis fannst ekki"
 
 #~ msgctxt "Device name (Battery percent)"
 #~ msgid "%1 (%2% Battery)"
