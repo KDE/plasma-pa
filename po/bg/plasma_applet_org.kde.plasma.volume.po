@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-29 00:44+0000\n"
-"PO-Revision-Date: 2025-08-16 22:35+0200\n"
+"PO-Revision-Date: 2025-12-04 17:39+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -151,7 +151,7 @@ msgstr "Допълнителни действия"
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "Задържане отворен"
 
 #: main.qml:441
 #, kde-format
