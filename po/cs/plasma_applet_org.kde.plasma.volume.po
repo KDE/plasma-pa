@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2024 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2024, 2025 Vít Pelčák <vit@pelcak.org>
 # Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2024-08-20 14:09+0200\n"
+"PO-Revision-Date: 2025-12-05 10:25+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: ListItemBase.qml:72
 #, kde-format
@@ -145,7 +145,7 @@ msgstr "Aplikace"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Další činnosti"
 
 #: main.qml:424
 #, kde-format
@@ -162,25 +162,25 @@ msgstr "Žádné aplikace přehrávající nebo nahrávající audio"
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr ""
+msgstr "Výstupní zařízení"
 
 #: main.qml:538
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "Výstupní proudy"
 
 #: main.qml:596
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr ""
+msgstr "Vstupní zařízení"
 
 #: main.qml:598
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "Vstupní proudy"
 
 #: main.qml:662
 #, kde-kuit-format
@@ -203,7 +203,7 @@ msgstr "Vynutit ztlumení všech přehrávacích zařízení"
 #: main.qml:701
 #, kde-format
 msgid "Force mute all input devices"
-msgstr ""
+msgstr "Vynutit ztlumení všech vstupních zařízení"
 
 #: main.qml:710
 #, kde-format
