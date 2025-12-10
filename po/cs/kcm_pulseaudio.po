@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2024 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2024, 2025 Vít Pelčák <vit@pelcak.org>
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2024-11-29 09:29+0100\n"
+"PO-Revision-Date: 2025-12-05 10:26+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -350,7 +350,7 @@ msgstr "Hlasitost audia"
 #: kcm/ui/VolumeControlsConfig.qml:76
 #, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr ""
+msgstr "Zobrazit vyskakovací okno při změně:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
@@ -366,7 +366,7 @@ msgstr "Stav ztlumení"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr ""
+msgstr "Aplikace bude spuštěna se ztlumeným mikrofonem"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -450,7 +450,7 @@ msgstr "%1 (%2% Baterie)"
 #, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr ""
+msgstr "%1: Ztlumený"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
