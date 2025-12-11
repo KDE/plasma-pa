@@ -321,14 +321,16 @@ PlasmoidItem {
                     }
 
                     onCurrentIndexChanged: {
-                        switch (currentIndex) {
-                        case devicesTab.PC3.TabBar.index:
-                            plasmoid.configuration.currentTab = "devices";
-                            break;
-                        case streamsTab.PC3.TabBar.index:
-                            plasmoid.configuration.currentTab = "streams";
-                            break;
-                        }
+                        Qt.callLater( () => { // callLater to avoid interference while loading
+                            switch (currentIndex) {
+                            case devicesTab.PC3.TabBar.index:
+                                plasmoid.configuration.currentTab = "devices";
+                                break;
+                            case streamsTab.PC3.TabBar.index:
+                                plasmoid.configuration.currentTab = "streams";
+                                break;
+                            }
+                        })
                     }
 
                     PC3.TabButton {
