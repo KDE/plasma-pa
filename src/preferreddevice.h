@@ -26,7 +26,6 @@ Q_SIGNALS:
 private:
     void updatePreferredSink();
     void updatePreferredSource();
-    [[nodiscard]] PulseAudioQt::Sink *findPreferredSink() const;
     PulseAudioQt::Sink *m_sink = nullptr;
     PulseAudioQt::Source *m_source = nullptr;
 };
