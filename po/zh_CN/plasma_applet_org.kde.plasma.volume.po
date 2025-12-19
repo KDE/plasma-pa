@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:44+0000\n"
+"POT-Creation-Date: 2025-12-19 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -131,65 +131,65 @@ msgstr "滚动鼠标滚轮以调节音量"
 msgid "Device name not found"
 msgstr "找不到设备名称"
 
-#: main.qml:336
+#: main.qml:338
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: main.qml:343
+#: main.qml:345
 #, kde-format
 msgid "Applications"
 msgstr "应用程序"
 
-#: main.qml:367
+#: main.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "更多操作"
 
-#: main.qml:409
+#: main.qml:411
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "保持打开"
 
-#: main.qml:441
+#: main.qml:443
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "重试"
 
-#: main.qml:468
+#: main.qml:470
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
-#: main.qml:553
+#: main.qml:555
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "输出设备"
 
-#: main.qml:555
+#: main.qml:557
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "输出流"
 
-#: main.qml:613
+#: main.qml:615
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "输入设备"
 
-#: main.qml:615
+#: main.qml:617
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "输入流"
 
-#: main.qml:679
+#: main.qml:681
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -199,27 +199,27 @@ msgstr ""
 "长时间使用此功能会损坏设备的扬声器。请仅在需要听清音量较低的媒体内容时短暂使"
 "用。"
 
-#: main.qml:695
+#: main.qml:697
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: main.qml:709
+#: main.qml:711
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
 
-#: main.qml:718
+#: main.qml:720
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "强制静音所有输入设备"
 
-#: main.qml:727
+#: main.qml:729
 #, kde-format
 msgid "Show virtual devices"
 msgstr "显示虚拟设备"
 
-#: main.qml:737
+#: main.qml:739
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "配置音频设备(&C)…"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:44+0000\n"
+"POT-Creation-Date: 2025-12-19 00:45+0000\n"
 "PO-Revision-Date: 2025-11-29 18:34+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -133,65 +133,65 @@ msgstr "Гортання для коригування гучності"
 msgid "Device name not found"
 msgstr "Назву пристрою не знайдено"
 
-#: main.qml:336
+#: main.qml:338
 #, kde-format
 msgid "Devices"
 msgstr "Пристрої"
 
-#: main.qml:343
+#: main.qml:345
 #, kde-format
 msgid "Applications"
 msgstr "Програми"
 
-#: main.qml:367
+#: main.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Додаткові дії"
 
-#: main.qml:409
+#: main.qml:411
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Тримати відкритим"
 
-#: main.qml:441
+#: main.qml:443
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Повторити"
 
-#: main.qml:468
+#: main.qml:470
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Жодна програма не відтворює і не записує звук"
 
-#: main.qml:553
+#: main.qml:555
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Пристрої відтворення"
 
-#: main.qml:555
+#: main.qml:557
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Потоки відтворення"
 
-#: main.qml:613
+#: main.qml:615
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Пристрої введення"
 
-#: main.qml:615
+#: main.qml:617
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Потоки вхідних даних"
 
-#: main.qml:679
+#: main.qml:681
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -201,27 +201,27 @@ msgstr ""
 "Тривале використання цієї можливості пошкодить динаміки пристрою. "
 "Користуйтеся нею лише тимчасово, щоб зробити чутними тихі звуки."
 
-#: main.qml:695
+#: main.qml:697
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Збільшити максимальну гучність"
 
-#: main.qml:709
+#: main.qml:711
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Примусово вимкнути всі пристрої відтворення"
 
-#: main.qml:718
+#: main.qml:720
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Примусово вимкнути всі пристрої введення даних"
 
-#: main.qml:727
+#: main.qml:729
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показати віртуальні пристрої"
 
-#: main.qml:737
+#: main.qml:739
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Налаштувати звукові пристрої…"

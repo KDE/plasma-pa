@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:44+0000\n"
+"POT-Creation-Date: 2025-12-19 00:45+0000\n"
 "PO-Revision-Date: 2025-11-29 05:07+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -131,65 +131,65 @@ msgstr "ხმის მოსარგებად აქაჩეთ"
 msgid "Device name not found"
 msgstr "მოწყობილობა ნაპოვნი არაა"
 
-#: main.qml:336
+#: main.qml:338
 #, kde-format
 msgid "Devices"
 msgstr "მოწყობილობები"
 
-#: main.qml:343
+#: main.qml:345
 #, kde-format
 msgid "Applications"
 msgstr "პროგრამები"
 
-#: main.qml:367
+#: main.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "მეტი ქმედება"
 
-#: main.qml:409
+#: main.qml:411
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "ღიად დატოვება"
 
-#: main.qml:441
+#: main.qml:443
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "გამეორება"
 
-#: main.qml:468
+#: main.qml:470
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ამჟამად აუდიოს არც ერთი აპლიკაცია არ უკრავს და არც იწერს"
 
-#: main.qml:553
+#: main.qml:555
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "გამოტანის მოწყობილობები"
 
-#: main.qml:555
+#: main.qml:557
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "გამავალი ნაკადები"
 
-#: main.qml:613
+#: main.qml:615
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "შეტანის მოწყობილობები"
 
-#: main.qml:615
+#: main.qml:617
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "შემომავალი ნაკადები"
 
-#: main.qml:679
+#: main.qml:681
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -199,27 +199,27 @@ msgstr ""
 "ამ ფუნქციის ხანგრძლივი გამოყენება მოწყობილობის დინამიკებს დააზიანებს. "
 "გამოიყენეთ ის, მხოლოდ, დროებით, რათა ჩუმი მედია მოსმენადი გახადოთ."
 
-#: main.qml:695
+#: main.qml:697
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "მაქსიმალური ხმის აწევა"
 
-#: main.qml:709
+#: main.qml:711
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ყველა დამკვრელი მოწყობილბის დადუმება"
 
-#: main.qml:718
+#: main.qml:720
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "ყველა შეყვანის მოწყობილობის ნაძალადევი დადუმება"
 
-#: main.qml:727
+#: main.qml:729
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ვირტუალური მოწყობილობების ჩვენება"
 
-#: main.qml:737
+#: main.qml:739
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "აუდიო მოწყობილობების &მორგება…"

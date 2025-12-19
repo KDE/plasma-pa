@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-29 00:44+0000\n"
+"POT-Creation-Date: 2025-12-19 00:45+0000\n"
 "PO-Revision-Date: 2025-12-11 18:34+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -134,65 +134,65 @@ msgstr "Изменить громкость: прокручивание колё
 msgid "Device name not found"
 msgstr "Имя устройства не найдено"
 
-#: main.qml:336
+#: main.qml:338
 #, kde-format
 msgid "Devices"
 msgstr "Устройства"
 
-#: main.qml:343
+#: main.qml:345
 #, kde-format
 msgid "Applications"
 msgstr "Программы"
 
-#: main.qml:367
+#: main.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Дополнительные действия"
 
-#: main.qml:409
+#: main.qml:411
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Держать открытым"
 
-#: main.qml:441
+#: main.qml:443
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Повторить"
 
-#: main.qml:468
+#: main.qml:470
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Ни одно приложение не воспроизводит и не записывает звук."
 
-#: main.qml:553
+#: main.qml:555
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Устройства вывода звука"
 
-#: main.qml:555
+#: main.qml:557
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Исходящие потоки звука"
 
-#: main.qml:613
+#: main.qml:615
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Устройства захвата звука"
 
-#: main.qml:615
+#: main.qml:617
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Входящие потоки звука"
 
-#: main.qml:679
+#: main.qml:681
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -203,27 +203,27 @@ msgstr ""
 "устройства. Используйте её только временно для прослушивания слишком тихих "
 "медиафайлов."
 
-#: main.qml:695
+#: main.qml:697
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Увеличить максимальную громкость"
 
-#: main.qml:709
+#: main.qml:711
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Принудительно выключить звук всех устройств воспроизведения"
 
-#: main.qml:718
+#: main.qml:720
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Принудительно выключить звук всех устройств захвата звука"
 
-#: main.qml:727
+#: main.qml:729
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Показывать виртуальные устройства"
 
-#: main.qml:737
+#: main.qml:739
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Настроить звуковые устройства..."
