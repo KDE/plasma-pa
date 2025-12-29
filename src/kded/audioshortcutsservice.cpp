@@ -393,6 +393,8 @@ void AudioShortcutsService::showPushToTalk(bool talk)
 
     if (talk) {
         m_osdDBusInterface->showText(u"irc-voice"_s, i18nc("Push to talk button depressed, microphone unmuted", "Speak…"));
+    } else {
+        m_osdDBusInterface->hide();
     }
 }
 
