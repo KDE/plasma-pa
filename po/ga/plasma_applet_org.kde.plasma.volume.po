@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-pa package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-pa\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-19 00:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ListItemBase.qml:72
+#, kde-format
+msgid "Currently not recording"
+msgstr ""
+
+#: ListItemBase.qml:73
+#, kde-format
+msgid "Currently not playing"
+msgstr ""
+
+#: ListItemBase.qml:204
+#, kde-format
+msgctxt "@action:button"
+msgid "Additional Options"
+msgstr ""
+
+#: ListItemBase.qml:206
+#, kde-format
+msgid "Show additional options for %1"
+msgstr ""
+
+#: ListItemBase.qml:228
+#, kde-format
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr ""
+
+#: ListItemBase.qml:228
+#, kde-format
+msgctxt "@action:button"
+msgid "Mute"
+msgstr ""
+
+#: ListItemBase.qml:230
+#, kde-format
+msgid "Unmute %1"
+msgstr ""
+
+#: ListItemBase.qml:230
+#, kde-format
+msgid "Mute %1"
+msgstr ""
+
+#: ListItemBase.qml:253
+#, kde-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr ""
+
+#: ListItemBase.qml:317
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr ""
+
+#: ListItemBase.qml:338
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr ""
+
+#: main.qml:36
+#, kde-format
+msgid "Audio Volume"
+msgstr ""
+
+#: main.qml:53 main.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "Connection to the Sound Service Lost"
+msgstr ""
+
+#: main.qml:57
+#, kde-format
+msgid "No output or input devices found"
+msgstr ""
+
+#: main.qml:61
+#, kde-format
+msgctxt "@info reconnecting to pulseaudio"
+msgid "Trying to reconnect…"
+msgstr ""
+
+#: main.qml:79
+#, kde-format
+msgid "Audio Muted"
+msgstr ""
+
+#: main.qml:81
+#, kde-format
+msgid "Volume at %1%"
+msgstr ""
+
+#: main.qml:92
+#, kde-format
+msgid "Middle-click to unmute"
+msgstr ""
+
+#: main.qml:93
+#, kde-format
+msgid "Middle-click to mute all audio"
+msgstr ""
+
+#: main.qml:94
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr ""
+
+#: main.qml:110
+#, kde-format
+msgid "Device name not found"
+msgstr ""
+
+#: main.qml:338
+#, kde-format
+msgid "Devices"
+msgstr ""
+
+#: main.qml:345
+#, kde-format
+msgid "Applications"
+msgstr ""
+
+#: main.qml:369
+#, kde-format
+msgctxt "@action:button"
+msgid "More actions"
+msgstr ""
+
+#: main.qml:411
+#, kde-format
+msgctxt ""
+"@action:button keep this widget's pop-up open until explicitly dismissed"
+msgid "Keep open"
+msgstr ""
+
+#: main.qml:443
+#, kde-format
+msgctxt "@action retry connecting to pulseaudio"
+msgid "Retry"
+msgstr ""
+
+#: main.qml:470
+#, kde-format
+msgid "No applications playing or recording audio"
+msgstr ""
+
+#: main.qml:555
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr ""
+
+#: main.qml:557
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr ""
+
+#: main.qml:615
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr ""
+
+#: main.qml:617
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr ""
+
+#: main.qml:681
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Prolonged use of this feature will damage the device's speakers. Only use it "
+"temporarily to make quiet media audible."
+msgstr ""
+
+#: main.qml:697
+#, kde-format
+msgid "Raise maximum volume"
+msgstr ""
+
+#: main.qml:711
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr ""
+
+#: main.qml:720
+#, kde-format
+msgid "Force mute all input devices"
+msgstr ""
+
+#: main.qml:729
+#, kde-format
+msgid "Show virtual devices"
+msgstr ""
+
+#: main.qml:739
+#, kde-format
+msgid "&Configure Audio Devices…"
+msgstr ""
+
+#: StreamListItem.qml:36
+#, kde-format
+msgid "Stream name not found"
+msgstr ""
