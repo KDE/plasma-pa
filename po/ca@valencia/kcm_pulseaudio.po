@@ -29,7 +29,7 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
-"No s'han aplicat els canvis.<nl/>No s'ha pogut reiniciar «wireplumber."
+"No s'han aplicat els canvis.<nl/>Ha fallat mentre es reiniciava «wireplumber."
 "service». L'ordre ha fallat."
 
 #: devicerenamesaver.cpp:125
@@ -39,26 +39,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
-"No s'han aplicat els canvis.<nl/>No s'ha pogut reiniciar «wireplumber."
+"No s'han aplicat els canvis.<nl/>Ha fallat mentre es reiniciava «wireplumber."
 "service». L'ordre ha acabat amb el codi: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr "No s'ha pogut gestionar els dispositius: %1."
+msgstr "Ha fallat mentre es gestionaven els dispositius: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr "No s'ha pogut crear el directori: %1."
+msgstr "Ha fallat mentre es creava el directori: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr "No s'ha pogut obrir el fitxer per a escriptura: %1."
+msgstr "Ha fallat mentre s'obria el fitxer per a escriptura: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -199,7 +199,7 @@ msgid ""
 "Error trying to play a test sound. \n"
 "The system said: \"%1\""
 msgstr ""
-"S'ha produït un error en intentar reproduir un so de prova. \n"
+"S'ha produït un error mentre s'intentava reproduir un so de prova. \n"
 "El sistema ha indicat: «%1»"
 
 #: kcm/ui/main.qml:416
