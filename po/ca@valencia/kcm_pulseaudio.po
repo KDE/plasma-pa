@@ -151,7 +151,7 @@ msgid ""
 "Error trying to play a test sound. \n"
 "The system said: \"%1\""
 msgstr ""
-"S'ha produït un error en intentar reproduir un so de prova. \n"
+"S'ha produït un error mentre s'intentava reproduir un so de prova. \n"
 "El sistema ha indicat: «%1»"
 
 #: kcm/package/contents/ui/main.qml:422
