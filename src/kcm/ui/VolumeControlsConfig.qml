@@ -92,6 +92,13 @@ Kirigami.Page {
             }
 
             QQC2.CheckBox {
+                id: pushToTalkOsd
+                checked: config.pushToTalkOsd
+                onToggled: { config.pushToTalkOsd = checked; config.save() }
+                text: i18nc("Show OSD when", "Push to talk")
+            }
+
+            QQC2.CheckBox {
                 checked: config.mutedMicrophoneReminderOsd
                 onToggled: { config.mutedMicrophoneReminderOsd = checked; config.save() }
                 text: i18nc("Show OSD when", "Application starts using muted microphone")

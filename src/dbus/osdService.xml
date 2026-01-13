@@ -42,6 +42,7 @@
       <arg name="icon" type="s" direction="in"/>
       <arg name="text" type="s" direction="in"/>
     </method>
+    <method name="hide" />
   </interface>
 </node>
 
