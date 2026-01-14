@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-14 00:46+0000\n"
 "PO-Revision-Date: 2025-04-13 18:12+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -79,7 +79,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:224
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:233
 #, kde-format
 msgid "Device name not found"
 msgstr "சாதனத்தின் பெயர் தெரியாது"
@@ -366,7 +366,13 @@ msgstr "ஒலிவாங்கியின் உணர்வுத்தி�
 msgid "Mute state"
 msgstr "ஒலியடக்க நிலை"
 
-#: kcm/ui/VolumeControlsConfig.qml:97
+#: kcm/ui/VolumeControlsConfig.qml:98
+#, kde-format
+msgctxt "Show OSD when"
+msgid "Push to talk"
+msgstr ""
+
+#: kcm/ui/VolumeControlsConfig.qml:104
 #, fuzzy, kde-format
 #| msgctxt "List of apps is using mic"
 #| msgid "%1 are using the microphone"
@@ -374,7 +380,7 @@ msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "%1 ஒலிவாங்கியை பயன்படுத்துகின்றன"
 
-#: kcm/ui/VolumeControlsConfig.qml:104
+#: kcm/ui/VolumeControlsConfig.qml:111
 #, kde-format
 msgid "Default output device"
 msgstr "இயல்பிருப்பு வெளியீடு சாதனம்"
@@ -431,26 +437,38 @@ msgstr "ஒலியை அடக்கு"
 msgid "Mute Microphone"
 msgstr "ஒலிவாங்கியின் ஒலியை அடக்கு"
 
-#: kded/audioshortcutsservice.cpp:195
+#: kded/audioshortcutsservice.cpp:196
+#, kde-format
+msgctxt "Microphone unmuted only while holding the key"
+msgid "Push to talk"
+msgstr ""
+
+#: kded/audioshortcutsservice.cpp:204
 #, kde-format
 msgid "Audio Volume"
 msgstr "ஒலியின் அளவு"
 
-#: kded/audioshortcutsservice.cpp:213
+#: kded/audioshortcutsservice.cpp:222
 #, kde-format
 msgid "No such device"
 msgstr "அப்படிப்பட்ட சாதனம் இல்லை"
 
-#: kded/audioshortcutsservice.cpp:259
+#: kded/audioshortcutsservice.cpp:268
 #, kde-format
 msgid "No output device"
 msgstr "வெளியீட்டு சாதனம் இல்லை"
 
-#: kded/audioshortcutsservice.cpp:280 kded/audioshortcutsservice.cpp:300
+#: kded/audioshortcutsservice.cpp:289 kded/audioshortcutsservice.cpp:309
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (மின்கலம் %2%)"
+
+#: kded/audioshortcutsservice.cpp:395
+#, kde-format
+msgctxt "Push to talk button depressed, microphone unmuted"
+msgid "Speak…"
+msgstr ""
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, fuzzy, kde-format

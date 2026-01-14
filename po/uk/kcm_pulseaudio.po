@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-14 00:46+0000\n"
 "PO-Revision-Date: 2025-04-25 09:23+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -82,7 +82,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Повторити"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:224
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:233
 #, kde-format
 msgid "Device name not found"
 msgstr "Не знайдено пристрою з такою назвою"
@@ -373,13 +373,19 @@ msgstr "Чутливості мікрофона"
 msgid "Mute state"
 msgstr "Стан вимикання звуку"
 
-#: kcm/ui/VolumeControlsConfig.qml:97
+#: kcm/ui/VolumeControlsConfig.qml:98
+#, kde-format
+msgctxt "Show OSD when"
+msgid "Push to talk"
+msgstr ""
+
+#: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "Програма запускається із вимиканням мікрофона"
 
-#: kcm/ui/VolumeControlsConfig.qml:104
+#: kcm/ui/VolumeControlsConfig.qml:111
 #, kde-format
 msgid "Default output device"
 msgstr "Типовому пристрої відтворення"
@@ -436,26 +442,38 @@ msgstr "Вимкнути звук"
 msgid "Mute Microphone"
 msgstr "Вимкнути мікрофон"
 
-#: kded/audioshortcutsservice.cpp:195
+#: kded/audioshortcutsservice.cpp:196
+#, kde-format
+msgctxt "Microphone unmuted only while holding the key"
+msgid "Push to talk"
+msgstr ""
+
+#: kded/audioshortcutsservice.cpp:204
 #, kde-format
 msgid "Audio Volume"
 msgstr "Гучність"
 
-#: kded/audioshortcutsservice.cpp:213
+#: kded/audioshortcutsservice.cpp:222
 #, kde-format
 msgid "No such device"
 msgstr "Пристрою не знайдено"
 
-#: kded/audioshortcutsservice.cpp:259
+#: kded/audioshortcutsservice.cpp:268
 #, kde-format
 msgid "No output device"
 msgstr "Не виявлено пристрою виведення"
 
-#: kded/audioshortcutsservice.cpp:280 kded/audioshortcutsservice.cpp:300
+#: kded/audioshortcutsservice.cpp:289 kded/audioshortcutsservice.cpp:309
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% заряду)"
+
+#: kded/audioshortcutsservice.cpp:395
+#, kde-format
+msgctxt "Push to talk button depressed, microphone unmuted"
+msgid "Speak…"
+msgstr ""
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
