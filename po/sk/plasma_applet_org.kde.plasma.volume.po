@@ -4,19 +4,20 @@
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2022.
 # Dušan Kazik <prescott66@gmail.com>, 2020.
 # Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2026 Lucia Mrenica <lucia.mrenica@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:45+0000\n"
-"PO-Revision-Date: 2023-12-10 15:08+0100\n"
-"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
-"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"PO-Revision-Date: 2026-01-14 18:47+0100\n"
+"Last-Translator: Lucia Mrenica <lucia.mrenica@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ListItemBase.qml:72
@@ -89,7 +90,7 @@ msgstr "Hlasitosti zvuku"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Strata pripojenia k zvukovej službe"
 
 #: main.qml:57
 #, kde-format
@@ -100,7 +101,7 @@ msgstr "Nenašli sa žiadne výstupné alebo vstupné zariadenia"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Skúšam sa znovu spojiť..."
 
 #: main.qml:79
 #, kde-format
@@ -146,20 +147,20 @@ msgstr "Aplikácie"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Viac akcií"
 
 #: main.qml:411
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "Ponechať otvorené"
 
 #: main.qml:443
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Znovu"
 
 #: main.qml:470
 #, kde-format
@@ -167,32 +168,28 @@ msgid "No applications playing or recording audio"
 msgstr "Žiadne aplikácie neprehrávajú ani nenahrávajú zvuk"
 
 #: main.qml:555
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Žiadne výstupné zariadenie"
+msgstr "Výstupné zariadenia"
 
 #: main.qml:557
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Prúdy zachytávania"
+msgstr "Výstupné prúdy"
 
 #: main.qml:615
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Zariadenia pre zachytávanie"
+msgstr "Vstupné zariadenia"
 
 #: main.qml:617
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Prúdy zachytávania"
+msgstr "Vstupné prúdy"
 
 #: main.qml:681
 #, kde-kuit-format

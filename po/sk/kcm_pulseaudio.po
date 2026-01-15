@@ -3,19 +3,20 @@
 # Mthw <jari_45@hotmail.com>, 2018.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2022.
 # Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2026 Lucia Mrenica <lucia.mrenica@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2023-03-28 18:40+0200\n"
-"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
-"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
+"PO-Revision-Date: 2026-01-14 18:47+0100\n"
+"Last-Translator: Lucia Mrenica <lucia.mrenica@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: devicerenamesaver.cpp:115
@@ -44,13 +45,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Nepodarilo sa vytvoriť priečinok: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Zlyhalo otvorenie súboru na zápis: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -62,24 +63,24 @@ msgstr "Profil:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Strata pripojenia k zvukovej službe"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Skúšam sa znovu spojiť..."
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Znovu"
 
 #: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:224
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Názov zariadenia nebol nájdený"
 
 #: kcm/ui/DeviceListItem.qml:105
 #, kde-format
@@ -122,10 +123,9 @@ msgid "Show Inactive Devices"
 msgstr "Zobraziť neaktívne zariadenia"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Nahrávacie zariadenia"
+msgstr "Premenovať zariadenia…"
 
 #: kcm/ui/main.qml:87
 #, kde-format
@@ -257,17 +257,16 @@ msgid "Mute %1"
 msgstr "Stlmiť %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Nahrávacie zariadenia"
+msgstr "Premenovať zariadenia…"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Uložiť"
 
 #: kcm/ui/RenameDevices.qml:68
 #, kde-format
@@ -281,13 +280,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Nahlásiť chybu"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "Obnovuje sa"
 
 #: kcm/ui/RenameDevices.qml:130
 #, kde-format
@@ -299,13 +298,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Použiť"
 
 #: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Obnoviť"
 
 #: kcm/ui/RenameDevices.qml:166
 #, kde-format
@@ -351,8 +350,7 @@ msgid "Audio volume"
 msgstr "Hlasitosť zvuku"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr "Zobraziť vizuálnu spätnú väzbu pre zmeny:"
 
@@ -394,34 +392,32 @@ msgstr "100%"
 #: kded/audioshortcutsservice.cpp:82
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Zvýšiť hlasitosť"
 
 #: kded/audioshortcutsservice.cpp:97
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Znížiť hlasitosť"
 
 #: kded/audioshortcutsservice.cpp:112
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Zvýšiť hlasitosť o 1%"
 
 #: kded/audioshortcutsservice.cpp:127
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Znížiť hlasitosť o 1%"
 
 #: kded/audioshortcutsservice.cpp:142
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Mikrofón stlmený"
+msgstr "Zvýšiť hlasitosť mikrofónu"
 
 #: kded/audioshortcutsservice.cpp:156
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Mikrofón stlmený"
+msgstr "Znížiť hlasitosť mikrofónu"
 
 #: kded/audioshortcutsservice.cpp:170 qml/microphoneindicator.cpp:109
 #, kde-format
@@ -429,42 +425,36 @@ msgid "Mute"
 msgstr "Stlmiť"
 
 #: kded/audioshortcutsservice.cpp:183
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Mikrofón"
+msgstr "Stlmiť mikrofón"
 
 #: kded/audioshortcutsservice.cpp:195
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
 msgstr "Hlasitosť zvuku"
 
 #: kded/audioshortcutsservice.cpp:213
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Zariadenie neexistuje"
 
 #: kded/audioshortcutsservice.cpp:259
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "Predvolené výstupné zariadenie"
+msgstr "Žiadne výstupné zariadenie"
 
 #: kded/audioshortcutsservice.cpp:280 kded/audioshortcutsservice.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% Batéria)"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Stlmiť"
+msgstr "%1: Stlmené"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
