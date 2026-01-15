@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2025-04-25 07:03+0200\n"
+"PO-Revision-Date: 2026-01-14 07:08+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -375,7 +375,7 @@ msgstr "Stanje utišanja zvoka"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Pritisnite za govor"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -444,7 +444,7 @@ msgstr "Izklopi mikrofon"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Pritisnite za govor"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
@@ -471,7 +471,7 @@ msgstr "%1 (%2 Baterija)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Govorite…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format

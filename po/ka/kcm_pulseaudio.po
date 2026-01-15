@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2025-04-25 04:33+0200\n"
+"PO-Revision-Date: 2026-01-14 05:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -372,7 +372,7 @@ msgstr "დადუმების მდგომარეობა"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "სალაპარაკოდ დააჭირეთ"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -441,7 +441,7 @@ msgstr "მიკროფონის დადუმება"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "სალაპარაკოდ დააჭირეთ"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
@@ -468,7 +468,7 @@ msgstr "%1 (%2% ელემენტი)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "ისაუბრეთ…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
