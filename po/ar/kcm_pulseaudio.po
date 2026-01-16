@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2015.
-# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2025-08-04 20:19+0400\n"
+"PO-Revision-Date: 2026-01-15 08:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -370,7 +370,7 @@ msgstr "حالة الكتم"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "اضغط لتتكلم"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -439,7 +439,7 @@ msgstr "اكتم المكرفون"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "اضغط لتتكلم"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
@@ -466,7 +466,7 @@ msgstr "%1 (%2٪ البطارية)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "انطق…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format

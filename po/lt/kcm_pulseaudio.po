@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2025-08-16 13:39+0300\n"
+"PO-Revision-Date: 2026-01-15 13:10+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -377,7 +377,7 @@ msgstr "Nutildymo būsena"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Aktyvavimas mygtuko paspaudimu"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -446,7 +446,7 @@ msgstr "Nutildyti mikrofoną"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Aktyvavimas mygtuko paspaudimu"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
@@ -473,7 +473,7 @@ msgstr "%1 (%2% akumuliatoriaus)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Sakykite…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
