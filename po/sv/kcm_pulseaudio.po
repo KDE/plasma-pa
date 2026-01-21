@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2025-05-31 12:50+0200\n"
+"PO-Revision-Date: 2026-01-20 20:54+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -371,7 +371,7 @@ msgstr "Tyst tillstånd"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Tryck för att tala"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -440,7 +440,7 @@ msgstr "Tysta mikrofon"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Tryck för att tala"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
@@ -467,7 +467,7 @@ msgstr "%1 (%2 % batteri)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Tala…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
