@@ -80,6 +80,7 @@ RowLayout {
                 return Kirigami.Theme.negativeTextColor
             }
         }
+        textFormat: Text.PlainText
     }
 
     TextMetrics {
