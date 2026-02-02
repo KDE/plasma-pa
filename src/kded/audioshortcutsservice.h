@@ -52,7 +52,7 @@ private:
     void showPushToTalk(bool talk);
 
     void applyGlobalSinkMute(const QModelIndex &index, const bool globalMute, QStringList &globalMuteMutedDevices);
-    void applyGlobalSourceMute(const QModelIndex &index, const bool globalMute, QStringList &globalMuteMutedDevices);
+    void applyGlobalSourceMute(const QModelIndex &index, const bool globalMute);
     void handleNewSink(const QModelIndex &parent, int first, int last);
     void handleNewSource(const QModelIndex &parent, int first, int last);
     void handleSinkDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);

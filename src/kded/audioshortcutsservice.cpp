@@ -421,7 +421,7 @@ void AudioShortcutsService::applyGlobalSinkMute(const QModelIndex &index, const 
     }
 }
 
-void AudioShortcutsService::applyGlobalSourceMute(const QModelIndex &index, const bool globalMute, QStringList &globalMicMuteMutedDevices)
+void AudioShortcutsService::applyGlobalSourceMute(const QModelIndex &index, const bool globalMute)
 {
     const QString name = m_sourceModel->data(index, m_sourceModel->role("Name"_ba)).toString();
     const QString activePortIdx = QString::number(m_sourceModel->data(index, m_sourceModel->role("ActivePortIndex"_ba)).toUInt());
@@ -431,16 +431,10 @@ void AudioShortcutsService::applyGlobalSourceMute(const QModelIndex &index, cons
         // Mute the device if unmuted
         const bool isUnmuted = !m_sourceModel->data(index, m_sourceModel->role("Muted"_ba)).toBool();
         if (isUnmuted) {
-            if (!globalMicMuteMutedDevices.contains(deviceId)) {
-                globalMicMuteMutedDevices.append(deviceId);
-            }
             m_sourceModel->setData(index, true, m_sourceModel->role("Muted"_ba));
         }
     } else {
-        // Unmute the device if global mute has muted it
-        if (globalMicMuteMutedDevices.removeAll(deviceId)) {
-            m_sourceModel->setData(index, false, m_sourceModel->role("Muted"_ba));
-        }
+        m_sourceModel->setData(index, false, m_sourceModel->role("Muted"_ba));
     }
 }
 
@@ -463,15 +457,11 @@ void AudioShortcutsService::handleNewSource(const QModelIndex &parent, int first
 {
     Q_UNUSED(parent)
 
-    QStringList globalMicMuteMutedDevices = m_globalConfig->globalMuteSourcesMutedDevices();
     const bool globalMicMute = m_globalConfig->globalMuteSources();
 
     for (int i = first; i <= last; ++i) {
-        applyGlobalSourceMute(m_sinkModel->index(i, 0), globalMicMute, globalMicMuteMutedDevices);
+        applyGlobalSourceMute(m_sinkModel->index(i, 0), globalMicMute);
     }
-
-    m_globalConfig->setGlobalMuteSourcesMutedDevices(globalMicMuteMutedDevices);
-    m_globalConfig->save();
 }
 
 void AudioShortcutsService::handleSinkDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles)
@@ -502,7 +492,6 @@ void AudioShortcutsService::handleSinkDataChanged(const QModelIndex &topLeft, co
 
 void AudioShortcutsService::handleSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles)
 {
-    QStringList globalMicMuteMutedDevices = m_globalConfig->globalMuteSourcesMutedDevices();
     const bool globalMicMute = m_globalConfig->globalMuteSources();
 
     for (int i = topLeft.row(); i <= bottomRight.row(); ++i) {
@@ -515,10 +504,9 @@ void AudioShortcutsService::handleSourceDataChanged(const QModelIndex &topLeft, 
 
         if (activePortIndexChanged) {
             // Apply global mute to new device
-            applyGlobalSourceMute(index, globalMicMute, globalMicMuteMutedDevices);
-
-            m_globalConfig->setGlobalMuteSourcesMutedDevices(globalMicMuteMutedDevices);
-            m_globalConfig->save();
+            if (isUnmuted) {
+                applyGlobalSourceMute(index, globalMicMute);
+            }
         } else if (globalMicMute && (volumeChanged || (mutedChanged && isUnmuted))) {
             // Changes to volume or unmuting break global mute
             disableGlobalSourceMute();
@@ -542,12 +530,10 @@ void AudioShortcutsService::enableGlobalSinkMute()
 
 void AudioShortcutsService::enableGlobalSourceMute()
 {
-    QStringList globalMicMuteMutedDevices = m_globalConfig->globalMuteSourcesMutedDevices();
     for (int i = 0; i < m_sourceModel->rowCount(); ++i) {
-        applyGlobalSourceMute(m_sourceModel->index(i, 0), true, globalMicMuteMutedDevices);
+        applyGlobalSourceMute(m_sourceModel->index(i, 0), true);
     }
 
-    m_globalConfig->setGlobalMuteSourcesMutedDevices(globalMicMuteMutedDevices);
     m_globalConfig->setGlobalMuteSources(true);
     m_globalConfig->save();
 
@@ -574,12 +560,10 @@ void AudioShortcutsService::disableGlobalSinkMute()
 
 void AudioShortcutsService::disableGlobalSourceMute()
 {
-    QStringList globalMicMuteMutedDevices = m_globalConfig->globalMuteSourcesMutedDevices();
     for (int i = 0; i < m_sourceModel->rowCount(); ++i) {
-        applyGlobalSourceMute(m_sourceModel->index(i, 0), false, globalMicMuteMutedDevices);
+        applyGlobalSourceMute(m_sourceModel->index(i, 0), false);
     }
 
-    m_globalConfig->setGlobalMuteSourcesMutedDevices(globalMicMuteMutedDevices);
     m_globalConfig->setGlobalMuteSources(false);
     m_globalConfig->save();
 
@@ -590,12 +574,10 @@ void AudioShortcutsService::disableGlobalSourceMute()
 
 void AudioShortcutsService::pushToTalk(bool talk)
 {
-    QStringList globalMicMuteMutedDevices = m_globalConfig->globalMuteSourcesMutedDevices();
     for (int i = 0; i < m_sourceModel->rowCount(); ++i) {
-        applyGlobalSourceMute(m_sourceModel->index(i, 0), !talk, globalMicMuteMutedDevices);
+        applyGlobalSourceMute(m_sourceModel->index(i, 0), !talk);
     }
 
-    m_globalConfig->setGlobalMuteSourcesMutedDevices(globalMicMuteMutedDevices);
     m_globalConfig->setGlobalMuteSources(!talk);
 
     // Talk is typically a short time, don't needlessly sync.

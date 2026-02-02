@@ -57,8 +57,5 @@
             <label>Mute all sources.</label>
             <default>false</default>
         </entry>
-        <entry name="GlobalMuteSourcesMutedDevices" type="StringList">
-            <label>Sources that were muted globally, and should be unmuted after global mute is disabled.</label>
-        </entry>
     </group>
 </kcfg>
