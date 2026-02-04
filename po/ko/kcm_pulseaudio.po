@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2025-06-10 22:22+0200\n"
+"PO-Revision-Date: 2026-02-03 22:17+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -369,7 +369,7 @@ msgstr "음소거 상태"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "눌러서 말하기"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -438,7 +438,7 @@ msgstr "마이크 음소거"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "눌러서 말하기"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
@@ -465,7 +465,7 @@ msgstr "%1(배터리 %2%)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "말하기…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
