@@ -79,7 +79,7 @@ KCM.ScrollViewKCM {
                 Kirigami.Action {
                     text: i18nc("@action", "Report Bug")
                     icon.name: "tools-report-bug-symbolic"
-                    onTriggered: Qt.openUrlExternally("https://bugs.kde.org/enter_bug.cgi?product=plasma-pa")
+                    onTriggered: Qt.openUrlExternally("https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_pulseaudio")
                 }
             ]
         }
