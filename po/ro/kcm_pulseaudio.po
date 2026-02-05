@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
-# Sergiu Bivol <sergiu@cip.md>, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2026 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2024-06-09 13:03+0100\n"
+"PO-Revision-Date: 2026-02-04 13:58+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -25,6 +25,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Modificările nu au fost aplicate.<nl/>Repornirea wireplumber.service a "
+"eșuat. Comanda s-a prăbușit."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -33,24 +35,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Modificările nu au fost aplicate.<nl/>Repornirea wireplumber.service a "
+"eșuat. Comanda s-a terminat cu codul: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Manipularea dispozitivelor a eșuat: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Crearea dosarului a eșuat: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Deschiderea fișierului pentru scriere a eșuat: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -62,19 +66,19 @@ msgstr "Profil:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Conexiunea cu serviciul de sunet a fost pierdută"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Se încearcă reconectarea…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Reîncearcă"
 
 #: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:233
 #, kde-format
@@ -122,10 +126,9 @@ msgid "Show Inactive Devices"
 msgstr "Arată dispozitivele inactive"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Dispozitive de înregistrare"
+msgstr "Redenumește dispozitivele…"
 
 #: kcm/ui/main.qml:87
 #, kde-format
@@ -256,17 +259,16 @@ msgid "Mute %1"
 msgstr "Muțește %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Dispozitive de înregistrare"
+msgstr "Redenumește dispozitivele"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Salvează"
 
 #: kcm/ui/RenameDevices.qml:68
 #, kde-format
@@ -275,43 +277,46 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Salvarea modificărilor va duce la repornirea serviciilor de sunet. "
+"Aplicațiile ce redau sunet vor suferi întreruperi și poate să fie necesară "
+"repornirea acestora."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Raportează defect"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "Se reîncarcă"
 
 #: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (apăsați „Salvează” pentru a aplica)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Aplică"
 
 #: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Reinițializează"
 
 #: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "IMPLICIT"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -350,10 +355,9 @@ msgid "Audio volume"
 msgstr "Volum audio"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Arată reacții vizuale la schimbări pentru:"
+msgstr "Arată indicii pe ecran la schimbări pentru:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
@@ -369,15 +373,13 @@ msgstr "Starea muțirii"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Apasă pentru vorbire"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 folosesc microfonul"
+msgstr "Aplicația începe să folosească microfonul muțit"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
 #, kde-format
@@ -440,7 +442,7 @@ msgstr "Muțește microfonul"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Apasă pentru vorbire"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
@@ -467,14 +469,13 @@ msgstr "%1 (%2% acumulator)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Vorbește…"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Tăcut"
+msgstr "%1: muțit"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
