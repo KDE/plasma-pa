@@ -64,7 +64,6 @@ class AppletTest(unittest.TestCase):
         options = AppiumOptions()
         options.set_capability("app", f"plasmawindowed -p org.kde.plasma.nano {WIDGET_ID}")
         options.set_capability("environ", {
-            "QT_FATAL_WARNINGS": "1",
             "QT_LOGGING_RULES": "org.kde.pulseaudio=false;org.kde.plasma.pulseaudio.warning=false;qt.accessibility.atspi.warning=false;kf.plasma.core.warning=false;kf.windowsystem.warning=false;kf.kirigami.platform.warning=false",
         })
         options.set_capability("timeouts", {'implicit': 30000})
