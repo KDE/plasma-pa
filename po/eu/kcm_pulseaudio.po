@@ -1,16 +1,16 @@
 # Translation for kcm_pulseaudio.po to Euskara/Basque (eu).
-# Copyright (C) 2018-2025 This file is copyright:
+# Copyright (C) 2018-2026 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
-# SPDX-FileCopyrightText: 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2025-04-25 14:39+0200\n"
+"PO-Revision-Date: 2026-02-11 20:41+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -377,7 +377,7 @@ msgstr "Isilarazte egoera"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Sakatu hitz egiteko"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -446,7 +446,7 @@ msgstr "Isilarazi mikrofonoa"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Sakatu hitz egiteko"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
@@ -473,7 +473,7 @@ msgstr "%1 (bateria %%2)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Hitz egin…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
