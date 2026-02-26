@@ -55,6 +55,7 @@ class AppletTest(unittest.TestCase):
     driver: webdriver.Remote | None = None
     pipewire: subprocess.Popen | None = None
     pulseaudio: subprocess.Popen | None = None
+    pipewire_already_running_before_test: bool = False
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -69,6 +70,7 @@ class AppletTest(unittest.TestCase):
         })
         options.set_capability("timeouts", {'implicit': 30000})
         cls.driver = webdriver.Remote(command_executor='http://127.0.0.1:4723', extensions=[SetValueCommand], options=options)
+        cls.pipewire_already_running_before_test = subprocess.Popen(["pidof", "pipewire"]).wait() == 0
 
     def tearDown(self) -> None:
         """
@@ -92,16 +94,19 @@ class AppletTest(unittest.TestCase):
         """
         Tests the widget can be opened
         """
-        self.driver.find_element(AppiumBy.NAME, "Connection to the Sound Service Lost")
+        if not self.pipewire_already_running_before_test:
+            self.driver.find_element(AppiumBy.NAME, "Connection to the Sound Service Lost")
 
     def test_1_sink_1_list_device(self) -> None:
         """
         Add a null sink and adjust its volume
         """
-        self.pipewire = subprocess.Popen(["pipewire"], stdout=sys.stderr, stderr=sys.stderr)
-        time.sleep(1)
-        self.pulseaudio = subprocess.Popen(["pipewire-pulse"], stdout=sys.stderr, stderr=sys.stderr)
-        time.sleep(1)
+        if not self.pipewire_already_running_before_test:
+            self.pipewire = subprocess.Popen(["pipewire"], stdout=sys.stderr, stderr=sys.stderr)
+            time.sleep(1)
+            self.pulseaudio = subprocess.Popen(["pipewire-pulse"], stdout=sys.stderr, stderr=sys.stderr)
+            time.sleep(1)
+
         description: Final = "Virtual_Dummy_Output"
         subprocess.check_call(["pactl", "load-module", "module-null-sink", "sink_name=DummyOutput", f"sink_properties=device.description={description}"])
         self.driver.find_element(AppiumBy.NAME, description)
