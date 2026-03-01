@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019.
 # Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2023.
@@ -6,9 +7,9 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:45+0000\n"
-"PO-Revision-Date: 2023-04-07 23:42-0700\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
-"Language-Team: Japanese <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2026-02-21 10:21+0900\n"
+"Last-Translator: Mint <5602mint@gmail.com>\n"
+"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: ListItemBase.qml:72
 #, kde-format
@@ -88,7 +89,7 @@ msgstr "音量"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "サウンドサービスの接続に失敗しました"
 
 #: main.qml:57
 #, kde-format
@@ -99,7 +100,7 @@ msgstr "入力や出力デバイスが見つかりません"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "再接続中..."
 
 #: main.qml:79
 #, kde-format
@@ -152,44 +153,42 @@ msgstr ""
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "固定"
 
 #: main.qml:443
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "再接続"
 
 #: main.qml:470
 #, kde-format
 msgid "No applications playing or recording audio"
-msgstr "再生や録音をしているアプリケーションなし"
+msgstr "再生や録音をしているアプリケーションはありません"
 
 #: main.qml:555
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "出力デバイスが見つかりません"
+msgstr "出力デバイス"
 
 #: main.qml:557
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "出力ストリーム"
 
 #: main.qml:615
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "デバイス"
+msgstr "入力デバイス"
 
 #: main.qml:617
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "入力ストリーム"
 
 #: main.qml:681
 #, kde-kuit-format
@@ -198,6 +197,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"この機能をオンにしたままにするとデバイスのスピーカーが故障するおそれがありま"
+"す。小さな音声を聞き取る場合にのみ使用してください。"
 
 #: main.qml:697
 #, kde-format
@@ -210,10 +211,9 @@ msgid "Force mute all playback devices"
 msgstr "すべての再生デバイスを強制的にミュート"
 
 #: main.qml:720
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "すべての再生デバイスを強制的にミュート"
+msgstr "すべての入力デバイスを強制的にミュート"
 
 #: main.qml:729
 #, kde-format
@@ -229,37 +229,3 @@ msgstr "音声デバイスを設定(&C)..."
 #, kde-format
 msgid "Stream name not found"
 msgstr "ストリームの名前が見つかりません"
-
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (バッテリ %2%)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "音量を上げる"
-
-#, fuzzy
-#~| msgid "Increase Volume"
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "音量を上げる"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "音量を下げる"
-
-#, fuzzy
-#~| msgid "Decrease Volume"
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "音量を下げる"
-
-#~ msgid "Mute"
-#~ msgstr "ミュート"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "マイクの音量を上げる"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "マイクの音量を下げる"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "マイクをミュート"
