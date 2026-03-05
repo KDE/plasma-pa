@@ -1,15 +1,15 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-pa package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Toms Trasuns <toms.trasuns@posteo.net>
 # Māris Nartišs <maris.kde@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2025-05-29 16:59+0300\n"
-"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"PO-Revision-Date: 2026-03-03 16:58+0200\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -374,7 +374,7 @@ msgstr "Apklusināšanas stāvoklis"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Spiežat, lai runāt"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -443,12 +443,12 @@ msgstr "Apklusināt mikrofonu"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Spiest, lai runātu"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
 msgid "Audio Volume"
-msgstr "Audio skaļums"
+msgstr "Skaļums"
 
 #: kded/audioshortcutsservice.cpp:222
 #, kde-format
@@ -470,7 +470,7 @@ msgstr "%1 (%2 % baterija)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Runāt…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
