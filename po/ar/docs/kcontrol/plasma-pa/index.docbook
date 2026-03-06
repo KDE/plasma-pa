@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-plasmapa 'Audio Volume'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE">
+]>
+<article id="plasmapa" lang="&language;">
+
+<articleinfo>
+<title
+>&i18n-plasmapa;</title>
+
+<authorgroup>
+<author
+>&Sebastian.Kuegler; &Sebastian.Kuegler.mail; </author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2015</year>
+<holder
+>&Sebastian.Kuegler;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2015-08-10</date>
+<releaseinfo
+>بلازما 5.4</releaseinfo>
+
+<abstract>
+<para
+>يصف هذا الدليل وحدة إعدادات النظام لـ &i18n-plasmapa;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>النظام</keyword>
+<keyword
+>إعدادات</keyword>
+<keyword
+>الضبط</keyword>
+<keyword
+>وسائط متعددة</keyword>
+<keyword
+>صوت</keyword>
+<keyword
+>مستوى</keyword>
+<keyword
+>مكبّر صوت</keyword>
+<keyword
+>سماعة رأس بميكروفون</keyword>
+<keyword
+>بلوتوث</keyword>
+<keyword
+>فونون</keyword>
+<keyword
+>بلس‌أوديو</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="introduction">
+<title
+>مقدمة</title>
+
+<para
+>يوفر &i18n-plasmapa; للمستخدم آلية للتحكم في مستوى صوت الأجهزة والتطبيقات باستخدام نظام الصوت بلس‌أوديو. </para>
+
+<sect2 id="kcm">
+<title
+>وحدة إعدادات النظام</title>
+
+<para
+>يوفر &i18n-plasmapa; للمستخدم آلية للتحكم في مستوى صوت الأجهزة والتطبيقات باستخدام نظام الصوت بلس‌أوديو. </para>
+
+<para
+>يتيح &i18n-plasmapa; للمستخدم التحكم في مستوى صوت أجهزة الإخراج، وقنوات مستوى التطبيق، وأجهزة الإدخال والتسجيل. كما يسمح للمستخدم بتوجيه الصوت من وإلى أجهزة محددة. يتكون &i18n-plasmapa; من وحدة إعدادات نظام وعنصر واجهة بلازما، والذي يوجد عادةً في منطقة صينية النظام. </para>
+
+<para
+>يجمع &i18n-plasmapa; إعدادات الصوت ومستواه لمختلف القنوات أو الأجهزة في المجموعات التالية: <itemizedlist>
+<listitem
+><para
+>التطبيقات: التطبيقات التي تشغل الصوت، مثل مشغل الموسيقى أو متصفح الويب. </para
+></listitem>
+<listitem
+><para
+>التسجيل: لتغيير مستوى صوت أجهزة التسجيل، مثل الميكروفون المتصل أو سماعة الرأس. </para
+></listitem>
+<listitem
+><para
+>أجهزة الإخراج: أجهزة الإخراج، يمكنك العثور هنا على مقبس سماعة الرأس أو مضخم الصوت أو مكبر صوت بلوتوث متصل، وهي مجمعة تحت بطاقة الصوت المتصلة بها. </para
+></listitem>
+<listitem
+><para
+>أجهزة الإدخال: أجهزة إدخال الصوت التي قد تكون متصلة بحاسوبك. </para
+></listitem>
+<listitem
+><para
+>الضبط: يتيح هذا اللسان ضبط تشكيلات محددة مثل "ستيريو تناظري" أو "صوت محيطي رقمي 5.1". بالنسبة لأجهزة بلوتوث، يمكنك التبديل إلى تشكيلة بلوتوث عالية الدقة AD2P من هنا. </para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="plasmoid">
+<title
+>عنصر واجهة بلازما</title>
+<para
+>يُحمّل عنصر واجهة بلازما &i18n-plasmapa; آليًا في منطقة صينية النظام. يؤدي النقر فوق أيقونة مكبر الصوت في اللوحة إلى فتح نافذة منبثقة تحتوي على منزلقات التحكم في مستوى الصوت لأجهزة التشغيل المختلفة، مما يسمح بتغيير مستوى صوتها بشكل فردي. </para>
+</sect2>
+
+<sect2 id="credits">
+
+<title
+>الحقوق والترخيص</title>
+
+<para
+>&i18n-plasmapa; </para>
+<para
+>حقوق برمجية البرنامج 2014-2015 لـ Harald Sitter </para>
+
+<para
+>حقوق تأليف الوثائق © 2015 لـ &Sebastian.Kuegler; &Sebastian.Kuegler.mail; </para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </sect2>
+
+</sect1>
+
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
