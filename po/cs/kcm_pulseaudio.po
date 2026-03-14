@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-14 00:46+0000\n"
-"PO-Revision-Date: 2026-02-27 21:19+0100\n"
+"PO-Revision-Date: 2026-03-13 13:53+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -25,6 +25,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Změny nebyly použity.<nl/>Restartování služby wireplumber.service se "
+"nezdařilo. Příkaz selhal."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -33,6 +35,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Změny nebyly použity.<nl/>Restartování služby wireplumber.service se "
+"nezdařilo. Příkaz byl ukončen s kódem: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
@@ -273,6 +277,8 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Uložení změn způsobí restartování zvukových služeb. Aplikace přehrávající "
+"zvuk budou přerušeny a možná je bude nutné restartovat."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
@@ -290,7 +296,7 @@ msgstr "Znova načítám"
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (pro použití klikněte na „Uložit“)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format
@@ -309,7 +315,7 @@ msgstr "Obnovit"
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "Výchozí"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -366,7 +372,7 @@ msgstr "Stav ztlumení"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Stiskněte při mluvení"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -435,7 +441,7 @@ msgstr "Ztlumit mikrofon"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Stiskněte při mluvení"
 
 #: kded/audioshortcutsservice.cpp:204
 #, kde-format
