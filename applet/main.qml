@@ -38,6 +38,8 @@ PlasmoidItem {
 
     property bool showVirtualDevices: Plasmoid.configuration.showVirtualDevices
 
+    property bool micTestActive: false
+
     readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
         || Plasmoid.location === PlasmaCore.Types.RightEdge
         || Plasmoid.location === PlasmaCore.Types.BottomEdge
@@ -61,6 +63,14 @@ PlasmoidItem {
             return i18nc("@info reconnecting to pulseaudio", "Trying to reconnect…")
         }
         return ""
+    }
+
+    readonly property Kirigami.Action backAction: Kirigami.Action {
+        enabled: main.micTestActive
+        onTriggered: {
+            micTestActive = false;
+            fullRepresentationItem?.microphoneTestPage?.stopTest();
+        }
     }
 
     switchHeight: Kirigami.Units.gridUnit * 8
@@ -267,6 +277,8 @@ PlasmoidItem {
 
         property list<string> hiddenTypes: []
 
+        property var microphoneTestPage: microphoneTestComponent
+
         function beginMoveStream(type: /* "sink" | "source" */ string) {
             if (type === "sink") {
                 hiddenTypes = ["source"]
@@ -285,6 +297,8 @@ PlasmoidItem {
             target: main
             function onExpandedChanged() : void {
                 if (!expanded) {
+                    micTestActive = false;
+                    fullRep.microphoneTestPage?.stopTest();
                     contentView.currentItem.reset()
                 }
             }
@@ -295,6 +309,7 @@ PlasmoidItem {
             rightPadding: -1
             // Allow tabbar to touch the header's bottom border
             bottomPadding: -bottomInset
+            visible: !micTestActive
 
             RowLayout {
                 anchors.fill: parent
@@ -426,72 +441,86 @@ PlasmoidItem {
         // SwipeView would never start with the correct initial view when the
         // last saved view was the streams view.
         // We also don't need to be able to swipe between views.
-        contentItem: HorizontalStackView {
-            id: contentView
-            initialItem: plasmoid.configuration.currentTab === "streams" ? streamsView : devicesView
-            movementTransitionsEnabled: currentItem !== null
-            property TwoPartView deviceViewItem: TwoPartView {
-                id: devicesView
-                upperModel: paSinkFilterModel
-                upperType: "sink"
-                lowerModel: paSourceFilterModel
-                lowerType: "source"
-                iconName: "audio-volume-muted" + (Qt.application.layoutDirection === Qt.RightToLeft ? "-rtl" : "");
-                placeholderText: main.noDevicePlaceholderMessage
-                explanationText: main.noDeviceExplanation
-                helpfulAction: Kirigami.Action {
-                    text: i18nc("@action retry connecting to pulseaudio", "Retry")
-                    icon.name: "view-refresh-symbolic"
-                    onTriggered: Context.reconnectDaemon()
-                    // Fun fact: visibility of the helpfulAction inside PlaceholderMessage is linked to enabled, not visible
-                    enabled: !Context.autoConnecting && !main.contextIsReady
-                }
-                upperDelegate: DeviceListItem {
-                    width: ListView.view.width
-                    type: devicesView.upperType
-                    focus: ListView.isCurrentItem
-                }
-                lowerDelegate: DeviceListItem {
-                    width: ListView.view.width
-                    type: devicesView.lowerType
-                    focus: ListView.isCurrentItem
-                }
-                HorizontalStackView.onStatusChanged: devicesView.reset()
-            }
-            // NOTE: Don't unload this while dragging and dropping a stream
-            // to a device or else the D&D operation will be cancelled.
-            property TwoPartView streamsViewItem: TwoPartView {
-                id: streamsView
-                upperModel: paSinkInputFilterModel
-                upperType: "sink-input"
-                lowerModel: paSourceOutputFilterModel
-                lowerType: "source-output"
-                iconName: "edit-none"
-                placeholderText: i18n("No applications playing or recording audio")
-                upperDelegate: StreamListItem {
-                    width: ListView.view.width
-                    type: streamsView.upperType
-                    devicesModel: paSinkFilterModel
-                    focus: ListView.isCurrentItem
-                }
-                lowerDelegate: StreamListItem {
-                    width: ListView.view.width
-                    type: streamsView.lowerType
-                    devicesModel: paSourceFilterModel
-                    focus: ListView.isCurrentItem
-                }
-                HorizontalStackView.onStatusChanged: devicesView.reset()
-            }
-            Connections {
-                target: tabBar
-                function onCurrentIndexChanged() {
-                    if (tabBar.currentItem === devicesTab) {
-                        contentView.reverseTransitions = false
-                        contentView.replace(devicesView)
-                    } else if (tabBar.currentItem === streamsTab) {
-                        contentView.reverseTransitions = true
-                        contentView.replace(streamsView)
+        contentItem: Item {
+            HorizontalStackView {
+                id: contentView
+                visible: !micTestActive
+                anchors.fill: parent
+                initialItem: plasmoid.configuration.currentTab === "streams" ? streamsView : devicesView
+                movementTransitionsEnabled: currentItem !== null
+                property TwoPartView deviceViewItem: TwoPartView {
+                    id: devicesView
+                    upperModel: paSinkFilterModel
+                    upperType: "sink"
+                    lowerModel: paSourceFilterModel
+                    lowerType: "source"
+                    iconName: "audio-volume-muted" + (Qt.application.layoutDirection === Qt.RightToLeft ? "-rtl" : "");
+                    placeholderText: main.noDevicePlaceholderMessage
+                    explanationText: main.noDeviceExplanation
+                    helpfulAction: Kirigami.Action {
+                        text: i18nc("@action retry connecting to pulseaudio", "Retry")
+                        icon.name: "view-refresh-symbolic"
+                        onTriggered: Context.reconnectDaemon()
+                        // Fun fact: visibility of the helpfulAction inside PlaceholderMessage is linked to enabled, not visible
+                        enabled: !Context.autoConnecting && !main.contextIsReady
                     }
+                    upperDelegate: DeviceListItem {
+                        width: ListView.view.width
+                        type: devicesView.upperType
+                        focus: ListView.isCurrentItem
+                    }
+                    lowerDelegate: DeviceListItem {
+                        width: ListView.view.width
+                        type: devicesView.lowerType
+                        focus: ListView.isCurrentItem
+                    }
+                    HorizontalStackView.onStatusChanged: devicesView.reset()
+                }
+                // NOTE: Don't unload this while dragging and dropping a stream
+                // to a device or else the D&D operation will be cancelled.
+                property TwoPartView streamsViewItem: TwoPartView {
+                    id: streamsView
+                    upperModel: paSinkInputFilterModel
+                    upperType: "sink-input"
+                    lowerModel: paSourceOutputFilterModel
+                    lowerType: "source-output"
+                    iconName: "edit-none"
+                    placeholderText: i18n("No applications playing or recording audio")
+                    upperDelegate: StreamListItem {
+                        width: ListView.view.width
+                        type: streamsView.upperType
+                        devicesModel: paSinkFilterModel
+                        focus: ListView.isCurrentItem
+                    }
+                    lowerDelegate: StreamListItem {
+                        width: ListView.view.width
+                        type: streamsView.lowerType
+                        devicesModel: paSourceFilterModel
+                        focus: ListView.isCurrentItem
+                    }
+                    HorizontalStackView.onStatusChanged: devicesView.reset()
+                }
+                Connections {
+                    target: tabBar
+                    function onCurrentIndexChanged() {
+                        if (tabBar.currentItem === devicesTab) {
+                            contentView.reverseTransitions = false
+                            contentView.replace(devicesView)
+                        } else if (tabBar.currentItem === streamsTab) {
+                            contentView.reverseTransitions = true
+                            contentView.replace(streamsView)
+                        }
+                    }
+                }
+            }
+            MicrophoneTestView {
+                id: microphoneTestComponent
+                anchors.fill: parent
+                visible: micTestActive
+                showInternalBackButton: Plasmoid.containment.pluginName !== "org.kde.plasma.systemtray"
+                onBackRequested: {
+                    main.micTestActive = false;
+                    microphoneTestComponent.stopTest();
                 }
             }
         }
@@ -654,6 +683,7 @@ PlasmoidItem {
         footer: PlasmaExtras.PlasmoidHeading {
             id: footerToolbar
 
+            visible: !micTestActive
             readonly property int margins: Kirigami.Units.smallSpacing
 
             Accessible.onPressAction: raiseMaximumVolumeCheckbox.toggle()

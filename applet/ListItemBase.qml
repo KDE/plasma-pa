@@ -8,6 +8,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
 
 import org.kde.kquickcontrolsaddons
 import org.kde.plasma.components as PC3
@@ -336,6 +337,16 @@ PC3.ItemDelegate {
                     id: percentMetrics
                     font: percentText.font
                     text: i18nc("only used for sizing, should be widest possible string", "100%")
+                }
+
+                Button {
+                    visible: item.type === "source"
+                    text: i18ndc("kcm_pulseaudio", "Perform an audio test of the device", "Test…")
+                    icon.name: "audio-input-microphone-symbolic"
+                    onClicked: {
+                        microphoneTestComponent.model = item.model;
+                        main.micTestActive = true;
+                    }
                 }
             }
         }

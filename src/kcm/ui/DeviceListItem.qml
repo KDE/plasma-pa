@@ -225,12 +225,19 @@ ColumnLayout {
         }
 
         Button {
+            id: playbackTestButton
             Layout.alignment: Qt.AlignTop
-            id: testButton
+            visible: delegate.isPlayback
             text: i18ndc("kcm_pulseaudio", "Perform an audio test of the device", "Test")
             icon.name: "audio-speakers-symbolic"
-            visible: isPlayback
-            onClicked: testOverlay.testSink(index);
+            onClicked: speakerTestOverlay.testSink(index)
+        }
+
+        Button {
+            visible: !delegate.isPlayback
+            text: i18ndc("kcm_pulseaudio", "Perform an audio test of the device", "Test…")
+            icon.name: "audio-input-microphone-symbolic"
+            onClicked: microphoneTestOverlay.testSource(index)
         }
 
         Button {

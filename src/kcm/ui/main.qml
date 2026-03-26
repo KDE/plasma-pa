@@ -304,7 +304,7 @@ KCM.ScrollViewKCM {
 
     SpeakerTest {
         id: tester
-        sink: testOverlay.sinkObject
+        sink: speakerTestOverlay.sinkObject
 
         onShowErrorMessage: message => {
             testError.text = i18ndc("kcm_pulseaudio",
@@ -315,7 +315,7 @@ KCM.ScrollViewKCM {
     }
 
     Kirigami.OverlaySheet {
-        id: testOverlay
+        id: speakerTestOverlay
 
         property var sinkObject: null
         property string description: ""
@@ -339,12 +339,12 @@ KCM.ScrollViewKCM {
                 profile = profiles.length > 1 ? profiles[paCardModel.data(cardIndex, paCardModel.KItemModels.KRoleNames.role("ActiveProfileIndex"))].description : "";
             }
 
-            testOverlay.open();
+            speakerTestOverlay.open();
         }
 
         onSinkObjectChanged: {
             if (!sinkObject) {
-                testOverlay.close();
+                speakerTestOverlay.close();
             }
         }
 
@@ -353,21 +353,21 @@ KCM.ScrollViewKCM {
             rowSpacing: Kirigami.Units.smallSpacing
 
             Kirigami.Icon {
-                source: testOverlay.iconName || "audio-card"
+                source: speakerTestOverlay.iconName || "audio-card"
                 Layout.rowSpan: 3
                 Layout.alignment: Qt.AlignCenter
             }
             Label {
-                text: testOverlay.description
+                text: speakerTestOverlay.description
                 font.bold: true
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
             }
             Label {
                 text: {
-                    if (testOverlay.port.length === 0) { return testOverlay.profile }
-                    if (testOverlay.profile.length === 0) { return testOverlay.port }
-                    return testOverlay.profile + " / " + testOverlay.port
+                    if (speakerTestOverlay.port.length === 0) { return speakerTestOverlay.profile }
+                    if (speakerTestOverlay.profile.length === 0) { return speakerTestOverlay.port }
+                    return speakerTestOverlay.profile + " / " + speakerTestOverlay.port
                 }
                 visible: text.length > 0
                 Layout.fillWidth: true
@@ -407,7 +407,7 @@ KCM.ScrollViewKCM {
                 Repeater {
                     id: channelRepeater
 
-                    model: testOverlay.sinkObject && testOverlay.sinkObject.rawChannels
+                    model: speakerTestOverlay.sinkObject && speakerTestOverlay.sinkObject.rawChannels
 
                     delegate: ToolButton {
                         readonly property bool isPlaying: tester.playingChannels.includes(modelData)
@@ -495,6 +495,237 @@ KCM.ScrollViewKCM {
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
+        }
+    }
+
+    MicrophoneTest {
+        id: micTester
+
+        onShowErrorMessage: (message) => {
+            micTestError.text = xi18nc("@info", "Microphone test error:<nl/><nl/>%1", message);
+            micTestError.visible = true;
+        }
+    }
+
+    Kirigami.OverlaySheet {
+        id: microphoneTestOverlay
+
+        property var sourceObject: null
+        property string description: ""
+        property string iconName: "audio-input-microphone-symbolic"
+        property string port: ""
+        property string profile: ""
+
+        function testSource(index: int): void {
+            const modelIndex = sources.model.index(Math.max(index, 0), 0);
+            sourceObject = sources.model.data(modelIndex, sources.model.KItemModels.KRoleNames.role("PulseObject"));
+            description = sources.model.data(modelIndex, sources.model.KItemModels.KRoleNames.role("Description"));
+            iconName = sources.model.data(modelIndex, sources.model.KItemModels.KRoleNames.role("IconName")) || "audio-input-microphone-symbolic";
+            const ports = sources.model.data(modelIndex, sources.model.KItemModels.KRoleNames.role("Ports")) || [];
+            const activePortIndex = sources.model.data(modelIndex, sources.model.KItemModels.KRoleNames.role("ActivePortIndex"));
+            port = ports.length > 1 && ports[activePortIndex] ? ports[activePortIndex].description : "";
+            profile = "";
+            const cardIndex = paCardModel.indexOfCardNumber(
+                sources.model.data(modelIndex, sources.model.KItemModels.KRoleNames.role("CardIndex"))
+            );
+            if (cardIndex.valid) {
+                const profiles = paCardModel.data(cardIndex, paCardModel.KItemModels.KRoleNames.role("Profiles")) || [];
+                const activeProfileIndex = paCardModel.data(cardIndex, paCardModel.KItemModels.KRoleNames.role("ActiveProfileIndex"));
+                profile = profiles.length > 1 && profiles[activeProfileIndex]
+                    ? profiles[activeProfileIndex].description
+                    : "";
+            }
+            micTestError.visible = false;
+            microphoneTestOverlay.open();
+        }
+
+        onOpenedChanged: {
+            if (opened) {
+                micTester.source = sourceObject;
+            } else {
+                if (micTester.recording) {
+                    micTester.stopRecording();
+                }
+                micTester.clearRecording();
+            }
+        }
+
+        ColumnLayout {
+            spacing: Kirigami.Units.largeSpacing * 3
+            Layout.fillWidth: true
+
+            Kirigami.InlineMessage {
+                id: micTestError
+
+                type: Kirigami.MessageType.Error
+                showCloseButton: true
+                Layout.fillWidth: true
+            }
+
+            RowLayout {
+                spacing: Kirigami.Units.largeSpacing
+                Layout.alignment: Qt.AlignHCenter
+
+                Button {
+                    text: micTester.recording ? i18nc("Button to stop microphone recording in test mode", "Stop") : i18nc("Button to start microphone recording in test mode", "Record")
+                    icon.name: micTester.recording ? "media-playback-stop-symbolic" : "media-record-symbolic"
+                    enabled: !micTester.playing
+                    onClicked: {
+                        micTestError.visible = false;
+                        if (micTester.recording)
+                            micTester.stopRecording();
+                        else
+                            micTester.startRecording();
+                    }
+                }
+
+                Button {
+                    text: micTester.playing ? i18nc("Button to stop microphone playing in test mode", "Stop") : i18nc("Button to start microphone playing in test mode", "Play")
+                    icon.name: micTester.playing? "media-playback-stop-symbolic" : "media-playback-start-symbolic"
+                    enabled: micTester.hasRecording && !micTester.recording
+                    onClicked: {
+                        micTestError.visible = false;
+                        if (micTester.playing)
+                            micTester.stopPlaying()
+                        else
+                            micTester.playRecording();
+                    }
+                }
+
+            }
+
+            ColumnLayout {
+                spacing: 0
+                Layout.fillWidth: true
+
+                Label {
+                    text: i18nc("Label above the microphone volume meter in test overlay", "Volume level")
+                    font: Kirigami.Theme.smallFont
+                    opacity: 0.75
+                    Layout.fillWidth: true
+                    elide: Text.ElideRight
+                }
+
+                RowLayout {
+                    Layout.fillWidth: true
+
+                    spacing: Kirigami.Units.smallSpacing
+
+                    ProgressBar {
+                        id: volumeProgressBar
+                        Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignVCenter
+
+                        from: 0
+                        to: 1
+                        value: micTester.recording ? micTester.volumeLevel : 0
+
+                        Behavior on value {
+                            NumberAnimation {
+                                duration: Kirigami.Units.longDuration
+                                easing.type: Easing.OutQuad
+                            }
+                        }
+                    }
+
+                    Label {
+                        text: i18nc("Label showing current microphone input level percentage in test mode", "%1 %", Math.round(volumeProgressBar.value * 100))
+                        font: Kirigami.Theme.smallFont
+                        Layout.alignment: Qt.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        Layout.minimumWidth: valueTextMetrics.advanceWidth
+                        Layout.maximumWidth: valueTextMetrics.advanceWidth
+                    }
+                }
+            }
+
+            ColumnLayout {
+                spacing: 0
+                Layout.fillWidth: true
+
+                Label {
+                    text: i18nc("Label above the microphone sensitivity slider in test overlay", "Sensitivity")
+                    font: Kirigami.Theme.smallFont
+                    opacity: 0.75
+                    Layout.fillWidth: true
+                    elide: Text.ElideRight
+                }
+
+                RowLayout {
+                    Layout.fillWidth: true
+
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Slider {
+                        id: inputLevelSlider
+                        Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignVCenter
+
+                        from: PulseAudio.MinimalVolume
+                        to: config.raiseMaximumVolume ? PulseAudio.MaximalVolume : PulseAudio.NormalVolume
+                        enabled: microphoneTestOverlay.sourceObject && microphoneTestOverlay.sourceObject.volumeWritable && !micTester.playing && !micTester.recording
+                        value: microphoneTestOverlay.sourceObject ? microphoneTestOverlay.sourceObject.volume : PulseAudio.NormalVolume
+
+                        onMoved: {
+                            if (!microphoneTestOverlay.sourceObject) return;
+                            const volume = Math.round(value * 100 / PulseAudio.NormalVolume) * PulseAudio.NormalVolume / 100;
+                            microphoneTestOverlay.sourceObject.volume = volume;
+                            microphoneTestOverlay.sourceObject.muted = volume === 0;
+                        }
+                    }
+
+                    Label {
+                        text: i18ndc("kcm_pulseaudio", "volume percentage", "%1%", Math.round(inputLevelSlider.value / PulseAudio.NormalVolume * 100))
+                        Layout.alignment: Qt.AlignVCenter
+                        font: Kirigami.Theme.smallFont
+                        horizontalAlignment: Text.AlignHCenter
+                        Layout.minimumWidth: valueTextMetrics.advanceWidth
+                        Layout.maximumWidth: valueTextMetrics.advanceWidth
+                    }
+                }
+            }
+
+            TextMetrics {
+                id: valueTextMetrics
+                font: Kirigami.Theme.smallFont
+                text: i18ndc("kcm_pulseaudio", "only used for sizing, should be widest possible string", "100%")
+            }
+        }
+
+        header: GridLayout {
+            columns: 2
+            rowSpacing: Kirigami.Units.smallSpacing
+
+            Kirigami.Icon {
+                source: microphoneTestOverlay.iconName
+                Layout.rowSpan: 3
+                implicitWidth: Kirigami.Units.iconSizes.medium
+                implicitHeight: Kirigami.Units.iconSizes.medium
+                Layout.alignment: Qt.AlignCenter
+            }
+
+            Label {
+                text: microphoneTestOverlay.description
+                font.bold: true
+                Layout.fillWidth: true
+                wrapMode: Text.Wrap
+            }
+
+            Label {
+                text: {
+                    if (microphoneTestOverlay.port.length === 0)
+                        return microphoneTestOverlay.profile;
+
+                    if (microphoneTestOverlay.profile.length === 0)
+                        return microphoneTestOverlay.port;
+
+                    return microphoneTestOverlay.profile + " / " + microphoneTestOverlay.port;
+                }
+                visible: text.length > 0
+                Layout.fillWidth: true
+                wrapMode: Text.Wrap
+            }
+
         }
     }
 

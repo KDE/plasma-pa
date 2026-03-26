@@ -31,9 +31,11 @@ PC3.Slider {
     // animate smoothly.
     property real volume: meter.volume
 
+    property bool showVolumeIndicator: true
+
     VolumeMonitor {
         id: meter
-        target: control.visible ? control.volumeObject : null
+        target: control.visible && control.showVolumeIndicator ? control.volumeObject : null
     }
 
     Behavior on volume {
@@ -118,7 +120,7 @@ PC3.Slider {
             imagePath: "widgets/slider"
             prefix: "groove-highlight"
             status: KSvg.FrameSvgItem.Selected
-            visible: meter.available && control.volume > 0
+            visible: control.showVolumeIndicator && meter.available && control.volume > 0
 
             anchors.left: parent.left
             anchors.bottom: parent.bottom

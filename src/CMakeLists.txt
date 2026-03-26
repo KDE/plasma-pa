@@ -17,6 +17,7 @@ set(plasma-volume_SRCS
     devicerenamemodel.cpp devicerenamemodel.h
     devicerenamesaver.cpp devicerenamesaver.h
     percentvalidator.cpp percentvalidator.h
+    microphonetest.cpp microphonetest.h
 )
 
 ecm_qt_declare_logging_category(plasma-volume_SRCS HEADER debug.h IDENTIFIER PLASMAPA
