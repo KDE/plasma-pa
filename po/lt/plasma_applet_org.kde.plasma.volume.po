@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:45+0000\n"
+"POT-Creation-Date: 2026-03-27 00:47+0000\n"
 "PO-Revision-Date: 2025-12-20 18:38+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -20,178 +20,184 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: ListItemBase.qml:72
+#: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not recording"
 msgstr "Šiuo metu neįrašoma"
 
-#: ListItemBase.qml:73
+#: ListItemBase.qml:74
 #, kde-format
 msgid "Currently not playing"
 msgstr "Šiuo metu neatkuriama"
 
-#: ListItemBase.qml:204
+#: ListItemBase.qml:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Papildomos parinktys"
 
-#: ListItemBase.qml:206
+#: ListItemBase.qml:207
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Rodyti papildomas %1 parinktis"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Įjungti garsą"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Nutildyti"
 
-#: ListItemBase.qml:230
+#: ListItemBase.qml:231
 #, kde-format
 msgid "Unmute %1"
 msgstr "Įjungti garsą %1"
 
-#: ListItemBase.qml:230
+#: ListItemBase.qml:231
 #, kde-format
 msgid "Mute %1"
 msgstr "Nutildyti %1"
 
-#: ListItemBase.qml:253
+#: ListItemBase.qml:254
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Reguliuoti %1 garsumą"
 
-#: ListItemBase.qml:317
+#: ListItemBase.qml:318 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:338
+#: ListItemBase.qml:339 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
+
+#: ListItemBase.qml:344
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test…"
+msgstr ""
 
 #: main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "Garsumas"
 
-#: main.qml:53 main.qml:55
+#: main.qml:55 main.qml:57
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Nutrūko ryšys su garso tarnyba"
 
-#: main.qml:57
+#: main.qml:59
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nerasta jokių įvesties ar išvesties įrenginių"
 
-#: main.qml:61
+#: main.qml:63
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Bandoma jungtis iš naujo…"
 
-#: main.qml:79
+#: main.qml:89
 #, kde-format
 msgid "Audio Muted"
 msgstr "Nutildyta"
 
-#: main.qml:81
+#: main.qml:91
 #, kde-format
 msgid "Volume at %1%"
 msgstr "%1% garsumas"
 
-#: main.qml:92
+#: main.qml:102
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Spustelėkite viduriniuoju pelės mygtuku, norėdami įjungti garsą"
 
-#: main.qml:93
+#: main.qml:103
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Spustelėkite viduriniuoju pelės mygtuku, norėdami nutildyti visą garsą"
 
-#: main.qml:94
+#: main.qml:104
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Slinkite norėdami reguliuoti garsumą"
 
-#: main.qml:110
+#: main.qml:120
 #, kde-format
 msgid "Device name not found"
 msgstr "Įrenginio pavadinimas nerastas"
 
-#: main.qml:338
+#: main.qml:353
 #, kde-format
 msgid "Devices"
 msgstr "Įrenginiai"
 
-#: main.qml:345
+#: main.qml:360
 #, kde-format
 msgid "Applications"
 msgstr "Programos"
 
-#: main.qml:369
+#: main.qml:384
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Daugiau veiksmų"
 
-#: main.qml:411
+#: main.qml:426
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Palikti atvertą"
 
-#: main.qml:443
+#: main.qml:461
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Bandyti dar kartą"
 
-#: main.qml:470
+#: main.qml:488
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Šiuo metu jokios programos neatkuria ir neįrašinėja garso"
 
-#: main.qml:555
+#: main.qml:584
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Išvesties įrenginiai"
 
-#: main.qml:557
+#: main.qml:586
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Išvesties srautai"
 
-#: main.qml:615
+#: main.qml:644
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Įvesties įrenginiai"
 
-#: main.qml:617
+#: main.qml:646
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Įvesties srautai"
 
-#: main.qml:681
+#: main.qml:711
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -201,30 +207,87 @@ msgstr ""
 "Ilgas šios ypatybės naudojimas pažeis įrenginio garsiakalbius. Naudokite ją "
 "laikinai tam, kad padarytumėte tylią mediją girdimą."
 
-#: main.qml:697
+#: main.qml:727
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Padidinti didžiausią garsumą"
 
-#: main.qml:711
+#: main.qml:741
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Priverstinai nutildyti visus atkūrimo įrenginius"
 
-#: main.qml:720
+#: main.qml:750
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Priverstinai nutildyti visus įvesties įrenginius"
 
-#: main.qml:729
+#: main.qml:759
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Rodyti virtualius įrenginius"
 
-#: main.qml:739
+#: main.qml:769
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigūruoti garso įrenginius…"
+
+#: MicrophoneTestView.qml:104
+#, kde-format
+msgctxt "Button to stop microphone recording in test mode"
+msgid "Stop"
+msgstr ""
+
+#: MicrophoneTestView.qml:104
+#, kde-format
+msgctxt "Button to start microphone recording in test mode"
+msgid "Record"
+msgstr ""
+
+#: MicrophoneTestView.qml:118
+#, kde-format
+msgctxt "Button to stop microphone playing in test mode"
+msgid "Stop"
+msgstr ""
+
+#: MicrophoneTestView.qml:118
+#, fuzzy, kde-format
+#| msgid "Playback Streams"
+msgctxt "Button to start microphone playing in test mode"
+msgid "Play"
+msgstr "Grojimo srautai"
+
+#: MicrophoneTestView.qml:137
+#, fuzzy, kde-format
+#| msgid "Volume step:"
+msgctxt "Label above the microphone volume meter in test overlay"
+msgid "Volume level"
+msgstr "Garsinimo žingsnis:"
+
+#: MicrophoneTestView.qml:166
+#, kde-format
+msgctxt "Label showing current microphone input level percentage in test mode"
+msgid "%1 %"
+msgstr ""
+
+#: MicrophoneTestView.qml:181
+#, fuzzy, kde-format
+#| msgid "Microphone sensitivity"
+msgctxt "Label above the microphone sensitivity slider in test overlay"
+msgid "Sensitivity"
+msgstr "Mikrofono jautrumas"
+
+#: MicrophoneTestView.qml:237
+#, kde-format
+msgctxt "Button in microphone test view to return to the device list"
+msgid "Back"
+msgstr ""
+
+#: MicrophoneTestView.qml:250
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Microphone test error:<nl/><nl/>%1"
+msgstr ""
 
 #: StreamListItem.qml:36
 #, kde-format
@@ -268,9 +331,6 @@ msgstr "Srauto pavadinimas nerastas"
 #~ msgid "General"
 #~ msgstr "Bendri"
 
-#~ msgid "Volume step:"
-#~ msgstr "Garsinimo žingsnis:"
-
 #~ msgid "Play audio feedback for changes to:"
 #~ msgstr "Atkurti garsinį grįžtąmąjį ryšį pakeitimams, kurie atliekami:"
 
@@ -279,9 +339,6 @@ msgstr "Srauto pavadinimas nerastas"
 
 #~ msgid "Show visual feedback for changes to:"
 #~ msgstr "Rodyti vaizdinį grįžtamąjį ryšį pakeitimams, kurie atliekami:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Mikrofono jautrumas"
 
 #~ msgid "Mute state"
 #~ msgstr "Nutildymo būsena"
@@ -383,11 +440,6 @@ msgstr "Srauto pavadinimas nerastas"
 #~| msgid "Devices"
 #~ msgid "Device Profiles"
 #~ msgstr "Įrenginiai"
-
-#, fuzzy
-#~| msgid "Playback Streams"
-#~ msgid "Playback"
-#~ msgstr "Grojimo srautai"
 
 #, fuzzy
 #~| msgid "No applications playing or recording audio"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-14 00:46+0000\n"
+"POT-Creation-Date: 2026-03-27 00:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -104,13 +104,19 @@ msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr ""
 
-#: kcm/ui/DeviceListItem.qml:230
+#: kcm/ui/DeviceListItem.qml:231
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr ""
 
-#: kcm/ui/DeviceListItem.qml:239
+#: kcm/ui/DeviceListItem.qml:238
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test…"
+msgstr ""
+
+#: kcm/ui/DeviceListItem.qml:246
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
@@ -236,6 +242,66 @@ msgstr ""
 #: kcm/ui/main.qml:492
 #, kde-format
 msgid "Click on any speaker to test sound"
+msgstr ""
+
+#: kcm/ui/main.qml:505
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Microphone test error:<nl/><nl/>%1"
+msgstr ""
+
+#: kcm/ui/main.qml:570
+#, kde-format
+msgctxt "Button to stop microphone recording in test mode"
+msgid "Stop"
+msgstr ""
+
+#: kcm/ui/main.qml:570
+#, kde-format
+msgctxt "Button to start microphone recording in test mode"
+msgid "Record"
+msgstr ""
+
+#: kcm/ui/main.qml:583
+#, kde-format
+msgctxt "Button to stop microphone playing in test mode"
+msgid "Stop"
+msgstr ""
+
+#: kcm/ui/main.qml:583
+#, kde-format
+msgctxt "Button to start microphone playing in test mode"
+msgid "Play"
+msgstr ""
+
+#: kcm/ui/main.qml:602
+#, kde-format
+msgctxt "Label above the microphone volume meter in test overlay"
+msgid "Volume level"
+msgstr ""
+
+#: kcm/ui/main.qml:632
+#, kde-format
+msgctxt "Label showing current microphone input level percentage in test mode"
+msgid "%1 %"
+msgstr ""
+
+#: kcm/ui/main.qml:647
+#, kde-format
+msgctxt "Label above the microphone sensitivity slider in test overlay"
+msgid "Sensitivity"
+msgstr ""
+
+#: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr ""
+
+#: kcm/ui/main.qml:691 kcm/ui/VolumeSlider.qml:88
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
 msgstr ""
 
 #: kcm/ui/MuteButton.qml:24
@@ -375,18 +441,6 @@ msgstr ""
 msgid "Default output device"
 msgstr ""
 
-#: kcm/ui/VolumeSlider.qml:68
-#, kde-format
-msgctxt "volume percentage"
-msgid "%1%"
-msgstr ""
-
-#: kcm/ui/VolumeSlider.qml:88
-#, kde-format
-msgctxt "only used for sizing, should be widest possible string"
-msgid "100%"
-msgstr ""
-
 #: kded/audioshortcutsservice.cpp:82
 #, kde-format
 msgid "Increase Volume"
@@ -464,6 +518,31 @@ msgstr ""
 #, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
+msgstr ""
+
+#: microphonetest.cpp:106 microphonetest.cpp:217
+#, kde-format
+msgid "PulseAudio context is not ready"
+msgstr ""
+
+#: microphonetest.cpp:114
+#, kde-format
+msgid "Failed to create a record stream"
+msgstr ""
+
+#: microphonetest.cpp:130
+#, kde-format
+msgid "Failed to connect record: %1"
+msgstr ""
+
+#: microphonetest.cpp:227
+#, kde-format
+msgid "Couldn't create a playback stream"
+msgstr ""
+
+#: microphonetest.cpp:243
+#, kde-format
+msgid "Couldn't connect playback"
 msgstr ""
 
 #: qml/listitemmenu.cpp:323

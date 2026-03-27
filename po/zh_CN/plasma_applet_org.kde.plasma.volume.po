@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:45+0000\n"
+"POT-Creation-Date: 2026-03-27 00:47+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,178 +18,184 @@ msgstr ""
 "volume.pot\n"
 "X-Crowdin-File-ID: 42993\n"
 
-#: ListItemBase.qml:72
+#: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not recording"
 msgstr "当前不在录音"
 
-#: ListItemBase.qml:73
+#: ListItemBase.qml:74
 #, kde-format
 msgid "Currently not playing"
 msgstr "当前不在播放"
 
-#: ListItemBase.qml:204
+#: ListItemBase.qml:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "更多选项"
 
-#: ListItemBase.qml:206
+#: ListItemBase.qml:207
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "显示用于 %1 的附加选项"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "取消静音"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "静音"
 
-#: ListItemBase.qml:230
+#: ListItemBase.qml:231
 #, kde-format
 msgid "Unmute %1"
 msgstr "取消静音 %1"
 
-#: ListItemBase.qml:230
+#: ListItemBase.qml:231
 #, kde-format
 msgid "Mute %1"
 msgstr "静音 %1"
 
-#: ListItemBase.qml:253
+#: ListItemBase.qml:254
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "调整 %1 的音量"
 
-#: ListItemBase.qml:317
+#: ListItemBase.qml:318 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:338
+#: ListItemBase.qml:339 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
+
+#: ListItemBase.qml:344
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test…"
+msgstr ""
 
 #: main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "音频音量"
 
-#: main.qml:53 main.qml:55
+#: main.qml:55 main.qml:57
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "声音服务的连接丢失"
 
-#: main.qml:57
+#: main.qml:59
 #, kde-format
 msgid "No output or input devices found"
 msgstr "没有找到输出或者输入设备"
 
-#: main.qml:61
+#: main.qml:63
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "正在尝试重新连接…"
 
-#: main.qml:79
+#: main.qml:89
 #, kde-format
 msgid "Audio Muted"
 msgstr "音频已静音"
 
-#: main.qml:81
+#: main.qml:91
 #, kde-format
 msgid "Volume at %1%"
 msgstr "音量为 %1%"
 
-#: main.qml:92
+#: main.qml:102
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "中键单击以取消静音"
 
-#: main.qml:93
+#: main.qml:103
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "中键单击以静音全部音频"
 
-#: main.qml:94
+#: main.qml:104
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "滚动鼠标滚轮以调节音量"
 
-#: main.qml:110
+#: main.qml:120
 #, kde-format
 msgid "Device name not found"
 msgstr "找不到设备名称"
 
-#: main.qml:338
+#: main.qml:353
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: main.qml:345
+#: main.qml:360
 #, kde-format
 msgid "Applications"
 msgstr "应用程序"
 
-#: main.qml:369
+#: main.qml:384
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "更多操作"
 
-#: main.qml:411
+#: main.qml:426
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "保持打开"
 
-#: main.qml:443
+#: main.qml:461
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "重试"
 
-#: main.qml:470
+#: main.qml:488
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "没有正在播放或者录制音频的应用程序"
 
-#: main.qml:555
+#: main.qml:584
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "输出设备"
 
-#: main.qml:557
+#: main.qml:586
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "输出流"
 
-#: main.qml:615
+#: main.qml:644
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "输入设备"
 
-#: main.qml:617
+#: main.qml:646
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "输入流"
 
-#: main.qml:681
+#: main.qml:711
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -199,30 +205,84 @@ msgstr ""
 "长时间使用此功能会损坏设备的扬声器。请仅在需要听清音量较低的媒体内容时短暂使"
 "用。"
 
-#: main.qml:697
+#: main.qml:727
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
-#: main.qml:711
+#: main.qml:741
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "强制静音所有播放设备"
 
-#: main.qml:720
+#: main.qml:750
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "强制静音所有输入设备"
 
-#: main.qml:729
+#: main.qml:759
 #, kde-format
 msgid "Show virtual devices"
 msgstr "显示虚拟设备"
 
-#: main.qml:739
+#: main.qml:769
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "配置音频设备(&C)…"
+
+#: MicrophoneTestView.qml:104
+#, kde-format
+msgctxt "Button to stop microphone recording in test mode"
+msgid "Stop"
+msgstr ""
+
+#: MicrophoneTestView.qml:104
+#, kde-format
+msgctxt "Button to start microphone recording in test mode"
+msgid "Record"
+msgstr ""
+
+#: MicrophoneTestView.qml:118
+#, kde-format
+msgctxt "Button to stop microphone playing in test mode"
+msgid "Stop"
+msgstr ""
+
+#: MicrophoneTestView.qml:118
+#, kde-format
+msgctxt "Button to start microphone playing in test mode"
+msgid "Play"
+msgstr ""
+
+#: MicrophoneTestView.qml:137
+#, kde-format
+msgctxt "Label above the microphone volume meter in test overlay"
+msgid "Volume level"
+msgstr ""
+
+#: MicrophoneTestView.qml:166
+#, kde-format
+msgctxt "Label showing current microphone input level percentage in test mode"
+msgid "%1 %"
+msgstr ""
+
+#: MicrophoneTestView.qml:181
+#, kde-format
+msgctxt "Label above the microphone sensitivity slider in test overlay"
+msgid "Sensitivity"
+msgstr ""
+
+#: MicrophoneTestView.qml:237
+#, kde-format
+msgctxt "Button in microphone test view to return to the device list"
+msgid "Back"
+msgstr ""
+
+#: MicrophoneTestView.qml:250
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Microphone test error:<nl/><nl/>%1"
+msgstr ""
 
 #: StreamListItem.qml:36
 #, kde-format

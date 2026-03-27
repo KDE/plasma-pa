@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:45+0000\n"
+"POT-Creation-Date: 2026-03-27 00:47+0000\n"
 "PO-Revision-Date: 2025-12-12 10:54+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -18,178 +18,184 @@ msgstr ""
 "20)) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
-#: ListItemBase.qml:72
+#: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not recording"
 msgstr "Nu înregistrează acum"
 
-#: ListItemBase.qml:73
+#: ListItemBase.qml:74
 #, kde-format
 msgid "Currently not playing"
 msgstr "Nu redă acum"
 
-#: ListItemBase.qml:204
+#: ListItemBase.qml:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Opțiuni suplimentare"
 
-#: ListItemBase.qml:206
+#: ListItemBase.qml:207
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Arată opțiuni suplimentare pentru %1"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Sonorizează"
 
-#: ListItemBase.qml:228
+#: ListItemBase.qml:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Muțește"
 
-#: ListItemBase.qml:230
+#: ListItemBase.qml:231
 #, kde-format
 msgid "Unmute %1"
 msgstr "Sonorizează %1"
 
-#: ListItemBase.qml:230
+#: ListItemBase.qml:231
 #, kde-format
 msgid "Mute %1"
 msgstr "Muțește %1"
 
-#: ListItemBase.qml:253
+#: ListItemBase.qml:254
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Ajustează volumul pentru %1"
 
-#: ListItemBase.qml:317
+#: ListItemBase.qml:318 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:338
+#: ListItemBase.qml:339 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
+
+#: ListItemBase.qml:344
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test…"
+msgstr ""
 
 #: main.qml:36
 #, kde-format
 msgid "Audio Volume"
 msgstr "Volum audio"
 
-#: main.qml:53 main.qml:55
+#: main.qml:55 main.qml:57
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Conexiunea cu serviciul de sunet a fost pierdută"
 
-#: main.qml:57
+#: main.qml:59
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nu a fost găsit niciun dispozitiv de ieșire sau intrare"
 
-#: main.qml:61
+#: main.qml:63
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Se încearcă reconectarea…"
 
-#: main.qml:79
+#: main.qml:89
 #, kde-format
 msgid "Audio Muted"
 msgstr "Audio muțit"
 
-#: main.qml:81
+#: main.qml:91
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Volum la %1%"
 
-#: main.qml:92
+#: main.qml:102
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "Clic mijlociu pentru sonorizare"
 
-#: main.qml:93
+#: main.qml:103
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Clic mijlociu pentru muțirea tuturor sunetelor"
 
-#: main.qml:94
+#: main.qml:104
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Derulează pentru ajustarea volumului"
 
-#: main.qml:110
+#: main.qml:120
 #, kde-format
 msgid "Device name not found"
 msgstr "Denumirea dispozitivului nu a fost găsită"
 
-#: main.qml:338
+#: main.qml:353
 #, kde-format
 msgid "Devices"
 msgstr "Dispozitive"
 
-#: main.qml:345
+#: main.qml:360
 #, kde-format
 msgid "Applications"
 msgstr "Aplicații"
 
-#: main.qml:369
+#: main.qml:384
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Acțiuni suplimentare"
 
-#: main.qml:411
+#: main.qml:426
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Ține deschis"
 
-#: main.qml:443
+#: main.qml:461
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Reîncearcă"
 
-#: main.qml:470
+#: main.qml:488
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nicio aplicație nu redă sau înregistrează sunet"
 
-#: main.qml:555
+#: main.qml:584
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Dispozitive de ieșire"
 
-#: main.qml:557
+#: main.qml:586
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Fluxuri de ieșire"
 
-#: main.qml:615
+#: main.qml:644
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Dispozitive de intrare"
 
-#: main.qml:617
+#: main.qml:646
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Fluxuri de intrare"
 
-#: main.qml:681
+#: main.qml:711
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -200,30 +206,86 @@ msgstr ""
 "dispozitivului. Folosiți-o numai temporar pentru a face auzibile sunetele "
 "tăcute."
 
-#: main.qml:697
+#: main.qml:727
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Mărește volumul maxim"
 
-#: main.qml:711
+#: main.qml:741
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Muțește forțat toate dispozitivele de redare"
 
-#: main.qml:720
+#: main.qml:750
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Muțește forțat toate dispozitivele de intrare"
 
-#: main.qml:729
+#: main.qml:759
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Arată dispozitivele virtuale"
 
-#: main.qml:739
+#: main.qml:769
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurează dispozitive audio…"
+
+#: MicrophoneTestView.qml:104
+#, kde-format
+msgctxt "Button to stop microphone recording in test mode"
+msgid "Stop"
+msgstr ""
+
+#: MicrophoneTestView.qml:104
+#, kde-format
+msgctxt "Button to start microphone recording in test mode"
+msgid "Record"
+msgstr ""
+
+#: MicrophoneTestView.qml:118
+#, kde-format
+msgctxt "Button to stop microphone playing in test mode"
+msgid "Stop"
+msgstr ""
+
+#: MicrophoneTestView.qml:118
+#, kde-format
+msgctxt "Button to start microphone playing in test mode"
+msgid "Play"
+msgstr ""
+
+#: MicrophoneTestView.qml:137
+#, fuzzy, kde-format
+#| msgid "Volume step:"
+msgctxt "Label above the microphone volume meter in test overlay"
+msgid "Volume level"
+msgstr "Pas volum:"
+
+#: MicrophoneTestView.qml:166
+#, kde-format
+msgctxt "Label showing current microphone input level percentage in test mode"
+msgid "%1 %"
+msgstr ""
+
+#: MicrophoneTestView.qml:181
+#, fuzzy, kde-format
+#| msgid "Microphone sensitivity"
+msgctxt "Label above the microphone sensitivity slider in test overlay"
+msgid "Sensitivity"
+msgstr "Sensibilitatea microfonului"
+
+#: MicrophoneTestView.qml:237
+#, kde-format
+msgctxt "Button in microphone test view to return to the device list"
+msgid "Back"
+msgstr ""
+
+#: MicrophoneTestView.qml:250
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Microphone test error:<nl/><nl/>%1"
+msgstr ""
 
 #: StreamListItem.qml:36
 #, kde-format
@@ -267,9 +329,6 @@ msgstr "Denumirea fluxului nu a fost găsită"
 #~ msgid "General"
 #~ msgstr "Generale"
 
-#~ msgid "Volume step:"
-#~ msgstr "Pas volum:"
-
 #~ msgid "Play audio feedback for changes to:"
 #~ msgstr "Reacționează sonor la schimbări pentru:"
 
@@ -278,9 +337,6 @@ msgstr "Denumirea fluxului nu a fost găsită"
 
 #~ msgid "Show visual feedback for changes to:"
 #~ msgstr "Arată reacții vizuale la schimbări pentru:"
-
-#~ msgid "Microphone sensitivity"
-#~ msgstr "Sensibilitatea microfonului"
 
 #~ msgid "Mute state"
 #~ msgstr "Starea muțirii"
