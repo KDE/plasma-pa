@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:47+0000\n"
-"PO-Revision-Date: 2026-01-14 05:19+0100\n"
+"PO-Revision-Date: 2026-03-27 05:11+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -115,12 +115,10 @@ msgid "Test"
 msgstr "შემოწმება"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "შემოწმება"
+msgstr "შემოწმება…"
 
 #: kcm/ui/DeviceListItem.qml:246
 #, kde-format
@@ -258,50 +256,49 @@ msgstr "დააწკაპუნეთ დასატესტ დინა�
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "მიკროფონის შემოწმების შეცდომა:<nl/><nl/>%1"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "გაჩერება"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "ჩაწერა"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "გაჩერება"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "დაკვრა"
 
 #: kcm/ui/main.qml:602
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "ხმის დონე"
 
 #: kcm/ui/main.qml:632
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:647
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "მიკროფონის მგრძნობიარობა"
+msgstr "მგრძნობიარობა"
 
 #: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -536,31 +533,27 @@ msgstr "%1: დადუმებულია"
 #: microphonetest.cpp:106 microphonetest.cpp:217
 #, kde-format
 msgid "PulseAudio context is not ready"
-msgstr ""
+msgstr "PulseAudio-ის კონტექსტი მზად არაა"
 
 #: microphonetest.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to create a record stream"
-msgstr "საქაღალდის შექმნის შეცდომა: %1."
+msgstr "ჩანაწერის ნაკადის შექმნა ჩავარდა"
 
 #: microphonetest.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to connect record: %1"
-msgstr "საქაღალდის შექმნის შეცდომა: %1."
+msgstr "ჩაწერასთან დაკავშირება ჩავარდა: %1"
 
 #: microphonetest.cpp:227
 #, kde-format
 msgid "Couldn't create a playback stream"
-msgstr ""
+msgstr "დაკვრის კანადის შექმნა შეუძლებელია"
 
 #: microphonetest.cpp:243
 #, kde-format
 msgid "Couldn't connect playback"
-msgstr ""
+msgstr "დაკვრასთან დაკავშირება შეუძლებელია"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:47+0000\n"
-"PO-Revision-Date: 2025-11-29 11:57+0100\n"
+"PO-Revision-Date: 2026-03-27 11:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ListItemBase.qml:73
 #, kde-format
@@ -82,7 +82,7 @@ msgstr "100%"
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "Testen…"
 
 #: main.qml:36
 #, kde-format
@@ -233,58 +233,55 @@ msgstr "Audio-apparaten &configureren…"
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Stoppen"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Opnemen"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Stoppen"
 
 #: MicrophoneTestView.qml:118
-#, fuzzy, kde-format
-#| msgid "Playback"
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "Afspelen"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
-#| msgid "Volume step:"
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr "Volumestap:"
+msgstr "Volumeniveau"
 
 #: MicrophoneTestView.qml:166
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Microfoongevoeligheid"
+msgstr "Gevoeligheid"
 
 #: MicrophoneTestView.qml:237
 #, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
 #: MicrophoneTestView.qml:250
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Microfoontestfout:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format

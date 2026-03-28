@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:47+0000\n"
-"PO-Revision-Date: 2026-01-14 09:05+0100\n"
+"PO-Revision-Date: 2026-03-27 10:56+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -119,12 +119,10 @@ msgid "Test"
 msgstr "Prova"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "Prova"
+msgstr "Prova…"
 
 #: kcm/ui/DeviceListItem.qml:246
 #, kde-format
@@ -264,50 +262,49 @@ msgstr "Feu clic en qualsevol altaveu per a provar el so"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Error de la prova de micròfon:<nl/><nl/>%1"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Atura"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Enregistra"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Atura"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Reprodueix"
 
 #: kcm/ui/main.qml:602
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "Nivell de volum"
 
 #: kcm/ui/main.qml:632
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:647
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Sensibilitat del micròfon"
+msgstr "Sensibilitat"
 
 #: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -543,31 +540,27 @@ msgstr "%1: silenciat"
 #: microphonetest.cpp:106 microphonetest.cpp:217
 #, kde-format
 msgid "PulseAudio context is not ready"
-msgstr ""
+msgstr "El context del PulseAudio no està preparat"
 
 #: microphonetest.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to create a record stream"
-msgstr "Ha fallat en crear el directori: %1."
+msgstr "Ha fallat en crear un flux d'enregistrament"
 
 #: microphonetest.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to connect record: %1"
-msgstr "Ha fallat en crear el directori: %1."
+msgstr "Ha fallat en connectar l'enregistrament: %1"
 
 #: microphonetest.cpp:227
 #, kde-format
 msgid "Couldn't create a playback stream"
-msgstr ""
+msgstr "No s'ha pogut crear un flux de reproducció"
 
 #: microphonetest.cpp:243
 #, kde-format
 msgid "Couldn't connect playback"
-msgstr ""
+msgstr "No s'ha pogut connectar la reproducció"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format

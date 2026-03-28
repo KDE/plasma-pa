@@ -5,22 +5,22 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2015, 2016, 2019.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # SPDX-FileCopyrightText: 2024, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
-# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 # SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:47+0000\n"
-"PO-Revision-Date: 2026-01-14 06:15-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2026-03-27 02:37-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -119,12 +119,10 @@ msgid "Test"
 msgstr "Testar"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "Testar"
+msgstr "Testar…"
 
 #: kcm/ui/DeviceListItem.qml:246
 #, kde-format
@@ -264,50 +262,49 @@ msgstr "Clique em qualquer alto-falante para testar o som"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Erro do teste de microfone:<nl/><nl/>%1"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Parar"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Gravar"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Parar"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Reproduzir"
 
 #: kcm/ui/main.qml:602
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "Nível do volume"
 
 #: kcm/ui/main.qml:632
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:647
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Sensibilidade do microfone"
+msgstr "Sensibilidade"
 
 #: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -542,31 +539,27 @@ msgstr "%1: Silenciado"
 #: microphonetest.cpp:106 microphonetest.cpp:217
 #, kde-format
 msgid "PulseAudio context is not ready"
-msgstr ""
+msgstr "O contexto do PulseAudio não está pronto"
 
 #: microphonetest.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to create a record stream"
-msgstr "Falha ao criar diretório: %1."
+msgstr "Falha ao criar fluxo de gravação"
 
 #: microphonetest.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to connect record: %1"
-msgstr "Falha ao criar diretório: %1."
+msgstr "Falha ao conectar gravação: %1."
 
 #: microphonetest.cpp:227
 #, kde-format
 msgid "Couldn't create a playback stream"
-msgstr ""
+msgstr "Não foi possível criar fluxo de reprodução"
 
 #: microphonetest.cpp:243
 #, kde-format
 msgid "Couldn't connect playback"
-msgstr ""
+msgstr "Não foi possível conectar à reprodução"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format

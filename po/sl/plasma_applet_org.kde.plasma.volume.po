@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:47+0000\n"
-"PO-Revision-Date: 2025-11-29 07:13+0100\n"
+"PO-Revision-Date: 2026-03-27 06:39+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ListItemBase.qml:73
 #, kde-format
@@ -85,7 +85,7 @@ msgstr "100%"
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "Test…"
 
 #: main.qml:36
 #, kde-format
@@ -236,58 +236,55 @@ msgstr "Nastavi zvočne naprave…"
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zaustavi"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Snemaj"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zaustavi"
 
 #: MicrophoneTestView.qml:118
-#, fuzzy, kde-format
-#| msgid "Playback Streams"
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr "Tokovi predvajanja"
+msgstr "Predvajaj"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
-#| msgid "Volume step:"
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr "Korak glasnosti:"
+msgstr "Raven glasnosti"
 
 #: MicrophoneTestView.qml:166
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Občutljivost mikrofona"
+msgstr "Občutljivost"
 
 #: MicrophoneTestView.qml:237
 #, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
-msgstr ""
+msgstr "Nazaj"
 
 #: MicrophoneTestView.qml:250
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Napaka pri testu mikrofona:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format

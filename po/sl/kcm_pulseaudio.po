@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:47+0000\n"
-"PO-Revision-Date: 2026-01-14 07:08+0100\n"
+"PO-Revision-Date: 2026-03-27 06:44+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -117,12 +117,10 @@ msgid "Test"
 msgstr "Test"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "Test"
+msgstr "Test…"
 
 #: kcm/ui/DeviceListItem.qml:246
 #, kde-format
@@ -261,50 +259,49 @@ msgstr "Kliknite na katerikoli zvočnik za preizkus zvoka"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Napaka pri testu mikrofona:<nl/><nl/>%1"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zaustavi"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Snemaj"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zaustavi"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Predvajaj"
 
 #: kcm/ui/main.qml:602
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "Raven glasnosti"
 
 #: kcm/ui/main.qml:632
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:647
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Občutljivosti mikrofona"
+msgstr "Občutljivost"
 
 #: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -539,31 +536,27 @@ msgstr "%1: Nemo"
 #: microphonetest.cpp:106 microphonetest.cpp:217
 #, kde-format
 msgid "PulseAudio context is not ready"
-msgstr ""
+msgstr "Kontekst PulseAudio ni pripravljen"
 
 #: microphonetest.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to create a record stream"
-msgstr "Imenika ni bilo mogoče ustvariti: %1."
+msgstr "Ustvarjanje toka zapisov ni uspelo"
 
 #: microphonetest.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to connect record: %1"
-msgstr "Imenika ni bilo mogoče ustvariti: %1."
+msgstr "Povezava z zapisom ni uspela: %1"
 
 #: microphonetest.cpp:227
 #, kde-format
 msgid "Couldn't create a playback stream"
-msgstr ""
+msgstr "Ni bilo mogoče ustvariti toka za playback"
 
 #: microphonetest.cpp:243
 #, kde-format
 msgid "Couldn't connect playback"
-msgstr ""
+msgstr "Ni se bilo mogoče povezati na playback"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format

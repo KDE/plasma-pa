@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:47+0000\n"
-"PO-Revision-Date: 2026-01-26 16:25+0100\n"
+"PO-Revision-Date: 2026-03-27 10:43+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -82,7 +82,7 @@ msgstr "100%"
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "Test…"
 
 #: main.qml:36
 #, kde-format
@@ -234,58 +234,55 @@ msgstr "&Configura dispositivos audio..."
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Stoppa"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Registra"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Stoppa"
 
 #: MicrophoneTestView.qml:118
-#, fuzzy, kde-format
-#| msgid "Playback Streams"
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr "Playback Streams (Fluxos de reproduction)"
+msgstr "Reproduce"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
-#| msgid "Volume step:"
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr "Passo de volumine:"
+msgstr "Nivello de volumine"
 
 #: MicrophoneTestView.qml:166
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Sensibilitate de microphono"
+msgstr "Sensibilitate"
 
 #: MicrophoneTestView.qml:237
 #, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
-msgstr ""
+msgstr "Retro"
 
 #: MicrophoneTestView.qml:250
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Error de test de Microphono:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format

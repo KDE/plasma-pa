@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:47+0000\n"
-"PO-Revision-Date: 2025-11-29 05:07+0100\n"
+"PO-Revision-Date: 2026-03-27 05:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ListItemBase.qml:73
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "100%"
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "შემოწმება…"
 
 #: main.qml:36
 #, kde-format
@@ -234,57 +234,55 @@ msgstr "აუდიო მოწყობილობების &მორგ
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "გაჩერება"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "ჩაწერა"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "გაჩერება"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "დაკვრა"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
-#| msgid "Volume step:"
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr "ხმის ბიჯი:"
+msgstr "ხმის დონე"
 
 #: MicrophoneTestView.qml:166
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "მიკროფონის მგრძნობიარობა"
+msgstr "მგრძნობიარობა"
 
 #: MicrophoneTestView.qml:237
 #, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
-msgstr ""
+msgstr "უკან"
 
 #: MicrophoneTestView.qml:250
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "მიკროფონის შემოწმების შეცდომა:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format

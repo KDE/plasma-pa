@@ -113,12 +113,10 @@ msgid "Test"
 msgstr "测试"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "测试"
+msgstr ""
 
 #: kcm/ui/DeviceListItem.qml:246
 #, kde-format
@@ -293,11 +291,10 @@ msgid "%1 %"
 msgstr ""
 
 #: kcm/ui/main.qml:647
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "麦克风灵敏度"
+msgstr ""
 
 #: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -535,18 +532,14 @@ msgid "PulseAudio context is not ready"
 msgstr ""
 
 #: microphonetest.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to create a record stream"
-msgstr "创建目录失败：%1。"
+msgstr ""
 
 #: microphonetest.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgid "Failed to connect record: %1"
-msgstr "创建目录失败：%1。"
+msgstr ""
 
 #: microphonetest.cpp:227
 #, kde-format
