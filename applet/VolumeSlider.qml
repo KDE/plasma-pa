@@ -54,7 +54,7 @@ PC3.Slider {
         }
     }
 
-    opacity: muted ? 0.5 : 1
+    opacity: (muted || !enabled) ? 0.5 : 1
     // Prevents the groove from showing through the handle
     layer.enabled: opacity < 1
 
