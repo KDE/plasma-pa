@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:47+0000\n"
+"POT-Creation-Date: 2026-04-06 00:45+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -95,114 +95,114 @@ msgstr ""
 msgid "Audio Volume"
 msgstr "Jačina zvuka"
 
-#: main.qml:55 main.qml:57
+#: main.qml:60 main.qml:62
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr ""
 
-#: main.qml:59
+#: main.qml:64
 #, kde-format
 msgid "No output or input devices found"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:63
+#: main.qml:68
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr ""
 
-#: main.qml:89
+#: main.qml:94
 #, kde-format
 msgid "Audio Muted"
 msgstr "Zvuk utišan"
 
-#: main.qml:91
+#: main.qml:96
 #, kde-format
 msgid "Volume at %1%"
 msgstr "Jačina %1%"
 
-#: main.qml:102
+#: main.qml:107
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr ""
 
-#: main.qml:103
+#: main.qml:108
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr ""
 
-#: main.qml:104
+#: main.qml:109
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr ""
 
-#: main.qml:120
+#: main.qml:125
 #, kde-format
 msgid "Device name not found"
 msgstr ""
 
-#: main.qml:353
+#: main.qml:358
 #, kde-format
 msgid "Devices"
 msgstr "Uređaji"
 
-#: main.qml:360
+#: main.qml:365
 #, kde-format
 msgid "Applications"
 msgstr "Programi"
 
-#: main.qml:384
+#: main.qml:389
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:426
+#: main.qml:431
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr ""
 
-#: main.qml:461
+#: main.qml:466
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:488
+#: main.qml:500
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Nijedan program ne pušta niti snima zvuk."
 
-#: main.qml:584
+#: main.qml:596
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:586
+#: main.qml:598
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr ""
 
-#: main.qml:644
+#: main.qml:656
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Uređaji"
 
-#: main.qml:646
+#: main.qml:658
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr ""
 
-#: main.qml:711
+#: main.qml:723
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -210,29 +210,29 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:727
+#: main.qml:739
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Podigni najveću jačinu"
 
-#: main.qml:741
+#: main.qml:757
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr ""
 
-#: main.qml:750
+#: main.qml:766
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Force mute all input devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:759
+#: main.qml:775
 #, fuzzy, kde-format
 #| msgid "No output or input devices found"
 msgid "Show virtual devices"
 msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
 
-#: main.qml:769
+#: main.qml:785
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr ""

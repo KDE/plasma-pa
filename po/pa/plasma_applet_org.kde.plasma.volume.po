@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:47+0000\n"
+"POT-Creation-Date: 2026-04-06 00:45+0000\n"
 "PO-Revision-Date: 2024-03-07 17:18-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -89,116 +89,116 @@ msgstr ""
 msgid "Audio Volume"
 msgstr "ਆਡੀਓ ਵਾਲੀਅਮ"
 
-#: main.qml:55 main.qml:57
+#: main.qml:60 main.qml:62
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr ""
 
-#: main.qml:59
+#: main.qml:64
 #, kde-format
 msgid "No output or input devices found"
 msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਜਾਂ ਇਨਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: main.qml:63
+#: main.qml:68
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr ""
 
-#: main.qml:89
+#: main.qml:94
 #, kde-format
 msgid "Audio Muted"
 msgstr "ਆਡੀਓ ਚੁੱਪ ਹੈ"
 
-#: main.qml:91
+#: main.qml:96
 #, kde-format
 msgid "Volume at %1%"
 msgstr "ਵਾਲੀਅਮ %1%"
 
-#: main.qml:102
+#: main.qml:107
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "ਨਾ-ਚੁੱਪ ਕਰਨ ਲਈ ਮਿਡਲ ਕਲਿੱਕ"
 
-#: main.qml:103
+#: main.qml:108
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "ਸਾਰੇ ਆਡੀਓ ਚੁੱਪ ਕਰਨ ਲਈ ਮਿਡਲ ਕਲਿੱਕ"
 
-#: main.qml:104
+#: main.qml:109
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "ਵਾਲੀਅਮ ਕੰਟਰੋਲ ਕਰਨ ਲਈ ਸਕਰੋਲ ਕਰੋ"
 
-#: main.qml:120
+#: main.qml:125
 #, kde-format
 msgid "Device name not found"
 msgstr "ਡਿਵਾਈਸ ਨਾਂ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: main.qml:353
+#: main.qml:358
 #, kde-format
 msgid "Devices"
 msgstr "ਡਿਵਾਈਸ"
 
-#: main.qml:360
+#: main.qml:365
 #, kde-format
 msgid "Applications"
 msgstr "ਐਪਲੀਕੇਸ਼ਨਾਂ"
 
-#: main.qml:384
+#: main.qml:389
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
-#: main.qml:426
+#: main.qml:431
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr ""
 
-#: main.qml:461
+#: main.qml:466
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
-#: main.qml:488
+#: main.qml:500
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ਕੋਈ ਵੀ ਐਪਲੀਕੇਸ਼ਨ ਆਡੀਓ ਚਲਾ ਜਾਂ ਰਿਕਾਰਡ ਨਹੀਂ ਕਰ ਰਹੀ ਹੈ"
 
-#: main.qml:584
+#: main.qml:596
 #, fuzzy, kde-format
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "ਕੋਈ ਆਉਟਪੁੱਟ ਡਿਵਾਈਸ ਨਹੀਂ"
 
-#: main.qml:586
+#: main.qml:598
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "ਕੈਪਚਰ ਸਟਰੀਮਾਂ"
 
-#: main.qml:644
+#: main.qml:656
 #, fuzzy, kde-format
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "ਕੈਪਚਰ ਡਿਵਾਈਸ"
 
-#: main.qml:646
+#: main.qml:658
 #, fuzzy, kde-format
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "ਕੈਪਚਰ ਸਟਰੀਮਾਂ"
 
-#: main.qml:711
+#: main.qml:723
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -206,28 +206,28 @@ msgid ""
 "temporarily to make quiet media audible."
 msgstr ""
 
-#: main.qml:727
+#: main.qml:739
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਵਾਲੀਅਮ ਵਧਾਓ"
 
-#: main.qml:741
+#: main.qml:757
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ਸਾਰੇ ਪਲੇਅਬੈਕ ਡਿਵਾਈਸਾਂ ਨੂੰ ਧੱਕੇ ਨਾਲ ਮੌਨ ਕਰੋ"
 
-#: main.qml:750
+#: main.qml:766
 #, fuzzy, kde-format
 #| msgid "Force mute all playback devices"
 msgid "Force mute all input devices"
 msgstr "ਸਾਰੇ ਪਲੇਅਬੈਕ ਡਿਵਾਈਸਾਂ ਨੂੰ ਧੱਕੇ ਨਾਲ ਮੌਨ ਕਰੋ"
 
-#: main.qml:759
+#: main.qml:775
 #, kde-format
 msgid "Show virtual devices"
 msgstr "ਵਰਚੁਅਲ ਡਿਵਾਈਸ ਵੇਖੋ"
 
-#: main.qml:769
+#: main.qml:785
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "…ਆਡੀਓ ਡਿਵਾਈਸਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:47+0000\n"
+"POT-Creation-Date: 2026-04-06 00:45+0000\n"
 "PO-Revision-Date: 2026-03-27 05:11+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -80,7 +80,7 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "გამეორება"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:233
+#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "Device name not found"
 msgstr "მოწყობილობის სახელი ვერ ვიპოვე"
@@ -451,74 +451,74 @@ msgstr "აპლიკაცია იწყებს დადუმებუ�
 msgid "Default output device"
 msgstr "ნაგულისხმევი გამოსატანი მოწყობილობა"
 
-#: kded/audioshortcutsservice.cpp:82
+#: kded/audioshortcutsservice.cpp:84
 #, kde-format
 msgid "Increase Volume"
 msgstr "ხმის აწევა"
 
-#: kded/audioshortcutsservice.cpp:97
+#: kded/audioshortcutsservice.cpp:99
 #, kde-format
 msgid "Decrease Volume"
 msgstr "ხმის დაწევა"
 
-#: kded/audioshortcutsservice.cpp:112
+#: kded/audioshortcutsservice.cpp:114
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "ხმის 1%-ით აწევა"
 
-#: kded/audioshortcutsservice.cpp:127
+#: kded/audioshortcutsservice.cpp:129
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "ხმის 1%-ით დაწევა"
 
-#: kded/audioshortcutsservice.cpp:142
+#: kded/audioshortcutsservice.cpp:144
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "მიკროფონის ხმის აწევა"
 
-#: kded/audioshortcutsservice.cpp:156
+#: kded/audioshortcutsservice.cpp:158
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "მიკროფონის ხმის დაწევა"
 
-#: kded/audioshortcutsservice.cpp:170 qml/microphoneindicator.cpp:109
+#: kded/audioshortcutsservice.cpp:172 qml/microphoneindicator.cpp:109
 #, kde-format
 msgid "Mute"
 msgstr "დადუმება"
 
-#: kded/audioshortcutsservice.cpp:183
+#: kded/audioshortcutsservice.cpp:185
 #, kde-format
 msgid "Mute Microphone"
 msgstr "მიკროფონის დადუმება"
 
-#: kded/audioshortcutsservice.cpp:196
+#: kded/audioshortcutsservice.cpp:198
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
 msgstr "სალაპარაკოდ დააჭირეთ"
 
-#: kded/audioshortcutsservice.cpp:204
+#: kded/audioshortcutsservice.cpp:206
 #, kde-format
 msgid "Audio Volume"
 msgstr "ხმის დონე"
 
-#: kded/audioshortcutsservice.cpp:222
+#: kded/audioshortcutsservice.cpp:224
 #, kde-format
 msgid "No such device"
 msgstr "ასეთი მოწყობილობა არ არსებობს"
 
-#: kded/audioshortcutsservice.cpp:268
+#: kded/audioshortcutsservice.cpp:270
 #, kde-format
 msgid "No output device"
 msgstr "გამოტანის მოწყობილობის გარეშე"
 
-#: kded/audioshortcutsservice.cpp:289 kded/audioshortcutsservice.cpp:309
+#: kded/audioshortcutsservice.cpp:291 kded/audioshortcutsservice.cpp:311
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% ელემენტი)"
 
-#: kded/audioshortcutsservice.cpp:395
+#: kded/audioshortcutsservice.cpp:397
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:47+0000\n"
+"POT-Creation-Date: 2026-04-06 00:45+0000\n"
 "PO-Revision-Date: 2026-03-28 09:31+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -92,112 +92,112 @@ msgstr "בדיקה…"
 msgid "Audio Volume"
 msgstr "עוצמת שמע"
 
-#: main.qml:55 main.qml:57
+#: main.qml:60 main.qml:62
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "החיבור לשירות השמע נקטע"
 
-#: main.qml:59
+#: main.qml:64
 #, kde-format
 msgid "No output or input devices found"
 msgstr "לא נמצאו התקני פלט או קלט"
 
-#: main.qml:63
+#: main.qml:68
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "מתבצע ניסיון להתחבר שוב…"
 
-#: main.qml:89
+#: main.qml:94
 #, kde-format
 msgid "Audio Muted"
 msgstr "השמע מושתק"
 
-#: main.qml:91
+#: main.qml:96
 #, kde-format
 msgid "Volume at %1%"
 msgstr "עוצמת השמע ב־%1%"
 
-#: main.qml:102
+#: main.qml:107
 #, kde-format
 msgid "Middle-click to unmute"
 msgstr "לחיצה אמצעית משתיקה"
 
-#: main.qml:103
+#: main.qml:108
 #, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "לחיצה אמצעית משתיקה את כל השמע"
 
-#: main.qml:104
+#: main.qml:109
 #, kde-format
 msgid "Scroll to adjust volume"
 msgstr "גלילה משנה את עוצמת השמע"
 
-#: main.qml:120
+#: main.qml:125
 #, kde-format
 msgid "Device name not found"
 msgstr "שם ההתקן לא נמצא"
 
-#: main.qml:353
+#: main.qml:358
 #, kde-format
 msgid "Devices"
 msgstr "התקנים"
 
-#: main.qml:360
+#: main.qml:365
 #, kde-format
 msgid "Applications"
 msgstr "יישומים"
 
-#: main.qml:384
+#: main.qml:389
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "פעולות נוספות"
 
-#: main.qml:426
+#: main.qml:431
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "להשאיר פתוח"
 
-#: main.qml:461
+#: main.qml:466
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "לנסות שוב"
 
-#: main.qml:488
+#: main.qml:500
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "אין יישומים שמשמיעים או מקליטים שמע"
 
-#: main.qml:584
+#: main.qml:596
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "התקני פלט"
 
-#: main.qml:586
+#: main.qml:598
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "תזרימי פלט"
 
-#: main.qml:644
+#: main.qml:656
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "התקני קלט"
 
-#: main.qml:646
+#: main.qml:658
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "תזרימי קלט"
 
-#: main.qml:711
+#: main.qml:723
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -207,27 +207,27 @@ msgstr ""
 "שימוש ביכולת הזאת למשך זמן יפגום ברמקולים שלך. יש להשתמש בה באופן זמני כדי "
 "להפוך שמע חלש ליותר ברור."
 
-#: main.qml:727
+#: main.qml:739
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "הגברת עוצמה מרבית"
 
-#: main.qml:741
+#: main.qml:757
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "אילוץ השתקת כל התקני הנגינה"
 
-#: main.qml:750
+#: main.qml:766
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "אילוץ השתקת כל התקני הקלט"
 
-#: main.qml:759
+#: main.qml:775
 #, kde-format
 msgid "Show virtual devices"
 msgstr "הצגת התקנים וירטואליים"
 
-#: main.qml:769
+#: main.qml:785
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ה&גדרת התקני שמע…"
