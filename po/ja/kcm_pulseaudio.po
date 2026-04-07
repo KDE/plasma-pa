@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019.
 # Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2023.
@@ -8,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
 "PO-Revision-Date: 2024-09-13 03:50+0900\n"
 "Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
-"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: context.cpp:596
 #, kde-format
