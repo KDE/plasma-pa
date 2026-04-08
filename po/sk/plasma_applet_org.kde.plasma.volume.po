@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: ListItemBase.qml:72
 #, kde-format
@@ -198,6 +198,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Prolonged use of táto funkcia will damage the device's speakers. Only use it "
+"temporarily to make quiet media audible."
 
 #: main.qml:697
 #, kde-format
@@ -210,8 +212,7 @@ msgid "Force mute all playback devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
 
 #: main.qml:720
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
 
@@ -379,48 +380,37 @@ msgstr "Názov prúdu nebol nájdený"
 #~ msgstr "Odozva hlasitosti"
 
 #, fuzzy
-#~| msgid "Devices"
 #~ msgid "Device Profiles"
 #~ msgstr "Zariadenia"
 
 #, fuzzy
-#~| msgid "Playback Streams"
 #~ msgid "Playback"
 #~ msgstr "Prúdy prehrávania"
 
 #, fuzzy
-#~| msgid "No applications playing or recording audio"
 #~ msgctxt "@label"
 #~ msgid "No Applications Playing Audio"
 #~ msgstr "Žiadne aplikácie neprehrávajú a nenahrávajú zvuk"
 
 #, fuzzy
-#~| msgid "Capture Streams"
 #~ msgid "Capture"
 #~ msgstr "Prúdy zachytávania"
 
 #, fuzzy
-#~| msgid "No applications playing or recording audio"
 #~ msgctxt "@label"
 #~ msgid "No Applications Recording Audio"
 #~ msgstr "Žiadne aplikácie neprehrávajú a nenahrávajú zvuk"
 
 #, fuzzy
-#~| msgctxt ""
-#~| "Heading for a list of ports of a device (for example built-in laptop "
-#~| "speakers or a plug for headphones)"
-#~| msgid "Ports"
 #~ msgid "Port"
 #~ msgstr "Porty"
 
 #, fuzzy
-#~| msgid "Devices"
 #~ msgctxt "@title:tab"
 #~ msgid "Devices"
 #~ msgstr "Zariadenia"
 
 #, fuzzy
-#~| msgid "Applications"
 #~ msgctxt "@title:tab"
 #~ msgid "Applications"
 #~ msgstr "Aplikácie"
@@ -430,7 +420,5 @@ msgstr "Názov prúdu nebol nájdený"
 #~ msgstr "%1: %2"
 
 #, fuzzy
-#~| msgctxt "only used for sizing, should be widest possible string"
-#~| msgid "100%"
 #~ msgid "100%"
 #~ msgstr "100%"

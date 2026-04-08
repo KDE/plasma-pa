@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -26,6 +26,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Changes have not been applied.<nl/>Nepodarilo sa restart wireplumber."
+"service. The command crashed."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -34,12 +36,14 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Changes have not been applied.<nl/>Nepodarilo sa restart wireplumber."
+"service. The command terminated with code: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Nepodarilo sa handle devices: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
@@ -115,7 +119,7 @@ msgstr "Vyskúšať"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Show Channels"
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -275,6 +279,8 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Saving changes will restart audio services. Apps playing audio will "
+"experience interruptions and may need to be restarted."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
@@ -292,7 +298,7 @@ msgstr "Obnovuje sa"
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (click 'Save' to apply)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format
@@ -311,7 +317,7 @@ msgstr "Obnoviť"
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "DEFAULT"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -365,12 +371,10 @@ msgid "Mute state"
 msgstr "Stav stlmenia"
 
 #: kcm/ui/VolumeControlsConfig.qml:97
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 používajú mikrofón"
+msgstr "Application starts using muted microphone"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -533,7 +537,6 @@ msgid "%1 is using the microphone"
 msgstr "%1 používa mikrofón"
 
 #, fuzzy
-#~| msgid "Device Profiles"
 #~ msgctxt "@item:inlistbox a type of name source"
 #~ msgid "Device Nickname"
 #~ msgstr "Profily zariadenia"
