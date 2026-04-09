@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: ListItemBase.qml:73
 #, kde-format
@@ -84,7 +84,7 @@ msgstr "100%"
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "Vyskúšať"
 
 #: main.qml:36
 #, kde-format
@@ -95,7 +95,7 @@ msgstr "Hlasitosti zvuku"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Strata pripojenia k zvukovej službe"
 
 #: main.qml:64
 #, kde-format
@@ -106,7 +106,7 @@ msgstr "Nenašli sa žiadne výstupné alebo vstupné zariadenia"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Skúšam sa znovu spojiť..."
 
 #: main.qml:94
 #, kde-format
@@ -152,20 +152,20 @@ msgstr "Aplikácie"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Viac akcií"
 
 #: main.qml:431
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "Ponechať otvorené"
 
 #: main.qml:466
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Znovu"
 
 #: main.qml:500
 #, kde-format
@@ -173,32 +173,28 @@ msgid "No applications playing or recording audio"
 msgstr "Žiadne aplikácie neprehrávajú ani nenahrávajú zvuk"
 
 #: main.qml:596
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Žiadne výstupné zariadenie"
+msgstr "Výstupné zariadenia"
 
 #: main.qml:598
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Prúdy zachytávania"
+msgstr "Výstupné prúdy"
 
 #: main.qml:656
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Zariadenia pre zachytávanie"
+msgstr "Vstupné zariadenia"
 
 #: main.qml:658
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr "Prúdy zachytávania"
+msgstr "Vstupné prúdy"
 
 #: main.qml:723
 #, kde-kuit-format
@@ -207,6 +203,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Prolonged use of táto funkcia will damage the device's speakers. Only use it "
+"temporarily to make quiet media audible."
 
 #: main.qml:739
 #, kde-format
@@ -219,8 +217,7 @@ msgid "Force mute all playback devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
 
 #: main.qml:766
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
 
@@ -238,30 +235,28 @@ msgstr "&Nastaviť zvukové zariadenia..."
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zastaviť"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Nahrávať"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zastaviť"
 
 #: MicrophoneTestView.qml:118
-#, fuzzy, kde-format
-#| msgid "Playback Streams"
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "Prúdy prehrávania"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
-#| msgid "Volume step:"
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "Krok hlasitosti:"
@@ -270,11 +265,10 @@ msgstr "Krok hlasitosti:"
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Citlivosti mikrofónu"
@@ -283,7 +277,7 @@ msgstr "Citlivosti mikrofónu"
 #, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
-msgstr ""
+msgstr "Späť"
 
 #: MicrophoneTestView.qml:250
 #, kde-kuit-format
@@ -439,43 +433,33 @@ msgstr "Názov prúdu nebol nájdený"
 #~ msgstr "Odozva hlasitosti"
 
 #, fuzzy
-#~| msgid "Devices"
 #~ msgid "Device Profiles"
 #~ msgstr "Zariadenia"
 
 #, fuzzy
-#~| msgid "No applications playing or recording audio"
 #~ msgctxt "@label"
 #~ msgid "No Applications Playing Audio"
 #~ msgstr "Žiadne aplikácie neprehrávajú a nenahrávajú zvuk"
 
 #, fuzzy
-#~| msgid "Capture Streams"
 #~ msgid "Capture"
 #~ msgstr "Prúdy zachytávania"
 
 #, fuzzy
-#~| msgid "No applications playing or recording audio"
 #~ msgctxt "@label"
 #~ msgid "No Applications Recording Audio"
 #~ msgstr "Žiadne aplikácie neprehrávajú a nenahrávajú zvuk"
 
 #, fuzzy
-#~| msgctxt ""
-#~| "Heading for a list of ports of a device (for example built-in laptop "
-#~| "speakers or a plug for headphones)"
-#~| msgid "Ports"
 #~ msgid "Port"
 #~ msgstr "Porty"
 
 #, fuzzy
-#~| msgid "Devices"
 #~ msgctxt "@title:tab"
 #~ msgid "Devices"
 #~ msgstr "Zariadenia"
 
 #, fuzzy
-#~| msgid "Applications"
 #~ msgctxt "@title:tab"
 #~ msgid "Applications"
 #~ msgstr "Aplikácie"
@@ -485,7 +469,5 @@ msgstr "Názov prúdu nebol nájdený"
 #~ msgstr "%1: %2"
 
 #, fuzzy
-#~| msgctxt "only used for sizing, should be widest possible string"
-#~| msgid "100%"
 #~ msgid "100%"
 #~ msgstr "100%"

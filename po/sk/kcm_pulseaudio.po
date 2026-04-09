@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -25,6 +25,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Changes have not been applied.<nl/>Nepodarilo sa restart wireplumber."
+"service. The command crashed."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -33,24 +35,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Changes have not been applied.<nl/>Nepodarilo sa restart wireplumber."
+"service. The command terminated with code: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Nepodarilo sa handle devices: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Nepodarilo sa vytvoriť priečinok: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Zlyhalo otvorenie súboru na zápis: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -62,24 +66,24 @@ msgstr "Profil:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Strata pripojenia k zvukovej službe"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Skúšam sa znovu spojiť..."
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Znovu"
 
 #: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Názov zariadenia nebol nájdený"
 
 #: kcm/ui/DeviceListItem.qml:105
 #, kde-format
@@ -111,9 +115,7 @@ msgid "Test"
 msgstr "Vyskúšať"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "Vyskúšať"
@@ -122,7 +124,7 @@ msgstr "Vyskúšať"
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Show Channels"
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -130,10 +132,9 @@ msgid "Show Inactive Devices"
 msgstr "Zobraziť neaktívne zariadenia"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Nahrávacie zariadenia"
+msgstr "Premenovať zariadenia…"
 
 #: kcm/ui/main.qml:87
 #, kde-format
@@ -262,41 +263,40 @@ msgstr ""
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zastaviť"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Nahrávať"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zastaviť"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Prehrať"
 
 #: kcm/ui/main.qml:602
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "Krok hlasitosti:"
 
 #: kcm/ui/main.qml:632
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:647
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Citlivosť mikrofónu"
@@ -326,17 +326,16 @@ msgid "Mute %1"
 msgstr "Stlmiť %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Nahrávacie zariadenia"
+msgstr "Premenovať zariadenia…"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Uložiť"
 
 #: kcm/ui/RenameDevices.qml:68
 #, kde-format
@@ -345,43 +344,45 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Saving changes will restart audio services. Apps playing audio will "
+"experience interruptions and may need to be restarted."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Nahlásiť chybu"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "Obnovuje sa"
 
 #: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (click 'Save' to apply)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Použiť"
 
 #: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Obnoviť"
 
 #: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "DEFAULT"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -420,8 +421,7 @@ msgid "Audio volume"
 msgstr "Hlasitosť zvuku"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr "Zobraziť vizuálnu spätnú väzbu pre zmeny:"
 
@@ -442,12 +442,10 @@ msgid "Push to talk"
 msgstr ""
 
 #: kcm/ui/VolumeControlsConfig.qml:104
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 používajú mikrofón"
+msgstr "Application starts using muted microphone"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
 #, kde-format
@@ -457,34 +455,32 @@ msgstr "Predvolené výstupné zariadenie"
 #: kded/audioshortcutsservice.cpp:84
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Zvýšiť hlasitosť"
 
 #: kded/audioshortcutsservice.cpp:99
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Znížiť hlasitosť"
 
 #: kded/audioshortcutsservice.cpp:114
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Zvýšiť hlasitosť o 1%"
 
 #: kded/audioshortcutsservice.cpp:129
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Znížiť hlasitosť o 1%"
 
 #: kded/audioshortcutsservice.cpp:144
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Mikrofón stlmený"
+msgstr "Zvýšiť hlasitosť mikrofónu"
 
 #: kded/audioshortcutsservice.cpp:158
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Mikrofón stlmený"
+msgstr "Znížiť hlasitosť mikrofónu"
 
 #: kded/audioshortcutsservice.cpp:172 qml/microphoneindicator.cpp:109
 #, kde-format
@@ -492,10 +488,9 @@ msgid "Mute"
 msgstr "Stlmiť"
 
 #: kded/audioshortcutsservice.cpp:185
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Mikrofón"
+msgstr "Stlmiť mikrofón"
 
 #: kded/audioshortcutsservice.cpp:198
 #, kde-format
@@ -504,29 +499,25 @@ msgid "Push to talk"
 msgstr ""
 
 #: kded/audioshortcutsservice.cpp:206
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
-msgstr "Hlasitosť zvuku"
+msgstr "Hlasitosti zvuku"
 
 #: kded/audioshortcutsservice.cpp:224
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Zariadenie neexistuje"
 
 #: kded/audioshortcutsservice.cpp:270
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "Predvolené výstupné zariadenie"
+msgstr "Žiadne výstupné zariadenie"
 
 #: kded/audioshortcutsservice.cpp:291 kded/audioshortcutsservice.cpp:311
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (%2% Batéria)"
 
 #: kded/audioshortcutsservice.cpp:397
 #, kde-format
@@ -535,11 +526,10 @@ msgid "Speak…"
 msgstr ""
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Stlmiť"
+msgstr "%1: Stlmené"
 
 #: microphonetest.cpp:106 microphonetest.cpp:217
 #, kde-format
@@ -549,12 +539,12 @@ msgstr ""
 #: microphonetest.cpp:114
 #, kde-format
 msgid "Failed to create a record stream"
-msgstr ""
+msgstr "Nepodarilo sa create a record stream"
 
 #: microphonetest.cpp:130
 #, kde-format
 msgid "Failed to connect record: %1"
-msgstr ""
+msgstr "Nepodarilo sa connect record: %1"
 
 #: microphonetest.cpp:227
 #, kde-format
@@ -643,7 +633,6 @@ msgid "%1 is using the microphone"
 msgstr "%1 používa mikrofón"
 
 #, fuzzy
-#~| msgid "Device Profiles"
 #~ msgctxt "@item:inlistbox a type of name source"
 #~ msgid "Device Nickname"
 #~ msgstr "Profily zariadenia"
