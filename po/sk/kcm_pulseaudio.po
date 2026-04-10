@@ -257,7 +257,7 @@ msgstr "Kliknutím na reproduktor otestujete zvuk"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Chyba testu mikrofónu:<nl/><nl/>%1"
 
 #: kcm/ui/main.qml:570
 #, kde-format
@@ -439,7 +439,7 @@ msgstr "Stav stlmenia"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Stlačte na hovorenie"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
@@ -496,7 +496,7 @@ msgstr "Stlmiť mikrofón"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Stlačte na hovorenie"
 
 #: kded/audioshortcutsservice.cpp:206
 #, kde-format
@@ -523,7 +523,7 @@ msgstr "%1 (%2% Batéria)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Hovorte…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
@@ -534,7 +534,7 @@ msgstr "%1: Stlmené"
 #: microphonetest.cpp:106 microphonetest.cpp:217
 #, kde-format
 msgid "PulseAudio context is not ready"
-msgstr ""
+msgstr "Kontext PulseAudio nie je pripravený"
 
 #: microphonetest.cpp:114
 #, kde-format
@@ -549,12 +549,12 @@ msgstr "Nepodarilo sa connect record: %1"
 #: microphonetest.cpp:227
 #, kde-format
 msgid "Couldn't create a playback stream"
-msgstr ""
+msgstr "Nepodarilo sa vytvoriť prehrávací prúd"
 
 #: microphonetest.cpp:243
 #, kde-format
 msgid "Couldn't connect playback"
-msgstr ""
+msgstr "Nepodarilo sa pripojiť prehrávanie"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format

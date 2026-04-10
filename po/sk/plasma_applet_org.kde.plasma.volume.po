@@ -283,7 +283,7 @@ msgstr "Späť"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Chyba testu mikrofónu:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format
