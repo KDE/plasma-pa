@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-06 00:45+0000\n"
-"PO-Revision-Date: 2026-04-08 23:51+0900\n"
+"PO-Revision-Date: 2026-04-17 20:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: Traditional Chinese\n"
@@ -540,7 +540,7 @@ msgstr "建立錄製串流失敗"
 #: microphonetest.cpp:130
 #, kde-format
 msgid "Failed to connect record: %1"
-msgstr ""
+msgstr "連線錄製失敗：%1"
 
 #: microphonetest.cpp:227
 #, kde-format
@@ -550,7 +550,7 @@ msgstr "無法建立播放控制串流"
 #: microphonetest.cpp:243
 #, kde-format
 msgid "Couldn't connect playback"
-msgstr ""
+msgstr "無法連線播放"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
