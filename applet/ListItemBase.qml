@@ -339,7 +339,7 @@ PC3.ItemDelegate {
                     text: i18nc("only used for sizing, should be widest possible string", "100%")
                 }
 
-                Button {
+                PC3.Button {
                     visible: item.type === "source"
                     text: i18ndc("kcm_pulseaudio", "Perform an audio test of the device", "Test…")
                     icon.name: "audio-input-microphone-symbolic"
