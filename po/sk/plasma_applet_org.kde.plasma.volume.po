@@ -203,8 +203,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
-"Prolonged use of táto funkcia will damage the device's speakers. Only use it "
-"temporarily to make quiet media audible."
+"Dlhodobé používanie tejto funkcie poškodí reproduktory zariadenia. "
+"Používajte ju iba dočasne, aby bolo tiché médium počuteľné."
 
 #: main.qml:739
 #, kde-format
