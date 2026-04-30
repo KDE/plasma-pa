@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-04-30 02:40+0000\n"
 "PO-Revision-Date: 2026-03-13 13:53+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: \n"
@@ -386,7 +386,7 @@ msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/VolumeSlider.qml:88
+#: kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
