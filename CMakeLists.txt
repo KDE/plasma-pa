@@ -88,8 +88,8 @@ set_package_properties(KF6Kirigami PROPERTIES
     TYPE RUNTIME
 )
 
-find_package(KirigamiAddons CONFIG)
-set_package_properties(KirigamiAddons PROPERTIES
+find_package(KF6KirigamiAddons CONFIG)
+set_package_properties(KF6KirigamiAddons PROPERTIES
     DESCRIPTION "Extra controls for Kirigami applications"
     PURPOSE "Required at runtime for the KCM"
     TYPE RUNTIME
