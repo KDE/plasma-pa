@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-30 00:46+0000\n"
-"PO-Revision-Date: 2026-03-31 10:56+0900\n"
+"PO-Revision-Date: 2026-05-10 11:53+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -422,10 +422,9 @@ msgid "Audio volume"
 msgstr "音量"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "変更時に視覚フィードバックを表示:"
+msgstr "変更時に OSD ポップアップを表示:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
@@ -441,15 +440,13 @@ msgstr "ミュート状態"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "プッシュトゥトーク"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 はマイクを使用しています"
+msgstr "アプリケーションがミュート中のマイクにアクセスしたとき"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
 #, kde-format
@@ -500,7 +497,7 @@ msgstr "マイクをミュートする"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr "プッシュツートーク"
+msgstr "プッシュトゥトーク"
 
 #: kded/audioshortcutsservice.cpp:206
 #, kde-format
