@@ -87,6 +87,7 @@ ColumnLayout {
             }
 
             RowLayout {
+                visible: HasVolume
                 MuteButton {
                     Layout.alignment: Qt.AlignTop
                     muted: Muted
@@ -97,7 +98,6 @@ ColumnLayout {
                 VolumeSlider {
                     id: volumeSlider
                     Layout.alignment: Qt.AlignVCenter
-                    visible:  HasVolume
                 }
             }
         }

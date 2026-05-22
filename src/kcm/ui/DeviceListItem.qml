@@ -184,6 +184,7 @@ ColumnLayout {
             muted: Muted
             onCheckedChanged: Muted = checked
             toolTipText: !currentPort ? Description : currentPort.description
+            enabled: delegate.pulseObject.muteWritable
         }
 
         GridLayout {

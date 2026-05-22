@@ -214,7 +214,42 @@ PC3.ItemDelegate {
             }
 
             RowLayout {
+                visible: !item.model.VolumeWritable
+                uniformCellSizes: true
+                PC3.Button {
+                    Layout.fillWidth: true
+                    text: i18n("Volume Down")
+                    icon.name: "audio-volume-low-symbolic"
+                    icon.width: Kirigami.Units.iconSizes.medium
+                    icon.height: Kirigami.Units.iconSizes.medium
+                    onClicked: item.model.PulseObject.volumeDown();
+                    display: PC3.AbstractButton.TextUnderIcon
+
+                }
+                PC3.Button {
+                    Layout.fillWidth: true
+                    text: i18n("Toggle Mute")
+                    display: PC3.AbstractButton.TextUnderIcon
+                    icon.width: Kirigami.Units.iconSizes.medium
+                    icon.height: Kirigami.Units.iconSizes.medium
+                    icon.name: "audio-volume-muted"
+                    onClicked: item.model.PulseObject.toggleMute();
+                }
+
+                PC3.Button {
+                    Layout.fillWidth: true
+                    text: i18n("Volume Up")
+                    display: PC3.AbstractButton.TextUnderIcon
+                    icon.width: Kirigami.Units.iconSizes.medium
+                    icon.height: Kirigami.Units.iconSizes.medium
+                    icon.name: "audio-volume-high-symbolic"
+                    onClicked: item.model.PulseObject.volumeUp();
+                }
+            }
+
+            RowLayout {
                 spacing: Kirigami.Units.smallSpacing
+                visible: item.model.VolumeWritable
 
                 SmallToolButton {
                     id: muteButton

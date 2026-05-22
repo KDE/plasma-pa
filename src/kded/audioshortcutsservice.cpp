@@ -80,9 +80,14 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
         if (!sink) {
             return;
         }
-        int percent = changeVolumePercent(sink, m_globalConfig->volumeStep());
-        showVolume(percent);
-        playFeedback(-1);
+        if (sink->isVolumeWritable()) {
+            int percent = changeVolumePercent(sink, m_globalConfig->volumeStep());
+            showVolume(percent);
+            playFeedback(-1);
+        } else {
+            m_osdDBusInterface->showText("audio-volume-high", i18n("Volume Up"));
+            sink->volumeUp();
+        }
     });
 
     QAction *volumeDownAction = new QAction(this);
@@ -95,9 +100,14 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
         if (!sink) {
             return;
         }
-        int percent = changeVolumePercent(sink, -m_globalConfig->volumeStep());
-        showVolume(percent);
-        playFeedback(-1);
+        if (sink->isVolumeWritable()) {
+            int percent = changeVolumePercent(sink, -m_globalConfig->volumeStep());
+            showVolume(percent);
+            playFeedback(-1);
+        } else {
+            m_osdDBusInterface->showText("audio-volume-low", i18n("Volume Down"));
+            sink->volumeDown();
+        }
     });
 
     QAction *volumeUpSmallAction = new QAction(this);
@@ -110,9 +120,14 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
         if (!sink) {
             return;
         }
-        int percent = changeVolumePercent(sink, 1);
-        showVolume(percent);
-        playFeedback(-1);
+        if (sink->isVolumeWritable()) {
+            int percent = changeVolumePercent(sink, 1);
+            showVolume(percent);
+            playFeedback(-1);
+        } else {
+            m_osdDBusInterface->showText("audio-volume-high", i18n("Volume Up"));
+            sink->volumeDown();
+        }
     });
 
     QAction *volumeDownSmallAction = new QAction(this);
@@ -125,9 +140,14 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
         if (!sink) {
             return;
         }
-        int percent = changeVolumePercent(sink, -1);
-        showVolume(percent);
-        playFeedback(-1);
+        if (sink->isVolumeWritable()) {
+            int percent = changeVolumePercent(sink, -1);
+            showVolume(percent);
+            playFeedback(-1);
+        } else {
+            m_osdDBusInterface->showText("audio-volume-low", i18n("Volume Down"));
+            sink->volumeDown();
+        }
     });
 
     QAction *volumeUpMicAction = new QAction(this);
@@ -164,6 +184,13 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     muteAction->setText(i18n("Mute"));
     muteAction->setShortcut(Qt::Key_VolumeMute);
     connect(muteAction, &QAction::triggered, this, [this]() {
+        auto sink = m_preferredDevice.sink();
+        if (sink && !sink->isMuteWritable()) {
+            m_osdDBusInterface->showText("audio-volume-muted", i18n("Toggle Mute"));
+            sink->toggleMute();
+            return;
+        }
+
         if (m_globalConfig->globalMute()) {
             disableGlobalMute();
         } else {
