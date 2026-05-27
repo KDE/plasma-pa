@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the plasma-pa package.
 #
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2019, 2020, 2021.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2023-2026 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-06 00:45+0000\n"
-"PO-Revision-Date: 2025-11-08 22:07+0100\n"
+"PO-Revision-Date: 2026-05-26 22:19+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: ListItemBase.qml:73
 #, kde-format
@@ -32,7 +32,7 @@ msgstr "Jelenleg nincs lejátszás"
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr "További beállítások ehhez"
+msgstr "További beállítások"
 
 #: ListItemBase.qml:207
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "100%"
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "Teszt…"
 
 #: main.qml:36
 #, kde-format
@@ -125,7 +125,7 @@ msgstr "Visszahangosítás a középső gombbal"
 #: main.qml:108
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr "Összes hang némítésa a középső gombbal"
+msgstr "Összes hang némítása a középső gombbal"
 
 #: main.qml:109
 #, kde-format
@@ -158,7 +158,7 @@ msgstr "További műveletek"
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "Tartsa nyitva"
 
 #: main.qml:466
 #, kde-format
@@ -234,57 +234,55 @@ msgstr "Hangeszközök &beállítása…"
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Leállítás"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Felvétel"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Leállítás"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Lejátszás"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
-#| msgid "Volume step:"
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr "Hangerőléptetés:"
+msgstr "Hangerőszint"
 
 #: MicrophoneTestView.qml:166
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Mikrofon érzékenysége"
+msgstr "Érzékenység"
 
 #: MicrophoneTestView.qml:237
 #, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
-msgstr ""
+msgstr "Vissza"
 
 #: MicrophoneTestView.qml:250
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Hiba a mikrofonteszt során:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format
