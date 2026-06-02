@@ -1,0 +1,287 @@
+# Uyghur translation for plasma_applet_org.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-pa package.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-pa\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-04-06 00:45+0000\n"
+"PO-Revision-Date: 2026-06-01 18:09-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: ListItemBase.qml:73
+#, kde-format
+msgid "Currently not recording"
+msgstr ""
+
+#: ListItemBase.qml:74
+#, kde-format
+msgid "Currently not playing"
+msgstr ""
+
+#: ListItemBase.qml:205
+#, kde-format
+msgctxt "@action:button"
+msgid "Additional Options"
+msgstr ""
+
+#: ListItemBase.qml:207
+#, kde-format
+msgid "Show additional options for %1"
+msgstr ""
+
+#: ListItemBase.qml:229
+#, kde-format
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "ئۈنلۈك"
+
+#: ListItemBase.qml:229
+#, kde-format
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "ئۈنسىز"
+
+#: ListItemBase.qml:231
+#, kde-format
+msgid "Unmute %1"
+msgstr "%1 ئۈنلۈك"
+
+#: ListItemBase.qml:231
+#, kde-format
+msgid "Mute %1"
+msgstr "%1 ئۈنسىز"
+
+#: ListItemBase.qml:254
+#, kde-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "%1 نىڭ ئاۋاز تەڭشىكى"
+
+#: ListItemBase.qml:318 MicrophoneTestView.qml:215
+#, kde-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: ListItemBase.qml:339 MicrophoneTestView.qml:228
+#, kde-format
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: ListItemBase.qml:344
+#, kde-format
+msgctxt "Perform an audio test of the device"
+msgid "Test…"
+msgstr ""
+
+#: main.qml:36
+#, kde-format
+msgid "Audio Volume"
+msgstr "ئاۋاز كۈچلۈكلۈكى"
+
+#: main.qml:60 main.qml:62
+#, kde-format
+msgctxt "@label"
+msgid "Connection to the Sound Service Lost"
+msgstr ""
+
+#: main.qml:64
+#, kde-format
+msgid "No output or input devices found"
+msgstr ""
+
+#: main.qml:68
+#, kde-format
+msgctxt "@info reconnecting to pulseaudio"
+msgid "Trying to reconnect…"
+msgstr ""
+
+#: main.qml:94
+#, kde-format
+msgid "Audio Muted"
+msgstr ""
+
+#: main.qml:96
+#, kde-format
+msgid "Volume at %1%"
+msgstr "%1% دىكى ئاۋاز"
+
+#: main.qml:107
+#, kde-format
+msgid "Middle-click to unmute"
+msgstr ""
+
+#: main.qml:108
+#, kde-format
+msgid "Middle-click to mute all audio"
+msgstr ""
+
+#: main.qml:109
+#, kde-format
+msgid "Scroll to adjust volume"
+msgstr ""
+
+#: main.qml:125
+#, kde-format
+msgid "Device name not found"
+msgstr ""
+
+#: main.qml:358
+#, kde-format
+msgid "Devices"
+msgstr "ئۈسكۈنە"
+
+#: main.qml:365
+#, kde-format
+msgid "Applications"
+msgstr "پىروگرامما"
+
+#: main.qml:389
+#, kde-format
+msgctxt "@action:button"
+msgid "More actions"
+msgstr "تېخىمۇ كۆپ مەشغۇلات"
+
+#: main.qml:431
+#, kde-format
+msgctxt ""
+"@action:button keep this widget's pop-up open until explicitly dismissed"
+msgid "Keep open"
+msgstr ""
+
+#: main.qml:466
+#, kde-format
+msgctxt "@action retry connecting to pulseaudio"
+msgid "Retry"
+msgstr "قايتا سىنا"
+
+#: main.qml:500
+#, kde-format
+msgid "No applications playing or recording audio"
+msgstr ""
+
+#: main.qml:596
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Devices"
+msgstr ""
+
+#: main.qml:598
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Output Streams"
+msgstr ""
+
+#: main.qml:656
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Devices"
+msgstr "كىرگۈزۈش ئۈسكۈنىسى"
+
+#: main.qml:658
+#, kde-format
+msgctxt "@title:group listview section header"
+msgid "Input Streams"
+msgstr ""
+
+#: main.qml:723
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Prolonged use of this feature will damage the device's speakers. Only use it "
+"temporarily to make quiet media audible."
+msgstr ""
+
+#: main.qml:739
+#, kde-format
+msgid "Raise maximum volume"
+msgstr ""
+
+#: main.qml:757
+#, kde-format
+msgid "Force mute all playback devices"
+msgstr ""
+
+#: main.qml:766
+#, kde-format
+msgid "Force mute all input devices"
+msgstr ""
+
+#: main.qml:775
+#, kde-format
+msgid "Show virtual devices"
+msgstr ""
+
+#: main.qml:785
+#, kde-format
+msgid "&Configure Audio Devices…"
+msgstr ""
+
+#: MicrophoneTestView.qml:104
+#, kde-format
+msgctxt "Button to stop microphone recording in test mode"
+msgid "Stop"
+msgstr "توختا"
+
+#: MicrophoneTestView.qml:104
+#, kde-format
+msgctxt "Button to start microphone recording in test mode"
+msgid "Record"
+msgstr "خاتىرە"
+
+#: MicrophoneTestView.qml:118
+#, kde-format
+msgctxt "Button to stop microphone playing in test mode"
+msgid "Stop"
+msgstr "توختا"
+
+#: MicrophoneTestView.qml:118
+#, kde-format
+msgctxt "Button to start microphone playing in test mode"
+msgid "Play"
+msgstr "ياڭرات"
+
+#: MicrophoneTestView.qml:137
+#, kde-format
+msgctxt "Label above the microphone volume meter in test overlay"
+msgid "Volume level"
+msgstr ""
+
+#: MicrophoneTestView.qml:166
+#, kde-format
+msgctxt "Label showing current microphone input level percentage in test mode"
+msgid "%1 %"
+msgstr "%1 %"
+
+#: MicrophoneTestView.qml:181
+#, kde-format
+msgctxt "Label above the microphone sensitivity slider in test overlay"
+msgid "Sensitivity"
+msgstr "سەزگۈرلۈك"
+
+#: MicrophoneTestView.qml:237
+#, kde-format
+msgctxt "Button in microphone test view to return to the device list"
+msgid "Back"
+msgstr "قايت"
+
+#: MicrophoneTestView.qml:250
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Microphone test error:<nl/><nl/>%1"
+msgstr ""
+
+#: StreamListItem.qml:36
+#, kde-format
+msgid "Stream name not found"
+msgstr ""
