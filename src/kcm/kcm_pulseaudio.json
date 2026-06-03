@@ -45,6 +45,7 @@
                 "Name[sv]": "Harald Sitter",
                 "Name[ta]": "ஹரால்டு சிட்டர்",
                 "Name[tr]": "Harald Sitter",
+                "Name[ug]": "Harald Sitter",
                 "Name[uk]": "Harald Sitter",
                 "Name[zh_CN]": "Harald Sitter",
                 "Name[zh_TW]": "Harald Sitter"
@@ -154,6 +155,7 @@
         "Name[ta]": "ஒலி",
         "Name[tg]": "Садо",
         "Name[tr]": "Ses",
+        "Name[ug]": "ئاۋاز",
         "Name[uk]": "Звук",
         "Name[zh_CN]": "声音",
         "Name[zh_TW]": "音效"
