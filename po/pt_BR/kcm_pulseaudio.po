@@ -5,14 +5,14 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2015, 2016, 2019.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # SPDX-FileCopyrightText: 2024, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
-# SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 # SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-30 00:46+0000\n"
-"PO-Revision-Date: 2026-03-27 02:37-0300\n"
+"PO-Revision-Date: 2026-06-26 03:26-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -428,7 +428,7 @@ msgstr "Volume do áudio"
 #: kcm/ui/VolumeControlsConfig.qml:76
 #, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Exibir retorno visual OSD das alterações para:"
+msgstr "Exibir indicador na tela das alterações para:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
@@ -450,7 +450,7 @@ msgstr "Pressione para falar"
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "O aplicativo começar a usar o microfone silenciado"
+msgstr "Quando o aplicativo começar a usar o microfone silenciado"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
 #, kde-format
