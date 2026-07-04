@@ -1,17 +1,19 @@
+# SPDX-FileCopyrightText: 2026 César A. P. Cláudio <cesarapclaudio@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-30 00:46+0000\n"
-"PO-Revision-Date: 2022-11-03 09:33+0000\n"
-"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
-"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"PO-Revision-Date: 2026-07-04 01:38+0100\n"
+"Last-Translator: César A. P. Cláudio <cesarapclaudio@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POFile-SpellExtra: Sitter Harald PulseAudio gconf Subwoofer PA\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -20,6 +22,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"As alterações não foram aplicadas.<nl/>Falha ao reiniciar o 'wireplumber."
+"service'. O comando falhou."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -28,24 +32,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"As alterações não foram aplicadas.<nl/>Falha ao reiniciar o 'wireplumber."
+"service'. O comando terminou com o código: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Falha ao processar dispositivos: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Falha ao criar diretório: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Falha ao abrir o ficheiro para escrita: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -57,24 +63,24 @@ msgstr "Perfil:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Ligação ao Serviço de Som perdida"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "A tentar restabelecer ligação…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Tentar novamente"
 
 #: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Nome do dispositivo não encontrado"
 
 #: kcm/ui/DeviceListItem.qml:105
 #, kde-format
@@ -106,34 +112,31 @@ msgid "Test"
 msgstr "Testar"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "Testar"
+msgstr "Testar..."
 
 #: kcm/ui/DeviceListItem.qml:246
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Mostrar canais"
 
 #: kcm/ui/main.qml:74
 #, kde-format
 msgid "Show Inactive Devices"
-msgstr "Mostrar os Dispositivos Inactivos"
+msgstr "Mostrar dispositivos inativos"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Dispositivos de Gravação"
+msgstr "Editar nome dos dispositivos"
 
 #: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Configurar os Controlos de Volume…"
+msgstr "Configurar controlos de volume…"
 
 #: kcm/ui/main.qml:94
 #, kde-format
@@ -143,48 +146,48 @@ msgstr "Configurar…"
 #: kcm/ui/main.qml:97
 #, kde-format
 msgid "Requires %1 PulseAudio module"
-msgstr "Precisa do módulo do PulseAudio %1"
+msgstr "Requer o módulo %1 do PulseAudio"
 
 #: kcm/ui/main.qml:100
 #, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr ""
-"Adicionar um dispositivo de saída virtual para a saída simultânea em todas "
-"as placas de som locais"
+"Adicionar dispositivo de saída virtual para saída simultânea em todas as "
+"placas de som locais"
 
 #: kcm/ui/main.qml:106
 #, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
-"Mudar automaticamente todas as transmissões em execução quando ficar "
-"disponível uma saída nova"
+"Alternar automaticamente todas as transmissões em execução quando uma nova "
+"saída estiver disponível"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
 #, kde-format
 msgid "Playback Devices"
-msgstr "Dispositivos de Reprodução"
+msgstr "Dispositivos de reprodução"
 
 #: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
 #, kde-format
 msgid "Recording Devices"
-msgstr "Dispositivos de Gravação"
+msgstr "Dispositivos de gravação"
 
 #: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
-msgstr "Placas Inactivas"
+msgstr "Placas inativas"
 
 #: kcm/ui/main.qml:226
 #, kde-format
 msgid "Playback Streams"
-msgstr "Sequências de Reprodução"
+msgstr "Fluxos de reprodução"
 
 #: kcm/ui/main.qml:278
 #, kde-format
 msgid "Recording Streams"
-msgstr "Sequências de Gravação"
+msgstr "Fluxos de gravação"
 
 #: kcm/ui/main.qml:312
 #, kde-format
@@ -201,32 +204,32 @@ msgstr ""
 #: kcm/ui/main.qml:416
 #, kde-format
 msgid "Front Left"
-msgstr "Frontal Esquerdo"
+msgstr "Frontal esquerdo"
 
 #: kcm/ui/main.qml:417
 #, kde-format
 msgid "Front Center"
-msgstr "Frontal Central"
+msgstr "Frontal central"
 
 #: kcm/ui/main.qml:418
 #, kde-format
 msgid "Front Right"
-msgstr "Frontal Direito"
+msgstr "Frontal direito"
 
 #: kcm/ui/main.qml:419
 #, kde-format
 msgid "Side Left"
-msgstr "Lateral Esquerdo"
+msgstr "Lateral esquerdo"
 
 #: kcm/ui/main.qml:420
 #, kde-format
 msgid "Side Right"
-msgstr "Lateral Direito"
+msgstr "Lateral direito"
 
 #: kcm/ui/main.qml:421
 #, kde-format
 msgid "Rear Left"
-msgstr "Traseiro Esquerdo"
+msgstr "Traseiro esquerdo"
 
 #: kcm/ui/main.qml:422
 #, kde-format
@@ -236,7 +239,7 @@ msgstr "Subwoofer"
 #: kcm/ui/main.qml:423
 #, kde-format
 msgid "Rear Right"
-msgstr "Traseiro Direito"
+msgstr "Traseiro direito"
 
 #: kcm/ui/main.qml:424
 #, kde-format
@@ -246,56 +249,55 @@ msgstr "Mono"
 #: kcm/ui/main.qml:492
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr "Carregue em qualquer altifalante para testar o som"
+msgstr "Clique em qualquer altifalante para testar o som"
 
 #: kcm/ui/main.qml:505
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Erro no teste do microfone:<nl/><nl/>%1"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Parar"
 
 #: kcm/ui/main.qml:570
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Gravar"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Parar"
 
 #: kcm/ui/main.qml:583
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Reproduzir"
 
 #: kcm/ui/main.qml:602
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "Nível de volume"
 
 #: kcm/ui/main.qml:632
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:647
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Sensibilidade do microfone"
+msgstr "Sensibilidade"
 
 #: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -313,26 +315,25 @@ msgstr "100%"
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
-msgstr "Repor o som do %1"
+msgstr "Repor som de %1"
 
 #: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
-msgstr "Silenciar o %1"
+msgstr "Silenciar som de %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Dispositivos de Gravação"
+msgstr "Editar nome dos dispositivos"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #: kcm/ui/RenameDevices.qml:68
 #, kde-format
@@ -341,48 +342,51 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Guardar as alterações reiniciará os serviços de áudio. As aplicações que "
+"estejam a reproduzir áudio sofrerão interrupções e poderão ter de ser "
+"reiniciadas."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Reportar erro"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "A recarregar"
 
 #: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (clique em 'Guardar' para aplicar)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Aplicar"
 
 #: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Repor"
 
 #: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "PREDEFINIDO"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
 msgid "Notification Sounds"
-msgstr "Sons das Notificações"
+msgstr "Som das Notificações"
 
 #: kcm/ui/StreamListItem.qml:65
 #, kde-format
@@ -393,7 +397,7 @@ msgstr "%1: %2"
 #: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr "Controlos de Volume"
+msgstr "Controlos de volume"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
 #, kde-format
@@ -403,12 +407,12 @@ msgstr "Aumentar o volume máximo"
 #: kcm/ui/VolumeControlsConfig.qml:38
 #, kde-format
 msgid "Volume change step:"
-msgstr "Passo de mudança do volume:"
+msgstr "Incremento de volume:"
 
 #: kcm/ui/VolumeControlsConfig.qml:67
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr "Reagir com áudio às mudanças de:"
+msgstr "Reproduzir áudio para alterações de:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
@@ -416,10 +420,9 @@ msgid "Audio volume"
 msgstr "Volume do áudio"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
-#| msgid "Show visual feedback for changes to:"
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Reagir visualmente às mudanças de:"
+msgstr "Mostrar alerta visual para alterações de:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
@@ -429,21 +432,19 @@ msgstr "Sensibilidade do microfone"
 #: kcm/ui/VolumeControlsConfig.qml:91
 #, kde-format
 msgid "Mute state"
-msgstr "Estado de silêncio"
+msgstr "Estado de silenciamento do som"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Premir para falar"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "%1 estão a usar o microfone"
+msgstr "A aplicação inicia com o microfone silenciado"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
 #, kde-format
@@ -453,124 +454,116 @@ msgstr "Dispositivo de saída predefinido"
 #: kded/audioshortcutsservice.cpp:84
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Aumentar volume"
 
 #: kded/audioshortcutsservice.cpp:99
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Reduzir volume"
 
 #: kded/audioshortcutsservice.cpp:114
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Aumentar volume em 1%"
 
 #: kded/audioshortcutsservice.cpp:129
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Reduzir volume em 1%"
 
 #: kded/audioshortcutsservice.cpp:144
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Microfone Silenciado"
+msgstr "Aumentar volume do microfone"
 
 #: kded/audioshortcutsservice.cpp:158
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Microfone Silenciado"
+msgstr "Reduzir volume do microfone"
 
 #: kded/audioshortcutsservice.cpp:172 qml/microphoneindicator.cpp:109
 #, kde-format
 msgid "Mute"
-msgstr "Silenciar"
+msgstr "Silenciar som"
 
 #: kded/audioshortcutsservice.cpp:185
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Microfone"
+msgstr "Silenciar microfone"
 
 #: kded/audioshortcutsservice.cpp:198
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Premir para falar"
 
 #: kded/audioshortcutsservice.cpp:206
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgid "Audio Volume"
 msgstr "Volume do áudio"
 
 #: kded/audioshortcutsservice.cpp:224
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Dispositivo inexistente"
 
 #: kded/audioshortcutsservice.cpp:270
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgid "No output device"
-msgstr "Dispositivo de saída predefinido"
+msgstr "Sem dispositivo de saída"
 
 #: kded/audioshortcutsservice.cpp:291 kded/audioshortcutsservice.cpp:311
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (Bateria a %2%)"
 
 #: kded/audioshortcutsservice.cpp:397
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Falar…"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Silenciar"
+msgstr "%1: Sem som"
 
 #: microphonetest.cpp:106 microphonetest.cpp:217
 #, kde-format
 msgid "PulseAudio context is not ready"
-msgstr ""
+msgstr "O contexto do PulseAudio não está pronto"
 
 #: microphonetest.cpp:114
 #, kde-format
 msgid "Failed to create a record stream"
-msgstr ""
+msgstr "Falha ao criar um fluxo de gravação"
 
 #: microphonetest.cpp:130
 #, kde-format
 msgid "Failed to connect record: %1"
-msgstr ""
+msgstr "Falha ao ligar a gravação: %1"
 
 #: microphonetest.cpp:227
 #, kde-format
 msgid "Couldn't create a playback stream"
-msgstr ""
+msgstr "Não foi possível criar um fluxo de reprodução"
 
 #: microphonetest.cpp:243
 #, kde-format
 msgid "Couldn't connect playback"
-msgstr ""
+msgstr "Não foi possível ligar a reprodução"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
 msgid "Play all audio via this device"
-msgstr "Reproduzir todo o áudio com este dispositivo"
+msgstr "Reproduzir todo o áudio através deste dispositivo"
 
 #: qml/listitemmenu.cpp:330
 #, kde-format
 msgid "Record all audio via this device"
-msgstr "Gravar todo o áudio com este dispositivo"
+msgstr "Gravar todo o áudio através deste dispositivo"
 
 #: qml/listitemmenu.cpp:359
 #, kde-format
@@ -594,7 +587,7 @@ msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
 "choose"
 msgid "Play audio using"
-msgstr "Reproduzir o áudio com"
+msgstr "Reproduzir áudio via"
 
 #: qml/listitemmenu.cpp:465
 #, kde-format
@@ -602,7 +595,7 @@ msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "
 "headset, ...) to choose"
 msgid "Record audio using"
-msgstr "Gravar o áudio com"
+msgstr "Gravar áudio via"
 
 #: qml/microphoneindicator.cpp:143 qml/microphoneindicator.cpp:145
 #, kde-format
@@ -612,7 +605,7 @@ msgstr "Microfone"
 #: qml/microphoneindicator.cpp:145
 #, kde-format
 msgid "Microphone Muted"
-msgstr "Microfone Silenciado"
+msgstr "Microfone silenciado"
 
 #: qml/microphoneindicator.cpp:291
 #, kde-format
@@ -624,19 +617,19 @@ msgstr ", "
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
-msgstr "%1 estão a usar o microfone"
+msgstr "%1 estão a utilizar o microfone"
 
 #: qml/microphoneindicator.cpp:317
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
-msgstr "O %1 está a usar o microfone (%2)"
+msgstr "%1 está a utilizar o microfone (%2)"
 
 #: qml/microphoneindicator.cpp:324
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
-msgstr "O %1 está a usar o microfone"
+msgstr "%1 está a utilizar o microfone"
 
 #~ msgctxt "label of device items"
 #~ msgid "%1 (%2)"
