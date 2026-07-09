@@ -16,6 +16,7 @@ kcoreaddons_add_plugin(audioshortcutsservice
 target_link_libraries(audioshortcutsservice
                         plasma-volume
                         Qt6::DBus
+                        Qt::Qml
                         KF6::CoreAddons
                         KF6::GlobalAccel
                         KF6::I18n

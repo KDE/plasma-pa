@@ -14,6 +14,7 @@
 #include <QObject>
 #include <QPersistentModelIndex>
 #include <QPointer>
+#include <qqmlregistration.h>
 
 #include "preferreddevice.h"
 
@@ -32,6 +33,8 @@ class SourceOutputModel;
 class MicrophoneIndicator : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     explicit MicrophoneIndicator(QObject *parent = nullptr);

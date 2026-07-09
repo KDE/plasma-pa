@@ -10,12 +10,14 @@
 #include <PulseAudioQt/Sink>
 
 #include <QObject>
+#include <qqmlregistration.h>
 
 class SoundThemeConfig;
 
 class SpeakerTest : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(PulseAudioQt::Sink *sink READ sink WRITE setSink NOTIFY sinkChanged)
     Q_PROPERTY(QStringList playingChannels READ playingChannels NOTIFY playingChannelsChanged)
 public:

@@ -5,12 +5,14 @@
 
 #include <QDir>
 #include <QObject>
+#include <qqmlregistration.h>
 
 #include "devicerenamemodel.h"
 
 class DeviceRenameSaver : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QList<DeviceRenameModel *> models MEMBER m_models WRITE setModels NOTIFY modelsChanged REQUIRED)
     Q_PROPERTY(bool busy MEMBER m_busy NOTIFY busyChanged)
     Q_PROPERTY(QString error MEMBER m_error NOTIFY errorChanged)

@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QObject>
+#include <qqmlregistration.h>
 
 #include <PulseAudioQt/Sink>
 #include <PulseAudioQt/Source>
@@ -12,6 +13,8 @@
 class PreferredDevice : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(PulseAudioQt::Sink *sink MEMBER m_sink NOTIFY sinkChanged)
     Q_PROPERTY(PulseAudioQt::Source *source MEMBER m_source NOTIFY sourceChanged)
 public:

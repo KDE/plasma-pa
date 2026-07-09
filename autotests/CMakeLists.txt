@@ -10,5 +10,5 @@ include(ECMAddTests)
 ecm_add_test(
     percentvalidatortest.cpp
     TEST_NAME percentvalidatortest
-    LINK_LIBRARIES Qt6::Test Qt6::Gui plasma-volume
+    LINK_LIBRARIES Qt6::Test Qt6::Gui Qt::Qml plasma-volume
 )

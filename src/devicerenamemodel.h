@@ -6,11 +6,14 @@
 #include <QIdentityProxyModel>
 #include <QTimer>
 
+#include <qqmlregistration.h>
+
 class DeviceRenameSaver;
 
 class DeviceRenameModel : public QIdentityProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     enum class Role {
         PulseProperties = Qt::UserRole,

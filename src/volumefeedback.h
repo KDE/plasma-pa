@@ -8,6 +8,7 @@
 #define VOLUMEFEEDBACK_H
 
 #include <QObject>
+#include <qqmlregistration.h>
 
 #include <canberra.h>
 
@@ -16,6 +17,7 @@ class SoundThemeConfig;
 class VolumeFeedback : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(bool valid READ isValid CONSTANT)
 
 public:

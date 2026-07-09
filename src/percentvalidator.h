@@ -4,9 +4,12 @@
 #pragma once
 
 #include <QIntValidator>
+#include <qqmlregistration.h>
 
 class PercentValidator : public QIntValidator
 {
+    Q_OBJECT
+    QML_ELEMENT
 public:
     using QIntValidator::QIntValidator;
     QValidator::State validate(QString &input, int &pos) const override;

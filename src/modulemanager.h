@@ -8,6 +8,7 @@
 #define MODULEMANAGER_H
 
 #include <QString>
+#include <qqmlregistration.h>
 
 #include <pulse/introspect.h>
 
@@ -22,6 +23,7 @@ class ConfigModule;
 class ModuleManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(bool settingsSupported READ settingsSupported NOTIFY serverUpdated)
     Q_PROPERTY(bool combineSinks READ combineSinks WRITE setCombineSinks NOTIFY combineSinksChanged)
     Q_PROPERTY(bool switchOnConnect READ switchOnConnect WRITE setSwitchOnConnect NOTIFY switchOnConnectChanged)

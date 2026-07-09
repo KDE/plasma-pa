@@ -3,15 +3,18 @@
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
+#pragma once
 
-#include <QTimer>
-#include <QByteArray>
-#include <pulse/stream.h>
 #include <PulseAudioQt/Source>
+#include <QByteArray>
+#include <QTimer>
+#include <pulse/stream.h>
+#include <qqmlregistration.h>
 
 class MicrophoneTest : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(double volumeLevel READ volumeLevel NOTIFY volumeLevelChanged)
     Q_PROPERTY(PulseAudioQt::Source *source READ source WRITE setSource NOTIFY sourceChanged)
     Q_PROPERTY(bool hasRecording READ hasRecording NOTIFY hasRecordingChanged)

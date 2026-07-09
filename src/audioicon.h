@@ -9,10 +9,13 @@
 
 #include <QObject>
 #include <QString>
+#include <qqmlregistration.h>
 
 class AudioIcon : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     Q_PROPERTY(int HIGH_UPPER_BOUND MEMBER HIGH_UPPER_BOUND CONSTANT)

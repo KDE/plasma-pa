@@ -9,6 +9,7 @@
 #include <QObject>
 #include <QPointer>
 #include <QQmlParserStatus>
+#include <qqmlregistration.h>
 
 struct pa_stream;
 
@@ -22,6 +23,7 @@ class VolumeObject;
 class VolumeMonitor : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     /**
      * Object to monitor the volume of
      * This is the "PulseObject" role of any SinkInput, Sink or Output model

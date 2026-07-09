@@ -9,10 +9,13 @@
 
 #include <QObject>
 #include <QString>
+#include <qqmlregistration.h>
 
 class GlobalService : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public Q_SLOTS:
     static void globalMuteSinks();
