@@ -110,3 +110,4 @@ add_subdirectory(kded)
 
 ecm_qt_install_logging_categories(EXPORT PLASMAPA FILE plasmapa.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
+install(FILES globalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} RENAME plasmapa.kcfg)
