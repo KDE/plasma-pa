@@ -8,36 +8,36 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-06 00:45+0000\n"
-"PO-Revision-Date: 2026-06-01 18:09-0400\n"
+"PO-Revision-Date: 2026-07-22 17:12-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not recording"
-msgstr ""
+msgstr "نۆۋەتتە خاتىرىلىمەيۋاتىدۇ"
 
 #: ListItemBase.qml:74
 #, kde-format
 msgid "Currently not playing"
-msgstr ""
+msgstr "نۆۋەتتە ياڭراتمايۋاتىدۇ"
 
 #: ListItemBase.qml:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr ""
+msgstr "قوشۇمچە تاللانما"
 
 #: ListItemBase.qml:207
 #, kde-format
 msgid "Show additional options for %1"
-msgstr ""
+msgstr "%1 نىڭ قوشۇمچە تاللانمىسىنى كۆرسىتىدۇ"
 
 #: ListItemBase.qml:229
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "100%"
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "سىنا…"
 
 #: main.qml:36
 #, kde-format
@@ -94,23 +94,23 @@ msgstr "ئاۋاز كۈچلۈكلۈكى"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "ئاۋاز مۇلازىمىتىنىڭ باغلىنىشى ئۈزۈلدى"
 
 #: main.qml:64
 #, kde-format
 msgid "No output or input devices found"
-msgstr ""
+msgstr "ھېچقانداق كىرگۈزۈش ياكى چىقىرىش ئۈسكۈنىسى تېپىلمىدى"
 
 #: main.qml:68
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "قايتا باشلاشنى سىناۋاتىدۇ…"
 
 #: main.qml:94
 #, kde-format
 msgid "Audio Muted"
-msgstr ""
+msgstr "ئاۋاز ئۈنسىزلەندى"
 
 #: main.qml:96
 #, kde-format
@@ -120,22 +120,22 @@ msgstr "%1% دىكى ئاۋاز"
 #: main.qml:107
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "ئوتتۇرا چېكىشتە ئۈنلۈك"
 
 #: main.qml:108
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "ئوتتۇرا چېكىشتە ھەممە ئاۋاز ئۈنسىز"
 
 #: main.qml:109
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "ئاۋاز مىقدارىنى تەڭشەشتە چاشقىنەك غالتىكى سىيرىلىدۇ"
 
 #: main.qml:125
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "ئۈسكۈنە ئىسمى تېپىلمىدى"
 
 #: main.qml:358
 #, kde-format
@@ -158,7 +158,7 @@ msgstr "تېخىمۇ كۆپ مەشغۇلات"
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "ئوچۇق تۇت"
 
 #: main.qml:466
 #, kde-format
@@ -169,19 +169,19 @@ msgstr "قايتا سىنا"
 #: main.qml:500
 #, kde-format
 msgid "No applications playing or recording audio"
-msgstr ""
+msgstr "ئاۋاز ياڭرىتىۋاتقان ياكى خاتىرىلەۋاتقان پىروگرامما يوق"
 
 #: main.qml:596
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr ""
+msgstr "چىقىرىش ئۈسكۈنىسى"
 
 #: main.qml:598
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "چىقىرىش ئېقىمى"
 
 #: main.qml:656
 #, kde-format
@@ -193,7 +193,7 @@ msgstr "كىرگۈزۈش ئۈسكۈنىسى"
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "كىرىش ئېقىمى"
 
 #: main.qml:723
 #, kde-kuit-format
@@ -202,31 +202,33 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"بۇ ئىقتىدار ئۇزۇن ۋاقىت ئىشلىتىلسە ياڭراتقۇنى بۇزۇشى مۇمكىن. پەقەت ئاۋازى "
+"تۆۋەن ۋاسىتىنىڭ مەزمۇنىنى ئاڭلىماقچى بولغاندا قىسقا ۋاقىت ئىشلىتىڭ."
 
 #: main.qml:739
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "ئەڭ يۇقىرى ئاۋازنى يۇقىرىلىتىدۇ"
 
 #: main.qml:757
 #, kde-format
 msgid "Force mute all playback devices"
-msgstr ""
+msgstr "ھەممە ياڭرىتىش ئۈسكۈنىسىنى مەجبۇرىي ئۈنسىزلە"
 
 #: main.qml:766
 #, kde-format
 msgid "Force mute all input devices"
-msgstr ""
+msgstr "ھەممە كىرگۈزۈش ئۈسكۈنىسىنى مەجبۇرىي ئۈنسىزلە"
 
 #: main.qml:775
 #, kde-format
 msgid "Show virtual devices"
-msgstr ""
+msgstr "مەۋھۇم ئۈسكۈنىنى كۆرسەت"
 
 #: main.qml:785
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr ""
+msgstr "ئاۋاز ئۈسكۈنىسىنى سەپلە(&C)…"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
@@ -256,7 +258,7 @@ msgstr "ياڭرات"
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "ئاۋاز دەرىجىسى"
 
 #: MicrophoneTestView.qml:166
 #, kde-format
@@ -280,9 +282,9 @@ msgstr "قايت"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "مىكروفون سىناش خاتالىقى: <nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format
 msgid "Stream name not found"
-msgstr ""
+msgstr "ئېقىم ئىسمى تېپىلمىدى"
