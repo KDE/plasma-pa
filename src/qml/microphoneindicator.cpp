@@ -68,7 +68,9 @@ void MicrophoneIndicator::scheduleUpdate()
 void MicrophoneIndicator::update()
 {
     const auto apps = recordingApplications();
-    if (apps.isEmpty()) {
+    const bool allMuted = muted();
+
+    if (apps.isEmpty() && !allMuted) {
         m_showOsdOnUpdate = false;
         delete m_sni;
         m_sni = nullptr;
@@ -114,8 +116,6 @@ void MicrophoneIndicator::update()
         m_sni->setStandardActionsEnabled(false);
     }
 
-    const bool allMuted = muted();
-
     QString iconName;
     if (allMuted) {
         iconName = QStringLiteral("microphone-sensitivity-muted");
@@ -140,9 +140,11 @@ void MicrophoneIndicator::update()
         iconName.append(QStringLiteral("-rtl"));
     }
 
+    const QString toolTipSubText = apps.isEmpty() ? QString() : toolTipForApps(apps);
+
     m_sni->setTitle(i18n("Microphone"));
     m_sni->setIconByName(iconName);
-    m_sni->setToolTip(QIcon::fromTheme(iconName), allMuted ? i18n("Microphone Muted") : i18n("Microphone"), toolTipForApps(apps));
+    m_sni->setToolTip(QIcon::fromTheme(iconName), allMuted ? i18n("Microphone Muted") : i18n("Microphone"), toolTipSubText);
 
     if (m_muteAction) {
         m_muteAction->setChecked(allMuted);
