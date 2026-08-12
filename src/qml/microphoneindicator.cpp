@@ -38,7 +38,7 @@ MicrophoneIndicator::MicrophoneIndicator(QObject *parent)
 {
     connect(m_sourceModel, &QAbstractItemModel::rowsInserted, this, &MicrophoneIndicator::scheduleUpdate);
     connect(m_sourceModel, &QAbstractItemModel::rowsRemoved, this, &MicrophoneIndicator::scheduleUpdate);
-    connect(m_sourceModel, &QAbstractItemModel::dataChanged, this, &MicrophoneIndicator::scheduleUpdate);
+    connect(m_sourceModel, &QAbstractItemModel::dataChanged, this, &MicrophoneIndicator::scheduleUpdateOnDataChange);
 
     connect(m_sourceOutputModel, &QAbstractItemModel::rowsInserted, this, &MicrophoneIndicator::scheduleUpdate);
     connect(m_sourceOutputModel, &QAbstractItemModel::rowsRemoved, this, &MicrophoneIndicator::scheduleUpdate);
@@ -56,6 +56,30 @@ MicrophoneIndicator::~MicrophoneIndicator() = default;
 void MicrophoneIndicator::init()
 {
     // does nothing, just prompts QML engine to create an instance of the singleton
+}
+
+void MicrophoneIndicator::scheduleUpdateOnDataChange(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles)
+{
+    static const int s_pulseObjectRole = m_sourceModel->role(QByteArrayLiteral("PulseObject"));
+    static const int s_volumeRole = m_sourceModel->role(QByteArrayLiteral("Volume"));
+    static const int s_mutedRole = m_sourceModel->role(QByteArrayLiteral("Muted"));
+    Q_ASSERT(s_pulseObjectRole > -1);
+    Q_ASSERT(s_volumeRole > -1);
+    Q_ASSERT(s_mutedRole > -1);
+
+    // Only allow to show OSD after the preferred device sent dataChange signal
+    // to avoid OSD showing unupdated data.
+    if (m_showOsdOnUpdate && (roles.isEmpty() || (!roles.contains(s_mutedRole) && !roles.contains(s_volumeRole)))) {
+        for (int row = topLeft.row(); row <= bottomRight.row(); row++) {
+            const QModelIndex idx = m_sourceModel->index(row);
+            if (idx.data(s_pulseObjectRole).value<QObject *>() == m_preferredDevice.source()) {
+                m_preferredDeviceUpdated = true;
+                break;
+            }
+        }
+    }
+
+    scheduleUpdate();
 }
 
 void MicrophoneIndicator::scheduleUpdate()
@@ -148,9 +172,10 @@ void MicrophoneIndicator::update()
         m_muteAction->setChecked(allMuted);
     }
 
-    if (m_showOsdOnUpdate) {
+    if (m_showOsdOnUpdate && m_preferredDeviceUpdated) {
         showOsd();
         m_showOsdOnUpdate = false;
+        m_preferredDeviceUpdated = false;
     }
 }
 

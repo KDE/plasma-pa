@@ -46,6 +46,7 @@ Q_SIGNALS:
     void enabledChanged();
 
 private:
+    void scheduleUpdateOnDataChange(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
     void scheduleUpdate();
     void update();
 
@@ -74,6 +75,7 @@ private:
 
     OsdServiceInterface *m_osdDBusInterface = nullptr;
     bool m_showOsdOnUpdate = false;
+    bool m_preferredDeviceUpdated = false;
 
     int m_wheelDelta = 0;
 
