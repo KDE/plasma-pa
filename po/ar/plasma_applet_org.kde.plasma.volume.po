@@ -159,7 +159,7 @@ msgstr "إجراءات أكثر"
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr "أبقه مفتوحاً"
+msgstr "أبقه مفتوحًا"
 
 #: main.qml:466
 #, kde-format
