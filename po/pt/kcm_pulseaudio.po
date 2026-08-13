@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-13 00:52+0000\n"
 "PO-Revision-Date: 2026-07-04 01:38+0100\n"
 "Last-Translator: César A. P. Cláudio <cesarapclaudio@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -481,7 +481,7 @@ msgstr "Aumentar volume do microfone"
 msgid "Decrease Microphone Volume"
 msgstr "Reduzir volume do microfone"
 
-#: kded/audioshortcutsservice.cpp:172 qml/microphoneindicator.cpp:109
+#: kded/audioshortcutsservice.cpp:172 qml/microphoneindicator.cpp:133
 #, kde-format
 msgid "Mute"
 msgstr "Silenciar som"
@@ -597,35 +597,35 @@ msgctxt ""
 msgid "Record audio using"
 msgstr "Gravar áudio via"
 
-#: qml/microphoneindicator.cpp:143 qml/microphoneindicator.cpp:145
+#: qml/microphoneindicator.cpp:167 qml/microphoneindicator.cpp:169
 #, kde-format
 msgid "Microphone"
 msgstr "Microfone"
 
-#: qml/microphoneindicator.cpp:145
+#: qml/microphoneindicator.cpp:169
 #, kde-format
 msgid "Microphone Muted"
 msgstr "Microfone silenciado"
 
-#: qml/microphoneindicator.cpp:291
+#: qml/microphoneindicator.cpp:316
 #, kde-format
 msgctxt "list separator"
 msgid ", "
 msgstr ", "
 
-#: qml/microphoneindicator.cpp:291
+#: qml/microphoneindicator.cpp:316
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
 msgstr "%1 estão a utilizar o microfone"
 
-#: qml/microphoneindicator.cpp:317
+#: qml/microphoneindicator.cpp:342
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
 msgstr "%1 está a utilizar o microfone (%2)"
 
-#: qml/microphoneindicator.cpp:324
+#: qml/microphoneindicator.cpp:349
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
