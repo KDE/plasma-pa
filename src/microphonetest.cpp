@@ -14,7 +14,6 @@
 
 namespace
 {
-    constexpr int SAMPLE_RATE = 44100;
     constexpr std::chrono::milliseconds MAX_RECORD_DURATION{10000};
     constexpr int MIN_FRAGMENT_SIZE = 256;
 }
@@ -107,7 +106,49 @@ void MicrophoneTest::startRecording()
         return;
     }
 
-    pa_sample_spec ss = {PA_SAMPLE_S16LE, SAMPLE_RATE, 1};
+    // Query the source's native sample rate first, so we don't force
+    // PipeWire/PulseAudio to switch the whole audio graph's clock rate to a
+    // fixed value (e.g. always 44.1 kHz) when the device is actually
+    // running at a different rate (e.g. 48 kHz).
+    pa_operation *op = pa_context_get_source_info_by_name(pa_ctx, m_source->name().toUtf8().constData(), source_info_callback, this);
+    if (op) {
+        pa_operation_unref(op);
+    } else {
+        // Couldn't query the source info; fall back to the last known (or
+        // default) sample rate rather than failing the test outright.
+        beginRecording();
+    }
+}
+
+void MicrophoneTest::source_info_callback(pa_context *c, const pa_source_info *i, int eol, void *userdata)
+{
+    Q_UNUSED(c)
+
+    auto *self = static_cast<MicrophoneTest *>(userdata);
+    if (!self || eol) {
+        return;
+    }
+
+    if (i && i->sample_spec.rate > 0) {
+        self->m_sampleRate = static_cast<int>(i->sample_spec.rate);
+    }
+
+    self->beginRecording();
+}
+
+void MicrophoneTest::beginRecording()
+{
+    if (m_recording || !m_source || m_playing) {
+        return;
+    }
+
+    auto pa_ctx = PulseAudioQt::Context::instance()->context();
+    if (!pa_ctx || pa_context_get_state(pa_ctx) != PA_CONTEXT_READY) {
+        Q_EMIT showErrorMessage(i18n("PulseAudio context is not ready"));
+        return;
+    }
+
+    pa_sample_spec ss = {PA_SAMPLE_S16LE, static_cast<uint32_t>(m_sampleRate), 1};
 
     m_recordStream = pa_stream_new(pa_ctx, "MicTest-Record", &ss, nullptr);
     if (!m_recordStream) {
@@ -218,7 +259,7 @@ void MicrophoneTest::playRecording()
         return;
     }
 
-    pa_sample_spec ss = {PA_SAMPLE_S16LE, SAMPLE_RATE, 1};
+    pa_sample_spec ss = {PA_SAMPLE_S16LE, static_cast<uint32_t>(m_sampleRate), 1};
 
     m_playbackOffset = 0;
 
