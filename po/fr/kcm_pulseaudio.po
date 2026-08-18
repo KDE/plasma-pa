@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:52+0000\n"
+"POT-Creation-Date: 2026-08-18 00:47+0000\n"
 "PO-Revision-Date: 2026-03-28 09:30+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -541,27 +541,27 @@ msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
 msgstr "%1 : mis en pause"
 
-#: microphonetest.cpp:106 microphonetest.cpp:217
+#: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format
 msgid "PulseAudio context is not ready"
 msgstr "Le contexte de PulseAudio n'est pas prêt"
 
-#: microphonetest.cpp:114
+#: microphonetest.cpp:155
 #, kde-format
 msgid "Failed to create a record stream"
 msgstr "Impossible de créer un flux d'enregistrement"
 
-#: microphonetest.cpp:130
+#: microphonetest.cpp:171
 #, kde-format
 msgid "Failed to connect record: %1"
 msgstr "Impossible de se connecter à l'enregistrement : %1."
 
-#: microphonetest.cpp:227
+#: microphonetest.cpp:268
 #, kde-format
 msgid "Couldn't create a playback stream"
 msgstr "Impossible de créer un flux de lecture"
 
-#: microphonetest.cpp:243
+#: microphonetest.cpp:284
 #, kde-format
 msgid "Couldn't connect playback"
 msgstr "Impossible de se connecter à la lecture"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:52+0000\n"
+"POT-Creation-Date: 2026-08-18 00:47+0000\n"
 "PO-Revision-Date: 2026-06-02 22:54+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -532,27 +532,27 @@ msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
 msgstr "%1: Némítva"
 
-#: microphonetest.cpp:106 microphonetest.cpp:217
+#: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format
 msgid "PulseAudio context is not ready"
 msgstr "A PulseAudio kontextus nincs kész"
 
-#: microphonetest.cpp:114
+#: microphonetest.cpp:155
 #, kde-format
 msgid "Failed to create a record stream"
 msgstr "Nem sikerült létrehozni a rögzítő adatfolyamot"
 
-#: microphonetest.cpp:130
+#: microphonetest.cpp:171
 #, kde-format
 msgid "Failed to connect record: %1"
 msgstr "Nem sikerült csatlakozni a rögzítéshez: %1."
 
-#: microphonetest.cpp:227
+#: microphonetest.cpp:268
 #, kde-format
 msgid "Couldn't create a playback stream"
 msgstr "Nem sikerült létrehozni a lejátszási adatfolyamot"
 
-#: microphonetest.cpp:243
+#: microphonetest.cpp:284
 #, kde-format
 msgid "Couldn't connect playback"
 msgstr "Nem sikerült csatlakozni a lejátszáshoz"

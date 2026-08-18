@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:52+0000\n"
+"POT-Creation-Date: 2026-08-18 00:47+0000\n"
 "PO-Revision-Date: 2026-03-28 09:32+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -529,27 +529,27 @@ msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
 msgstr "%1: מושתק"
 
-#: microphonetest.cpp:106 microphonetest.cpp:217
+#: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format
 msgid "PulseAudio context is not ready"
 msgstr "הקשר PulseAudio לא מוכן"
 
-#: microphonetest.cpp:114
+#: microphonetest.cpp:155
 #, kde-format
 msgid "Failed to create a record stream"
 msgstr "יצירת תזרים הקלטה נכשלה"
 
-#: microphonetest.cpp:130
+#: microphonetest.cpp:171
 #, kde-format
 msgid "Failed to connect record: %1"
 msgstr "התחברות להקלטה נכשלה: %1"
 
-#: microphonetest.cpp:227
+#: microphonetest.cpp:268
 #, kde-format
 msgid "Couldn't create a playback stream"
 msgstr "לא ניתן ליצור תזרים נגינה"
 
-#: microphonetest.cpp:243
+#: microphonetest.cpp:284
 #, kde-format
 msgid "Couldn't connect playback"
 msgstr "לא ניתן להתחבר לנגינה"

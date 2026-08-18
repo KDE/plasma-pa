@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:52+0000\n"
+"POT-Creation-Date: 2026-08-18 00:47+0000\n"
 "PO-Revision-Date: 2026-03-31 13:53+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -531,27 +531,27 @@ msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
 msgstr "%1: muțit"
 
-#: microphonetest.cpp:106 microphonetest.cpp:217
+#: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format
 msgid "PulseAudio context is not ready"
 msgstr "Contextul PulseAudio nu e pregătit"
 
-#: microphonetest.cpp:114
+#: microphonetest.cpp:155
 #, kde-format
 msgid "Failed to create a record stream"
 msgstr "Crearea fluxului de înregistrare a eșuat"
 
-#: microphonetest.cpp:130
+#: microphonetest.cpp:171
 #, kde-format
 msgid "Failed to connect record: %1"
 msgstr "Conectarea înregistrării a eșuat: %1"
 
-#: microphonetest.cpp:227
+#: microphonetest.cpp:268
 #, kde-format
 msgid "Couldn't create a playback stream"
 msgstr "Fluxul de redare nu a putut fi creat"
 
-#: microphonetest.cpp:243
+#: microphonetest.cpp:284
 #, kde-format
 msgid "Couldn't connect playback"
 msgstr "Redarea nu a putut fi conectată"

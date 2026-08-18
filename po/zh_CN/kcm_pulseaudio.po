@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:52+0000\n"
+"POT-Creation-Date: 2026-08-18 00:47+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -526,27 +526,27 @@ msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
 msgstr "%1：已静音"
 
-#: microphonetest.cpp:106 microphonetest.cpp:217
+#: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format
 msgid "PulseAudio context is not ready"
 msgstr "PulseAudio 上下文尚未就绪"
 
-#: microphonetest.cpp:114
+#: microphonetest.cpp:155
 #, kde-format
 msgid "Failed to create a record stream"
 msgstr "创建录音流失败"
 
-#: microphonetest.cpp:130
+#: microphonetest.cpp:171
 #, kde-format
 msgid "Failed to connect record: %1"
 msgstr "连接录音失败：%1"
 
-#: microphonetest.cpp:227
+#: microphonetest.cpp:268
 #, kde-format
 msgid "Couldn't create a playback stream"
 msgstr "无法创建播放流"
 
-#: microphonetest.cpp:243
+#: microphonetest.cpp:284
 #, kde-format
 msgid "Couldn't connect playback"
 msgstr "无法连接播放"
