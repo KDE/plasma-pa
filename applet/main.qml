@@ -276,6 +276,9 @@ PlasmoidItem {
         Layout.minimumHeight: (main.inPanel && !main.compactInPanel) ? -1 : main.switchHeight
         Layout.minimumWidth: (main.inPanel && !main.compactInPanel) ? -1 : main.switchWidth
 
+        // The implicitWidth of the content is rather cramped; provide a better default
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 20
+
         collapseMarginsHint: true
 
         KeyNavigation.down: tabBar.currentItem
@@ -447,6 +450,8 @@ PlasmoidItem {
         // last saved view was the streams view.
         // We also don't need to be able to swipe between views.
         contentItem: Item {
+            implicitWidth: contentView.implicitWidth
+            implicitHeight: contentView.implicitHeight
             HorizontalStackView {
                 id: contentView
                 visible: !micTestActive
