@@ -307,9 +307,9 @@ KCM.ScrollViewKCM {
         sink: speakerTestOverlay.sinkObject
 
         onShowErrorMessage: message => {
-            testError.text = i18ndc("kcm_pulseaudio",
-                                    "%1 is an error string produced by an external component, and probably untranslated",
-                                    "Error trying to play a test sound. \nThe system said: \"%1\"", message);
+            testError.text = xi18ndc("kcm_pulseaudio",
+                                    "@info %1 is an error string produced by an external component, and probably untranslated",
+                                    "The PulseAudio audio subsystem was unable to play a test sound, and reported the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again.", message);
             testError.visible = true;
         }
     }
@@ -502,7 +502,9 @@ KCM.ScrollViewKCM {
         id: micTester
 
         onShowErrorMessage: (message) => {
-            micTestError.text = xi18nc("@info", "Microphone test error:<nl/><nl/>%1", message);
+            micTestError.text = xi18ndc("kcm_pulseaudio",
+                                        "@info %1 is an error string produced by an external component, and probably untranslated",
+                                        "The PulseAudio audio subsystem was unable to record sound, and reported the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again.", message);
             micTestError.visible = true;
         }
     }

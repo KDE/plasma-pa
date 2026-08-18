@@ -102,7 +102,7 @@ void MicrophoneTest::startRecording()
 
     auto pa_ctx = PulseAudioQt::Context::instance()->context();
     if (!pa_ctx || pa_context_get_state(pa_ctx) != PA_CONTEXT_READY) {
-        Q_EMIT showErrorMessage(i18n("PulseAudio context is not ready"));
+        Q_EMIT showErrorMessage(i18nc("@info:status", "PulseAudio context is not ready."));
         return;
     }
 
@@ -144,7 +144,7 @@ void MicrophoneTest::beginRecording()
 
     auto pa_ctx = PulseAudioQt::Context::instance()->context();
     if (!pa_ctx || pa_context_get_state(pa_ctx) != PA_CONTEXT_READY) {
-        Q_EMIT showErrorMessage(i18n("PulseAudio context is not ready"));
+        Q_EMIT showErrorMessage(i18nc("@info:status", "PulseAudio context is not ready."));
         return;
     }
 
@@ -152,7 +152,7 @@ void MicrophoneTest::beginRecording()
 
     m_recordStream = pa_stream_new(pa_ctx, "MicTest-Record", &ss, nullptr);
     if (!m_recordStream) {
-        Q_EMIT showErrorMessage(i18n("Failed to create a record stream"));
+        Q_EMIT showErrorMessage(i18nc("@info:status", "Couldn’t create a recording stream."));
         return;
     }
 
@@ -168,7 +168,7 @@ void MicrophoneTest::beginRecording()
 
     if (pa_stream_connect_record(m_recordStream, m_source->name().toUtf8().constData(),
         &attr, static_cast<pa_stream_flags_t>(PA_STREAM_INTERPOLATE_TIMING | PA_STREAM_ADJUST_LATENCY)) < 0) {
-        Q_EMIT showErrorMessage(i18n("Failed to connect record: %1", pa_strerror(pa_context_errno(pa_ctx))));
+        Q_EMIT showErrorMessage(i18nc("@info:status", "Couldn’t connect to recording stream: %1.", pa_strerror(pa_context_errno(pa_ctx))));
         pa_stream_unref(m_recordStream);
         m_recordStream = nullptr;
         return;
@@ -255,7 +255,7 @@ void MicrophoneTest::playRecording()
 
     auto pa_ctx = PulseAudioQt::Context::instance()->context();
     if (!pa_ctx || pa_context_get_state(pa_ctx) != PA_CONTEXT_READY) {
-        Q_EMIT showErrorMessage(i18n("PulseAudio context is not ready"));
+        Q_EMIT showErrorMessage(i18nc("@info:status", "PulseAudio context is not ready."));
         return;
     }
 
@@ -265,7 +265,7 @@ void MicrophoneTest::playRecording()
 
     m_playbackStream = pa_stream_new(pa_ctx, "MicTest-Playback", &ss, nullptr);
     if (!m_playbackStream) {
-        Q_EMIT showErrorMessage(i18n("Couldn't create a playback stream"));
+        Q_EMIT showErrorMessage(i18nc("@info:status", "Couldn’t create a playback stream."));
         return;
     }
 
@@ -281,7 +281,7 @@ void MicrophoneTest::playRecording()
                 PA_STREAM_ADJUST_LATENCY),
             nullptr,
             nullptr) < 0) {
-        Q_EMIT showErrorMessage(i18n("Couldn't connect playback"));
+        Q_EMIT showErrorMessage(i18nc("@info:status", "Couldn’t connect to playback stream: %1", pa_strerror(pa_context_errno(pa_ctx))));
         pa_stream_unref(m_playbackStream);
         m_playbackStream = nullptr;
         return;
