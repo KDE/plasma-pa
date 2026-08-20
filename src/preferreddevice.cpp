@@ -14,6 +14,9 @@ PreferredDevice::PreferredDevice(QObject *parent)
 {
     connect(PulseAudioQt::Context::instance()->server(), &PulseAudioQt::Server::defaultSinkChanged, this, &PreferredDevice::updatePreferredSink);
     connect(PulseAudioQt::Context::instance()->server(), &PulseAudioQt::Server::defaultSourceChanged, this, &PreferredDevice::updatePreferredSource);
+
+    updatePreferredSink();
+    updatePreferredSource();
 }
 
 PulseAudioQt::Sink *PreferredDevice::sink() const
