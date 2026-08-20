@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:45+0000\n"
+"POT-Creation-Date: 2026-08-20 00:47+0000\n"
 "PO-Revision-Date: 2026-01-05 18:05+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -140,65 +140,65 @@ msgstr "Säädä äänenvoimakkuutta vierittämällä"
 msgid "Device name not found"
 msgstr "Laitenimeä ei löytynyt"
 
-#: main.qml:358
+#: main.qml:361
 #, kde-format
 msgid "Devices"
 msgstr "Laitteet"
 
-#: main.qml:365
+#: main.qml:368
 #, kde-format
 msgid "Applications"
 msgstr "Sovellukset"
 
-#: main.qml:389
+#: main.qml:392
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Lisää toimintoja"
 
-#: main.qml:431
+#: main.qml:434
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Pidä avoinna"
 
-#: main.qml:466
+#: main.qml:471
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Yritä uudelleen"
 
-#: main.qml:500
+#: main.qml:505
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Mikään sovellus ei toista tai tallenna ääntä"
 
-#: main.qml:596
+#: main.qml:601
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Ulostulolaitteet"
 
-#: main.qml:598
+#: main.qml:603
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Ulostulovirrat"
 
-#: main.qml:656
+#: main.qml:661
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Sisäänmenolaitteet"
 
-#: main.qml:658
+#: main.qml:663
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Sisäänmenovirrat"
 
-#: main.qml:723
+#: main.qml:728
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -208,27 +208,27 @@ msgstr ""
 "Ominaisuuden pitkittynyt käyttö voi vahingoittaa laitteen kaiuttimia. Käytä "
 "sitä vain väliaikaisesti tehdäksesi hiljaisen median kuuluvaksi."
 
-#: main.qml:739
+#: main.qml:744
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Nosta enimmäisvoimakkuutta"
 
-#: main.qml:757
+#: main.qml:762
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Pakota vaimennus kaikissa toistolaitteissa"
 
-#: main.qml:766
+#: main.qml:771
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Pakota vaimennus kaikissa sisääntulolaitteissa"
 
-#: main.qml:775
+#: main.qml:780
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Näytä virtuaalilaitteet"
 
-#: main.qml:785
+#: main.qml:790
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Äänilaitteiden asetukset…"

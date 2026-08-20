@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:45+0000\n"
+"POT-Creation-Date: 2026-08-20 00:47+0000\n"
 "PO-Revision-Date: 2026-07-22 17:12-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -137,65 +137,65 @@ msgstr "ئاۋاز مىقدارىنى تەڭشەشتە چاشقىنەك غالت
 msgid "Device name not found"
 msgstr "ئۈسكۈنە ئىسمى تېپىلمىدى"
 
-#: main.qml:358
+#: main.qml:361
 #, kde-format
 msgid "Devices"
 msgstr "ئۈسكۈنە"
 
-#: main.qml:365
+#: main.qml:368
 #, kde-format
 msgid "Applications"
 msgstr "پىروگرامما"
 
-#: main.qml:389
+#: main.qml:392
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "تېخىمۇ كۆپ مەشغۇلات"
 
-#: main.qml:431
+#: main.qml:434
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "ئوچۇق تۇت"
 
-#: main.qml:466
+#: main.qml:471
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "قايتا سىنا"
 
-#: main.qml:500
+#: main.qml:505
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ئاۋاز ياڭرىتىۋاتقان ياكى خاتىرىلەۋاتقان پىروگرامما يوق"
 
-#: main.qml:596
+#: main.qml:601
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "چىقىرىش ئۈسكۈنىسى"
 
-#: main.qml:598
+#: main.qml:603
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "چىقىرىش ئېقىمى"
 
-#: main.qml:656
+#: main.qml:661
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "كىرگۈزۈش ئۈسكۈنىسى"
 
-#: main.qml:658
+#: main.qml:663
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "كىرىش ئېقىمى"
 
-#: main.qml:723
+#: main.qml:728
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -205,27 +205,27 @@ msgstr ""
 "بۇ ئىقتىدار ئۇزۇن ۋاقىت ئىشلىتىلسە ياڭراتقۇنى بۇزۇشى مۇمكىن. پەقەت ئاۋازى "
 "تۆۋەن ۋاسىتىنىڭ مەزمۇنىنى ئاڭلىماقچى بولغاندا قىسقا ۋاقىت ئىشلىتىڭ."
 
-#: main.qml:739
+#: main.qml:744
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "ئەڭ يۇقىرى ئاۋازنى يۇقىرىلىتىدۇ"
 
-#: main.qml:757
+#: main.qml:762
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "ھەممە ياڭرىتىش ئۈسكۈنىسىنى مەجبۇرىي ئۈنسىزلە"
 
-#: main.qml:766
+#: main.qml:771
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "ھەممە كىرگۈزۈش ئۈسكۈنىسىنى مەجبۇرىي ئۈنسىزلە"
 
-#: main.qml:775
+#: main.qml:780
 #, kde-format
 msgid "Show virtual devices"
 msgstr "مەۋھۇم ئۈسكۈنىنى كۆرسەت"
 
-#: main.qml:785
+#: main.qml:790
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ئاۋاز ئۈسكۈنىسىنى سەپلە(&C)…"

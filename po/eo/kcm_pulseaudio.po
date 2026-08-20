@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-18 00:47+0000\n"
+"POT-Creation-Date: 2026-08-20 00:47+0000\n"
 "PO-Revision-Date: 2025-03-22 22:36+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -192,16 +192,14 @@ msgid "Recording Streams"
 msgstr "Registrado de Rojoj"
 
 #: kcm/ui/main.qml:312
-#, kde-format
+#, kde-kuit-format
 msgctxt ""
-"%1 is an error string produced by an external component, and probably "
+"@info %1 is an error string produced by an external component, and probably "
 "untranslated"
 msgid ""
-"Error trying to play a test sound. \n"
-"The system said: \"%1\""
+"The PulseAudio audio subsystem was unable to play a test sound, and reported "
+"the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
-"Eraro dum provado ludi testan sonon. \n"
-"La sistemo diris: \"%1\""
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -253,62 +251,66 @@ msgstr "Mono"
 msgid "Click on any speaker to test sound"
 msgstr "Alklaku iun ajn laŭtparolilon por testi sonon"
 
-#: kcm/ui/main.qml:505
+#: kcm/ui/main.qml:507
 #, kde-kuit-format
-msgctxt "@info"
-msgid "Microphone test error:<nl/><nl/>%1"
+msgctxt ""
+"@info %1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"The PulseAudio audio subsystem was unable to record sound, and reported the "
+"following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
 
-#: kcm/ui/main.qml:570
+#: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr ""
 
-#: kcm/ui/main.qml:570
+#: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr ""
 
-#: kcm/ui/main.qml:583
+#: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr ""
 
-#: kcm/ui/main.qml:583
+#: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr ""
 
-#: kcm/ui/main.qml:602
+#: kcm/ui/main.qml:604
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr ""
 
-#: kcm/ui/main.qml:632
+#: kcm/ui/main.qml:634
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr ""
 
-#: kcm/ui/main.qml:647
+#: kcm/ui/main.qml:649
 #, fuzzy, kde-format
 #| msgid "Microphone sensitivity"
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Mikrofona sentemo"
 
-#: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
+#: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/main.qml:691 kcm/ui/VolumeSlider.qml:89
+#: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -537,31 +539,38 @@ msgstr "Silentigi"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format
-msgid "PulseAudio context is not ready"
+msgctxt "@info:status"
+msgid "PulseAudio context is not ready."
 msgstr ""
 
 #: microphonetest.cpp:155
 #, fuzzy, kde-format
 #| msgctxt "@info error %1 is a path"
 #| msgid "Failed to create directory: %1."
-msgid "Failed to create a record stream"
+msgctxt "@info:status"
+msgid "Couldn’t create a recording stream."
 msgstr "Malsukcesis krei disierujon: %1."
 
 #: microphonetest.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "@info error %1 is a path"
 #| msgid "Failed to create directory: %1."
-msgid "Failed to connect record: %1"
+msgctxt "@info:status"
+msgid "Couldn’t connect to recording stream: %1."
 msgstr "Malsukcesis krei disierujon: %1."
 
 #: microphonetest.cpp:268
-#, kde-format
-msgid "Couldn't create a playback stream"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@info error %1 is a path"
+#| msgid "Failed to create directory: %1."
+msgctxt "@info:status"
+msgid "Couldn’t create a playback stream."
+msgstr "Malsukcesis krei disierujon: %1."
 
 #: microphonetest.cpp:284
 #, kde-format
-msgid "Couldn't connect playback"
+msgctxt "@info:status"
+msgid "Couldn’t connect to playback stream: %1"
 msgstr ""
 
 #: qml/listitemmenu.cpp:323
@@ -639,3 +648,13 @@ msgstr "%1 uzas la mikrofonon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 uzas la mikrofonon"
+
+#~ msgctxt ""
+#~ "%1 is an error string produced by an external component, and probably "
+#~ "untranslated"
+#~ msgid ""
+#~ "Error trying to play a test sound. \n"
+#~ "The system said: \"%1\""
+#~ msgstr ""
+#~ "Eraro dum provado ludi testan sonon. \n"
+#~ "La sistemo diris: \"%1\""

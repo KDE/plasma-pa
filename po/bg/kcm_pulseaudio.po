@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-18 00:47+0000\n"
+"POT-Creation-Date: 2026-08-20 00:47+0000\n"
 "PO-Revision-Date: 2026-04-03 02:17+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -190,16 +190,14 @@ msgid "Recording Streams"
 msgstr "Записване на потоци"
 
 #: kcm/ui/main.qml:312
-#, kde-format
+#, kde-kuit-format
 msgctxt ""
-"%1 is an error string produced by an external component, and probably "
+"@info %1 is an error string produced by an external component, and probably "
 "untranslated"
 msgid ""
-"Error trying to play a test sound. \n"
-"The system said: \"%1\""
+"The PulseAudio audio subsystem was unable to play a test sound, and reported "
+"the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
-"Грешка при опит за тестване на звука. \n"
-"Съобщение: „%1“"
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -251,61 +249,65 @@ msgstr "Моно"
 msgid "Click on any speaker to test sound"
 msgstr "Кликнете върху високоговорителите, за да тествате звука"
 
-#: kcm/ui/main.qml:505
+#: kcm/ui/main.qml:507
 #, kde-kuit-format
-msgctxt "@info"
-msgid "Microphone test error:<nl/><nl/>%1"
-msgstr "Грешка при тестване на микрофона:<nl/><nl/>%1"
+msgctxt ""
+"@info %1 is an error string produced by an external component, and probably "
+"untranslated"
+msgid ""
+"The PulseAudio audio subsystem was unable to record sound, and reported the "
+"following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
+msgstr ""
 
-#: kcm/ui/main.qml:570
+#: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "Стоп"
 
-#: kcm/ui/main.qml:570
+#: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "Запис"
 
-#: kcm/ui/main.qml:583
+#: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "Стоп"
 
-#: kcm/ui/main.qml:583
+#: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "Старт"
 
-#: kcm/ui/main.qml:602
+#: kcm/ui/main.qml:604
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "Сила на звука"
 
-#: kcm/ui/main.qml:632
+#: kcm/ui/main.qml:634
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
-#: kcm/ui/main.qml:647
+#: kcm/ui/main.qml:649
 #, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Чувствителност"
 
-#: kcm/ui/main.qml:678 kcm/ui/VolumeSlider.qml:68
+#: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: kcm/ui/main.qml:691 kcm/ui/VolumeSlider.qml:89
+#: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
@@ -531,29 +533,39 @@ msgid "%1: Muted"
 msgstr "%1: е заглушен"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, kde-format
-msgid "PulseAudio context is not ready"
+#, fuzzy, kde-format
+#| msgid "PulseAudio context is not ready"
+msgctxt "@info:status"
+msgid "PulseAudio context is not ready."
 msgstr "Съдържанието на PulseAudio не е готово"
 
 #: microphonetest.cpp:155
-#, kde-format
-msgid "Failed to create a record stream"
+#, fuzzy, kde-format
+#| msgid "Failed to create a record stream"
+msgctxt "@info:status"
+msgid "Couldn’t create a recording stream."
 msgstr "Неуспешно създаване на записан поток"
 
 #: microphonetest.cpp:171
-#, kde-format
-msgid "Failed to connect record: %1"
+#, fuzzy, kde-format
+#| msgid "Failed to connect record: %1"
+msgctxt "@info:status"
+msgid "Couldn’t connect to recording stream: %1."
 msgstr "Неуспешно свързване на запис: '%1."
 
 #: microphonetest.cpp:268
-#, kde-format
-msgid "Couldn't create a playback stream"
+#, fuzzy, kde-format
+#| msgid "Couldn't create a playback stream"
+msgctxt "@info:status"
+msgid "Couldn’t create a playback stream."
 msgstr "Не можа да се създаде поток за възпроизвеждане"
 
 #: microphonetest.cpp:284
-#, kde-format
-msgid "Couldn't connect playback"
-msgstr "Не можа да се свърже възпроизвеждането"
+#, fuzzy, kde-format
+#| msgid "Couldn't create a playback stream"
+msgctxt "@info:status"
+msgid "Couldn’t connect to playback stream: %1"
+msgstr "Не можа да се създаде поток за възпроизвеждане"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
@@ -630,3 +642,20 @@ msgstr "%1 използва микрофона (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 използва микрофона"
+
+#~ msgctxt ""
+#~ "%1 is an error string produced by an external component, and probably "
+#~ "untranslated"
+#~ msgid ""
+#~ "Error trying to play a test sound. \n"
+#~ "The system said: \"%1\""
+#~ msgstr ""
+#~ "Грешка при опит за тестване на звука. \n"
+#~ "Съобщение: „%1“"
+
+#~ msgctxt "@info"
+#~ msgid "Microphone test error:<nl/><nl/>%1"
+#~ msgstr "Грешка при тестване на микрофона:<nl/><nl/>%1"
+
+#~ msgid "Couldn't connect playback"
+#~ msgstr "Не можа да се свърже възпроизвеждането"

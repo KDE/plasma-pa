@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:45+0000\n"
+"POT-Creation-Date: 2026-08-20 00:47+0000\n"
 "PO-Revision-Date: 2026-03-28 09:25+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -144,66 +144,66 @@ msgstr "Faire défiler pour ajuster le volume"
 msgid "Device name not found"
 msgstr "Nom du périphérique introuvable"
 
-#: main.qml:358
+#: main.qml:361
 #, kde-format
 msgid "Devices"
 msgstr "Périphériques"
 
-#: main.qml:365
+#: main.qml:368
 #, kde-format
 msgid "Applications"
 msgstr "Applications"
 
-#: main.qml:389
+#: main.qml:392
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Plus d'actions"
 
-#: main.qml:431
+#: main.qml:434
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Maintenir ouvert"
 
-#: main.qml:466
+#: main.qml:471
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Réessayer"
 
-#: main.qml:500
+#: main.qml:505
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr ""
 "Aucune application ne lit ou n'enregistre actuellement du contenu sonore"
 
-#: main.qml:596
+#: main.qml:601
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Périphérique de sortie"
 
-#: main.qml:598
+#: main.qml:603
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Flux de sortie"
 
-#: main.qml:656
+#: main.qml:661
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Périphériques d'entrée"
 
-#: main.qml:658
+#: main.qml:663
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Flux d'entrée"
 
-#: main.qml:723
+#: main.qml:728
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -214,27 +214,27 @@ msgstr ""
 "parleurs de l'appareil. Veuillez l'utilisez uniquement de façon temporaire "
 "pour rendre audibles les média faiblement sonorisés."
 
-#: main.qml:739
+#: main.qml:744
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Augmenter le volume maximum"
 
-#: main.qml:757
+#: main.qml:762
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Couper le son de tous les périphériques de lecture"
 
-#: main.qml:766
+#: main.qml:771
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Forcer la mise en sourdine de tous les périphériques d'entrée"
 
-#: main.qml:775
+#: main.qml:780
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Afficher les périphériques virtuels"
 
-#: main.qml:785
+#: main.qml:790
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Configurer les périphériques audio..."

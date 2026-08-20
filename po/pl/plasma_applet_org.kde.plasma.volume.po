@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:45+0000\n"
+"POT-Creation-Date: 2026-08-20 00:47+0000\n"
 "PO-Revision-Date: 2026-05-16 12:16+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -137,65 +137,65 @@ msgstr "Przewiń myszą, aby dostosować głośność"
 msgid "Device name not found"
 msgstr "Nie znaleziono nazwy urządzenia"
 
-#: main.qml:358
+#: main.qml:361
 #, kde-format
 msgid "Devices"
 msgstr "Urządzenia"
 
-#: main.qml:365
+#: main.qml:368
 #, kde-format
 msgid "Applications"
 msgstr "Programy"
 
-#: main.qml:389
+#: main.qml:392
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Więcej działań"
 
-#: main.qml:431
+#: main.qml:434
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Pozostaw otwartym"
 
-#: main.qml:466
+#: main.qml:471
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Ponów"
 
-#: main.qml:500
+#: main.qml:505
 #, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Żadna aplikacja nie odtwarza, ani nie nagrywa teraz dźwięku"
 
-#: main.qml:596
+#: main.qml:601
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Urządzenia wyjściowe"
 
-#: main.qml:598
+#: main.qml:603
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Strumienie wyjściowe"
 
-#: main.qml:656
+#: main.qml:661
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Urządzenie wejściowe"
 
-#: main.qml:658
+#: main.qml:663
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Strumienie wejściowe"
 
-#: main.qml:723
+#: main.qml:728
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -205,27 +205,27 @@ msgstr ""
 "Dłuższe korzystanie z tej funkcji uszkodzi głośniki urządzenia. Używaj tego "
 "tylko tymczasowo, aby móc usłyszeć ciche dźwięki."
 
-#: main.qml:739
+#: main.qml:744
 #, kde-format
 msgid "Raise maximum volume"
 msgstr "Zwiększ graniczną głośność"
 
-#: main.qml:757
+#: main.qml:762
 #, kde-format
 msgid "Force mute all playback devices"
 msgstr "Wycisz wszystkie urządzenia odtwarzające"
 
-#: main.qml:766
+#: main.qml:771
 #, kde-format
 msgid "Force mute all input devices"
 msgstr "Wymuś wyciszenie na wszystkich urządzeniach wejściowych"
 
-#: main.qml:775
+#: main.qml:780
 #, kde-format
 msgid "Show virtual devices"
 msgstr "Pokaż urządzenia wirtualne"
 
-#: main.qml:785
+#: main.qml:790
 #, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Ustawienia urządzeń dźwiękowych..."
