@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-27 05:11+0100\n"
+"PO-Revision-Date: 2026-08-20 06:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -188,7 +188,7 @@ msgstr "დასაკრავი ნაკადები"
 #: kcm/ui/main.qml:278
 #, kde-format
 msgid "Recording Streams"
-msgstr "ჩამწერი ნააკდები"
+msgstr "ჩაწერის ნაკადები"
 
 #: kcm/ui/main.qml:312
 #, kde-kuit-format
@@ -199,6 +199,8 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"ხმის ქვესისტემამ PulseAudio სატესტო ხმა ვერ დაუკრა და გადმოგვცა შემდეგი "
+"შეცდომა:<nl/><nl/>\"%1\"<nl/><nl/>გადატვირთეთ სისტემა და კიდევ სცადეთ."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -259,6 +261,8 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"ხმის ქვესისტემამ PulseAudio სატესტო ხმა ვერ ჩაიწერა და გადმოგვცა შემდეგი "
+"შეცდომა:<nl/><nl/>\"%1\"<nl/><nl/>გადატვირთეთ სისტემა და კიდევ სცადეთ."
 
 #: kcm/ui/main.qml:572
 #, kde-format
@@ -533,39 +537,34 @@ msgid "%1: Muted"
 msgstr "%1: დადუმებულია"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "PulseAudio-ის კონტექსტი მზად არაა"
+msgstr "PulseAudio-ის კონტექსტი მზად არაა."
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "ჩანაწერის ნაკადის შექმნა ჩავარდა"
+msgstr "ჩაწერის ნაკადის შექმნა ჩავარდა."
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "ჩაწერასთან დაკავშირება ჩავარდა: %1"
+msgstr "ჩაწერის ნაკადთან დაკავშირება ჩავარდა: %1."
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "დაკვრის კანადის შექმნა შეუძლებელია"
+msgstr "დაკვრის კანადის შექმნა შეუძლებელია."
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "დაკვრის კანადის შექმნა შეუძლებელია"
+msgstr "დაკვრის კანადის შექმნა შეუძლებელია: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
