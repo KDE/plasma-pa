@@ -529,39 +529,34 @@ msgid "%1: Muted"
 msgstr "%1：已静音"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "PulseAudio 上下文尚未就绪"
+msgstr ""
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "创建录音流失败"
+msgstr ""
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "连接录音失败：%1"
+msgstr ""
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "无法创建播放流"
+msgstr ""
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "无法创建播放流"
+msgstr ""
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
@@ -638,20 +633,3 @@ msgstr "%1 正在使用麦克风 (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 正在使用麦克风"
-
-#~ msgctxt ""
-#~ "%1 is an error string produced by an external component, and probably "
-#~ "untranslated"
-#~ msgid ""
-#~ "Error trying to play a test sound. \n"
-#~ "The system said: \"%1\""
-#~ msgstr ""
-#~ "尝试播放测试声音时出错。 \n"
-#~ "系统返回消息：“%1”"
-
-#~ msgctxt "@info"
-#~ msgid "Microphone test error:<nl/><nl/>%1"
-#~ msgstr "麦克风测试错误：<nl/><nl/>%1"
-
-#~ msgid "Couldn't connect playback"
-#~ msgstr "无法连接播放"

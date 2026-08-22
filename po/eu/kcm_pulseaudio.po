@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:47+0000\n"
-"PO-Revision-Date: 2026-07-21 00:45+0200\n"
+"PO-Revision-Date: 2026-08-21 14:37+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -203,6 +203,8 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"PulseAudio audio-azpisistemak ezin izan du proba-soinua jo, eta errore hau "
+"jakinarazi du:<nl/><nl/>«%1»<nl/><nl/>Sistema berrabiarazi eta berrirosaiatu."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -263,6 +265,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"PulseAudio audio-azpisistemak ezin izan du soinua grabatu, eta errore hau "
+"jakinarazi du:<nl/><nl/>«%1»<nl/><nl/>Sistema berrabiarazi eta berriro "
+"saiatu."
 
 #: kcm/ui/main.qml:572
 #, kde-format
@@ -538,39 +543,34 @@ msgid "%1: Muted"
 msgstr "%1: Isilarazita"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "PulseAudio testuingurua ez dago prest"
+msgstr "PulseAudio testuingurua ez dago prest."
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "Grabazio-korronte bat sortzea huts egin du"
+msgstr "Ezin izan da grabazio-korronte bat sortu."
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "Grabazioa konektatzea huts egin du: %1"
+msgstr "Ezin izan da grabazio-korrontera konektatu: %1."
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "Ezin izan da atzera-jotzeko korronte bat sortu"
+msgstr "Ezin izan da atzera-jotzeko korronte bat sortu."
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "Ezin izan da atzera-jotzeko korronte bat sortu"
+msgstr "Ezin izan da atzera-jotzeko korrontera konektatu: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format

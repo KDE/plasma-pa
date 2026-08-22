@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: trunk-kf 5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-27 19:40+0200\n"
+"PO-Revision-Date: 2026-08-21 11:26+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -204,6 +204,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"PulseAudio garso įrašų posistemei nepavyko atkurti bandomojo garso ir ji "
+"pranešė apie šią klaidą:<nl/><nl/>„%1“<nl/><nl/>Paleiskite sistemą iš naujo "
+"ir bandykite dar kartą."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -264,6 +267,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"PulseAudio garso įrašų posistemei nepavyko įrašyti garso ir ji pranešė apie "
+"šią klaidą:<nl/><nl/>„%1“<nl/><nl/>Paleiskite sistemą iš naujo ir bandykite "
+"dar kartą."
 
 #: kcm/ui/main.qml:572
 #, kde-format
@@ -538,39 +544,34 @@ msgid "%1: Muted"
 msgstr "%1: Nutildytas"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "PulseAudio kontekstas nepasiruošęs"
+msgstr "PulseAudio kontekstas nepasiruošęs."
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "Nepavyko sukurti įrašymo srauto"
+msgstr "Nepavyko sukurti įrašymo srauto."
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "Nepavyko prijungti įrašymo: %1"
+msgstr "Nepavyko prisijungti prie įrašymo srauto: %1."
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "Nepavyko sukurti atkūrimo srauto"
+msgstr "Nepavyko sukurti atkūrimo srauto."
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "Nepavyko sukurti atkūrimo srauto"
+msgstr "Nepavyko prisijungti prie atkūrimo srauto: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
