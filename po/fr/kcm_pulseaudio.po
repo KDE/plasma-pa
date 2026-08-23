@@ -5,16 +5,16 @@
 # Johan Claude-Breuninger <johan.claudebreuninger@gmail.com>, 2017.
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
 # William Oprandi <william.oprandi@gmail.com>, 2020.
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020-2026 Xavier Besnard <xavier.besnard@kde.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-28 09:30+0100\n"
+"PO-Revision-Date: 2026-08-21 09:20+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <French <kde-francophone@kde.org>>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.07.90\n"
 "X-Text-Markup: kde4\n"
 
 #: devicerenamesaver.cpp:115
@@ -208,6 +208,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Il a été impossible pour le sous-système audio PulseAudio de lire un son de "
+"test. PulseAudio a signalé l'erreur suivante :<nl/><nl/>« %1 »<nl/><nl/"
+">Veuillez redémarrer le système et réessayer."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -268,6 +271,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Il a été impossible pour le sous-système audio PulseAudio d'enregistrer le "
+"son. PulseAudio a signalé l'erreur suivante :<nl/><nl/>« %1 »<nl/><nl/"
+">Veuillez redémarrer le système et réessayer."
 
 #: kcm/ui/main.qml:572
 #, kde-format
@@ -544,39 +550,34 @@ msgid "%1: Muted"
 msgstr "%1 : mis en pause"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "Le contexte de PulseAudio n'est pas prêt"
+msgstr "Le contexte de PulseAudio n'est pas prêt."
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "Impossible de créer un flux d'enregistrement"
+msgstr "Impossible de créer un flux d'enregistrement."
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "Impossible de se connecter à l'enregistrement : %1."
+msgstr "Impossible de se connecter à l'enregistrement de flux : %1."
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "Impossible de créer un flux de lecture"
+msgstr "Impossible de créer un flux de lecture."
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "Impossible de créer un flux de lecture"
+msgstr "Impossible de se connecter à la lecture d'un flux : %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format

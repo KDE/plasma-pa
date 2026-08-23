@@ -195,6 +195,8 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"PulseAudio 音频子系统无法播放测试声音，并报告了以下错误：<nl/><nl/>“%1”<nl/"
+"><nl/>请重启系统后重试。"
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -255,6 +257,8 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"PulseAudio 音频子系统无法录制声音，并报告了以下错误：<nl/><nl/>“%1”<nl/><nl/>"
+"请重启系统后重试。"
 
 #: kcm/ui/main.qml:572
 #, kde-format
@@ -532,31 +536,31 @@ msgstr "%1：已静音"
 #, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr ""
+msgstr "PulseAudio 上下文尚未就绪。"
 
 #: microphonetest.cpp:155
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr ""
+msgstr "无法创建录制流。"
 
 #: microphonetest.cpp:171
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr ""
+msgstr "无法连接到录制流：%1"
 
 #: microphonetest.cpp:268
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr ""
+msgstr "无法创建播放流。"
 
 #: microphonetest.cpp:284
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr ""
+msgstr "无法连接到播放流：%1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
