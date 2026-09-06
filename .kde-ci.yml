@@ -15,8 +15,8 @@ Dependencies:
     'frameworks/kcmutils': 'Frameworks/6.24'
     'frameworks/ksvg': 'Frameworks/6.24'
     'frameworks/kitemmodels': 'Frameworks/6.24'
-    'libraries/kirigami-addons': 'v1.11.0'
-    'libraries/pulseaudio-qt': 'v1.7.0'
+    'libraries/kirigami-addons': 'stable/1.11'
+    'libraries/pulseaudio-qt': 'stable/1.7'
     'plasma/libplasma': '@same'
 
 RuntimeDependencies:
