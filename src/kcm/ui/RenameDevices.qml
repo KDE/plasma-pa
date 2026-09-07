@@ -36,7 +36,7 @@ KCM.ScrollViewKCM {
         Kirigami.Action {
             icon.source: "dialog-ok-apply-symbolic"
             text: i18nc("@action save changes", "Save")
-            visible: saver.dirty
+            enabled: saver.dirty
             onTriggered: saver.saveChanges()
         }
     ]
