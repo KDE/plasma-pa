@@ -40,17 +40,7 @@ void VolumeFeedback::play(quint32 sinkIndex)
         return;
     }
 
-    int playing = 0;
     const int cindex = 2; // Note "2" is simply the index we've picked. It's somewhat irrelevant.
-    ca_context_playing(context, cindex, &playing);
-
-    // NB Depending on how this is desired to work, we may want to simply
-    // skip playing, or cancel the currently playing sound and play our
-    // new one... for now, let's do the latter.
-    if (playing) {
-        ca_context_cancel(context, cindex);
-    }
-
     char dev[64];
     snprintf(dev, sizeof(dev), "%lu", (unsigned long)sinkIndex);
     ca_context_change_device(context, dev);
