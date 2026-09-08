@@ -131,13 +131,11 @@ KCM.ScrollViewKCM {
                     return xi18nc("@label/rich", "%1", root.initialText)
                 }
 
-                onEditingFinished: {
-                    if (text === root.initialText) {
-                        return
-                    }
+                onTextEdited: {
+                    const value = text === root.initialText ? "" : text
                     let properties = pulseProperties
                     for (const key of page.possibleProperties) {
-                        properties[key] = text
+                        properties[key] = value
                     }
                     PulseProperties = properties
                 }
@@ -159,10 +157,6 @@ KCM.ScrollViewKCM {
                 function reset() {
                     clear()
                     if (delegate.hasOverride) {
-                        // the current value is already an override. use it as text rather than placeholder
-                        // There is a bit of a problem because we can't rightly tell what the original property
-                        // was, so we can't keep placeholder and text 100% correct, but we can at least
-                        // indicate if this is an override or not.
                         text = delegate.pulseProperties['node.description']
                     } else {
                         text = ""
