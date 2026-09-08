@@ -59,7 +59,7 @@ ColumnLayout {
 
             ToolTip {
                 text: parent.text
-                visible: parent.visible && parent.contentItem.truncated && labelMouseArea.containsMouse
+                visible: parent.visible && (parent.contentItem?.truncated ?? false) && labelMouseArea.containsMouse
             }
             MouseArea {
                 id: labelMouseArea

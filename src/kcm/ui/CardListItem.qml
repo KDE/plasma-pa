@@ -13,7 +13,7 @@ import org.kde.plasma.private.volume
 
 ColumnLayout {
     id: delegate
-    width: parent.width
+    width: parent?.width ?? 0
 
     property bool comboBoxLabelsVisible: false
 
