@@ -241,7 +241,9 @@ KCM.ScrollViewKCM {
                 interactive: false
                 spacing: Kirigami.Units.largeSpacing
                 model: sourceRenameModel
-                delegate: RenameDelegate {}
+                delegate: RenameDelegate {
+                    width: ListView.view.width
+                }
             }
         }
     }
