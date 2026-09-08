@@ -123,8 +123,6 @@ KCM.ScrollViewKCM {
                 id: textField
                 Layout.fillWidth: true
 
-                property bool dirty: false
-
                 placeholderText: {
                     if (delegate.hadOverride) {
                         return xi18nc("@label/rich place holder text, %1 is a device name", "%1 (click 'Save' to apply)", root.initialText)
@@ -144,17 +142,7 @@ KCM.ScrollViewKCM {
                     PulseProperties = properties
                 }
 
-                onTextEdited: {
-                    dirty = text !== root.initialText
-                }
-
                 rightActions: [
-                    Kirigami.Action {
-                        visible: textField.dirty
-                        text: i18nc("@action apply currently editing test", "Apply")
-                        icon.name: "dialog-ok-apply"
-                        onTriggered: textField.editingFinished()
-                    },
                     Kirigami.Action {
                         visible: delegate.hasOverride
                         text: i18nc("@action reset device name to default", "Reset")
