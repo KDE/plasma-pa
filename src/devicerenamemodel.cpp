@@ -141,7 +141,7 @@ QVariant DeviceRenameModel::pulseProperties(const QModelIndex &index) const
     return QIdentityProxyModel::data(index, key);
 }
 
-void DeviceRenameModel::reset(const QModelIndex &index)
+void DeviceRenameModel::resetLine(const QModelIndex &index)
 {
     if (!checkIndex(index, CheckIndexOption::IndexIsValid | CheckIndexOption::ParentIsInvalid)) {
         return;

@@ -161,7 +161,7 @@ KCM.ScrollViewKCM {
                         icon.name: "edit-reset-symbolic"
                         onTriggered: {
                             const model = delegate.ListView.view.model
-                            model.reset(model.index(index, 0))
+                            model.resetLine(model.index(index, 0))
 
                             textField.reset()
                         }

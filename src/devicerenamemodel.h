@@ -30,7 +30,7 @@ public:
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
 public Q_SLOTS:
-    void reset(const QModelIndex &index);
+    void resetLine(const QModelIndex &index);
 
 private:
     [[nodiscard]] QString pulseName(const QModelIndex &index) const;
