@@ -80,7 +80,6 @@ bool DeviceRenameModel::setData(const QModelIndex &index, const QVariant &value,
             qCWarning(PLASMAPA) << "Name unexpectedly empty. Cannot override" << index;
             return false;
         }
-        beginResetModel();
         const auto base = pulseProperties(index).toMap();
         const auto incoming = value.toMap();
         auto override = m_saver->override(name);
@@ -104,7 +103,7 @@ bool DeviceRenameModel::setData(const QModelIndex &index, const QVariant &value,
         } else {
             m_saver->insertOverride(name, override); // replace
         }
-        endResetModel();
+        Q_EMIT dataChanged(index, index);
         return true;
     }
 
@@ -154,9 +153,8 @@ void DeviceRenameModel::reset(const QModelIndex &index)
         return;
     }
 
-    beginResetModel();
     m_saver->removeOverride(name);
-    endResetModel();
+    Q_EMIT dataChanged(index, index);
 }
 
 void DeviceRenameModel::setSaver(DeviceRenameSaver *saver)

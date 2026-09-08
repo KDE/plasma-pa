@@ -164,7 +164,6 @@ KCM.ScrollViewKCM {
                             model.reset(model.index(index, 0))
 
                             textField.reset()
-                            textField.placeholderText = i18nc("@label placeholder text when we don't know the default value of a device yet", "DEFAULT")
                         }
                     }
                 ]
