@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2014-2015 Harald Sitter <sitter@kde.org>
+    SPDX-FileCopyrightText: 2014-2026 Harald Sitter <sitter@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -312,136 +312,144 @@ PlasmoidItem {
             }
         }
 
-        header: PlasmaExtras.PlasmoidHeading {
-            // Make this toolbar's buttons align vertically with the ones above
-            rightPadding: -1
-            // Allow tabbar to touch the header's bottom border
-            bottomPadding: -bottomInset
-            visible: !micTestActive
+        header: ColumnLayout {
+            spacing: 0
 
-            RowLayout {
-                anchors.fill: parent
-                spacing: Kirigami.Units.smallSpacing
+            PlasmaExtras.PlasmoidHeading {
+                // Make this toolbar's buttons align vertically with the ones above
+                rightPadding: -1
+                // Allow tabbar to touch the header's bottom border
+                bottomPadding: -bottomInset
+                visible: !micTestActive
 
-                PC3.TabBar {
-                    id: tabBar
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
+                RowLayout {
+                    anchors.fill: parent
+                    spacing: Kirigami.Units.smallSpacing
 
-                    currentIndex: {
-                        switch (plasmoid.configuration.currentTab) {
-                        case "devices":
-                            return devicesTab.PC3.TabBar.index;
-                        case "streams":
-                            return streamsTab.PC3.TabBar.index;
-                        }
-                    }
+                    PC3.TabBar {
+                        id: tabBar
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
 
-                    KeyNavigation.right: actionsButton
-                    Keys.onDownPressed: event => {
-                        contentView.currentItem.contentItem.upperListView.currentIndex = 0
-                        event.accepted = false // pass to KeyNavigation, set inside StackView
-                    }
-
-                    onCurrentIndexChanged: {
-                        Qt.callLater( () => { // callLater to avoid interference while loading
-                            switch (currentIndex) {
-                            case devicesTab.PC3.TabBar.index:
-                                plasmoid.configuration.currentTab = "devices";
-                                break;
-                            case streamsTab.PC3.TabBar.index:
-                                plasmoid.configuration.currentTab = "streams";
-                                break;
+                        currentIndex: {
+                            switch (plasmoid.configuration.currentTab) {
+                            case "devices":
+                                return devicesTab.PC3.TabBar.index;
+                            case "streams":
+                                return streamsTab.PC3.TabBar.index;
                             }
-                        })
-                    }
+                        }
 
-                    PC3.TabButton {
-                        id: devicesTab
-                        text: i18n("Devices")
+                        KeyNavigation.right: actionsButton
+                        Keys.onDownPressed: event => {
+                            contentView.currentItem.contentItem.upperListView.currentIndex = 0
+                            event.accepted = false // pass to KeyNavigation, set inside StackView
+                        }
 
-                        KeyNavigation.up: fullRep.KeyNavigation.up
-                    }
+                        onCurrentIndexChanged: {
+                            Qt.callLater( () => { // callLater to avoid interference while loading
+                                switch (currentIndex) {
+                                case devicesTab.PC3.TabBar.index:
+                                    plasmoid.configuration.currentTab = "devices";
+                                    break;
+                                case streamsTab.PC3.TabBar.index:
+                                    plasmoid.configuration.currentTab = "streams";
+                                    break;
+                                }
+                            })
+                        }
 
-                    PC3.TabButton {
-                        id: streamsTab
-                        text: i18n("Applications")
+                        PC3.TabButton {
+                            id: devicesTab
+                            text: i18n("Devices")
 
-                        KeyNavigation.up: fullRep.KeyNavigation.up
-                    }
-                }
+                            KeyNavigation.up: fullRep.KeyNavigation.up
+                        }
 
-                PC3.ToolButton {
-                    id: actionsButton
+                        PC3.TabButton {
+                            id: streamsTab
+                            text: i18n("Applications")
 
-                    visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
-
-                    icon.name: "application-menu"
-                    display: PC3.AbstractButton.IconOnly
-                    checkable: true
-                    checked: configMenu.status !== PlasmaExtras.Menu.Closed
-                    onToggled: {
-                        if (checked) {
-                            configMenu.openRelative();
-                        } else {
-                            configMenu.close();
+                            KeyNavigation.up: fullRep.KeyNavigation.up
                         }
                     }
-                    KeyNavigation.right: configureButton
 
-                    text: i18nc("@action:button", "More actions")
-                    PC3.ToolTip {
-                        text: parent.text
-                    }
-                }
+                    PC3.ToolButton {
+                        id: actionsButton
 
-                PlasmaExtras.Menu {
-                    id: configMenu
-                    visualParent: actionsButton
-                    placement: PlasmaExtras.Menu.BottomPosedLeftAlignedPopup
-                }
+                        visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
 
-                Instantiator {
-                    model: Plasmoid.contextualActions
-                    delegate: PlasmaExtras.MenuItem {
-                        id: menuItem
-                        action: modelData
-                    }
-                    onObjectAdded: (index, object) => {
-                        if (object.action.priority === PlasmaCore.Action.NormalPriority) {
-                            configMenu.addMenuItem(object);
+                        icon.name: "application-menu"
+                        display: PC3.AbstractButton.IconOnly
+                        checkable: true
+                        checked: configMenu.status !== PlasmaExtras.Menu.Closed
+                        onToggled: {
+                            if (checked) {
+                                configMenu.openRelative();
+                            } else {
+                                configMenu.close();
+                            }
+                        }
+                        KeyNavigation.right: configureButton
+
+                        text: i18nc("@action:button", "More actions")
+                        PC3.ToolTip {
+                            text: parent.text
                         }
                     }
-                }
 
-                PC3.ToolButton {
-                    id: configureButton
-                    visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+                    PlasmaExtras.Menu {
+                        id: configMenu
+                        visualParent: actionsButton
+                        placement: PlasmaExtras.Menu.BottomPosedLeftAlignedPopup
+                    }
 
-                    icon.name: "configure"
-                    onClicked: plasmoid.internalAction("configure").trigger()
+                    Instantiator {
+                        model: Plasmoid.contextualActions
+                        delegate: PlasmaExtras.MenuItem {
+                            id: menuItem
+                            action: modelData
+                        }
+                        onObjectAdded: (index, object) => {
+                            if (object.action.priority === PlasmaCore.Action.NormalPriority) {
+                                configMenu.addMenuItem(object);
+                            }
+                        }
+                    }
 
-                    Accessible.name: plasmoid.internalAction("configure").text
-                    PC3.ToolTip {
-                        text: plasmoid.internalAction("configure").text
+                    PC3.ToolButton {
+                        id: configureButton
+                        visible: !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+
+                        icon.name: "configure"
+                        onClicked: plasmoid.internalAction("configure").trigger()
+
+                        Accessible.name: plasmoid.internalAction("configure").text
+                        PC3.ToolTip {
+                            text: plasmoid.internalAction("configure").text
+                        }
+                    }
+
+                    PC3.ToolButton {
+                        visible: main.compactInPanel && !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+
+                        icon.name: "window-pin-symbolic"
+                        text: i18nc("@action:button keep this widget's pop-up open until explicitly dismissed", "Keep open")
+                        display: PC3.AbstractButton.IconOnly
+
+                        checkable: true
+                        checked: Plasmoid.configuration.pin
+                        onToggled: Plasmoid.configuration.pin = checked
+
+                        PC3.ToolTip.text: text
+                        PC3.ToolTip.visible: hovered || activeFocus
+                        PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
                 }
+            }
 
-                PC3.ToolButton {
-                    visible: main.compactInPanel && !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
-
-                    icon.name: "window-pin-symbolic"
-                    text: i18nc("@action:button keep this widget's pop-up open until explicitly dismissed", "Keep open")
-                    display: PC3.AbstractButton.IconOnly
-
-                    checkable: true
-                    checked: Plasmoid.configuration.pin
-                    onToggled: Plasmoid.configuration.pin = checked
-
-                    PC3.ToolTip.text: text
-                    PC3.ToolTip.visible: hovered || activeFocus
-                    PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
-                }
+            DefaultDeviceInlineMessage {
+                Layout.fillWidth: true
             }
         }
 

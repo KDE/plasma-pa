@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2014-2015 Harald Sitter <sitter@kde.org>
+    SPDX-FileCopyrightText: 2014-2026 Harald Sitter <sitter@kde.org>
     SPDX-FileCopyrightText: 2016 David Rosca <nowrep@gmail.com>
     SPDX-FileCopyrightText: 2019 Sefa Eyeoglu <contact@scrumplex.net>
     SPDX-FileCopyrightText: 2020 Nicolas Fella <nicolas.fella@gmx.de>
@@ -110,6 +110,8 @@ KCM.ScrollViewKCM {
             }
         }
     ]
+
+    header: DefaultDeviceInlineMessage {}
 
     view: Flickable {
         id: flickable
