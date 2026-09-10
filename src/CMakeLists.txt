@@ -47,6 +47,7 @@ target_include_directories(plasma-volume-declarative PRIVATE qml/)
 
 ecm_target_qml_sources(plasma-volume-declarative VERSION 0.1 SOURCES
     qml/PulseObjectFilterModel.qml
+    qml/DefaultDeviceInlineMessage.qml
 )
 
 set_property(SOURCE dbus/osdService.xml APPEND PROPERTY CLASSNAME OsdServiceInterface)
