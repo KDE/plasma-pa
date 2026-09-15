@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:47+0000\n"
-"PO-Revision-Date: 2023-03-28 18:40+0200\n"
-"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
+"PO-Revision-Date: 2026-09-14 20:10+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -200,6 +200,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Zvukovému podsystému PulseAudio sa nepodarilo prehrať testovací zvuk a "
+"ohlásil túto chybu:<nl/><nl/>„%1“<nl/><nl/>Reštartujte systém a skúste to "
+"znova."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -260,6 +263,8 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Zvukovému podsystému PulseAudio sa nepodarilo nahrať zvuk a ohlásil túto "
+"chybu:<nl/><nl/>„%1“<nl/><nl/>Reštartujte systém a skúste to znova."
 
 #: kcm/ui/main.qml:572
 #, kde-format
@@ -534,39 +539,34 @@ msgid "%1: Muted"
 msgstr "%1: Stlmené"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "Kontext PulseAudio nie je pripravený"
+msgstr "Kontext PulseAudio nie je pripravený."
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "Nepodarilo sa create a record stream"
+msgstr "Nepodarilo sa vytvoriť nahrávací prúd."
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "Nepodarilo sa connect record: %1"
+msgstr "Nepodarilo sa pripojiť k nahrávaciemu prúdu: %1."
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "Nepodarilo sa vytvoriť prehrávací prúd"
+msgstr "Nepodarilo sa vytvoriť prehrávací prúd."
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "Nepodarilo sa vytvoriť prehrávací prúd"
+msgstr "Nepodarilo sa pripojiť k prehrávaciemu prúdu: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
