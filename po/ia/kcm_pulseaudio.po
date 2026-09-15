@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-27 10:43+0100\n"
+"PO-Revision-Date: 2026-09-14 12:07+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -201,6 +201,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Le subsistema de audio PulseAudio non poteva reproducer un sono de test, e "
+"reportava le sequente error:<nl/><nl/>“%1”<nl/><nl/>Reinitia le systema e "
+"tenta de novo."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -261,6 +264,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Le subsistema de audio PulseAudio esseva incapabile de registrar sono,  e "
+"reportava le sequente error:<nl/><nl/>“%1”<nl/><nl/>Reinitia le systema e "
+"reproba."
 
 #: kcm/ui/main.qml:572
 #, kde-format
@@ -535,39 +541,34 @@ msgid "%1: Muted"
 msgstr "%1: Silentiate"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "Contexto de PulseAudio non es preste"
+msgstr "Contexto de PulseAudio non es preste."
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "Il falleva a crear fluxo de registrar"
+msgstr "Il falleva a crear fluxo de registrar."
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "Il falleva a connecter registro: %1."
+msgstr "Non poteva connecter al fluxo de registrar: %1."
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "Non poteva crear un fluxo de reproduction"
+msgstr "Non poteva crear un fluxo de reproduction."
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "Non poteva crear un fluxo de reproduction"
+msgstr "Non poteva connecter reproduction: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
