@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-16 00:47+0000\n"
 "PO-Revision-Date: 2023-01-29 08:01+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -19,188 +19,161 @@ msgstr ""
 "X-Generator: Lokalize 22.12.1\n"
 
 #: ListItemBase.qml:73
-#, kde-format
 msgid "Currently not recording"
 msgstr "Saat ini tidak merekam"
 
 #: ListItemBase.qml:74
-#, kde-format
 msgid "Currently not playing"
 msgstr "Saat ini tidak memainkan"
 
 #: ListItemBase.qml:205
-#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Opsi Tambahan"
 
 #: ListItemBase.qml:207
-#, kde-format
 msgid "Show additional options for %1"
 msgstr "Tampilkan opsi tambahan untuk %1"
 
 #: ListItemBase.qml:229
-#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Bunyikan"
 
 #: ListItemBase.qml:229
-#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Senyapkan"
 
 #: ListItemBase.qml:231
-#, kde-format
 msgid "Unmute %1"
 msgstr "Bunyikan %1"
 
 #: ListItemBase.qml:231
-#, kde-format
 msgid "Mute %1"
 msgstr "Senyapkan %1"
 
 #: ListItemBase.qml:254
-#, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Sesuaikan volume untuk %1"
 
 #: ListItemBase.qml:318 MicrophoneTestView.qml:215
-#, kde-format
+#, javascript-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: ListItemBase.qml:339 MicrophoneTestView.qml:228
-#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: ListItemBase.qml:344
-#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr ""
 
 #: main.qml:36
-#, kde-format
 msgid "Audio Volume"
 msgstr "Volume Audio"
 
 #: main.qml:60 main.qml:62
-#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr ""
 
 #: main.qml:64
-#, kde-format
 msgid "No output or input devices found"
 msgstr "Tidak ada peranti input atau output yang ditemukan"
 
 #: main.qml:68
-#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr ""
 
 #: main.qml:94
-#, kde-format
 msgid "Audio Muted"
 msgstr "Audio Disenyapkan"
 
 #: main.qml:96
-#, kde-format
+#, javascript-format
 msgid "Volume at %1%"
 msgstr "Volume pada %1%"
 
 #: main.qml:107
-#, kde-format
 msgid "Middle-click to unmute"
 msgstr "Klik tengah untuk membunyikan"
 
 #: main.qml:108
-#, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Klik tengah untuk menyenyapkan semua audio"
 
 #: main.qml:109
-#, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Gulir untuk menyetel volume"
 
 #: main.qml:125
-#, kde-format
 msgid "Device name not found"
 msgstr "Nama perangkat tidak ditemukan"
 
 #: main.qml:361
-#, kde-format
 msgid "Devices"
 msgstr "Peranti"
 
 #: main.qml:368
-#, kde-format
 msgid "Applications"
 msgstr "Aplikasi"
 
 #: main.qml:392
-#, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr ""
 
 #: main.qml:434
-#, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr ""
 
 #: main.qml:471
-#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
 
 #: main.qml:505
-#, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Tidak ada aplikasi yang memutar atau merekam audio"
 
 #: main.qml:601
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "No output device"
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Tidak ada peranti output"
 
 #: main.qml:603
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Stream Capture"
 
 #: main.qml:661
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Capture Devices"
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Perangkat Capture"
 
 #: main.qml:663
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Capture Streams"
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Stream Capture"
 
 #: main.qml:728
-#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
@@ -208,90 +181,79 @@ msgid ""
 msgstr ""
 
 #: main.qml:744
-#, kde-format
 msgid "Raise maximum volume"
 msgstr "Tingkatkan volume maksimum"
 
 #: main.qml:762
-#, kde-format
 msgid "Force mute all playback devices"
 msgstr "Paksa senyap semua pemutaran peranti"
 
 #: main.qml:771
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Force mute all playback devices"
 msgid "Force mute all input devices"
 msgstr "Paksa senyap semua pemutaran peranti"
 
 #: main.qml:780
-#, kde-format
 msgid "Show virtual devices"
 msgstr "Tampilkan peranti virtual"
 
 #: main.qml:790
-#, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Konfigurasikan Peranti Audio..."
 
 #: MicrophoneTestView.qml:104
-#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr ""
 
 #: MicrophoneTestView.qml:104
-#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr ""
 
 #: MicrophoneTestView.qml:118
-#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr ""
 
 #: MicrophoneTestView.qml:118
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Playback"
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "Pemainan"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Volume step:"
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "Langkah volume:"
 
 #: MicrophoneTestView.qml:166
-#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr ""
 
 #: MicrophoneTestView.qml:181
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Microphone sensitivity"
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Sensitivitas mikrofon"
 
 #: MicrophoneTestView.qml:237
-#, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
 msgstr ""
 
 #: MicrophoneTestView.qml:250
-#, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
 msgstr ""
 
 #: StreamListItem.qml:36
-#, kde-format
 msgid "Stream name not found"
 msgstr "Nama stream tidak ditemukan"
 

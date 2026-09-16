@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-16 00:47+0000\n"
 "PO-Revision-Date: 2026-04-08 23:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -20,184 +20,153 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ListItemBase.qml:73
-#, kde-format
 msgid "Currently not recording"
 msgstr "目前沒有在錄音"
 
 #: ListItemBase.qml:74
-#, kde-format
 msgid "Currently not playing"
 msgstr "目前沒有在播放"
 
 #: ListItemBase.qml:205
-#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "額外選項"
 
 #: ListItemBase.qml:207
-#, kde-format
 msgid "Show additional options for %1"
 msgstr "顯示 %1 的額外選項"
 
 #: ListItemBase.qml:229
-#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "取消靜音"
 
 #: ListItemBase.qml:229
-#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "靜音"
 
 #: ListItemBase.qml:231
-#, kde-format
 msgid "Unmute %1"
 msgstr "取消靜音 %1"
 
 #: ListItemBase.qml:231
-#, kde-format
 msgid "Mute %1"
 msgstr "靜音 %1"
 
 #: ListItemBase.qml:254
-#, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "調整 %1 的音量"
 
 #: ListItemBase.qml:318 MicrophoneTestView.qml:215
-#, kde-format
+#, javascript-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: ListItemBase.qml:339 MicrophoneTestView.qml:228
-#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: ListItemBase.qml:344
-#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "測試…"
 
 #: main.qml:36
-#, kde-format
 msgid "Audio Volume"
 msgstr "音效音量"
 
 #: main.qml:60 main.qml:62
-#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "已喪失與聲音服務的連線"
 
 #: main.qml:64
-#, kde-format
 msgid "No output or input devices found"
 msgstr "找不到輸出或輸入裝置"
 
 #: main.qml:68
-#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "正在嘗試重新連線…"
 
 #: main.qml:94
-#, kde-format
 msgid "Audio Muted"
 msgstr "音效靜音"
 
 #: main.qml:96
-#, kde-format
+#, javascript-format
 msgid "Volume at %1%"
 msgstr "音量在 %1%"
 
 #: main.qml:107
-#, kde-format
 msgid "Middle-click to unmute"
 msgstr "按中鍵取消靜音"
 
 #: main.qml:108
-#, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "按中鍵將所有音效靜音"
 
 #: main.qml:109
-#, kde-format
 msgid "Scroll to adjust volume"
 msgstr "捲動調整音量"
 
 #: main.qml:125
-#, kde-format
 msgid "Device name not found"
 msgstr "找不到裝置名稱"
 
 #: main.qml:361
-#, kde-format
 msgid "Devices"
 msgstr "裝置"
 
 #: main.qml:368
-#, kde-format
 msgid "Applications"
 msgstr "應用程式"
 
 #: main.qml:392
-#, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "更多動作"
 
 #: main.qml:434
-#, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "保持開啟"
 
 #: main.qml:471
-#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "重試"
 
 #: main.qml:505
-#, kde-format
 msgid "No applications playing or recording audio"
 msgstr "沒有正在播放或錄音的應用程式"
 
 #: main.qml:601
-#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "輸出裝置"
 
 #: main.qml:603
-#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "輸出串流"
 
 #: main.qml:661
-#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "輸入裝置"
 
 #: main.qml:663
-#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "輸入串流"
 
 #: main.qml:728
-#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
@@ -207,86 +176,71 @@ msgstr ""
 "見。"
 
 #: main.qml:744
-#, kde-format
 msgid "Raise maximum volume"
 msgstr "提高最大音量"
 
 #: main.qml:762
-#, kde-format
 msgid "Force mute all playback devices"
 msgstr "強制靜音所有播放裝置"
 
 #: main.qml:771
-#, kde-format
 msgid "Force mute all input devices"
 msgstr "強制靜音所有輸入裝置"
 
 #: main.qml:780
-#, kde-format
 msgid "Show virtual devices"
 msgstr "顯示虛擬裝置"
 
 #: main.qml:790
-#, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "設定音效裝置(&C)…"
 
 #: MicrophoneTestView.qml:104
-#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "停止"
 
 #: MicrophoneTestView.qml:104
-#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "錄製"
 
 #: MicrophoneTestView.qml:118
-#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "停止"
 
 #: MicrophoneTestView.qml:118
-#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "播放"
 
 #: MicrophoneTestView.qml:137
-#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "音量"
 
 #: MicrophoneTestView.qml:166
-#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "靈敏度"
 
 #: MicrophoneTestView.qml:237
-#, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
 msgstr "返回"
 
 #: MicrophoneTestView.qml:250
-#, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
 msgstr "麥克風測試錯誤：<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
-#, kde-format
 msgid "Stream name not found"
 msgstr "找不到串流名稱"
 

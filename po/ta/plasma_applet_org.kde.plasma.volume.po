@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-16 00:47+0000\n"
 "PO-Revision-Date: 2026-04-12 17:18+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -18,184 +18,153 @@ msgstr ""
 "X-Generator: Lokalize 25.12.3\n"
 
 #: ListItemBase.qml:73
-#, kde-format
 msgid "Currently not recording"
 msgstr "இப்போது பதிவு செய்யவில்லை"
 
 #: ListItemBase.qml:74
-#, kde-format
 msgid "Currently not playing"
 msgstr "இப்போது இயங்கவில்லை"
 
 #: ListItemBase.qml:205
-#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "மேம்பட்ட அமைப்புகள்"
 
 #: ListItemBase.qml:207
-#, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 என்பதற்கு கூடுதல் விருப்பங்களை காட்டு"
 
 #: ListItemBase.qml:229
-#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ஒலிமுடக்கத்தை நீக்கு"
 
 #: ListItemBase.qml:229
-#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "ஒலியை அடக்கு"
 
 #: ListItemBase.qml:231
-#, kde-format
 msgid "Unmute %1"
 msgstr "%1-இன் ஒலியை அனுமதி"
 
 #: ListItemBase.qml:231
-#, kde-format
 msgid "Mute %1"
 msgstr "%1-இன் ஒலியை அடக்கு"
 
 #: ListItemBase.qml:254
-#, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1-க்கு ஒலியின் அளவை மாற்று"
 
 #: ListItemBase.qml:318 MicrophoneTestView.qml:215
-#, kde-format
+#, javascript-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: ListItemBase.qml:339 MicrophoneTestView.qml:228
-#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: ListItemBase.qml:344
-#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "சோதி…"
 
 #: main.qml:36
-#, kde-format
 msgid "Audio Volume"
 msgstr "ஒலி அளவு"
 
 #: main.qml:60 main.qml:62
-#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "ஒலிக்கான பின்னணி நிரலுடனான இணைப்பு முறிவடைந்தது"
 
 #: main.qml:64
-#, kde-format
 msgid "No output or input devices found"
 msgstr "எந்த உள்ளீட்டு அல்லது வெளியீட்டு சாதனங்களும் கண்டுபிடிக்கப்படவில்லை"
 
 #: main.qml:68
-#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "திரும்ப இணைக்க முயற்சிக்கிறது…"
 
 #: main.qml:94
-#, kde-format
 msgid "Audio Muted"
 msgstr "ஒலி அடக்கப்பட்டுள்ளது"
 
 #: main.qml:96
-#, kde-format
+#, javascript-format
 msgid "Volume at %1%"
 msgstr "ஒலி %1% ஆக உள்ளது"
 
 #: main.qml:107
-#, kde-format
 msgid "Middle-click to unmute"
 msgstr "ஒலியை அனுமதிக்க நடு-கிளிக் செய்யவும்"
 
 #: main.qml:108
-#, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "அனைத்து ஒலிகளையும் அடக்க நடு-கிளிக் செய்யவும்"
 
 #: main.qml:109
-#, kde-format
 msgid "Scroll to adjust volume"
 msgstr "ஒலி அளவை மாற்ற உருளவும்"
 
 #: main.qml:125
-#, kde-format
 msgid "Device name not found"
 msgstr "சாதனத்தின் பெயர் தெரியாது"
 
 #: main.qml:361
-#, kde-format
 msgid "Devices"
 msgstr "சாதனங்கள்"
 
 #: main.qml:368
-#, kde-format
 msgid "Applications"
 msgstr "செயலிகள்"
 
 #: main.qml:392
-#, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "மேலும் செயல்கள்"
 
 #: main.qml:434
-#, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "திறந்தே வைத்திரு"
 
 #: main.qml:471
-#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி"
 
 #: main.qml:505
-#, kde-format
 msgid "No applications playing or recording audio"
 msgstr "எந்த செயலிகளும் ஒலியை இயக்கவோ பதிவு செய்யவோ இல்லை"
 
 #: main.qml:601
-#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "வெளியீடு சாதனங்கள்"
 
 #: main.qml:603
-#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "வெளியீடு ஒலித்தடங்கள்"
 
 #: main.qml:661
-#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "உள்ளீடு கருவிகள்"
 
 #: main.qml:663
-#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "உள்ளீடு ஒலித்தடங்கள்"
 
 #: main.qml:728
-#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
@@ -205,86 +174,71 @@ msgstr ""
 "குறைவாக இருந்தால் அவ்வப்போது இதைப் பயன்படுத்தலாம்."
 
 #: main.qml:744
-#, kde-format
 msgid "Raise maximum volume"
 msgstr "அதிகபட்ச ஒலியை உயர்த்து"
 
 #: main.qml:762
-#, kde-format
 msgid "Force mute all playback devices"
 msgstr "அனைத்து வெளியீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
 
 #: main.qml:771
-#, kde-format
 msgid "Force mute all input devices"
 msgstr "அனைத்து உள்ளீட்டு சாதனங்களையும் கட்டாயமாக அடக்கு"
 
 #: main.qml:780
-#, kde-format
 msgid "Show virtual devices"
 msgstr "மெய்நிகர் சாதனங்களைக் காட்டு"
 
 #: main.qml:790
-#, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "ஒலி சாதனங்களை &அமை…"
 
 #: MicrophoneTestView.qml:104
-#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "நிறுத்து"
 
 #: MicrophoneTestView.qml:104
-#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "பதிவுசெய்"
 
 #: MicrophoneTestView.qml:118
-#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "நிறுத்து"
 
 #: MicrophoneTestView.qml:118
-#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "வாசி"
 
 #: MicrophoneTestView.qml:137
-#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "ஒலியளவு"
 
 #: MicrophoneTestView.qml:166
-#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "உணர்வுத்திறன்"
 
 #: MicrophoneTestView.qml:237
-#, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
 msgstr "பின்னே"
 
 #: MicrophoneTestView.qml:250
-#, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
 msgstr "ஒலிவாங்கியை சோதிப்பதில் சிக்கல்:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
-#, kde-format
 msgid "Stream name not found"
 msgstr "அப்பெயரையுடைய ஒலித்தடத்தை (stream-ஐ) கண்டுபிடிக்க முடியவில்லை"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-16 00:47+0000\n"
 "PO-Revision-Date: 2023-11-12 09:22+0700\n"
 "Last-Translator: Linerly <linerly@linerly.xyz>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -53,25 +53,21 @@ msgid "Failed to open file for writing: %1."
 msgstr ""
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
-#, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Profil:"
 
 #: kcm/ui/ContextBrokenOverlay.qml:25
-#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr ""
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
-#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr ""
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
-#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr ""
@@ -82,7 +78,6 @@ msgid "Device name not found"
 msgstr ""
 
 #: kcm/ui/DeviceListItem.qml:105
-#, kde-format
 msgid "Port:"
 msgstr "Colokan:"
 
@@ -99,19 +94,17 @@ msgid "%1 (unplugged)"
 msgstr "%1 (tidak dicolokkan)"
 
 #: kcm/ui/DeviceListItem.qml:205
-#, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:231
-#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Tes"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
+#, fuzzy
 #| msgctxt "Perform an audio test of the device"
 #| msgid "Test"
 msgctxt "Perform an audio test of the device"
@@ -119,39 +112,33 @@ msgid "Test…"
 msgstr "Tes"
 
 #: kcm/ui/DeviceListItem.qml:246
-#, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr ""
 
 #: kcm/ui/main.qml:74
-#, kde-format
 msgid "Show Inactive Devices"
 msgstr "Tampilkan Peranti Tidak Aktif"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Recording Devices"
 msgid "Rename Devices…"
 msgstr "Peranti Perekaman"
 
 #: kcm/ui/main.qml:87
-#, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Konfigurasikan Kontrol Volume..."
 
 #: kcm/ui/main.qml:94
-#, kde-format
 msgid "Configure…"
 msgstr "Konfigurasikan..."
 
 #: kcm/ui/main.qml:97
-#, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Memerlukan modul PulseAudio %1"
 
 #: kcm/ui/main.qml:100
-#, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr ""
@@ -159,7 +146,6 @@ msgstr ""
 "suara lokal"
 
 #: kcm/ui/main.qml:106
-#, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
@@ -167,32 +153,26 @@ msgstr ""
 "baru telah tersedia"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
-#, kde-format
 msgid "Playback Devices"
 msgstr "Peranti Pemutaran"
 
 #: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
-#, kde-format
 msgid "Recording Devices"
 msgstr "Peranti Perekaman"
 
 #: kcm/ui/main.qml:191
-#, kde-format
 msgid "Inactive Cards"
 msgstr "Kartu Tidak Aktif"
 
 #: kcm/ui/main.qml:226
-#, kde-format
 msgid "Playback Streams"
 msgstr "Stream Pemutaran"
 
 #: kcm/ui/main.qml:278
-#, kde-format
 msgid "Recording Streams"
 msgstr "Stream Perekaman"
 
 #: kcm/ui/main.qml:312
-#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -202,57 +182,46 @@ msgid ""
 msgstr ""
 
 #: kcm/ui/main.qml:416
-#, kde-format
 msgid "Front Left"
 msgstr "Kiri Depan"
 
 #: kcm/ui/main.qml:417
-#, kde-format
 msgid "Front Center"
 msgstr "Tengah Depan"
 
 #: kcm/ui/main.qml:418
-#, kde-format
 msgid "Front Right"
 msgstr "Kanan Depan"
 
 #: kcm/ui/main.qml:419
-#, kde-format
 msgid "Side Left"
 msgstr "Sisi Kiri"
 
 #: kcm/ui/main.qml:420
-#, kde-format
 msgid "Side Right"
 msgstr "Sisi Kanan"
 
 #: kcm/ui/main.qml:421
-#, kde-format
 msgid "Rear Left"
 msgstr "Kiri Belakang"
 
 #: kcm/ui/main.qml:422
-#, kde-format
 msgid "Subwoofer"
 msgstr "Subwoofer"
 
 #: kcm/ui/main.qml:423
-#, kde-format
 msgid "Rear Right"
 msgstr "Kanan Belakang"
 
 #: kcm/ui/main.qml:424
-#, kde-format
 msgid "Mono"
 msgstr "Mono"
 
 #: kcm/ui/main.qml:492
-#, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Klik pada speaker mana pun untuk menguji suara"
 
 #: kcm/ui/main.qml:507
-#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -262,87 +231,76 @@ msgid ""
 msgstr ""
 
 #: kcm/ui/main.qml:572
-#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr ""
 
 #: kcm/ui/main.qml:572
-#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr ""
 
 #: kcm/ui/main.qml:585
-#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr ""
 
 #: kcm/ui/main.qml:585
-#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr ""
 
 #: kcm/ui/main.qml:604
-#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr ""
 
 #: kcm/ui/main.qml:634
-#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr ""
 
 #: kcm/ui/main.qml:649
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Microphone sensitivity"
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Sensitivitas Mikrofon"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
-#, kde-format
+#, javascript-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
-#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: kcm/ui/MuteButton.qml:24
-#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Suarakan %1"
 
 #: kcm/ui/MuteButton.qml:24
-#, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr "Bungkam %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Recording Devices"
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
 msgstr "Peranti Perekaman"
 
 #: kcm/ui/RenameDevices.qml:38
-#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr ""
 
 #: kcm/ui/RenameDevices.qml:68
-#, kde-format
 msgctxt "@info"
 msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
@@ -350,102 +308,86 @@ msgid ""
 msgstr ""
 
 #: kcm/ui/RenameDevices.qml:80
-#, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr ""
 
 #: kcm/ui/RenameDevices.qml:92
-#, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr ""
 
 #: kcm/ui/RenameDevices.qml:130
-#, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr ""
 
 #: kcm/ui/RenameDevices.qml:153
-#, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr ""
 
 #: kcm/ui/RenameDevices.qml:159
-#, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr ""
 
 #: kcm/ui/RenameDevices.qml:166
-#, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
 msgstr ""
 
 #: kcm/ui/StreamListItem.qml:59
-#, kde-format
 msgid "Notification Sounds"
 msgstr "Suara Notifikasi"
 
 #: kcm/ui/StreamListItem.qml:65
-#, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, kde-format
 msgid "Volume Controls"
 msgstr "Kontrol Volume"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
-#, kde-format
 msgid "Raise maximum volume"
 msgstr "Naikkan volume maksimum"
 
 #: kcm/ui/VolumeControlsConfig.qml:38
-#, kde-format
 msgid "Volume change step:"
 msgstr "Langkah perubahan volume:"
 
 #: kcm/ui/VolumeControlsConfig.qml:67
-#, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Mainkan umpan balik suara pada perubahan:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
-#, kde-format
 msgid "Audio volume"
 msgstr "Volume audio"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
+#, fuzzy
 #| msgid "Show visual feedback for changes to:"
 msgid "Show OSD popups for changes to:"
 msgstr "Tampilkan umpan balik visual pada perubahan:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
-#, kde-format
 msgid "Microphone sensitivity"
 msgstr "Sensitivitas Mikrofon"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
-#, kde-format
 msgid "Mute state"
 msgstr "Keadaan senyap"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
 msgstr ""
 
 #: kcm/ui/VolumeControlsConfig.qml:104
-#, fuzzy, kde-format
+#, fuzzy
 #| msgctxt "List of apps is using mic"
 #| msgid "%1 are using the microphone"
 msgctxt "Show OSD when"
@@ -453,7 +395,6 @@ msgid "Application starts using muted microphone"
 msgstr "%1 telah menggunakan mikrofon"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
-#, kde-format
 msgid "Default output device"
 msgstr "Perangkat keluaran bawaan"
 

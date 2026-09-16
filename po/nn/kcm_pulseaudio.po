@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-16 00:47+0000\n"
 "PO-Revision-Date: 2026-04-22 18:54+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -59,25 +59,21 @@ msgid "Failed to open file for writing: %1."
 msgstr "Klarte ikkje opna fila for skriving: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
-#, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Profil:"
 
 #: kcm/ui/ContextBrokenOverlay.qml:25
-#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Mista tilkopling til lydtenesta"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
-#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Prøver å kopla til på nytt …"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
-#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Prøv på nytt"
@@ -88,7 +84,6 @@ msgid "Device name not found"
 msgstr "Fann ikkje einingsnamn"
 
 #: kcm/ui/DeviceListItem.qml:105
-#, kde-format
 msgid "Port:"
 msgstr "Port:"
 
@@ -105,94 +100,77 @@ msgid "%1 (unplugged)"
 msgstr "%1 (kopla frå)"
 
 #: kcm/ui/DeviceListItem.qml:205
-#, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:231
-#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Test"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "Test …"
 
 #: kcm/ui/DeviceListItem.qml:246
-#, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr "Vis kanalar"
 
 #: kcm/ui/main.qml:74
-#, kde-format
 msgid "Show Inactive Devices"
 msgstr "Vis einingar som ikkje er i bruk"
 
 #: kcm/ui/main.qml:81
-#, kde-format
 msgid "Rename Devices…"
 msgstr "Endra namn på einingar …"
 
 #: kcm/ui/main.qml:87
-#, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Set opp lydstyrke-kontroll …"
 
 #: kcm/ui/main.qml:94
-#, kde-format
 msgid "Configure…"
 msgstr "Set opp …"
 
 #: kcm/ui/main.qml:97
-#, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Krev PulseAudio-modulen %1"
 
 #: kcm/ui/main.qml:100
-#, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "Legg til virtuell lydeining for samtidig lyd på alle tilkopla lydkort"
 
 #: kcm/ui/main.qml:106
-#, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
 "Flytt automatisk alle køyrande straumar når ei ny uteining vert tilgjengeleg"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
-#, kde-format
 msgid "Playback Devices"
 msgstr "Avspelingseiningar"
 
 #: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
-#, kde-format
 msgid "Recording Devices"
 msgstr "Opptakseiningar"
 
 #: kcm/ui/main.qml:191
-#, kde-format
 msgid "Inactive Cards"
 msgstr "Inaktive kort"
 
 #: kcm/ui/main.qml:226
-#, kde-format
 msgid "Playback Streams"
 msgstr "Avspelingsstraumar"
 
 #: kcm/ui/main.qml:278
-#, kde-format
 msgid "Recording Streams"
 msgstr "Opptaksstraumar"
 
 #: kcm/ui/main.qml:312
-#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -202,57 +180,46 @@ msgid ""
 msgstr ""
 
 #: kcm/ui/main.qml:416
-#, kde-format
 msgid "Front Left"
 msgstr "Framme venstre"
 
 #: kcm/ui/main.qml:417
-#, kde-format
 msgid "Front Center"
 msgstr "Framme i midten"
 
 #: kcm/ui/main.qml:418
-#, kde-format
 msgid "Front Right"
 msgstr "Framme til høgre"
 
 #: kcm/ui/main.qml:419
-#, kde-format
 msgid "Side Left"
 msgstr "Til venstre"
 
 #: kcm/ui/main.qml:420
-#, kde-format
 msgid "Side Right"
 msgstr "Til høgre"
 
 #: kcm/ui/main.qml:421
-#, kde-format
 msgid "Rear Left"
 msgstr "Bak til venstre"
 
 #: kcm/ui/main.qml:422
-#, kde-format
 msgid "Subwoofer"
 msgstr "Basshøgtalar"
 
 #: kcm/ui/main.qml:423
-#, kde-format
 msgid "Rear Right"
 msgstr "Bak til høgre"
 
 #: kcm/ui/main.qml:424
-#, kde-format
 msgid "Mono"
 msgstr "Mono"
 
 #: kcm/ui/main.qml:492
-#, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Trykk på ein høgtalar for å testa lyden"
 
 #: kcm/ui/main.qml:507
-#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -262,85 +229,74 @@ msgid ""
 msgstr ""
 
 #: kcm/ui/main.qml:572
-#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "Stopp"
 
 #: kcm/ui/main.qml:572
-#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "Ta opp"
 
 #: kcm/ui/main.qml:585
-#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "Stopp"
 
 #: kcm/ui/main.qml:585
-#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "Spel av"
 
 #: kcm/ui/main.qml:604
-#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "Lydstyrke"
 
 #: kcm/ui/main.qml:634
-#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: kcm/ui/main.qml:649
-#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Følsemd"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
-#, kde-format
+#, fuzzy, javascript-format
+#| msgctxt "volume percentage"
+#| msgid "%1%"
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
-#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100 %"
 
 #: kcm/ui/MuteButton.qml:24
-#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Slå av lyddemping for %1"
 
 #: kcm/ui/MuteButton.qml:24
-#, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr "Demp %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
 msgstr "Endra namn på einingar"
 
 #: kcm/ui/RenameDevices.qml:38
-#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr "Lagra"
 
 #: kcm/ui/RenameDevices.qml:68
-#, kde-format
 msgctxt "@info"
 msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
@@ -350,107 +306,88 @@ msgstr ""
 "spelar av lyd, vert avbroten, og programma må kanskje òg startast på nytt."
 
 #: kcm/ui/RenameDevices.qml:80
-#, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr "Meld frå om feil"
 
 #: kcm/ui/RenameDevices.qml:92
-#, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "Lastar på nytt"
 
 #: kcm/ui/RenameDevices.qml:130
-#, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (Trykk «Lagra» for å ta i bruk)"
 
 #: kcm/ui/RenameDevices.qml:153
-#, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "Bruk"
 
 #: kcm/ui/RenameDevices.qml:159
-#, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Tilbakestill"
 
 #: kcm/ui/RenameDevices.qml:166
-#, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
 msgstr "STANDARD"
 
 #: kcm/ui/StreamListItem.qml:59
-#, kde-format
 msgid "Notification Sounds"
 msgstr "Varslingslydar"
 
 #: kcm/ui/StreamListItem.qml:65
-#, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, kde-format
 msgid "Volume Controls"
 msgstr "Lydstyrke-kontroll"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
-#, kde-format
 msgid "Raise maximum volume"
 msgstr "Auk høgste lydstyrke"
 
 #: kcm/ui/VolumeControlsConfig.qml:38
-#, kde-format
 msgid "Volume change step:"
 msgstr "Lydstyrke-steg:"
 
 #: kcm/ui/VolumeControlsConfig.qml:67
-#, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Spel av lydvarsling for endringar i:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
-#, kde-format
 msgid "Audio volume"
 msgstr "Lydstyrke"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr "Vis skjermmelding-sprettopp for endringar i:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
-#, kde-format
 msgid "Microphone sensitivity"
 msgstr "Mikrofonfølsemd"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
-#, kde-format
 msgid "Mute state"
 msgstr "Dempingsstatus"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
 msgstr "Trykk for å tala"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
-#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "Porgram startar å bruka dempa mikrofonen"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
-#, kde-format
 msgid "Default output device"
 msgstr "Standard uteining"
 
