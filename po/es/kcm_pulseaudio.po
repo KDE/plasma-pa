@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 00:47+0000\n"
-"PO-Revision-Date: 2026-08-21 01:19+0100\n"
+"PO-Revision-Date: 2026-09-17 00:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -271,17 +271,15 @@ msgid "Sensitivity"
 msgstr "Sensibilidad"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
-#, fuzzy, javascript-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, javascript-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1 %"
+msgstr "%1%"
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100 %"
+msgstr "100 %"
 
 #: kcm/ui/MuteButton.qml:24
 msgctxt "Unmute audio stream"
@@ -412,12 +410,12 @@ msgstr "Bajar el volumen"
 #: kded/audioshortcutsservice.cpp:114
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr "Subir el volumen un 1 %"
+msgstr "Subir el volumen un 1 %"
 
 #: kded/audioshortcutsservice.cpp:129
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr "Bajar el volumen un 1 %"
+msgstr "Bajar el volumen un 1 %"
 
 #: kded/audioshortcutsservice.cpp:144
 #, kde-format
@@ -464,7 +462,7 @@ msgstr "No hay ningún dispositivo de salida"
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (Batería al %2 %)"
+msgstr "%1 (Batería al %2 %)"
 
 #: kded/audioshortcutsservice.cpp:397
 #, kde-format

@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the plasma-pa package.
 # Automatically generated, 2015.
 #
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2015-2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 00:47+0000\n"
-"PO-Revision-Date: 2026-03-27 11:42+0100\n"
+"PO-Revision-Date: 2026-09-17 00:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: ListItemBase.qml:73
 msgid "Currently not recording"
@@ -60,17 +60,15 @@ msgid "Adjust volume for %1"
 msgstr "Ajustar el volumen para %1"
 
 #: ListItemBase.qml:318 MicrophoneTestView.qml:215
-#, fuzzy, javascript-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, javascript-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1 %"
+msgstr "%1%"
 
 #: ListItemBase.qml:339 MicrophoneTestView.qml:228
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100 %"
+msgstr "100 %"
 
 #: ListItemBase.qml:344
 msgctxt "Perform an audio test of the device"
@@ -100,10 +98,9 @@ msgid "Audio Muted"
 msgstr "Sonido silenciado"
 
 #: main.qml:96
-#, fuzzy, javascript-format
-#| msgid "Volume at %1%"
+#, javascript-format
 msgid "Volume at %1%"
-msgstr "Volumen al %1 %"
+msgstr "Volumen al %1%"
 
 #: main.qml:107
 msgid "Middle-click to unmute"
