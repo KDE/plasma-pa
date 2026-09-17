@@ -120,7 +120,8 @@ msgid "Audio Muted"
 msgstr "Son coupé"
 
 #: main.qml:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Volume at %1%"
 msgid "Volume at %1%"
 msgstr "Volume à %1 %"
 
