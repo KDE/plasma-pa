@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 00:47+0000\n"
+"POT-Creation-Date: 2026-09-18 00:47+0000\n"
 "PO-Revision-Date: 2023-12-10 15:08+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -20,153 +20,184 @@ msgstr ""
 "X-Generator: Lokalize 23.08.3\n"
 
 #: ListItemBase.qml:73
+#, kde-format
 msgid "Currently not recording"
 msgstr "Práve sa nenahráva"
 
 #: ListItemBase.qml:74
+#, kde-format
 msgid "Currently not playing"
 msgstr "Práve sa neprehráva"
 
 #: ListItemBase.qml:205
+#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Ďalšie možnosti"
 
 #: ListItemBase.qml:207
+#, kde-format
 msgid "Show additional options for %1"
 msgstr "Zobraziť dodatočné voľby pre %1"
 
 #: ListItemBase.qml:229
+#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Zrušiť stlmenie"
 
 #: ListItemBase.qml:229
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Stlmiť"
 
 #: ListItemBase.qml:231
+#, kde-format
 msgid "Unmute %1"
 msgstr "Zrušiť stlmenie %1"
 
 #: ListItemBase.qml:231
+#, kde-format
 msgid "Mute %1"
 msgstr "Stlmiť %1"
 
 #: ListItemBase.qml:254
+#, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Upraviť hlasitosť pre %1"
 
 #: ListItemBase.qml:318 MicrophoneTestView.qml:215
-#, javascript-format
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: ListItemBase.qml:339 MicrophoneTestView.qml:228
+#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: ListItemBase.qml:344
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "Vyskúšať"
 
 #: main.qml:36
+#, kde-format
 msgid "Audio Volume"
 msgstr "Hlasitosti zvuku"
 
 #: main.qml:60 main.qml:62
+#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Strata pripojenia k zvukovej službe"
 
 #: main.qml:64
+#, kde-format
 msgid "No output or input devices found"
 msgstr "Nenašli sa žiadne výstupné alebo vstupné zariadenia"
 
 #: main.qml:68
+#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Skúšam sa znovu spojiť..."
 
 #: main.qml:94
+#, kde-format
 msgid "Audio Muted"
 msgstr "Zvuk je stlmený"
 
 #: main.qml:96
-#, javascript-format
+#, kde-format
 msgid "Volume at %1%"
 msgstr "Hlasitosť na %1%"
 
 #: main.qml:107
+#, kde-format
 msgid "Middle-click to unmute"
 msgstr "Kliknutím stredného tlačidla myši zrušiť stlmenie zvuku"
 
 #: main.qml:108
+#, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Kliknutím stredného tlačidla myši stlmiť všetok zvuk"
 
 #: main.qml:109
+#, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Posúvaním upraviť hlasitosť"
 
 #: main.qml:125
+#, kde-format
 msgid "Device name not found"
 msgstr "Názov zariadenia nebol nájdený"
 
 #: main.qml:361
+#, kde-format
 msgid "Devices"
 msgstr "Zariadenia"
 
 #: main.qml:368
+#, kde-format
 msgid "Applications"
 msgstr "Aplikácie"
 
 #: main.qml:392
+#, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Viac akcií"
 
 #: main.qml:434
+#, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Ponechať otvorené"
 
 #: main.qml:471
+#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Znovu"
 
 #: main.qml:505
+#, kde-format
 msgid "No applications playing or recording audio"
 msgstr "Žiadne aplikácie neprehrávajú ani nenahrávajú zvuk"
 
 #: main.qml:601
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "Výstupné zariadenia"
 
 #: main.qml:603
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "Výstupné prúdy"
 
 #: main.qml:661
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "Vstupné zariadenia"
 
 #: main.qml:663
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Vstupné prúdy"
 
 #: main.qml:728
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
@@ -176,71 +207,86 @@ msgstr ""
 "Používajte ju iba dočasne, aby bolo tiché médium počuteľné."
 
 #: main.qml:744
+#, kde-format
 msgid "Raise maximum volume"
 msgstr "Zvýšiť maximálnu hlasitosť"
 
 #: main.qml:762
+#, kde-format
 msgid "Force mute all playback devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
 
 #: main.qml:771
+#, kde-format
 msgid "Force mute all input devices"
 msgstr "Vynútiť stlmenie všetkých prehrávacích zariadení"
 
 #: main.qml:780
+#, kde-format
 msgid "Show virtual devices"
 msgstr "Zobraziť virtuálne zariadenia"
 
 #: main.qml:790
+#, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "&Nastaviť zvukové zariadenia..."
 
 #: MicrophoneTestView.qml:104
+#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "Zastaviť"
 
 #: MicrophoneTestView.qml:104
+#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "Nahrávať"
 
 #: MicrophoneTestView.qml:118
+#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "Zastaviť"
 
 #: MicrophoneTestView.qml:118
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "Prúdy prehrávania"
 
 #: MicrophoneTestView.qml:137
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "Krok hlasitosti:"
 
 #: MicrophoneTestView.qml:166
+#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Citlivosti mikrofónu"
 
 #: MicrophoneTestView.qml:237
+#, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
 msgstr "Späť"
 
 #: MicrophoneTestView.qml:250
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
 msgstr "Chyba testu mikrofónu:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
+#, kde-format
 msgid "Stream name not found"
 msgstr "Názov prúdu nebol nájdený"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 00:47+0000\n"
+"POT-Creation-Date: 2026-09-18 00:47+0000\n"
 "PO-Revision-Date: 2026-03-27 05:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -19,153 +19,184 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 
 #: ListItemBase.qml:73
+#, kde-format
 msgid "Currently not recording"
 msgstr "ამჟამად ჩაწერა არ მიმდინარეობს"
 
 #: ListItemBase.qml:74
+#, kde-format
 msgid "Currently not playing"
 msgstr "ამჟამად დაკვრა არ მიმდინარეობს"
 
 #: ListItemBase.qml:205
+#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "დამატებითი პარამეტრები"
 
 #: ListItemBase.qml:207
+#, kde-format
 msgid "Show additional options for %1"
 msgstr "%1-სთვის დამატებითი პარამეტრების ჩვენება"
 
 #: ListItemBase.qml:229
+#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "დადუმების გამორთვა"
 
 #: ListItemBase.qml:229
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "დადუმება"
 
 #: ListItemBase.qml:231
+#, kde-format
 msgid "Unmute %1"
 msgstr "დადუმების გამორთვა: %1"
 
 #: ListItemBase.qml:231
+#, kde-format
 msgid "Mute %1"
 msgstr "დადუმება: %1"
 
 #: ListItemBase.qml:254
+#, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1-ის ხმის მორგება"
 
 #: ListItemBase.qml:318 MicrophoneTestView.qml:215
-#, javascript-format
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: ListItemBase.qml:339 MicrophoneTestView.qml:228
+#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: ListItemBase.qml:344
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "შემოწმება…"
 
 #: main.qml:36
+#, kde-format
 msgid "Audio Volume"
 msgstr "აუდიოს ხმა"
 
 #: main.qml:60 main.qml:62
+#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "ხმის სერვერთან კავშირი დაიკარგა"
 
 #: main.qml:64
+#, kde-format
 msgid "No output or input devices found"
 msgstr "არც შესატანი, არც გამოსატანი მოწყობილობა ნაპოვნი არაა"
 
 #: main.qml:68
+#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "თავიდან დაკავშირების ცდა…"
 
 #: main.qml:94
+#, kde-format
 msgid "Audio Muted"
 msgstr "აუდიო ჩაჩუმებულია"
 
 #: main.qml:96
-#, javascript-format
+#, kde-format
 msgid "Volume at %1%"
 msgstr "ხმა: %1%"
 
 #: main.qml:107
+#, kde-format
 msgid "Middle-click to unmute"
 msgstr "შუა-წკაპი დადუმების გასაუქმებლად"
 
 #: main.qml:108
+#, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "შუა-წკაპი ყველა ხმის დასადუმებლად"
 
 #: main.qml:109
+#, kde-format
 msgid "Scroll to adjust volume"
 msgstr "ხმის მოსარგებად აქაჩეთ"
 
 #: main.qml:125
+#, kde-format
 msgid "Device name not found"
 msgstr "მოწყობილობა ნაპოვნი არაა"
 
 #: main.qml:361
+#, kde-format
 msgid "Devices"
 msgstr "მოწყობილობები"
 
 #: main.qml:368
+#, kde-format
 msgid "Applications"
 msgstr "პროგრამები"
 
 #: main.qml:392
+#, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "მეტი ქმედება"
 
 #: main.qml:434
+#, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "ღიად დატოვება"
 
 #: main.qml:471
+#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "გამეორება"
 
 #: main.qml:505
+#, kde-format
 msgid "No applications playing or recording audio"
 msgstr "ამჟამად აუდიოს არც ერთი აპლიკაცია არ უკრავს და არც იწერს"
 
 #: main.qml:601
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
 msgstr "გამოტანის მოწყობილობები"
 
 #: main.qml:603
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
 msgstr "გამავალი ნაკადები"
 
 #: main.qml:661
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
 msgstr "შეტანის მოწყობილობები"
 
 #: main.qml:663
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "შემომავალი ნაკადები"
 
 #: main.qml:728
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
@@ -175,71 +206,86 @@ msgstr ""
 "გამოიყენეთ ის, მხოლოდ, დროებით, რათა ჩუმი მედია მოსმენადი გახადოთ."
 
 #: main.qml:744
+#, kde-format
 msgid "Raise maximum volume"
 msgstr "მაქსიმალური ხმის აწევა"
 
 #: main.qml:762
+#, kde-format
 msgid "Force mute all playback devices"
 msgstr "ყველა დამკვრელი მოწყობილბის დადუმება"
 
 #: main.qml:771
+#, kde-format
 msgid "Force mute all input devices"
 msgstr "ყველა შეყვანის მოწყობილობის ნაძალადევი დადუმება"
 
 #: main.qml:780
+#, kde-format
 msgid "Show virtual devices"
 msgstr "ვირტუალური მოწყობილობების ჩვენება"
 
 #: main.qml:790
+#, kde-format
 msgid "&Configure Audio Devices…"
 msgstr "აუდიო მოწყობილობების &მორგება…"
 
 #: MicrophoneTestView.qml:104
+#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "გაჩერება"
 
 #: MicrophoneTestView.qml:104
+#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "ჩაწერა"
 
 #: MicrophoneTestView.qml:118
+#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "გაჩერება"
 
 #: MicrophoneTestView.qml:118
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "დაკვრა"
 
 #: MicrophoneTestView.qml:137
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "ხმის დონე"
 
 #: MicrophoneTestView.qml:166
+#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "მგრძნობიარობა"
 
 #: MicrophoneTestView.qml:237
+#, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
 msgstr "უკან"
 
 #: MicrophoneTestView.qml:250
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
 msgstr "მიკროფონის შემოწმების შეცდომა:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
+#, kde-format
 msgid "Stream name not found"
 msgstr "ნაკადის სახელი ვერ ვიპოვე"
 

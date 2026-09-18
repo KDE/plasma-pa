@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 00:47+0000\n"
+"POT-Creation-Date: 2026-09-18 00:47+0000\n"
 "PO-Revision-Date: 2026-09-15 16:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -56,21 +56,25 @@ msgid "Failed to open file for writing: %1."
 msgstr "開啟檔案供寫入時失敗：%1。"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
+#, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "設定檔："
 
 #: kcm/ui/ContextBrokenOverlay.qml:25
+#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "已喪失與聲音服務的連線"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
+#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "正在嘗試重新連線…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
+#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "重試"
@@ -81,6 +85,7 @@ msgid "Device name not found"
 msgstr "找不到裝置名稱"
 
 #: kcm/ui/DeviceListItem.qml:105
+#, kde-format
 msgid "Port:"
 msgstr "連接埠："
 
@@ -97,76 +102,93 @@ msgid "%1 (unplugged)"
 msgstr "%1（未插入）"
 
 #: kcm/ui/DeviceListItem.qml:205
+#, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1："
 
 #: kcm/ui/DeviceListItem.qml:231
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "測試(&T)"
 
 #: kcm/ui/DeviceListItem.qml:238
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "測試…"
 
 #: kcm/ui/DeviceListItem.qml:246
+#, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr "顯示頻道(&S)"
 
 #: kcm/ui/main.qml:74
+#, kde-format
 msgid "Show Inactive Devices"
 msgstr "顯示非作用中的裝置"
 
 #: kcm/ui/main.qml:81
+#, kde-format
 msgid "Rename Devices…"
 msgstr "重新命名裝置(&R)…"
 
 #: kcm/ui/main.qml:87
+#, kde-format
 msgid "Configure Volume Controls…"
 msgstr "設定音量控制(&C)…"
 
 #: kcm/ui/main.qml:94
+#, kde-format
 msgid "Configure…"
 msgstr "設定…"
 
 #: kcm/ui/main.qml:97
+#, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "需要 %1 PulseAudio 模組"
 
 #: kcm/ui/main.qml:100
+#, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "在所有本機音效卡上加入虛擬輸出裝置以同步輸出"
 
 #: kcm/ui/main.qml:106
+#, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "當新輸出可用時自動切換所有執行中的串流"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
+#, kde-format
 msgid "Playback Devices"
 msgstr "播放裝置"
 
 #: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
+#, kde-format
 msgid "Recording Devices"
 msgstr "錄音裝置"
 
 #: kcm/ui/main.qml:191
+#, kde-format
 msgid "Inactive Cards"
 msgstr "非作用中音效卡"
 
 #: kcm/ui/main.qml:226
+#, kde-format
 msgid "Playback Streams"
 msgstr "播放串流"
 
 #: kcm/ui/main.qml:278
+#, kde-format
 msgid "Recording Streams"
 msgstr "錄音串流"
 
 #: kcm/ui/main.qml:312
+#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -178,46 +200,57 @@ msgstr ""
 "><nl/>請重新啟動系統後再試一次。"
 
 #: kcm/ui/main.qml:416
+#, kde-format
 msgid "Front Left"
 msgstr "左前方"
 
 #: kcm/ui/main.qml:417
+#, kde-format
 msgid "Front Center"
 msgstr "前方正中央"
 
 #: kcm/ui/main.qml:418
+#, kde-format
 msgid "Front Right"
 msgstr "右前方"
 
 #: kcm/ui/main.qml:419
+#, kde-format
 msgid "Side Left"
 msgstr "左側"
 
 #: kcm/ui/main.qml:420
+#, kde-format
 msgid "Side Right"
 msgstr "右側"
 
 #: kcm/ui/main.qml:421
+#, kde-format
 msgid "Rear Left"
 msgstr "左後方"
 
 #: kcm/ui/main.qml:422
+#, kde-format
 msgid "Subwoofer"
 msgstr "低音音響"
 
 #: kcm/ui/main.qml:423
+#, kde-format
 msgid "Rear Right"
 msgstr "右後方"
 
 #: kcm/ui/main.qml:424
+#, kde-format
 msgid "Mono"
 msgstr "單聲道"
 
 #: kcm/ui/main.qml:492
+#, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "點擊任何喇叭來測試聲音"
 
 #: kcm/ui/main.qml:507
+#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -229,72 +262,85 @@ msgstr ""
 "重新啟動系統後再試一次。"
 
 #: kcm/ui/main.qml:572
+#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "停止"
 
 #: kcm/ui/main.qml:572
+#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "錄製"
 
 #: kcm/ui/main.qml:585
+#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "停止"
 
 #: kcm/ui/main.qml:585
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "播放"
 
 #: kcm/ui/main.qml:604
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "音量"
 
 #: kcm/ui/main.qml:634
+#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: kcm/ui/main.qml:649
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "靈敏度"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
-#, javascript-format
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
+#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: kcm/ui/MuteButton.qml:24
+#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "取消靜音 %1"
 
 #: kcm/ui/MuteButton.qml:24
+#, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr "靜音 %1"
 
 #: kcm/ui/RenameDevices.qml:31
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
 msgstr "重新命名裝置"
 
 #: kcm/ui/RenameDevices.qml:38
+#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr "儲存"
 
 #: kcm/ui/RenameDevices.qml:68
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
@@ -304,88 +350,107 @@ msgstr ""
 "啟。"
 
 #: kcm/ui/RenameDevices.qml:80
+#, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr "回報問題"
 
 #: kcm/ui/RenameDevices.qml:92
+#, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "重新載入中"
 
 #: kcm/ui/RenameDevices.qml:130
+#, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1（點擊「儲存」以套用）"
 
 #: kcm/ui/RenameDevices.qml:153
+#, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "套用"
 
 #: kcm/ui/RenameDevices.qml:159
+#, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "重設"
 
 #: kcm/ui/RenameDevices.qml:166
+#, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
 msgstr "DEFAULT"
 
 #: kcm/ui/StreamListItem.qml:59
+#, kde-format
 msgid "Notification Sounds"
 msgstr "通知音效"
 
 #: kcm/ui/StreamListItem.qml:65
+#, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1：%2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
+#, kde-format
 msgid "Volume Controls"
 msgstr "音量控制"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
+#, kde-format
 msgid "Raise maximum volume"
 msgstr "提升最大音量"
 
 #: kcm/ui/VolumeControlsConfig.qml:38
+#, kde-format
 msgid "Volume change step:"
 msgstr "音量調整間隔值："
 
 #: kcm/ui/VolumeControlsConfig.qml:67
+#, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "將變更時的音效回饋播放到："
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
+#, kde-format
 msgid "Audio volume"
 msgstr "音效音量"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
+#, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr "為這些變更顯示彈出通知："
 
 #: kcm/ui/VolumeControlsConfig.qml:84
+#, kde-format
 msgid "Microphone sensitivity"
 msgstr "麥克風敏感度"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
+#, kde-format
 msgid "Mute state"
 msgstr "靜音狀態"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
 msgstr "按鍵發話"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "應用程式開始使用已靜音的麥克風"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
+#, kde-format
 msgid "Default output device"
 msgstr "預設輸出裝置"
 

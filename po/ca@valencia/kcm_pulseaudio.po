@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 00:47+0000\n"
+"POT-Creation-Date: 2026-09-18 00:47+0000\n"
 "PO-Revision-Date: 2026-08-20 09:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -61,21 +61,25 @@ msgid "Failed to open file for writing: %1."
 msgstr "Ha fallat mentre s'obria el fitxer per a escriptura: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
+#, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "Perfil:"
 
 #: kcm/ui/ContextBrokenOverlay.qml:25
+#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "S'ha perdut la connexió amb el servei de so"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
+#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "S'està intentant tornar a connectar…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
+#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Torna-ho a intentar"
@@ -86,6 +90,7 @@ msgid "Device name not found"
 msgstr "No s'ha trobat el nom del dispositiu"
 
 #: kcm/ui/DeviceListItem.qml:105
+#, kde-format
 msgid "Port:"
 msgstr "Port:"
 
@@ -102,46 +107,56 @@ msgid "%1 (unplugged)"
 msgstr "%1 (desconnectat)"
 
 #: kcm/ui/DeviceListItem.qml:205
+#, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:231
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Prova"
 
 #: kcm/ui/DeviceListItem.qml:238
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "Prova…"
 
 #: kcm/ui/DeviceListItem.qml:246
+#, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr "Mostra els canals"
 
 #: kcm/ui/main.qml:74
+#, kde-format
 msgid "Show Inactive Devices"
 msgstr "Mostra els dispositius inactius"
 
 #: kcm/ui/main.qml:81
+#, kde-format
 msgid "Rename Devices…"
 msgstr "Canvia el nom de dispositius…"
 
 #: kcm/ui/main.qml:87
+#, kde-format
 msgid "Configure Volume Controls…"
 msgstr "Configura els controls de volum…"
 
 #: kcm/ui/main.qml:94
+#, kde-format
 msgid "Configure…"
 msgstr "Configura…"
 
 #: kcm/ui/main.qml:97
+#, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "Requerix el mòdul %1 de PulseAudio"
 
 #: kcm/ui/main.qml:100
+#, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr ""
@@ -149,6 +164,7 @@ msgstr ""
 "a totes les targetes de so locals"
 
 #: kcm/ui/main.qml:106
+#, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
@@ -156,26 +172,32 @@ msgstr ""
 "una nova eixida"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
+#, kde-format
 msgid "Playback Devices"
 msgstr "Dispositius de reproducció"
 
 #: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
+#, kde-format
 msgid "Recording Devices"
 msgstr "Dispositius de gravació"
 
 #: kcm/ui/main.qml:191
+#, kde-format
 msgid "Inactive Cards"
 msgstr "Targetes inactives"
 
 #: kcm/ui/main.qml:226
+#, kde-format
 msgid "Playback Streams"
 msgstr "Fluxos de reproducció"
 
 #: kcm/ui/main.qml:278
+#, kde-format
 msgid "Recording Streams"
 msgstr "Fluxos de gravació"
 
 #: kcm/ui/main.qml:312
+#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -188,46 +210,57 @@ msgstr ""
 "torneu-ho a provar."
 
 #: kcm/ui/main.qml:416
+#, kde-format
 msgid "Front Left"
 msgstr "Frontal esquerra"
 
 #: kcm/ui/main.qml:417
+#, kde-format
 msgid "Front Center"
 msgstr "Frontal centre"
 
 #: kcm/ui/main.qml:418
+#, kde-format
 msgid "Front Right"
 msgstr "Frontal dreta"
 
 #: kcm/ui/main.qml:419
+#, kde-format
 msgid "Side Left"
 msgstr "Banda esquerra"
 
 #: kcm/ui/main.qml:420
+#, kde-format
 msgid "Side Right"
 msgstr "Banda dreta"
 
 #: kcm/ui/main.qml:421
+#, kde-format
 msgid "Rear Left"
 msgstr "Posterior esquerra"
 
 #: kcm/ui/main.qml:422
+#, kde-format
 msgid "Subwoofer"
 msgstr "Altaveu de greus"
 
 #: kcm/ui/main.qml:423
+#, kde-format
 msgid "Rear Right"
 msgstr "Posterior dreta"
 
 #: kcm/ui/main.qml:424
+#, kde-format
 msgid "Mono"
 msgstr "Mono"
 
 #: kcm/ui/main.qml:492
+#, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Cliqueu damunt de qualsevol altaveu per a provar el so"
 
 #: kcm/ui/main.qml:507
+#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -240,72 +273,85 @@ msgstr ""
 "provar."
 
 #: kcm/ui/main.qml:572
+#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "Para"
 
 #: kcm/ui/main.qml:572
+#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "Grava"
 
 #: kcm/ui/main.qml:585
+#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "Para"
 
 #: kcm/ui/main.qml:585
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "Reproduïx"
 
 #: kcm/ui/main.qml:604
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "Nivell de volum"
 
 #: kcm/ui/main.qml:634
+#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: kcm/ui/main.qml:649
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Sensibilitat"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
-#, javascript-format
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
+#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: kcm/ui/MuteButton.qml:24
+#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "Activa el so de %1"
 
 #: kcm/ui/MuteButton.qml:24
+#, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr "Silencia %1"
 
 #: kcm/ui/RenameDevices.qml:31
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
 msgstr "Canvi de nom de dispositius"
 
 #: kcm/ui/RenameDevices.qml:38
+#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr "Guarda"
 
 #: kcm/ui/RenameDevices.qml:68
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
@@ -316,88 +362,107 @@ msgstr ""
 "de reiniciar."
 
 #: kcm/ui/RenameDevices.qml:80
+#, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr "Informeu d'un error"
 
 #: kcm/ui/RenameDevices.qml:92
+#, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "S'està tornant a carregar"
 
 #: kcm/ui/RenameDevices.qml:130
+#, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (cliqueu damunt «Guarda» per a aplicar)"
 
 #: kcm/ui/RenameDevices.qml:153
+#, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "Aplica"
 
 #: kcm/ui/RenameDevices.qml:159
+#, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Reinicia"
 
 #: kcm/ui/RenameDevices.qml:166
+#, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
 msgstr "PREDETERMINAT"
 
 #: kcm/ui/StreamListItem.qml:59
+#, kde-format
 msgid "Notification Sounds"
 msgstr "Sons de notificació"
 
 #: kcm/ui/StreamListItem.qml:65
+#, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
+#, kde-format
 msgid "Volume Controls"
 msgstr "Controls de volum"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
+#, kde-format
 msgid "Raise maximum volume"
 msgstr "Eleva el volum màxim"
 
 #: kcm/ui/VolumeControlsConfig.qml:38
+#, kde-format
 msgid "Volume change step:"
 msgstr "Pas del canvi de volum:"
 
 #: kcm/ui/VolumeControlsConfig.qml:67
+#, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Reproduïx una retroalimentació sonora per als canvis a:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
+#, kde-format
 msgid "Audio volume"
 msgstr "Volum de l'àudio"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
+#, kde-format
 msgid "Show OSD popups for changes to:"
 msgstr "Mostra texts OSD emergents per als canvis a:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
+#, kde-format
 msgid "Microphone sensitivity"
 msgstr "Sensibilitat del micròfon"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
+#, kde-format
 msgid "Mute state"
 msgstr "Estat de silenci"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
 msgstr "Prémer per a parlar"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
 msgstr "L'aplicació comença amb el micròfon en silenci"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
+#, kde-format
 msgid "Default output device"
 msgstr "Dispositiu predeterminat d'eixida"
 

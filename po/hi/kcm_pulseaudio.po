@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 00:47+0000\n"
+"POT-Creation-Date: 2026-09-18 00:47+0000\n"
 "PO-Revision-Date: 2024-12-15 19:41+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -58,21 +58,25 @@ msgid "Failed to open file for writing: %1."
 msgstr "लेखन हेतु फ़ाइल खोलने में विफल: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
+#, kde-format
 msgctxt "@label"
 msgid "Profile:"
 msgstr "प्रोफ़ाइल:"
 
 #: kcm/ui/ContextBrokenOverlay.qml:25
+#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "ध्वनि सेवा से कनेक्शन टूट गया"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
+#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "पुनः कनेक्ट करने का प्रयास कर रहा हूँ…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
+#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "पुन: प्रयास करें"
@@ -83,6 +87,7 @@ msgid "Device name not found"
 msgstr "डिवाइस का नाम नहीं मिला"
 
 #: kcm/ui/DeviceListItem.qml:105
+#, kde-format
 msgid "Port:"
 msgstr "पत्तन:"
 
@@ -99,17 +104,19 @@ msgid "%1 (unplugged)"
 msgstr "%1 (अनप्लग्ड)"
 
 #: kcm/ui/DeviceListItem.qml:205
+#, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:231
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "परीक्षा"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy
+#, fuzzy, kde-format
 #| msgctxt "Perform an audio test of the device"
 #| msgid "Test"
 msgctxt "Perform an audio test of the device"
@@ -117,62 +124,76 @@ msgid "Test…"
 msgstr "परीक्षा"
 
 #: kcm/ui/DeviceListItem.qml:246
+#, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr "चैनल दिखाएं"
 
 #: kcm/ui/main.qml:74
+#, kde-format
 msgid "Show Inactive Devices"
 msgstr "निष्क्रिय डिवाइस दिखाएं"
 
 #: kcm/ui/main.qml:81
+#, kde-format
 msgid "Rename Devices…"
 msgstr "डिवाइस का नाम बदलें…"
 
 #: kcm/ui/main.qml:87
+#, kde-format
 msgid "Configure Volume Controls…"
 msgstr "वॉल्यूम नियंत्रण कॉन्फ़िगर करें…"
 
 #: kcm/ui/main.qml:94
+#, kde-format
 msgid "Configure…"
 msgstr "कॉन्फ़िगर करें…"
 
 #: kcm/ui/main.qml:97
+#, kde-format
 msgid "Requires %1 PulseAudio module"
 msgstr "%1 पल्सऑडियो मॉड्यूल की आवश्यकता है"
 
 #: kcm/ui/main.qml:100
+#, kde-format
 msgid ""
 "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "सभी स्थानीय साउंड कार्ड पर एक साथ आउटपुट के लिए वर्चुअल आउटपुट डिवाइस जोड़ें"
 
 #: kcm/ui/main.qml:106
+#, kde-format
 msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr ""
 "जब कोई नया आउटपुट उपलब्ध हो जाए तो सभी चल रही स्ट्रीम को स्वचालित रूप से स्विच करें"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
+#, kde-format
 msgid "Playback Devices"
 msgstr "प्रतिश्रवण उपकरण"
 
 #: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
+#, kde-format
 msgid "Recording Devices"
 msgstr "रिकॉर्डिंग डिवाइस"
 
 #: kcm/ui/main.qml:191
+#, kde-format
 msgid "Inactive Cards"
 msgstr "निष्क्रिय कार्ड"
 
 #: kcm/ui/main.qml:226
+#, kde-format
 msgid "Playback Streams"
 msgstr "प्लेबैक स्ट्रीम"
 
 #: kcm/ui/main.qml:278
+#, kde-format
 msgid "Recording Streams"
 msgstr "रिकॉर्डिंग स्ट्रीम"
 
 #: kcm/ui/main.qml:312
+#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -182,46 +203,57 @@ msgid ""
 msgstr ""
 
 #: kcm/ui/main.qml:416
+#, kde-format
 msgid "Front Left"
 msgstr "आगे से बयां"
 
 #: kcm/ui/main.qml:417
+#, kde-format
 msgid "Front Center"
 msgstr "सामने का केंद्र"
 
 #: kcm/ui/main.qml:418
+#, kde-format
 msgid "Front Right"
 msgstr "सामने सही"
 
 #: kcm/ui/main.qml:419
+#, kde-format
 msgid "Side Left"
 msgstr "बाएँ तरफ"
 
 #: kcm/ui/main.qml:420
+#, kde-format
 msgid "Side Right"
 msgstr "साइड दायाँ"
 
 #: kcm/ui/main.qml:421
+#, kde-format
 msgid "Rear Left"
 msgstr "पीछे बाएँ"
 
 #: kcm/ui/main.qml:422
+#, kde-format
 msgid "Subwoofer"
 msgstr "सबवूफर"
 
 #: kcm/ui/main.qml:423
+#, kde-format
 msgid "Rear Right"
 msgstr "पीछे दायाँ"
 
 #: kcm/ui/main.qml:424
+#, kde-format
 msgid "Mono"
 msgstr "मोनो"
 
 #: kcm/ui/main.qml:492
+#, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "ध्वनि का परीक्षण करने के लिए किसी भी स्पीकर पर क्लिक करें"
 
 #: kcm/ui/main.qml:507
+#, kde-kuit-format
 msgctxt ""
 "@info %1 is an error string produced by an external component, and probably "
 "untranslated"
@@ -231,74 +263,86 @@ msgid ""
 msgstr ""
 
 #: kcm/ui/main.qml:572
+#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr ""
 
 #: kcm/ui/main.qml:572
+#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr ""
 
 #: kcm/ui/main.qml:585
+#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr ""
 
 #: kcm/ui/main.qml:585
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr ""
 
 #: kcm/ui/main.qml:604
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr ""
 
 #: kcm/ui/main.qml:634
+#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr ""
 
 #: kcm/ui/main.qml:649
-#, fuzzy
+#, fuzzy, kde-format
 #| msgid "Microphone sensitivity"
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "माइक्रोफ़ोन संवेदनशीलता"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
-#, javascript-format
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
+#, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
 #: kcm/ui/MuteButton.qml:24
+#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
 msgstr "अप्रसन्नता %1"
 
 #: kcm/ui/MuteButton.qml:24
+#, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
 msgstr "म्यूट करें %1"
 
 #: kcm/ui/RenameDevices.qml:31
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
 msgstr "डिवाइस का नाम बदलें"
 
 #: kcm/ui/RenameDevices.qml:38
+#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr "बचाना"
 
 #: kcm/ui/RenameDevices.qml:68
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
@@ -308,86 +352,102 @@ msgstr ""
 "आएगी और उन्हें पुनः आरंभ करने की आवश्यकता हो सकती है।"
 
 #: kcm/ui/RenameDevices.qml:80
+#, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr "रिपोर्ट बग"
 
 #: kcm/ui/RenameDevices.qml:92
+#, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "पुन: लोड"
 
 #: kcm/ui/RenameDevices.qml:130
+#, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (लागू करने के लिए 'सहेजें' पर क्लिक करें)"
 
 #: kcm/ui/RenameDevices.qml:153
+#, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "आवेदन करना"
 
 #: kcm/ui/RenameDevices.qml:159
+#, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "रीसेट करें"
 
 #: kcm/ui/RenameDevices.qml:166
+#, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
 msgstr "गलती करना"
 
 #: kcm/ui/StreamListItem.qml:59
+#, kde-format
 msgid "Notification Sounds"
 msgstr "अधिसूचना ध्वनियाँ"
 
 #: kcm/ui/StreamListItem.qml:65
+#, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
+#, kde-format
 msgid "Volume Controls"
 msgstr "वॉल्यूम नियंत्रण"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
+#, kde-format
 msgid "Raise maximum volume"
 msgstr "अधिकतम वॉल्यूम बढ़ाएँ"
 
 #: kcm/ui/VolumeControlsConfig.qml:38
+#, kde-format
 msgid "Volume change step:"
 msgstr "आयतन परिवर्तन चरण:"
 
 #: kcm/ui/VolumeControlsConfig.qml:67
+#, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "निम्नलिखित में परिवर्तन के लिए ऑडियो फ़ीडबैक चलाएँ:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
+#, kde-format
 msgid "Audio volume"
 msgstr "ऑडियो वॉल्यूम"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy
+#, fuzzy, kde-format
 #| msgid "Show visual feedback for changes to:"
 msgid "Show OSD popups for changes to:"
 msgstr "निम्न में परिवर्तन के लिए दृश्य प्रतिक्रिया दिखाएँ:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
+#, kde-format
 msgid "Microphone sensitivity"
 msgstr "माइक्रोफ़ोन संवेदनशीलता"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
+#, kde-format
 msgid "Mute state"
 msgstr "मौन अवस्था"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
 msgstr ""
 
 #: kcm/ui/VolumeControlsConfig.qml:104
-#, fuzzy
+#, fuzzy, kde-format
 #| msgctxt "List of apps is using mic"
 #| msgid "%1 are using the microphone"
 msgctxt "Show OSD when"
@@ -395,6 +455,7 @@ msgid "Application starts using muted microphone"
 msgstr "%1 माइक्रोफ़ोन का उपयोग कर रहे हैं"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
+#, kde-format
 msgid "Default output device"
 msgstr "डिफ़ॉल्ट आउटपुट डिवाइस"
 
