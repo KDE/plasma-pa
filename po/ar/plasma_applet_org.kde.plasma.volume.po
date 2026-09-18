@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:47+0000\n"
-"PO-Revision-Date: 2026-03-28 18:13+0400\n"
+"PO-Revision-Date: 2026-09-17 10:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ListItemBase.qml:73
 #, kde-format
@@ -69,7 +69,9 @@ msgid "Adjust volume for %1"
 msgstr "اضبط المستوى إلى %1"
 
 #: ListItemBase.qml:318 MicrophoneTestView.qml:215
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "volume percentage"
+#| msgid "%1%"
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1٪"
