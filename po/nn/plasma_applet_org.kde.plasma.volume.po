@@ -70,9 +70,7 @@ msgid "Adjust volume for %1"
 msgstr "Juster lydstyrke for %1"
 
 #: ListItemBase.qml:318 MicrophoneTestView.qml:215
-#, fuzzy, kde-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
@@ -117,8 +115,7 @@ msgid "Audio Muted"
 msgstr "Dempa lyd"
 
 #: main.qml:96
-#, fuzzy, kde-format
-#| msgid "Volume at %1%"
+#, kde-format
 msgid "Volume at %1%"
 msgstr "Lydstyrken er %1 %"
 

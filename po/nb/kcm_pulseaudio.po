@@ -307,9 +307,7 @@ msgid "Sensitivity"
 msgstr "Mikrofonfølsomhet"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
-#, fuzzy, kde-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
