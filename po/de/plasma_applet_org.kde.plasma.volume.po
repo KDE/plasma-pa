@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2026-04-23 18:52+0200\n"
+"PO-Revision-Date: 2026-09-19 12:50+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: contents/ui/DeviceListItem.qml:26
 #, kde-format
@@ -79,9 +79,7 @@ msgid "Adjust volume for %1"
 msgstr "Lautstärke für %1 anpassen"
 
 #: contents/ui/ListItemBase.qml:283
-#, fuzzy, kde-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
@@ -108,8 +106,7 @@ msgid "Audio Muted"
 msgstr "Audio stumm"
 
 #: contents/ui/main.qml:59
-#, fuzzy, kde-format
-#| msgid "Volume at %1%"
+#, kde-format
 msgid "Volume at %1%"
 msgstr "Lautstärke bei %1 %"
 
