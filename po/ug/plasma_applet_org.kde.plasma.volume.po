@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-18 00:47+0000\n"
-"PO-Revision-Date: 2026-07-22 17:12-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -71,13 +71,13 @@ msgstr "%1 نىڭ ئاۋاز تەڭشىكى"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: ListItemBase.qml:339 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: ListItemBase.qml:344
 #, kde-format
@@ -202,8 +202,6 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
-"بۇ ئىقتىدار ئۇزۇن ۋاقىت ئىشلىتىلسە ياڭراتقۇنى بۇزۇشى مۇمكىن. پەقەت ئاۋازى "
-"تۆۋەن ۋاسىتىنىڭ مەزمۇنىنى ئاڭلىماقچى بولغاندا قىسقا ۋاقىت ئىشلىتىڭ."
 
 #: main.qml:744
 #, kde-format
@@ -264,7 +262,7 @@ msgstr "ئاۋاز دەرىجىسى"
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr "%1 %"
+msgstr ""
 
 #: MicrophoneTestView.qml:181
 #, kde-format

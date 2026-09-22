@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-18 00:47+0000\n"
-"PO-Revision-Date: 2026-07-22 17:12-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -25,8 +25,6 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
-"ئۆزگىرىش قوللىنىلمىدى.<nl/>wireplumber.service مۇلازىمىتىنى قايتا "
-"قوزغىتالمىدى. بۇيرۇق يىمىرىلدى."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -35,9 +33,6 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
-"ئۆزگىرىش قوللىنىلمىدى.<nl/>wireplumber.service مۇلازىمىتىنى قايتا "
-"قوزغىتالمىدى. بۇيرۇق ئاخىرلاشتۇرۇلدى، خاتالىق كودى:\n"
-"%1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
@@ -107,7 +102,7 @@ msgstr "%1 (چېتىلمىغان)"
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
-msgstr "%1:"
+msgstr ""
 
 #: kcm/ui/DeviceListItem.qml:231
 #, kde-format
@@ -297,7 +292,7 @@ msgstr "ئاۋاز دەرىجىسى"
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr "%1 %"
+msgstr ""
 
 #: kcm/ui/main.qml:649
 #, kde-format
@@ -309,13 +304,13 @@ msgstr "سەزگۈرلۈك"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: kcm/ui/MuteButton.qml:24
 #, kde-format
@@ -348,8 +343,6 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
-"ئۆزگىرىش ساقلاش ئاۋاز مۇلازىمىتىنى قايتا قوزغىتىدۇ. ياڭرىتىۋاتقان ئاۋاز "
-"توختايدۇ ۋە قايتا قوزغىتىش زۆرۈر بولۇشى مۇمكىن."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
@@ -397,7 +390,7 @@ msgstr "ئۇقتۇرۇش ئاۋازى"
 #, kde-format
 msgctxt "label of stream items"
 msgid "%1: %2"
-msgstr "%1: %2"
+msgstr ""
 
 #: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
@@ -536,39 +529,34 @@ msgid "%1: Muted"
 msgstr "%1: ئۈنسىزلەندى"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "PulseAudio مەزمۇنى تەييار ئەمەس"
+msgstr ""
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "خاتىرە ئېقىمى قۇرالمىدى"
+msgstr ""
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "خاتىرىگە باغلىنالمىدى: %1"
+msgstr ""
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "ياڭرىتىش ئېقىمى قۇرالمايدۇ"
+msgstr ""
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "ياڭرىتىش ئېقىمى قۇرالمايدۇ"
+msgstr ""
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
