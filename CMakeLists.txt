@@ -115,8 +115,8 @@ ecm_set_disabled_deprecation_versions(QT 6.11.0
 )
 
 add_subdirectory(autotests)
-add_subdirectory(applet)
 add_subdirectory(src)
+add_subdirectory(applet)
 add_subdirectory(appiumtests)
 
 # add clang-format target for all our real source files

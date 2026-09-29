@@ -13,3 +13,5 @@ plasma_add_applet(org.kde.plasma.volume
         main.xml
     GENERATE_APPLET_CLASS
 )
+
+add_dependencies(org.kde.plasma.volume plasma-volume-declarative)
