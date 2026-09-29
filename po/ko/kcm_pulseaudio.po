@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:47+0000\n"
-"PO-Revision-Date: 2026-04-26 20:48+0200\n"
+"PO-Revision-Date: 2026-09-28 23:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -196,6 +196,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"PulseAudio 오디오 하위 시스템에서 테스트 소리를 재생할 수 없으며, 다음 오류"
+"를 보고했습니다:<nl/><nl/>“%1”<nl/><nl/>시스템을 다시 시작한 후 다시 시도해 "
+"보십시오."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -256,6 +259,8 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"PulseAudio 오디오 하위 시스템에서 소리를 녹음할 수 없으며, 다음 오류를 보고했"
+"습니다:<nl/><nl/>“%1”<nl/><nl/>시스템을 다시 시작한 후 다시 시도해 보십시오."
 
 #: kcm/ui/main.qml:572
 #, kde-format
@@ -530,39 +535,34 @@ msgid "%1: Muted"
 msgstr "%1: 음소거됨"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
-#, fuzzy, kde-format
-#| msgid "PulseAudio context is not ready"
+#, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr "PulseAudio 콘텍스트가 준비되지 않았음"
+msgstr "PulseAudio 콘텍스트가 준비되지 않았습니다."
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgid "Failed to create a record stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "녹음 스트림을 생성할 수 없음"
+msgstr "녹음 스트림을 생성할 수 없습니다."
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgid "Failed to connect record: %1"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "녹음을 연결할 수 없음: %1"
+msgstr "녹음 스트림에 연결할 수 없음: %1."
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "재생 스트림을 생성할 수 없음"
+msgstr "재생 스트림을 생성할 수 없습니다."
 
 #: microphonetest.cpp:284
-#, fuzzy, kde-format
-#| msgid "Couldn't create a playback stream"
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr "재생 스트림을 생성할 수 없음"
+msgstr "재생 스트림에 연결할 수 없음: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
