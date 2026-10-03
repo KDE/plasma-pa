@@ -1,5 +1,6 @@
 # Translation of kcm_pulseaudio.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2015, 2016, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
@@ -25,6 +26,8 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Измјене нису примијењене.<nl/>Не могу поново да покренем wireplumber."
+"service. Наредба се срушила."
 
 #: devicerenamesaver.cpp:125
 #, kde-kuit-format
@@ -33,24 +36,26 @@ msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Измјене нису примијењене.<nl/>Не могу поново да покренем wireplumber."
+"service. Наредба је завршила са кодом: %1."
 
 #: devicerenamesaver.cpp:237
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Не могу да обрадим уређаје: %1."
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Не могу да направим фасциклу: %1."
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Не могу да отворим фајл за писање: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
 #, kde-format
@@ -62,98 +67,90 @@ msgstr "Профил:"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Изгубљена веза са звучним сервисом"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Покушавам да се поново повежем…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Покушај поново"
 
 #: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Име уређаја није нађено"
 
 #: kcm/ui/DeviceListItem.qml:105
-#, fuzzy, kde-format
-#| msgid "Port"
+#, kde-format
 msgid "Port:"
-msgstr "Порт"
+msgstr "Порт:"
 
 #: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:373
-#, fuzzy, kde-format
-#| msgctxt "Port is unavailable"
-#| msgid " (unavailable)"
+#, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
-msgstr " (недоступан)"
+msgstr "%1 (недоступан)"
 
 #: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:375
-#, fuzzy, kde-format
-#| msgctxt "Port is unplugged"
-#| msgid " (unplugged)"
+#, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
-msgstr " (извучен)"
+msgstr "%1 (извучен)"
 
 #: kcm/ui/DeviceListItem.qml:205
-#, fuzzy, kde-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
-msgstr "%1%"
+msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:231
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
-msgstr ""
+msgstr "Испробај"
 
 #: kcm/ui/DeviceListItem.qml:238
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "Испробај…"
 
 #: kcm/ui/DeviceListItem.qml:246
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Прикажи канале"
 
 #: kcm/ui/main.qml:74
 #, kde-format
 msgid "Show Inactive Devices"
-msgstr ""
+msgstr "Прикажи неактивне уређаје"
 
 #: kcm/ui/main.qml:81
 #, kde-format
 msgid "Rename Devices…"
-msgstr ""
+msgstr "Преименуј уређаје…"
 
 #: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr ""
+msgstr "Подеси управљање јачином…"
 
 #: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "Подеси…"
 
 #: kcm/ui/main.qml:97
-#, fuzzy, kde-format
-#| msgid "Requires 'module-gconf' PulseAudio module"
+#, kde-format
 msgid "Requires %1 PulseAudio module"
-msgstr "Захтева модул Пулс‑аудија module-gconf."
+msgstr "Захтијева модул Пулс‑аудија %1"
 
 #: kcm/ui/main.qml:100
 #, kde-format
@@ -170,31 +167,29 @@ msgid ""
 msgstr "Аутоматски пребаци све токове у погону чим нови излаз постане доступан"
 
 #: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
-#, fuzzy, kde-format
-#| msgid "Playback"
+#, kde-format
 msgid "Playback Devices"
-msgstr "Пуштање"
+msgstr "Уређаји за пуштање"
 
 #: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
 #, kde-format
 msgid "Recording Devices"
-msgstr ""
+msgstr "Уређаји за снимање"
 
 #: kcm/ui/main.qml:191
 #, kde-format
 msgid "Inactive Cards"
-msgstr ""
+msgstr "Неактивне картице"
 
 #: kcm/ui/main.qml:226
-#, fuzzy, kde-format
-#| msgid "Playback"
+#, kde-format
 msgid "Playback Streams"
-msgstr "Пуштање"
+msgstr "Токови пуштања"
 
 #: kcm/ui/main.qml:278
 #, kde-format
 msgid "Recording Streams"
-msgstr ""
+msgstr "Токови снимања"
 
 #: kcm/ui/main.qml:312
 #, kde-kuit-format
@@ -205,56 +200,59 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Звучни подсистем Пулс‑аудија није успио да пусти пробни звук и пријавио је "
+"сљедећу грешку:<nl/><nl/>„%1“<nl/><nl/>Поново покрените систем и покушајте "
+"опет."
 
 #: kcm/ui/main.qml:416
 #, kde-format
 msgid "Front Left"
-msgstr ""
+msgstr "Предњи лијеви"
 
 #: kcm/ui/main.qml:417
 #, kde-format
 msgid "Front Center"
-msgstr ""
+msgstr "Предњи средишњи"
 
 #: kcm/ui/main.qml:418
 #, kde-format
 msgid "Front Right"
-msgstr ""
+msgstr "Предњи десни"
 
 #: kcm/ui/main.qml:419
 #, kde-format
 msgid "Side Left"
-msgstr ""
+msgstr "Бочни лијеви"
 
 #: kcm/ui/main.qml:420
 #, kde-format
 msgid "Side Right"
-msgstr ""
+msgstr "Бочни десни"
 
 #: kcm/ui/main.qml:421
 #, kde-format
 msgid "Rear Left"
-msgstr ""
+msgstr "Задњи лијеви"
 
 #: kcm/ui/main.qml:422
 #, kde-format
 msgid "Subwoofer"
-msgstr ""
+msgstr "Бас звучник"
 
 #: kcm/ui/main.qml:423
 #, kde-format
 msgid "Rear Right"
-msgstr ""
+msgstr "Задњи десни"
 
 #: kcm/ui/main.qml:424
 #, kde-format
 msgid "Mono"
-msgstr ""
+msgstr "Моно"
 
 #: kcm/ui/main.qml:492
 #, kde-format
 msgid "Click on any speaker to test sound"
-msgstr ""
+msgstr "Кликните на било који звучник да испробате звук"
 
 #: kcm/ui/main.qml:507
 #, kde-kuit-format
@@ -265,48 +263,50 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Звучни подсистем Пулс‑аудија није успио да сними звук и пријавио је сљедећу "
+"грешку:<nl/><nl/>„%1“<nl/><nl/>Поново покрените систем и покушајте опет."
 
 #: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Заустави"
 
 #: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Сними"
 
 #: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Заустави"
 
 #: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Пусти"
 
 #: kcm/ui/main.qml:604
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "Ниво јачине"
 
 #: kcm/ui/main.qml:634
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:649
 #, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr ""
+msgstr "Осјетљивост"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -324,27 +324,25 @@ msgstr "100%"
 #, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
-msgstr ""
+msgstr "Врати звук за %1"
 
 #: kcm/ui/MuteButton.qml:24
 #, kde-format
 msgctxt "Mute audio stream"
 msgid "Mute %1"
-msgstr ""
+msgstr "Утишај %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Уређаји"
+msgstr "Преименовање уређаја"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Сачувај"
 
 #: kcm/ui/RenameDevices.qml:68
 #, kde-format
@@ -353,48 +351,51 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Ако сачувате измјене, звучни сервиси ће се поново покренути. Звук у "
+"програмима који га пуштају накратко ће се прекинути, а програме ће можда "
+"требати поново покренути."
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Пријави грешку"
 
 #: kcm/ui/RenameDevices.qml:92
 #, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "Поново учитавам"
 
 #: kcm/ui/RenameDevices.qml:130
 #, kde-format
 msgctxt "place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (кликните на „Сачувај“ да примијените)"
 
 #: kcm/ui/RenameDevices.qml:153
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
-msgstr ""
+msgstr "Примијени"
 
 #: kcm/ui/RenameDevices.qml:159
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Ресетуј"
 
 #: kcm/ui/RenameDevices.qml:166
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"
 msgid "DEFAULT"
-msgstr ""
+msgstr "ПОДРАЗУМИЈЕВАНО"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
 msgid "Notification Sounds"
-msgstr "Звукови обавештења"
+msgstr "Звукови обавјештења"
 
 #: kcm/ui/StreamListItem.qml:65
 #, kde-format
@@ -405,197 +406,194 @@ msgstr "%1: %2"
 #: kcm/ui/VolumeControlsConfig.qml:15
 #, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Управљање јачином"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
 #, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Подигни највећу јачину"
 
 #: kcm/ui/VolumeControlsConfig.qml:38
 #, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Корак промјене јачине:"
 
 #: kcm/ui/VolumeControlsConfig.qml:67
 #, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Пуштај звучни одзив за ове промјене:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
 #, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Јачина звука"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
 #, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr ""
+msgstr "Прикажи ОСД за ове промјене:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, kde-format
 msgid "Microphone sensitivity"
-msgstr ""
+msgstr "Осјетљивост микрофона"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
 #, kde-format
 msgid "Mute state"
-msgstr ""
+msgstr "Стање утишаности"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Притисни за говор"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr ""
+msgstr "Програм почиње да користи утишан микрофон"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
 #, kde-format
 msgid "Default output device"
-msgstr ""
+msgstr "Подразумијевани излазни уређај"
 
 #: kded/audioshortcutsservice.cpp:84
 #, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Повећај јачину"
 
 #: kded/audioshortcutsservice.cpp:99
 #, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Смањи јачину"
 
 #: kded/audioshortcutsservice.cpp:114
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Повећај јачину за 1%"
 
 #: kded/audioshortcutsservice.cpp:129
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Смањи јачину за 1%"
 
 #: kded/audioshortcutsservice.cpp:144
 #, kde-format
 msgid "Increase Microphone Volume"
-msgstr ""
+msgstr "Повећај јачину микрофона"
 
 #: kded/audioshortcutsservice.cpp:158
 #, kde-format
 msgid "Decrease Microphone Volume"
-msgstr ""
+msgstr "Смањи јачину микрофона"
 
 #: kded/audioshortcutsservice.cpp:172 qml/microphoneindicator.cpp:133
 #, kde-format
 msgid "Mute"
-msgstr ""
+msgstr "Утишај"
 
 #: kded/audioshortcutsservice.cpp:185
 #, kde-format
 msgid "Mute Microphone"
-msgstr ""
+msgstr "Утишај микрофон"
 
 #: kded/audioshortcutsservice.cpp:198
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Притисни за говор"
 
 #: kded/audioshortcutsservice.cpp:206
 #, kde-format
 msgid "Audio Volume"
-msgstr ""
+msgstr "Јачина звука"
 
 #: kded/audioshortcutsservice.cpp:224
 #, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Нема таквог уређаја"
 
 #: kded/audioshortcutsservice.cpp:270
 #, kde-format
 msgid "No output device"
-msgstr ""
+msgstr "Нема излазног уређаја"
 
 #: kded/audioshortcutsservice.cpp:291 kded/audioshortcutsservice.cpp:311
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr ""
+msgstr "%1 (батерија на %2%)"
 
 #: kded/audioshortcutsservice.cpp:397
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Говорите…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr ""
+msgstr "%1: утишано"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr ""
+msgstr "Контекст Пулс‑аудија није спреман."
 
 #: microphonetest.cpp:155
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr ""
+msgstr "Не могу да направим ток снимања."
 
 #: microphonetest.cpp:171
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr ""
+msgstr "Не могу да се повежем на ток снимања: %1."
 
 #: microphonetest.cpp:268
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr ""
+msgstr "Не могу да направим ток пуштања."
 
 #: microphonetest.cpp:284
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr ""
+msgstr "Не могу да се повежем на ток пуштања: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
 msgid "Play all audio via this device"
-msgstr ""
+msgstr "Пуштај сав звук преко овог уређаја"
 
 #: qml/listitemmenu.cpp:330
 #, kde-format
 msgid "Record all audio via this device"
-msgstr ""
+msgstr "Снимај сав звук преко овог уређаја"
 
 #: qml/listitemmenu.cpp:361
-#, fuzzy, kde-format
-#| msgid "Port"
+#, kde-format
 msgctxt ""
 "Heading for a list of ports of a device (for example built-in laptop "
 "speakers or a plug for headphones)"
 msgid "Ports"
-msgstr "Порт"
+msgstr "Портови"
 
 #: qml/listitemmenu.cpp:431
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Profile:"
+#, kde-format
 msgctxt ""
 "Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
 "only, ...)"
 msgid "Profiles"
-msgstr "Профил:"
+msgstr "Профили"
 
 #: qml/listitemmenu.cpp:465
 #, kde-format
@@ -603,7 +601,7 @@ msgctxt ""
 "Heading for a list of possible output devices (speakers, headphones, ...) to "
 "choose"
 msgid "Play audio using"
-msgstr ""
+msgstr "Пуштај звук преко"
 
 #: qml/listitemmenu.cpp:467
 #, kde-format
@@ -611,115 +609,38 @@ msgctxt ""
 "Heading for a list of possible input devices (built-in microphone, "
 "headset, ...) to choose"
 msgid "Record audio using"
-msgstr ""
+msgstr "Снимај звук преко"
 
 #: qml/microphoneindicator.cpp:167 qml/microphoneindicator.cpp:169
 #, kde-format
 msgid "Microphone"
-msgstr ""
+msgstr "Микрофон"
 
 #: qml/microphoneindicator.cpp:169
 #, kde-format
 msgid "Microphone Muted"
-msgstr ""
+msgstr "Микрофон утишан"
 
 #: qml/microphoneindicator.cpp:316
 #, kde-format
 msgctxt "list separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: qml/microphoneindicator.cpp:316
 #, kde-format
 msgctxt "List of apps is using mic"
 msgid "%1 are using the microphone"
-msgstr ""
+msgstr "%1 користе микрофон"
 
 #: qml/microphoneindicator.cpp:342
 #, kde-format
 msgctxt "App %1 is using mic with name %2"
 msgid "%1 is using the microphone (%2)"
-msgstr ""
+msgstr "%1 користи микрофон (%2)"
 
 #: qml/microphoneindicator.cpp:349
 #, kde-format
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
-msgstr ""
-
-#, fuzzy
-#~| msgid "Device Profiles"
-#~ msgctxt "@item:inlistbox a type of name source"
-#~ msgid "Device Nickname"
-#~ msgstr "Профили уређаја"
-
-#, fuzzy
-#~| msgid "This module allows to set up the Pulseaudio sound subsystem."
-#~ msgid "This module allows configuring the Pulseaudio sound subsystem."
-#~ msgstr "Овај модул омогућава подешавање звучног подсистема Пулс‑аудио."
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Часлав Илић"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "caslav.ilic@gmx.net"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Copyright 2015 Harald Sitter"
-#~ msgstr "© 2015, Харалд Ситер"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Harald Sitter"
-#~ msgstr "Харалд Ситер"
-
-#~ msgctxt "@info:credit"
-#~ msgid "Author"
-#~ msgstr "Аутор"
-
-#~ msgctxt "@label"
-#~ msgid "No Device Profiles Available"
-#~ msgstr "Нема доступних профила уређаја"
-
-#~ msgid "Advanced Output Configuration"
-#~ msgstr "Напредно подешавање излаза"
-
-#, fuzzy
-#~| msgid "Outputs"
-#~ msgctxt "@label"
-#~ msgid "Output:"
-#~ msgstr "Излази"
-
-#~ msgctxt "@label"
-#~ msgid "No Applications Playing Audio"
-#~ msgstr "Ниједан програм не пушта звук"
-
-#~ msgctxt "@label"
-#~ msgid "No Applications Recording Audio"
-#~ msgstr "Ниједан програм не снима звук"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "No Input Devices Available"
-#~ msgctxt "@label"
-#~ msgid "No Playback Devices Available"
-#~ msgstr "Нема улазних уређаја"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "No Input Devices Available"
-#~ msgctxt "@label"
-#~ msgid "No Recording Devices Available"
-#~ msgstr "Нема улазних уређаја"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Applications"
-#~ msgstr "Програми"
-
-#~ msgctxt "@title:tab"
-#~ msgid "Advanced"
-#~ msgstr "Напредно"
-
-#~ msgid "100%"
-#~ msgstr "100%"
+msgstr "%1 користи микрофон"
