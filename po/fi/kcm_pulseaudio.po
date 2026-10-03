@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-18 00:47+0000\n"
-"PO-Revision-Date: 2026-02-25 18:46+0200\n"
+"PO-Revision-Date: 2026-08-24 19:43+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -117,12 +117,10 @@ msgid "Test"
 msgstr "Kokeile"
 
 #: kcm/ui/DeviceListItem.qml:238
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "Kokeile"
+msgstr "Kokeile…"
 
 #: kcm/ui/DeviceListItem.qml:246
 #, kde-format
@@ -205,6 +203,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Pulseaudio-äänijärjestelmä ei kyennyt toistamaan testiääntä vaan ilmoitti "
+"seuraavan virheen:<nl/><nl/>”%1”<nl/><nl/>Käynnistä järjestelmä uudelleen ja "
+"kokeile taas."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -265,54 +266,54 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Pulseaudio-äänijärjestelmä ei kyennyt nauhoittamaan ääntä vaan ilmoitti "
+"seuraavan virheen:<nl/><nl/>”%1”<nl/><nl/>Käynnistä järjestelmä uudelleen ja "
+"kokeile taas."
 
 #: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Pysäytä"
 
 #: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Nauhoita"
 
 #: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Pysäytä"
 
 #: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Toista"
 
 #: kcm/ui/main.qml:604
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "Äänenvoimakkuus"
 
 #: kcm/ui/main.qml:634
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:649
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Mikrofonin herkkyys"
+msgstr "Herkkyys"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
-#, fuzzy, kde-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1 %"
@@ -545,37 +546,31 @@ msgstr "%1: vaimennettu"
 #, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr ""
+msgstr "Pulseaudio-konteksti ei ole valmis."
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "Ei voitu luoda kansiota: %1."
+msgstr "Äänitysvirtaa ei voitu luoda"
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "Ei voitu luoda kansiota: %1."
+msgstr "Äänitysvirtaan ei voitu yhdistää: %1"
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "Ei voitu luoda kansiota: %1."
+msgstr "Toistovirtaa ei voitu luoda."
 
 #: microphonetest.cpp:284
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr ""
+msgstr "Toistovirtaan ei voitu yhdistää: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format

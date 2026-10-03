@@ -1,11 +1,12 @@
 # Translation of plasma_applet_org.kde.plasma.volume.po into Serbian.
-# Chusslove Illich <caslav.ilic@gmx.net>, 2015, 2016, 2017.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2015, 2016, 2017, 2018.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-18 00:47+0000\n"
-"PO-Revision-Date: 2017-09-25 19:53+0200\n"
+"PO-Revision-Date: 2018-05-22 01:12+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
@@ -21,45 +22,42 @@ msgstr ""
 #: ListItemBase.qml:73
 #, kde-format
 msgid "Currently not recording"
-msgstr ""
+msgstr "Trenutno se ne snima"
 
 #: ListItemBase.qml:74
 #, kde-format
 msgid "Currently not playing"
-msgstr ""
+msgstr "Trenutno se ne pušta"
 
 # >> @info:tooltip
 #: ListItemBase.qml:205
-#, fuzzy, kde-format
-#| msgid "Show additional options for %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr "Dodatne opcije za %1"
+msgstr "Dodatne opcije"
 
 # >> @info:tooltip
 #: ListItemBase.qml:207
 #, kde-format
 msgid "Show additional options for %1"
-msgstr "Dodatne opcije za %1"
+msgstr "Prikaži dodatne opcije za %1"
 
 #: ListItemBase.qml:229
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr ""
+msgstr "Vrati zvuk"
 
 #: ListItemBase.qml:229
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Utišaj"
 
 #: ListItemBase.qml:231
-#, fuzzy, kde-format
-#| msgid "Mute %1"
+#, kde-format
 msgid "Unmute %1"
-msgstr "Utišaj %1"
+msgstr "Vrati zvuk za %1"
 
 #: ListItemBase.qml:231
 #, kde-format
@@ -88,7 +86,7 @@ msgstr "100%"
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "Isprobaj…"
 
 #: main.qml:36
 #, kde-format
@@ -99,18 +97,18 @@ msgstr "Jačina zvuka"
 #, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Izgubljena veza sa zvučnim servisom"
 
 #: main.qml:64
 #, kde-format
 msgid "No output or input devices found"
-msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
+msgstr "Nije nađen nijedan izlazni ili ulazni uređaj"
 
 #: main.qml:68
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Pokušavam da se ponovo povežem…"
 
 #: main.qml:94
 #, kde-format
@@ -125,22 +123,22 @@ msgstr "Jačina %1%"
 #: main.qml:107
 #, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Srednji klik vraća zvuk"
 
 #: main.qml:108
 #, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Srednji klik utišava sav zvuk"
 
 #: main.qml:109
 #, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Klizanje podešava jačinu"
 
 #: main.qml:125
 #, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Ime uređaja nije nađeno"
 
 #: main.qml:361
 #, kde-format
@@ -156,51 +154,49 @@ msgstr "Programi"
 #, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Više radnji"
 
 #: main.qml:434
 #, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "Drži otvoreno"
 
 #: main.qml:471
 #, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Pokušaj ponovo"
 
 #: main.qml:505
 #, kde-format
 msgid "No applications playing or recording audio"
-msgstr "Nijedan program ne pušta niti snima zvuk."
+msgstr "Nijedan program ne pušta niti snima zvuk"
 
 #: main.qml:601
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
+msgstr "Izlazni uređaji"
 
 #: main.qml:603
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr ""
+msgstr "Izlazni tokovi"
 
 #: main.qml:661
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Uređaji"
+msgstr "Ulazni uređaji"
 
 #: main.qml:663
 #, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
-msgstr ""
+msgstr "Ulazni tokovi"
 
 #: main.qml:728
 #, kde-kuit-format
@@ -209,6 +205,8 @@ msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Duže korišćenje ove mogućnosti oštetiće zvučnike uređaja. Koristite je samo "
+"privremeno, da bi tih zvuk postao čujan."
 
 #: main.qml:744
 #, kde-format
@@ -218,150 +216,78 @@ msgstr "Podigni najveću jačinu"
 #: main.qml:762
 #, kde-format
 msgid "Force mute all playback devices"
-msgstr ""
+msgstr "Prinudno utišaj sve uređaje za puštanje"
 
 #: main.qml:771
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
+msgstr "Prinudno utišaj sve ulazne uređaje"
 
 #: main.qml:780
-#, fuzzy, kde-format
-#| msgid "No output or input devices found"
+#, kde-format
 msgid "Show virtual devices"
-msgstr "Nije nađen nijedan izlazni ili ulazni uređaj."
+msgstr "Prikaži virtuelne uređaje"
 
 #: main.qml:790
 #, kde-format
 msgid "&Configure Audio Devices…"
-msgstr ""
+msgstr "&Podesi audio uređaje…"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zaustavi"
 
 #: MicrophoneTestView.qml:104
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Snimi"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Zaustavi"
 
 #: MicrophoneTestView.qml:118
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Pusti"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
-#| msgid "Volume step:"
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr "Korak jačine:"
+msgstr "Nivo jačine"
 
 #: MicrophoneTestView.qml:166
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
 #, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr ""
+msgstr "Osetljivost"
 
 #: MicrophoneTestView.qml:237
 #, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
-msgstr ""
+msgstr "Nazad"
 
 #: MicrophoneTestView.qml:250
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Greška pri probi mikrofona:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format
 msgid "Stream name not found"
-msgstr ""
-
-#, fuzzy
-#~| msgctxt "label of device items"
-#~| msgid "%1 (%2)"
-#~ msgctxt "Device name (Battery percent)"
-#~ msgid "%1 (%2% Battery)"
-#~ msgstr "%1 (%2)"
-
-#~ msgid "Increase Volume"
-#~ msgstr "Povećaj jačinu"
-
-#, fuzzy
-#~| msgid "Increase Volume"
-#~ msgctxt "@action shortcut"
-#~ msgid "Increase Volume by 1%"
-#~ msgstr "Povećaj jačinu"
-
-#~ msgid "Decrease Volume"
-#~ msgstr "Smanji jačinu"
-
-#, fuzzy
-#~| msgid "Decrease Volume"
-#~ msgctxt "@action shortcut"
-#~ msgid "Decrease Volume by 1%"
-#~ msgstr "Smanji jačinu"
-
-#~ msgid "Mute"
-#~ msgstr "Utišaj"
-
-#~ msgid "Increase Microphone Volume"
-#~ msgstr "Povećaj jačinu mikrofona"
-
-#~ msgid "Decrease Microphone Volume"
-#~ msgstr "Smanji jačinu mikrofona"
-
-#~ msgid "Mute Microphone"
-#~ msgstr "Utišaj mikrofon"
-
-#~ msgctxt "label of device items"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgid "General"
-#~ msgstr "Opšte"
-
-#, fuzzy
-#~| msgid "Audio Volume"
-#~ msgid "Audio volume"
-#~ msgstr "Jačina zvuka"
-
-#~ msgctxt ""
-#~ "Heading for a list of ports of a device (for example built-in laptop "
-#~ "speakers or a plug for headphones)"
-#~ msgid "Ports"
-#~ msgstr "Portovi"
-
-#, fuzzy
-#~| msgctxt "Port is unavailable"
-#~| msgid " (unavailable)"
-#~ msgctxt "Port is unavailable"
-#~ msgid "%1 (unavailable)"
-#~ msgstr " (nedostupan)"
-
-#, fuzzy
-#~| msgctxt "Port is unplugged"
-#~| msgid " (unplugged)"
-#~ msgctxt "Port is unplugged"
-#~ msgid "%1 (unplugged)"
-#~ msgstr " (izvučen)"
+msgstr "Ime toka nije nađeno"
