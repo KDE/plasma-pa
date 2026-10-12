@@ -28,3 +28,6 @@ RuntimeDependencies:
 Options:
  require-passing-tests-on: ['Linux', 'FreeBSD']
  run-qmllint: true
+
+Environment:
+  TEST_WITH_VIDEO_RECORDER: "0"
