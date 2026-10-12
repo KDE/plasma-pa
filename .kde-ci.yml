@@ -30,4 +30,4 @@ Options:
  run-qmllint: true
 
 Environment:
-  TEST_WITH_VIDEO_RECORDER: "0"
+ TEST_WITH_VIDEO_RECORDER: "0"
