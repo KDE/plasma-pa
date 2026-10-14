@@ -64,8 +64,8 @@ class AppletTest(unittest.TestCase):
         options = AppiumOptions()
         options.set_capability("app", f"plasmawindowed -p org.kde.plasma.nano {WIDGET_ID}")
         options.set_capability("environ", {
-            "QT_FATAL_WARNINGS": "1",
-            "QT_LOGGING_RULES": "org.kde.pulseaudio=false;org.kde.plasma.pulseaudio.warning=false;qt.accessibility.atspi.warning=false;kf.plasma.core.warning=false;kf.windowsystem.warning=false;kf.kirigami.platform.warning=false",
+            #"QT_FATAL_WARNINGS": "1",
+            "QT_LOGGING_RULES": "org.kde.pulseaudio=true;org.kde.plasma.pulseaudio.warning=true;qt.accessibility.atspi.warning=true;kf.plasma.core.warning=true;kf.windowsystem.warning=true;kf.kirigami.platform.warning=true",
         })
         options.set_capability("timeouts", {'implicit': 30000})
         cls.driver = webdriver.Remote(command_executor='http://127.0.0.1:4723', extensions=[SetValueCommand], options=options)
