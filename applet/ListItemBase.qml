@@ -19,7 +19,7 @@ PC3.ItemDelegate {
     id: item
 
     required property var model
-    property alias label: defaultButton.text
+    property string label
     property alias draggable: dragMouseArea.enabled
     property alias iconSource: clientIcon.source
     // TODO: convert to a proper enum?
@@ -129,6 +129,9 @@ PC3.ItemDelegate {
                         Accessible.ignored: true // read out from delegate
                         activeFocusOnTab: false // toggle from delegate
                         checked: item.model.PulseObject?.default ?? false
+
+                        //TODO(Qt6.12): Use Qt.escapeHtml()
+                        text: xi18nc("@label/rich", "%1", item.label).replace(/&/g, "&&")
                         onToggled: {
                             if (checked) {
                                 item.setAsDefault();
@@ -155,7 +158,7 @@ PC3.ItemDelegate {
                         }
                         width: Math.min(implicitWidth, parent.width)
 
-                        text: defaultButton.text
+                        text: item.label
                         textFormat: Text.PlainText
                         elide: Text.ElideRight
 
@@ -204,11 +207,11 @@ PC3.ItemDelegate {
 
                     text: i18nc("@action:button", "Additional Options")
 
-                    Accessible.description: i18n("Show additional options for %1", defaultButton.text)
+                    Accessible.description: i18n("Show additional options for %1", item.label)
                     Accessible.role: Accessible.ButtonMenu
 
                     PC3.ToolTip {
-                        text: parent.Accessible.description
+                        text: parent.Accessible.description.replace(/&(?=\S)/g, "&&")
                         textFormat: Text.PlainText
                     }
                 }
@@ -228,10 +231,10 @@ PC3.ItemDelegate {
 
                     text: item.model.Muted ? i18nc("@action:button", "Unmute") : i18nc("@action:button", "Mute")
 
-                    Accessible.description: item.model.Muted ? i18n("Unmute %1", defaultButton.text) : i18n("Mute %1", defaultButton.text)
+                    Accessible.description: item.model.Muted ? i18n("Unmute %1", item.label) : i18n("Mute %1", item.label)
 
                     PC3.ToolTip {
-                        text: parent.Accessible.description
+                        text: parent.Accessible.description.replace(/&(?=\S)/g, "&&")
                         textFormat: Text.PlainText
                     }
                 }
@@ -251,7 +254,7 @@ PC3.ItemDelegate {
                     muted: item.model.Muted
                     volumeObject: item.model.PulseObject
                     activeFocusOnTab: false // access from delegate
-                    Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", defaultButton.text)
+                    Accessible.name: i18nc("Accessibility data on volume slider", "Adjust volume for %1", item.label)
                     Accessible.onPressAction: moved()
 
                     value: to, item.model.Volume

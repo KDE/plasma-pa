@@ -127,9 +127,10 @@ KCM.ScrollViewKCM {
 
                 placeholderText: {
                     if (delegate.hadOverride) {
-                        return i18nc("place holder text, %1 is a device name", "%1 (click 'Save' to apply)", root.initialText)
+                        return xi18nc("@label/rich place holder text, %1 is a device name", "%1 (click 'Save' to apply)", root.initialText)
                     }
-                    return root.initialText
+                    // TODO(Qt6.12): Use Qt.escapeHtml()
+                    return xi18nc("@label/rich", "%1", root.initialText)
                 }
 
                 onEditingFinished: {
