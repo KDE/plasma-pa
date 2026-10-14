@@ -47,11 +47,13 @@ ColumnLayout {
             onClicked: Default = true
             text: {
                 if (pulseObject.description) {
-                    return pulseObject.description
+                    //TODO(Qt6.12): Use Qt.escapeHtml()
+                    return xi18nc("@label/rich", "%1", pulseObject.description)
                 }
 
                 if (pulseObject.name) {
-                    return pulseObject.name
+                    //TODO(Qt6.12): Use Qt.escapeHtml()
+                    return xi18nc("@label/rich", "%1", pulseObject.name)
                 }
 
                 return i18n("Device name not found")
