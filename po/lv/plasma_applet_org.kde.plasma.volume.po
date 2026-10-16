@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-10-16 03:04+0000\n"
 "PO-Revision-Date: 2026-08-15 23:37+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -29,58 +29,66 @@ msgstr "Šobrīd neieraksta"
 msgid "Currently not playing"
 msgstr "Šobrīd neatskaņo"
 
-#: ListItemBase.qml:205
+#: ListItemBase.qml:134
+#, fuzzy, kde-kuit-format
+#| msgctxt "volume percentage"
+#| msgid "%1%"
+msgctxt "@label/rich"
+msgid "%1"
+msgstr "%1%"
+
+#: ListItemBase.qml:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Papildu opcijas"
 
-#: ListItemBase.qml:207
+#: ListItemBase.qml:210
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Rādīt „%1“ papildu opcijas"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Atjaunot skaņu"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Apklusināt"
 
-#: ListItemBase.qml:231
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Unmute %1"
 msgstr "Atjaunot skaņu „%1“"
 
-#: ListItemBase.qml:231
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Mute %1"
 msgstr "Apklusināt „%1“"
 
-#: ListItemBase.qml:254
+#: ListItemBase.qml:257
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Regulēt „%1“ skaļumu"
 
-#: ListItemBase.qml:318 MicrophoneTestView.qml:215
+#: ListItemBase.qml:321 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:339 MicrophoneTestView.qml:228
+#: ListItemBase.qml:342 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: ListItemBase.qml:344
+#: ListItemBase.qml:347
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"

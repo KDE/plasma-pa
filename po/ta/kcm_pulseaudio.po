@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-10-16 03:04+0000\n"
 "PO-Revision-Date: 2026-02-01 17:39+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -55,7 +55,7 @@ msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
 msgstr "இந்த கோப்பிற்கு எழுதுமாறு திறக்க முடியவில்லை: %1."
 
-#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:153
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
@@ -79,41 +79,50 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:235
+#: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
+#: kcm/ui/RenameDevices.qml:133
+#, fuzzy, kde-kuit-format
+#| msgctxt "Placeholder is channel name"
+#| msgid "%1:"
+msgctxt "@label/rich"
+msgid "%1"
+msgstr "%1:"
+
+#: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "Device name not found"
 msgstr "சாதனத்தின் பெயர் தெரியாது"
 
-#: kcm/ui/DeviceListItem.qml:105
+#: kcm/ui/DeviceListItem.qml:107
 #, kde-format
 msgid "Port:"
 msgstr "புறை:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:373
+#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:373
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (கிட்டவில்லை)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:375
+#: kcm/ui/DeviceListItem.qml:132 qml/listitemmenu.cpp:375
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (செருகப்படவில்லை)"
 
-#: kcm/ui/DeviceListItem.qml:205
+#: kcm/ui/DeviceListItem.qml:207
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/ui/DeviceListItem.qml:231
+#: kcm/ui/DeviceListItem.qml:233
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "சோதி"
 
-#: kcm/ui/DeviceListItem.qml:238
+#: kcm/ui/DeviceListItem.qml:240
 #, fuzzy, kde-format
 #| msgctxt "Perform an audio test of the device"
 #| msgid "Test"
@@ -121,7 +130,7 @@ msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "சோதி"
 
-#: kcm/ui/DeviceListItem.qml:246
+#: kcm/ui/DeviceListItem.qml:248
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
@@ -165,12 +174,12 @@ msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "புதிய வெளியீட்டு சாதனம் கிடைக்கும்போது அனைத்து செயலிகளின் ஒலியை அதற்கே மாற்று"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:206
 #, kde-format
 msgid "Playback Devices"
 msgstr "ஒலியியக்கும் சாதனங்கள்"
 
-#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:230
 #, kde-format
 msgid "Recording Devices"
 msgstr "ஒலிப்பதிவு சாதனங்கள்"
@@ -362,24 +371,26 @@ msgid "Reloading"
 msgstr "மீளேற்றுகிறது"
 
 #: kcm/ui/RenameDevices.qml:130
-#, kde-format
-msgctxt "place holder text, %1 is a device name"
+#, fuzzy, kde-kuit-format
+#| msgctxt "place holder text, %1 is a device name"
+#| msgid "%1 (click 'Save' to apply)"
+msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (செயல்படுத்த 'சேமி' என்பதை அழுத்தவும்)"
 
-#: kcm/ui/RenameDevices.qml:153
+#: kcm/ui/RenameDevices.qml:154
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "செயல்படுத்து"
 
-#: kcm/ui/RenameDevices.qml:159
+#: kcm/ui/RenameDevices.qml:160
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "மீட்டமை"
 
-#: kcm/ui/RenameDevices.qml:166
+#: kcm/ui/RenameDevices.qml:167
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"

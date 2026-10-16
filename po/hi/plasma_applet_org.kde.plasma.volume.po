@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-10-16 03:04+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -29,58 +29,66 @@ msgstr "वर्तमान में रिकॉर्डिंग नही
 msgid "Currently not playing"
 msgstr "वर्तमान में नहीं चल रहा"
 
-#: ListItemBase.qml:205
+#: ListItemBase.qml:134
+#, fuzzy, kde-kuit-format
+#| msgctxt "volume percentage"
+#| msgid "%1%"
+msgctxt "@label/rich"
+msgid "%1"
+msgstr "%1%"
+
+#: ListItemBase.qml:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "अतिरिक्त विकल्प"
 
-#: ListItemBase.qml:207
+#: ListItemBase.qml:210
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 के लिए अतिरिक्त विकल्प दिखाएं"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "अप्रसन्नता"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "आवाज़ बंद करना"
 
-#: ListItemBase.qml:231
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Unmute %1"
 msgstr "अप्रसन्नता %1"
 
-#: ListItemBase.qml:231
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Mute %1"
 msgstr "म्यूट करें %1"
 
-#: ListItemBase.qml:254
+#: ListItemBase.qml:257
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 के लिए वॉल्यूम समायोजित करें"
 
-#: ListItemBase.qml:318 MicrophoneTestView.qml:215
+#: ListItemBase.qml:321 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:339 MicrophoneTestView.qml:228
+#: ListItemBase.qml:342 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: ListItemBase.qml:344
+#: ListItemBase.qml:347
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"

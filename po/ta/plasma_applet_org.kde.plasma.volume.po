@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 00:47+0000\n"
+"POT-Creation-Date: 2026-10-16 03:04+0000\n"
 "PO-Revision-Date: 2026-04-12 17:18+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -27,58 +27,66 @@ msgstr "இப்போது பதிவு செய்யவில்லை"
 msgid "Currently not playing"
 msgstr "இப்போது இயங்கவில்லை"
 
-#: ListItemBase.qml:205
+#: ListItemBase.qml:134
+#, fuzzy, kde-kuit-format
+#| msgctxt "volume percentage"
+#| msgid "%1%"
+msgctxt "@label/rich"
+msgid "%1"
+msgstr "%1%"
+
+#: ListItemBase.qml:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "மேம்பட்ட அமைப்புகள்"
 
-#: ListItemBase.qml:207
+#: ListItemBase.qml:210
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "%1 என்பதற்கு கூடுதல் விருப்பங்களை காட்டு"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "ஒலிமுடக்கத்தை நீக்கு"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "ஒலியை அடக்கு"
 
-#: ListItemBase.qml:231
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Unmute %1"
 msgstr "%1-இன் ஒலியை அனுமதி"
 
-#: ListItemBase.qml:231
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Mute %1"
 msgstr "%1-இன் ஒலியை அடக்கு"
 
-#: ListItemBase.qml:254
+#: ListItemBase.qml:257
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1-க்கு ஒலியின் அளவை மாற்று"
 
-#: ListItemBase.qml:318 MicrophoneTestView.qml:215
+#: ListItemBase.qml:321 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:339 MicrophoneTestView.qml:228
+#: ListItemBase.qml:342 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: ListItemBase.qml:344
+#: ListItemBase.qml:347
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
