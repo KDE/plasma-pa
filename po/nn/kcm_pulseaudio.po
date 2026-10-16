@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:47+0000\n"
+"POT-Creation-Date: 2026-10-16 00:50+0000\n"
 "PO-Revision-Date: 2026-04-22 18:54+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -58,7 +58,7 @@ msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
 msgstr "Klarte ikkje opna fila for skriving: %1."
 
-#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:151
+#: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:153
 #, kde-format
 msgctxt "@label"
 msgid "Profile:"
@@ -82,47 +82,56 @@ msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Prøv på nytt"
 
-#: kcm/ui/DeviceListItem.qml:57 kded/audioshortcutsservice.cpp:235
+#: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
+#: kcm/ui/RenameDevices.qml:133
+#, fuzzy, kde-kuit-format
+#| msgctxt "Placeholder is channel name"
+#| msgid "%1:"
+msgctxt "@label/rich"
+msgid "%1"
+msgstr "%1:"
+
+#: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:235
 #, kde-format
 msgid "Device name not found"
 msgstr "Fann ikkje einingsnamn"
 
-#: kcm/ui/DeviceListItem.qml:105
+#: kcm/ui/DeviceListItem.qml:107
 #, kde-format
 msgid "Port:"
 msgstr "Port:"
 
-#: kcm/ui/DeviceListItem.qml:128 qml/listitemmenu.cpp:373
+#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:373
 #, kde-format
 msgctxt "Port is unavailable"
 msgid "%1 (unavailable)"
 msgstr "%1 (ikkje tilgjengeleg)"
 
-#: kcm/ui/DeviceListItem.qml:130 qml/listitemmenu.cpp:375
+#: kcm/ui/DeviceListItem.qml:132 qml/listitemmenu.cpp:375
 #, kde-format
 msgctxt "Port is unplugged"
 msgid "%1 (unplugged)"
 msgstr "%1 (kopla frå)"
 
-#: kcm/ui/DeviceListItem.qml:205
+#: kcm/ui/DeviceListItem.qml:207
 #, kde-format
 msgctxt "Placeholder is channel name"
 msgid "%1:"
 msgstr "%1:"
 
-#: kcm/ui/DeviceListItem.qml:231
+#: kcm/ui/DeviceListItem.qml:233
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test"
 msgstr "Test"
 
-#: kcm/ui/DeviceListItem.qml:238
+#: kcm/ui/DeviceListItem.qml:240
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "Test …"
 
-#: kcm/ui/DeviceListItem.qml:246
+#: kcm/ui/DeviceListItem.qml:248
 #, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
@@ -166,12 +175,12 @@ msgid ""
 msgstr ""
 "Flytt automatisk alle køyrande straumar når ei ny uteining vert tilgjengeleg"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:205
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:206
 #, kde-format
 msgid "Playback Devices"
 msgstr "Avspelingseiningar"
 
-#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:229
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:230
 #, kde-format
 msgid "Recording Devices"
 msgstr "Opptakseiningar"
@@ -362,24 +371,26 @@ msgid "Reloading"
 msgstr "Lastar på nytt"
 
 #: kcm/ui/RenameDevices.qml:130
-#, kde-format
-msgctxt "place holder text, %1 is a device name"
+#, fuzzy, kde-kuit-format
+#| msgctxt "place holder text, %1 is a device name"
+#| msgid "%1 (click 'Save' to apply)"
+msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (Trykk «Lagra» for å ta i bruk)"
 
-#: kcm/ui/RenameDevices.qml:153
+#: kcm/ui/RenameDevices.qml:154
 #, kde-format
 msgctxt "@action apply currently editing test"
 msgid "Apply"
 msgstr "Bruk"
 
-#: kcm/ui/RenameDevices.qml:159
+#: kcm/ui/RenameDevices.qml:160
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Tilbakestill"
 
-#: kcm/ui/RenameDevices.qml:166
+#: kcm/ui/RenameDevices.qml:167
 #, kde-format
 msgctxt ""
 "@label placeholder text when we don't know the default value of a device yet"

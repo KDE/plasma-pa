@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:47+0000\n"
+"POT-Creation-Date: 2026-10-16 00:50+0000\n"
 "PO-Revision-Date: 2026-03-27 11:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27,58 +27,66 @@ msgstr "Geen opname op dit moment"
 msgid "Currently not playing"
 msgstr "Geen afspelen op dit moment"
 
-#: ListItemBase.qml:205
+#: ListItemBase.qml:134
+#, fuzzy, kde-kuit-format
+#| msgctxt "volume percentage"
+#| msgid "%1%"
+msgctxt "@label/rich"
+msgid "%1"
+msgstr "%1%"
+
+#: ListItemBase.qml:208
 #, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Aanvullende opties"
 
-#: ListItemBase.qml:207
+#: ListItemBase.qml:210
 #, kde-format
 msgid "Show additional options for %1"
 msgstr "Additionele opties voor %1 tonen"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
 msgstr "Dempen opheffen"
 
-#: ListItemBase.qml:229
+#: ListItemBase.qml:232
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Dempen"
 
-#: ListItemBase.qml:231
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Unmute %1"
 msgstr "Van %1 dempen opheffen"
 
-#: ListItemBase.qml:231
+#: ListItemBase.qml:234
 #, kde-format
 msgid "Mute %1"
 msgstr "%1 dempen"
 
-#: ListItemBase.qml:254
+#: ListItemBase.qml:257
 #, kde-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Volume voor %1 aanpassen"
 
-#: ListItemBase.qml:318 MicrophoneTestView.qml:215
+#: ListItemBase.qml:321 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:339 MicrophoneTestView.qml:228
+#: ListItemBase.qml:342 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100%"
 
-#: ListItemBase.qml:344
+#: ListItemBase.qml:347
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
