@@ -32,12 +32,10 @@ msgid "Currently not playing"
 msgstr "Воспроизведение не выполняется"
 
 #: ListItemBase.qml:134
-#, fuzzy, kde-kuit-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1%"
+msgstr "%1"
 
 #: ListItemBase.qml:208
 #, kde-format
