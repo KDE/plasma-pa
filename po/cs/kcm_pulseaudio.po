@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-16 00:50+0000\n"
-"PO-Revision-Date: 2026-10-17 01:09+0200\n"
+"PO-Revision-Date: 2026-10-17 09:59+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -374,12 +374,10 @@ msgid "Reloading"
 msgstr "Znova načítám"
 
 #: kcm/ui/RenameDevices.qml:130
-#, fuzzy, kde-kuit-format
-#| msgctxt "place holder text, %1 is a device name"
-#| msgid "%1 (click 'Save' to apply)"
+#, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr "%1 (pro použití klikněte na „Uložit“)"
+msgstr "%1 (pro použití klikněte na 'Uložit')"
 
 #: kcm/ui/RenameDevices.qml:154
 #, kde-format
