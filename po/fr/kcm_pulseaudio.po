@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-16 03:04+0000\n"
-"PO-Revision-Date: 2026-08-21 09:20+0200\n"
+"PO-Revision-Date: 2026-10-17 13:34+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 26.07.90\n"
+"X-Generator: Lokalize 26.08.1\n"
 "X-Text-Markup: kde4\n"
 
 #: devicerenamesaver.cpp:115
@@ -89,12 +89,10 @@ msgstr "Réessayer"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
 #: kcm/ui/RenameDevices.qml:133
-#, fuzzy, kde-kuit-format
-#| msgctxt "Placeholder is channel name"
-#| msgid "%1:"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1 :"
+msgstr "%1"
 
 #: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:235
 #, kde-format
@@ -386,9 +384,7 @@ msgid "Reloading"
 msgstr "Rechargement"
 
 #: kcm/ui/RenameDevices.qml:130
-#, fuzzy, kde-kuit-format
-#| msgctxt "place holder text, %1 is a device name"
-#| msgid "%1 (click 'Save' to apply)"
+#, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (Cliquer sur « Enregistrer » pour appliquer)"
