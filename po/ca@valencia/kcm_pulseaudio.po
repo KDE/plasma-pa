@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-16 03:04+0000\n"
-"PO-Revision-Date: 2026-08-20 09:40+0200\n"
+"PO-Revision-Date: 2026-10-16 08:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -86,12 +86,10 @@ msgstr "Torna-ho a intentar"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
 #: kcm/ui/RenameDevices.qml:133
-#, fuzzy, kde-kuit-format
-#| msgctxt "Placeholder is channel name"
-#| msgid "%1:"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1:"
+msgstr "%1"
 
 #: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:235
 #, kde-format
@@ -327,13 +325,13 @@ msgstr "Sensibilitat"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: kcm/ui/MuteButton.qml:24
 #, kde-format
@@ -383,9 +381,7 @@ msgid "Reloading"
 msgstr "S'està tornant a carregar"
 
 #: kcm/ui/RenameDevices.qml:130
-#, fuzzy, kde-kuit-format
-#| msgctxt "place holder text, %1 is a device name"
-#| msgid "%1 (click 'Save' to apply)"
+#, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (cliqueu damunt «Guarda» per a aplicar)"
@@ -490,12 +486,12 @@ msgstr "Abaixa el volum"
 #: kded/audioshortcutsservice.cpp:114
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr "Apuja el volum un 1%"
+msgstr "Apuja el volum un 1 %"
 
 #: kded/audioshortcutsservice.cpp:129
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr "Abaixa el volum un 1%"
+msgstr "Abaixa el volum un 1 %"
 
 #: kded/audioshortcutsservice.cpp:144
 #, kde-format
