@@ -57,15 +57,12 @@ AudioShortcutsService::AudioShortcutsService(QObject *parent, const QList<QVaria
     connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::stateChanged, this, &AudioShortcutsService::contextConnectedChanged);
     connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::autoConnectingChanged, this, &AudioShortcutsService::contextAutoConnectingChanged);
     connect(&m_preferredDevice, &PreferredDevice::sinkChanged, this, [this]() {
+        disconnect(m_preferredSinkVolumeConnection);
         auto sink = m_preferredDevice.sink();
         if (!sink) {
             return;
         }
-        connect(sink, &PulseAudioQt::Sink::volumeChanged, this, [this]() {
-            auto sink = m_preferredDevice.sink();
-            if (!sink) {
-                return;
-            }
+        m_preferredSinkVolumeConnection = connect(sink, &PulseAudioQt::Sink::volumeChanged, this, [this, sink]() {
             showVolume(volumePercent(sink->volume()));
         });
     });
