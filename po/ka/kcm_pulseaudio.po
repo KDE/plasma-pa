@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-16 03:04+0000\n"
-"PO-Revision-Date: 2026-08-20 06:18+0200\n"
+"PO-Revision-Date: 2026-10-21 01:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -82,12 +82,10 @@ msgstr "გამეორება"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
 #: kcm/ui/RenameDevices.qml:133
-#, fuzzy, kde-kuit-format
-#| msgctxt "Placeholder is channel name"
-#| msgid "%1:"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1:"
+msgstr "%1"
 
 #: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:235
 #, kde-format
@@ -374,12 +372,10 @@ msgid "Reloading"
 msgstr "თავიდან ჩატვირთვა"
 
 #: kcm/ui/RenameDevices.qml:130
-#, fuzzy, kde-kuit-format
-#| msgctxt "place holder text, %1 is a device name"
-#| msgid "%1 (click 'Save' to apply)"
+#, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr "%1 (გადასატარებლად დააწკაპუნეთ 'შენახვაზე')"
+msgstr "%1 (გადასატარებლად დააწკაპუნეთ ღილაკზე 'შენახვა')"
 
 #: kcm/ui/RenameDevices.qml:154
 #, kde-format
