@@ -258,8 +258,15 @@ PC3.ItemDelegate {
                     Accessible.onPressAction: moved()
 
                     value: to, item.model.Volume
-                    function increase() { value = value + myStepSize; moved() }
-                    function decrease() { value = value - myStepSize; moved() }
+                    function increase() { changeVolumeBy(myStepSize) }
+                    function decrease() { changeVolumeBy(-myStepSize) }
+                    function changeVolumeBy(delta: real) {
+                        value = value + delta;
+                        moved();
+                        if (item.type === "sink") {
+                            playFeedback(item.model.Index);
+                        }
+                    }
                     Keys.onLeftPressed: Qt.application.layoutDirection === Qt.LeftToRight ? decrease() : increase()
                     Keys.onRightPressed: Qt.application.layoutDirection === Qt.LeftToRight ? increase() : decrease()
                     onMoved: {
