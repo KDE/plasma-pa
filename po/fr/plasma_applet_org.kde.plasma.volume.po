@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:50+0000\n"
+"POT-Creation-Date: 2026-10-26 00:51+0000\n"
 "PO-Revision-Date: 2026-10-17 13:34+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -80,19 +80,19 @@ msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Ajuster le volume de %1"
 
-#: ListItemBase.qml:321 MicrophoneTestView.qml:215
+#: ListItemBase.qml:328 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: ListItemBase.qml:342 MicrophoneTestView.qml:228
+#: ListItemBase.qml:349 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
 msgstr "100 %"
 
-#: ListItemBase.qml:347
+#: ListItemBase.qml:354
 #, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
