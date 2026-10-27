@@ -84,6 +84,7 @@ private:
     VolumeFeedback *m_feedback;
     bool m_hasDefaultSink = false;
     PreferredDevice m_preferredDevice;
+    QMetaObject::Connection m_preferredSinkVolumeConnection;
     std::unique_ptr<MutedMicrophoneReminder> m_mutedMicrophoneReminder;
     KDBusPropertiesChangedAdaptor m_adaptor = {QStringLiteral("/modules/audioshortcutsservice"), this};
 };
