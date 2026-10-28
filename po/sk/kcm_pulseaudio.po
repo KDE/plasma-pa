@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 03:04+0000\n"
+"POT-Creation-Date: 2026-10-28 03:17+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -87,7 +87,7 @@ msgctxt "@label/rich"
 msgid "%1"
 msgstr "%1"
 
-#: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:235
+#: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:233
 #, kde-format
 msgid "Device name not found"
 msgstr "Názov zariadenia nebol nájdený"
@@ -466,74 +466,74 @@ msgstr "Application starts using muted microphone"
 msgid "Default output device"
 msgstr "Predvolené výstupné zariadenie"
 
-#: kded/audioshortcutsservice.cpp:84
+#: kded/audioshortcutsservice.cpp:82
 #, kde-format
 msgid "Increase Volume"
 msgstr "Zvýšiť hlasitosť"
 
-#: kded/audioshortcutsservice.cpp:99
+#: kded/audioshortcutsservice.cpp:97
 #, kde-format
 msgid "Decrease Volume"
 msgstr "Znížiť hlasitosť"
 
-#: kded/audioshortcutsservice.cpp:114
+#: kded/audioshortcutsservice.cpp:112
 #, kde-format
 msgid "Increase Volume by 1%"
 msgstr "Zvýšiť hlasitosť o 1%"
 
-#: kded/audioshortcutsservice.cpp:129
+#: kded/audioshortcutsservice.cpp:127
 #, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "Znížiť hlasitosť o 1%"
 
-#: kded/audioshortcutsservice.cpp:144
+#: kded/audioshortcutsservice.cpp:142
 #, kde-format
 msgid "Increase Microphone Volume"
 msgstr "Zvýšiť hlasitosť mikrofónu"
 
-#: kded/audioshortcutsservice.cpp:158
+#: kded/audioshortcutsservice.cpp:156
 #, kde-format
 msgid "Decrease Microphone Volume"
 msgstr "Znížiť hlasitosť mikrofónu"
 
-#: kded/audioshortcutsservice.cpp:172 qml/microphoneindicator.cpp:133
+#: kded/audioshortcutsservice.cpp:170 qml/microphoneindicator.cpp:133
 #, kde-format
 msgid "Mute"
 msgstr "Stlmiť"
 
-#: kded/audioshortcutsservice.cpp:185
+#: kded/audioshortcutsservice.cpp:183
 #, kde-format
 msgid "Mute Microphone"
 msgstr "Stlmiť mikrofón"
 
-#: kded/audioshortcutsservice.cpp:198
+#: kded/audioshortcutsservice.cpp:196
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
 msgstr "Stlačte na hovorenie"
 
-#: kded/audioshortcutsservice.cpp:206
+#: kded/audioshortcutsservice.cpp:204
 #, kde-format
 msgid "Audio Volume"
 msgstr "Hlasitosti zvuku"
 
-#: kded/audioshortcutsservice.cpp:224
+#: kded/audioshortcutsservice.cpp:222
 #, kde-format
 msgid "No such device"
 msgstr "Zariadenie neexistuje"
 
-#: kded/audioshortcutsservice.cpp:270
+#: kded/audioshortcutsservice.cpp:268
 #, kde-format
 msgid "No output device"
 msgstr "Žiadne výstupné zariadenie"
 
-#: kded/audioshortcutsservice.cpp:291 kded/audioshortcutsservice.cpp:311
+#: kded/audioshortcutsservice.cpp:289 kded/audioshortcutsservice.cpp:309
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
 msgstr "%1 (%2% Batéria)"
 
-#: kded/audioshortcutsservice.cpp:397
+#: kded/audioshortcutsservice.cpp:395
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
