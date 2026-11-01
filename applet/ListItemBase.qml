@@ -322,11 +322,11 @@ PC3.ItemDelegate {
                     id: percentText
                     readonly property real value: item.model.PulseObject.volume > slider.to ? item.model.PulseObject.volume : slider.value
                     readonly property real displayValue: Math.round(value / PulseAudio.NormalVolume * 100.0)
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.minimumWidth: percentMetrics.advanceWidth
+                    Layout.minimumWidth: Math.ceil(percentMetrics.advanceWidth)
                     horizontalAlignment: Qt.AlignRight
                     text: i18nc("volume percentage", "%1%", displayValue)
                     textFormat: Text.PlainText
+                    font.features: Object.assign({}, Kirigami.Theme.defaultFont.features, { "tnum": 1 })
                     // Display a subtle visual indication that the volume
                     // might be dangerously high
                     // ------------------------------------------------
