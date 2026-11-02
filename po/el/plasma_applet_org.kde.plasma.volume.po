@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 03:00+0000\n"
+"POT-Creation-Date: 2026-11-02 03:03+0000\n"
 "PO-Revision-Date: 2021-07-07 11:46+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -78,7 +78,7 @@ msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "Προσαρμογή έντασης για το %1"
 
-#: ListItemBase.qml:328 MicrophoneTestView.qml:215
+#: ListItemBase.qml:327 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.volume\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 03:00+0000\n"
+"POT-Creation-Date: 2026-11-02 03:03+0000\n"
 "PO-Revision-Date: 2026-02-21 10:21+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
@@ -76,7 +76,7 @@ msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 の音量を調整"
 
-#: ListItemBase.qml:328 MicrophoneTestView.qml:215
+#: ListItemBase.qml:327 MicrophoneTestView.qml:215
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
