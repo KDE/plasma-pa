@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:03+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2026-02-01 17:39+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -80,7 +80,7 @@ msgid "Retry"
 msgstr "மீண்டும் முயற்சி"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
-#: kcm/ui/RenameDevices.qml:133
+#: kcm/ui/RenameDevices.qml:131
 #, fuzzy, kde-kuit-format
 #| msgctxt "Placeholder is channel name"
 #| msgid "%1:"
@@ -174,12 +174,12 @@ msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "புதிய வெளியீட்டு சாதனம் கிடைக்கும்போது அனைத்து செயலிகளின் ஒலியை அதற்கே மாற்று"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:206
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:187
 #, kde-format
 msgid "Playback Devices"
 msgstr "ஒலியியக்கும் சாதனங்கள்"
 
-#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:230
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:211
 #, kde-format
 msgid "Recording Devices"
 msgstr "ஒலிப்பதிவு சாதனங்கள்"
@@ -370,7 +370,7 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "மீளேற்றுகிறது"
 
-#: kcm/ui/RenameDevices.qml:130
+#: kcm/ui/RenameDevices.qml:128
 #, fuzzy, kde-kuit-format
 #| msgctxt "place holder text, %1 is a device name"
 #| msgid "%1 (click 'Save' to apply)"
@@ -378,24 +378,11 @@ msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (செயல்படுத்த 'சேமி' என்பதை அழுத்தவும்)"
 
-#: kcm/ui/RenameDevices.qml:154
-#, kde-format
-msgctxt "@action apply currently editing test"
-msgid "Apply"
-msgstr "செயல்படுத்து"
-
-#: kcm/ui/RenameDevices.qml:160
+#: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "மீட்டமை"
-
-#: kcm/ui/RenameDevices.qml:167
-#, kde-format
-msgctxt ""
-"@label placeholder text when we don't know the default value of a device yet"
-msgid "DEFAULT"
-msgstr "இயல்பிருப்பு"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -655,6 +642,16 @@ msgstr "%1 ஒலிவாங்கியை பயன்படுத்து�
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 ஒலிவாங்கியை பயன்படுத்துகிறது"
+
+#~ msgctxt "@action apply currently editing test"
+#~ msgid "Apply"
+#~ msgstr "செயல்படுத்து"
+
+#~ msgctxt ""
+#~ "@label placeholder text when we don't know the default value of a device "
+#~ "yet"
+#~ msgid "DEFAULT"
+#~ msgstr "இயல்பிருப்பு"
 
 #~ msgctxt ""
 #~ "%1 is an error string produced by an external component, and probably "

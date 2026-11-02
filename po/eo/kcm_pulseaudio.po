@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:03+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2025-03-22 22:36+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -81,7 +81,7 @@ msgid "Retry"
 msgstr "Reprovi"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
-#: kcm/ui/RenameDevices.qml:133
+#: kcm/ui/RenameDevices.qml:131
 #, fuzzy, kde-kuit-format
 #| msgctxt "Placeholder is channel name"
 #| msgid "%1:"
@@ -175,12 +175,12 @@ msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "Aŭtomate ŝanĝi ĉiujn rulantajn fluojn kiam nova eligo disponeblas"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:206
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:187
 #, kde-format
 msgid "Playback Devices"
 msgstr "Reproduktaj aparatoj"
 
-#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:230
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:211
 #, kde-format
 msgid "Recording Devices"
 msgstr "Registrado-Aparatoj"
@@ -371,7 +371,7 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "Reŝargante"
 
-#: kcm/ui/RenameDevices.qml:130
+#: kcm/ui/RenameDevices.qml:128
 #, fuzzy, kde-kuit-format
 #| msgctxt "place holder text, %1 is a device name"
 #| msgid "%1 (click 'Save' to apply)"
@@ -379,24 +379,11 @@ msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (klaku 'Konservi' por apliki)"
 
-#: kcm/ui/RenameDevices.qml:154
-#, kde-format
-msgctxt "@action apply currently editing test"
-msgid "Apply"
-msgstr "Apliki"
-
-#: kcm/ui/RenameDevices.qml:160
+#: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Restarigi"
-
-#: kcm/ui/RenameDevices.qml:167
-#, kde-format
-msgctxt ""
-"@label placeholder text when we don't know the default value of a device yet"
-msgid "DEFAULT"
-msgstr "DEFAŬLTO"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -659,6 +646,16 @@ msgstr "%1 uzas la mikrofonon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 uzas la mikrofonon"
+
+#~ msgctxt "@action apply currently editing test"
+#~ msgid "Apply"
+#~ msgstr "Apliki"
+
+#~ msgctxt ""
+#~ "@label placeholder text when we don't know the default value of a device "
+#~ "yet"
+#~ msgid "DEFAULT"
+#~ msgstr "DEFAŬLTO"
 
 #~ msgctxt ""
 #~ "%1 is an error string produced by an external component, and probably "

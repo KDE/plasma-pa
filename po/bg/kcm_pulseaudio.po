@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:03+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2026-10-19 15:20+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -80,7 +80,7 @@ msgid "Retry"
 msgstr "Повторен опит"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
-#: kcm/ui/RenameDevices.qml:133
+#: kcm/ui/RenameDevices.qml:131
 #, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
@@ -171,12 +171,12 @@ msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "Автоматично превключване на всички текущи потоци при наличен нов изход"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:206
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:187
 #, kde-format
 msgid "Playback Devices"
 msgstr "Устройства за възпроизвеждане"
 
-#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:230
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:211
 #, kde-format
 msgid "Recording Devices"
 msgstr "Устройства за запис"
@@ -372,30 +372,17 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "Презареждане"
 
-#: kcm/ui/RenameDevices.qml:130
+#: kcm/ui/RenameDevices.qml:128
 #, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (натиснете \"Запази\", за да приложите)"
 
-#: kcm/ui/RenameDevices.qml:154
-#, kde-format
-msgctxt "@action apply currently editing test"
-msgid "Apply"
-msgstr "Прилагане"
-
-#: kcm/ui/RenameDevices.qml:160
+#: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Нулиране"
-
-#: kcm/ui/RenameDevices.qml:167
-#, kde-format
-msgctxt ""
-"@label placeholder text when we don't know the default value of a device yet"
-msgid "DEFAULT"
-msgstr "По подразбиране"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -649,3 +636,13 @@ msgstr "%1 използва микрофона (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 използва микрофона"
+
+#~ msgctxt "@action apply currently editing test"
+#~ msgid "Apply"
+#~ msgstr "Прилагане"
+
+#~ msgctxt ""
+#~ "@label placeholder text when we don't know the default value of a device "
+#~ "yet"
+#~ msgid "DEFAULT"
+#~ msgstr "По подразбиране"

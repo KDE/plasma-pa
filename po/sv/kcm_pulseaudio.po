@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:03+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2026-09-17 21:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -80,7 +80,7 @@ msgid "Retry"
 msgstr "Försök igen"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
-#: kcm/ui/RenameDevices.qml:133
+#: kcm/ui/RenameDevices.qml:131
 #, fuzzy, kde-kuit-format
 #| msgctxt "Placeholder is channel name"
 #| msgid "%1:"
@@ -173,12 +173,12 @@ msgid ""
 msgstr ""
 "Byt automatiskt alla pågående strömmar när en ny utgång blir tillgänglig"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:206
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:187
 #, kde-format
 msgid "Playback Devices"
 msgstr "Uppspelningsenheter"
 
-#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:230
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:211
 #, kde-format
 msgid "Recording Devices"
 msgstr "Inspelningsenheter"
@@ -372,7 +372,7 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "Läser in igen"
 
-#: kcm/ui/RenameDevices.qml:130
+#: kcm/ui/RenameDevices.qml:128
 #, fuzzy, kde-kuit-format
 #| msgctxt "place holder text, %1 is a device name"
 #| msgid "%1 (click 'Save' to apply)"
@@ -380,24 +380,11 @@ msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (klicka på 'Spara' för att verkställa)"
 
-#: kcm/ui/RenameDevices.qml:154
-#, kde-format
-msgctxt "@action apply currently editing test"
-msgid "Apply"
-msgstr "Verkställ"
-
-#: kcm/ui/RenameDevices.qml:160
+#: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Återställ"
-
-#: kcm/ui/RenameDevices.qml:167
-#, kde-format
-msgctxt ""
-"@label placeholder text when we don't know the default value of a device yet"
-msgid "DEFAULT"
-msgstr "FÖRVAL"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -651,6 +638,16 @@ msgstr "%1 använder mikrofonen (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 använder mikrofonen"
+
+#~ msgctxt "@action apply currently editing test"
+#~ msgid "Apply"
+#~ msgstr "Verkställ"
+
+#~ msgctxt ""
+#~ "@label placeholder text when we don't know the default value of a device "
+#~ "yet"
+#~ msgid "DEFAULT"
+#~ msgstr "FÖRVAL"
 
 #~ msgctxt ""
 #~ "%1 is an error string produced by an external component, and probably "

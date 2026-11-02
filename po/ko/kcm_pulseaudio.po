@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:03+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2026-09-28 23:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -80,7 +80,7 @@ msgid "Retry"
 msgstr "다시 시도"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
-#: kcm/ui/RenameDevices.qml:133
+#: kcm/ui/RenameDevices.qml:131
 #, fuzzy, kde-kuit-format
 #| msgctxt "Placeholder is channel name"
 #| msgid "%1:"
@@ -171,12 +171,12 @@ msgid ""
 "Automatically switch all running streams when a new output becomes available"
 msgstr "새로운 출력을 사용할 수 있을 때 자동으로 모든 스트림 전환"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:206
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:187
 #, kde-format
 msgid "Playback Devices"
 msgstr "재생 장치"
 
-#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:230
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:211
 #, kde-format
 msgid "Recording Devices"
 msgstr "녹음 장치"
@@ -371,7 +371,7 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "다시 불러오는 중"
 
-#: kcm/ui/RenameDevices.qml:130
+#: kcm/ui/RenameDevices.qml:128
 #, fuzzy, kde-kuit-format
 #| msgctxt "place holder text, %1 is a device name"
 #| msgid "%1 (click 'Save' to apply)"
@@ -379,24 +379,11 @@ msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1('저장'을 클릭하여 적용)"
 
-#: kcm/ui/RenameDevices.qml:154
-#, kde-format
-msgctxt "@action apply currently editing test"
-msgid "Apply"
-msgstr "적용"
-
-#: kcm/ui/RenameDevices.qml:160
+#: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "초기화"
-
-#: kcm/ui/RenameDevices.qml:167
-#, kde-format
-msgctxt ""
-"@label placeholder text when we don't know the default value of a device yet"
-msgid "DEFAULT"
-msgstr "기본값"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -650,6 +637,16 @@ msgstr "%1에서 마이크(%2) 사용 중"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1에서 마이크 사용 중"
+
+#~ msgctxt "@action apply currently editing test"
+#~ msgid "Apply"
+#~ msgstr "적용"
+
+#~ msgctxt ""
+#~ "@label placeholder text when we don't know the default value of a device "
+#~ "yet"
+#~ msgid "DEFAULT"
+#~ msgstr "기본값"
 
 #~ msgctxt ""
 #~ "%1 is an error string produced by an external component, and probably "

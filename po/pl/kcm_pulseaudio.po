@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:03+0000\n"
+"POT-Creation-Date: 2026-11-02 00:57+0000\n"
 "PO-Revision-Date: 2026-10-04 13:01+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -81,7 +81,7 @@ msgid "Retry"
 msgstr "Ponów"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
-#: kcm/ui/RenameDevices.qml:133
+#: kcm/ui/RenameDevices.qml:131
 #, fuzzy, kde-kuit-format
 #| msgctxt "Placeholder is channel name"
 #| msgid "%1:"
@@ -176,12 +176,12 @@ msgstr ""
 "Samoczynnie przełącz wszystkie działające strumienie, gdy nowe wyjście "
 "stanie się dostępne"
 
-#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:206
+#: kcm/ui/main.qml:143 kcm/ui/RenameDevices.qml:187
 #, kde-format
 msgid "Playback Devices"
 msgstr "Urządzenia odtwarzające"
 
-#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:230
+#: kcm/ui/main.qml:167 kcm/ui/RenameDevices.qml:211
 #, kde-format
 msgid "Recording Devices"
 msgstr "Urządzenia nagrywające"
@@ -377,7 +377,7 @@ msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "Ponowne wczytywanie"
 
-#: kcm/ui/RenameDevices.qml:130
+#: kcm/ui/RenameDevices.qml:128
 #, fuzzy, kde-kuit-format
 #| msgctxt "place holder text, %1 is a device name"
 #| msgid "%1 (click 'Save' to apply)"
@@ -385,24 +385,11 @@ msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (naciśnij 'Zapisz', aby zastosować)"
 
-#: kcm/ui/RenameDevices.qml:154
-#, kde-format
-msgctxt "@action apply currently editing test"
-msgid "Apply"
-msgstr "Zastosuj"
-
-#: kcm/ui/RenameDevices.qml:160
+#: kcm/ui/RenameDevices.qml:146
 #, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Wyzeruj"
-
-#: kcm/ui/RenameDevices.qml:167
-#, kde-format
-msgctxt ""
-"@label placeholder text when we don't know the default value of a device yet"
-msgid "DEFAULT"
-msgstr "DOMYŚLNA"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -656,6 +643,16 @@ msgstr "%1 używa mikrofonu (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 używa mikrofonu"
+
+#~ msgctxt "@action apply currently editing test"
+#~ msgid "Apply"
+#~ msgstr "Zastosuj"
+
+#~ msgctxt ""
+#~ "@label placeholder text when we don't know the default value of a device "
+#~ "yet"
+#~ msgid "DEFAULT"
+#~ msgstr "DOMYŚLNA"
 
 #~ msgctxt ""
 #~ "%1 is an error string produced by an external component, and probably "
