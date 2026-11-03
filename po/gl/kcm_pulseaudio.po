@@ -376,9 +376,7 @@ msgid "Reloading"
 msgstr "Cargando de novo"
 
 #: kcm/ui/RenameDevices.qml:128
-#, fuzzy, kde-kuit-format
-#| msgctxt "place holder text, %1 is a device name"
-#| msgid "%1 (click 'Save' to apply)"
+#, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (prema «Save» para aplicar)"
