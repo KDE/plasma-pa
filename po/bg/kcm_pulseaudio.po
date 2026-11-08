@@ -636,13 +636,3 @@ msgstr "%1 използва микрофона (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 използва микрофона"
-
-#~ msgctxt "@action apply currently editing test"
-#~ msgid "Apply"
-#~ msgstr "Прилагане"
-
-#~ msgctxt ""
-#~ "@label placeholder text when we don't know the default value of a device "
-#~ "yet"
-#~ msgid "DEFAULT"
-#~ msgstr "По подразбиране"
