@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 03:03+0000\n"
-"PO-Revision-Date: 2026-04-03 21:58+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-11-11 22:58+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -80,13 +80,13 @@ msgstr "Настройка громкости %1"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: ListItemBase.qml:349 MicrophoneTestView.qml:228
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: ListItemBase.qml:354
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "Звук выключен"
 #: main.qml:96
 #, kde-format
 msgid "Volume at %1%"
-msgstr "Громкость: %1%"
+msgstr "Громкость: %1 %"
 
 #: main.qml:107
 #, kde-format
@@ -274,7 +274,7 @@ msgstr "Уровень громкости"
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr "%1 %"
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
 #, kde-format

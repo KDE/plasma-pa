@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-28 03:17+0000\n"
-"PO-Revision-Date: 2026-09-06 15:17+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-11-11 22:58+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -323,13 +323,13 @@ msgstr "Чувствительность"
 #, kde-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:693 kcm/ui/VolumeSlider.qml:89
 #, kde-format
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: kcm/ui/MuteButton.qml:24
 #, kde-format
@@ -484,12 +484,12 @@ msgstr "Уменьшить громкость"
 #: kded/audioshortcutsservice.cpp:112
 #, kde-format
 msgid "Increase Volume by 1%"
-msgstr "Увеличить громкость на 1%"
+msgstr "Увеличить громкость на 1 %"
 
 #: kded/audioshortcutsservice.cpp:127
 #, kde-format
 msgid "Decrease Volume by 1%"
-msgstr "Уменьшить громкость на 1%"
+msgstr "Уменьшить громкость на 1 %"
 
 #: kded/audioshortcutsservice.cpp:142
 #, kde-format
@@ -536,7 +536,7 @@ msgstr "Не найдено устройств вывода звука"
 #, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (батарея: %2%)"
+msgstr "%1 (батарея: %2 %)"
 
 #: kded/audioshortcutsservice.cpp:395
 #, kde-format
