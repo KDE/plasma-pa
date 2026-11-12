@@ -19,38 +19,42 @@ msgstr ""
 "X-Generator: Lokalize 20.04.2\n"
 
 #: devicerenamesaver.cpp:115
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info:status error message"
 msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
+"Οι αλλαγές δεν εφαρμόστηκαν.<nl/>Αποτυχία επανεκκίνησης του wireplumber."
+"service. Η εντολή κατέρρευσε."
 
 #: devicerenamesaver.cpp:125
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info:status error message %1 is an integer exit code"
 msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
+"Οι αλλαγές δεν εφαρμόστηκαν.<nl/>Αποτυχία επανεκκίνησης του wireplumber."
+"service. Η εντολή τερματίστηκε με κωδικό: %1."
 
 #: devicerenamesaver.cpp:237
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr ""
+msgstr "Αποτυχία χειρισμού συσκευών: %1."
 
 #: devicerenamesaver.cpp:250
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr ""
+msgstr "Αποτυχία δημιουργίας καταλόγου: %1."
 
 #: devicerenamesaver.cpp:258
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr ""
+msgstr "Αποτυχία ανοίγματος αρχείου για εγγραφή: %1."
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:153
 #, kde-format
@@ -59,22 +63,22 @@ msgid "Profile:"
 msgstr "Προφίλ:"
 
 #: kcm/ui/ContextBrokenOverlay.qml:25
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Η σύνδεση με την υπηρεσία ήχου χάθηκε"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Γίνεται προσπάθεια επανασύνδεσης…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Επανάληψη"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
 #: kcm/ui/RenameDevices.qml:131
@@ -86,9 +90,9 @@ msgid "%1"
 msgstr "%1:"
 
 #: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:232
-#, kde-format
+#, fuzzy, kde-format
 msgid "Device name not found"
-msgstr ""
+msgstr "Δεν βρέθηκε όνομα συσκευής"
 
 #: kcm/ui/DeviceListItem.qml:107
 #, kde-format
@@ -128,10 +132,10 @@ msgid "Test…"
 msgstr "Δοκιμή"
 
 #: kcm/ui/DeviceListItem.qml:248
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
-msgstr ""
+msgstr "Εμφάνιση καναλιών"
 
 #: kcm/ui/main.qml:74
 #, kde-format
@@ -257,9 +261,9 @@ msgid "Mono"
 msgstr "Μονοφωνική"
 
 #: kcm/ui/main.qml:492
-#, kde-format
+#, fuzzy, kde-format
 msgid "Click on any speaker to test sound"
-msgstr ""
+msgstr "Κάντε κλικ σε οποιοδήποτε ηχείο για δοκιμή ήχου"
 
 #: kcm/ui/main.qml:507
 #, kde-kuit-format
@@ -272,40 +276,40 @@ msgid ""
 msgstr ""
 
 #: kcm/ui/main.qml:572
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Διακοπή"
 
 #: kcm/ui/main.qml:572
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Εγγραφή"
 
 #: kcm/ui/main.qml:585
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Διακοπή"
 
 #: kcm/ui/main.qml:585
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "Αναπαραγωγή"
 
 #: kcm/ui/main.qml:604
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "Στάθμη έντασης"
 
 #: kcm/ui/main.qml:634
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:649
 #, fuzzy, kde-format
@@ -348,30 +352,32 @@ msgid "Rename Devices"
 msgstr "Συσκευές εγγραφής"
 
 #: kcm/ui/RenameDevices.qml:38
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action save changes"
 msgid "Save"
-msgstr ""
+msgstr "Αποθήκευση"
 
 #: kcm/ui/RenameDevices.qml:68
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
+"Η αποθήκευση των αλλαγών θα επανεκκινήσει τις υπηρεσίες ήχου. Οι εφαρμογές "
+"που αναπαράγουν ήχο θα διακοπούν και ίσως χρειαστεί να τις ανοίξετε ξανά."
 
 #: kcm/ui/RenameDevices.qml:80
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action"
 msgid "Report Bug"
-msgstr ""
+msgstr "Αναφορά σφάλματος"
 
 #: kcm/ui/RenameDevices.qml:92
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
-msgstr ""
+msgstr "Επαναφόρτωση"
 
 #: kcm/ui/RenameDevices.qml:128
 #, kde-kuit-format
@@ -380,10 +386,10 @@ msgid "%1 (click 'Save' to apply)"
 msgstr ""
 
 #: kcm/ui/RenameDevices.qml:146
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
-msgstr ""
+msgstr "Επαναφορά"
 
 #: kcm/ui/StreamListItem.qml:59
 #, kde-format
@@ -397,34 +403,34 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, kde-format
+#, fuzzy, kde-format
 msgid "Volume Controls"
-msgstr ""
+msgstr "Χειριστήρια έντασης"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
-#, kde-format
+#, fuzzy, kde-format
 msgid "Raise maximum volume"
-msgstr ""
+msgstr "Αύξηση μέγιστης έντασης"
 
 #: kcm/ui/VolumeControlsConfig.qml:38
-#, kde-format
+#, fuzzy, kde-format
 msgid "Volume change step:"
-msgstr ""
+msgstr "Βήμα αλλαγής έντασης:"
 
 #: kcm/ui/VolumeControlsConfig.qml:67
-#, kde-format
+#, fuzzy, kde-format
 msgid "Play audio feedback for changes to:"
-msgstr ""
+msgstr "Ηχητική ανάδραση για αλλαγές σε:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
-#, kde-format
+#, fuzzy, kde-format
 msgid "Audio volume"
-msgstr ""
+msgstr "Ένταση ήχου"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, kde-format
+#, fuzzy, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr ""
+msgstr "Εμφάνιση αναδυόμενων ενδείξεων για αλλαγές σε:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
 #, fuzzy, kde-format
@@ -439,10 +445,10 @@ msgid "Mute state"
 msgstr "Σίγαση ήχου"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
-msgstr ""
+msgstr "Πάτημα για ομιλία"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
 #, fuzzy, kde-format
@@ -450,7 +456,7 @@ msgstr ""
 #| msgid "%1 are using the microphone"
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "Τα %1 χρησιμοποιούν το μικρόφωνο"
+msgstr "Εφαρμογή ξεκινά να χρησιμοποιεί μικρόφωνο σε σίγαση"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
 #, fuzzy, kde-format
@@ -459,24 +465,24 @@ msgid "Default output device"
 msgstr "Προκαθορισμένο"
 
 #: kded/audioshortcutsservice.cpp:81
-#, kde-format
+#, fuzzy, kde-format
 msgid "Increase Volume"
-msgstr ""
+msgstr "Αύξηση έντασης"
 
 #: kded/audioshortcutsservice.cpp:96
-#, kde-format
+#, fuzzy, kde-format
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Μείωση έντασης"
 
 #: kded/audioshortcutsservice.cpp:111
-#, kde-format
+#, fuzzy, kde-format
 msgid "Increase Volume by 1%"
-msgstr ""
+msgstr "Αύξηση έντασης κατά 1%"
 
 #: kded/audioshortcutsservice.cpp:126
-#, kde-format
+#, fuzzy, kde-format
 msgid "Decrease Volume by 1%"
-msgstr ""
+msgstr "Μείωση έντασης κατά 1%"
 
 #: kded/audioshortcutsservice.cpp:141
 #, fuzzy, kde-format
@@ -502,20 +508,20 @@ msgid "Mute Microphone"
 msgstr "Μικρόφωνο"
 
 #: kded/audioshortcutsservice.cpp:195
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr ""
+msgstr "Πάτημα για ομιλία"
 
 #: kded/audioshortcutsservice.cpp:203
-#, kde-format
+#, fuzzy, kde-format
 msgid "Audio Volume"
-msgstr ""
+msgstr "Ένταση ήχου"
 
 #: kded/audioshortcutsservice.cpp:221
-#, kde-format
+#, fuzzy, kde-format
 msgid "No such device"
-msgstr ""
+msgstr "Δεν υπάρχει τέτοια συσκευή"
 
 #: kded/audioshortcutsservice.cpp:267
 #, fuzzy, kde-format
@@ -532,17 +538,17 @@ msgid "%1 (%2% Battery)"
 msgstr "%1 (%2)"
 
 #: kded/audioshortcutsservice.cpp:394
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "Μιλήστε…"
 
 #: kded/mutedmicrophonereminder.cpp:131
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "Σίγαση"
+msgstr "%1: Σίγαση"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format

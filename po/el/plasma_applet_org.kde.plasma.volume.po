@@ -41,7 +41,7 @@ msgstr "%1%"
 #| msgid "Show additional options for %1"
 msgctxt "@action:button"
 msgid "Additional Options"
-msgstr "Εμφάνιση επιπλέον επιλογών για το %1"
+msgstr "Επιπλέον επιλογές"
 
 #: ListItemBase.qml:210
 #, kde-format
@@ -53,7 +53,7 @@ msgstr "Εμφάνιση επιπλέον επιλογών για το %1"
 #| msgid "Mute %1"
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "Σίγαση %1"
+msgstr "Κατάργηση σίγασης"
 
 #: ListItemBase.qml:232
 #, kde-format
@@ -91,10 +91,10 @@ msgid "100%"
 msgstr "100%"
 
 #: ListItemBase.qml:354
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr ""
+msgstr "Δοκιμή…"
 
 #: main.qml:36
 #, kde-format
@@ -102,10 +102,10 @@ msgid "Audio Volume"
 msgstr "Ένταση ήχου"
 
 #: main.qml:60 main.qml:62
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
-msgstr ""
+msgstr "Η σύνδεση με την υπηρεσία ήχου χάθηκε"
 
 #: main.qml:64
 #, kde-format
@@ -113,10 +113,10 @@ msgid "No output or input devices found"
 msgstr "Δε βρέθηκαν συσκευές εισόδου ή εξόδου"
 
 #: main.qml:68
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr ""
+msgstr "Γίνεται προσπάθεια επανασύνδεσης…"
 
 #: main.qml:94
 #, kde-format
@@ -129,19 +129,19 @@ msgid "Volume at %1%"
 msgstr "Ένταση στο %1%"
 
 #: main.qml:107
-#, kde-format
+#, fuzzy, kde-format
 msgid "Middle-click to unmute"
-msgstr ""
+msgstr "Μεσαίο κλικ για κατάργηση σίγασης"
 
 #: main.qml:108
-#, kde-format
+#, fuzzy, kde-format
 msgid "Middle-click to mute all audio"
-msgstr ""
+msgstr "Μεσαίο κλικ για σίγαση όλου του ήχου"
 
 #: main.qml:109
-#, kde-format
+#, fuzzy, kde-format
 msgid "Scroll to adjust volume"
-msgstr ""
+msgstr "Κύλιση για ρύθμιση έντασης"
 
 #: main.qml:125
 #, kde-format
@@ -159,23 +159,23 @@ msgid "Applications"
 msgstr "Εφαρμογές"
 
 #: main.qml:392
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "More actions"
-msgstr ""
+msgstr "Περισσότερες ενέργειες"
 
 #: main.qml:434
-#, kde-format
+#, fuzzy, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
-msgstr ""
+msgstr "Να μένει ανοιχτό"
 
 #: main.qml:471
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
-msgstr ""
+msgstr "Επανάληψη"
 
 #: main.qml:505
 #, kde-format
@@ -211,12 +211,15 @@ msgid "Input Streams"
 msgstr "Ροές εγγραφής"
 
 #: main.qml:728
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
+"Η παρατεταμένη χρήση αυτής της λειτουργίας θα καταστρέψει τα ηχεία της "
+"συσκευής. Χρησιμοποιήστε την μόνο προσωρινά, για να ακούγονται πολυμέσα με "
+"χαμηλό ήχο."
 
 #: main.qml:744
 #, kde-format
@@ -246,22 +249,22 @@ msgid "&Configure Audio Devices…"
 msgstr "&Διαμόρφωση συσκευών ήχου…"
 
 #: MicrophoneTestView.qml:104
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Διακοπή"
 
 #: MicrophoneTestView.qml:104
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "Εγγραφή"
 
 #: MicrophoneTestView.qml:118
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "Διακοπή"
 
 #: MicrophoneTestView.qml:118
 #, fuzzy, kde-format
@@ -278,10 +281,10 @@ msgid "Volume level"
 msgstr "Βήμα έντασης:"
 
 #: MicrophoneTestView.qml:166
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
 #, fuzzy, kde-format
@@ -291,16 +294,16 @@ msgid "Sensitivity"
 msgstr "Ευαισθησία μικροφώνου"
 
 #: MicrophoneTestView.qml:237
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
-msgstr ""
+msgstr "Πίσω"
 
 #: MicrophoneTestView.qml:250
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
-msgstr ""
+msgstr "Σφάλμα δοκιμής μικροφώνου:<nl/><nl/>%1"
 
 #: StreamListItem.qml:36
 #, kde-format
