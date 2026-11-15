@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:57+0000\n"
-"PO-Revision-Date: 2017-05-07 22:20+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
 "MIME-Version: 1.0\n"
@@ -83,12 +83,10 @@ msgstr "Pokušaj ponovo"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
 #: kcm/ui/RenameDevices.qml:131
-#, fuzzy, kde-kuit-format
-#| msgctxt "Placeholder is channel name"
-#| msgid "%1:"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1:"
+msgstr "%1"
 
 #: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:232
 #, kde-format
@@ -377,9 +375,7 @@ msgid "Reloading"
 msgstr "Ponovo učitavam"
 
 #: kcm/ui/RenameDevices.qml:128
-#, fuzzy, kde-kuit-format
-#| msgctxt "place holder text, %1 is a device name"
-#| msgid "%1 (click 'Save' to apply)"
+#, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (kliknite na „Sačuvaj“ da primenite)"
@@ -642,13 +638,3 @@ msgstr "%1 koristi mikrofon (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 koristi mikrofon"
-
-#~ msgctxt "@action apply currently editing test"
-#~ msgid "Apply"
-#~ msgstr "Primeni"
-
-#~ msgctxt ""
-#~ "@label placeholder text when we don't know the default value of a device "
-#~ "yet"
-#~ msgid "DEFAULT"
-#~ msgstr "PODRAZUMEVANO"
