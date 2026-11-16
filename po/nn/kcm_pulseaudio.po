@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.11.70\n"
+"X-Generator: Lokalize 27.03.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -126,22 +126,17 @@ msgstr "Krev PulseAudio-modulen %1"
 
 #: kcm/package/contents/ui/main.qml:304
 #, kde-format
-msgid ""
-"Add virtual output device for simultaneous output on all local sound cards"
+msgid "Add virtual output device for simultaneous output on all local sound cards"
 msgstr "Legg til virtuell lydeining for samtidig lyd på alle tilkopla lydkort"
 
 #: kcm/package/contents/ui/main.qml:310
 #, kde-format
-msgid ""
-"Automatically switch all running streams when a new output becomes available"
-msgstr ""
-"Flytt automatisk alle køyrande straumar når ei ny uteining vert tilgjengeleg"
+msgid "Automatically switch all running streams when a new output becomes available"
+msgstr "Flytt automatisk alle køyrande straumar når ei ny uteining vert tilgjengeleg"
 
 #: kcm/package/contents/ui/main.qml:326
 #, kde-format
-msgctxt ""
-"%1 is an error string produced by an external component, and probably "
-"untranslated"
+msgctxt "%1 is an error string produced by an external component, and probably untranslated"
 msgid ""
 "Error trying to play a test sound. \n"
 "The system said: \"%1\""
@@ -292,33 +287,25 @@ msgstr "Ta opp all lyd via denne eininga"
 
 #: qml/listitemmenu.cpp:375
 #, kde-format
-msgctxt ""
-"Heading for a list of ports of a device (for example built-in laptop "
-"speakers or a plug for headphones)"
+msgctxt "Heading for a list of ports of a device (for example built-in laptop speakers or a plug for headphones)"
 msgid "Ports"
 msgstr "Portar"
 
 #: qml/listitemmenu.cpp:445
 #, kde-format
-msgctxt ""
-"Heading for a list of device profiles (5.1 surround sound, stereo, speakers "
-"only, ...)"
+msgctxt "Heading for a list of device profiles (5.1 surround sound, stereo, speakers only, ...)"
 msgid "Profiles"
 msgstr "Profilar"
 
 #: qml/listitemmenu.cpp:479
 #, kde-format
-msgctxt ""
-"Heading for a list of possible output devices (speakers, headphones, ...) to "
-"choose"
+msgctxt "Heading for a list of possible output devices (speakers, headphones, ...) to choose"
 msgid "Play audio using"
 msgstr "Spel lyd med"
 
 #: qml/listitemmenu.cpp:481
 #, kde-format
-msgctxt ""
-"Heading for a list of possible input devices (built-in microphone, "
-"headset, ...) to choose"
+msgctxt "Heading for a list of possible input devices (built-in microphone, headset, ...) to choose"
 msgid "Record audio using"
 msgstr "Ta opp lyd med"
 
