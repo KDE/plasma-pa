@@ -1,15 +1,15 @@
-# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019.
 # Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2023.
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:57+0000\n"
-"PO-Revision-Date: 2026-05-10 11:53+0900\n"
+"PO-Revision-Date: 2026-11-14 12:19+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
-"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -43,19 +43,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
-msgstr "デバイスの処理に失敗しました: %1。"
+msgstr "デバイス %1 の処理に失敗しました。"
 
 #: devicerenamesaver.cpp:250
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
-msgstr "ディレクトリの作成に失敗しました: %1。"
+msgstr "ディレクトリ %1 の作成に失敗しました。"
 
 #: devicerenamesaver.cpp:258
 #, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
-msgstr "書き込み用にファイルを開けませんでした: %1。"
+msgstr "ファイル %1 を書き込み用に開けませんでした。"
 
 #: kcm/ui/CardListItem.qml:52 kcm/ui/DeviceListItem.qml:153
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "サウンドサービスへの接続がロストしました"
 #, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
-msgstr "再接続を試行..."
+msgstr "再接続中…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
 #, kde-format
@@ -83,12 +83,10 @@ msgstr "リトライ"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
 #: kcm/ui/RenameDevices.qml:131
-#, fuzzy, kde-kuit-format
-#| msgctxt "Placeholder is channel name"
-#| msgid "%1:"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1:"
+msgstr "%1"
 
 #: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:232
 #, kde-format
@@ -125,12 +123,10 @@ msgid "Test"
 msgstr "テスト"
 
 #: kcm/ui/DeviceListItem.qml:240
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "テスト"
+msgstr "テスト…"
 
 #: kcm/ui/DeviceListItem.qml:248
 #, kde-format
@@ -146,17 +142,17 @@ msgstr "非アクティブなデバイスを表示"
 #: kcm/ui/main.qml:81
 #, kde-format
 msgid "Rename Devices…"
-msgstr "デバイス名を変更..."
+msgstr "デバイス名を変更…"
 
 #: kcm/ui/main.qml:87
 #, kde-format
 msgid "Configure Volume Controls…"
-msgstr "音量コントロールを設定..."
+msgstr "音量コントロールを設定…"
 
 #: kcm/ui/main.qml:94
 #, kde-format
 msgid "Configure…"
-msgstr "設定..."
+msgstr "設定…"
 
 #: kcm/ui/main.qml:97
 #, kde-format
@@ -209,6 +205,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"テスト音声を再生する際、PulseAudio (オーディオサブシステム) でエラーが発生し"
+"ました。エラー内容は以下のとおりです。<nl/><nl/>“%1”<nl/><nl/>システムを再起"
+"動してもう一度お試しください。"
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -269,49 +268,51 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"音声を録音する際、PulseAudio (オーディオサブシステム) でエラーが発生しまし"
+"た。エラー内容は以下のとおりです。<nl/><nl/>“%1”<nl/><nl/>システムを再起動し"
+"てもう一度お試しください。"
 
 #: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #: kcm/ui/main.qml:572
 #, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
-msgstr ""
+msgstr "録音"
 
 #: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #: kcm/ui/main.qml:585
 #, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr ""
+msgstr "再生"
 
 #: kcm/ui/main.qml:604
 #, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr ""
+msgstr "音声の大きさ"
 
 #: kcm/ui/main.qml:634
 #, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: kcm/ui/main.qml:649
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "マイク感度"
+msgstr "感度"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -341,7 +342,7 @@ msgstr "%1 をミュート"
 #, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "デバイス名を変更"
+msgstr "デバイス名の変更"
 
 #: kcm/ui/RenameDevices.qml:38
 #, kde-format
@@ -356,8 +357,8 @@ msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
-"変更を保存するとオーディオサービスが再起動します。オーディオを再生するアプリ"
-"が中断されるため、再起動が必要になる場合があります。"
+"変更を保存するとオーディオサービスが再起動されます。オーディオを再生するアプ"
+"リが中断されるため、再起動が必要になる場合があります。"
 
 #: kcm/ui/RenameDevices.qml:80
 #, kde-format
@@ -372,12 +373,10 @@ msgid "Reloading"
 msgstr "リロード"
 
 #: kcm/ui/RenameDevices.qml:128
-#, fuzzy, kde-kuit-format
-#| msgctxt "place holder text, %1 is a device name"
-#| msgid "%1 (click 'Save' to apply)"
+#, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr "%1 (適用するには「保存」をクリッ)"
+msgstr "%1 (「保存」をクリックで適用)"
 
 #: kcm/ui/RenameDevices.qml:146
 #, kde-format
@@ -524,50 +523,43 @@ msgstr "%1 (%2% バッテリー)"
 #, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
-msgstr ""
+msgstr "ミュート解除中"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
-msgstr "ミュート"
+msgstr "%1: ミュート中"
 
 #: microphonetest.cpp:105 microphonetest.cpp:147 microphonetest.cpp:258
 #, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr ""
+msgstr "PulseAudio コンテキストの準備が完了していません。"
 
 #: microphonetest.cpp:155
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr "ディレクトリの作成に失敗しました: %1。"
+msgstr "録音ストリームを作成できませんでした。"
 
 #: microphonetest.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr "ディレクトリの作成に失敗しました: %1。"
+msgstr "録音ストリームに接続できませんでした。エラー内容: %1"
 
 #: microphonetest.cpp:268
-#, fuzzy, kde-format
-#| msgctxt "@info error %1 is a path"
-#| msgid "Failed to create directory: %1."
+#, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr "ディレクトリの作成に失敗しました: %1。"
+msgstr "再生ストリームの作成に失敗しました。"
 
 #: microphonetest.cpp:284
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr ""
+msgstr "再生ストリームに接続できませんでした。エラー内容: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
@@ -644,23 +636,3 @@ msgstr "%1 はマイクを使用しています (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 はマイクを使用しています"
-
-#~ msgctxt "@action apply currently editing test"
-#~ msgid "Apply"
-#~ msgstr "適用"
-
-#~ msgctxt ""
-#~ "@label placeholder text when we don't know the default value of a device "
-#~ "yet"
-#~ msgid "DEFAULT"
-#~ msgstr "デフォルト"
-
-#~ msgctxt ""
-#~ "%1 is an error string produced by an external component, and probably "
-#~ "untranslated"
-#~ msgid ""
-#~ "Error trying to play a test sound. \n"
-#~ "The system said: \"%1\""
-#~ msgstr ""
-#~ "テスト音声の再生中にエラーが発生しました。\n"
-#~ "システムのメッセージ: \"%1\""
