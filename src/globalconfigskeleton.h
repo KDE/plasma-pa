@@ -11,6 +11,7 @@
 
 class GlobalConfigSkeleton : public KConfigSkeleton
 {
+    Q_OBJECT
 public:
     explicit GlobalConfigSkeleton(const QString &configName = QStringLiteral("plasmaparc"), QObject *parent = nullptr)
         : KConfigSkeleton(configName, parent)

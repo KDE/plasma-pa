@@ -7,6 +7,11 @@
 
 #include "plugin.h"
 
+#include <QJSValue>
+#include <QQmlEngine>
+
+#include <PulseAudioQt/Context>
+
 static QJSValue pulseaudio_singleton(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
     Q_UNUSED(engine)

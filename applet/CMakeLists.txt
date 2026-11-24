@@ -14,4 +14,4 @@ plasma_add_applet(org.kde.plasma.volume
     GENERATE_APPLET_CLASS
 )
 
-add_dependencies(org.kde.plasma.volume plasma-volume-declarative)
+add_dependencies(org.kde.plasma.volume plasma-volume)
