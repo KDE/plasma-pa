@@ -3,20 +3,21 @@
 #
 # Dimitris Kardarakos <dimkard@gmail.com>, 2015, 2016, 2017.
 # Stelios <sstavra@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2026 Petros Vidalis <pvidalis@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:57+0000\n"
-"PO-Revision-Date: 2021-07-07 11:46+0300\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"PO-Revision-Date: 2026-11-24 23:00+0200\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ListItemBase.qml:73
 #, kde-format
@@ -29,16 +30,13 @@ msgid "Currently not playing"
 msgstr "Προς το παρόν δεν γίνεται αναπαραγωγή"
 
 #: ListItemBase.qml:134
-#, fuzzy, kde-kuit-format
-#| msgctxt "volume percentage"
-#| msgid "%1%"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1%"
+msgstr "%1"
 
 #: ListItemBase.qml:208
-#, fuzzy, kde-format
-#| msgid "Show additional options for %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Additional Options"
 msgstr "Επιπλέον επιλογές"
@@ -49,11 +47,10 @@ msgid "Show additional options for %1"
 msgstr "Εμφάνιση επιπλέον επιλογών για το %1"
 
 #: ListItemBase.qml:232
-#, fuzzy, kde-format
-#| msgid "Mute %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "Κατάργηση σίγασης"
+msgstr "Αποσίγαση"
 
 #: ListItemBase.qml:232
 #, kde-format
@@ -62,10 +59,9 @@ msgid "Mute"
 msgstr "Σίγαση"
 
 #: ListItemBase.qml:234
-#, fuzzy, kde-format
-#| msgid "Mute %1"
+#, kde-format
 msgid "Unmute %1"
-msgstr "Σίγαση %1"
+msgstr "Αποσίγαση %1"
 
 #: ListItemBase.qml:234
 #, kde-format
@@ -91,7 +87,7 @@ msgid "100%"
 msgstr "100%"
 
 #: ListItemBase.qml:354
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
 msgstr "Δοκιμή…"
@@ -102,7 +98,7 @@ msgid "Audio Volume"
 msgstr "Ένταση ήχου"
 
 #: main.qml:60 main.qml:62
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Η σύνδεση με την υπηρεσία ήχου χάθηκε"
@@ -113,7 +109,7 @@ msgid "No output or input devices found"
 msgstr "Δε βρέθηκαν συσκευές εισόδου ή εξόδου"
 
 #: main.qml:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Γίνεται προσπάθεια επανασύνδεσης…"
@@ -129,17 +125,17 @@ msgid "Volume at %1%"
 msgstr "Ένταση στο %1%"
 
 #: main.qml:107
-#, fuzzy, kde-format
+#, kde-format
 msgid "Middle-click to unmute"
 msgstr "Μεσαίο κλικ για κατάργηση σίγασης"
 
 #: main.qml:108
-#, fuzzy, kde-format
+#, kde-format
 msgid "Middle-click to mute all audio"
 msgstr "Μεσαίο κλικ για σίγαση όλου του ήχου"
 
 #: main.qml:109
-#, fuzzy, kde-format
+#, kde-format
 msgid "Scroll to adjust volume"
 msgstr "Κύλιση για ρύθμιση έντασης"
 
@@ -159,20 +155,20 @@ msgid "Applications"
 msgstr "Εφαρμογές"
 
 #: main.qml:392
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "More actions"
 msgstr "Περισσότερες ενέργειες"
 
 #: main.qml:434
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@action:button keep this widget's pop-up open until explicitly dismissed"
 msgid "Keep open"
 msgstr "Να μένει ανοιχτό"
 
 #: main.qml:471
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Επανάληψη"
@@ -183,43 +179,39 @@ msgid "No applications playing or recording audio"
 msgstr "Καμιά εφαρμογή δεν πραγματοποιεί εγγραφή ή αναπαραγωγή ήχου"
 
 #: main.qml:601
-#, fuzzy, kde-format
-#| msgid "No output device"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Devices"
-msgstr "Δε υπάρχουν συσκευές εξόδου"
+msgstr "Συσκευές εξόδου"
 
 #: main.qml:603
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Output Streams"
-msgstr "Ροές εγγραφής"
+msgstr "Ροές αναπαραγωγής"
 
 #: main.qml:661
-#, fuzzy, kde-format
-#| msgid "Capture Devices"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Devices"
-msgstr "Συσκευές εγγραφής"
+msgstr "Συσκευές εισόδου"
 
 #: main.qml:663
-#, fuzzy, kde-format
-#| msgid "Capture Streams"
+#, kde-format
 msgctxt "@title:group listview section header"
 msgid "Input Streams"
 msgstr "Ροές εγγραφής"
 
 #: main.qml:728
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Prolonged use of this feature will damage the device's speakers. Only use it "
 "temporarily to make quiet media audible."
 msgstr ""
-"Η παρατεταμένη χρήση αυτής της λειτουργίας θα καταστρέψει τα ηχεία της "
-"συσκευής. Χρησιμοποιήστε την μόνο προσωρινά, για να ακούγονται πολυμέσα με "
-"χαμηλό ήχο."
+"Η παρατεταμένη χρήση αυτής της λειτουργίας θα προκαλέσει ζημιά στα ηχεία της "
+"συσκευής. Χρησιμοποιήστε τη μόνο προσωρινά, για να ακούγονται τα πολυμέσα με "
+"χαμηλή ένταση."
 
 #: main.qml:744
 #, kde-format
@@ -232,16 +224,14 @@ msgid "Force mute all playback devices"
 msgstr "Εξαναγκασμός σίγασης για όλες τις συσκευές αναπαραγωγής"
 
 #: main.qml:771
-#, fuzzy, kde-format
-#| msgid "Force mute all playback devices"
+#, kde-format
 msgid "Force mute all input devices"
-msgstr "Εξαναγκασμός σίγασης για όλες τις συσκευές αναπαραγωγής"
+msgstr "Επιβολή σίγασης σε όλες τις συσκευές εισόδου"
 
 #: main.qml:780
-#, fuzzy, kde-format
-#| msgid "Show hidden devices"
+#, kde-format
 msgid "Show virtual devices"
-msgstr "Εμφάνιση κρυμμένων συσκευών"
+msgstr "Εμφάνιση εικονικών συσκευών"
 
 #: main.qml:790
 #, kde-format
@@ -249,58 +239,55 @@ msgid "&Configure Audio Devices…"
 msgstr "&Διαμόρφωση συσκευών ήχου…"
 
 #: MicrophoneTestView.qml:104
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "Διακοπή"
 
 #: MicrophoneTestView.qml:104
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "Εγγραφή"
 
 #: MicrophoneTestView.qml:118
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "Διακοπή"
 
 #: MicrophoneTestView.qml:118
-#, fuzzy, kde-format
-#| msgid "Playback Streams"
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
-msgstr "Ροές αναπαραγωγής"
+msgstr "Αναπαραγωγή"
 
 #: MicrophoneTestView.qml:137
-#, fuzzy, kde-format
-#| msgid "Volume step:"
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
-msgstr "Βήμα έντασης:"
+msgstr "Στάθμη έντασης"
 
 #: MicrophoneTestView.qml:166
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: MicrophoneTestView.qml:181
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
 msgstr "Ευαισθησία μικροφώνου"
 
 #: MicrophoneTestView.qml:237
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Button in microphone test view to return to the device list"
 msgid "Back"
 msgstr "Πίσω"
 
 #: MicrophoneTestView.qml:250
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Microphone test error:<nl/><nl/>%1"
 msgstr "Σφάλμα δοκιμής μικροφώνου:<nl/><nl/>%1"

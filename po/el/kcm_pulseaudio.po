@@ -3,55 +3,56 @@
 #
 # Dimitris Kardarakos <dimkard@gmail.com>, 2015, 2016, 2017.
 # Stelios <sstavra@gmail.com>, 2020, 2021.
+# SPDX-FileCopyrightText: 2026 Petros Vidalis <pvidalis@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:57+0000\n"
-"PO-Revision-Date: 2021-09-04 09:35+0300\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"PO-Revision-Date: 2026-11-24 23:00+0200\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: devicerenamesaver.cpp:115
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status error message"
 msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command crashed."
 msgstr ""
 "Οι αλλαγές δεν εφαρμόστηκαν.<nl/>Αποτυχία επανεκκίνησης του wireplumber."
-"service. Η εντολή κατέρρευσε."
+"service. Η εκτέλεση της εντολής διακόπηκε απρόσμενα."
 
 #: devicerenamesaver.cpp:125
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status error message %1 is an integer exit code"
 msgid ""
 "Changes have not been applied.<nl/>Failed to restart wireplumber.service. "
 "The command terminated with code: %1."
 msgstr ""
 "Οι αλλαγές δεν εφαρμόστηκαν.<nl/>Αποτυχία επανεκκίνησης του wireplumber."
-"service. Η εντολή τερματίστηκε με κωδικό: %1."
+"service. Η εντολή τερματίστηκε με κωδικό εξόδου %1."
 
 #: devicerenamesaver.cpp:237
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info error %1 is a list of device identifiers"
 msgid "Failed to handle devices: %1."
 msgstr "Αποτυχία χειρισμού συσκευών: %1."
 
 #: devicerenamesaver.cpp:250
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to create directory: %1."
 msgstr "Αποτυχία δημιουργίας καταλόγου: %1."
 
 #: devicerenamesaver.cpp:258
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info error %1 is a path"
 msgid "Failed to open file for writing: %1."
 msgstr "Αποτυχία ανοίγματος αρχείου για εγγραφή: %1."
@@ -63,36 +64,34 @@ msgid "Profile:"
 msgstr "Προφίλ:"
 
 #: kcm/ui/ContextBrokenOverlay.qml:25
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Connection to the Sound Service Lost"
 msgstr "Η σύνδεση με την υπηρεσία ήχου χάθηκε"
 
 #: kcm/ui/ContextBrokenOverlay.qml:28
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info reconnecting to pulseaudio"
 msgid "Trying to reconnect…"
 msgstr "Γίνεται προσπάθεια επανασύνδεσης…"
 
 #: kcm/ui/ContextBrokenOverlay.qml:36
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action retry connecting to pulseaudio"
 msgid "Retry"
 msgstr "Επανάληψη"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
 #: kcm/ui/RenameDevices.qml:131
-#, fuzzy, kde-kuit-format
-#| msgctxt "Placeholder is channel name"
-#| msgid "%1:"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1:"
+msgstr "%1"
 
 #: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:232
-#, fuzzy, kde-format
+#, kde-format
 msgid "Device name not found"
-msgstr "Δεν βρέθηκε όνομα συσκευής"
+msgstr "Το όνομα της συσκευής δεν βρέθηκε"
 
 #: kcm/ui/DeviceListItem.qml:107
 #, kde-format
@@ -124,15 +123,13 @@ msgid "Test"
 msgstr "Δοκιμή"
 
 #: kcm/ui/DeviceListItem.qml:240
-#, fuzzy, kde-format
-#| msgctxt "Perform an audio test of the device"
-#| msgid "Test"
+#, kde-format
 msgctxt "Perform an audio test of the device"
 msgid "Test…"
-msgstr "Δοκιμή"
+msgstr "Δοκιμή…"
 
 #: kcm/ui/DeviceListItem.qml:248
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Show audio channels (e.g. to control left/right audio balance"
 msgid "Show Channels"
 msgstr "Εμφάνιση καναλιών"
@@ -143,16 +140,14 @@ msgid "Show Inactive Devices"
 msgstr "Εμφάνιση αδρανών συσκευών"
 
 #: kcm/ui/main.qml:81
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgid "Rename Devices…"
-msgstr "Συσκευές εγγραφής"
+msgstr "Μετονομασία συσκευών…"
 
 #: kcm/ui/main.qml:87
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure Volume Controls…"
-msgstr "Διαμόρφωση…"
+msgstr "Διαμόρφωση χειριστηρίων έντασης…"
 
 #: kcm/ui/main.qml:94
 #, kde-format
@@ -214,6 +209,9 @@ msgid ""
 "The PulseAudio audio subsystem was unable to play a test sound, and reported "
 "the following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Το υποσύστημα ήχου PulseAudio δεν μπόρεσε να αναπαραγάγει τον δοκιμαστικό "
+"ήχο και ανέφερε το εξής σφάλμα:<nl/><nl/>«%1»<nl/><nl/>Επανεκκινήστε το "
+"σύστημα και δοκιμάστε ξανά."
 
 #: kcm/ui/main.qml:416
 #, kde-format
@@ -261,7 +259,7 @@ msgid "Mono"
 msgstr "Μονοφωνική"
 
 #: kcm/ui/main.qml:492
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click on any speaker to test sound"
 msgstr "Κάντε κλικ σε οποιοδήποτε ηχείο για δοκιμή ήχου"
 
@@ -274,49 +272,51 @@ msgid ""
 "The PulseAudio audio subsystem was unable to record sound, and reported the "
 "following error:<nl/><nl/>“%1”<nl/><nl/>Restart the system and try again."
 msgstr ""
+"Το υποσύστημα ήχου PulseAudio δεν μπόρεσε να εγγράψει ήχο και ανέφερε το "
+"εξής σφάλμα:<nl/><nl/>«%1»<nl/><nl/>Επανεκκινήστε το σύστημα και δοκιμάστε "
+"ξανά."
 
 #: kcm/ui/main.qml:572
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Button to stop microphone recording in test mode"
 msgid "Stop"
 msgstr "Διακοπή"
 
 #: kcm/ui/main.qml:572
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Button to start microphone recording in test mode"
 msgid "Record"
 msgstr "Εγγραφή"
 
 #: kcm/ui/main.qml:585
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Button to stop microphone playing in test mode"
 msgid "Stop"
 msgstr "Διακοπή"
 
 #: kcm/ui/main.qml:585
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Button to start microphone playing in test mode"
 msgid "Play"
 msgstr "Αναπαραγωγή"
 
 #: kcm/ui/main.qml:604
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Label above the microphone volume meter in test overlay"
 msgid "Volume level"
 msgstr "Στάθμη έντασης"
 
 #: kcm/ui/main.qml:634
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Label showing current microphone input level percentage in test mode"
 msgid "%1 %"
 msgstr "%1 %"
 
 #: kcm/ui/main.qml:649
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgctxt "Label above the microphone sensitivity slider in test overlay"
 msgid "Sensitivity"
-msgstr "Μικρόφωνο σε σίγαση"
+msgstr "Ευαισθησία μικροφώνου"
 
 #: kcm/ui/main.qml:680 kcm/ui/VolumeSlider.qml:68
 #, kde-format
@@ -331,12 +331,10 @@ msgid "100%"
 msgstr "100%"
 
 #: kcm/ui/MuteButton.qml:24
-#, fuzzy, kde-format
-#| msgctxt "Mute audio stream"
-#| msgid "Mute %1"
+#, kde-format
 msgctxt "Unmute audio stream"
 msgid "Unmute %1"
-msgstr "Σίγαση %1"
+msgstr "Αποσίγαση %1"
 
 #: kcm/ui/MuteButton.qml:24
 #, kde-format
@@ -345,36 +343,36 @@ msgid "Mute %1"
 msgstr "Σίγαση %1"
 
 #: kcm/ui/RenameDevices.qml:31
-#, fuzzy, kde-format
-#| msgid "Recording Devices"
+#, kde-format
 msgctxt "@title rename audio devices"
 msgid "Rename Devices"
-msgstr "Συσκευές εγγραφής"
+msgstr "Μετονομασία συσκευών"
 
 #: kcm/ui/RenameDevices.qml:38
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action save changes"
 msgid "Save"
 msgstr "Αποθήκευση"
 
 #: kcm/ui/RenameDevices.qml:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Saving changes will restart audio services. Apps playing audio will "
 "experience interruptions and may need to be restarted."
 msgstr ""
-"Η αποθήκευση των αλλαγών θα επανεκκινήσει τις υπηρεσίες ήχου. Οι εφαρμογές "
-"που αναπαράγουν ήχο θα διακοπούν και ίσως χρειαστεί να τις ανοίξετε ξανά."
+"Η αποθήκευση των αλλαγών θα επανεκκινήσει τις υπηρεσίες ήχου. Η αναπαραγωγή "
+"ήχου θα διακοπεί στις εφαρμογές που τη χρησιμοποιούν και ίσως χρειαστεί να "
+"τις επανεκκινήσετε."
 
 #: kcm/ui/RenameDevices.qml:80
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Report Bug"
 msgstr "Αναφορά σφάλματος"
 
 #: kcm/ui/RenameDevices.qml:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status reloading the backing data"
 msgid "Reloading"
 msgstr "Επαναφόρτωση"
@@ -383,10 +381,10 @@ msgstr "Επαναφόρτωση"
 #, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
-msgstr ""
+msgstr "%1 (κάντε κλικ στην «Αποθήκευση» για εφαρμογή)"
 
 #: kcm/ui/RenameDevices.qml:146
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action reset device name to default"
 msgid "Reset"
 msgstr "Επαναφορά"
@@ -403,98 +401,91 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, fuzzy, kde-format
+#, kde-format
 msgid "Volume Controls"
 msgstr "Χειριστήρια έντασης"
 
 #: kcm/ui/VolumeControlsConfig.qml:30
-#, fuzzy, kde-format
+#, kde-format
 msgid "Raise maximum volume"
 msgstr "Αύξηση μέγιστης έντασης"
 
 #: kcm/ui/VolumeControlsConfig.qml:38
-#, fuzzy, kde-format
+#, kde-format
 msgid "Volume change step:"
 msgstr "Βήμα αλλαγής έντασης:"
 
 #: kcm/ui/VolumeControlsConfig.qml:67
-#, fuzzy, kde-format
+#, kde-format
 msgid "Play audio feedback for changes to:"
 msgstr "Ηχητική ανάδραση για αλλαγές σε:"
 
 #: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio volume"
 msgstr "Ένταση ήχου"
 
 #: kcm/ui/VolumeControlsConfig.qml:76
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show OSD popups for changes to:"
-msgstr "Εμφάνιση αναδυόμενων ενδείξεων για αλλαγές σε:"
+msgstr "Εμφάνιση ενδείξεων στην οθόνη για αλλαγές σε:"
 
 #: kcm/ui/VolumeControlsConfig.qml:84
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Microphone sensitivity"
-msgstr "Μικρόφωνο σε σίγαση"
+msgstr "Ευαισθησία μικροφώνου"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
-#, fuzzy, kde-format
-#| msgid "Mute audio"
+#, kde-format
 msgid "Mute state"
-msgstr "Σίγαση ήχου"
+msgstr "Κατάσταση σίγασης"
 
 #: kcm/ui/VolumeControlsConfig.qml:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Push to talk"
 msgstr "Πάτημα για ομιλία"
 
 #: kcm/ui/VolumeControlsConfig.qml:104
-#, fuzzy, kde-format
-#| msgctxt "List of apps is using mic"
-#| msgid "%1 are using the microphone"
+#, kde-format
 msgctxt "Show OSD when"
 msgid "Application starts using muted microphone"
-msgstr "Εφαρμογή ξεκινά να χρησιμοποιεί μικρόφωνο σε σίγαση"
+msgstr "Μια εφαρμογή αρχίζει να χρησιμοποιεί μικρόφωνο σε σίγαση"
 
 #: kcm/ui/VolumeControlsConfig.qml:111
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgid "Default output device"
-msgstr "Προκαθορισμένο"
+msgstr "Προεπιλεγμένη συσκευή εξόδου"
 
 #: kded/audioshortcutsservice.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid "Increase Volume"
 msgstr "Αύξηση έντασης"
 
 #: kded/audioshortcutsservice.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgid "Decrease Volume"
 msgstr "Μείωση έντασης"
 
 #: kded/audioshortcutsservice.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 msgid "Increase Volume by 1%"
 msgstr "Αύξηση έντασης κατά 1%"
 
 #: kded/audioshortcutsservice.cpp:126
-#, fuzzy, kde-format
+#, kde-format
 msgid "Decrease Volume by 1%"
 msgstr "Μείωση έντασης κατά 1%"
 
 #: kded/audioshortcutsservice.cpp:141
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Increase Microphone Volume"
-msgstr "Μικρόφωνο σε σίγαση"
+msgstr "Αύξηση έντασης μικροφώνου"
 
 #: kded/audioshortcutsservice.cpp:155
-#, fuzzy, kde-format
-#| msgid "Microphone Muted"
+#, kde-format
 msgid "Decrease Microphone Volume"
-msgstr "Μικρόφωνο σε σίγαση"
+msgstr "Μείωση έντασης μικροφώνου"
 
 #: kded/audioshortcutsservice.cpp:169 qml/microphoneindicator.cpp:133
 #, kde-format
@@ -502,50 +493,45 @@ msgid "Mute"
 msgstr "Σίγαση"
 
 #: kded/audioshortcutsservice.cpp:182
-#, fuzzy, kde-format
-#| msgid "Microphone"
+#, kde-format
 msgid "Mute Microphone"
-msgstr "Μικρόφωνο"
+msgstr "Σίγαση μικροφώνου"
 
 #: kded/audioshortcutsservice.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
 msgstr "Πάτημα για ομιλία"
 
 #: kded/audioshortcutsservice.cpp:203
-#, fuzzy, kde-format
+#, kde-format
 msgid "Audio Volume"
 msgstr "Ένταση ήχου"
 
 #: kded/audioshortcutsservice.cpp:221
-#, fuzzy, kde-format
+#, kde-format
 msgid "No such device"
 msgstr "Δεν υπάρχει τέτοια συσκευή"
 
 #: kded/audioshortcutsservice.cpp:267
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgid "No output device"
-msgstr "Προκαθορισμένο"
+msgstr "Δεν υπάρχει συσκευή εξόδου"
 
 #: kded/audioshortcutsservice.cpp:288 kded/audioshortcutsservice.cpp:308
-#, fuzzy, kde-format
-#| msgctxt "label of device items"
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "Device name (Battery percent)"
 msgid "%1 (%2% Battery)"
-msgstr "%1 (%2)"
+msgstr "%1 (μπαταρία %2%)"
 
 #: kded/audioshortcutsservice.cpp:394
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Push to talk button depressed, microphone unmuted"
 msgid "Speak…"
 msgstr "Μιλήστε…"
 
 #: kded/mutedmicrophonereminder.cpp:131
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "Microphone name: is currently muted (osd, keep short)"
 msgid "%1: Muted"
 msgstr "%1: Σίγαση"
@@ -554,31 +540,31 @@ msgstr "%1: Σίγαση"
 #, kde-format
 msgctxt "@info:status"
 msgid "PulseAudio context is not ready."
-msgstr ""
+msgstr "Το περιβάλλον του PulseAudio δεν είναι έτοιμο."
 
 #: microphonetest.cpp:155
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a recording stream."
-msgstr ""
+msgstr "Δεν ήταν δυνατή η δημιουργία ροής εγγραφής."
 
 #: microphonetest.cpp:171
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to recording stream: %1."
-msgstr ""
+msgstr "Δεν ήταν δυνατή η σύνδεση στη ροή εγγραφής: %1."
 
 #: microphonetest.cpp:268
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t create a playback stream."
-msgstr ""
+msgstr "Δεν ήταν δυνατή η δημιουργία ροής αναπαραγωγής."
 
 #: microphonetest.cpp:284
 #, kde-format
 msgctxt "@info:status"
 msgid "Couldn’t connect to playback stream: %1"
-msgstr ""
+msgstr "Δεν ήταν δυνατή η σύνδεση στη ροή αναπαραγωγής: %1"
 
 #: qml/listitemmenu.cpp:323
 #, kde-format
