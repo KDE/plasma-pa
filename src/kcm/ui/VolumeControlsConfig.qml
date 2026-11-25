@@ -12,7 +12,7 @@ import org.kde.plasma.private.volume
 
 Kirigami.Page {
     id: volumeControlsConfigPage
-    title: i18n("Volume Controls")
+    title: i18nc("@title:window page title", "Volume Controls")
 
     property var config
 
@@ -20,100 +20,108 @@ Kirigami.Page {
         id: feedback
     }
 
-    ColumnLayout {
-        anchors.fill: parent
+    Kirigami.Form {
+        Kirigami.FormGroup {
+            Kirigami.FormEntry {
+                title: i18nc("@label:spinbox how much e.g. keyboard shortcuts change volume, in percent", "Volume change step size:")
+                contentItem: QQC2.SpinBox {
+                    id: volumeStep
+                    // So it doesn't resize itself when showing a 2 or 3-digit number
+                    Layout.minimumWidth: Kirigami.Units.gridUnit * 3
+                    value: config.volumeStep
+                    onValueModified: { config.volumeStep = value; config.save() }
+                    from: 1
+                    to: 100
+                    stepSize: 1
+                    editable: true
+                    textFromValue: function(value) {
+                        return value + "%";
+                    }
+                    valueFromText: function(text) {
+                        return parseInt(text);
+                    }
 
-        Kirigami.FormLayout {
-
-            QQC2.CheckBox {
-                checked: config.raiseMaximumVolume
-                text: i18n("Raise maximum volume")
-                onToggled: { config.raiseMaximumVolume = checked; config.save() }
-            }
-
-            QQC2.SpinBox {
-                id: volumeStep
-                // So it doesn't resize itself when showing a 2 or 3-digit number
-                Layout.minimumWidth: Kirigami.Units.gridUnit * 3
-                Kirigami.FormData.label: i18n("Volume change step:")
-                value: config.volumeStep
-                onValueModified: { config.volumeStep = value; config.save() }
-                from: 1
-                to: 100
-                stepSize: 1
-                editable: true
-                textFromValue: function(value) {
-                    return value + "%";
-                }
-                valueFromText: function(text) {
-                    return parseInt(text);
-                }
-
-                validator: PercentValidator {
-                    bottom: Math.min(volumeStep.from, volumeStep.to)
-                    top: Math.max(volumeStep.from, volumeStep.to)
+                    validator: PercentValidator {
+                        bottom: Math.min(volumeStep.from, volumeStep.to)
+                        top: Math.max(volumeStep.from, volumeStep.to)
+                    }
                 }
             }
 
-            Item {
-                Kirigami.FormData.isSection: true
-            }
+            Kirigami.FormSeparator {}
 
-
-            QQC2.CheckBox {
-                id: volumeFeedback
-                checked: config.audioFeedback
-                onToggled: { config.audioFeedback = checked; config.save() }
-                Kirigami.FormData.label: i18n("Play audio feedback for changes to:")
-                text: i18n("Audio volume")
-                enabled: feedback.valid
-            }
-
-            QQC2.CheckBox {
-                id: volumeOsd
-                checked: config.volumeOsd
-                onToggled: { config.volumeOsd = checked; config.save() }
-                Kirigami.FormData.label: i18n("Show OSD popups for changes to:")
-                text: i18n("Audio volume")
-            }
-
-            QQC2.CheckBox {
-                id: micOsd
-                checked: config.microphoneSensitivityOsd
-                onToggled: { config.microphoneSensitivityOsd = checked; config.save() }
-                text: i18n("Microphone sensitivity")
-            }
-
-            QQC2.CheckBox {
-                id: muteOsd
-                checked: config.muteOsd
-                onToggled: { config.muteOsd = checked; config.save() }
-                text: i18n("Mute state")
-            }
-
-            QQC2.CheckBox {
-                id: pushToTalkOsd
-                checked: config.pushToTalkOsd
-                onToggled: { config.pushToTalkOsd = checked; config.save() }
-                text: i18nc("Show OSD when", "Push to talk")
-            }
-
-            QQC2.CheckBox {
-                checked: config.mutedMicrophoneReminderOsd
-                onToggled: { config.mutedMicrophoneReminderOsd = checked; config.save() }
-                text: i18nc("Show OSD when", "Application starts using muted microphone")
-            }
-
-            QQC2.CheckBox {
-                id: outputChangeOsd
-                checked: config.defaultOutputDeviceOsd
-                onToggled: { config.defaultOutputDeviceOsd = checked; config.save() }
-                text: i18n("Default output device")
+            Kirigami.FormEntry {
+                title: i18nc("@option:check prefix completes … Raise above 100%", "Maximum volume:")
+                contentItem: QQC2.CheckBox {
+                    checked: config.raiseMaximumVolume
+                    text: i18nc("@option:check completes Maximum volume: …", "Raise above 100%")
+                    onToggled: { config.raiseMaximumVolume = checked; config.save() }
+                }
+                subtitle: i18nc("@info:usagetip", "Prolonged use of this feature will damage the device's speakers.")
             }
         }
+        Kirigami.FormGroup {
+            Kirigami.FormEntry {
+                title: i18nc("@option:check prefix, completes … Audio volume", "Play audio feedback for changes to:")
+                contentItem: QQC2.CheckBox {
+                    id: volumeFeedback
+                    checked: config.audioFeedback
+                    onToggled: { config.audioFeedback = checked; config.save() }
+                    text: i18nc("@option:check, completes Play audio feedback for changes to:", "Audio volume")
+                    enabled: feedback.valid
+                }
+            }
 
-        Item {
-            Layout.fillHeight: true
+            Kirigami.FormSeparator {}
+
+            Kirigami.FormEntry {
+                title: i18nc("@title:group completes e.g. … Audio volume", "Show OSD popups for changes to:")
+                contentItem: QQC2.CheckBox {
+                    id: volumeOsd
+                    checked: config.volumeOsd
+                    onToggled: { config.volumeOsd = checked; config.save() }
+                    text: i18nc("@option:check completes Show OSD popups for changes to:", "Audio volume")
+                }
+            }
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    id: micOsd
+                    checked: config.microphoneSensitivityOsd
+                    onToggled: { config.microphoneSensitivityOsd = checked; config.save() }
+                    text: i18nc("@option:check completes Show OSD popups for changes to:", "Microphone sensitivity")
+                }
+            }
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    id: muteOsd
+                    checked: config.muteOsd
+                    onToggled: { config.muteOsd = checked; config.save() }
+                    text: i18nc("@option:check completes Show OSD popups for changes to:", "Mute state")
+                }
+            }
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    id: pushToTalkOsd
+                    checked: config.pushToTalkOsd
+                    onToggled: { config.pushToTalkOsd = checked; config.save() }
+                    text: i18nc("@option:check completes Show OSD popups for changes to:", "Push to talk")
+                }
+            }
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    checked: config.mutedMicrophoneReminderOsd
+                    onToggled: { config.mutedMicrophoneReminderOsd = checked; config.save() }
+                    text: i18nc("@option:check completes Show OSD popups for changes to:", "Application starts using muted microphone")
+                }
+            }
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    id: outputChangeOsd
+                    checked: config.defaultOutputDeviceOsd
+                    onToggled: { config.defaultOutputDeviceOsd = checked; config.save() }
+                    text: i18nc("@option:check completes Show OSD popups for changes to:", "Default output device")
+                }
+            }
         }
     }
 }
