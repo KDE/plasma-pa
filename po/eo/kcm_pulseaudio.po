@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-pa\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-02 00:57+0000\n"
+"POT-Creation-Date: 2026-11-26 01:06+0000\n"
 "PO-Revision-Date: 2025-03-22 22:36+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -397,61 +397,99 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Volume Controls"
+msgctxt "@title:window page title"
 msgid "Volume Controls"
 msgstr "Regiloj de laŭteco"
 
-#: kcm/ui/VolumeControlsConfig.qml:30
-#, kde-format
-msgid "Raise maximum volume"
-msgstr "Altigi maksimuman laŭteco"
-
-#: kcm/ui/VolumeControlsConfig.qml:38
-#, kde-format
-msgid "Volume change step:"
+#: kcm/ui/VolumeControlsConfig.qml:26
+#, fuzzy, kde-format
+#| msgid "Volume change step:"
+msgctxt ""
+"@label:spinbox how much e.g. keyboard shortcuts change volume, in percent"
+msgid "Volume change step size:"
 msgstr "Ŝanĝo de laŭteco:"
 
-#: kcm/ui/VolumeControlsConfig.qml:67
+#: kcm/ui/VolumeControlsConfig.qml:54
+#, fuzzy, kde-format
+#| msgid "Raise maximum volume"
+msgctxt "@option:check prefix completes … Raise above 100%"
+msgid "Maximum volume:"
+msgstr "Altigi maksimuman laŭteco"
+
+#: kcm/ui/VolumeControlsConfig.qml:57
 #, kde-format
+msgctxt "@option:check completes Maximum volume: …"
+msgid "Raise above 100%"
+msgstr ""
+
+#: kcm/ui/VolumeControlsConfig.qml:60
+#, kde-format
+msgctxt "@info:usagetip"
+msgid "Prolonged use of this feature will damage the device's speakers."
+msgstr ""
+
+#: kcm/ui/VolumeControlsConfig.qml:65
+#, fuzzy, kde-format
+#| msgid "Play audio feedback for changes to:"
+msgctxt "@option:check prefix, completes … Audio volume"
 msgid "Play audio feedback for changes to:"
 msgstr "Ludi sonajn rimarkojn por ŝanĝoj al:"
 
-#: kcm/ui/VolumeControlsConfig.qml:68 kcm/ui/VolumeControlsConfig.qml:77
-#, kde-format
+#: kcm/ui/VolumeControlsConfig.qml:70
+#, fuzzy, kde-format
+#| msgid "Audio volume"
+msgctxt "@option:check, completes Play audio feedback for changes to:"
 msgid "Audio volume"
 msgstr "Sona laŭteco"
 
-#: kcm/ui/VolumeControlsConfig.qml:76
-#, kde-format
+#: kcm/ui/VolumeControlsConfig.qml:78
+#, fuzzy, kde-format
+#| msgid "Show OSD popups for changes to:"
+msgctxt "@title:group completes e.g. … Audio volume"
 msgid "Show OSD popups for changes to:"
 msgstr "Montri OSD-ŝprucfenestron por ŝanĝoj al:"
 
-#: kcm/ui/VolumeControlsConfig.qml:84
-#, kde-format
+#: kcm/ui/VolumeControlsConfig.qml:83
+#, fuzzy, kde-format
+#| msgid "Audio volume"
+msgctxt "@option:check completes Show OSD popups for changes to:"
+msgid "Audio volume"
+msgstr "Sona laŭteco"
+
+#: kcm/ui/VolumeControlsConfig.qml:91
+#, fuzzy, kde-format
+#| msgid "Microphone sensitivity"
+msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Microphone sensitivity"
 msgstr "Mikrofona sentemo"
 
-#: kcm/ui/VolumeControlsConfig.qml:91
-#, kde-format
+#: kcm/ui/VolumeControlsConfig.qml:99
+#, fuzzy, kde-format
+#| msgid "Mute state"
+msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Mute state"
 msgstr "Muta stato"
 
-#: kcm/ui/VolumeControlsConfig.qml:98
+#: kcm/ui/VolumeControlsConfig.qml:107
 #, kde-format
-msgctxt "Show OSD when"
+msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Push to talk"
 msgstr ""
 
-#: kcm/ui/VolumeControlsConfig.qml:104
+#: kcm/ui/VolumeControlsConfig.qml:114
 #, fuzzy, kde-format
 #| msgctxt "List of apps is using mic"
 #| msgid "%1 are using the microphone"
-msgctxt "Show OSD when"
+msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Application starts using muted microphone"
 msgstr "%1 uzas la mikrofonon"
 
-#: kcm/ui/VolumeControlsConfig.qml:111
-#, kde-format
+#: kcm/ui/VolumeControlsConfig.qml:122
+#, fuzzy, kde-format
+#| msgid "Default output device"
+msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Default output device"
 msgstr "Defaŭlta eliga aparato"
 
