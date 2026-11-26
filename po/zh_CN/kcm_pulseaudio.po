@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-pa/kcm_pulseaudio.pot\n"
-"X-Crowdin-File-ID: 43649\n"
+"X-Crowdin-File: /kf6-stable/messages/plasma-pa/kcm_pulseaudio.pot\n"
+"X-Crowdin-File-ID: 52858\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -80,12 +80,10 @@ msgstr "重试"
 
 #: kcm/ui/DeviceListItem.qml:51 kcm/ui/DeviceListItem.qml:56
 #: kcm/ui/RenameDevices.qml:133
-#, fuzzy, kde-kuit-format
-#| msgctxt "Placeholder is channel name"
-#| msgid "%1:"
+#, kde-kuit-format
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1："
+msgstr "%1"
 
 #: kcm/ui/DeviceListItem.qml:59 kded/audioshortcutsservice.cpp:233
 #, kde-format
@@ -370,9 +368,7 @@ msgid "Reloading"
 msgstr "正在重新加载"
 
 #: kcm/ui/RenameDevices.qml:130
-#, fuzzy, kde-kuit-format
-#| msgctxt "place holder text, %1 is a device name"
-#| msgid "%1 (click 'Save' to apply)"
+#, kde-kuit-format
 msgctxt "@label/rich place holder text, %1 is a device name"
 msgid "%1 (click 'Save' to apply)"
 msgstr "%1 (点击“保存”以应用更改)"
