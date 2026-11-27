@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-10-16 12:13+0100\n"
+"PO-Revision-Date: 2026-11-27 00:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: devicerenamesaver.cpp:115
 #, kde-kuit-format
@@ -400,100 +400,87 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, fuzzy, kde-format
-#| msgid "Volume Controls"
+#, kde-format
 msgctxt "@title:window page title"
 msgid "Volume Controls"
 msgstr "Controles del volumen"
 
 #: kcm/ui/VolumeControlsConfig.qml:26
-#, fuzzy, kde-format
-#| msgid "Volume change step:"
+#, kde-format
 msgctxt ""
 "@label:spinbox how much e.g. keyboard shortcuts change volume, in percent"
 msgid "Volume change step size:"
-msgstr "Paso de cambio del volumen:"
+msgstr "Tamaño del paso de cambio del volumen:"
 
 #: kcm/ui/VolumeControlsConfig.qml:54
-#, fuzzy, kde-format
-#| msgid "Raise maximum volume"
+#, kde-format
 msgctxt "@option:check prefix completes … Raise above 100%"
 msgid "Maximum volume:"
-msgstr "Elevar el volumen máximo"
+msgstr "Volumen máximo:"
 
 #: kcm/ui/VolumeControlsConfig.qml:57
 #, kde-format
 msgctxt "@option:check completes Maximum volume: …"
 msgid "Raise above 100%"
-msgstr ""
+msgstr "Aumentar por encima del 100 %"
 
 #: kcm/ui/VolumeControlsConfig.qml:60
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Prolonged use of this feature will damage the device's speakers."
 msgstr ""
+"El uso prolongado de esta función dañará los altavoces del dispositivo."
 
 #: kcm/ui/VolumeControlsConfig.qml:65
-#, fuzzy, kde-format
-#| msgid "Play audio feedback for changes to:"
+#, kde-format
 msgctxt "@option:check prefix, completes … Audio volume"
 msgid "Play audio feedback for changes to:"
 msgstr "Reproducir información sonora para los cambios de:"
 
 #: kcm/ui/VolumeControlsConfig.qml:70
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgctxt "@option:check, completes Play audio feedback for changes to:"
 msgid "Audio volume"
 msgstr "Volumen del sonido"
 
 #: kcm/ui/VolumeControlsConfig.qml:78
-#, fuzzy, kde-format
-#| msgid "Show OSD popups for changes to:"
+#, kde-format
 msgctxt "@title:group completes e.g. … Audio volume"
 msgid "Show OSD popups for changes to:"
 msgstr "Mostrar ventanas emergentes OSD para los cambios de:"
 
 #: kcm/ui/VolumeControlsConfig.qml:83
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Audio volume"
 msgstr "Volumen del sonido"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Microphone sensitivity"
 msgstr "Sensibilidad del micrófono"
 
 #: kcm/ui/VolumeControlsConfig.qml:99
-#, fuzzy, kde-format
-#| msgid "Mute state"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Mute state"
 msgstr "Estado de silencio"
 
 #: kcm/ui/VolumeControlsConfig.qml:107
-#, fuzzy, kde-format
-#| msgctxt "Show OSD when"
-#| msgid "Push to talk"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Push to talk"
 msgstr "Pulse para hablar"
 
 #: kcm/ui/VolumeControlsConfig.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Show OSD when"
-#| msgid "Application starts using muted microphone"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Application starts using muted microphone"
 msgstr "Una aplicación empieza a usar el micrófono silenciado"
 
 #: kcm/ui/VolumeControlsConfig.qml:122
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Default output device"
 msgstr "Dispositivo de salida predeterminado"
@@ -682,13 +669,3 @@ msgstr "%1 está usando el micrófono (%2)"
 msgctxt "App is using mic"
 msgid "%1 is using the microphone"
 msgstr "%1 está usando el micrófono"
-
-#~ msgctxt "@action apply currently editing test"
-#~ msgid "Apply"
-#~ msgstr "Aplicar"
-
-#~ msgctxt ""
-#~ "@label placeholder text when we don't know the default value of a device "
-#~ "yet"
-#~ msgid "DEFAULT"
-#~ msgstr "Predeterminado"

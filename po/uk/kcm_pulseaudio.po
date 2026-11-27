@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcm_pulseaudio\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-10-16 08:14+0300\n"
+"PO-Revision-Date: 2026-11-26 08:39+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -402,103 +402,89 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, fuzzy, kde-format
-#| msgid "Volume Controls"
+#, kde-format
 msgctxt "@title:window page title"
 msgid "Volume Controls"
 msgstr "Керування гучністю"
 
 #: kcm/ui/VolumeControlsConfig.qml:26
-#, fuzzy, kde-format
-#| msgid "Volume change step:"
+#, kde-format
 msgctxt ""
 "@label:spinbox how much e.g. keyboard shortcuts change volume, in percent"
 msgid "Volume change step size:"
-msgstr "Крок зміни гучності:"
+msgstr "Розмір кроку зміни гучності:"
 
 #: kcm/ui/VolumeControlsConfig.qml:54
-#, fuzzy, kde-format
-#| msgid "Raise maximum volume"
+#, kde-format
 msgctxt "@option:check prefix completes … Raise above 100%"
 msgid "Maximum volume:"
-msgstr "Збільшити максимальну гучність"
+msgstr "Максимальна гучність:"
 
 #: kcm/ui/VolumeControlsConfig.qml:57
 #, kde-format
 msgctxt "@option:check completes Maximum volume: …"
 msgid "Raise above 100%"
-msgstr ""
+msgstr "Підняти вище 100%"
 
 #: kcm/ui/VolumeControlsConfig.qml:60
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Prolonged use of this feature will damage the device's speakers."
-msgstr ""
+msgstr "Тривале використання цієї можливості пошкодить динаміки пристрою."
 
 #: kcm/ui/VolumeControlsConfig.qml:65
-#, fuzzy, kde-format
-#| msgid "Play audio feedback for changes to:"
+#, kde-format
 msgctxt "@option:check prefix, completes … Audio volume"
 msgid "Play audio feedback for changes to:"
 msgstr "Супроводжувати звуком зміни у:"
 
 #: kcm/ui/VolumeControlsConfig.qml:70
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgctxt "@option:check, completes Play audio feedback for changes to:"
 msgid "Audio volume"
 msgstr "Гучність звуку"
 
 #: kcm/ui/VolumeControlsConfig.qml:78
-#, fuzzy, kde-format
-#| msgid "Show OSD popups for changes to:"
+#, kde-format
 msgctxt "@title:group completes e.g. … Audio volume"
 msgid "Show OSD popups for changes to:"
 msgstr "Показувати екранні вікна для змін:"
 
 #: kcm/ui/VolumeControlsConfig.qml:83
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Audio volume"
-msgstr "Гучність звуку"
+msgstr "Гучності звуку"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Microphone sensitivity"
 msgstr "Чутливості мікрофона"
 
 #: kcm/ui/VolumeControlsConfig.qml:99
-#, fuzzy, kde-format
-#| msgid "Mute state"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Mute state"
-msgstr "Стан вимикання звуку"
+msgstr "Стану вимикання звуку"
 
 #: kcm/ui/VolumeControlsConfig.qml:107
-#, fuzzy, kde-format
-#| msgctxt "Show OSD when"
-#| msgid "Push to talk"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Push to talk"
-msgstr "Натисніть, щоб почати"
+msgstr "У вмиканні записування"
 
 #: kcm/ui/VolumeControlsConfig.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Show OSD when"
-#| msgid "Application starts using muted microphone"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Application starts using muted microphone"
-msgstr "Програма запускається із вимиканням мікрофона"
+msgstr "Запуску програми із вимиканням мікрофона"
 
 #: kcm/ui/VolumeControlsConfig.qml:122
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Default output device"
-msgstr "Типовому пристрої відтворення"
+msgstr "У типовому пристрої відтворення"
 
 #: kded/audioshortcutsservice.cpp:81
 #, kde-format

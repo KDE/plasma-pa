@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-11-23 17:59+0300\n"
+"PO-Revision-Date: 2026-11-26 17:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -395,100 +395,87 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, fuzzy, kde-format
-#| msgid "Volume Controls"
+#, kde-format
 msgctxt "@title:window page title"
 msgid "Volume Controls"
 msgstr "Ses Düzeyi Denetimleri"
 
 #: kcm/ui/VolumeControlsConfig.qml:26
-#, fuzzy, kde-format
-#| msgid "Volume change step:"
+#, kde-format
 msgctxt ""
 "@label:spinbox how much e.g. keyboard shortcuts change volume, in percent"
 msgid "Volume change step size:"
-msgstr "Ses düzeyi değiştirme çentiği:"
+msgstr "Ses düzeyi değiştirme çentiği büyüklüğü:"
 
 #: kcm/ui/VolumeControlsConfig.qml:54
-#, fuzzy, kde-format
-#| msgid "Raise maximum volume"
+#, kde-format
 msgctxt "@option:check prefix completes … Raise above 100%"
 msgid "Maximum volume:"
-msgstr "Sesi sonuna kadar aç"
+msgstr "En yüksek ses:"
 
 #: kcm/ui/VolumeControlsConfig.qml:57
 #, kde-format
 msgctxt "@option:check completes Maximum volume: …"
 msgid "Raise above 100%"
-msgstr ""
+msgstr "%​100’ün üzerine çıkar"
 
 #: kcm/ui/VolumeControlsConfig.qml:60
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Prolonged use of this feature will damage the device's speakers."
 msgstr ""
+"Bu özelliğin uzun süreli kullanımı, aygıtın hoparlörlerine hasar verir."
 
 #: kcm/ui/VolumeControlsConfig.qml:65
-#, fuzzy, kde-format
-#| msgid "Play audio feedback for changes to:"
+#, kde-format
 msgctxt "@option:check prefix, completes … Audio volume"
 msgid "Play audio feedback for changes to:"
-msgstr "Yapılan değişikliklerde sesle geri bildirim ver:"
+msgstr "Şunlara yapılan değişikliklerde sesle geri bildirim ver:"
 
 #: kcm/ui/VolumeControlsConfig.qml:70
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgctxt "@option:check, completes Play audio feedback for changes to:"
 msgid "Audio volume"
 msgstr "Ses düzeyi"
 
 #: kcm/ui/VolumeControlsConfig.qml:78
-#, fuzzy, kde-format
-#| msgid "Show OSD popups for changes to:"
+#, kde-format
 msgctxt "@title:group completes e.g. … Audio volume"
 msgid "Show OSD popups for changes to:"
-msgstr "Şu değişikliklerde Ekran Üzeri Görüntü göster:"
+msgstr "Şunlara yapılan değişikliklerde Ekran Üzeri Görüntü göster:"
 
 #: kcm/ui/VolumeControlsConfig.qml:83
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Audio volume"
 msgstr "Ses düzeyi"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Microphone sensitivity"
 msgstr "Mikrofon duyarlılığı"
 
 #: kcm/ui/VolumeControlsConfig.qml:99
-#, fuzzy, kde-format
-#| msgid "Mute state"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Mute state"
-msgstr "Sesi kapatma durumu"
+msgstr "Sesi açma/kapatma durumu"
 
 #: kcm/ui/VolumeControlsConfig.qml:107
-#, fuzzy, kde-format
-#| msgctxt "Show OSD when"
-#| msgid "Push to talk"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Push to talk"
-msgstr "Bas Konuş"
+msgstr "Bas–Konuş"
 
 #: kcm/ui/VolumeControlsConfig.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Show OSD when"
-#| msgid "Application starts using muted microphone"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Application starts using muted microphone"
-msgstr "Uygulama, sessize alınmış mikrofonu kullanarak başlar"
+msgstr "Uygulama, mikrofon sessizde başladığında"
 
 #: kcm/ui/VolumeControlsConfig.qml:122
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Default output device"
 msgstr "Varsayılan çıkış aygıtı"
@@ -537,7 +524,7 @@ msgstr "Mikrofonu Sessize Al"
 #, kde-format
 msgctxt "Microphone unmuted only while holding the key"
 msgid "Push to talk"
-msgstr "Bas Konuş"
+msgstr "Bas–Konuş"
 
 #: kded/audioshortcutsservice.cpp:203
 #, kde-format
