@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-11-11 23:01+0200\n"
+"PO-Revision-Date: 2026-11-27 08:24+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -402,100 +402,86 @@ msgid "%1: %2"
 msgstr "%1: %2"
 
 #: kcm/ui/VolumeControlsConfig.qml:15
-#, fuzzy, kde-format
-#| msgid "Volume Controls"
+#, kde-format
 msgctxt "@title:window page title"
 msgid "Volume Controls"
 msgstr "Управление громкостью"
 
 #: kcm/ui/VolumeControlsConfig.qml:26
-#, fuzzy, kde-format
-#| msgid "Volume change step:"
+#, kde-format
 msgctxt ""
 "@label:spinbox how much e.g. keyboard shortcuts change volume, in percent"
 msgid "Volume change step size:"
 msgstr "Шаг изменения громкости:"
 
 #: kcm/ui/VolumeControlsConfig.qml:54
-#, fuzzy, kde-format
-#| msgid "Raise maximum volume"
+#, kde-format
 msgctxt "@option:check prefix completes … Raise above 100%"
 msgid "Maximum volume:"
-msgstr "Увеличить максимальную громкость"
+msgstr "Максимальная громкость:"
 
 #: kcm/ui/VolumeControlsConfig.qml:57
 #, kde-format
 msgctxt "@option:check completes Maximum volume: …"
 msgid "Raise above 100%"
-msgstr ""
+msgstr "выше 100 %"
 
 #: kcm/ui/VolumeControlsConfig.qml:60
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Prolonged use of this feature will damage the device's speakers."
-msgstr ""
+msgstr "Длительное использование этой функции повредит динамики устройства."
 
 #: kcm/ui/VolumeControlsConfig.qml:65
-#, fuzzy, kde-format
-#| msgid "Play audio feedback for changes to:"
+#, kde-format
 msgctxt "@option:check prefix, completes … Audio volume"
 msgid "Play audio feedback for changes to:"
 msgstr "Воспроизводить звук при регулировке устройств:"
 
 #: kcm/ui/VolumeControlsConfig.qml:70
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgctxt "@option:check, completes Play audio feedback for changes to:"
 msgid "Audio volume"
 msgstr "Громкость звука"
 
 #: kcm/ui/VolumeControlsConfig.qml:78
-#, fuzzy, kde-format
-#| msgid "Show OSD popups for changes to:"
+#, kde-format
 msgctxt "@title:group completes e.g. … Audio volume"
 msgid "Show OSD popups for changes to:"
 msgstr "Показывать уведомления при регулировке устройств:"
 
 #: kcm/ui/VolumeControlsConfig.qml:83
-#, fuzzy, kde-format
-#| msgid "Audio volume"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Audio volume"
 msgstr "Громкость звука"
 
 #: kcm/ui/VolumeControlsConfig.qml:91
-#, fuzzy, kde-format
-#| msgid "Microphone sensitivity"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Microphone sensitivity"
 msgstr "Чувствительность микрофона"
 
 #: kcm/ui/VolumeControlsConfig.qml:99
-#, fuzzy, kde-format
-#| msgid "Mute state"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Mute state"
-msgstr "Состояние"
+msgstr "Включение и отключение звука"
 
 #: kcm/ui/VolumeControlsConfig.qml:107
-#, fuzzy, kde-format
-#| msgctxt "Show OSD when"
-#| msgid "Push to talk"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Push to talk"
 msgstr "Режим рации"
 
 #: kcm/ui/VolumeControlsConfig.qml:114
-#, fuzzy, kde-format
-#| msgctxt "Show OSD when"
-#| msgid "Application starts using muted microphone"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Application starts using muted microphone"
 msgstr "Приложение использует микрофон, который отключён"
 
 #: kcm/ui/VolumeControlsConfig.qml:122
-#, fuzzy, kde-format
-#| msgid "Default output device"
+#, kde-format
 msgctxt "@option:check completes Show OSD popups for changes to:"
 msgid "Default output device"
 msgstr "Устройство вывода звука по умолчанию"
